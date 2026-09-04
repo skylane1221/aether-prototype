@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #080a0f;
+    --color-surface: #0e121a;
+    --color-card: #131824;
+    --color-border: #1e2638;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: #f8fafc;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080a0f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e2638;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2d3b55;
+  }
+}
+
+@layer utilities {
+  /* Subtle technical background grid */
+  .bg-grid-subtle {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  }
+
+  .bg-grid-dots {
+    background-size: 24px 24px;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  }
+
+  /* Ambient radial vignette */
+  .radial-mask-top {
+    mask-image: radial-gradient(circle at 50% 0%, black 0%, transparent 75%);
+    -webkit-mask-image: radial-gradient(circle at 50% 0%, black 0%, transparent 75%);
+  }
+
+  .radial-mask-center {
+    mask-image: radial-gradient(circle at 50% 50%, black 0%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 0%, transparent 80%);
+  }
+
+  /* Hairline border inner glow */
+  .border-hairline {
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .card-gradient-surface {
+    background: linear-gradient(180deg, rgba(19, 24, 36, 0.95) 0%, rgba(14, 18, 26, 0.98) 100%);
+  }
+
+  .card-gradient-hover {
+    background: linear-gradient(180deg, rgba(24, 32, 48, 0.95) 0%, rgba(18, 24, 36, 0.98) 100%);
+  }
+}
