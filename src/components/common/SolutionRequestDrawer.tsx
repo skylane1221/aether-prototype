@@ -143,6 +143,8 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
   const [email, setEmail] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
 
   const toggleImprovement = (optionLabel: string) => {
     setSelectedImprovements((prev) =>
@@ -152,8 +154,43 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
     );
   };
 
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    if (!challengeText.trim()) {
+      newErrors.challenge = 'Please describe your operational challenge or bottleneck.';
+    } else if (challengeText.trim().length < 10) {
+      newErrors.challenge = 'Please provide at least 10 characters of context.';
+    }
+
+    if (!name.trim()) {
+      newErrors.name = 'Please provide your name.';
+    }
+
+    if (!business.trim()) {
+      newErrors.business = 'Please specify your organization name.';
+    }
+
+    if (!email.trim()) {
+      newErrors.email = 'Please provide your work email address.';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      newErrors.email = 'Please provide a valid work email format.';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleBlur = (field: string) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+    validateForm();
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setTouched({ challenge: true, name: true, business: true, email: true });
+    if (!validateForm()) {
+      return;
+    }
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
@@ -166,6 +203,8 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
     setChallengeText('');
     setSelectedImprovements(['Reduce manual work', 'Improve operational efficiency']);
     setCustomImprovement('');
+    setErrors({});
+    setTouched({});
     onClose();
   };
 
@@ -441,88 +480,206 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
           {/* ========================================================================= */}
           <div className="space-y-1.5 pt-1">
             <div className="flex items-center justify-between">
-              <label className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
+              <label
+                htmlFor="drawer-challenge-text"
+                className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2"
+              >
                 <span className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px]">
                   3
                 </span>
                 <span>Tell us about your challenge</span>
               </label>
-              <span className="text-[10px] text-text-muted font-mono">Large Context Field</span>
+              <span className="text-[10px] text-text-muted font-mono">
+                {challengeText.length} chars
+              </span>
             </div>
 
             <textarea
+              id="drawer-challenge-text"
               rows={3}
               required
+              aria-required="true"
+              aria-invalid={!!(touched.challenge && errors.challenge)}
               placeholder={
                 INDUSTRY_CHALLENGE_PROMPTS[selectedIndustry] || INDUSTRY_CHALLENGE_PROMPTS.other
               }
               value={challengeText}
-              onChange={(e) => setChallengeText(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors placeholder:text-slate-600 resize-none leading-relaxed"
+              onChange={(e) => {
+                setChallengeText(e.target.value);
+                if (touched.challenge && e.target.value.trim().length >= 10) {
+                  setErrors((prev) => {
+                    const updated = { ...prev };
+                    delete updated.challenge;
+                    return updated;
+                  });
+                }
+              }}
+              onBlur={() => handleBlur('challenge')}
+              className={cn(
+                'w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border text-text-primary text-xs focus:outline-none focus:visible:ring-2 transition-colors placeholder:text-slate-600 resize-none leading-relaxed',
+                touched.challenge && errors.challenge
+                  ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-rose-500/40'
+                  : 'border-slate-800 focus:border-sky-500 focus-visible:ring-sky-400'
+              )}
             />
+            {touched.challenge && errors.challenge && (
+              <p role="alert" className="text-[11px] text-rose-400 font-medium animate-fade-in">
+                {errors.challenge}
+              </p>
+            )}
           </div>
 
           {/* ========================================================================= */}
           {/* 4. Contact details */}
           {/* ========================================================================= */}
           <div className="space-y-2 pt-1">
-            <label className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
               <span className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px]">
                 4
               </span>
               <span>Contact details</span>
-            </label>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
               <div className="space-y-1">
-                <label className="block text-[10px] font-medium text-text-muted uppercase font-mono">
+                <label
+                  htmlFor="drawer-contact-name"
+                  className="block text-[10px] font-medium text-text-muted uppercase font-mono"
+                >
                   Name
                 </label>
                 <div className="relative">
-                  <User className="w-3.5 h-3.5 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <User
+                    className="w-3.5 h-3.5 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                    aria-hidden="true"
+                  />
                   <input
+                    id="drawer-contact-name"
                     type="text"
                     required
+                    aria-required="true"
+                    aria-invalid={!!(touched.name && errors.name)}
                     placeholder="Marcus Vance"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors"
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      if (touched.name && e.target.value.trim()) {
+                        setErrors((prev) => {
+                          const updated = { ...prev };
+                          delete updated.name;
+                          return updated;
+                        });
+                      }
+                    }}
+                    onBlur={() => handleBlur('name')}
+                    className={cn(
+                      'w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border text-text-primary text-xs focus:outline-none transition-colors',
+                      touched.name && errors.name
+                        ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-2 focus-visible:ring-rose-500/40'
+                        : 'border-slate-800 focus:border-sky-500 focus-visible:ring-2 focus-visible:ring-sky-400'
+                    )}
                   />
                 </div>
+                {touched.name && errors.name && (
+                  <p role="alert" className="text-[10px] text-rose-400 font-medium animate-fade-in">
+                    {errors.name}
+                  </p>
+                )}
               </div>
 
               <div className="space-y-1">
-                <label className="block text-[10px] font-medium text-text-muted uppercase font-mono">
+                <label
+                  htmlFor="drawer-contact-business"
+                  className="block text-[10px] font-medium text-text-muted uppercase font-mono"
+                >
                   Business
                 </label>
                 <div className="relative">
-                  <Building className="w-3.5 h-3.5 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <Building
+                    className="w-3.5 h-3.5 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                    aria-hidden="true"
+                  />
                   <input
+                    id="drawer-contact-business"
                     type="text"
                     required
+                    aria-required="true"
+                    aria-invalid={!!(touched.business && errors.business)}
                     placeholder="Acme Holdings"
                     value={business}
-                    onChange={(e) => setBusiness(e.target.value)}
-                    className="w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors"
+                    onChange={(e) => {
+                      setBusiness(e.target.value);
+                      if (touched.business && e.target.value.trim()) {
+                        setErrors((prev) => {
+                          const updated = { ...prev };
+                          delete updated.business;
+                          return updated;
+                        });
+                      }
+                    }}
+                    onBlur={() => handleBlur('business')}
+                    className={cn(
+                      'w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border text-text-primary text-xs focus:outline-none transition-colors',
+                      touched.business && errors.business
+                        ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-2 focus-visible:ring-rose-500/40'
+                        : 'border-slate-800 focus:border-sky-500 focus-visible:ring-2 focus-visible:ring-sky-400'
+                    )}
                   />
                 </div>
+                {touched.business && errors.business && (
+                  <p role="alert" className="text-[10px] text-rose-400 font-medium animate-fade-in">
+                    {errors.business}
+                  </p>
+                )}
               </div>
 
               <div className="space-y-1">
-                <label className="block text-[10px] font-medium text-text-muted uppercase font-mono">
+                <label
+                  htmlFor="drawer-contact-email"
+                  className="block text-[10px] font-medium text-text-muted uppercase font-mono"
+                >
                   Email
                 </label>
                 <div className="relative">
-                  <Mail className="w-3.5 h-3.5 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <Mail
+                    className="w-3.5 h-3.5 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                    aria-hidden="true"
+                  />
                   <input
+                    id="drawer-contact-email"
                     type="email"
                     required
+                    aria-required="true"
+                    aria-invalid={!!(touched.email && errors.email)}
                     placeholder="marcus@company.com"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors"
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (
+                        touched.email &&
+                        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value.trim())
+                      ) {
+                        setErrors((prev) => {
+                          const updated = { ...prev };
+                          delete updated.email;
+                          return updated;
+                        });
+                      }
+                    }}
+                    onBlur={() => handleBlur('email')}
+                    className={cn(
+                      'w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border text-text-primary text-xs focus:outline-none transition-colors',
+                      touched.email && errors.email
+                        ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-2 focus-visible:ring-rose-500/40'
+                        : 'border-slate-800 focus:border-sky-500 focus-visible:ring-2 focus-visible:ring-sky-400'
+                    )}
                   />
                 </div>
+                {touched.email && errors.email && (
+                  <p role="alert" className="text-[10px] text-rose-400 font-medium animate-fade-in">
+                    {errors.email}
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -542,10 +699,11 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
               variant="primary"
               size="md"
               isLoading={isSubmitting}
-              className="font-semibold shadow-glow-subtle bg-sky-500 hover:bg-sky-400 text-slate-950"
+              disabled={isSubmitting}
+              className="font-semibold shadow-glow-subtle bg-sky-500 hover:bg-sky-400 text-slate-950 disabled:opacity-60"
               rightIcon={<ArrowRight className="w-4 h-4" />}
             >
-              Explore What Aether Could Do
+              {isSubmitting ? 'Processing Intake...' : 'Explore What Aether Could Do'}
             </Button>
           </div>
         </form>

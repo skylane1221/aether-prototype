@@ -12,6 +12,7 @@ import { PLATFORM_IMPACT_METRICS } from '../data/impact';
 import { DEMO_SCENARIOS } from '../data/demos';
 import { JourneyNavigator } from '../components/common/JourneyNavigator';
 import { WhyAetherSection } from '../components/common/WhyAetherSection';
+import { SEO } from '../components/common/SEO';
 import {
   ArrowRight,
   Sparkles,
@@ -72,6 +73,11 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="space-y-24 sm:space-y-32 pb-16">
+      <SEO
+        title="Aether | AI Business Transformation & Workflow Intelligence"
+        description="Diagnose operational friction, discover automation opportunities, and deploy custom intelligent workflows across 10 industry verticals."
+        canonicalPath="/"
+      />
       {/* ========================================================================= */}
       {/* 1. HERO SECTION */}
       {/* ========================================================================= */}

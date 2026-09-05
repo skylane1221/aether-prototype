@@ -26,6 +26,8 @@ export const Tabs: React.FC<TabsProps> = ({
   if (variant === 'segmented') {
     return (
       <div
+        role="tablist"
+        aria-label="Navigation Tabs"
         className={cn(
           'inline-flex items-center p-1 bg-aether-surface border border-aether-border rounded-xl max-w-full overflow-x-auto no-scrollbar',
           className
@@ -36,15 +38,22 @@ export const Tabs: React.FC<TabsProps> = ({
           return (
             <button
               key={tab.id}
+              role="tab"
+              aria-selected={isActive}
+              tabIndex={isActive ? 0 : -1}
               onClick={() => onChange(tab.id)}
               className={cn(
-                'flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap',
+                'flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400',
                 isActive
                   ? 'bg-aether-card text-text-primary shadow-sm border border-aether-border-bright/80 font-semibold'
                   : 'text-text-secondary hover:text-text-primary hover:bg-white/[0.02]'
               )}
             >
-              {tab.icon && <span className="w-4 h-4">{tab.icon}</span>}
+              {tab.icon && (
+                <span className="w-4 h-4" aria-hidden="true">
+                  {tab.icon}
+                </span>
+              )}
               <span>{tab.label}</span>
               {tab.count !== undefined && (
                 <span
@@ -66,6 +75,8 @@ export const Tabs: React.FC<TabsProps> = ({
   // Underline variant
   return (
     <div
+      role="tablist"
+      aria-label="Navigation Tabs"
       className={cn(
         'flex border-b border-aether-border overflow-x-auto no-scrollbar gap-6',
         className
@@ -76,15 +87,22 @@ export const Tabs: React.FC<TabsProps> = ({
         return (
           <button
             key={tab.id}
+            role="tab"
+            aria-selected={isActive}
+            tabIndex={isActive ? 0 : -1}
             onClick={() => onChange(tab.id)}
             className={cn(
-              'flex items-center gap-2 pb-3 text-sm font-medium border-b-2 transition-all whitespace-nowrap -mb-px',
+              'flex items-center gap-2 pb-3 text-sm font-medium border-b-2 transition-all whitespace-nowrap -mb-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400',
               isActive
                 ? 'border-aether-primary text-text-primary font-semibold'
                 : 'border-transparent text-text-secondary hover:text-text-primary hover:border-slate-700'
             )}
           >
-            {tab.icon && <span className="w-4 h-4">{tab.icon}</span>}
+            {tab.icon && (
+              <span className="w-4 h-4" aria-hidden="true">
+                {tab.icon}
+              </span>
+            )}
             <span>{tab.label}</span>
             {tab.count !== undefined && (
               <span className="text-xs px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 font-mono">

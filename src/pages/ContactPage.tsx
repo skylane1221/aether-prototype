@@ -5,6 +5,7 @@ import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Badge } from '../components/ui/Badge';
 import { JourneyNavigator } from '../components/common/JourneyNavigator';
+import { SEO } from '../components/common/SEO';
 import {
   Building2,
   UtensilsCrossed,
@@ -128,6 +129,8 @@ export const ContactPage: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
 
   const toggleImprovement = (optionLabel: string) => {
     setSelectedImprovements((prev) =>
@@ -137,8 +140,43 @@ export const ContactPage: React.FC = () => {
     );
   };
 
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    if (!challengeText.trim()) {
+      newErrors.challenge = 'Please describe your operational challenge or bottleneck.';
+    } else if (challengeText.trim().length < 10) {
+      newErrors.challenge = 'Please provide a bit more detail (at least 10 characters).';
+    }
+
+    if (!name.trim()) {
+      newErrors.name = 'Please provide your name.';
+    }
+
+    if (!business.trim()) {
+      newErrors.business = 'Please specify your company or organization name.';
+    }
+
+    if (!email.trim()) {
+      newErrors.email = 'Please provide your work email address.';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      newErrors.email = 'Please provide a valid work email format.';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleBlur = (field: string) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+    validateForm();
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setTouched({ challenge: true, name: true, business: true, email: true });
+    if (!validateForm()) {
+      return;
+    }
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
@@ -151,6 +189,8 @@ export const ContactPage: React.FC = () => {
     setChallengeText('');
     setSelectedImprovements(['Reduce manual work', 'Improve operational efficiency']);
     setCustomImprovement('');
+    setErrors({});
+    setTouched({});
   };
 
   const activeIndustryObj =
@@ -158,6 +198,11 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="space-y-16 sm:space-y-24 pb-16">
+      <SEO
+        title="Solution Builder & Diagnostic Intake | Aether"
+        description="Describe your operational challenges and explore what a custom Aether cognitive architecture can achieve for your organization."
+        canonicalPath="/contact"
+      />
       {/* Breadcrumb Trail */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="flex items-center justify-between py-2 border-b border-aether-border-subtle">
@@ -512,7 +557,10 @@ export const ContactPage: React.FC = () => {
               {/* ========================================================================= */}
               <div className="space-y-2 pt-2">
                 <div className="flex items-center justify-between">
-                  <label className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
+                  <label
+                    htmlFor="challenge-text"
+                    className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2"
+                  >
                     <span className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px]">
                       3
                     </span>
@@ -525,86 +573,217 @@ export const ContactPage: React.FC = () => {
 
                 <div className="relative">
                   <textarea
+                    id="challenge-text"
                     rows={4}
                     required
+                    aria-required="true"
+                    aria-invalid={!!(touched.challenge && errors.challenge)}
+                    aria-describedby="challenge-char-count challenge-error"
                     placeholder={
                       INDUSTRY_CHALLENGE_PROMPTS[selectedIndustry] ||
                       INDUSTRY_CHALLENGE_PROMPTS.other
                     }
                     value={challengeText}
-                    onChange={(e) => setChallengeText(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-950/90 border border-slate-800 text-text-primary text-sm focus:outline-none focus:border-sky-500 transition-colors placeholder:text-slate-600 resize-none leading-relaxed"
+                    onChange={(e) => {
+                      setChallengeText(e.target.value);
+                      if (touched.challenge) {
+                        setErrors((prev) => {
+                          const updated = { ...prev };
+                          if (e.target.value.trim().length >= 10) delete updated.challenge;
+                          return updated;
+                        });
+                      }
+                    }}
+                    onBlur={() => handleBlur('challenge')}
+                    className={cn(
+                      'w-full px-4 py-3 rounded-xl bg-slate-950/90 border text-text-primary text-sm focus:outline-none focus:visible:ring-2 transition-colors placeholder:text-slate-600 resize-none leading-relaxed',
+                      touched.challenge && errors.challenge
+                        ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-rose-500/40'
+                        : 'border-slate-800 focus:border-sky-500 focus-visible:ring-sky-400'
+                    )}
                   />
-                  <div className="absolute bottom-3 right-3 text-[10px] font-mono text-slate-600 pointer-events-none">
+                  <div
+                    id="challenge-char-count"
+                    className="absolute bottom-3 right-3 text-[10px] font-mono text-slate-500 pointer-events-none"
+                  >
                     {challengeText.length} characters
                   </div>
                 </div>
+                {touched.challenge && errors.challenge && (
+                  <p
+                    id="challenge-error"
+                    role="alert"
+                    className="text-xs text-rose-400 font-medium flex items-center gap-1.5 animate-fade-in"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
+                    {errors.challenge}
+                  </p>
+                )}
               </div>
 
               {/* ========================================================================= */}
               {/* 4. Contact details */}
               {/* ========================================================================= */}
               <div className="space-y-3 pt-2">
-                <label className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
                   <span className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px]">
                     4
                   </span>
                   <span>Contact details</span>
-                </label>
+                </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                   {/* Name */}
                   <div className="space-y-1">
-                    <label className="block text-[11px] font-medium text-text-secondary">
+                    <label
+                      htmlFor="contact-name"
+                      className="block text-[11px] font-medium text-text-secondary"
+                    >
                       Your Name
                     </label>
                     <div className="relative">
-                      <User className="w-4 h-4 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                      <User
+                        className="w-4 h-4 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                        aria-hidden="true"
+                      />
                       <input
+                        id="contact-name"
                         type="text"
                         required
+                        aria-required="true"
+                        aria-invalid={!!(touched.name && errors.name)}
                         placeholder="Marcus Vance"
                         value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        className="w-full pl-9 pr-3.5 py-2.5 rounded-xl bg-slate-950/90 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors"
+                        onChange={(e) => {
+                          setName(e.target.value);
+                          if (touched.name && e.target.value.trim()) {
+                            setErrors((prev) => {
+                              const updated = { ...prev };
+                              delete updated.name;
+                              return updated;
+                            });
+                          }
+                        }}
+                        onBlur={() => handleBlur('name')}
+                        className={cn(
+                          'w-full pl-9 pr-3.5 py-2.5 rounded-xl bg-slate-950/90 border text-text-primary text-xs focus:outline-none transition-colors',
+                          touched.name && errors.name
+                            ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-2 focus-visible:ring-rose-500/40'
+                            : 'border-slate-800 focus:border-sky-500 focus-visible:ring-2 focus-visible:ring-sky-400'
+                        )}
                       />
                     </div>
+                    {touched.name && errors.name && (
+                      <p
+                        role="alert"
+                        className="text-[11px] text-rose-400 font-medium animate-fade-in"
+                      >
+                        {errors.name}
+                      </p>
+                    )}
                   </div>
 
                   {/* Business */}
                   <div className="space-y-1">
-                    <label className="block text-[11px] font-medium text-text-secondary">
+                    <label
+                      htmlFor="contact-business"
+                      className="block text-[11px] font-medium text-text-secondary"
+                    >
                       Business / Organization
                     </label>
                     <div className="relative">
-                      <Building className="w-4 h-4 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                      <Building
+                        className="w-4 h-4 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                        aria-hidden="true"
+                      />
                       <input
+                        id="contact-business"
                         type="text"
                         required
+                        aria-required="true"
+                        aria-invalid={!!(touched.business && errors.business)}
                         placeholder="Acme Holdings"
                         value={business}
-                        onChange={(e) => setBusiness(e.target.value)}
-                        className="w-full pl-9 pr-3.5 py-2.5 rounded-xl bg-slate-950/90 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors"
+                        onChange={(e) => {
+                          setBusiness(e.target.value);
+                          if (touched.business && e.target.value.trim()) {
+                            setErrors((prev) => {
+                              const updated = { ...prev };
+                              delete updated.business;
+                              return updated;
+                            });
+                          }
+                        }}
+                        onBlur={() => handleBlur('business')}
+                        className={cn(
+                          'w-full pl-9 pr-3.5 py-2.5 rounded-xl bg-slate-950/90 border text-text-primary text-xs focus:outline-none transition-colors',
+                          touched.business && errors.business
+                            ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-2 focus-visible:ring-rose-500/40'
+                            : 'border-slate-800 focus:border-sky-500 focus-visible:ring-2 focus-visible:ring-sky-400'
+                        )}
                       />
                     </div>
+                    {touched.business && errors.business && (
+                      <p
+                        role="alert"
+                        className="text-[11px] text-rose-400 font-medium animate-fade-in"
+                      >
+                        {errors.business}
+                      </p>
+                    )}
                   </div>
 
                   {/* Email */}
                   <div className="space-y-1">
-                    <label className="block text-[11px] font-medium text-text-secondary">
+                    <label
+                      htmlFor="contact-email"
+                      className="block text-[11px] font-medium text-text-secondary"
+                    >
                       Work Email
                     </label>
                     <div className="relative">
-                      <Mail className="w-4 h-4 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                      <Mail
+                        className="w-4 h-4 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                        aria-hidden="true"
+                      />
                       <input
+                        id="contact-email"
                         type="email"
                         required
+                        aria-required="true"
+                        aria-invalid={!!(touched.email && errors.email)}
                         placeholder="marcus@company.com"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full pl-9 pr-3.5 py-2.5 rounded-xl bg-slate-950/90 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors"
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                          if (
+                            touched.email &&
+                            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value.trim())
+                          ) {
+                            setErrors((prev) => {
+                              const updated = { ...prev };
+                              delete updated.email;
+                              return updated;
+                            });
+                          }
+                        }}
+                        onBlur={() => handleBlur('email')}
+                        className={cn(
+                          'w-full pl-9 pr-3.5 py-2.5 rounded-xl bg-slate-950/90 border text-text-primary text-xs focus:outline-none transition-colors',
+                          touched.email && errors.email
+                            ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-2 focus-visible:ring-rose-500/40'
+                            : 'border-slate-800 focus:border-sky-500 focus-visible:ring-2 focus-visible:ring-sky-400'
+                        )}
                       />
                     </div>
+                    {touched.email && errors.email && (
+                      <p
+                        role="alert"
+                        className="text-[11px] text-rose-400 font-medium animate-fade-in"
+                      >
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -624,10 +803,11 @@ export const ContactPage: React.FC = () => {
                 variant="primary"
                 size="lg"
                 isLoading={isSubmitting}
-                className="w-full justify-center text-sm font-semibold shadow-glow-subtle bg-sky-500 hover:bg-sky-400 text-slate-950"
+                disabled={isSubmitting}
+                className="w-full justify-center text-sm font-semibold shadow-glow-subtle bg-sky-500 hover:bg-sky-400 text-slate-950 disabled:opacity-60"
                 rightIcon={<ArrowRight className="w-4 h-4" />}
               >
-                Explore What Aether Could Do
+                {isSubmitting ? 'Processing Diagnostic Intake...' : 'Explore What Aether Could Do'}
               </Button>
             </form>
           )}

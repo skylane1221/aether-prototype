@@ -71,8 +71,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                 >
                   <Link
                     to={item.href}
+                    aria-expanded={isIndustriesDropdownOpen}
+                    aria-haspopup="true"
+                    onFocus={() => setIsIndustriesDropdownOpen(true)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Escape') setIsIndustriesDropdownOpen(false);
+                    }}
                     className={cn(
-                      'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5',
+                      'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400',
                       isActive
                         ? 'text-text-primary bg-slate-800/40 font-semibold'
                         : 'text-text-secondary hover:text-text-primary hover:bg-slate-800/30'
@@ -84,12 +90,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                         'w-3.5 h-3.5 transition-transform duration-200 text-text-muted',
                         isIndustriesDropdownOpen && 'rotate-180 text-text-primary'
                       )}
+                      aria-hidden="true"
                     />
                   </Link>
 
                   {/* Dropdown Menu */}
                   {isIndustriesDropdownOpen && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[540px] animate-fade-in">
+                    <div
+                      role="menu"
+                      aria-label="Demonstration Industries"
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[540px] animate-fade-in"
+                    >
                       <div className="bg-aether-card border border-aether-border rounded-xl p-3 shadow-card-hover card-gradient-surface">
                         <div className="flex items-center justify-between px-3 py-2 border-b border-aether-border-subtle mb-2">
                           <span className="text-xs font-semibold uppercase tracking-wider text-text-muted">
@@ -97,10 +108,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                           </span>
                           <Link
                             to="/industries"
-                            className="text-xs text-sky-400 hover:text-sky-300 font-medium flex items-center gap-1"
+                            className="text-xs text-sky-400 hover:text-sky-300 font-medium flex items-center gap-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sky-400 rounded"
                           >
                             <span>View All 10</span>
-                            <ArrowRight className="w-3 h-3" />
+                            <ArrowRight className="w-3 h-3" aria-hidden="true" />
                           </Link>
                         </div>
 
@@ -109,7 +120,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                             <Link
                               key={subItem.href}
                               to={subItem.href}
-                              className="p-2.5 rounded-lg hover:bg-slate-800/60 transition-colors group flex flex-col"
+                              role="menuitem"
+                              className="p-2.5 rounded-lg hover:bg-slate-800/60 transition-colors group flex flex-col focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sky-400"
                             >
                               <div className="flex items-center justify-between">
                                 <span className="text-sm font-medium text-text-primary group-hover:text-sky-400 transition-colors">
@@ -136,7 +148,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                 key={item.href}
                 to={item.href}
                 className={cn(
-                  'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors',
+                  'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400',
                   isActive
                     ? 'text-text-primary bg-slate-800/40 font-semibold'
                     : 'text-text-secondary hover:text-text-primary hover:bg-slate-800/30'
@@ -172,10 +184,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
           </Button>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-slate-800/60 border border-aether-border"
+            className="p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-slate-800/60 border border-aether-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
             aria-label="Toggle navigation menu"
+            aria-expanded={isMobileMenuOpen}
           >
-            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isMobileMenuOpen ? (
+              <X className="w-5 h-5" aria-hidden="true" />
+            ) : (
+              <Menu className="w-5 h-5" aria-hidden="true" />
+            )}
           </button>
         </div>
       </div>

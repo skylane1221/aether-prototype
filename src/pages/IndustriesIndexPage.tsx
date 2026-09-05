@@ -6,6 +6,7 @@ import { Button } from '../components/ui/Button';
 import { Tabs, TabItem } from '../components/ui/Tabs';
 import { JourneyNavigator } from '../components/common/JourneyNavigator';
 import { CTASection } from '../components/common/CTASection';
+import { SEO } from '../components/common/SEO';
 import { INDUSTRIES } from '../data/industries';
 import { INDUSTRY_THEMES } from '../types/theme';
 import { IndustryFocusCategory } from '../types';
@@ -60,6 +61,11 @@ export const IndustriesIndexPage: React.FC = () => {
 
   return (
     <div className="space-y-16 sm:space-y-24 pb-16">
+      <SEO
+        title="Industry Solutions & Vertical Architectures | Aether"
+        description="Explore purpose-built AI workflows, real-time telemetry pipelines, and interactive sandboxes for 10 distinct business sectors."
+        canonicalPath="/industries"
+      />
       {/* Breadcrumb Trail */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="flex items-center justify-between py-2 border-b border-aether-border-subtle">

@@ -1,0 +1,32 @@
+name: Security Audit
+
+on:
+  push:
+    branches: ['main', 'master']
+  pull_request:
+    branches: ['main', 'master']
+  schedule:
+    # Run every Monday at midnight UTC
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  security-audit:
+    name: Dependency Security Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 2. Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+
+      - name: 3. Audit dependencies for high/critical vulnerabilities
+        run: npm audit --audit-level=high

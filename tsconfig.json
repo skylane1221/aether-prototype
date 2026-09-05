@@ -16,6 +16,7 @@
     "strictNullChecks": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
+    "types": ["@testing-library/jest-dom/vitest"],
     "paths": {
       "@/*": ["src/*"]
     }

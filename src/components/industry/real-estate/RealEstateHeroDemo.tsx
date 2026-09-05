@@ -47,6 +47,7 @@ export const RealEstateHeroDemo: React.FC = () => {
   const [extractionState, setExtractionState] = useState<'idle' | 'analyzing' | 'extracted'>(
     'extracted'
   );
+  const [inputError, setInputError] = useState<string | null>(null);
   const [shortlistedIds, setShortlistedIds] = useState<string[]>(['prop-1']);
 
   // Modals state
@@ -58,6 +59,11 @@ export const RealEstateHeroDemo: React.FC = () => {
   const [visitConfirmed, setVisitConfirmed] = useState<boolean>(false);
 
   const handleRunAnalysis = () => {
+    if (!messageInput.trim()) {
+      setInputError('Please enter a buyer query or choose one of the quick presets above.');
+      return;
+    }
+    setInputError(null);
     setExtractionState('analyzing');
     setTimeout(() => {
       setExtractionState('extracted');
@@ -66,6 +72,7 @@ export const RealEstateHeroDemo: React.FC = () => {
 
   const handleReset = () => {
     setMessageInput(SAMPLE_PROMPTS[0].text);
+    setInputError(null);
     setExtractionState('idle');
   };
 
@@ -160,17 +167,23 @@ export const RealEstateHeroDemo: React.FC = () => {
               </div>
 
               {/* Sample Prompt Selector */}
-              <div className="flex items-center gap-1.5 flex-wrap">
+              <div
+                className="flex items-center gap-1.5 flex-wrap"
+                role="group"
+                aria-label="Sample message presets"
+              >
                 <span className="text-[11px] text-text-muted">Quick Presets:</span>
                 {SAMPLE_PROMPTS.map((preset, idx) => (
                   <button
                     key={idx}
+                    type="button"
                     onClick={() => {
                       setMessageInput(preset.text);
                       setExtractionState('extracted');
                     }}
+                    aria-label={`Load preset ${idx + 1}: ${preset.label}`}
                     className={cn(
-                      'text-[10px] font-mono px-2 py-0.5 rounded border transition-all',
+                      'text-[10px] font-mono px-2 py-0.5 rounded border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400',
                       messageInput === preset.text
                         ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40'
                         : 'bg-slate-900 text-slate-400 border-slate-800 hover:border-slate-700'
@@ -184,22 +197,35 @@ export const RealEstateHeroDemo: React.FC = () => {
 
             <div className="relative">
               <textarea
+                id="realestate-buyer-message"
+                aria-label="Inbound buyer inquiry message"
                 value={messageInput}
-                onChange={(e) => setMessageInput(e.target.value)}
+                onChange={(e) => {
+                  setMessageInput(e.target.value);
+                  if (inputError && e.target.value.trim()) {
+                    setInputError(null);
+                  }
+                }}
                 rows={2}
                 placeholder="Paste natural language buyer inquiry..."
-                className="w-full rounded-xl bg-slate-900 border border-slate-700/80 px-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 font-sans leading-relaxed"
+                className={cn(
+                  'w-full rounded-xl bg-slate-900 border px-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none transition-colors font-sans leading-relaxed',
+                  inputError
+                    ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-2 focus-visible:ring-rose-500/40'
+                    : 'border-slate-700/80 focus:border-cyan-500 focus-visible:ring-2 focus-visible:ring-cyan-400'
+                )}
               />
               <div className="absolute right-3 bottom-3 flex items-center gap-2">
                 <Button
                   variant="primary"
                   size="sm"
                   onClick={handleRunAnalysis}
+                  disabled={extractionState === 'analyzing'}
                   leftIcon={
                     extractionState === 'analyzing' ? (
-                      <Sparkles className="w-3.5 h-3.5 animate-spin" />
+                      <Sparkles className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
                     ) : (
-                      <Zap className="w-3.5 h-3.5" />
+                      <Zap className="w-3.5 h-3.5" aria-hidden="true" />
                     )
                   }
                   className="shadow-sm text-xs py-1.5"
@@ -208,10 +234,19 @@ export const RealEstateHeroDemo: React.FC = () => {
                 </Button>
               </div>
             </div>
+            {inputError && (
+              <p
+                role="alert"
+                className="text-xs text-rose-400 font-medium flex items-center gap-1.5 animate-fade-in"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
+                {inputError}
+              </p>
+            )}
           </div>
 
           {/* 2. Extracted Entities (AETHER UNDERSTANDS) & Recommendations (AETHER RECOMMENDS) */}
-          {extractionState !== 'idle' && (
+          {extractionState !== 'idle' ? (
             <div className="space-y-6 animate-fade-in">
               {/* 2A. AETHER UNDERSTANDS - 7 Core Extracted Entities */}
               <div className="p-5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-3.5">
@@ -515,6 +550,31 @@ export const RealEstateHeroDemo: React.FC = () => {
                     );
                   })}
                 </div>
+              </div>
+            </div>
+          ) : (
+            <div className="p-8 sm:p-12 rounded-xl bg-slate-900/40 border border-slate-800 text-center space-y-3 animate-fade-in">
+              <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mx-auto">
+                <Sparkles className="w-6 h-6" />
+              </div>
+              <h4 className="text-sm sm:text-base font-bold text-white">
+                Aether Natural Language Triage Ready
+              </h4>
+              <p className="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
+                Type an inbound buyer inquiry or select one of the quick presets above, then click{' '}
+                <strong className="text-cyan-300">"Parse & Match Inventory"</strong> to simulate
+                semantic entity extraction.
+              </p>
+              <div className="pt-2">
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  onClick={handleRunAnalysis}
+                  leftIcon={<Play className="w-3.5 h-3.5 fill-current" />}
+                  className="text-xs"
+                >
+                  Run Analysis with Default Preset
+                </Button>
               </div>
             </div>
           )}

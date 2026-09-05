@@ -554,8 +554,10 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
             return (
               <Card key={idx} className="overflow-hidden border-slate-800">
                 <button
+                  type="button"
                   onClick={() => toggleAccordion(idx)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-slate-800/40 transition-colors"
+                  aria-expanded={isOpen}
+                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-slate-800/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-lg"
                 >
                   <div>
                     <span className="text-[10px] font-mono text-cyan-400 font-semibold block mb-1">

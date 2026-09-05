@@ -541,8 +541,10 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
                 className="p-5 sm:p-6 transition-all duration-200 border-slate-700/80 card-gradient-surface"
               >
                 <button
+                  type="button"
                   onClick={() => toggleAccordion(idx)}
-                  className="w-full flex items-center justify-between text-left gap-4"
+                  aria-expanded={isOpen}
+                  className="w-full flex items-center justify-between text-left gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-lg"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-slate-900 border border-aether-border flex items-center justify-center text-cyan-400 shrink-0">

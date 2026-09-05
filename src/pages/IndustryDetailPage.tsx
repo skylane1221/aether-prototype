@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { useParams, Navigate, useOutletContext, Link } from 'react-router-dom';
 import { INDUSTRIES } from '../data/industries';
 import { INDUSTRY_THEMES } from '../types/theme';
@@ -6,6 +6,7 @@ import { SectionHeader } from '../components/ui/SectionHeader';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
+import { PageFallback } from '../components/common/PageFallback';
 import {
   Building2,
   Utensils,
@@ -38,18 +39,62 @@ import {
   Compass,
 } from 'lucide-react';
 import { cn } from '../utils/cn';
-import { RealEstateExperience } from '../components/industry/real-estate/RealEstateExperience';
-import { RestaurantExperience } from '../components/industry/restaurant/RestaurantExperience';
-import { CafeExperience } from '../components/industry/cafe/CafeExperience';
-import { GymExperience } from '../components/industry/gym/GymExperience';
-import { SalonExperience } from '../components/industry/salon/SalonExperience';
-import { HealthcareExperience } from '../components/industry/healthcare/HealthcareExperience';
-import { AutomotiveExperience } from '../components/industry/automotive/AutomotiveExperience';
-import { EducationExperience } from '../components/industry/education/EducationExperience';
-import { RetailExperience } from '../components/industry/retail/RetailExperience';
-import { HotelExperience } from '../components/industry/hotel/HotelExperience';
 import { IndustryBreadcrumb } from '../components/common/IndustryBreadcrumb';
 import { IndustryNextSteps } from '../components/common/IndustryNextSteps';
+import { NotFoundPage } from './NotFoundPage';
+import { usePageMetadata } from '../components/common/SEO';
+
+// Dynamic lazy-loaded industry experience modules
+const RealEstateExperience = lazy(() =>
+  import('../components/industry/real-estate/RealEstateExperience').then((m) => ({
+    default: m.RealEstateExperience,
+  }))
+);
+const RestaurantExperience = lazy(() =>
+  import('../components/industry/restaurant/RestaurantExperience').then((m) => ({
+    default: m.RestaurantExperience,
+  }))
+);
+const CafeExperience = lazy(() =>
+  import('../components/industry/cafe/CafeExperience').then((m) => ({
+    default: m.CafeExperience,
+  }))
+);
+const GymExperience = lazy(() =>
+  import('../components/industry/gym/GymExperience').then((m) => ({
+    default: m.GymExperience,
+  }))
+);
+const SalonExperience = lazy(() =>
+  import('../components/industry/salon/SalonExperience').then((m) => ({
+    default: m.SalonExperience,
+  }))
+);
+const HealthcareExperience = lazy(() =>
+  import('../components/industry/healthcare/HealthcareExperience').then((m) => ({
+    default: m.HealthcareExperience,
+  }))
+);
+const AutomotiveExperience = lazy(() =>
+  import('../components/industry/automotive/AutomotiveExperience').then((m) => ({
+    default: m.AutomotiveExperience,
+  }))
+);
+const EducationExperience = lazy(() =>
+  import('../components/industry/education/EducationExperience').then((m) => ({
+    default: m.EducationExperience,
+  }))
+);
+const RetailExperience = lazy(() =>
+  import('../components/industry/retail/RetailExperience').then((m) => ({
+    default: m.RetailExperience,
+  }))
+);
+const HotelExperience = lazy(() =>
+  import('../components/industry/hotel/HotelExperience').then((m) => ({
+    default: m.HotelExperience,
+  }))
+);
 
 const ICON_MAP: Record<string, React.ReactNode> = {
   Building2: <Building2 className="w-5 h-5" />,
@@ -74,42 +119,103 @@ export const IndustryDetailPage: React.FC = () => {
   // Additional Capabilities Accordion State (open groups)
   const [openAccordionIdx, setOpenAccordionIdx] = useState<number | null>(0);
 
-  const industry = INDUSTRIES.find((ind) => ind.slug === slug);
+  // Slug aliases for both singular and plural forms
+  const SLUG_ALIASES: Record<string, string> = {
+    hotel: 'hotels',
+    restaurant: 'restaurants',
+    gym: 'gyms',
+    salon: 'salons',
+    cafe: 'cafes',
+  };
+
+  const resolvedSlug = (slug && SLUG_ALIASES[slug]) || slug;
+  const industry = INDUSTRIES.find((ind) => ind.slug === resolvedSlug);
+
+  usePageMetadata({
+    title: industry
+      ? `Aether for ${industry.name} | ${industry.heroHeadline}`
+      : 'Industry Not Found | Aether',
+    description: industry
+      ? industry.description
+      : 'The requested industry architecture could not be found.',
+    canonicalPath: industry ? `/industries/${industry.slug}` : undefined,
+    noindex: !industry,
+  });
 
   if (!industry) {
-    return <Navigate to="/industries" replace />;
+    return <NotFoundPage />;
   }
 
   // Specialized industry experiences
   if (industry.slug === 'real-estate') {
-    return <RealEstateExperience industry={industry} />;
+    return (
+      <Suspense fallback={<PageFallback message="Loading Real Estate Experience..." />}>
+        <RealEstateExperience industry={industry} />
+      </Suspense>
+    );
   }
   if (industry.slug === 'restaurants') {
-    return <RestaurantExperience industry={industry} />;
+    return (
+      <Suspense fallback={<PageFallback message="Loading Restaurant Experience..." />}>
+        <RestaurantExperience industry={industry} />
+      </Suspense>
+    );
   }
   if (industry.slug === 'cafes') {
-    return <CafeExperience industry={industry} />;
+    return (
+      <Suspense fallback={<PageFallback message="Loading Cafe Experience..." />}>
+        <CafeExperience industry={industry} />
+      </Suspense>
+    );
   }
   if (industry.slug === 'gyms') {
-    return <GymExperience industry={industry} />;
+    return (
+      <Suspense fallback={<PageFallback message="Loading Gym Experience..." />}>
+        <GymExperience industry={industry} />
+      </Suspense>
+    );
   }
   if (industry.slug === 'salons') {
-    return <SalonExperience industry={industry} />;
+    return (
+      <Suspense fallback={<PageFallback message="Loading Salon Experience..." />}>
+        <SalonExperience industry={industry} />
+      </Suspense>
+    );
   }
   if (industry.slug === 'healthcare') {
-    return <HealthcareExperience industry={industry} />;
+    return (
+      <Suspense fallback={<PageFallback message="Loading Healthcare Experience..." />}>
+        <HealthcareExperience industry={industry} />
+      </Suspense>
+    );
   }
   if (industry.slug === 'automotive') {
-    return <AutomotiveExperience industry={industry} />;
+    return (
+      <Suspense fallback={<PageFallback message="Loading Automotive Experience..." />}>
+        <AutomotiveExperience industry={industry} />
+      </Suspense>
+    );
   }
   if (industry.slug === 'education') {
-    return <EducationExperience industry={industry} />;
+    return (
+      <Suspense fallback={<PageFallback message="Loading Education Experience..." />}>
+        <EducationExperience industry={industry} />
+      </Suspense>
+    );
   }
   if (industry.slug === 'retail') {
-    return <RetailExperience industry={industry} />;
+    return (
+      <Suspense fallback={<PageFallback message="Loading Retail Experience..." />}>
+        <RetailExperience industry={industry} />
+      </Suspense>
+    );
   }
   if (industry.slug === 'hotels') {
-    return <HotelExperience industry={industry} />;
+    return (
+      <Suspense fallback={<PageFallback message="Loading Hotel Experience..." />}>
+        <HotelExperience industry={industry} />
+      </Suspense>
+    );
   }
 
   const theme = INDUSTRY_THEMES[industry.accentColor] || INDUSTRY_THEMES.cyan;

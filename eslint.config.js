@@ -38,5 +38,11 @@ export default tseslint.config(
       'no-var': 'error',
       eqeqeq: ['error', 'always', { null: 'ignore' }],
     },
+  },
+  {
+    files: ['**/*.test.{ts,tsx}', 'src/test/**'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
   }
 );

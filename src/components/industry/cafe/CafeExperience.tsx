@@ -542,8 +542,10 @@ export const CafeExperience: React.FC<CafeExperienceProps> = ({ industry }) => {
                 className="p-5 sm:p-6 transition-all duration-200 border-stone-800 bg-stone-900/80"
               >
                 <button
+                  type="button"
                   onClick={() => toggleAccordion(idx)}
-                  className="w-full flex items-center justify-between text-left gap-4"
+                  aria-expanded={isOpen}
+                  className="w-full flex items-center justify-between text-left gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-lg"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-stone-950 border border-stone-800 flex items-center justify-center text-amber-400 shrink-0">

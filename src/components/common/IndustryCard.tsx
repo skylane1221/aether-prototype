@@ -43,7 +43,11 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({ industry, className 
   const topStat = industry.stats[0];
 
   return (
-    <Link to={`/industries/${industry.slug}`} className="block group h-full">
+    <Link
+      to={`/industries/${industry.slug}`}
+      className="block group h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-xl"
+      aria-label={`Explore Aether solutions for ${industry.name}`}
+    >
       <Card
         interactive
         className={cn(
@@ -61,6 +65,7 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({ industry, className 
                 theme.badgeBorder,
                 theme.accentText
               )}
+              aria-hidden="true"
             >
               {ICON_MAP[industry.iconName] || <Zap className="w-4 h-4" />}
             </div>
@@ -87,7 +92,10 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({ industry, className 
           <span className="text-xs font-semibold text-sky-400 group-hover:text-sky-300 transition-colors flex items-center gap-1">
             Explore {industry.shortName}
           </span>
-          <div className="w-6 h-6 rounded-full bg-slate-800/80 group-hover:bg-sky-500/20 flex items-center justify-center text-text-muted group-hover:text-sky-400 transition-all">
+          <div
+            className="w-6 h-6 rounded-full bg-slate-800/80 group-hover:bg-sky-500/20 flex items-center justify-center text-text-muted group-hover:text-sky-400 transition-all"
+            aria-hidden="true"
+          >
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
           </div>
         </div>

@@ -3,6 +3,7 @@ import { useOutletContext, Link, useSearchParams, useNavigate } from 'react-rout
 import { Hero } from '../components/common/Hero';
 import { CTASection } from '../components/common/CTASection';
 import { JourneyNavigator } from '../components/common/JourneyNavigator';
+import { SEO } from '../components/common/SEO';
 import { ALL_10_INDUSTRY_DEMOS, UniversalDemoWorkflow } from '../data/demos';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
@@ -88,6 +89,11 @@ export const DemosPage: React.FC = () => {
 
   return (
     <div className="space-y-16 sm:space-y-24 pb-16">
+      <SEO
+        title="Interactive Demos & Live Sandbox | Aether"
+        description="Test real-time simulated cognitive workflows and observe autonomous signal processing across multiple industries."
+        canonicalPath="/demos"
+      />
       {/* Breadcrumb Navigation Trail */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="flex items-center justify-between py-2 border-b border-aether-border-subtle">

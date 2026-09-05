@@ -6,6 +6,7 @@ import { Badge } from '../components/ui/Badge';
 import { Card } from '../components/ui/Card';
 import { JourneyNavigator } from '../components/common/JourneyNavigator';
 import { WhyAetherSection } from '../components/common/WhyAetherSection';
+import { SEO } from '../components/common/SEO';
 import {
   ArrowRight,
   Sparkles,
@@ -155,6 +156,11 @@ export const WhatIsAetherPage: React.FC = () => {
 
   return (
     <div className="space-y-24 sm:space-y-32 pb-16">
+      <SEO
+        title="What is Aether | Problem-First AI Architecture & Philosophy"
+        description="Learn why Aether begins with your operational reality rather than pre-packaged tools, transforming friction points into autonomous workflows."
+        canonicalPath="/what-is-aether"
+      />
       {/* Breadcrumb Trail */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="flex items-center justify-between py-2 border-b border-aether-border-subtle">

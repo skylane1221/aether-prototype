@@ -21,6 +21,7 @@ import { SALON_CUSTOMERS, SalonCustomerProfile } from '../../../data/salonData';
 export const SalonRebookingDemo: React.FC = () => {
   const [selectedCustomerId, setSelectedCustomerId] = useState<string>(SALON_CUSTOMERS[0].id);
   const [dispatchedCustomerId, setDispatchedCustomerId] = useState<string | null>(null);
+  const [isDispatching, setIsDispatching] = useState<boolean>(false);
   const [selectedTab, setSelectedTab] = useState<'service_history' | 'preferences'>(
     'service_history'
   );
@@ -31,7 +32,11 @@ export const SalonRebookingDemo: React.FC = () => {
   const isDispatched = dispatchedCustomerId === customer.id;
 
   const handleDispatchRebooking = () => {
-    setDispatchedCustomerId(customer.id);
+    setIsDispatching(true);
+    setTimeout(() => {
+      setIsDispatching(false);
+      setDispatchedCustomerId(customer.id);
+    }, 700);
   };
 
   return (
@@ -440,10 +445,14 @@ export const SalonRebookingDemo: React.FC = () => {
                   <Button
                     onClick={handleDispatchRebooking}
                     variant="primary"
-                    className="w-full justify-center gap-2 bg-gradient-to-r from-rose-600 to-purple-600 hover:from-rose-500 hover:to-purple-500 shadow-lg shadow-rose-900/30"
+                    isLoading={isDispatching}
+                    disabled={isDispatching}
+                    className="w-full justify-center gap-2 bg-gradient-to-r from-rose-600 to-purple-600 hover:from-rose-500 hover:to-purple-500 shadow-lg shadow-rose-900/30 disabled:opacity-75"
                   >
                     <Send className="w-4 h-4" />
-                    Dispatch Intelligent Rebooking Outreach
+                    {isDispatching
+                      ? 'Synthesizing Outreach & Reserving...'
+                      : 'Dispatch Intelligent Rebooking Outreach'}
                   </Button>
                 )}
               </AnimatePresence>
