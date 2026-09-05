@@ -55,9 +55,7 @@ export const GymMemberRetentionDemo: React.FC = () => {
                 aether-retention-mesh
               </span>
               <span className="text-text-muted text-xs">/</span>
-              <span className="text-xs font-mono text-text-muted">
-                member-churn-prevention
-              </span>
+              <span className="text-xs font-mono text-text-muted">member-churn-prevention</span>
             </div>
           </div>
 
@@ -86,9 +84,7 @@ export const GymMemberRetentionDemo: React.FC = () => {
                 </span>
                 <span>{phase.split('. ')[1]}</span>
               </div>
-              {idx < arr.length - 1 && (
-                <ArrowRight className="w-3 h-3 text-slate-600 shrink-0" />
-              )}
+              {idx < arr.length - 1 && <ArrowRight className="w-3 h-3 text-slate-600 shrink-0" />}
             </React.Fragment>
           ))}
         </div>
@@ -104,7 +100,9 @@ export const GymMemberRetentionDemo: React.FC = () => {
                   Step 1: Select a Member Profile to Inspect:
                 </h4>
               </div>
-              <span className="text-[11px] font-mono text-text-muted">4 Distinct Member Archetypes</span>
+              <span className="text-[11px] font-mono text-text-muted">
+                4 Distinct Member Archetypes
+              </span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -128,7 +126,9 @@ export const GymMemberRetentionDemo: React.FC = () => {
                         </div>
                         <div>
                           <div className="text-xs font-bold text-white">{m.name}</div>
-                          <div className="text-[10px] text-text-muted truncate max-w-[110px]">{m.membershipTier}</div>
+                          <div className="text-[10px] text-text-muted truncate max-w-[110px]">
+                            {m.membershipTier}
+                          </div>
                         </div>
                       </div>
 
@@ -138,8 +138,8 @@ export const GymMemberRetentionDemo: React.FC = () => {
                           m.churnRiskScore >= 80
                             ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
                             : m.churnRiskScore >= 50
-                            ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                            : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
+                              ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                              : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
                         )}
                       >
                         {m.churnRiskScore}% Churn
@@ -168,16 +168,29 @@ export const GymMemberRetentionDemo: React.FC = () => {
                     </div>
                     <div>
                       <h5 className="text-base font-bold text-white">{member.name}</h5>
-                      <span className="text-xs text-emerald-400 font-mono">{member.membershipTier}</span>
+                      <span className="text-xs text-emerald-400 font-mono">
+                        {member.membershipTier}
+                      </span>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3 font-mono text-xs">
                     <div className="text-right">
-                      <span className="text-[10px] text-text-muted uppercase block">Monthly Tier Value</span>
+                      <span className="text-[10px] text-text-muted uppercase block">
+                        Monthly Tier Value
+                      </span>
                       <span className="text-emerald-300 font-bold">{member.monthlyValue}</span>
                     </div>
-                    <Badge variant={member.engagementScore > 70 ? 'success' : member.engagementScore > 40 ? 'warning' : 'neutral'} size="sm">
+                    <Badge
+                      variant={
+                        member.engagementScore > 70
+                          ? 'success'
+                          : member.engagementScore > 40
+                            ? 'warning'
+                            : 'neutral'
+                      }
+                      size="sm"
+                    >
                       {member.engagementLevel}
                     </Badge>
                   </div>
@@ -191,7 +204,10 @@ export const GymMemberRetentionDemo: React.FC = () => {
                       Step 2: 8-Week Activity & Turnstile Inactivity Decay
                     </span>
                     <span className="text-slate-300">
-                      Current Streak: <strong className="text-white">{member.attendanceTrend[member.attendanceTrend.length - 1].visits} visits/wk</strong>
+                      Current Streak:{' '}
+                      <strong className="text-white">
+                        {member.attendanceTrend[member.attendanceTrend.length - 1].visits} visits/wk
+                      </strong>
                     </span>
                   </div>
 
@@ -202,16 +218,21 @@ export const GymMemberRetentionDemo: React.FC = () => {
                       const isZero = item.visits === 0;
 
                       return (
-                        <div key={i} className="flex flex-col items-center gap-1 h-full justify-end">
-                          <span className="text-[10px] font-mono text-slate-400">{item.visits}</span>
+                        <div
+                          key={i}
+                          className="flex flex-col items-center gap-1 h-full justify-end"
+                        >
+                          <span className="text-[10px] font-mono text-slate-400">
+                            {item.visits}
+                          </span>
                           <div
                             className={cn(
                               'w-full rounded-t transition-all duration-300',
                               isZero
                                 ? 'bg-rose-500/30 border-t-2 border-rose-500'
                                 : item.visits >= 4
-                                ? 'bg-emerald-500'
-                                : 'bg-amber-500/80'
+                                  ? 'bg-emerald-500'
+                                  : 'bg-amber-500/80'
                             )}
                             style={{ height: `${heightPct}%` }}
                           />
@@ -226,7 +247,9 @@ export const GymMemberRetentionDemo: React.FC = () => {
                 <div className="grid grid-cols-2 gap-2 text-xs font-mono bg-slate-950 p-3 rounded-xl border border-slate-800">
                   <div>
                     <span className="text-[10px] text-text-muted block">Last Check-In</span>
-                    <span className="text-white font-bold">{member.recentActivity.lastCheckIn}</span>
+                    <span className="text-white font-bold">
+                      {member.recentActivity.lastCheckIn}
+                    </span>
                   </div>
                   <div>
                     <span className="text-[10px] text-text-muted block">Assigned Coach</span>
@@ -234,11 +257,15 @@ export const GymMemberRetentionDemo: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-[10px] text-text-muted block">Favorite Studio Class</span>
-                    <span className="text-slate-200 truncate block">{member.recentActivity.favoriteClass}</span>
+                    <span className="text-slate-200 truncate block">
+                      {member.recentActivity.favoriteClass}
+                    </span>
                   </div>
                   <div>
                     <span className="text-[10px] text-text-muted block">Visits This Month</span>
-                    <span className="text-emerald-400 font-bold">{member.recentActivity.totalVisitsThisMonth} visits</span>
+                    <span className="text-emerald-400 font-bold">
+                      {member.recentActivity.totalVisitsThisMonth} visits
+                    </span>
                   </div>
                 </div>
               </Card>
@@ -259,8 +286,8 @@ export const GymMemberRetentionDemo: React.FC = () => {
                         member.churnRiskScore >= 80
                           ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
                           : member.churnRiskScore >= 50
-                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
-                          : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                            ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                            : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                       )}
                     >
                       {member.churnRiskLevel}

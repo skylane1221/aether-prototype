@@ -1,3 +1,5 @@
+import { PlatformSolution } from '../types';
+
 export interface ApplicableIndustry {
   name: string;
   slug: string;
@@ -47,16 +49,20 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
   {
     id: 'ai-intelligence',
     category: 'AI Intelligence',
-    description: 'Cognitive diagnostic and predictive models that forecast demand surges, classify multi-modal signals, and guide high-stakes decisions.',
+    description:
+      'Cognitive diagnostic and predictive models that forecast demand surges, classify multi-modal signals, and guide high-stakes decisions.',
     iconName: 'BrainCircuit',
     solutions: [
       {
         id: 'prediction-engine',
         name: 'Prediction Engine',
         category: 'AI Intelligence',
-        tagline: 'Anticipate equipment failures, customer drop-off risks, and demand surges before they manifest.',
-        whatItDoes: 'Ingests multi-source time-series telemetry (vehicle mileage, turnstile check-ins, dining covers, weather forecasts) to compute precise future outcomes with high probabilistic confidence.',
-        problemItAddresses: 'Unanticipated equipment breakdowns, sudden dining rushes causing kitchen chaos, and silent customer churn.',
+        tagline:
+          'Anticipate equipment failures, customer drop-off risks, and demand surges before they manifest.',
+        whatItDoes:
+          'Ingests multi-source time-series telemetry (vehicle mileage, turnstile check-ins, dining covers, weather forecasts) to compute precise future outcomes with high probabilistic confidence.',
+        problemItAddresses:
+          'Unanticipated equipment breakdowns, sudden dining rushes causing kitchen chaos, and silent customer churn.',
         problemsItSolves: [
           'Catastrophic vehicle breakdowns and emergency component failures.',
           'Sudden kitchen prep shortages during unpredicted weather shifts.',
@@ -96,9 +102,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'In an automotive service workshop, a vehicle logs 45,000 km with heavy urban stop-and-go driving telemetry.',
-          action: 'Aether detects accelerated brake wear patterns and calculates replacement necessity within 14 days.',
-          outcome: 'Proactively triggers a pre-approved brake service quote, avoiding roadside failure and capturing high-margin repair work.',
+          scenario:
+            'In an automotive service workshop, a vehicle logs 45,000 km with heavy urban stop-and-go driving telemetry.',
+          action:
+            'Aether detects accelerated brake wear patterns and calculates replacement necessity within 14 days.',
+          outcome:
+            'Proactively triggers a pre-approved brake service quote, avoiding roadside failure and capturing high-margin repair work.',
         },
         keyCapabilities: [
           'Multi-variable time-series forecasting',
@@ -112,9 +121,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         id: 'recommendation-system',
         name: 'Recommendation System',
         category: 'AI Intelligence',
-        tagline: 'Contextual, high-margin next-best-actions tailored to each customer and operational state.',
-        whatItDoes: 'Analyzes client dossiers, historical ticket yields, and current inventory to generate optimal service add-ons, course matches, and property recommendations.',
-        problemItAddresses: 'Staff missing high-margin upsell opportunities and clients receiving irrelevant, generic product suggestions.',
+        tagline:
+          'Contextual, high-margin next-best-actions tailored to each customer and operational state.',
+        whatItDoes:
+          'Analyzes client dossiers, historical ticket yields, and current inventory to generate optimal service add-ons, course matches, and property recommendations.',
+        problemItAddresses:
+          'Staff missing high-margin upsell opportunities and clients receiving irrelevant, generic product suggestions.',
         problemsItSolves: [
           'Stylists missing high-margin conditioning and gloss add-on opportunities.',
           'Prospective students overwhelmed by complex, multi-track course catalogs.',
@@ -148,9 +160,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A salon client with color-treated hair books a routine blowout 8 weeks after their last balayage.',
-          action: 'Aether analyzes color porosity records and surfaces a "Deep Hydration Gloss Treatment" prompt directly to the stylist’s tablet.',
-          outcome: 'Stylist recommends the treatment in-chair with 1 tap, lifting average ticket yield by +32%.',
+          scenario:
+            'A salon client with color-treated hair books a routine blowout 8 weeks after their last balayage.',
+          action:
+            'Aether analyzes color porosity records and surfaces a "Deep Hydration Gloss Treatment" prompt directly to the stylist’s tablet.',
+          outcome:
+            'Stylist recommends the treatment in-chair with 1 tap, lifting average ticket yield by +32%.',
         },
         keyCapabilities: [
           'Collaborative preference filtering',
@@ -165,8 +180,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Classification Engine & Intent Triage',
         category: 'AI Intelligence',
         tagline: 'Autonomous intent recognition, priority triage, and clinical urgency sorting.',
-        whatItDoes: 'Parses unstructured text, voice notes, and uploaded PDF documents to classify intent urgency, customer tiering, and clinical pre-requisite eligibility.',
-        problemItAddresses: 'High-intent leads sitting uncontacted in portal inboxes while staff manually read and route basic questionnaires.',
+        whatItDoes:
+          'Parses unstructured text, voice notes, and uploaded PDF documents to classify intent urgency, customer tiering, and clinical pre-requisite eligibility.',
+        problemItAddresses:
+          'High-intent leads sitting uncontacted in portal inboxes while staff manually read and route basic questionnaires.',
         problemsItSolves: [
           'High-intent real estate buyers waiting days for an agent callback.',
           'Manual sorting of thousands of student admissions transcripts.',
@@ -178,7 +195,8 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
             name: 'Real Estate',
             slug: 'real-estate',
             buttonLabel: 'Explore Real Estate',
-            useCase: 'Extracts property type, budget, configuration, and possession timeline from buyer chats.',
+            useCase:
+              'Extracts property type, budget, configuration, and possession timeline from buyer chats.',
           },
           {
             name: 'Education',
@@ -196,13 +214,17 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
             name: 'Automotive',
             slug: 'automotive',
             buttonLabel: 'Explore Automotive',
-            useCase: 'Classifies breakdown symptoms from customer voice notes into diagnostic repair codes.',
+            useCase:
+              'Classifies breakdown symptoms from customer voice notes into diagnostic repair codes.',
           },
         ],
         exampleApplication: {
-          scenario: 'An inbound portal inquiry arrives stating: "Looking for 3BHK ready to move in Whitefield under 1.5 Cr with 2 covered parkings."',
-          action: 'Aether instantly extracts 7 structured parameters, computes a 94% buyer intent score, and matches 3 live inventory units.',
-          outcome: 'Routes the qualified dossier to the senior territory broker within 15 seconds, securing an immediate weekend site visit.',
+          scenario:
+            'An inbound portal inquiry arrives stating: "Looking for 3BHK ready to move in Whitefield under 1.5 Cr with 2 covered parkings."',
+          action:
+            'Aether instantly extracts 7 structured parameters, computes a 94% buyer intent score, and matches 3 live inventory units.',
+          outcome:
+            'Routes the qualified dossier to the senior territory broker within 15 seconds, securing an immediate weekend site visit.',
         },
         keyCapabilities: [
           'NLP intent extraction & qualification',
@@ -217,8 +239,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Decision Support System',
         category: 'AI Intelligence',
         tagline: 'Synthesize complex multi-variable trade-offs to guide operational decisions.',
-        whatItDoes: 'Evaluates simultaneous constraints (technician certifications, lift bay types, perishable food batch times, flight arrival times) to recommend mathematically optimal operational choices.',
-        problemItAddresses: 'Suboptimal management decisions that create bottleneck cascades, room turnover delays, and technician scheduling conflicts.',
+        whatItDoes:
+          'Evaluates simultaneous constraints (technician certifications, lift bay types, perishable food batch times, flight arrival times) to recommend mathematically optimal operational choices.',
+        problemItAddresses:
+          'Suboptimal management decisions that create bottleneck cascades, room turnover delays, and technician scheduling conflicts.',
         problemsItSolves: [
           'Overbooking heavy mechanical jobs into quick-lube bays.',
           'Mismatched housekeeping cleaning priorities before VIP flight arrivals.',
@@ -252,9 +276,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A 200-room hotel experiences 14 early flight arrivals while 18 late checkouts are scheduled on the same floor.',
-          action: 'Aether recalculates housekeeping task sequences, routing staff to priority VIP suites first while staging linen carts optimally.',
-          outcome: 'Eliminates front desk lobby waiting queues and achieves 100% on-time VIP check-in compliance.',
+          scenario:
+            'A 200-room hotel experiences 14 early flight arrivals while 18 late checkouts are scheduled on the same floor.',
+          action:
+            'Aether recalculates housekeeping task sequences, routing staff to priority VIP suites first while staging linen carts optimally.',
+          outcome:
+            'Eliminates front desk lobby waiting queues and achieves 100% on-time VIP check-in compliance.',
         },
         keyCapabilities: [
           'Multi-constraint linear optimization',
@@ -269,7 +296,8 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
   {
     id: 'customer-intelligence',
     category: 'Customer Intelligence',
-    description: 'Transform customer interactions into unified longitudinal profiles. Continuously detects subtle shifts in affinity, price sensitivity, and drop-off risks.',
+    description:
+      'Transform customer interactions into unified longitudinal profiles. Continuously detects subtle shifts in affinity, price sensitivity, and drop-off risks.',
     iconName: 'Users',
     solutions: [
       {
@@ -277,8 +305,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Dynamic Customer Segmentation',
         category: 'Customer Intelligence',
         tagline: 'Continuous behavioral cohort clustering that evolves with customer actions.',
-        whatItDoes: 'Automatically clusters customers based on real-time visit frequency, spend velocity, service preferences, and engagement responsiveness.',
-        problemItAddresses: 'Sending generic mass discounts to VIP regular patrons, missing fast-emerging high-value clients, and treating first-time visitors like churned accounts.',
+        whatItDoes:
+          'Automatically clusters customers based on real-time visit frequency, spend velocity, service preferences, and engagement responsiveness.',
+        problemItAddresses:
+          'Sending generic mass discounts to VIP regular patrons, missing fast-emerging high-value clients, and treating first-time visitors like churned accounts.',
         problemsItSolves: [
           'Sending generic mass emails that alienate VIP power guests.',
           'Failing to identify fast-growing corporate fleet accounts.',
@@ -312,8 +342,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A boutique gym identifies 45 members whose weekly visit frequency shifted from 4 visits to 1 visit over a 21-day period.',
-          action: 'Aether automatically clusters them into an "At-Risk Habit Decay" segment and schedules a personalized re-engagement workout invite.',
+          scenario:
+            'A boutique gym identifies 45 members whose weekly visit frequency shifted from 4 visits to 1 visit over a 21-day period.',
+          action:
+            'Aether automatically clusters them into an "At-Risk Habit Decay" segment and schedules a personalized re-engagement workout invite.',
           outcome: 'Recovers 62% of at-risk members before their annual subscription renewal date.',
         },
         keyCapabilities: [
@@ -329,8 +361,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Preference & Formula Memory Mesh',
         category: 'Customer Intelligence',
         tagline: 'Zero-friction memory of client formulas, dietary needs, and comfort notes.',
-        whatItDoes: 'Captures and indexes client specifications—from balayage gloss ratios and beverage preferences to food allergies and room climate preferences.',
-        problemItAddresses: 'Embarrassing repetitions where returning clients must re-explain dietary allergies, past hair formulas, or room preferences to new staff.',
+        whatItDoes:
+          'Captures and indexes client specifications—from balayage gloss ratios and beverage preferences to food allergies and room climate preferences.',
+        problemItAddresses:
+          'Embarrassing repetitions where returning clients must re-explain dietary allergies, past hair formulas, or room preferences to new staff.',
         problemsItSolves: [
           'Stylists re-asking color formulas due to lost paper client index cards.',
           'Hospitality guests frustrated by unrecorded dietary restrictions.',
@@ -364,9 +398,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A regular salon client books an appointment at a new branch location across town.',
-          action: 'Aether automatically synchronizes their exact 6N/7GB gloss formulation and scalp sensitivity notes to the new stylist’s workstation mirror.',
-          outcome: 'Achieves flawless color continuity with zero client friction, securing five-star client retention.',
+          scenario:
+            'A regular salon client books an appointment at a new branch location across town.',
+          action:
+            'Aether automatically synchronizes their exact 6N/7GB gloss formulation and scalp sensitivity notes to the new stylist’s workstation mirror.',
+          outcome:
+            'Achieves flawless color continuity with zero client friction, securing five-star client retention.',
         },
         keyCapabilities: [
           'Digital formula & shade archival',
@@ -381,8 +418,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Lead Scoring & Intent Engine',
         category: 'Customer Intelligence',
         tagline: 'Real-time prospective buyer prioritization based on conversion velocity.',
-        whatItDoes: 'Scores incoming buyer and student inquiries (0–100%) by evaluating timeline urgency, budget qualifications, and engagement response signals.',
-        problemItAddresses: 'Sales advisors drowning in hundreds of unvetted leads while high-intent, ready-to-buy prospects go cold waiting for a callback.',
+        whatItDoes:
+          'Scores incoming buyer and student inquiries (0–100%) by evaluating timeline urgency, budget qualifications, and engagement response signals.',
+        problemItAddresses:
+          'Sales advisors drowning in hundreds of unvetted leads while high-intent, ready-to-buy prospects go cold waiting for a callback.',
         problemsItSolves: [
           'Sales reps wasting time on tire-kickers while high-intent buyers go cold.',
           'Admissions officers overwhelmed during peak application deadlines.',
@@ -416,9 +455,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'An education institute receives 600 online inquiry forms over a weekend deadline.',
-          action: 'Aether analyzes completion signals, transcript uploads, and financing questions to rank 42 students as Tier-1 High-Intent.',
-          outcome: 'Admissions team contacts all 42 high-intent applicants by 9:30 AM Monday, achieving a 78% enrollment rate.',
+          scenario:
+            'An education institute receives 600 online inquiry forms over a weekend deadline.',
+          action:
+            'Aether analyzes completion signals, transcript uploads, and financing questions to rank 42 students as Tier-1 High-Intent.',
+          outcome:
+            'Admissions team contacts all 42 high-intent applicants by 9:30 AM Monday, achieving a 78% enrollment rate.',
         },
         keyCapabilities: [
           'Real-time lead qualification matrix',
@@ -433,8 +475,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Retention Watchdog & Churn Prevention',
         category: 'Customer Intelligence',
         tagline: 'Detect silent habit breaks and intervene weeks before cancellation.',
-        whatItDoes: 'Tracks individual attendance curves and purchase cycles, triggering automated revival protocols the moment cadence deviates from baseline.',
-        problemItAddresses: 'Silent customer attrition where members, diners, or clients simply vanish without giving feedback until it is too late to recover them.',
+        whatItDoes:
+          'Tracks individual attendance curves and purchase cycles, triggering automated revival protocols the moment cadence deviates from baseline.',
+        problemItAddresses:
+          'Silent customer attrition where members, diners, or clients simply vanish without giving feedback until it is too late to recover them.',
         problemsItSolves: [
           'Gym members dropping from 4 visits/week to 0 without staff noticing.',
           'Salon clients delaying rebooking from 4 weeks to 10+ weeks.',
@@ -452,7 +496,8 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
             name: 'Salons',
             slug: 'salons',
             buttonLabel: 'Explore Salons',
-            useCase: 'Alerts staff when a regular client passes their typical 4-week rebooking window.',
+            useCase:
+              'Alerts staff when a regular client passes their typical 4-week rebooking window.',
           },
           {
             name: 'Education',
@@ -468,9 +513,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A gym member with an upcoming contract renewal has not scanned their keycard in 16 days.',
-          action: 'Aether detects the silent habit break, alerts the head coach, and drafts an empathetic personal training check-in note.',
-          outcome: 'Member re-engages, books a coach session, and extends their annual membership contract.',
+          scenario:
+            'A gym member with an upcoming contract renewal has not scanned their keycard in 16 days.',
+          action:
+            'Aether detects the silent habit break, alerts the head coach, and drafts an empathetic personal training check-in note.',
+          outcome:
+            'Member re-engages, books a coach session, and extends their annual membership contract.',
         },
         keyCapabilities: [
           'Habit decay curve trajectory modeling',
@@ -485,7 +533,8 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
   {
     id: 'operational-intelligence',
     category: 'Operational Intelligence',
-    description: 'Real-time operational sensing that balances kitchen prep, inventory stockouts, station throughput, and staff scheduling across facilities.',
+    description:
+      'Real-time operational sensing that balances kitchen prep, inventory stockouts, station throughput, and staff scheduling across facilities.',
     iconName: 'Cpu',
     solutions: [
       {
@@ -493,8 +542,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Demand Forecasting & Volume Sensing',
         category: 'Operational Intelligence',
         tagline: 'Anticipate hourly covers, footfall surges, and prep requirements.',
-        whatItDoes: 'Anticipates future customer volume, covers, footfall, and order demand by analyzing historical trends, calendar seasonality, weather patterns, and local events.',
-        problemItAddresses: 'Over-preparation leading to massive food waste or under-preparation causing stockouts, long wait times, and lost revenue.',
+        whatItDoes:
+          'Anticipates future customer volume, covers, footfall, and order demand by analyzing historical trends, calendar seasonality, weather patterns, and local events.',
+        problemItAddresses:
+          'Over-preparation leading to massive food waste or under-preparation causing stockouts, long wait times, and lost revenue.',
         problemsItSolves: [
           'Commercial kitchens throwing away 15% of prepared food on rainy days.',
           'Cafes understaffed during sudden transit commuter surges.',
@@ -528,9 +579,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A casual dining restaurant faces a Friday evening forecast of heavy rain and a nearby stadium concert.',
-          action: 'Aether models historical rainy-day behavior, forecasting a 30% surge in delivery orders and a 15% dip in dining room covers.',
-          outcome: 'Kitchen preps exact packaging and batch sauce quantities, reducing food waste by 68% while maintaining sub-12 min ticket times.',
+          scenario:
+            'A casual dining restaurant faces a Friday evening forecast of heavy rain and a nearby stadium concert.',
+          action:
+            'Aether models historical rainy-day behavior, forecasting a 30% surge in delivery orders and a 15% dip in dining room covers.',
+          outcome:
+            'Kitchen preps exact packaging and batch sauce quantities, reducing food waste by 68% while maintaining sub-12 min ticket times.',
         },
         keyCapabilities: [
           'Hourly day-part cover projections',
@@ -545,8 +599,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Inventory & Perishable Stock Intelligence',
         category: 'Operational Intelligence',
         tagline: 'Prevent stockouts and perishability losses before they hit your margins.',
-        whatItDoes: 'Tracks inventory depletion velocity in real time, calculates dynamic reorder thresholds, and flags expiring or slow-moving stock before margin loss.',
-        problemItAddresses: 'Perishable goods expiring in storage, unexpected out-of-stock items during rush hours, and excess capital tied up in dead stock.',
+        whatItDoes:
+          'Tracks inventory depletion velocity in real time, calculates dynamic reorder thresholds, and flags expiring or slow-moving stock before margin loss.',
+        problemItAddresses:
+          'Perishable goods expiring in storage, unexpected out-of-stock items during rush hours, and excess capital tied up in dead stock.',
         problemsItSolves: [
           'Uncontrolled spoilage of dairy, seafood, and fresh produce.',
           'Bestselling retail sizes going out of stock on Saturday afternoons.',
@@ -580,9 +636,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A multi-brand retail apparel store experiences a rapid run on winter jackets following a cold front.',
-          action: 'Aether detects stock levels falling below the 4-day replenishment threshold and auto-generates a supplier reorder draft.',
-          outcome: 'Replenishment arrives before stockouts occur, preserving $24,000 in weekend retail sales.',
+          scenario:
+            'A multi-brand retail apparel store experiences a rapid run on winter jackets following a cold front.',
+          action:
+            'Aether detects stock levels falling below the 4-day replenishment threshold and auto-generates a supplier reorder draft.',
+          outcome:
+            'Replenishment arrives before stockouts occur, preserving $24,000 in weekend retail sales.',
         },
         keyCapabilities: [
           'Dynamic safety stock thresholding',
@@ -597,8 +656,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Operational Bottleneck & Throughput Diagnostics',
         category: 'Operational Intelligence',
         tagline: 'Diagnose the hidden root causes slowing down your business.',
-        whatItDoes: 'Traces cycle times across stations, bays, rooms, and counters to diagnose root causes of delay and balance workflow velocity.',
-        problemItAddresses: 'Unexplained customer waiting lines, congested kitchen expo stations, backed-up service bays, and uneven staff utilization.',
+        whatItDoes:
+          'Traces cycle times across stations, bays, rooms, and counters to diagnose root causes of delay and balance workflow velocity.',
+        problemItAddresses:
+          'Unexplained customer waiting lines, congested kitchen expo stations, backed-up service bays, and uneven staff utilization.',
         problemsItSolves: [
           'Kitchen hot-lines backed up while expo stations wait idle.',
           'Dealership service advisors overbooking morning intake slots.',
@@ -632,9 +693,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'An automotive workshop experiences afternoon repair delays despite having 6 open lift bays.',
-          action: 'Aether analyzes telemetry and pinpoints that 38% of technician idle time is spent walking to the central parts counter.',
-          outcome: 'Reorganizes fast-moving parts into pre-staged bay carts, cutting average repair turnaround by 45 minutes per car.',
+          scenario:
+            'An automotive workshop experiences afternoon repair delays despite having 6 open lift bays.',
+          action:
+            'Aether analyzes telemetry and pinpoints that 38% of technician idle time is spent walking to the central parts counter.',
+          outcome:
+            'Reorganizes fast-moving parts into pre-staged bay carts, cutting average repair turnaround by 45 minutes per car.',
         },
         keyCapabilities: [
           'Station-by-station throughput timing',
@@ -649,8 +713,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Staff Scheduling & Capacity Balancing',
         category: 'Operational Intelligence',
         tagline: 'Match labor deployment against predicted hourly customer load.',
-        whatItDoes: 'Matches historical and projected peak demand curves with staff skill certifications and availability to generate optimal shift schedules.',
-        problemItAddresses: 'Overstaffing during slow afternoon valleys and chaotic understaffing during sudden rush periods.',
+        whatItDoes:
+          'Matches historical and projected peak demand curves with staff skill certifications and availability to generate optimal shift schedules.',
+        problemItAddresses:
+          'Overstaffing during slow afternoon valleys and chaotic understaffing during sudden rush periods.',
         problemsItSolves: [
           'High payroll costs from idle servers during weekday afternoon lulls.',
           'Overwhelmed baristas during sudden morning transit commuter rushes.',
@@ -684,9 +750,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A high-volume cafe experiences recurring 12-minute morning wait queues despite having sufficient total staff on the daily roster.',
-          action: 'Aether shifts 2 staff hours from the slow 2:00 PM lull to the 7:30–9:30 AM morning rush window.',
-          outcome: 'Reduces peak queue times to 90 seconds while eliminating 14 hours of weekly overtime expense.',
+          scenario:
+            'A high-volume cafe experiences recurring 12-minute morning wait queues despite having sufficient total staff on the daily roster.',
+          action:
+            'Aether shifts 2 staff hours from the slow 2:00 PM lull to the 7:30–9:30 AM morning rush window.',
+          outcome:
+            'Reduces peak queue times to 90 seconds while eliminating 14 hours of weekly overtime expense.',
         },
         keyCapabilities: [
           'Skill-matrix demand matching',
@@ -701,7 +770,8 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
   {
     id: 'workflow-automation',
     category: 'Workflow Automation',
-    description: 'Replace manual coordination drag with self-executing operational pipelines that balance capacity, schedule assets, and automate paperwork.',
+    description:
+      'Replace manual coordination drag with self-executing operational pipelines that balance capacity, schedule assets, and automate paperwork.',
     iconName: 'Workflow',
     solutions: [
       {
@@ -709,8 +779,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Intelligent Scheduling & Capacity Balancing',
         category: 'Workflow Automation',
         tagline: 'Maximize asset yield across chairs, bays, rooms, and provider schedules.',
-        whatItDoes: 'Dynamically packs and optimizes appointment slots, eliminating dead valleys and matching equipment constraints with staff certifications.',
-        problemItAddresses: 'Fragmented calendars with awkward 15–30 minute dead gaps that cannot be booked, causing lost provider revenue.',
+        whatItDoes:
+          'Dynamically packs and optimizes appointment slots, eliminating dead valleys and matching equipment constraints with staff certifications.',
+        problemItAddresses:
+          'Fragmented calendars with awkward 15–30 minute dead gaps that cannot be booked, causing lost provider revenue.',
         problemsItSolves: [
           'Unbalanced salon chairs with dead 30-min gaps between chemical treatments.',
           'Automotive lift bays blocked by cars waiting for master technicians.',
@@ -744,8 +816,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A salon has an opening during a senior stylist’s 45-minute color processing window.',
-          action: 'Aether automatically fits a high-margin express blowout appointment into the intermediate gap.',
+          scenario:
+            'A salon has an opening during a senior stylist’s 45-minute color processing window.',
+          action:
+            'Aether automatically fits a high-margin express blowout appointment into the intermediate gap.',
           outcome: 'Increases daily chair utilization by 24% without extending stylist work hours.',
         },
         keyCapabilities: [
@@ -761,8 +835,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Automated Multi-Touch Follow-Ups',
         category: 'Workflow Automation',
         tagline: 'Precision-timed rebooking and check-in sequences that never drop a lead.',
-        whatItDoes: 'Calculates the exact biological or mechanical cycle for re-engagement, automatically triggering personalized outreach at the optimal moment.',
-        problemItAddresses: 'Sales reps and advisors forgetting to follow up after site visits, consultations, or maintenance intervals, losing deals to competitors.',
+        whatItDoes:
+          'Calculates the exact biological or mechanical cycle for re-engagement, automatically triggering personalized outreach at the optimal moment.',
+        problemItAddresses:
+          'Sales reps and advisors forgetting to follow up after site visits, consultations, or maintenance intervals, losing deals to competitors.',
         problemsItSolves: [
           'Real estate agents forgetting to follow up after weekend site visits.',
           'Dealerships losing touch when vehicles cross 30k/60k/90k mileage points.',
@@ -796,9 +872,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A buyer attends a weekend property site visit and expresses interest in a 3BHK unit.',
-          action: 'Aether triggers a tailored digital brochure and payment schedule breakdown via WhatsApp 2 hours later, followed by a loan advisory prompt 48 hours later.',
-          outcome: 'Captures buyer commitment and schedules an agreement review meeting within 4 days.',
+          scenario:
+            'A buyer attends a weekend property site visit and expresses interest in a 3BHK unit.',
+          action:
+            'Aether triggers a tailored digital brochure and payment schedule breakdown via WhatsApp 2 hours later, followed by a loan advisory prompt 48 hours later.',
+          outcome:
+            'Captures buyer commitment and schedules an agreement review meeting within 4 days.',
         },
         keyCapabilities: [
           'Cycle-calculated outreach scheduling',
@@ -813,8 +892,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Context-Aware Notifications & Alerts',
         category: 'Workflow Automation',
         tagline: 'Hyper-personalized transactional briefings with mandatory confirmation gates.',
-        whatItDoes: 'Dispatches interactive pre-arrival briefings, fasting checklists, digital gate passes, and ready-for-pickup notifications.',
-        problemItAddresses: 'Day-of appointment no-shows, unprepared patients voiding clinical procedure slots, and customers waiting in congested lobbies.',
+        whatItDoes:
+          'Dispatches interactive pre-arrival briefings, fasting checklists, digital gate passes, and ready-for-pickup notifications.',
+        problemItAddresses:
+          'Day-of appointment no-shows, unprepared patients voiding clinical procedure slots, and customers waiting in congested lobbies.',
         problemsItSolves: [
           'Day-of clinical procedure cancellations from missed fasting prep.',
           'Retail customers flooding support lines with "Where is my order?" tickets.',
@@ -848,9 +929,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A patient is scheduled for an ultrasound procedure requiring 8 hours of fasting.',
-          action: 'Aether sends an interactive checklist via WhatsApp with a required "Confirm Fasting" button 12 hours before the appointment.',
-          outcome: 'Achieves 96% procedure readiness compliance and reduces day-of cancellations by 72%.',
+          scenario:
+            'A patient is scheduled for an ultrasound procedure requiring 8 hours of fasting.',
+          action:
+            'Aether sends an interactive checklist via WhatsApp with a required "Confirm Fasting" button 12 hours before the appointment.',
+          outcome:
+            'Achieves 96% procedure readiness compliance and reduces day-of cancellations by 72%.',
         },
         keyCapabilities: [
           'Mandatory 1-tap confirmation checkpoints',
@@ -865,8 +949,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Administrative Workflow Automation',
         category: 'Workflow Automation',
         tagline: 'Eliminate manual paperwork, clipboard queues, and data transcription.',
-        whatItDoes: 'Ingests digital forms, parses transcripts, validates insurance pre-authorizations, and structures notes directly into core ERP/EHR/SIS software.',
-        problemItAddresses: 'Front-line staff spending 2+ hours daily on manual data entry, transcription, and physical paperwork processing.',
+        whatItDoes:
+          'Ingests digital forms, parses transcripts, validates insurance pre-authorizations, and structures notes directly into core ERP/EHR/SIS software.',
+        problemItAddresses:
+          'Front-line staff spending 2+ hours daily on manual data entry, transcription, and physical paperwork processing.',
         problemsItSolves: [
           'Physicians spending 2+ hours daily on manual charting paperwork.',
           'Admissions staff manually reviewing paper graduation certificates.',
@@ -900,9 +986,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A university admissions department receives 400 uploaded high school transcripts during application week.',
-          action: 'Aether extracts grades, calculates GPA equivalents, and verifies prerequisite math courses in under 3 minutes.',
-          outcome: 'Saves 15 administrative hours per counselor weekly and cuts application decision turnaround from 14 days to 48 hours.',
+          scenario:
+            'A university admissions department receives 400 uploaded high school transcripts during application week.',
+          action:
+            'Aether extracts grades, calculates GPA equivalents, and verifies prerequisite math courses in under 3 minutes.',
+          outcome:
+            'Saves 15 administrative hours per counselor weekly and cuts application decision turnaround from 14 days to 48 hours.',
         },
         keyCapabilities: [
           'Structured EHR / SIS / DMS note export',
@@ -917,16 +1006,20 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
   {
     id: 'business-intelligence',
     category: 'Business Intelligence',
-    description: 'Transform reactive historical spreadsheets into real-time operational telemetry and forward-looking simulations.',
+    description:
+      'Transform reactive historical spreadsheets into real-time operational telemetry and forward-looking simulations.',
     iconName: 'TrendingUp',
     solutions: [
       {
         id: 'operational-telemetry',
         name: 'Operational Telemetry & Performance Analytics',
         category: 'Business Intelligence',
-        tagline: 'Real-time visibility into throughput velocity, bottlenecks, and staff productivity.',
-        whatItDoes: 'Aggregates multi-location telemetry into live executive dashboards tracking table turns, bay yields, ticket times, and staff efficiency.',
-        problemItAddresses: 'Multi-unit business owners flying blind with delayed end-of-month spreadsheets and no visibility into branch variances.',
+        tagline:
+          'Real-time visibility into throughput velocity, bottlenecks, and staff productivity.',
+        whatItDoes:
+          'Aggregates multi-location telemetry into live executive dashboards tracking table turns, bay yields, ticket times, and staff efficiency.',
+        problemItAddresses:
+          'Multi-unit business owners flying blind with delayed end-of-month spreadsheets and no visibility into branch variances.',
         problemsItSolves: [
           'Multi-outlet restaurant executives blind to food cost variance across branches.',
           'Salon owners unaware of uneven stylist chair occupancy.',
@@ -938,7 +1031,8 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
             name: 'Restaurants',
             slug: 'restaurants',
             buttonLabel: 'Explore Restaurants',
-            useCase: 'Tracks hourly sales, table turn times, and food cost variance across branches.',
+            useCase:
+              'Tracks hourly sales, table turn times, and food cost variance across branches.',
           },
           {
             name: 'Salons',
@@ -961,8 +1055,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         ],
         exampleApplication: {
           scenario: 'A restaurant group operating 6 locations reviews weekly operational reports.',
-          action: 'Aether highlights that Location 4 has an 18% longer ticket turnaround time on saute items compared to the group benchmark.',
-          outcome: 'Identifies an untrained station cook and provides targeted training, restoring ticket speed within 48 hours.',
+          action:
+            'Aether highlights that Location 4 has an 18% longer ticket turnaround time on saute items compared to the group benchmark.',
+          outcome:
+            'Identifies an untrained station cook and provides targeted training, restoring ticket speed within 48 hours.',
         },
         keyCapabilities: [
           'Multi-outlet executive benchmark matrix',
@@ -977,8 +1073,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Revenue Yield Optimization & Margin Intelligence',
         category: 'Business Intelligence',
         tagline: 'Maximize realized margins and recurring revenue yield across every square foot.',
-        whatItDoes: 'Simulates dynamic yield strategies—filling dead afternoon salon chairs, recovering abandoned retail carts, and pacing hotel late checkouts.',
-        problemItAddresses: 'High top-line sales masking poor bottom-line margins due to discounting, high food cost items, or dead off-peak facility hours.',
+        whatItDoes:
+          'Simulates dynamic yield strategies—filling dead afternoon salon chairs, recovering abandoned retail carts, and pacing hotel late checkouts.',
+        problemItAddresses:
+          'High top-line sales masking poor bottom-line margins due to discounting, high food cost items, or dead off-peak facility hours.',
         problemsItSolves: [
           'Dead midday gaps leaving salon and spa revenue uncaptured.',
           'Unsold seasonal inventory requiring 50% clearance markdowns.',
@@ -1012,8 +1110,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A luxury boutique hotel experiences low spa bookings and empty poolside cabanas on Tuesday and Wednesday afternoons.',
-          action: 'Aether models dynamic bundled packages pairing cabana day-passes with off-peak massage appointments targeted to corporate guests.',
+          scenario:
+            'A luxury boutique hotel experiences low spa bookings and empty poolside cabanas on Tuesday and Wednesday afternoons.',
+          action:
+            'Aether models dynamic bundled packages pairing cabana day-passes with off-peak massage appointments targeted to corporate guests.',
           outcome: 'Generates an incremental $14,200 in monthly high-margin ancillary revenue.',
         },
         keyCapabilities: [
@@ -1029,8 +1129,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Menu & Product Profitability Matrix',
         category: 'Business Intelligence',
         tagline: 'Classify items into Stars, Workhorses, Puzzles, and Dogs for margin engineering.',
-        whatItDoes: 'Analyzes raw ingredient costs, preparation labor time, and sales popularity to optimize product matrices and maximize gross contribution margin.',
-        problemItAddresses: 'Keeping labor-intensive, low-margin menu items or retail products that slow down operations without contributing to profit.',
+        whatItDoes:
+          'Analyzes raw ingredient costs, preparation labor time, and sales popularity to optimize product matrices and maximize gross contribution margin.',
+        problemItAddresses:
+          'Keeping labor-intensive, low-margin menu items or retail products that slow down operations without contributing to profit.',
         problemsItSolves: [
           'High-prep-time dishes slowing down the entire kitchen hot line.',
           'Popular cafe drinks generating near-zero gross margin due to unmeasured milk waste.',
@@ -1057,8 +1159,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A cafe menu includes an elaborate matcha iced beverage with 6 ingredients taking 3.5 minutes to prepare.',
-          action: 'Aether calculates an actual gross margin of only 14% after labor allocation and suggests a pre-batched preparation formulation.',
+          scenario:
+            'A cafe menu includes an elaborate matcha iced beverage with 6 ingredients taking 3.5 minutes to prepare.',
+          action:
+            'Aether calculates an actual gross margin of only 14% after labor allocation and suggests a pre-batched preparation formulation.',
           outcome: 'Cuts drink assembly time to 45 seconds and boosts gross item margin to 62%.',
         },
         keyCapabilities: [
@@ -1074,7 +1178,8 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
   {
     id: 'communication-intelligence',
     category: 'Communication Intelligence',
-    description: 'Deliver natural, context-aware conversations across WhatsApp, SMS, and email that feel like high-touch personal concierge service.',
+    description:
+      'Deliver natural, context-aware conversations across WhatsApp, SMS, and email that feel like high-touch personal concierge service.',
     iconName: 'MessageSquare',
     solutions: [
       {
@@ -1082,8 +1187,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Context-Aware Communication Engine',
         category: 'Communication Intelligence',
         tagline: 'Conversations powered by deep customer and operational history.',
-        whatItDoes: 'Generates tailored messages that reference exact vehicle mileage, past hair colors, dietary allergies, and prospective student goals.',
-        problemItAddresses: 'Generic, robotic communication templates that customers ignore or find impersonal.',
+        whatItDoes:
+          'Generates tailored messages that reference exact vehicle mileage, past hair colors, dietary allergies, and prospective student goals.',
+        problemItAddresses:
+          'Generic, robotic communication templates that customers ignore or find impersonal.',
         problemsItSolves: [
           'Sending robotic, tone-deaf automated templates that customers ignore.',
           'Staff spending hours manually drafting individual client messages.',
@@ -1113,12 +1220,15 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
             name: 'Education',
             slug: 'education',
             buttonLabel: 'Explore Education',
-            useCase: 'Engages prospective students with curriculum details tailored to their goals.',
+            useCase:
+              'Engages prospective students with curriculum details tailored to their goals.',
           },
         ],
         exampleApplication: {
-          scenario: 'An automotive service center completes a 30-point inspection on a client’s vehicle.',
-          action: 'Aether drafts a personalized message detailing the completed oil change, noting the tire tread depth at 4mm, and offering a 1-tap tire rotation schedule.',
+          scenario:
+            'An automotive service center completes a 30-point inspection on a client’s vehicle.',
+          action:
+            'Aether drafts a personalized message detailing the completed oil change, noting the tire tread depth at 4mm, and offering a 1-tap tire rotation schedule.',
           outcome: 'Customer responds and approves the add-on within 8 minutes via WhatsApp.',
         },
         keyCapabilities: [
@@ -1134,8 +1244,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Interactive Engagement & Confirmation Mesh',
         category: 'Communication Intelligence',
         tagline: 'Convert passive notifications into 1-tap actionable agreements.',
-        whatItDoes: 'Embeds dynamic one-tap confirmation buttons, reschedule selectors, and pre-visit check-in passes directly inside messaging streams.',
-        problemItAddresses: 'Customers forced to make tedious phone calls to confirm or reschedule appointments, resulting in phone tag and dropped bookings.',
+        whatItDoes:
+          'Embeds dynamic one-tap confirmation buttons, reschedule selectors, and pre-visit check-in passes directly inside messaging streams.',
+        problemItAddresses:
+          'Customers forced to make tedious phone calls to confirm or reschedule appointments, resulting in phone tag and dropped bookings.',
         problemsItSolves: [
           'Customers having to make phone calls just to confirm or reschedule.',
           'Unconfirmed high-value appointments leaving providers vulnerable.',
@@ -1170,8 +1282,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         ],
         exampleApplication: {
           scenario: 'A healthcare clinic sends an upcoming specialist appointment notice.',
-          action: 'Message embeds interactive `[Confirm Tuesday 10:00 AM]` and `[Reschedule Slot]` buttons.',
-          outcome: 'Patient confirms with 1 tap; clinic EHR schedule is locked and synchronized instantly with zero receptionist overhead.',
+          action:
+            'Message embeds interactive `[Confirm Tuesday 10:00 AM]` and `[Reschedule Slot]` buttons.',
+          outcome:
+            'Patient confirms with 1 tap; clinic EHR schedule is locked and synchronized instantly with zero receptionist overhead.',
         },
         keyCapabilities: [
           '1-tap WhatsApp interactive message buttons',
@@ -1186,8 +1300,10 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
         name: 'Follow-Up Assistance & Concierge Copilot',
         category: 'Communication Intelligence',
         tagline: 'Empower front-line staff with pre-drafted intelligent responses.',
-        whatItDoes: 'Equips service advisors, receptionists, and admissions officers with suggested responses, appointment windows, and objection handling.',
-        problemItAddresses: 'Junior staff making pricing mistakes, slow response times during peak inquiry surges, and inconsistent brand communication.',
+        whatItDoes:
+          'Equips service advisors, receptionists, and admissions officers with suggested responses, appointment windows, and objection handling.',
+        problemItAddresses:
+          'Junior staff making pricing mistakes, slow response times during peak inquiry surges, and inconsistent brand communication.',
         problemsItSolves: [
           'Junior staff making scheduling errors or providing incorrect pricing.',
           'Slow advisor response times during peak inquiry surges.',
@@ -1221,9 +1337,12 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
           },
         ],
         exampleApplication: {
-          scenario: 'A prospective student asks an admissions counselor whether an AI Engineering bootcamp requires prerequisite Python knowledge.',
-          action: 'Aether Concierge Copilot surfaces the exact syllabus clause, drafts a helpful 2-sentence response explaining the introductory prep module, and provides a 1-click send button.',
-          outcome: 'Counselor replies accurately in under 10 seconds, accelerating the enrollment decision.',
+          scenario:
+            'A prospective student asks an admissions counselor whether an AI Engineering bootcamp requires prerequisite Python knowledge.',
+          action:
+            'Aether Concierge Copilot surfaces the exact syllabus clause, drafts a helpful 2-sentence response explaining the introductory prep module, and provides a 1-click send button.',
+          outcome:
+            'Counselor replies accurately in under 10 seconds, accelerating the enrollment decision.',
         },
         keyCapabilities: [
           'Real-time advisor copilot suggestions',
@@ -1237,31 +1356,14 @@ export const PLATFORM_SOLUTION_CATEGORIES: PlatformSolutionCategory[] = [
   },
 ];
 
-export const PLATFORM_SOLUTIONS: Array<{
-  id: string;
-  title: string;
-  tagline: string;
-  category:
-    | 'AI Intelligence'
-    | 'Customer Intelligence'
-    | 'Operational Intelligence'
-    | 'Workflow Automation'
-    | 'Business Intelligence'
-    | 'Communication Intelligence';
-  description: string;
-  capabilities: string[];
-  technicalPillars: {
-    name: string;
-    description: string;
-  }[];
-  metricsImpact: string;
-}> = [
+export const PLATFORM_SOLUTIONS: PlatformSolution[] = [
   {
     id: 'ai-intelligence',
     title: 'AI Intelligence Suite',
     tagline: 'Predictive modeling, contextual recommendation, and real-time decisioning.',
     category: 'AI Intelligence',
-    description: 'Autonomous cognitive kernels that ingest real-time telemetry, historical trends, and multi-factor constraints to anticipate outcomes before friction occurs.',
+    description:
+      'Autonomous cognitive kernels that ingest real-time telemetry, historical trends, and multi-factor constraints to anticipate outcomes before friction occurs.',
     capabilities: [
       'Multi-variable time-series forecasting & demand sensing',
       'Context-aware ranking and next-best-action recommendation engines',
@@ -1279,7 +1381,8 @@ export const PLATFORM_SOLUTIONS: Array<{
     title: 'Customer Intelligence Engine',
     tagline: 'Dynamic segmentation, preference extraction, and churn risk scoring.',
     category: 'Customer Intelligence',
-    description: 'Transform customer interactions into unified longitudinal profiles. Continuously detects subtle shifts in affinity, price sensitivity, and drop-off risks.',
+    description:
+      'Transform customer interactions into unified longitudinal profiles. Continuously detects subtle shifts in affinity, price sensitivity, and drop-off risks.',
     capabilities: [
       'Multi-dimensional behavioral segmentation (RFM + engagement cadence)',
       'Unstructured preference parsing from chat, notes, and booking logs',
@@ -1297,7 +1400,8 @@ export const PLATFORM_SOLUTIONS: Array<{
     title: 'Operational Intelligence Engine',
     tagline: 'Real-time demand forecasting, kitchen/inventory sensing, and throughput diagnostics.',
     category: 'Operational Intelligence',
-    description: 'Monitor physical operational flow across stations, bays, kitchens, and counters. Balances perishable prep, prevents inventory stockouts, and eliminates bottleneck delays.',
+    description:
+      'Monitor physical operational flow across stations, bays, kitchens, and counters. Balances perishable prep, prevents inventory stockouts, and eliminates bottleneck delays.',
     capabilities: [
       'Hourly day-part cover projections & weather-correlated demand forecasting',
       'Perishable ingredient burn-rate tracking & automated dynamic reordering',
@@ -1306,7 +1410,10 @@ export const PLATFORM_SOLUTIONS: Array<{
     ],
     technicalPillars: [
       { name: 'Telemetry Stream Mesh', description: 'Sub-minute station flow monitoring.' },
-      { name: 'Perishability Modeling', description: 'Dynamic batch size & shelf-life calculation.' },
+      {
+        name: 'Perishability Modeling',
+        description: 'Dynamic batch size & shelf-life calculation.',
+      },
     ],
     metricsImpact: 'Illustrative Modeling: Waste reduction & queue pacing',
   },
@@ -1315,7 +1422,8 @@ export const PLATFORM_SOLUTIONS: Array<{
     title: 'Workflow Automation Mesh',
     tagline: 'Self-healing scheduling, adaptive follow-ups, and admin orchestration.',
     category: 'Workflow Automation',
-    description: 'Connect fragmented operational silos into closed-loop execution pipelines. Eliminates manual coordination across calendar, CRM, POS, and messaging.',
+    description:
+      'Connect fragmented operational silos into closed-loop execution pipelines. Eliminates manual coordination across calendar, CRM, POS, and messaging.',
     capabilities: [
       'Dynamic gap-filling smart scheduling with double-booking prevention',
       'Behavior-triggered multi-channel follow-up sequences (WhatsApp/SMS/Email)',
@@ -1333,7 +1441,8 @@ export const PLATFORM_SOLUTIONS: Array<{
     title: 'Business Intelligence & Telemetry',
     tagline: 'Continuous operational monitoring, yield analytics, and margin tracking.',
     category: 'Business Intelligence',
-    description: 'Consolidate cross-department data streams into actionable diagnostic dashboards and prescriptive executive recommendations.',
+    description:
+      'Consolidate cross-department data streams into actionable diagnostic dashboards and prescriptive executive recommendations.',
     capabilities: [
       'Real-time operational bottleneck detection & staff utilization heatmaps',
       'Item-level and service-level gross margin & contribution analysis',
@@ -1351,7 +1460,8 @@ export const PLATFORM_SOLUTIONS: Array<{
     title: 'Communication Intelligence Copilot',
     tagline: 'Context-aware messaging, AI re-engagement, and concierge assistance.',
     category: 'Communication Intelligence',
-    description: 'Elevate every customer touchpoint with intelligent, brand-aligned messaging and co-pilot drafts tailored to each customer context.',
+    description:
+      'Elevate every customer touchpoint with intelligent, brand-aligned messaging and co-pilot drafts tailored to each customer context.',
     capabilities: [
       'Context-aware tone and timing optimization across WhatsApp, SMS, and Email',
       'Interactive 1-tap booking confirmations, reschedule swaps, and video approvals',
@@ -1359,11 +1469,12 @@ export const PLATFORM_SOLUTIONS: Array<{
       'Automated sentiment monitoring with proactive escalation to senior staff',
     ],
     technicalPillars: [
-      { name: 'Contextual Prompt Synthesizer', description: 'Domain-specific conversation agents.' },
+      {
+        name: 'Contextual Prompt Synthesizer',
+        description: 'Domain-specific conversation agents.',
+      },
       { name: 'Brand-Tone Guardrails', description: 'Zero-hallucination compliance checking.' },
     ],
     metricsImpact: 'Illustrative Benchmark: Enhanced inquiry handling capacity',
   },
 ];
-
-

@@ -22,10 +22,10 @@ import {
 import { cn } from '../../../utils/cn';
 import { RETAIL_BI_DATA } from '../../../data/retailData';
 
+type RetailTabId = 'health' | 'top' | 'atRisk' | 'trend' | 'stockRisk' | 'actions';
+
 export const RetailBiDashboard: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<
-    'health' | 'top' | 'atRisk' | 'trend' | 'stockRisk' | 'actions'
-  >('health');
+  const [activeTab, setActiveTab] = useState<RetailTabId>('health');
   const [executedActionIds, setExecutedActionIds] = useState<string[]>([]);
 
   const handleExecuteAction = (id: string) => {
@@ -33,6 +33,27 @@ export const RetailBiDashboard: React.FC = () => {
       setExecutedActionIds([...executedActionIds, id]);
     }
   };
+
+  const tabs: { id: RetailTabId; label: string; icon: React.ReactNode }[] = [
+    {
+      id: 'health',
+      label: 'Inventory Health',
+      icon: <Activity className="w-3.5 h-3.5" />,
+    },
+    { id: 'top', label: 'Top Products', icon: <TrendingUp className="w-3.5 h-3.5" /> },
+    {
+      id: 'atRisk',
+      label: 'At-Risk Products',
+      icon: <AlertTriangle className="w-3.5 h-3.5" />,
+    },
+    { id: 'trend', label: 'Demand Trend', icon: <BarChart3 className="w-3.5 h-3.5" /> },
+    { id: 'stockRisk', label: 'Stock Risk', icon: <Layers className="w-3.5 h-3.5" /> },
+    {
+      id: 'actions',
+      label: 'Recommended Actions',
+      icon: <Sparkles className="w-3.5 h-3.5" />,
+    },
+  ];
 
   return (
     <div className="space-y-6">
@@ -46,19 +67,12 @@ export const RetailBiDashboard: React.FC = () => {
         {/* Tab Navigation Header */}
         <div className="bg-slate-950 px-4 sm:px-6 py-3 border-b border-aether-border flex items-center justify-between overflow-x-auto no-scrollbar gap-2">
           <div className="flex items-center gap-1.5 sm:gap-2">
-            {[
-              { id: 'health', label: 'Inventory Health', icon: <Activity className="w-3.5 h-3.5" /> },
-              { id: 'top', label: 'Top Products', icon: <TrendingUp className="w-3.5 h-3.5" /> },
-              { id: 'atRisk', label: 'At-Risk Products', icon: <AlertTriangle className="w-3.5 h-3.5" /> },
-              { id: 'trend', label: 'Demand Trend', icon: <BarChart3 className="w-3.5 h-3.5" /> },
-              { id: 'stockRisk', label: 'Stock Risk', icon: <Layers className="w-3.5 h-3.5" /> },
-              { id: 'actions', label: 'Recommended Actions', icon: <Sparkles className="w-3.5 h-3.5" /> },
-            ].map((tab) => {
+            {tabs.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id as any)}
+                  onClick={() => setActiveTab(tab.id)}
                   className={cn(
                     'px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 shrink-0',
                     isActive
@@ -89,7 +103,9 @@ export const RetailBiDashboard: React.FC = () => {
                 <div className="text-2xl font-extrabold font-mono text-emerald-400 mt-2">
                   {RETAIL_BI_DATA.inventoryHealth.healthScore}/100
                 </div>
-                <span className="text-[10px] text-emerald-400 font-mono mt-1">+4.2 pts vs last mo</span>
+                <span className="text-[10px] text-emerald-400 font-mono mt-1">
+                  +4.2 pts vs last mo
+                </span>
               </div>
 
               <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
@@ -109,7 +125,9 @@ export const RetailBiDashboard: React.FC = () => {
                 <div className="text-2xl font-extrabold font-mono text-indigo-300 mt-2">
                   {RETAIL_BI_DATA.inventoryHealth.stockTurnRate}
                 </div>
-                <span className="text-[10px] text-indigo-300 font-mono mt-1">+1.8x industry avg</span>
+                <span className="text-[10px] text-indigo-300 font-mono mt-1">
+                  +1.8x industry avg
+                </span>
               </div>
 
               <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
@@ -129,7 +147,9 @@ export const RetailBiDashboard: React.FC = () => {
                 <div className="text-2xl font-extrabold font-mono text-emerald-300 mt-2">
                   {RETAIL_BI_DATA.inventoryHealth.deadStockEliminated}
                 </div>
-                <span className="text-[10px] text-emerald-300 font-mono mt-1">Margin Protected</span>
+                <span className="text-[10px] text-emerald-300 font-mono mt-1">
+                  Margin Protected
+                </span>
               </div>
 
               <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
@@ -147,7 +167,8 @@ export const RetailBiDashboard: React.FC = () => {
               <div className="flex items-center gap-3">
                 <ShieldCheck className="w-5 h-5 text-sky-400 shrink-0" />
                 <span className="text-xs text-text-secondary">
-                  Omnichannel stock mesh is actively synchronizing 4 offline physical locations, 1 central distribution warehouse, and e-commerce carts in real-time.
+                  Omnichannel stock mesh is actively synchronizing 4 offline physical locations, 1
+                  central distribution warehouse, and e-commerce carts in real-time.
                 </span>
               </div>
               <Badge variant="primary" size="sm" className="hidden sm:inline font-mono text-[10px]">
@@ -199,8 +220,8 @@ export const RetailBiDashboard: React.FC = () => {
                             p.health === 'Optimal'
                               ? 'bg-emerald-500/20 text-emerald-300'
                               : p.health === 'Low Stock'
-                              ? 'bg-amber-500/20 text-amber-300'
-                              : 'bg-rose-500/20 text-rose-300'
+                                ? 'bg-amber-500/20 text-amber-300'
+                                : 'bg-rose-500/20 text-rose-300'
                           )}
                         >
                           {p.health}
@@ -229,8 +250,8 @@ export const RetailBiDashboard: React.FC = () => {
                     item.severity === 'Critical'
                       ? 'bg-rose-500/5 border-rose-500/30'
                       : item.severity === 'High'
-                      ? 'bg-amber-500/5 border-amber-500/30'
-                      : 'bg-slate-900 border-slate-800'
+                        ? 'bg-amber-500/5 border-amber-500/30'
+                        : 'bg-slate-900 border-slate-800'
                   )}
                 >
                   <div className="space-y-2">
@@ -241,8 +262,8 @@ export const RetailBiDashboard: React.FC = () => {
                           item.severity === 'Critical'
                             ? 'warning'
                             : item.severity === 'High'
-                            ? 'neutral'
-                            : 'primary'
+                              ? 'neutral'
+                              : 'primary'
                         }
                         size="sm"
                       >
@@ -326,9 +347,13 @@ export const RetailBiDashboard: React.FC = () => {
 
             <div className="p-3.5 rounded-lg bg-slate-950/60 border border-slate-800 text-xs text-text-secondary flex items-center justify-between">
               <span>
-                💡 <strong className="text-text-primary">Weekend Spike Detected:</strong> Friday–Sunday demand surges by +118% due to commercial payday and scheduled seasonal launch.
+                💡 <strong className="text-text-primary">Weekend Spike Detected:</strong>{' '}
+                Friday–Sunday demand surges by +118% due to commercial payday and scheduled seasonal
+                launch.
               </span>
-              <span className="font-mono text-sky-400 text-[11px]">Dynamic Par-Levels Pre-Staged</span>
+              <span className="font-mono text-sky-400 text-[11px]">
+                Dynamic Par-Levels Pre-Staged
+              </span>
             </div>
           </div>
         )}
@@ -351,7 +376,10 @@ export const RetailBiDashboard: React.FC = () => {
                       <span className={cn('text-xs font-bold uppercase', risk.text)}>
                         {risk.label}
                       </span>
-                      <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: risk.color.replace('bg-', '') }} />
+                      <span
+                        className="w-2.5 h-2.5 rounded-full"
+                        style={{ backgroundColor: risk.color.replace('bg-', '') }}
+                      />
                     </div>
                     <div className="text-3xl font-extrabold font-mono text-text-primary">
                       {risk.count} <span className="text-xs text-text-muted font-normal">SKUs</span>
@@ -388,8 +416,8 @@ export const RetailBiDashboard: React.FC = () => {
                             pres.priority === 'Immediate'
                               ? 'warning'
                               : pres.priority === 'High'
-                              ? 'primary'
-                              : 'neutral'
+                                ? 'primary'
+                                : 'neutral'
                           }
                           size="sm"
                         >
@@ -398,7 +426,9 @@ export const RetailBiDashboard: React.FC = () => {
                         <span className="text-xs font-mono text-text-muted">{pres.category}</span>
                       </div>
                       <h4 className="text-sm font-bold text-text-primary">{pres.title}</h4>
-                      <p className="text-xs text-text-secondary leading-relaxed">{pres.rationale}</p>
+                      <p className="text-xs text-text-secondary leading-relaxed">
+                        {pres.rationale}
+                      </p>
                       <div className="text-[11px] font-mono text-emerald-400 font-bold">
                         Expected Impact: {pres.projectedROI}
                       </div>

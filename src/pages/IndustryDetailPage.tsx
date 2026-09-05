@@ -233,7 +233,11 @@ export const IndustryDetailPage: React.FC = () => {
                   <h4 className="text-base font-bold text-text-primary tracking-tight">
                     {item.problem}
                   </h4>
-                  <Badge variant="warning" size="sm" className="text-[10px] uppercase font-mono shrink-0">
+                  <Badge
+                    variant="warning"
+                    size="sm"
+                    className="text-[10px] uppercase font-mono shrink-0"
+                  >
                     {item.severity}
                   </Badge>
                 </div>
@@ -275,7 +279,10 @@ export const IndustryDetailPage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {industry.opportunities.map((opp, idx) => (
-            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80">
+            <Card
+              key={idx}
+              className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80"
+            >
               <div className="space-y-4">
                 {/* Diagnosed Problem */}
                 <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
@@ -307,7 +314,9 @@ export const IndustryDetailPage: React.FC = () => {
               {/* Multiplier Badge */}
               <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
                 <span className="text-text-muted font-mono">Projected Multiplier:</span>
-                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+                <span className="font-bold font-mono text-emerald-400">
+                  {opp.potentialMultiplier}
+                </span>
               </div>
             </Card>
           ))}
@@ -385,7 +394,9 @@ export const IndustryDetailPage: React.FC = () => {
                 </span>
                 <span className="text-[10px] font-mono text-text-muted">Ingest</span>
               </div>
-              <div className="text-[11px] font-mono text-sky-400 mb-1">{industry.workflowPipeline.input.source}</div>
+              <div className="text-[11px] font-mono text-sky-400 mb-1">
+                {industry.workflowPipeline.input.source}
+              </div>
               <p className="text-xs text-text-secondary leading-snug mb-2">
                 {industry.workflowPipeline.input.details}
               </p>
@@ -408,7 +419,11 @@ export const IndustryDetailPage: React.FC = () => {
               <p className="text-xs text-text-secondary leading-snug mb-2">
                 {industry.workflowPipeline.intelligence.diagnosis}
               </p>
-              <Badge variant="primary" size="sm" className="font-mono text-[10px] w-full justify-center">
+              <Badge
+                variant="primary"
+                size="sm"
+                className="font-mono text-[10px] w-full justify-center"
+              >
                 {industry.workflowPipeline.intelligence.metricScored}
               </Badge>
             </div>
@@ -612,13 +627,18 @@ export const IndustryDetailPage: React.FC = () => {
                   </div>
                   {demoState !== 'executed' ? (
                     <div className="text-xs text-text-muted font-mono py-8 text-center">
-                      {demoState === 'analyzing' ? 'Executing workflows...' : 'Pending diagnosis...'}
+                      {demoState === 'analyzing'
+                        ? 'Executing workflows...'
+                        : 'Pending diagnosis...'}
                     </div>
                   ) : (
                     <div className="space-y-2 text-xs animate-fade-in">
                       <div className="space-y-1">
                         {industry.interactiveDemo.automatedActions.map((act, i) => (
-                          <div key={i} className="flex items-start gap-1.5 text-slate-300 text-[11px]">
+                          <div
+                            key={i}
+                            className="flex items-start gap-1.5 text-slate-300 text-[11px]"
+                          >
                             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
                             <span>{act}</span>
                           </div>
@@ -882,7 +902,8 @@ export const IndustryDetailPage: React.FC = () => {
             </h2>
 
             <p className="mt-4 text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed max-w-2xl">
-              Experience a simulated transformation blueprint configured specifically for your {industry.shortName.toLowerCase()} operations.
+              Experience a simulated transformation blueprint configured specifically for your{' '}
+              {industry.shortName.toLowerCase()} operations.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">

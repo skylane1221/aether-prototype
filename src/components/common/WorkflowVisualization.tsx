@@ -53,7 +53,9 @@ export const WorkflowVisualization: React.FC<WorkflowVisualizationProps> = ({
               <p
                 className={cn(
                   'text-xs font-semibold line-clamp-1 transition-colors',
-                  isActive ? 'text-text-primary' : 'text-text-secondary group-hover:text-text-primary'
+                  isActive
+                    ? 'text-text-primary'
+                    : 'text-text-secondary group-hover:text-text-primary'
                 )}
               >
                 {step.title}
@@ -87,9 +89,7 @@ export const WorkflowVisualization: React.FC<WorkflowVisualizationProps> = ({
             <h5 className="text-xs font-semibold uppercase tracking-wider text-text-muted">
               Operational Context
             </h5>
-            <p className="text-sm text-text-secondary leading-relaxed">
-              {currentStep.description}
-            </p>
+            <p className="text-sm text-text-secondary leading-relaxed">{currentStep.description}</p>
           </div>
 
           <div className="p-4 rounded-xl bg-slate-950/80 border border-aether-border-subtle space-y-2">

@@ -10,7 +10,8 @@ export interface RealEstateProperty {
   matchScore: number;
   parking: string;
   possession: string;
-  status: 'Ready to Move' | 'Possession in 3 Months' | 'Possession in 5 Months' | 'Under Construction';
+  status:
+    'Ready to Move' | 'Possession in 3 Months' | 'Possession in 5 Months' | 'Under Construction';
   whyItMatches: string;
   imageUrl?: string;
   highlights: string[];
@@ -80,8 +81,13 @@ export const REAL_ESTATE_PROPERTIES: RealEstateProperty[] = [
     parking: '1 Covered Dedicated Bay',
     possession: 'Ready to Move In',
     status: 'Ready to Move',
-    whyItMatches: 'Exact budget fit (₹1.48 Cr vs ₹1.5 Cr budget), prime Powai location, includes covered parking, and zero possession waiting period.',
-    highlights: ['Lake view balcony', 'Clubhouse & Olympic Pool', 'Direct connectivity to JVLR & Metro 6'],
+    whyItMatches:
+      'Exact budget fit (₹1.48 Cr vs ₹1.5 Cr budget), prime Powai location, includes covered parking, and zero possession waiting period.',
+    highlights: [
+      'Lake view balcony',
+      'Clubhouse & Olympic Pool',
+      'Direct connectivity to JVLR & Metro 6',
+    ],
   },
   {
     id: 'prop-2',
@@ -96,8 +102,13 @@ export const REAL_ESTATE_PROPERTIES: RealEstateProperty[] = [
     parking: '1 Podium Covered Bay',
     possession: 'Possession in 3 Months (OC Applied)',
     status: 'Possession in 3 Months',
-    whyItMatches: 'Larger carpet area (+40 sq.ft), falls within 5% budget flexibility, and possession timeline is well within your 6-month requirement.',
-    highlights: ['10-acre gated township', 'Adjacent to Powai Lake', 'OC received for mid-rise tower'],
+    whyItMatches:
+      'Larger carpet area (+40 sq.ft), falls within 5% budget flexibility, and possession timeline is well within your 6-month requirement.',
+    highlights: [
+      '10-acre gated township',
+      'Adjacent to Powai Lake',
+      'OC received for mid-rise tower',
+    ],
   },
   {
     id: 'prop-3',
@@ -112,8 +123,13 @@ export const REAL_ESTATE_PROPERTIES: RealEstateProperty[] = [
     parking: '1 Covered Stilt Bay',
     possession: 'Possession in 4 Months',
     status: 'Possession in 5 Months',
-    whyItMatches: 'Exceptional value at ₹8 Lakhs below maximum budget threshold, high-quality developer reputation, with 4-month possession timeline.',
-    highlights: ['Green landscaped podium', 'Low maintenance charges', 'Near D-Mart & Nahar International School'],
+    whyItMatches:
+      'Exceptional value at ₹8 Lakhs below maximum budget threshold, high-quality developer reputation, with 4-month possession timeline.',
+    highlights: [
+      'Green landscaped podium',
+      'Low maintenance charges',
+      'Near D-Mart & Nahar International School',
+    ],
   },
   {
     id: 'prop-4',
@@ -128,8 +144,13 @@ export const REAL_ESTATE_PROPERTIES: RealEstateProperty[] = [
     parking: '1 Basement Dedicated Bay',
     possession: 'Ready for Fit-outs',
     status: 'Ready to Move',
-    whyItMatches: 'Spacious layout with high ceiling height and Italian marble finish. 8% premium above budget for significantly higher resale liquidity.',
-    highlights: ['Rooftop infinity lounge', 'Smart home automation pre-installed', 'Walk to Galleria Shopping Arcade'],
+    whyItMatches:
+      'Spacious layout with high ceiling height and Italian marble finish. 8% premium above budget for significantly higher resale liquidity.',
+    highlights: [
+      'Rooftop infinity lounge',
+      'Smart home automation pre-installed',
+      'Walk to Galleria Shopping Arcade',
+    ],
   },
 ];
 
@@ -173,7 +194,8 @@ export const MATCHED_BUYER_LEADS: Record<string, MatchedBuyerLead[]> = {
       intentLevel: 'High Intent',
       lastInteraction: '2 hours ago (Inquired about Hiranandani resale)',
       preApproved: true,
-      matchReason: 'HDFC pre-approved loan of ₹2 Cr; actively touring Powai luxury properties with immediate closing mandate.',
+      matchReason:
+        'HDFC pre-approved loan of ₹2 Cr; actively touring Powai luxury properties with immediate closing mandate.',
     },
     {
       id: 'lead-102',
@@ -186,7 +208,8 @@ export const MATCHED_BUYER_LEADS: Record<string, MatchedBuyerLead[]> = {
       intentLevel: 'High Intent',
       lastInteraction: 'Yesterday (Saved 3 properties in Hiranandani)',
       preApproved: true,
-      matchReason: 'Relocating from Singapore next quarter; looking specifically for gated luxury township with club amenities.',
+      matchReason:
+        'Relocating from Singapore next quarter; looking specifically for gated luxury township with club amenities.',
     },
     {
       id: 'lead-103',
@@ -199,7 +222,8 @@ export const MATCHED_BUYER_LEADS: Record<string, MatchedBuyerLead[]> = {
       intentLevel: 'Warm Intent',
       lastInteraction: '3 days ago (Attended virtual briefing)',
       preApproved: false,
-      matchReason: 'Self-employed tech founder; looking for home with dedicated workspace and lake view.',
+      matchReason:
+        'Self-employed tech founder; looking for home with dedicated workspace and lake view.',
     },
   ],
   'list-2': [
@@ -214,7 +238,8 @@ export const MATCHED_BUYER_LEADS: Record<string, MatchedBuyerLead[]> = {
       intentLevel: 'High Intent',
       lastInteraction: '45 mins ago (Submitted web inquiry)',
       preApproved: true,
-      matchReason: 'Exact match for Chandivali location and ₹1.38 Cr price point. SBI pre-approved.',
+      matchReason:
+        'Exact match for Chandivali location and ₹1.38 Cr price point. SBI pre-approved.',
     },
     {
       id: 'lead-202',
@@ -227,7 +252,8 @@ export const MATCHED_BUYER_LEADS: Record<string, MatchedBuyerLead[]> = {
       intentLevel: 'High Intent',
       lastInteraction: 'Yesterday (Tour completed at nearby project)',
       preApproved: true,
-      matchReason: 'Rejected previous unit due to low ceiling; Godrej floor plate matches preference perfectly.',
+      matchReason:
+        'Rejected previous unit due to low ceiling; Godrej floor plate matches preference perfectly.',
     },
   ],
   'list-3': [
@@ -242,7 +268,8 @@ export const MATCHED_BUYER_LEADS: Record<string, MatchedBuyerLead[]> = {
       intentLevel: 'High Intent',
       lastInteraction: 'Today at 10:15 AM',
       preApproved: true,
-      matchReason: 'Needs rapid JVLR connectivity for Western Express Highway commute. Pre-approved with ICICI.',
+      matchReason:
+        'Needs rapid JVLR connectivity for Western Express Highway commute. Pre-approved with ICICI.',
     },
   ],
 };
@@ -257,15 +284,45 @@ export const REAL_ESTATE_BI_DATA: RealEstateBiData = {
     { stage: 'Offer & Deal Closing', count: 142, conversion: '10.0%' },
   ],
   intentDistribution: [
-    { category: 'Immediate Buyer (<30 days, Pre-approved)', percentage: 44, count: 625, color: '#38bdf8' },
-    { category: 'Warm Explorer (30-90 days, In-Market)', percentage: 35, count: 497, color: '#818cf8' },
+    {
+      category: 'Immediate Buyer (<30 days, Pre-approved)',
+      percentage: 44,
+      count: 625,
+      color: '#38bdf8',
+    },
+    {
+      category: 'Warm Explorer (30-90 days, In-Market)',
+      percentage: 35,
+      count: 497,
+      color: '#818cf8',
+    },
     { category: 'Early Researcher (Nurture Stage)', percentage: 21, count: 298, color: '#64748b' },
   ],
   demandByLocation: [
-    { location: 'Powai (Central & Hiranandani)', inquiries: 540, averageBudget: '₹1.85 Cr', demandTrend: '+34% YoY' },
-    { location: 'Chandivali - Powai Link', inquiries: 380, averageBudget: '₹1.35 Cr', demandTrend: '+28% YoY' },
-    { location: 'JVLR - Powai West', inquiries: 290, averageBudget: '₹2.10 Cr', demandTrend: '+19% YoY' },
-    { location: 'Kanjurmarg - Powai East', inquiries: 210, averageBudget: '₹1.25 Cr', demandTrend: '+42% YoY' },
+    {
+      location: 'Powai (Central & Hiranandani)',
+      inquiries: 540,
+      averageBudget: '₹1.85 Cr',
+      demandTrend: '+34% YoY',
+    },
+    {
+      location: 'Chandivali - Powai Link',
+      inquiries: 380,
+      averageBudget: '₹1.35 Cr',
+      demandTrend: '+28% YoY',
+    },
+    {
+      location: 'JVLR - Powai West',
+      inquiries: 290,
+      averageBudget: '₹2.10 Cr',
+      demandTrend: '+19% YoY',
+    },
+    {
+      location: 'Kanjurmarg - Powai East',
+      inquiries: 210,
+      averageBudget: '₹1.25 Cr',
+      demandTrend: '+42% YoY',
+    },
   ],
   inventoryStatus: {
     totalUnits: 480,

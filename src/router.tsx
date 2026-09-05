@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { createBrowserRouter, RouterProvider, useLocation } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
 import { HomePage } from './pages/HomePage';
 import { WhatIsAetherPage } from './pages/WhatIsAetherPage';
@@ -10,24 +9,10 @@ import { DemosPage } from './pages/DemosPage';
 import { ImpactPage } from './pages/ImpactPage';
 import { ContactPage } from './pages/ContactPage';
 
-// Scroll to top helper on navigation
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-}
-
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: (
-      <>
-        <ScrollToTop />
-        <Layout />
-      </>
-    ),
+    element: <Layout />,
     children: [
       {
         index: true,
@@ -68,7 +53,3 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
-
-export const App: React.FC = () => {
-  return <RouterProvider router={router} />;
-};

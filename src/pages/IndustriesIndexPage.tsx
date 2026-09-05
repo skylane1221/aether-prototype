@@ -64,13 +64,20 @@ export const IndustriesIndexPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="flex items-center justify-between py-2 border-b border-aether-border-subtle">
           <div className="flex items-center gap-2 text-xs text-text-muted">
-            <Link to="/" className="hover:text-text-primary transition-colors">Home</Link>
+            <Link to="/" className="hover:text-text-primary transition-colors">
+              Home
+            </Link>
             <span>/</span>
             <span className="text-text-primary font-medium">Explore Industries</span>
           </div>
 
           <Link to="/demos">
-            <Button variant="ghost" size="sm" rightIcon={<Play className="w-3.5 h-3.5 fill-current text-sky-400" />} className="text-xs">
+            <Button
+              variant="ghost"
+              size="sm"
+              rightIcon={<Play className="w-3.5 h-3.5 fill-current text-sky-400" />}
+              className="text-xs"
+            >
               Open Demo Hub
             </Button>
           </Link>
@@ -93,7 +100,8 @@ export const IndustriesIndexPage: React.FC = () => {
           </h1>
 
           <p className="mt-5 text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl font-normal">
-            Every business operates differently. Explore how Aether can adapt its intelligence to different industries.
+            Every business operates differently. Explore how Aether can adapt its intelligence to
+            different industries.
           </p>
 
           <div className="mt-4 pt-3 flex items-center gap-2 text-xs font-mono text-text-muted">
@@ -162,7 +170,12 @@ export const IndustriesIndexPage: React.FC = () => {
                   </h3>
 
                   {/* One-Line Transformation Statement */}
-                  <p className={cn('text-xs sm:text-sm font-semibold mb-3 leading-snug', theme.accentText)}>
+                  <p
+                    className={cn(
+                      'text-xs sm:text-sm font-semibold mb-3 leading-snug',
+                      theme.accentText
+                    )}
+                  >
                     {ind.transformationStatement}
                   </p>
 
@@ -182,7 +195,9 @@ export const IndustriesIndexPage: React.FC = () => {
                     <Button
                       variant="secondary"
                       size="sm"
-                      rightIcon={<ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />}
+                      rightIcon={
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      }
                       className="text-xs font-semibold group-hover:border-sky-500/40"
                     >
                       Explore {ind.shortName}
@@ -211,7 +226,9 @@ export const IndustriesIndexPage: React.FC = () => {
               Aether adapts to many types of businesses.
             </h3>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
-              Whether your operational model centers around table covers, surgical appointments, client showings, gym turnstiles, or service bays, Aether normalizes telemetry and executes intelligent solutions.
+              Whether your operational model centers around table covers, surgical appointments,
+              client showings, gym turnstiles, or service bays, Aether normalizes telemetry and
+              executes intelligent solutions.
             </p>
           </div>
 

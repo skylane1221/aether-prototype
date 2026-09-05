@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { SolutionRequestDrawer } from '../common/SolutionRequestDrawer';
 
 export const Layout: React.FC = () => {
   const [isSolutionModalOpen, setIsSolutionModalOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div className="min-h-screen bg-aether-bg text-text-primary flex flex-col relative selection:bg-sky-500/20 selection:text-white">

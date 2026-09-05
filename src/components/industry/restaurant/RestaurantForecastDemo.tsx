@@ -61,9 +61,7 @@ export const RestaurantForecastDemo: React.FC = () => {
                 aether-culinary-kernel
               </span>
               <span className="text-text-muted text-xs">/</span>
-              <span className="text-xs font-mono text-text-muted">
-                predictive-prep-forecast
-              </span>
+              <span className="text-xs font-mono text-text-muted">predictive-prep-forecast</span>
             </div>
           </div>
 
@@ -93,9 +91,7 @@ export const RestaurantForecastDemo: React.FC = () => {
                 </span>
                 <span>{phase.split('. ')[1]}</span>
               </div>
-              {idx < arr.length - 1 && (
-                <ArrowRight className="w-3 h-3 text-slate-600 shrink-0" />
-              )}
+              {idx < arr.length - 1 && <ArrowRight className="w-3 h-3 text-slate-600 shrink-0" />}
             </React.Fragment>
           ))}
         </div>
@@ -131,7 +127,9 @@ export const RestaurantForecastDemo: React.FC = () => {
 
                   <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
                     <span className="text-text-muted text-[11px]">Avg Daily:</span>
-                    <span className="text-white font-bold">{item.historicalAvgDaily} {item.unit}</span>
+                    <span className="text-white font-bold">
+                      {item.historicalAvgDaily} {item.unit}
+                    </span>
                   </div>
                 </div>
               ))}
@@ -155,7 +153,12 @@ export const RestaurantForecastDemo: React.FC = () => {
                 )}
               >
                 <div className="flex items-center justify-between">
-                  <Sun className={cn('w-4 h-4', activeScenario === 'tomorrow' ? 'text-amber-400' : 'text-slate-400')} />
+                  <Sun
+                    className={cn(
+                      'w-4 h-4',
+                      activeScenario === 'tomorrow' ? 'text-amber-400' : 'text-slate-400'
+                    )}
+                  />
                   <span className="text-[10px] font-mono text-text-muted">1.0x Baseline</span>
                 </div>
                 <div>
@@ -174,8 +177,15 @@ export const RestaurantForecastDemo: React.FC = () => {
                 )}
               >
                 <div className="flex items-center justify-between">
-                  <TrendingUp className={cn('w-4 h-4', activeScenario === 'weekend' ? 'text-amber-400' : 'text-slate-400')} />
-                  <span className="text-[10px] font-mono text-emerald-400 font-bold">+85% Surge</span>
+                  <TrendingUp
+                    className={cn(
+                      'w-4 h-4',
+                      activeScenario === 'weekend' ? 'text-amber-400' : 'text-slate-400'
+                    )}
+                  />
+                  <span className="text-[10px] font-mono text-emerald-400 font-bold">
+                    +85% Surge
+                  </span>
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">Weekend Rush</div>
@@ -193,8 +203,15 @@ export const RestaurantForecastDemo: React.FC = () => {
                 )}
               >
                 <div className="flex items-center justify-between">
-                  <CloudRain className={cn('w-4 h-4', activeScenario === 'rainy' ? 'text-sky-400' : 'text-slate-400')} />
-                  <span className="text-[10px] font-mono text-sky-400 font-bold">+110% Delivery</span>
+                  <CloudRain
+                    className={cn(
+                      'w-4 h-4',
+                      activeScenario === 'rainy' ? 'text-sky-400' : 'text-slate-400'
+                    )}
+                  />
+                  <span className="text-[10px] font-mono text-sky-400 font-bold">
+                    +110% Delivery
+                  </span>
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">Rainy Day</div>
@@ -212,7 +229,12 @@ export const RestaurantForecastDemo: React.FC = () => {
                 )}
               >
                 <div className="flex items-center justify-between">
-                  <PartyPopper className={cn('w-4 h-4', activeScenario === 'festival' ? 'text-amber-400' : 'text-slate-400')} />
+                  <PartyPopper
+                    className={cn(
+                      'w-4 h-4',
+                      activeScenario === 'festival' ? 'text-amber-400' : 'text-slate-400'
+                    )}
+                  />
                   <span className="text-[10px] font-mono text-amber-300 font-bold">2.2x Peak</span>
                 </div>
                 <div>
@@ -243,12 +265,20 @@ export const RestaurantForecastDemo: React.FC = () => {
 
               <div className="flex items-center gap-4 font-mono text-xs border-t md:border-t-0 md:border-l border-amber-500/20 pt-3 md:pt-0 md:pl-6 shrink-0">
                 <div>
-                  <span className="text-[10px] text-text-muted uppercase block">Predicted Covers</span>
-                  <span className="text-xl font-extrabold text-white">{currentForecast.expectedCovers}</span>
+                  <span className="text-[10px] text-text-muted uppercase block">
+                    Predicted Covers
+                  </span>
+                  <span className="text-xl font-extrabold text-white">
+                    {currentForecast.expectedCovers}
+                  </span>
                 </div>
                 <div>
-                  <span className="text-[10px] text-text-muted uppercase block">Delivery Share</span>
-                  <span className="text-xl font-extrabold text-sky-400">{currentForecast.deliveryShare}%</span>
+                  <span className="text-[10px] text-text-muted uppercase block">
+                    Delivery Share
+                  </span>
+                  <span className="text-xl font-extrabold text-sky-400">
+                    {currentForecast.deliveryShare}%
+                  </span>
                 </div>
               </div>
             </div>
@@ -314,7 +344,9 @@ export const RestaurantForecastDemo: React.FC = () => {
 
                       <div className="flex items-center gap-3">
                         <div className="text-right">
-                          <span className="text-[10px] font-mono text-text-muted uppercase block">Expected Demand</span>
+                          <span className="text-[10px] font-mono text-text-muted uppercase block">
+                            Expected Demand
+                          </span>
                           <span className="text-sm font-extrabold font-mono text-amber-300">
                             {item.expectedDemand} {item.unit}
                           </span>
@@ -326,8 +358,8 @@ export const RestaurantForecastDemo: React.FC = () => {
                             item.wastageRisk === 'Critical Risk'
                               ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
                               : item.wastageRisk === 'Moderate'
-                              ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
-                              : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                                : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                           )}
                         >
                           {item.wastageRisk} Spoilage Risk
@@ -372,17 +404,26 @@ export const RestaurantForecastDemo: React.FC = () => {
                   <span className="text-xs font-semibold text-white uppercase tracking-wider">
                     Shift Inventory Depletion & Vendor Reorder Ledger
                   </span>
-                  <span className="text-xs font-mono text-emerald-400">Auto-PO Dispatch Active</span>
+                  <span className="text-xs font-mono text-emerald-400">
+                    Auto-PO Dispatch Active
+                  </span>
                 </div>
 
                 <div className="divide-y divide-slate-800">
                   {currentForecast.inventorySummary.map((inv, i) => (
-                    <div key={i} className="py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono">
+                    <div
+                      key={i}
+                      className="py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono"
+                    >
                       <div className="space-y-0.5">
-                        <span className="text-[10px] text-amber-400 uppercase block">{inv.category}</span>
+                        <span className="text-[10px] text-amber-400 uppercase block">
+                          {inv.category}
+                        </span>
                         <div className="text-sm font-bold text-white font-sans">{inv.item}</div>
                         <div className="text-[11px] text-text-muted">
-                          Stock on Hand: <span className="text-slate-300">{inv.stockOnHand}</span> | Needed: <span className="text-white font-bold">{inv.neededForService}</span>
+                          Stock on Hand: <span className="text-slate-300">{inv.stockOnHand}</span> |
+                          Needed:{' '}
+                          <span className="text-white font-bold">{inv.neededForService}</span>
                         </div>
                       </div>
 
@@ -396,8 +437,8 @@ export const RestaurantForecastDemo: React.FC = () => {
                             inv.status === 'Critical Shortage'
                               ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
                               : inv.status === 'Order Needed'
-                              ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
-                              : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                                : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                           )}
                         >
                           {inv.status}
@@ -413,13 +454,18 @@ export const RestaurantForecastDemo: React.FC = () => {
             {activeTab === 'operations' && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {currentForecast.operationalRecommendations.map((op, i) => (
-                  <Card key={i} className="p-5 bg-slate-900/90 border-slate-800 flex flex-col justify-between space-y-3">
+                  <Card
+                    key={i}
+                    className="p-5 bg-slate-900/90 border-slate-800 flex flex-col justify-between space-y-3"
+                  >
                     <div className="space-y-2">
                       <div className="flex items-center justify-between pb-2 border-b border-slate-800">
                         <Badge variant="primary" size="sm" className="font-mono text-[10px]">
                           {op.station}
                         </Badge>
-                        <span className="text-xs font-mono text-amber-400 font-bold">{op.timing}</span>
+                        <span className="text-xs font-mono text-amber-400 font-bold">
+                          {op.timing}
+                        </span>
                       </div>
 
                       <h5 className="text-sm font-bold text-white">{op.title}</h5>

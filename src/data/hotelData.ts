@@ -57,15 +57,21 @@ export const HOTEL_DEMO_SCENARIOS: HotelDemoDateScenario[] = [
       frontDeskPeakHour: '2:00 PM – 4:30 PM (84 check-ins in 2.5 hours)',
     },
     aetherGeneratedOutput: {
-      occupancyInsight: 'High-probability cancellation detected across 12 OTA standard rooms. Corporate conference waitlist has 24 unfulfilled attendee requests willing to pay +28% premium.',
-      operationalRisk: 'Critical 3-hour housekeeping crunch between 11:00 AM – 2:00 PM. 88 departures must be turned before 2:00 PM VIP convention arrivals.',
+      occupancyInsight:
+        'High-probability cancellation detected across 12 OTA standard rooms. Corporate conference waitlist has 24 unfulfilled attendee requests willing to pay +28% premium.',
+      operationalRisk:
+        'Critical 3-hour housekeeping crunch between 11:00 AM – 2:00 PM. 88 departures must be turned before 2:00 PM VIP convention arrivals.',
       recommendedStaffAllocation: {
-        housekeeping: '+5 staff pulled from evening turndown to 10:00 AM – 2:00 PM express turnover floor pods.',
-        frontDesk: '+2 roving tablet concierge check-in stations deployed to lobby entrance during 2–4 PM peak.',
-        concierge: '1 dedicated luggage express courier assigned to corporate charter bus arrivals.',
+        housekeeping:
+          '+5 staff pulled from evening turndown to 10:00 AM – 2:00 PM express turnover floor pods.',
+        frontDesk:
+          '+2 roving tablet concierge check-in stations deployed to lobby entrance during 2–4 PM peak.',
+        concierge:
+          '1 dedicated luggage express courier assigned to corporate charter bus arrivals.',
         maintenance: 'Pre-flight HVAC and digital key checks on 146 arrival rooms by 1:00 PM.',
       },
-      recommendedAction: 'Instantly backfill 12 predicted cancellations with corporate waitlist bookings; push $45 early check-in pass to 30 leisure arrivals; auto-sequence floor-by-floor cleaning dispatch.',
+      recommendedAction:
+        'Instantly backfill 12 predicted cancellations with corporate waitlist bookings; push $45 early check-in pass to 30 leisure arrivals; auto-sequence floor-by-floor cleaning dispatch.',
       projectedRevenueSaved: '₹3,48,000 incremental RevPAR captured',
       autonomousExecutionSteps: [
         'Reallocated 12 risk-flagged OTA rooms to confirmed corporate group roster',
@@ -97,15 +103,19 @@ export const HOTEL_DEMO_SCENARIOS: HotelDemoDateScenario[] = [
       frontDeskPeakHour: '1:30 PM – 3:30 PM',
     },
     aetherGeneratedOutput: {
-      occupancyInsight: 'Near-zero cancellation risk. Highest ancillary spend day with strong spa, room service, and rooftop banquet demand.',
-      operationalRisk: 'Elevated room service transit times and valet bottlenecks anticipated between 6:30 PM – 8:30 PM.',
+      occupancyInsight:
+        'Near-zero cancellation risk. Highest ancillary spend day with strong spa, room service, and rooftop banquet demand.',
+      operationalRisk:
+        'Elevated room service transit times and valet bottlenecks anticipated between 6:30 PM – 8:30 PM.',
       recommendedStaffAllocation: {
-        housekeeping: 'Standard morning turnover crew + 4 dedicated evening turndown/amenity refresh staff.',
+        housekeeping:
+          'Standard morning turnover crew + 4 dedicated evening turndown/amenity refresh staff.',
         frontDesk: '2 standard desks + 1 dedicated VIP escort concierge.',
         concierge: '+3 valet parking coordinators staged at main portico.',
         maintenance: 'Sound and lighting technician on standby for banquet ballroom.',
       },
-      recommendedAction: 'Trigger personalized pre-arrival dining and spa package offers to 64 arrivals; schedule staggered valet staging at 6:00 PM.',
+      recommendedAction:
+        'Trigger personalized pre-arrival dining and spa package offers to 64 arrivals; schedule staggered valet staging at 6:00 PM.',
       projectedRevenueSaved: '₹2,15,000 in ancillary F&B and spa upsell',
       autonomousExecutionSteps: [
         'Sent automated digital menu and spa reservation links to 64 confirmed guests',
@@ -125,7 +135,8 @@ export const HOTEL_DEMO_SCENARIOS: HotelDemoDateScenario[] = [
     confirmedBookings: 164,
     expectedCancellations: 18,
     cancellationRate: '11.0% (Flexible corporate policy cancellations)',
-    roomDemand: 'Moderate corporate demand. King business rooms in high request; twin rooms underutilized.',
+    roomDemand:
+      'Moderate corporate demand. King business rooms in high request; twin rooms underutilized.',
     demandStatus: 'Steady Business',
     operationalLoad: {
       level: 'Moderate',
@@ -136,15 +147,21 @@ export const HOTEL_DEMO_SCENARIOS: HotelDemoDateScenario[] = [
       frontDeskPeakHour: '5:00 PM – 7:30 PM (Late business check-ins)',
     },
     aetherGeneratedOutput: {
-      occupancyInsight: 'Flexible corporate bookings exhibit a 11% cancellation risk 24 hours prior. 16 unbooked twin rooms can be bundled for business pairs.',
-      operationalRisk: 'Under-utilized dining room at dinner; front desk staff over-scheduled in morning and under-scheduled at evening 6 PM peak.',
+      occupancyInsight:
+        'Flexible corporate bookings exhibit a 11% cancellation risk 24 hours prior. 16 unbooked twin rooms can be bundled for business pairs.',
+      operationalRisk:
+        'Under-utilized dining room at dinner; front desk staff over-scheduled in morning and under-scheduled at evening 6 PM peak.',
       recommendedStaffAllocation: {
-        housekeeping: 'Standard baseline roster with priority given to early business traveler departures.',
-        frontDesk: 'Shift 2 staff from 9:00 AM morning slot to 5:00 PM – 9:00 PM evening arrival rush.',
+        housekeeping:
+          'Standard baseline roster with priority given to early business traveler departures.',
+        frontDesk:
+          'Shift 2 staff from 9:00 AM morning slot to 5:00 PM – 9:00 PM evening arrival rush.',
         concierge: '1 corporate transport concierge for airport early morning shuttle dispatch.',
-        maintenance: 'Fast-track Wi-Fi router checks and desk ergonomic setups on corporate floors.',
+        maintenance:
+          'Fast-track Wi-Fi router checks and desk ergonomic setups on corporate floors.',
       },
-      recommendedAction: 'Automate dynamic re-pricing for last-minute business bookings at $185 ADR; send evening business dinner promotion to 86 stay-over guests.',
+      recommendedAction:
+        'Automate dynamic re-pricing for last-minute business bookings at $185 ADR; send evening business dinner promotion to 86 stay-over guests.',
       projectedRevenueSaved: '₹1,92,000 protected through last-minute business backfill',
       autonomousExecutionSteps: [
         'Adjusted dynamic corporate room rates on GDS/corporate booking portals',
@@ -164,7 +181,8 @@ export const HOTEL_DEMO_SCENARIOS: HotelDemoDateScenario[] = [
     confirmedBookings: 137,
     expectedCancellations: 8,
     cancellationRate: '5.8% predicted cancellation rate',
-    roomDemand: 'Leisure guests checking out; incoming weekly corporate guests arriving late evening.',
+    roomDemand:
+      'Leisure guests checking out; incoming weekly corporate guests arriving late evening.',
     demandStatus: 'Turnover Surge',
     operationalLoad: {
       level: 'High Turnover',
@@ -175,16 +193,22 @@ export const HOTEL_DEMO_SCENARIOS: HotelDemoDateScenario[] = [
       frontDeskPeakHour: '10:30 AM – 12:30 PM (Checkout rush)',
     },
     aetherGeneratedOutput: {
-      occupancyInsight: '148 weekend checkout departures require rapid room turnaround and deep sanitization before Monday full-house business week.',
-      operationalRisk: 'Severe checkout desk congestion between 11:00 AM – 12:00 PM; late checkout requests could derail Monday room staging.',
+      occupancyInsight:
+        '148 weekend checkout departures require rapid room turnaround and deep sanitization before Monday full-house business week.',
+      operationalRisk:
+        'Severe checkout desk congestion between 11:00 AM – 12:00 PM; late checkout requests could derail Monday room staging.',
       recommendedStaffAllocation: {
-        housekeeping: 'All-hands housekeeping surge (12 room attendants) operating in dual-attendant zone teams.',
-        frontDesk: '3 express checkout kiosks activated + 2 staff verifying digital folio settlements.',
+        housekeeping:
+          'All-hands housekeeping surge (12 room attendants) operating in dual-attendant zone teams.',
+        frontDesk:
+          '3 express checkout kiosks activated + 2 staff verifying digital folio settlements.',
         concierge: '3 bellhops dedicated to luggage holding for late-flight departing guests.',
         maintenance: 'Deep air filter replacement and preventative maintenance in 35 empty rooms.',
       },
-      recommendedAction: 'Enable 1-tap WhatsApp contactless checkout; grant automated late checkouts only on floors with zero Sunday incoming arrivals.',
-      projectedRevenueSaved: '₹1,25,000 in late checkout fee monetization + zero Monday delay penalties',
+      recommendedAction:
+        'Enable 1-tap WhatsApp contactless checkout; grant automated late checkouts only on floors with zero Sunday incoming arrivals.',
+      projectedRevenueSaved:
+        '₹1,25,000 in late checkout fee monetization + zero Monday delay penalties',
       autonomousExecutionSteps: [
         'Dispatched contactless digital checkout links to all 148 departing folios',
         'Dynamic housekeeping room release: cleaned vacant rooms for preventative maintenance',
@@ -224,27 +248,111 @@ export const HOTEL_BI_DATA = {
   ],
 
   cancellationRiskDistribution: [
-    { label: 'High Cancellation Risk (OTA Flexible)', count: 28, percentage: '14.0%', riskColor: 'text-rose-400', bg: 'bg-rose-500/10 border-rose-500/30' },
-    { label: 'Moderate Pace Risk (Corporate Open)', count: 36, percentage: '18.0%', riskColor: 'text-amber-400', bg: 'bg-amber-500/10 border-amber-500/30' },
-    { label: 'Guaranteed / Non-Refundable', count: 112, percentage: '56.0%', riskColor: 'text-emerald-400', bg: 'bg-emerald-500/10 border-emerald-500/30' },
-    { label: 'VIP / Titanium Loyalty Direct', count: 24, percentage: '12.0%', riskColor: 'text-sky-400', bg: 'bg-sky-500/10 border-sky-500/30' },
+    {
+      label: 'High Cancellation Risk (OTA Flexible)',
+      count: 28,
+      percentage: '14.0%',
+      riskColor: 'text-rose-400',
+      bg: 'bg-rose-500/10 border-rose-500/30',
+    },
+    {
+      label: 'Moderate Pace Risk (Corporate Open)',
+      count: 36,
+      percentage: '18.0%',
+      riskColor: 'text-amber-400',
+      bg: 'bg-amber-500/10 border-amber-500/30',
+    },
+    {
+      label: 'Guaranteed / Non-Refundable',
+      count: 112,
+      percentage: '56.0%',
+      riskColor: 'text-emerald-400',
+      bg: 'bg-emerald-500/10 border-emerald-500/30',
+    },
+    {
+      label: 'VIP / Titanium Loyalty Direct',
+      count: 24,
+      percentage: '12.0%',
+      riskColor: 'text-sky-400',
+      bg: 'bg-sky-500/10 border-sky-500/30',
+    },
   ],
 
   guestPreferences: [
-    { preference: 'High-Floor / Quiet Wing', count: 84, trend: '+18% this month', category: 'Room Assignment' },
-    { preference: 'Hypoallergenic Bedding & Extra Pillows', count: 62, trend: '+24% this month', category: 'Housekeeping' },
-    { preference: 'Late Checkout Request (2:00 PM)', count: 54, trend: '+35% weekend peak', category: 'Front Desk' },
-    { preference: 'Early Breakfast Box / Room Delivery', count: 48, trend: '+12% corporate', category: 'Dining & Kitchen' },
-    { preference: 'Airport Chauffeur Transfer Concierge', count: 32, trend: '+29% international', category: 'Concierge' },
-    { preference: 'Spa & Wellness Pre-Booking', count: 28, trend: '+40% leisure', category: 'Ancillary Services' },
+    {
+      preference: 'High-Floor / Quiet Wing',
+      count: 84,
+      trend: '+18% this month',
+      category: 'Room Assignment',
+    },
+    {
+      preference: 'Hypoallergenic Bedding & Extra Pillows',
+      count: 62,
+      trend: '+24% this month',
+      category: 'Housekeeping',
+    },
+    {
+      preference: 'Late Checkout Request (2:00 PM)',
+      count: 54,
+      trend: '+35% weekend peak',
+      category: 'Front Desk',
+    },
+    {
+      preference: 'Early Breakfast Box / Room Delivery',
+      count: 48,
+      trend: '+12% corporate',
+      category: 'Dining & Kitchen',
+    },
+    {
+      preference: 'Airport Chauffeur Transfer Concierge',
+      count: 32,
+      trend: '+29% international',
+      category: 'Concierge',
+    },
+    {
+      preference: 'Spa & Wellness Pre-Booking',
+      count: 28,
+      trend: '+40% leisure',
+      category: 'Ancillary Services',
+    },
   ],
 
   operationalLoadFloors: [
-    { floor: 'Floor 1 (Suites & Presidential)', cleanReady: 12, inCleaning: 3, pendingDirty: 1, occupancy: '94%' },
-    { floor: 'Floor 2 (Executive Club Rooms)', cleanReady: 28, inCleaning: 6, pendingDirty: 4, occupancy: '92%' },
-    { floor: 'Floor 3 (Deluxe King Rooms)', cleanReady: 32, inCleaning: 8, pendingDirty: 6, occupancy: '89%' },
-    { floor: 'Floor 4 (Deluxe Twin Rooms)', cleanReady: 30, inCleaning: 5, pendingDirty: 5, occupancy: '84%' },
-    { floor: 'Floor 5 (Standard Rooms)', cleanReady: 34, inCleaning: 4, pendingDirty: 2, occupancy: '88%' },
+    {
+      floor: 'Floor 1 (Suites & Presidential)',
+      cleanReady: 12,
+      inCleaning: 3,
+      pendingDirty: 1,
+      occupancy: '94%',
+    },
+    {
+      floor: 'Floor 2 (Executive Club Rooms)',
+      cleanReady: 28,
+      inCleaning: 6,
+      pendingDirty: 4,
+      occupancy: '92%',
+    },
+    {
+      floor: 'Floor 3 (Deluxe King Rooms)',
+      cleanReady: 32,
+      inCleaning: 8,
+      pendingDirty: 6,
+      occupancy: '89%',
+    },
+    {
+      floor: 'Floor 4 (Deluxe Twin Rooms)',
+      cleanReady: 30,
+      inCleaning: 5,
+      pendingDirty: 5,
+      occupancy: '84%',
+    },
+    {
+      floor: 'Floor 5 (Standard Rooms)',
+      cleanReady: 34,
+      inCleaning: 4,
+      pendingDirty: 2,
+      occupancy: '88%',
+    },
   ],
 
   revenueOpportunities: [
@@ -267,7 +375,8 @@ export const HOTEL_BI_DATA = {
       title: 'Direct Rebooking Incentive on OTA Checkout Folios',
       target: '148 Weekly OTA Departures',
       expectedLift: '+18% Direct Shift',
-      strategy: 'Provide direct booking 15% credit code on digital folio email, bypassing 20% OTA commission.',
+      strategy:
+        'Provide direct booking 15% credit code on digital folio email, bypassing 20% OTA commission.',
     },
   ],
 };
@@ -292,8 +401,10 @@ export const HOTEL_JOURNEY_STEPS: HotelJourneyStep[] = [
     title: 'Booking Channel Intake',
     stageName: 'Booking',
     subtitle: 'Omni-Channel Reservation & Rate Sync',
-    traditionalDrag: 'Reservations flood in across Booking.com, Expedia, GDS, and phone with mismatched rates, rate parity penalties, and unlinked guest notes.',
-    aetherIntelligence: 'Unified cognitive booking mesh synchronizes channel rates, detects overbooking risks, and captures unstructured guest requests instantly.',
+    traditionalDrag:
+      'Reservations flood in across Booking.com, Expedia, GDS, and phone with mismatched rates, rate parity penalties, and unlinked guest notes.',
+    aetherIntelligence:
+      'Unified cognitive booking mesh synchronizes channel rates, detects overbooking risks, and captures unstructured guest requests instantly.',
     metricLabel: 'Channel Sync',
     metricValue: 'Sub-second GDS Sync',
     iconName: 'CalendarCheck',
@@ -304,8 +415,10 @@ export const HOTEL_JOURNEY_STEPS: HotelJourneyStep[] = [
     title: 'Occupancy Forecasting',
     stageName: 'Occupancy',
     subtitle: 'Dynamic Pace & Cancellation Prediction',
-    traditionalDrag: 'Revenue managers guess weekend occupancy using static historic tables, getting blindsided by last-minute group cancellations or sudden city surges.',
-    aetherIntelligence: 'Models flight schedules, local events, weather, and cancellation probabilities to forecast exact daily room category pace 14 days out.',
+    traditionalDrag:
+      'Revenue managers guess weekend occupancy using static historic tables, getting blindsided by last-minute group cancellations or sudden city surges.',
+    aetherIntelligence:
+      'Models flight schedules, local events, weather, and cancellation probabilities to forecast exact daily room category pace 14 days out.',
     metricLabel: 'Pace Accuracy',
     metricValue: '98.6% Forecast Precision',
     iconName: 'TrendingUp',
@@ -316,8 +429,10 @@ export const HOTEL_JOURNEY_STEPS: HotelJourneyStep[] = [
     title: 'Guest Profiling',
     stageName: 'Guest',
     subtitle: 'Unified VIP & Preference Intelligence',
-    traditionalDrag: 'Repeat guests arrive and must repeatedly ask for high-floor rooms, foam pillows, or quiet suites because notes are trapped in legacy PMS silos.',
-    aetherIntelligence: 'Builds a persistent, privacy-compliant cognitive guest dossier that automatically pre-assigns preferred rooms and stages personalized amenities.',
+    traditionalDrag:
+      'Repeat guests arrive and must repeatedly ask for high-floor rooms, foam pillows, or quiet suites because notes are trapped in legacy PMS silos.',
+    aetherIntelligence:
+      'Builds a persistent, privacy-compliant cognitive guest dossier that automatically pre-assigns preferred rooms and stages personalized amenities.',
     metricLabel: 'Profile Match',
     metricValue: '100% Preference Recall',
     iconName: 'UserCheck',
@@ -328,8 +443,10 @@ export const HOTEL_JOURNEY_STEPS: HotelJourneyStep[] = [
     title: 'Room Operations',
     stageName: 'Operations',
     subtitle: 'Autonomous Housekeeping & Maintenance Dispatch',
-    traditionalDrag: 'Front desk calls housekeeping supervisor via walkie-talkies to check room readiness while guests wait 45+ minutes in crowded lobby queues.',
-    aetherIntelligence: 'Dynamically routes housekeeping attendants by arrival priority, guest check-in telemetry, and digital room departure signals in real time.',
+    traditionalDrag:
+      'Front desk calls housekeeping supervisor via walkie-talkies to check room readiness while guests wait 45+ minutes in crowded lobby queues.',
+    aetherIntelligence:
+      'Dynamically routes housekeeping attendants by arrival priority, guest check-in telemetry, and digital room departure signals in real time.',
     metricLabel: 'Turnover Speed',
     metricValue: '24min Average Turn',
     iconName: 'Sparkles',
@@ -340,8 +457,10 @@ export const HOTEL_JOURNEY_STEPS: HotelJourneyStep[] = [
     title: 'In-Stay Experience',
     stageName: 'Experience',
     subtitle: 'Digital Concierge & Contextual Upsell',
-    traditionalDrag: 'Guests must call room service or front desk for simple requests; hotel misses high-margin spa, dining, and late checkout upsells.',
-    aetherIntelligence: 'Autonomous mobile concierge resolves service requests in under 60 seconds and serves perfectly timed dining and upgrade invitations.',
+    traditionalDrag:
+      'Guests must call room service or front desk for simple requests; hotel misses high-margin spa, dining, and late checkout upsells.',
+    aetherIntelligence:
+      'Autonomous mobile concierge resolves service requests in under 60 seconds and serves perfectly timed dining and upgrade invitations.',
     metricLabel: 'In-Stay Resolution',
     metricValue: '< 45s Response SLA',
     iconName: 'Coffee',
@@ -352,8 +471,10 @@ export const HOTEL_JOURNEY_STEPS: HotelJourneyStep[] = [
     title: 'Loyalty & Retention',
     stageName: 'Retention',
     subtitle: 'Direct Booking Shift & Post-Stay Engagement',
-    traditionalDrag: 'Guests check out with a printed paper invoice and rebook future stays through third-party OTAs, costing the hotel 20%+ in commissions.',
-    aetherIntelligence: 'Delivers seamless contactless digital checkouts, personalized thank-you folios, and direct booking incentives that convert OTA guests into direct bookers.',
+    traditionalDrag:
+      'Guests check out with a printed paper invoice and rebook future stays through third-party OTAs, costing the hotel 20%+ in commissions.',
+    aetherIntelligence:
+      'Delivers seamless contactless digital checkouts, personalized thank-you folios, and direct booking incentives that convert OTA guests into direct bookers.',
     metricLabel: 'Direct Booking Shift',
     metricValue: '+34% Direct Retention',
     iconName: 'HeartHandshake',

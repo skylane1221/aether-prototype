@@ -23,13 +23,14 @@ import {
 import { cn } from '../../../utils/cn';
 
 export const RealEstateReverseMatchDemo: React.FC = () => {
-  const [selectedPropertyId, setSelectedPropertyId] = useState<string>(REVERSE_MATCH_LISTINGS[0].id);
+  const [selectedPropertyId, setSelectedPropertyId] = useState<string>(
+    REVERSE_MATCH_LISTINGS[0].id
+  );
   const [dispatchedLeadIds, setDispatchedLeadIds] = useState<string[]>([]);
   const [dispatchingLeadId, setDispatchingLeadId] = useState<string | null>(null);
 
   const currentProperty =
-    REVERSE_MATCH_LISTINGS.find((p) => p.id === selectedPropertyId) ||
-    REVERSE_MATCH_LISTINGS[0];
+    REVERSE_MATCH_LISTINGS.find((p) => p.id === selectedPropertyId) || REVERSE_MATCH_LISTINGS[0];
 
   const matchingLeads = MATCHED_BUYER_LEADS[selectedPropertyId] || [];
 
@@ -62,13 +63,16 @@ export const RealEstateReverseMatchDemo: React.FC = () => {
             <Badge variant="primary" size="sm">
               Reverse Discovery Engine
             </Badge>
-            <span className="text-xs font-mono text-text-muted">Property → Find Qualified Buyers</span>
+            <span className="text-xs font-mono text-text-muted">
+              Property → Find Qualified Buyers
+            </span>
           </div>
           <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-text-primary">
             Instant Buyer Matching for New & Revised Inventory
           </h3>
           <p className="text-xs sm:text-sm text-text-secondary mt-1">
-            Invert the real estate funnel: Log a new unit or price revision, and Aether instantly surfaces active, pre-approved buyers.
+            Invert the real estate funnel: Log a new unit or price revision, and Aether instantly
+            surfaces active, pre-approved buyers.
           </p>
         </div>
 
@@ -105,7 +109,9 @@ export const RealEstateReverseMatchDemo: React.FC = () => {
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <div className="text-xs font-bold text-white tracking-tight">{prop.propertyName}</div>
+                      <div className="text-xs font-bold text-white tracking-tight">
+                        {prop.propertyName}
+                      </div>
                       <div className="text-[11px] text-text-muted mt-0.5">{prop.location}</div>
                     </div>
                     <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 shrink-0">
@@ -132,7 +138,8 @@ export const RealEstateReverseMatchDemo: React.FC = () => {
               <span>Zero-Lag Buyer Activation</span>
             </div>
             <p className="text-[11px] leading-relaxed text-slate-400">
-              When a builder adjusts price or releases a high-floor unit, Aether alerts all matching high-intent buyers in under 30 seconds.
+              When a builder adjusts price or releases a high-floor unit, Aether alerts all matching
+              high-intent buyers in under 30 seconds.
             </p>
           </div>
         </div>

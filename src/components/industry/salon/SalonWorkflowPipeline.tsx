@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  User, 
-  CalendarCheck, 
-  Sparkles, 
-  RefreshCw, 
-  HeartHandshake, 
-  ArrowRight, 
+import {
+  User,
+  CalendarCheck,
+  Sparkles,
+  RefreshCw,
+  HeartHandshake,
+  ArrowRight,
   Info,
   CheckCircle2,
   Clock,
-  Scissors
+  Scissors,
 } from 'lucide-react';
 import { Card } from '../../ui/Card';
 import { Badge } from '../../ui/Badge';
@@ -34,10 +34,17 @@ const SALON_STAGES: StageDetail[] = [
     name: 'Customer',
     shortDesc: 'Client profile, preference memory & treatment historical logging',
     icon: User,
-    traditionalPain: 'Fragmented paper cards, unrecorded allergies, forgotten formula ratios & style preferences.',
-    aetherIntelligence: 'Unified digital client dossier auto-aggregating hair/skin profiles, formula histories & visit rhythms.',
-    dataPoints: ['Skin/Hair Diagnostic Profile', 'Formula & Shade Archive', 'Communication Preferences', 'Lifetime Spend Tier'],
-    metricGain: '100% preference continuity'
+    traditionalPain:
+      'Fragmented paper cards, unrecorded allergies, forgotten formula ratios & style preferences.',
+    aetherIntelligence:
+      'Unified digital client dossier auto-aggregating hair/skin profiles, formula histories & visit rhythms.',
+    dataPoints: [
+      'Skin/Hair Diagnostic Profile',
+      'Formula & Shade Archive',
+      'Communication Preferences',
+      'Lifetime Spend Tier',
+    ],
+    metricGain: '100% preference continuity',
   },
   {
     id: 'appointment',
@@ -45,10 +52,17 @@ const SALON_STAGES: StageDetail[] = [
     name: 'Appointment',
     shortDesc: 'Dynamic booking optimization, buffer intelligence & no-show prevention',
     icon: CalendarCheck,
-    traditionalPain: 'Double bookings, unrealistic time slots, phone-tag friction & 18% salon no-show rates.',
-    aetherIntelligence: 'Predictive slot allocation based on stylist velocity + ML no-show risk scoring & smart confirmation protocols.',
-    dataPoints: ['Stylist Processing Time Curves', 'No-Show Risk Probability (94%)', 'Chair Slot Packing Yield', 'Deposit Safeguards'],
-    metricGain: '-72% booking no-shows'
+    traditionalPain:
+      'Double bookings, unrealistic time slots, phone-tag friction & 18% salon no-show rates.',
+    aetherIntelligence:
+      'Predictive slot allocation based on stylist velocity + ML no-show risk scoring & smart confirmation protocols.',
+    dataPoints: [
+      'Stylist Processing Time Curves',
+      'No-Show Risk Probability (94%)',
+      'Chair Slot Packing Yield',
+      'Deposit Safeguards',
+    ],
+    metricGain: '-72% booking no-shows',
   },
   {
     id: 'service',
@@ -56,10 +70,17 @@ const SALON_STAGES: StageDetail[] = [
     name: 'Service',
     shortDesc: 'Stylist workstation intelligence, add-on prompts & formula accuracy',
     icon: Scissors,
-    traditionalPain: 'Stylists rush without client background, missing high-margin add-on treatments & accurate formula logs.',
-    aetherIntelligence: 'Workstation tablet prompt with previous formula mix, recent hair notes & contextual add-on treatment recommendations.',
-    dataPoints: ['Exact Shade/Oxidant Ratio', 'Contextual Add-on Recommendation', 'Chair Time Tracking', 'Stylist Workstation Sync'],
-    metricGain: '+28% service ticket value'
+    traditionalPain:
+      'Stylists rush without client background, missing high-margin add-on treatments & accurate formula logs.',
+    aetherIntelligence:
+      'Workstation tablet prompt with previous formula mix, recent hair notes & contextual add-on treatment recommendations.',
+    dataPoints: [
+      'Exact Shade/Oxidant Ratio',
+      'Contextual Add-on Recommendation',
+      'Chair Time Tracking',
+      'Stylist Workstation Sync',
+    ],
+    metricGain: '+28% service ticket value',
   },
   {
     id: 'rebooking',
@@ -67,10 +88,17 @@ const SALON_STAGES: StageDetail[] = [
     name: 'Rebooking',
     shortDesc: 'Cycle-calculated rebooking prompts & personalized outreach',
     icon: RefreshCw,
-    traditionalPain: 'Front desk forgets to ask; clients leave and delay rebooking by 4-8 weeks, causing revenue drift.',
-    aetherIntelligence: 'Precision regrowth/fade calculation triggering automated, hyper-personalized rebooking prompts at optimal moment.',
-    dataPoints: ['Regrowth / Fade Cycle (4.2 wks)', 'Preferred Day/Time Matrix', 'Stylist Roster Availability', '1-Tap WhatsApp Slot Reserve'],
-    metricGain: '84% rebooking capture rate'
+    traditionalPain:
+      'Front desk forgets to ask; clients leave and delay rebooking by 4-8 weeks, causing revenue drift.',
+    aetherIntelligence:
+      'Precision regrowth/fade calculation triggering automated, hyper-personalized rebooking prompts at optimal moment.',
+    dataPoints: [
+      'Regrowth / Fade Cycle (4.2 wks)',
+      'Preferred Day/Time Matrix',
+      'Stylist Roster Availability',
+      '1-Tap WhatsApp Slot Reserve',
+    ],
+    metricGain: '84% rebooking capture rate',
   },
   {
     id: 'retention',
@@ -78,11 +106,18 @@ const SALON_STAGES: StageDetail[] = [
     name: 'Retention',
     shortDesc: 'VIP loyalty nurturing, churn interception & referral compounding',
     icon: HeartHandshake,
-    traditionalPain: 'Lost clients vanish silently without notice until months later when chair utilization drops.',
-    aetherIntelligence: 'Early slippage alert system identifying overdue clients + curated revival experiences to preserve LTV.',
-    dataPoints: ['Visit Gap Standard Deviation', 'Sentiment & Review Tracking', 'VIP Lifetime Value Trajectory', 'Auto-Revival Win-Back Engine'],
-    metricGain: '+41% 12-month client LTV'
-  }
+    traditionalPain:
+      'Lost clients vanish silently without notice until months later when chair utilization drops.',
+    aetherIntelligence:
+      'Early slippage alert system identifying overdue clients + curated revival experiences to preserve LTV.',
+    dataPoints: [
+      'Visit Gap Standard Deviation',
+      'Sentiment & Review Tracking',
+      'VIP Lifetime Value Trajectory',
+      'Auto-Revival Win-Back Engine',
+    ],
+    metricGain: '+41% 12-month client LTV',
+  },
 ];
 
 export const SalonWorkflowPipeline: React.FC = () => {
@@ -112,23 +147,33 @@ export const SalonWorkflowPipeline: React.FC = () => {
               >
                 {/* Header with Stage Number and Icon */}
                 <div className="flex items-center justify-between mb-3">
-                  <span className={`text-[10px] font-mono tracking-widest font-semibold px-2 py-0.5 rounded ${
-                    isSelected ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40' : 'bg-white/5 text-zinc-300'
-                  }`}>
+                  <span
+                    className={`text-[10px] font-mono tracking-widest font-semibold px-2 py-0.5 rounded ${
+                      isSelected
+                        ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
+                        : 'bg-white/5 text-zinc-300'
+                    }`}
+                  >
                     {stage.number}
                   </span>
-                  <div className={`p-2 rounded-lg transition-colors ${
-                    isSelected ? 'bg-rose-500 text-white shadow-lg shadow-rose-500/30' : 'bg-white/5 text-zinc-300 group-hover:text-rose-400'
-                  }`}>
+                  <div
+                    className={`p-2 rounded-lg transition-colors ${
+                      isSelected
+                        ? 'bg-rose-500 text-white shadow-lg shadow-rose-500/30'
+                        : 'bg-white/5 text-zinc-300 group-hover:text-rose-400'
+                    }`}
+                  >
                     <Icon className="w-4 h-4" />
                   </div>
                 </div>
 
                 {/* Name and Snippet */}
                 <div>
-                  <h4 className={`text-sm font-semibold mb-1 transition-colors ${
-                    isSelected ? 'text-white' : 'text-zinc-300 group-hover:text-zinc-200'
-                  }`}>
+                  <h4
+                    className={`text-sm font-semibold mb-1 transition-colors ${
+                      isSelected ? 'text-white' : 'text-zinc-300 group-hover:text-zinc-200'
+                    }`}
+                  >
                     {stage.name}
                   </h4>
                   <p className="text-[11px] text-zinc-300 line-clamp-2 leading-relaxed">
@@ -170,18 +215,21 @@ export const SalonWorkflowPipeline: React.FC = () => {
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <Badge variant="primary" className="text-[10px] bg-rose-500/20 text-rose-300 border-rose-500/40">
+                      <Badge
+                        variant="primary"
+                        className="text-[10px] bg-rose-500/20 text-rose-300 border-rose-500/40"
+                      >
                         STAGE {currentStage.number}
                       </Badge>
                       <span className="text-xs font-mono text-zinc-300">SALON CYCLE ENGINE</span>
                     </div>
-                    <h3 className="text-xl font-bold text-white tracking-tight">{currentStage.name}</h3>
+                    <h3 className="text-xl font-bold text-white tracking-tight">
+                      {currentStage.name}
+                    </h3>
                   </div>
                 </div>
 
-                <p className="text-sm text-zinc-300 leading-relaxed">
-                  {currentStage.shortDesc}
-                </p>
+                <p className="text-sm text-zinc-300 leading-relaxed">{currentStage.shortDesc}</p>
 
                 <div className="p-4 rounded-xl bg-rose-950/20 border border-rose-500/30 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-rose-300 text-xs font-semibold">
@@ -229,7 +277,10 @@ export const SalonWorkflowPipeline: React.FC = () => {
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
                     {currentStage.dataPoints.map((point: string, idx: number) => (
-                      <div key={idx} className="p-2 rounded-lg bg-black/50 border border-white/5 text-[11px] text-zinc-300 font-mono flex items-center gap-1.5">
+                      <div
+                        key={idx}
+                        className="p-2 rounded-lg bg-black/50 border border-white/5 text-[11px] text-zinc-300 font-mono flex items-center gap-1.5"
+                      >
                         <div className="w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0" />
                         <span className="truncate">{point}</span>
                       </div>

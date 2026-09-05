@@ -35,8 +35,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         'bg-aether-card hover:bg-aether-card-hover text-text-primary border border-aether-border hover:border-aether-border-bright shadow-card',
       outline:
         'bg-transparent hover:bg-slate-800/40 text-text-secondary hover:text-text-primary border border-aether-border hover:border-slate-600',
-      ghost:
-        'bg-transparent hover:bg-slate-800/50 text-text-secondary hover:text-text-primary',
+      ghost: 'bg-transparent hover:bg-slate-800/50 text-text-secondary hover:text-text-primary',
       accent:
         'bg-aether-primary/10 hover:bg-aether-primary/20 text-aether-primary border border-aether-primary/30 hover:border-aether-primary/60 shadow-glow-subtle font-medium',
     };

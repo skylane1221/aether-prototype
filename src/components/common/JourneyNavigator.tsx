@@ -1,6 +1,14 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowRight, Compass, Layers, Play, TrendingUp, Sparkles, CheckCircle2 } from 'lucide-react';
+import {
+  ArrowRight,
+  Compass,
+  Layers,
+  Play,
+  TrendingUp,
+  Sparkles,
+  CheckCircle2,
+} from 'lucide-react';
 import { cn } from '../../utils/cn';
 
 export interface JourneyStep {
@@ -12,7 +20,7 @@ export interface JourneyStep {
   icon: React.ReactNode;
 }
 
-export const JOURNEY_STEPS: JourneyStep[] = [
+const JOURNEY_STEPS: JourneyStep[] = [
   {
     id: 'discover',
     stageNumber: '01',
@@ -74,21 +82,29 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
     (location.pathname === '/what-is-aether'
       ? 'discover'
       : location.pathname.startsWith('/industries')
-      ? 'explore'
-      : location.pathname === '/demos'
-      ? 'experience'
-      : location.pathname === '/impact'
-      ? 'impact'
-      : location.pathname === '/contact'
-      ? 'request'
-      : 'discover');
+        ? 'explore'
+        : location.pathname === '/demos'
+          ? 'experience'
+          : location.pathname === '/impact'
+            ? 'impact'
+            : location.pathname === '/contact'
+              ? 'request'
+              : 'discover');
 
   const activeIndex = JOURNEY_STEPS.findIndex((s) => s.id === activeStepId);
-  const nextStep = activeIndex >= 0 && activeIndex < JOURNEY_STEPS.length - 1 ? JOURNEY_STEPS[activeIndex + 1] : null;
+  const nextStep =
+    activeIndex >= 0 && activeIndex < JOURNEY_STEPS.length - 1
+      ? JOURNEY_STEPS[activeIndex + 1]
+      : null;
 
   if (compact) {
     return (
-      <div className={cn('p-4 rounded-xl bg-slate-900/60 border border-aether-border flex flex-col sm:flex-row items-center justify-between gap-4', className)}>
+      <div
+        className={cn(
+          'p-4 rounded-xl bg-slate-900/60 border border-aether-border flex flex-col sm:flex-row items-center justify-between gap-4',
+          className
+        )}
+      >
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400">
             <Sparkles className="w-4 h-4" />
@@ -98,7 +114,9 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
               Suggested Next Step
             </span>
             <p className="text-xs sm:text-sm font-semibold text-text-primary">
-              {nextStep ? `Continue to ${nextStep.label}: ${nextStep.shortDesc}` : 'Ready to configure your solution?'}
+              {nextStep
+                ? `Continue to ${nextStep.label}: ${nextStep.shortDesc}`
+                : 'Ready to configure your solution?'}
             </p>
           </div>
         </div>
@@ -158,8 +176,8 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
                   isCurrent
                     ? 'bg-sky-500/10 border-sky-500/50 shadow-glow-subtle'
                     : isCompleted
-                    ? 'bg-aether-surface/60 border-slate-700/60 hover:border-slate-600'
-                    : 'bg-aether-surface/30 border-aether-border/60 hover:border-slate-700'
+                      ? 'bg-aether-surface/60 border-slate-700/60 hover:border-slate-600'
+                      : 'bg-aether-surface/30 border-aether-border/60 hover:border-slate-700'
                 )}
               >
                 <div>
@@ -170,8 +188,8 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
                         isCurrent
                           ? 'bg-sky-500 text-slate-950'
                           : isCompleted
-                          ? 'bg-emerald-500/20 text-emerald-300'
-                          : 'bg-slate-800 text-text-muted'
+                            ? 'bg-emerald-500/20 text-emerald-300'
+                            : 'bg-slate-800 text-text-muted'
                       )}
                     >
                       {step.stageNumber}
@@ -183,8 +201,8 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
                         isCurrent
                           ? 'bg-sky-500/20 border-sky-500/40 text-sky-300'
                           : isCompleted
-                          ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
-                          : 'bg-slate-900 border-slate-800 text-text-muted group-hover:text-text-secondary'
+                            ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+                            : 'bg-slate-900 border-slate-800 text-text-muted group-hover:text-text-secondary'
                       )}
                     >
                       {isCompleted ? <CheckCircle2 className="w-3.5 h-3.5" /> : step.icon}
@@ -197,8 +215,8 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
                       isCurrent
                         ? 'text-sky-300'
                         : isCompleted
-                        ? 'text-text-primary'
-                        : 'text-text-secondary group-hover:text-text-primary'
+                          ? 'text-text-primary'
+                          : 'text-text-secondary group-hover:text-text-primary'
                     )}
                   >
                     {step.label}
@@ -215,8 +233,8 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
                       isCurrent
                         ? 'text-sky-400'
                         : isCompleted
-                        ? 'text-emerald-400'
-                        : 'text-text-muted group-hover:text-text-secondary'
+                          ? 'text-emerald-400'
+                          : 'text-text-muted group-hover:text-text-secondary'
                     )}
                   >
                     {isCurrent ? 'Current Stage' : isCompleted ? 'Completed' : 'Explore'}

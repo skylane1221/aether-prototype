@@ -39,7 +39,11 @@ export interface ScenarioForecast {
     title: string;
     details: string;
     timing: string;
-    station: 'Butchery & Marination' | 'Sauce & Sauté Line' | 'Bakery & Tandoor' | 'Packaging & Delivery Expedite';
+    station:
+      | 'Butchery & Marination'
+      | 'Sauce & Sauté Line'
+      | 'Bakery & Tandoor'
+      | 'Packaging & Delivery Expedite';
   }[];
 }
 
@@ -105,7 +109,8 @@ export const RESTAURANT_SCENARIO_FORECASTS: Record<string, ScenarioForecast> = {
   tomorrow: {
     scenarioKey: 'tomorrow',
     scenarioName: 'Tomorrow (Standard Weekday)',
-    scenarioDescription: 'Regular Wednesday lunch and dinner service with balanced corporate & family dine-in.',
+    scenarioDescription:
+      'Regular Wednesday lunch and dinner service with balanced corporate & family dine-in.',
     footfallMultiplier: 1.0,
     expectedCovers: 240,
     deliveryShare: 32,
@@ -148,7 +153,8 @@ export const RESTAURANT_SCENARIO_FORECASTS: Record<string, ScenarioForecast> = {
         recommendedPrep: 'Portion exactly 35 fillets (180g cut) from fresh Atlantic catch',
         inventoryRequired: '6.8 kg Whole Chilled Salmon, Fresh Dill, Lemon Marinade',
         wastageRisk: 'Moderate',
-        wastageDetails: 'High-cost raw protein; only slice 20 portions for lunch, remaining 15 at 5 PM.',
+        wastageDetails:
+          'High-cost raw protein; only slice 20 portions for lunch, remaining 15 at 5 PM.',
       },
       {
         itemId: 'item-5',
@@ -162,21 +168,67 @@ export const RESTAURANT_SCENARIO_FORECASTS: Record<string, ScenarioForecast> = {
       },
     ],
     inventorySummary: [
-      { category: 'Meat & Poultry', item: 'Boneless Fresh Chicken', stockOnHand: '32 kg', neededForService: '44 kg', orderRecommendation: '+15 kg (Delivery at 8:00 AM)', status: 'Order Needed' },
-      { category: 'Dairy & Fats', item: 'Unsalted White Cream Butter', stockOnHand: '18 kg', neededForService: '12 kg', orderRecommendation: 'Sufficient inventory', status: 'Sufficient' },
-      { category: 'Seafood', item: 'Chilled Atlantic Salmon', stockOnHand: '4.5 kg', neededForService: '7.0 kg', orderRecommendation: '+3.5 kg urgent morning vendor dispatch', status: 'Order Needed' },
-      { category: 'Dry Goods', item: 'Extra Long Basmati Rice', stockOnHand: '65 kg', neededForService: '16 kg', orderRecommendation: 'Buffer healthy (4 days)', status: 'Sufficient' },
+      {
+        category: 'Meat & Poultry',
+        item: 'Boneless Fresh Chicken',
+        stockOnHand: '32 kg',
+        neededForService: '44 kg',
+        orderRecommendation: '+15 kg (Delivery at 8:00 AM)',
+        status: 'Order Needed',
+      },
+      {
+        category: 'Dairy & Fats',
+        item: 'Unsalted White Cream Butter',
+        stockOnHand: '18 kg',
+        neededForService: '12 kg',
+        orderRecommendation: 'Sufficient inventory',
+        status: 'Sufficient',
+      },
+      {
+        category: 'Seafood',
+        item: 'Chilled Atlantic Salmon',
+        stockOnHand: '4.5 kg',
+        neededForService: '7.0 kg',
+        orderRecommendation: '+3.5 kg urgent morning vendor dispatch',
+        status: 'Order Needed',
+      },
+      {
+        category: 'Dry Goods',
+        item: 'Extra Long Basmati Rice',
+        stockOnHand: '65 kg',
+        neededForService: '16 kg',
+        orderRecommendation: 'Buffer healthy (4 days)',
+        status: 'Sufficient',
+      },
     ],
     operationalRecommendations: [
-      { title: 'Stagger Biryani Dum Cycles', details: 'Trigger 1st handi seal at 10:45 AM for 12:30 PM lunch peak; 2nd cycle at 6:00 PM.', timing: '10:45 AM & 6:00 PM', station: 'Butchery & Marination' },
-      { title: 'Expedite Online Delivery Par-Packaging', details: 'Pre-assemble 45 delivery carry-packs with cutlery & chutneys to reduce ticket dispatch time to under 8 mins.', timing: '11:30 AM', station: 'Packaging & Delivery Expedite' },
-      { title: 'Salmon Fresh Cut Gate', details: 'Hold back 15 fillets in cryo-chill until 6:00 PM reservation check-in confirm.', timing: '5:30 PM', station: 'Sauce & Sauté Line' },
+      {
+        title: 'Stagger Biryani Dum Cycles',
+        details:
+          'Trigger 1st handi seal at 10:45 AM for 12:30 PM lunch peak; 2nd cycle at 6:00 PM.',
+        timing: '10:45 AM & 6:00 PM',
+        station: 'Butchery & Marination',
+      },
+      {
+        title: 'Expedite Online Delivery Par-Packaging',
+        details:
+          'Pre-assemble 45 delivery carry-packs with cutlery & chutneys to reduce ticket dispatch time to under 8 mins.',
+        timing: '11:30 AM',
+        station: 'Packaging & Delivery Expedite',
+      },
+      {
+        title: 'Salmon Fresh Cut Gate',
+        details: 'Hold back 15 fillets in cryo-chill until 6:00 PM reservation check-in confirm.',
+        timing: '5:30 PM',
+        station: 'Sauce & Sauté Line',
+      },
     ],
   },
   weekend: {
     scenarioKey: 'weekend',
     scenarioName: 'Weekend Surge (Saturday Night Peak)',
-    scenarioDescription: 'Heavy dinner bookings, extended table turnover, and high beverage/appetizer attachment rate.',
+    scenarioDescription:
+      'Heavy dinner bookings, extended table turnover, and high beverage/appetizer attachment rate.',
     footfallMultiplier: 1.85,
     expectedCovers: 445,
     deliveryShare: 24,
@@ -186,7 +238,8 @@ export const RESTAURANT_SCENARIO_FORECASTS: Record<string, ScenarioForecast> = {
         itemName: 'Slow-Cooked Dum Biryani (Pot)',
         expectedDemand: 165,
         unit: 'portions',
-        recommendedPrep: 'Triple-batch sequence (11 AM: 60 pots | 5:30 PM: 70 pots | 8:30 PM: 35 pots)',
+        recommendedPrep:
+          'Triple-batch sequence (11 AM: 60 pots | 5:30 PM: 70 pots | 8:30 PM: 35 pots)',
         inventoryRequired: '36 kg Marinated Poultry, 24 kg Basmati, 5 kg Pure Ghee, Saffron Milk',
         wastageRisk: 'Low',
         wastageDetails: 'High weekend turnover ensures 98.5% sell-through before 11:30 PM.',
@@ -233,21 +286,66 @@ export const RESTAURANT_SCENARIO_FORECASTS: Record<string, ScenarioForecast> = {
       },
     ],
     inventorySummary: [
-      { category: 'Meat & Poultry', item: 'Boneless Fresh Chicken', stockOnHand: '25 kg', neededForService: '84 kg', orderRecommendation: '+60 kg High-Priority Saturday AM intake', status: 'Critical Shortage' },
-      { category: 'Dairy & Fats', item: 'Heavy Cooking Cream & Butter', stockOnHand: '20 kg', neededForService: '35 kg', orderRecommendation: '+20 kg immediate dairy restock', status: 'Order Needed' },
-      { category: 'Seafood', item: 'Chilled Atlantic Salmon', stockOnHand: '5.0 kg', neededForService: '14.0 kg', orderRecommendation: '+10.0 kg Saturday Morning Air-freight Delivery', status: 'Critical Shortage' },
-      { category: 'Produce', item: 'Wild Exotic Mushrooms', stockOnHand: '4.0 kg', neededForService: '10.0 kg', orderRecommendation: '+6 kg Local Hydroponic Vendor Drop', status: 'Order Needed' },
+      {
+        category: 'Meat & Poultry',
+        item: 'Boneless Fresh Chicken',
+        stockOnHand: '25 kg',
+        neededForService: '84 kg',
+        orderRecommendation: '+60 kg High-Priority Saturday AM intake',
+        status: 'Critical Shortage',
+      },
+      {
+        category: 'Dairy & Fats',
+        item: 'Heavy Cooking Cream & Butter',
+        stockOnHand: '20 kg',
+        neededForService: '35 kg',
+        orderRecommendation: '+20 kg immediate dairy restock',
+        status: 'Order Needed',
+      },
+      {
+        category: 'Seafood',
+        item: 'Chilled Atlantic Salmon',
+        stockOnHand: '5.0 kg',
+        neededForService: '14.0 kg',
+        orderRecommendation: '+10.0 kg Saturday Morning Air-freight Delivery',
+        status: 'Critical Shortage',
+      },
+      {
+        category: 'Produce',
+        item: 'Wild Exotic Mushrooms',
+        stockOnHand: '4.0 kg',
+        neededForService: '10.0 kg',
+        orderRecommendation: '+6 kg Local Hydroponic Vendor Drop',
+        status: 'Order Needed',
+      },
     ],
     operationalRecommendations: [
-      { title: 'Add 2 Line Cooks to Grill & Sauté', details: 'Reassign 1 prep cook to active plating pass to prevent 22+ min ticket bottlenecks.', timing: '7:00 PM - 11:00 PM', station: 'Sauce & Sauté Line' },
-      { title: 'Continuous Tandoor Rotation', details: 'Keep auxiliary tandoor at 320°C from 6:30 PM to avoid paratha delay queues.', timing: '6:30 PM', station: 'Bakery & Tandoor' },
-      { title: 'Appetizer Pre-fire Optimization', details: 'Pre-dredge calamari batches during 7:30 PM rush for sub-4 min fryer drop.', timing: '7:30 PM', station: 'Butchery & Marination' },
+      {
+        title: 'Add 2 Line Cooks to Grill & Sauté',
+        details:
+          'Reassign 1 prep cook to active plating pass to prevent 22+ min ticket bottlenecks.',
+        timing: '7:00 PM - 11:00 PM',
+        station: 'Sauce & Sauté Line',
+      },
+      {
+        title: 'Continuous Tandoor Rotation',
+        details: 'Keep auxiliary tandoor at 320°C from 6:30 PM to avoid paratha delay queues.',
+        timing: '6:30 PM',
+        station: 'Bakery & Tandoor',
+      },
+      {
+        title: 'Appetizer Pre-fire Optimization',
+        details: 'Pre-dredge calamari batches during 7:30 PM rush for sub-4 min fryer drop.',
+        timing: '7:30 PM',
+        station: 'Butchery & Marination',
+      },
     ],
   },
   rainy: {
     scenarioKey: 'rainy',
     scenarioName: 'Rainy Day Surge (Delivery & Comfort Food)',
-    scenarioDescription: 'Heavy monsoon downpour causing 48% drop in walk-in dine-in, but +110% explosion in delivery apps.',
+    scenarioDescription:
+      'Heavy monsoon downpour causing 48% drop in walk-in dine-in, but +110% explosion in delivery apps.',
     footfallMultiplier: 0.85,
     expectedCovers: 205,
     deliveryShare: 68,
@@ -280,7 +378,8 @@ export const RESTAURANT_SCENARIO_FORECASTS: Record<string, ScenarioForecast> = {
         recommendedPrep: 'Reduce fresh pasta prep by 50% (Dine-in pasta orders drop in rain)',
         inventoryRequired: '2.8 kg Semolina, 2.2 kg Mushrooms, 350ml Truffle Oil',
         wastageRisk: 'Critical Risk',
-        wastageDetails: 'High spoilage risk if regular batch prepared. Cut prep to avoid ₹8,400 raw loss.',
+        wastageDetails:
+          'High spoilage risk if regular batch prepared. Cut prep to avoid ₹8,400 raw loss.',
       },
       {
         itemId: 'item-4',
@@ -300,25 +399,73 @@ export const RESTAURANT_SCENARIO_FORECASTS: Record<string, ScenarioForecast> = {
         recommendedPrep: 'Reduce prep by 55%; calamari loses crispness in delivery transit',
         inventoryRequired: '4.5 kg Squid, 1.5L Aioli',
         wastageRisk: 'Moderate',
-        wastageDetails: 'Fried appetizers suffer delivery texture decay; promote hot soups instead.',
+        wastageDetails:
+          'Fried appetizers suffer delivery texture decay; promote hot soups instead.',
       },
     ],
     inventorySummary: [
-      { category: 'Packaging', item: 'Thermal Handi Containers & Insulated Bags', stockOnHand: '80 pcs', neededForService: '220 pcs', orderRecommendation: 'Emergency courier of +150 thermal containers', status: 'Critical Shortage' },
-      { category: 'Meat & Poultry', item: 'Boneless Fresh Chicken', stockOnHand: '30 kg', neededForService: '68 kg', orderRecommendation: '+40 kg for delivery curry rush', status: 'Order Needed' },
-      { category: 'Seafood', item: 'Chilled Salmon & Squid', stockOnHand: '12 kg', neededForService: '7.5 kg', orderRecommendation: 'Pause next morning seafood delivery', status: 'Sufficient' },
-      { category: 'Bread & Grain', item: 'Basmati & Paratha Flour', stockOnHand: '80 kg', neededForService: '35 kg', orderRecommendation: 'Sufficient stock', status: 'Sufficient' },
+      {
+        category: 'Packaging',
+        item: 'Thermal Handi Containers & Insulated Bags',
+        stockOnHand: '80 pcs',
+        neededForService: '220 pcs',
+        orderRecommendation: 'Emergency courier of +150 thermal containers',
+        status: 'Critical Shortage',
+      },
+      {
+        category: 'Meat & Poultry',
+        item: 'Boneless Fresh Chicken',
+        stockOnHand: '30 kg',
+        neededForService: '68 kg',
+        orderRecommendation: '+40 kg for delivery curry rush',
+        status: 'Order Needed',
+      },
+      {
+        category: 'Seafood',
+        item: 'Chilled Salmon & Squid',
+        stockOnHand: '12 kg',
+        neededForService: '7.5 kg',
+        orderRecommendation: 'Pause next morning seafood delivery',
+        status: 'Sufficient',
+      },
+      {
+        category: 'Bread & Grain',
+        item: 'Basmati & Paratha Flour',
+        stockOnHand: '80 kg',
+        neededForService: '35 kg',
+        orderRecommendation: 'Sufficient stock',
+        status: 'Sufficient',
+      },
     ],
     operationalRecommendations: [
-      { title: 'Activate Dual Packing Dispatch Station', details: 'Convert dine-in bar pass into dedicated delivery staging area to handle Swiggy/Zomato rider congestion.', timing: '12:00 PM & 7:30 PM', station: 'Packaging & Delivery Expedite' },
-      { title: 'Throttle Seafood & Fresh Pasta Prep', details: 'Freeze salmon intake and halve fresh dough kneading to protect food cost margin by 4.2%.', timing: '9:30 AM', station: 'Sauce & Sauté Line' },
-      { title: 'Automated Rider Lead Time Adjustment', details: 'Add +10 mins preparation buffer on delivery aggregators to avoid driver cancellation penalties.', timing: '11:00 AM', station: 'Packaging & Delivery Expedite' },
+      {
+        title: 'Activate Dual Packing Dispatch Station',
+        details:
+          'Convert dine-in bar pass into dedicated delivery staging area to handle Swiggy/Zomato rider congestion.',
+        timing: '12:00 PM & 7:30 PM',
+        station: 'Packaging & Delivery Expedite',
+      },
+      {
+        title: 'Throttle Seafood & Fresh Pasta Prep',
+        details:
+          'Freeze salmon intake and halve fresh dough kneading to protect food cost margin by 4.2%.',
+        timing: '9:30 AM',
+        station: 'Sauce & Sauté Line',
+      },
+      {
+        title: 'Automated Rider Lead Time Adjustment',
+        details:
+          'Add +10 mins preparation buffer on delivery aggregators to avoid driver cancellation penalties.',
+        timing: '11:00 AM',
+        station: 'Packaging & Delivery Expedite',
+      },
     ],
   },
   festival: {
     scenarioKey: 'festival',
     scenarioName: 'Festival & Banquet Season (Diwali / New Year)',
-    scenarioDescription: 'Large family parties, corporate group bookings, pre-ordered party packs, and maximum seat occupancy.',
+    scenarioDescription:
+      'Large family parties, corporate group bookings, pre-ordered party packs, and maximum seat occupancy.',
     footfallMultiplier: 2.2,
     expectedCovers: 530,
     deliveryShare: 35,
@@ -375,15 +522,61 @@ export const RESTAURANT_SCENARIO_FORECASTS: Record<string, ScenarioForecast> = {
       },
     ],
     inventorySummary: [
-      { category: 'Meat & Poultry', item: 'Fresh Marinated Chicken', stockOnHand: '40 kg', neededForService: '116 kg', orderRecommendation: 'Split vendor shipment: 60 kg at 7 AM, 30 kg at 3 PM', status: 'Critical Shortage' },
-      { category: 'Dairy & Ghee', item: 'Pure Desi Ghee & Fresh Cream', stockOnHand: '25 kg', neededForService: '45 kg', orderRecommendation: '+25 kg bulk canister procurement', status: 'Critical Shortage' },
-      { category: 'Seafood', item: 'Atlantic Salmon & Calamari', stockOnHand: '8 kg', neededForService: '39 kg', orderRecommendation: 'Reserve guaranteed allocation with seafood wholesaler', status: 'Critical Shortage' },
-      { category: 'Packaging', item: 'Festival Family Boxes & Bags', stockOnHand: '120 pcs', neededForService: '300 pcs', orderRecommendation: '+200 Festival Special Packaging Kits', status: 'Order Needed' },
+      {
+        category: 'Meat & Poultry',
+        item: 'Fresh Marinated Chicken',
+        stockOnHand: '40 kg',
+        neededForService: '116 kg',
+        orderRecommendation: 'Split vendor shipment: 60 kg at 7 AM, 30 kg at 3 PM',
+        status: 'Critical Shortage',
+      },
+      {
+        category: 'Dairy & Ghee',
+        item: 'Pure Desi Ghee & Fresh Cream',
+        stockOnHand: '25 kg',
+        neededForService: '45 kg',
+        orderRecommendation: '+25 kg bulk canister procurement',
+        status: 'Critical Shortage',
+      },
+      {
+        category: 'Seafood',
+        item: 'Atlantic Salmon & Calamari',
+        stockOnHand: '8 kg',
+        neededForService: '39 kg',
+        orderRecommendation: 'Reserve guaranteed allocation with seafood wholesaler',
+        status: 'Critical Shortage',
+      },
+      {
+        category: 'Packaging',
+        item: 'Festival Family Boxes & Bags',
+        stockOnHand: '120 pcs',
+        neededForService: '300 pcs',
+        orderRecommendation: '+200 Festival Special Packaging Kits',
+        status: 'Order Needed',
+      },
     ],
     operationalRecommendations: [
-      { title: 'Full Kitchen Staff Surge & Split Shifts', details: 'Deploy all 6 senior line chefs across double active kitchen passes with zero split break during 1 PM - 10 PM.', timing: 'All Day', station: 'Butchery & Marination' },
-      { title: 'Banquet Table Pre-Setting', details: 'Pre-set shared appetizer dipping sauces and tableware 45 mins prior to party check-ins.', timing: '12:00 PM & 6:30 PM', station: 'Packaging & Delivery Expedite' },
-      { title: 'Emergency Supplier Hot-Line', details: 'Activate on-call backup dairy & poultry suppliers on 45-min delivery SLA for unexpected evening walk-ins.', timing: '4:00 PM', station: 'Sauce & Sauté Line' },
+      {
+        title: 'Full Kitchen Staff Surge & Split Shifts',
+        details:
+          'Deploy all 6 senior line chefs across double active kitchen passes with zero split break during 1 PM - 10 PM.',
+        timing: 'All Day',
+        station: 'Butchery & Marination',
+      },
+      {
+        title: 'Banquet Table Pre-Setting',
+        details:
+          'Pre-set shared appetizer dipping sauces and tableware 45 mins prior to party check-ins.',
+        timing: '12:00 PM & 6:30 PM',
+        station: 'Packaging & Delivery Expedite',
+      },
+      {
+        title: 'Emergency Supplier Hot-Line',
+        details:
+          'Activate on-call backup dairy & poultry suppliers on 45-min delivery SLA for unexpected evening walk-ins.',
+        timing: '4:00 PM',
+        station: 'Sauce & Sauté Line',
+      },
     ],
   },
 };
@@ -402,16 +595,70 @@ export const RESTAURANT_BI_DATA = {
     orderAccuracy: '99.4%',
   },
   menuProfitabilityMatrix: [
-    { name: 'Dum Biryani', classification: 'Star (High Volume, High Margin)', margin: '71%', popularity: 'Very High', action: 'Promote as flagship platter' },
-    { name: 'Smoked Butter Chicken', classification: 'Star (High Volume, High Margin)', margin: '72%', popularity: 'Very High', action: 'Upsell with garlic butter parathas' },
-    { name: 'Charcoal Salmon', classification: 'Opportunity (High Margin, Moderate Volume)', margin: '59%', popularity: 'Moderate', action: 'Bundle with weekend wine pairing' },
-    { name: 'Truffle Fettuccine', classification: 'Workhorse (Consistent Volume)', margin: '68%', popularity: 'High', action: 'Standardize par-cooked pasta nests' },
-    { name: 'Artisan Lamb Shank', classification: 'Dog (Low Volume, High Spoilage Risk)', margin: '48%', popularity: 'Low', action: 'Replace with braised lamb rogan josh' },
+    {
+      name: 'Dum Biryani',
+      classification: 'Star (High Volume, High Margin)',
+      margin: '71%',
+      popularity: 'Very High',
+      action: 'Promote as flagship platter',
+    },
+    {
+      name: 'Smoked Butter Chicken',
+      classification: 'Star (High Volume, High Margin)',
+      margin: '72%',
+      popularity: 'Very High',
+      action: 'Upsell with garlic butter parathas',
+    },
+    {
+      name: 'Charcoal Salmon',
+      classification: 'Opportunity (High Margin, Moderate Volume)',
+      margin: '59%',
+      popularity: 'Moderate',
+      action: 'Bundle with weekend wine pairing',
+    },
+    {
+      name: 'Truffle Fettuccine',
+      classification: 'Workhorse (Consistent Volume)',
+      margin: '68%',
+      popularity: 'High',
+      action: 'Standardize par-cooked pasta nests',
+    },
+    {
+      name: 'Artisan Lamb Shank',
+      classification: 'Dog (Low Volume, High Spoilage Risk)',
+      margin: '48%',
+      popularity: 'Low',
+      action: 'Replace with braised lamb rogan josh',
+    },
   ],
   multiOutletSync: [
-    { outlet: 'Powai High Street (Flagship)', coversToday: 380, wastagePercent: '1.9%', recipeCompliance: '99.2%', healthScore: 'A+' },
-    { outlet: 'Bandra West (Bistro & Bar)', coversToday: 420, wastagePercent: '2.3%', recipeCompliance: '98.5%', healthScore: 'A' },
-    { outlet: 'Lower Parel (Commercial Hub)', coversToday: 490, wastagePercent: '2.8%', recipeCompliance: '97.9%', healthScore: 'A' },
-    { outlet: 'Juhu Beachfront', coversToday: 340, wastagePercent: '2.1%', recipeCompliance: '99.0%', healthScore: 'A+' },
+    {
+      outlet: 'Powai High Street (Flagship)',
+      coversToday: 380,
+      wastagePercent: '1.9%',
+      recipeCompliance: '99.2%',
+      healthScore: 'A+',
+    },
+    {
+      outlet: 'Bandra West (Bistro & Bar)',
+      coversToday: 420,
+      wastagePercent: '2.3%',
+      recipeCompliance: '98.5%',
+      healthScore: 'A',
+    },
+    {
+      outlet: 'Lower Parel (Commercial Hub)',
+      coversToday: 490,
+      wastagePercent: '2.8%',
+      recipeCompliance: '97.9%',
+      healthScore: 'A',
+    },
+    {
+      outlet: 'Juhu Beachfront',
+      coversToday: 340,
+      wastagePercent: '2.1%',
+      recipeCompliance: '99.0%',
+      healthScore: 'A+',
+    },
   ],
 };

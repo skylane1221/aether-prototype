@@ -48,7 +48,8 @@ export const RETAIL_DEMO_PRODUCTS: RetailProductDemoItem[] = [
     recommendedReorder: 60,
     supplier: 'AeroStep Athletics (Hub Mumbai)',
     leadTimeDays: 2,
-    suggestedAction: 'Dispatch emergency 60-unit EDI purchase order; route 15 units directly to high-traffic flagship store.',
+    suggestedAction:
+      'Dispatch emergency 60-unit EDI purchase order; route 15 units directly to high-traffic flagship store.',
     unitCost: '₹4,200',
     projectedRevenueAtRisk: '₹3,22,966',
     stockTrajectory: [
@@ -62,10 +63,12 @@ export const RETAIL_DEMO_PRODUCTS: RetailProductDemoItem[] = [
       { day: '+7 Days', projectedStock: 33, unassistedStock: 0 },
     ],
     aetherDiagnosis: {
-      rootCause: 'Regional marathon registration surge and local weekend runner club promotion boosted demand by +38%.',
+      rootCause:
+        'Regional marathon registration surge and local weekend runner club promotion boosted demand by +38%.',
       velocityChange: '+38% 7-day velocity acceleration',
       leadTimeBuffer: '2-day expedited supplier SLA protects against 4-day stockout gap',
-      crossLocationStock: '2 units in suburban outlet with zero sales in 14 days flagged for inter-store transfer',
+      crossLocationStock:
+        '2 units in suburban outlet with zero sales in 14 days flagged for inter-store transfer',
     },
     generatedReorderPO: {
       poNumber: 'PO-RET-2026-8841',
@@ -91,7 +94,8 @@ export const RETAIL_DEMO_PRODUCTS: RetailProductDemoItem[] = [
     recommendedReorder: 80,
     supplier: 'Verde Organics Mill (Tirupur)',
     leadTimeDays: 3,
-    suggestedAction: 'Generate batch reorder of 80 units; trigger automated restock notification for 18 wishlist users.',
+    suggestedAction:
+      'Generate batch reorder of 80 units; trigger automated restock notification for 18 wishlist users.',
     unitCost: '₹1,350',
     projectedRevenueAtRisk: '₹1,15,465',
     stockTrajectory: [
@@ -105,10 +109,12 @@ export const RETAIL_DEMO_PRODUCTS: RetailProductDemoItem[] = [
       { day: '+7 Days', projectedStock: 60, unassistedStock: 0 },
     ],
     aetherDiagnosis: {
-      rootCause: 'Sudden temperature drop across northern metropolitan zones and social influencer tag drove cart additions.',
+      rootCause:
+        'Sudden temperature drop across northern metropolitan zones and social influencer tag drove cart additions.',
       velocityChange: '+28% seasonal demand shift',
       leadTimeBuffer: '3-day production window synchronized before weekend footfall surge',
-      crossLocationStock: 'Stock balanced across 3 offline stores with unified online availability buffer',
+      crossLocationStock:
+        'Stock balanced across 3 offline stores with unified online availability buffer',
     },
     generatedReorderPO: {
       poNumber: 'PO-RET-2026-8842',
@@ -134,7 +140,8 @@ export const RETAIL_DEMO_PRODUCTS: RetailProductDemoItem[] = [
     recommendedReorder: 40,
     supplier: 'Artisan Goods Workshop',
     leadTimeDays: 2,
-    suggestedAction: 'Issue immediate 40-unit purchase trigger; lock in supplier pre-order discount.',
+    suggestedAction:
+      'Issue immediate 40-unit purchase trigger; lock in supplier pre-order discount.',
     unitCost: '₹2,900',
     projectedRevenueAtRisk: '₹1,51,778',
     stockTrajectory: [
@@ -148,7 +155,8 @@ export const RETAIL_DEMO_PRODUCTS: RetailProductDemoItem[] = [
       { day: '+7 Days', projectedStock: 25, unassistedStock: 0 },
     ],
     aetherDiagnosis: {
-      rootCause: 'Corporate gifting season and high product page conversion (6.8%) creating rapid stock depletion.',
+      rootCause:
+        'Corporate gifting season and high product page conversion (6.8%) creating rapid stock depletion.',
       velocityChange: '+44% conversion lift',
       leadTimeBuffer: 'Critical replenishment before weekend high-margin shopping traffic',
       crossLocationStock: 'Zero surplus inventory in secondary hubs',
@@ -177,7 +185,8 @@ export const RETAIL_DEMO_PRODUCTS: RetailProductDemoItem[] = [
     recommendedReorder: 0,
     supplier: 'SoundWave Global',
     leadTimeDays: 5,
-    suggestedAction: 'Pause replenishment; launch 12% dynamic bundle promotion with laptop sleeve to accelerate sell-through.',
+    suggestedAction:
+      'Pause replenishment; launch 12% dynamic bundle promotion with laptop sleeve to accelerate sell-through.',
     unitCost: '₹9,800',
     projectedRevenueAtRisk: '₹4,70,400 (Capital Tied)',
     stockTrajectory: [
@@ -191,7 +200,8 @@ export const RETAIL_DEMO_PRODUCTS: RetailProductDemoItem[] = [
       { day: '+7 Days', projectedStock: 24, unassistedStock: 41 },
     ],
     aetherDiagnosis: {
-      rootCause: '60 days of holding inventory with decelerating organic demand after initial product launch peak.',
+      rootCause:
+        '60 days of holding inventory with decelerating organic demand after initial product launch peak.',
       velocityChange: '-32% organic velocity slowdown',
       leadTimeBuffer: 'Zero reorder needed; working capital redeployment recommended',
       crossLocationStock: 'Rebalance 15 units to high-tech downtown experiential showroom',
@@ -339,7 +349,8 @@ export const RETAIL_BI_DATA = {
       stockOnHand: 48,
       daysOfRunway: '60+ Days',
       financialImpact: '₹4,70,400 capital tied up',
-      prescribedFix: 'Halt restock; launch 12% bundle discount with laptop sleeves to liquidate stock.',
+      prescribedFix:
+        'Halt restock; launch 12% bundle discount with laptop sleeves to liquidate stock.',
     },
     {
       name: 'Merino Wool Sweater — Charcoal (XL)',
@@ -349,23 +360,97 @@ export const RETAIL_BI_DATA = {
       stockOnHand: 26,
       daysOfRunway: '35 Days',
       financialImpact: '₹1,18,000 margin risk',
-      prescribedFix: 'Early targeted personalized discount to frequent knitwear buyers before seasonal change.',
+      prescribedFix:
+        'Early targeted personalized discount to frequent knitwear buyers before seasonal change.',
     },
   ] as RetailBiAtRiskProduct[],
   demandTrend: [
-    { day: 'Mon', apparelForecast: 42, footwearForecast: 38, accessoriesForecast: 22, electronicsForecast: 10, actuals: 110 },
-    { day: 'Tue', apparelForecast: 48, footwearForecast: 40, accessoriesForecast: 24, electronicsForecast: 11, actuals: 122 },
-    { day: 'Wed', apparelForecast: 55, footwearForecast: 45, accessoriesForecast: 28, electronicsForecast: 13, actuals: 139 },
-    { day: 'Thu', apparelForecast: 68, footwearForecast: 58, accessoriesForecast: 34, electronicsForecast: 15, actuals: 172 },
-    { day: 'Fri', apparelForecast: 92, footwearForecast: 84, accessoriesForecast: 48, electronicsForecast: 22, actuals: 242 },
-    { day: 'Sat', apparelForecast: 140, footwearForecast: 128, accessoriesForecast: 76, electronicsForecast: 34, actuals: 374 },
-    { day: 'Sun', apparelForecast: 125, footwearForecast: 115, accessoriesForecast: 68, electronicsForecast: 30, actuals: 334 },
+    {
+      day: 'Mon',
+      apparelForecast: 42,
+      footwearForecast: 38,
+      accessoriesForecast: 22,
+      electronicsForecast: 10,
+      actuals: 110,
+    },
+    {
+      day: 'Tue',
+      apparelForecast: 48,
+      footwearForecast: 40,
+      accessoriesForecast: 24,
+      electronicsForecast: 11,
+      actuals: 122,
+    },
+    {
+      day: 'Wed',
+      apparelForecast: 55,
+      footwearForecast: 45,
+      accessoriesForecast: 28,
+      electronicsForecast: 13,
+      actuals: 139,
+    },
+    {
+      day: 'Thu',
+      apparelForecast: 68,
+      footwearForecast: 58,
+      accessoriesForecast: 34,
+      electronicsForecast: 15,
+      actuals: 172,
+    },
+    {
+      day: 'Fri',
+      apparelForecast: 92,
+      footwearForecast: 84,
+      accessoriesForecast: 48,
+      electronicsForecast: 22,
+      actuals: 242,
+    },
+    {
+      day: 'Sat',
+      apparelForecast: 140,
+      footwearForecast: 128,
+      accessoriesForecast: 76,
+      electronicsForecast: 34,
+      actuals: 374,
+    },
+    {
+      day: 'Sun',
+      apparelForecast: 125,
+      footwearForecast: 115,
+      accessoriesForecast: 68,
+      electronicsForecast: 30,
+      actuals: 334,
+    },
   ] as RetailBiDemandPoint[],
   stockRiskDistribution: [
-    { label: 'Critical Stockout (< 2 Days)', count: 14, percentage: '4.8%', color: 'bg-rose-500', text: 'text-rose-400' },
-    { label: 'Reorder Soon (< 5 Days)', count: 32, percentage: '11.0%', color: 'bg-amber-500', text: 'text-amber-400' },
-    { label: 'Optimal Stock Health', count: 228, percentage: '78.6%', color: 'bg-emerald-500', text: 'text-emerald-400' },
-    { label: 'Overstock / Slow-Moving', count: 16, percentage: '5.6%', color: 'bg-indigo-500', text: 'text-indigo-400' },
+    {
+      label: 'Critical Stockout (< 2 Days)',
+      count: 14,
+      percentage: '4.8%',
+      color: 'bg-rose-500',
+      text: 'text-rose-400',
+    },
+    {
+      label: 'Reorder Soon (< 5 Days)',
+      count: 32,
+      percentage: '11.0%',
+      color: 'bg-amber-500',
+      text: 'text-amber-400',
+    },
+    {
+      label: 'Optimal Stock Health',
+      count: 228,
+      percentage: '78.6%',
+      color: 'bg-emerald-500',
+      text: 'text-emerald-400',
+    },
+    {
+      label: 'Overstock / Slow-Moving',
+      count: 16,
+      percentage: '5.6%',
+      color: 'bg-indigo-500',
+      text: 'text-indigo-400',
+    },
   ],
   prescriptions: [
     {
@@ -373,7 +458,8 @@ export const RETAIL_BI_DATA = {
       priority: 'Immediate',
       category: 'Inventory Reorder',
       title: 'Auto-Dispatch 60 Units for Running Shoes (Size 9)',
-      rationale: 'Current stock of 8 units will breach safety threshold within 38 hours based on +38% weekend demand surge.',
+      rationale:
+        'Current stock of 8 units will breach safety threshold within 38 hours based on +38% weekend demand surge.',
       projectedROI: '+₹3.22L Protected Gross Margin',
       actionText: 'Execute Supplier PO via EDI',
     },
@@ -382,7 +468,8 @@ export const RETAIL_BI_DATA = {
       priority: 'High',
       category: 'Store Rebalance',
       title: 'Transfer 6 Units of Tan Leather Backpack from Suburban Outlet',
-      rationale: 'Suburban store has zero sell-through in 14 days while Metro Flagship is converting 3.2 units/day.',
+      rationale:
+        'Suburban store has zero sell-through in 14 days while Metro Flagship is converting 3.2 units/day.',
       projectedROI: '+₹41,394 Immediate Cash Recovery',
       actionText: 'Generate Inter-Store Transfer Order',
     },
@@ -391,7 +478,8 @@ export const RETAIL_BI_DATA = {
       priority: 'High',
       category: 'Dynamic Pricing',
       title: 'Deploy 12% Accessory Bundle for Slow-Moving Headphones',
-      rationale: '48 units in stock with 60-day runway; bundle prevents steep end-of-season 40% clearance markdown.',
+      rationale:
+        '48 units in stock with 60-day runway; bundle prevents steep end-of-season 40% clearance markdown.',
       projectedROI: '+18% Higher Realized Margin',
       actionText: 'Activate Promotional Campaign',
     },
@@ -400,7 +488,8 @@ export const RETAIL_BI_DATA = {
       priority: 'Scheduled',
       category: 'Customer Retention',
       title: 'Push Restock Notifications to 64 High-Intent Waitlist Customers',
-      rationale: 'Customers who viewed out-of-stock sizes have 4.6x higher conversion if alerted within 15 minutes of restock.',
+      rationale:
+        'Customers who viewed out-of-stock sizes have 4.6x higher conversion if alerted within 15 minutes of restock.',
       projectedROI: '62% Expected Conversion Rate',
       actionText: 'Queue Omnichannel Notifications',
     },
@@ -427,8 +516,10 @@ export const RETAIL_JOURNEY_STEPS: RetailJourneyStep[] = [
     title: 'Customer Intent',
     stageName: 'Customer',
     subtitle: 'Omnichannel Footfall & Cart Signal',
-    traditionalDrag: 'Customer walks into store or views online catalog, but browsing history and size preferences stay disconnected in fragmented silos.',
-    aetherIntelligence: 'Unifies shopper identity across physical POS, web traffic, wishlist additions, and size-specific engagement telemetry.',
+    traditionalDrag:
+      'Customer walks into store or views online catalog, but browsing history and size preferences stay disconnected in fragmented silos.',
+    aetherIntelligence:
+      'Unifies shopper identity across physical POS, web traffic, wishlist additions, and size-specific engagement telemetry.',
     metricLabel: 'Identity Resolution',
     metricValue: 'Sub-second Match',
     iconName: 'Users',
@@ -439,8 +530,10 @@ export const RETAIL_JOURNEY_STEPS: RetailJourneyStep[] = [
     title: 'Purchase Event',
     stageName: 'Purchase',
     subtitle: 'Point-of-Sale & Checkout Conversion',
-    traditionalDrag: 'Transactions are recorded purely as historic revenue receipts without real-time inventory velocity calculations or size depletion alerts.',
-    aetherIntelligence: 'Instantly processes line-item transaction telemetry, calculating real-time SKU velocity, basket pairings, and remaining size curves.',
+    traditionalDrag:
+      'Transactions are recorded purely as historic revenue receipts without real-time inventory velocity calculations or size depletion alerts.',
+    aetherIntelligence:
+      'Instantly processes line-item transaction telemetry, calculating real-time SKU velocity, basket pairings, and remaining size curves.',
     metricLabel: 'Telemetry Ingest',
     metricValue: '< 50ms Real-Time',
     iconName: 'ShoppingBag',
@@ -451,8 +544,10 @@ export const RETAIL_JOURNEY_STEPS: RetailJourneyStep[] = [
     title: 'Demand Curve',
     stageName: 'Demand',
     subtitle: 'Multi-Factor Predictive Forecasting',
-    traditionalDrag: 'Store managers rely on last year’s spreadsheets or gut-feeling guesswork, failing to anticipate micro-market surges or seasonal shifts.',
-    aetherIntelligence: 'Ingests local weather forecasts, weekend events, social trends, and historical velocity to project precise 7-14 day SKU demand.',
+    traditionalDrag:
+      'Store managers rely on last year’s spreadsheets or gut-feeling guesswork, failing to anticipate micro-market surges or seasonal shifts.',
+    aetherIntelligence:
+      'Ingests local weather forecasts, weekend events, social trends, and historical velocity to project precise 7-14 day SKU demand.',
     metricLabel: 'Forecast Accuracy',
     metricValue: '98.4% Precision',
     iconName: 'TrendingUp',
@@ -463,8 +558,10 @@ export const RETAIL_JOURNEY_STEPS: RetailJourneyStep[] = [
     title: 'Inventory Sync',
     stageName: 'Inventory',
     subtitle: 'Omnichannel Stock Mesh',
-    traditionalDrag: 'Stock in physical retail stores is invisible to online shoppers, causing online stockouts while store shelves sit overstocked.',
-    aetherIntelligence: 'Unified virtual inventory mesh balances physical retail racks, regional warehouses, and return transit into a single live ledger.',
+    traditionalDrag:
+      'Stock in physical retail stores is invisible to online shoppers, causing online stockouts while store shelves sit overstocked.',
+    aetherIntelligence:
+      'Unified virtual inventory mesh balances physical retail racks, regional warehouses, and return transit into a single live ledger.',
     metricLabel: 'Stock Visibility',
     metricValue: '100% Unified Mesh',
     iconName: 'PackageCheck',
@@ -475,8 +572,10 @@ export const RETAIL_JOURNEY_STEPS: RetailJourneyStep[] = [
     title: 'Stock Risk',
     stageName: 'Stock Risk',
     subtitle: 'Early Stockout & Overstock Diagnosis',
-    traditionalDrag: 'Out-of-stock events are only discovered when a customer asks for a missing size; overstock is noticed at end-of-season clearance.',
-    aetherIntelligence: 'Continuous cognitive monitoring calculates exact days of stock runway per SKU/size, raising red flags days before stockouts occur.',
+    traditionalDrag:
+      'Out-of-stock events are only discovered when a customer asks for a missing size; overstock is noticed at end-of-season clearance.',
+    aetherIntelligence:
+      'Continuous cognitive monitoring calculates exact days of stock runway per SKU/size, raising red flags days before stockouts occur.',
     metricLabel: 'Stockout Prevention',
     metricValue: '-81% Stockouts',
     iconName: 'AlertTriangle',
@@ -487,8 +586,10 @@ export const RETAIL_JOURNEY_STEPS: RetailJourneyStep[] = [
     title: 'Autonomous Reorder',
     stageName: 'Reorder',
     subtitle: 'Supplier PO Dispatch & Transfer Routing',
-    traditionalDrag: 'Buyers manually compile weekly purchase orders, leading to delayed orders, supplier lead-time mismatches, and high holding costs.',
-    aetherIntelligence: 'Automatically generates optimal purchase orders, routes inter-store stock transfers, and coordinates supplier delivery schedules.',
+    traditionalDrag:
+      'Buyers manually compile weekly purchase orders, leading to delayed orders, supplier lead-time mismatches, and high holding costs.',
+    aetherIntelligence:
+      'Automatically generates optimal purchase orders, routes inter-store stock transfers, and coordinates supplier delivery schedules.',
     metricLabel: 'PO Generation',
     metricValue: '100% Automated',
     iconName: 'Truck',
@@ -499,8 +600,10 @@ export const RETAIL_JOURNEY_STEPS: RetailJourneyStep[] = [
     title: 'Customer Intelligence',
     stageName: 'Customer Intelligence',
     subtitle: 'Personalized Re-Engagement & Retention',
-    traditionalDrag: 'Lost stockout customers are forgotten with zero automated follow-up when replenishment arrives.',
-    aetherIntelligence: 'Automatically triggers personalized restock alerts, size-matched recommendations, and tailored promotions that turn stockouts into conversions.',
+    traditionalDrag:
+      'Lost stockout customers are forgotten with zero automated follow-up when replenishment arrives.',
+    aetherIntelligence:
+      'Automatically triggers personalized restock alerts, size-matched recommendations, and tailored promotions that turn stockouts into conversions.',
     metricLabel: 'Customer Retention',
     metricValue: '+34% Repurchase',
     iconName: 'Sparkles',

@@ -144,7 +144,9 @@ export const RetailExperience: React.FC<RetailExperienceProps> = ({ industry }) 
                 <Badge variant="primary" size="sm">
                   Core Retail Thesis
                 </Badge>
-                <span className="text-xs font-mono text-sky-400 font-semibold">Autonomous Inventory Orchestration</span>
+                <span className="text-xs font-mono text-sky-400 font-semibold">
+                  Autonomous Inventory Orchestration
+                </span>
               </div>
               <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                 "Prevent inventory problems before they affect sales."
@@ -167,7 +169,8 @@ export const RetailExperience: React.FC<RetailExperienceProps> = ({ industry }) 
                 Stockouts & Blind Overstock
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Manual reorders and ununified store telemetry cause fast-sellers to 86 mid-surge while capital is trapped in slow-movers.
+                Manual reorders and ununified store telemetry cause fast-sellers to 86 mid-surge
+                while capital is trapped in slow-movers.
               </p>
               <span className="text-[10px] font-mono text-rose-400 pt-1 border-t border-rose-500/20">
                 12-18% Lost Sales
@@ -184,7 +187,8 @@ export const RetailExperience: React.FC<RetailExperienceProps> = ({ industry }) 
                 Predictive Velocity Capture
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Anticipate replenishment windows 14 days ahead using store-level sell-through curves and local demand signals.
+                Anticipate replenishment windows 14 days ahead using store-level sell-through curves
+                and local demand signals.
               </p>
               <span className="text-[10px] font-mono text-amber-300 pt-1 border-t border-amber-500/20">
                 14-Day Advance Lead
@@ -197,11 +201,10 @@ export const RetailExperience: React.FC<RetailExperienceProps> = ({ industry }) 
                 <BrainCircuit className="w-3.5 h-3.5 shrink-0" />
                 <span>3. Intelligence</span>
               </div>
-              <h4 className="text-xs font-bold text-white leading-snug">
-                SKU-Level Telemetry
-              </h4>
+              <h4 className="text-xs font-bold text-white leading-snug">SKU-Level Telemetry</h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Synthesizes store checkouts, footfall, lead times, safety stocks, and customer shopping basket affinity.
+                Synthesizes store checkouts, footfall, lead times, safety stocks, and customer
+                shopping basket affinity.
               </p>
               <span className="text-[10px] font-mono text-sky-300 pt-1 border-t border-sky-500/20">
                 Granular Item Mesh
@@ -214,11 +217,10 @@ export const RetailExperience: React.FC<RetailExperienceProps> = ({ industry }) 
                 <Target className="w-3.5 h-3.5 shrink-0" />
                 <span>4. Recommendation</span>
               </div>
-              <h4 className="text-xs font-bold text-white leading-snug">
-                Exact Quantity Orders
-              </h4>
+              <h4 className="text-xs font-bold text-white leading-snug">Exact Quantity Orders</h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Calculates optimal reorder batch sizes, supplier safety thresholds, and inter-store inventory balancing.
+                Calculates optimal reorder batch sizes, supplier safety thresholds, and inter-store
+                inventory balancing.
               </p>
               <span className="text-[10px] font-mono text-indigo-300 pt-1 border-t border-indigo-500/20">
                 Optimal Reorder Units
@@ -231,11 +233,10 @@ export const RetailExperience: React.FC<RetailExperienceProps> = ({ industry }) 
                 <Zap className="w-3.5 h-3.5 shrink-0" />
                 <span>5. Action</span>
               </div>
-              <h4 className="text-xs font-bold text-white leading-snug">
-                Automated PO Dispatch
-              </h4>
+              <h4 className="text-xs font-bold text-white leading-snug">Automated PO Dispatch</h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                1-click EDI supplier dispatch, warehouse truck route scheduling, and markdown triggers for slow inventory.
+                1-click EDI supplier dispatch, warehouse truck route scheduling, and markdown
+                triggers for slow inventory.
               </p>
               <span className="text-[10px] font-mono text-violet-300 pt-1 border-t border-violet-500/20">
                 Zero-Lag Execution
@@ -248,11 +249,10 @@ export const RetailExperience: React.FC<RetailExperienceProps> = ({ industry }) 
                 <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
                 <span>6. Impact</span>
               </div>
-              <h4 className="text-xs font-bold text-white leading-snug">
-                Maximized Sell-Through
-              </h4>
+              <h4 className="text-xs font-bold text-white leading-snug">Maximized Sell-Through</h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Eliminates stockouts, frees trapped working capital, and accelerates gross merchandise profit margins.
+                Eliminates stockouts, frees trapped working capital, and accelerates gross
+                merchandise profit margins.
               </p>
               <span className="text-[10px] font-mono text-emerald-400 font-bold pt-1 border-t border-emerald-500/20">
                 +22% GMV • -65% Stockouts
@@ -289,8 +289,8 @@ export const RetailExperience: React.FC<RetailExperienceProps> = ({ industry }) 
                       item.severity === 'critical'
                         ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
                         : item.severity === 'high'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                        : 'bg-slate-800 text-slate-300'
+                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                          : 'bg-slate-800 text-slate-300'
                     )}
                   >
                     {item.severity}
@@ -306,9 +306,7 @@ export const RetailExperience: React.FC<RetailExperienceProps> = ({ industry }) 
                     <AlertCircle className="w-3 h-3" />
                     <span>Root Cause</span>
                   </div>
-                  <p className="text-xs text-text-secondary leading-relaxed pl-4">
-                    {item.cause}
-                  </p>
+                  <p className="text-xs text-text-secondary leading-relaxed pl-4">{item.cause}</p>
                 </div>
 
                 <div className="pt-1">
@@ -369,7 +367,9 @@ export const RetailExperience: React.FC<RetailExperienceProps> = ({ industry }) 
 
               <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
                 <span className="text-text-muted font-mono">Projected Multiplier:</span>
-                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+                <span className="font-bold font-mono text-emerald-400">
+                  {opp.potentialMultiplier}
+                </span>
               </div>
             </Card>
           ))}
@@ -620,7 +620,8 @@ export const RetailExperience: React.FC<RetailExperienceProps> = ({ industry }) 
             </h2>
 
             <p className="mt-4 text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed max-w-2xl">
-              Eliminate stockouts, optimize purchase order timing, and unify omnichannel stock with an autonomous cognitive engine tailored to your store footprint.
+              Eliminate stockouts, optimize purchase order timing, and unify omnichannel stock with
+              an autonomous cognitive engine tailored to your store footprint.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">

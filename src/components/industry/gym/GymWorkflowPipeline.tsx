@@ -32,8 +32,10 @@ const GYM_STEPS: GymStep[] = [
     title: 'Member Profile',
     subtitle: 'Unified telemetry & joiner onboarding',
     icon: <UserCheck className="w-5 h-5 text-emerald-400" />,
-    traditionalDrag: 'New members enter basic contact info on paper contracts; no historical athletic goal tracking.',
-    aetherIntelligence: 'Constructs a 360° fitness dossier tracking baseline BMI, preferred class times, trainer match, and motivation profile.',
+    traditionalDrag:
+      'New members enter basic contact info on paper contracts; no historical athletic goal tracking.',
+    aetherIntelligence:
+      'Constructs a 360° fitness dossier tracking baseline BMI, preferred class times, trainer match, and motivation profile.',
     metricLabel: 'Member Profiling',
     metricValue: '100% Digital Dossier',
   },
@@ -43,8 +45,10 @@ const GYM_STEPS: GymStep[] = [
     title: 'Activity Stream',
     subtitle: 'Turnstile & workout telemetry',
     icon: <Activity className="w-5 h-5 text-sky-400" />,
-    traditionalDrag: 'Turnstile logs scan timestamps without correlating workout duration, class attendance, or rest intervals.',
-    aetherIntelligence: 'Continuously streams RFID turnstile check-ins, app workout logs, heart-rate zones, and class participation.',
+    traditionalDrag:
+      'Turnstile logs scan timestamps without correlating workout duration, class attendance, or rest intervals.',
+    aetherIntelligence:
+      'Continuously streams RFID turnstile check-ins, app workout logs, heart-rate zones, and class participation.',
     metricLabel: 'Telemetry Resolution',
     metricValue: 'Sub-second Sync',
   },
@@ -54,8 +58,10 @@ const GYM_STEPS: GymStep[] = [
     title: 'Engagement Index',
     subtitle: 'Habit consistency & community bond',
     icon: <Zap className="w-5 h-5 text-amber-400" />,
-    traditionalDrag: 'Clubs measure engagement by total headcounts, missing the gradual decline in individual member visit frequency.',
-    aetherIntelligence: 'Computes dynamic engagement velocity scores, detecting habit breaks when visits drop 25%+ below baseline.',
+    traditionalDrag:
+      'Clubs measure engagement by total headcounts, missing the gradual decline in individual member visit frequency.',
+    aetherIntelligence:
+      'Computes dynamic engagement velocity scores, detecting habit breaks when visits drop 25%+ below baseline.',
     metricLabel: 'Habit Tracking',
     metricValue: '96.2% Precision',
   },
@@ -65,8 +71,10 @@ const GYM_STEPS: GymStep[] = [
     title: 'Risk Modeling',
     subtitle: 'Predictive churn vulnerability',
     icon: <AlertTriangle className="w-5 h-5 text-rose-400" />,
-    traditionalDrag: 'Staff only discover member dissatisfaction when formal cancellation or chargeback requests land at front desk.',
-    aetherIntelligence: 'Forecasts churn vulnerability 45 days in advance using neural activity curve decay modeling.',
+    traditionalDrag:
+      'Staff only discover member dissatisfaction when formal cancellation or chargeback requests land at front desk.',
+    aetherIntelligence:
+      'Forecasts churn vulnerability 45 days in advance using neural activity curve decay modeling.',
     metricLabel: 'Early Warning',
     metricValue: '45 Days Advance Lead',
   },
@@ -76,8 +84,10 @@ const GYM_STEPS: GymStep[] = [
     title: 'Retention Protocol',
     subtitle: 'Autonomous high-touch recovery',
     icon: <ShieldCheck className="w-5 h-5 text-emerald-400" />,
-    traditionalDrag: 'Generic marketing blast emails sent to all members; zero coach personalization or recovery incentive.',
-    aetherIntelligence: 'Triggers assigned coach wellness check-ins, complimentary hydro-massage vouchers, or class VIP priority access.',
+    traditionalDrag:
+      'Generic marketing blast emails sent to all members; zero coach personalization or recovery incentive.',
+    aetherIntelligence:
+      'Triggers assigned coach wellness check-ins, complimentary hydro-massage vouchers, or class VIP priority access.',
     metricLabel: 'Recovery Rate',
     metricValue: '89.4% Cohort Preserved',
   },
@@ -87,8 +97,10 @@ const GYM_STEPS: GymStep[] = [
     title: 'Renewal Lock',
     subtitle: 'Contract & autopay lifecycle',
     icon: <RefreshCw className="w-5 h-5 text-teal-300" />,
-    traditionalDrag: 'Manual phone calls 3 days before expiry; high cancellation rates due to perceived lack of value.',
-    aetherIntelligence: 'Automates 30-day milestone renewal prompts with milestone badge summaries and tailored multi-tier perks.',
+    traditionalDrag:
+      'Manual phone calls 3 days before expiry; high cancellation rates due to perceived lack of value.',
+    aetherIntelligence:
+      'Automates 30-day milestone renewal prompts with milestone badge summaries and tailored multi-tier perks.',
     metricLabel: 'Renewal Uplift',
     metricValue: '+18% Annual LTV',
   },
@@ -124,25 +136,27 @@ export const GymWorkflowPipeline: React.FC = () => {
 
       {/* Visual Flow Indicator */}
       <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between gap-1 overflow-x-auto text-xs font-mono">
-        {['Member', 'Activity', 'Engagement', 'Risk', 'Retention', 'Renewal'].map((step, idx, arr) => (
-          <React.Fragment key={step}>
-            <button
-              onClick={() => setSelectedStep(GYM_STEPS[idx])}
-              className={cn(
-                "flex items-center gap-1.5 px-2.5 py-1 rounded-lg shrink-0 transition-colors cursor-pointer",
-                selectedStep.id === GYM_STEPS[idx]?.id
-                  ? "bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40"
-                  : "text-slate-400 hover:text-white"
+        {['Member', 'Activity', 'Engagement', 'Risk', 'Retention', 'Renewal'].map(
+          (step, idx, arr) => (
+            <React.Fragment key={step}>
+              <button
+                onClick={() => setSelectedStep(GYM_STEPS[idx])}
+                className={cn(
+                  'flex items-center gap-1.5 px-2.5 py-1 rounded-lg shrink-0 transition-colors cursor-pointer',
+                  selectedStep.id === GYM_STEPS[idx]?.id
+                    ? 'bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40'
+                    : 'text-slate-400 hover:text-white'
+                )}
+              >
+                <span className="text-[10px] text-emerald-400 font-bold">0{idx + 1}</span>
+                <span>{step}</span>
+              </button>
+              {idx < arr.length - 1 && (
+                <ChevronRight className="w-3.5 h-3.5 text-slate-600 shrink-0" />
               )}
-            >
-              <span className="text-[10px] text-emerald-400 font-bold">0{idx + 1}</span>
-              <span>{step}</span>
-            </button>
-            {idx < arr.length - 1 && (
-              <ChevronRight className="w-3.5 h-3.5 text-slate-600 shrink-0" />
-            )}
-          </React.Fragment>
-        ))}
+            </React.Fragment>
+          )
+        )}
       </div>
 
       {/* Step Buttons Bar */}
@@ -164,7 +178,9 @@ export const GymWorkflowPipeline: React.FC = () => {
                 <span
                   className={cn(
                     'text-[10px] font-mono font-bold px-1.5 py-0.5 rounded',
-                    isSelected ? 'bg-emerald-500/20 text-emerald-300' : 'bg-slate-800 text-text-muted'
+                    isSelected
+                      ? 'bg-emerald-500/20 text-emerald-300'
+                      : 'bg-slate-800 text-text-muted'
                   )}
                 >
                   {step.stepNumber}
@@ -172,7 +188,9 @@ export const GymWorkflowPipeline: React.FC = () => {
                 <div
                   className={cn(
                     'p-1 rounded-md transition-colors',
-                    isSelected ? 'bg-emerald-500/10' : 'text-text-muted group-hover:text-text-secondary'
+                    isSelected
+                      ? 'bg-emerald-500/10'
+                      : 'text-text-muted group-hover:text-text-secondary'
                   )}
                 >
                   {step.icon}
@@ -223,8 +241,12 @@ export const GymWorkflowPipeline: React.FC = () => {
             <p className="text-xs sm:text-sm text-text-muted">{selectedStep.subtitle}</p>
 
             <div className="pt-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800">
-              <span className="text-[10px] font-mono text-text-muted uppercase block">Retention Multiplier</span>
-              <span className="text-emerald-300 font-bold font-mono text-sm">{selectedStep.metricLabel}: {selectedStep.metricValue}</span>
+              <span className="text-[10px] font-mono text-text-muted uppercase block">
+                Retention Multiplier
+              </span>
+              <span className="text-emerald-300 font-bold font-mono text-sm">
+                {selectedStep.metricLabel}: {selectedStep.metricValue}
+              </span>
             </div>
           </div>
 

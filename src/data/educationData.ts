@@ -2,7 +2,8 @@ export interface StudentInquiryProfile {
   id: string;
   studentName: string;
   avatarInitials: string;
-  background: 'Working Professional' | 'Recent Graduate' | 'Career Switcher' | 'Corporate Training Lead';
+  background:
+    'Working Professional' | 'Recent Graduate' | 'Career Switcher' | 'Corporate Training Lead';
   inquiryChannel: 'Web Form' | 'WhatsApp Inbound' | 'LinkedIn Campaign' | 'Campus Walk-In';
   targetProgram: string;
   targetDegree: string;
@@ -189,9 +190,33 @@ export const EDUCATION_BI_DATA = {
     atRiskStudentsRecovered: '418 Learners',
   },
   counselorPerformance: [
-    { advisor: 'Dr. Sarah Lin (Data & AI)', inquiriesHandled: 142, responseTimeAvg: '< 3 mins', enrollmentYield: '34.2%', satisfaction: '98.5%' },
-    { advisor: 'Marcus Brody (Cloud & DevOps)', inquiriesHandled: 168, responseTimeAvg: '< 4 mins', enrollmentYield: '31.0%', satisfaction: '97.2%' },
-    { advisor: 'Priya Anand (Executive & L&D)', inquiriesHandled: 84, responseTimeAvg: '< 6 mins', enrollmentYield: '42.8%', satisfaction: '99.1%' },
-    { advisor: 'James Taylor (Cyber & Security)', inquiriesHandled: 110, responseTimeAvg: '< 5 mins', enrollmentYield: '28.5%', satisfaction: '96.4%' },
+    {
+      advisor: 'Dr. Sarah Lin (Data & AI)',
+      inquiriesHandled: 142,
+      responseTimeAvg: '< 3 mins',
+      enrollmentYield: '34.2%',
+      satisfaction: '98.5%',
+    },
+    {
+      advisor: 'Marcus Brody (Cloud & DevOps)',
+      inquiriesHandled: 168,
+      responseTimeAvg: '< 4 mins',
+      enrollmentYield: '31.0%',
+      satisfaction: '97.2%',
+    },
+    {
+      advisor: 'Priya Anand (Executive & L&D)',
+      inquiriesHandled: 84,
+      responseTimeAvg: '< 6 mins',
+      enrollmentYield: '42.8%',
+      satisfaction: '99.1%',
+    },
+    {
+      advisor: 'James Taylor (Cyber & Security)',
+      inquiriesHandled: 110,
+      responseTimeAvg: '< 5 mins',
+      enrollmentYield: '28.5%',
+      satisfaction: '96.4%',
+    },
   ],
 };

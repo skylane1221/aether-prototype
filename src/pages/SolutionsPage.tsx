@@ -9,15 +9,15 @@ import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
 import { Modal } from '../components/ui/Modal';
-import { 
-  BrainCircuit, 
-  Users, 
-  Workflow, 
-  TrendingUp, 
-  MessageSquare, 
-  ArrowRight, 
-  CheckCircle2, 
-  AlertCircle, 
+import {
+  BrainCircuit,
+  Users,
+  Workflow,
+  TrendingUp,
+  MessageSquare,
+  ArrowRight,
+  CheckCircle2,
+  AlertCircle,
   Sparkles,
   Layers,
   ChevronRight,
@@ -32,7 +32,7 @@ import {
   Hotel,
   Stethoscope,
   Wrench,
-  GraduationCap
+  GraduationCap,
 } from 'lucide-react';
 import { cn } from '../utils/cn';
 
@@ -45,26 +45,57 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
   'Communication Intelligence': <MessageSquare className="w-5 h-5" />,
 };
 
-const CATEGORY_THEMES: Record<string, { badge: string; border: string; text: string; bg: string }> = {
-  'AI Intelligence': { badge: 'bg-cyan-500/10 border-cyan-500/20 text-cyan-400', border: 'border-cyan-500/40', text: 'text-cyan-400', bg: 'from-cyan-950/30' },
-  'Customer Intelligence': { badge: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400', border: 'border-emerald-500/40', text: 'text-emerald-400', bg: 'from-emerald-950/30' },
-  'Operational Intelligence': { badge: 'bg-amber-500/10 border-amber-500/20 text-amber-400', border: 'border-amber-500/40', text: 'text-amber-400', bg: 'from-amber-950/30' },
-  'Workflow Automation': { badge: 'bg-indigo-500/10 border-indigo-500/20 text-indigo-400', border: 'border-indigo-500/40', text: 'text-indigo-400', bg: 'from-indigo-950/30' },
-  'Business Intelligence': { badge: 'bg-sky-500/10 border-sky-500/20 text-sky-400', border: 'border-sky-500/40', text: 'text-sky-400', bg: 'from-sky-950/30' },
-  'Communication Intelligence': { badge: 'bg-rose-500/10 border-rose-500/20 text-rose-400', border: 'border-rose-500/40', text: 'text-rose-400', bg: 'from-rose-950/30' },
-};
+const CATEGORY_THEMES: Record<string, { badge: string; border: string; text: string; bg: string }> =
+  {
+    'AI Intelligence': {
+      badge: 'bg-cyan-500/10 border-cyan-500/20 text-cyan-400',
+      border: 'border-cyan-500/40',
+      text: 'text-cyan-400',
+      bg: 'from-cyan-950/30',
+    },
+    'Customer Intelligence': {
+      badge: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400',
+      border: 'border-emerald-500/40',
+      text: 'text-emerald-400',
+      bg: 'from-emerald-950/30',
+    },
+    'Operational Intelligence': {
+      badge: 'bg-amber-500/10 border-amber-500/20 text-amber-400',
+      border: 'border-amber-500/40',
+      text: 'text-amber-400',
+      bg: 'from-amber-950/30',
+    },
+    'Workflow Automation': {
+      badge: 'bg-indigo-500/10 border-indigo-500/20 text-indigo-400',
+      border: 'border-indigo-500/40',
+      text: 'text-indigo-400',
+      bg: 'from-indigo-950/30',
+    },
+    'Business Intelligence': {
+      badge: 'bg-sky-500/10 border-sky-500/20 text-sky-400',
+      border: 'border-sky-500/40',
+      text: 'text-sky-400',
+      bg: 'from-sky-950/30',
+    },
+    'Communication Intelligence': {
+      badge: 'bg-rose-500/10 border-rose-500/20 text-rose-400',
+      border: 'border-rose-500/40',
+      text: 'text-rose-400',
+      bg: 'from-rose-950/30',
+    },
+  };
 
 const INDUSTRY_ICONS: Record<string, React.ReactNode> = {
   'real-estate': <Building2 className="w-3.5 h-3.5" />,
-  'restaurants': <UtensilsCrossed className="w-3.5 h-3.5" />,
-  'gyms': <Dumbbell className="w-3.5 h-3.5" />,
-  'salons': <Scissors className="w-3.5 h-3.5" />,
-  'cafes': <Coffee className="w-3.5 h-3.5" />,
-  'retail': <ShoppingBag className="w-3.5 h-3.5" />,
-  'hotels': <Hotel className="w-3.5 h-3.5" />,
-  'healthcare': <Stethoscope className="w-3.5 h-3.5" />,
-  'automotive': <Wrench className="w-3.5 h-3.5" />,
-  'education': <GraduationCap className="w-3.5 h-3.5" />,
+  restaurants: <UtensilsCrossed className="w-3.5 h-3.5" />,
+  gyms: <Dumbbell className="w-3.5 h-3.5" />,
+  salons: <Scissors className="w-3.5 h-3.5" />,
+  cafes: <Coffee className="w-3.5 h-3.5" />,
+  retail: <ShoppingBag className="w-3.5 h-3.5" />,
+  hotels: <Hotel className="w-3.5 h-3.5" />,
+  healthcare: <Stethoscope className="w-3.5 h-3.5" />,
+  automotive: <Wrench className="w-3.5 h-3.5" />,
+  education: <GraduationCap className="w-3.5 h-3.5" />,
 };
 
 export const SolutionsPage: React.FC = () => {
@@ -94,19 +125,31 @@ export const SolutionsPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="flex items-center justify-between py-2 border-b border-aether-border-subtle">
           <div className="flex items-center gap-2 text-xs text-text-muted">
-            <Link to="/" className="hover:text-text-primary transition-colors">Home</Link>
+            <Link to="/" className="hover:text-text-primary transition-colors">
+              Home
+            </Link>
             <span>/</span>
             <span className="text-text-primary font-medium">Platform Solutions</span>
           </div>
 
           <div className="flex items-center gap-3">
             <Link to="/industries">
-              <Button variant="ghost" size="sm" rightIcon={<ArrowRight className="w-3.5 h-3.5" />} className="text-xs">
+              <Button
+                variant="ghost"
+                size="sm"
+                rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+                className="text-xs"
+              >
                 Explore 10 Industries
               </Button>
             </Link>
             <Link to="/demos">
-              <Button variant="ghost" size="sm" rightIcon={<ArrowRight className="w-3.5 h-3.5" />} className="text-xs">
+              <Button
+                variant="ghost"
+                size="sm"
+                rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+                className="text-xs"
+              >
                 Central Demo Hub
               </Button>
             </Link>
@@ -148,13 +191,20 @@ export const SolutionsPage: React.FC = () => {
                 Two Views of One Cognitive System
               </div>
               <p className="text-xs text-text-secondary">
-                <strong className="text-text-primary">Solutions</strong> describe our modular capabilities, while <strong className="text-text-primary">Industries</strong> demonstrate their real-world application in specialized operational journeys.
+                <strong className="text-text-primary">Solutions</strong> describe our modular
+                capabilities, while <strong className="text-text-primary">Industries</strong>{' '}
+                demonstrate their real-world application in specialized operational journeys.
               </p>
             </div>
           </div>
 
           <Link to="/industries" className="shrink-0">
-            <Button variant="outline" size="sm" rightIcon={<ArrowRight className="w-3.5 h-3.5" />} className="text-xs">
+            <Button
+              variant="outline"
+              size="sm"
+              rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+              className="text-xs"
+            >
               View Industry Verticals
             </Button>
           </Link>
@@ -177,9 +227,7 @@ export const SolutionsPage: React.FC = () => {
                     : 'bg-slate-900/40 text-text-secondary border-slate-800 hover:border-slate-700 hover:text-text-primary'
                 )}
               >
-                {cat !== 'all' && (
-                  <span className="text-xs">{CATEGORY_ICONS[cat]}</span>
-                )}
+                {cat !== 'all' && <span className="text-xs">{CATEGORY_ICONS[cat]}</span>}
                 <span>{cat === 'all' ? 'All 6 Solution Disciplines' : cat}</span>
               </button>
             );
@@ -197,7 +245,12 @@ export const SolutionsPage: React.FC = () => {
               {/* Category Header */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-800">
                 <div className="flex items-center gap-3">
-                  <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center border', theme.badge)}>
+                  <div
+                    className={cn(
+                      'w-10 h-10 rounded-xl flex items-center justify-center border',
+                      theme.badge
+                    )}
+                  >
                     {CATEGORY_ICONS[catGroup.category]}
                   </div>
                   <div>
@@ -230,14 +283,23 @@ export const SolutionsPage: React.FC = () => {
                       {/* Top Header */}
                       <div className="flex items-start justify-between gap-3">
                         <div>
-                          <span className={cn('text-[10px] font-mono font-bold uppercase tracking-wider block mb-1', theme.text)}>
+                          <span
+                            className={cn(
+                              'text-[10px] font-mono font-bold uppercase tracking-wider block mb-1',
+                              theme.text
+                            )}
+                          >
                             {catGroup.category}
                           </span>
                           <h3 className="text-lg font-bold text-text-primary group-hover:text-sky-300 transition-colors">
                             {sol.name}
                           </h3>
                         </div>
-                        <Badge variant="success" size="sm" className="font-mono text-[10px] shrink-0">
+                        <Badge
+                          variant="success"
+                          size="sm"
+                          className="font-mono text-[10px] shrink-0"
+                        >
                           {sol.impactMetric}
                         </Badge>
                       </div>
@@ -270,9 +332,18 @@ export const SolutionsPage: React.FC = () => {
                           <span>Example Application</span>
                         </div>
                         <div className="text-xs space-y-1 text-text-secondary">
-                          <p><strong className="text-text-primary">Scenario:</strong> {sol.exampleApplication.scenario}</p>
-                          <p><strong className="text-sky-300">Action:</strong> {sol.exampleApplication.action}</p>
-                          <p><strong className="text-emerald-400">Outcome:</strong> {sol.exampleApplication.outcome}</p>
+                          <p>
+                            <strong className="text-text-primary">Scenario:</strong>{' '}
+                            {sol.exampleApplication.scenario}
+                          </p>
+                          <p>
+                            <strong className="text-sky-300">Action:</strong>{' '}
+                            {sol.exampleApplication.action}
+                          </p>
+                          <p>
+                            <strong className="text-emerald-400">Outcome:</strong>{' '}
+                            {sol.exampleApplication.outcome}
+                          </p>
                         </div>
                       </div>
 
@@ -297,7 +368,9 @@ export const SolutionsPage: React.FC = () => {
                             >
                               <div className="flex items-center gap-2 min-w-0">
                                 <span className="text-text-muted group-hover/link:text-sky-400 transition-colors">
-                                  {INDUSTRY_ICONS[ind.slug] || <ChevronRight className="w-3.5 h-3.5" />}
+                                  {INDUSTRY_ICONS[ind.slug] || (
+                                    <ChevronRight className="w-3.5 h-3.5" />
+                                  )}
                                 </span>
                                 <span className="text-xs font-medium text-text-primary truncate">
                                   {ind.name}
@@ -352,12 +425,18 @@ export const SolutionsPage: React.FC = () => {
             {/* Category & Impact Banner */}
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-between gap-4">
               <div>
-                <span className="text-[10px] uppercase font-mono text-text-muted">Solution Discipline</span>
+                <span className="text-[10px] uppercase font-mono text-text-muted">
+                  Solution Discipline
+                </span>
                 <div className="text-sm font-bold text-sky-400">{selectedSolution.category}</div>
               </div>
               <div className="text-right">
-                <span className="text-[10px] uppercase font-mono text-text-muted">Illustrative Benchmark (Simulated Data)</span>
-                <div className="text-xs font-bold font-mono text-emerald-400">{selectedSolution.impactMetric}</div>
+                <span className="text-[10px] uppercase font-mono text-text-muted">
+                  Illustrative Benchmark (Simulated Data)
+                </span>
+                <div className="text-xs font-bold font-mono text-emerald-400">
+                  {selectedSolution.impactMetric}
+                </div>
               </div>
             </div>
 
@@ -377,7 +456,8 @@ export const SolutionsPage: React.FC = () => {
                 2. Operational Problems It Solves
               </h4>
               <div className="p-3 rounded-lg bg-slate-950 border border-rose-500/20 text-xs text-text-secondary mb-2">
-                <strong className="text-text-primary">Primary Focus:</strong> {selectedSolution.problemItAddresses}
+                <strong className="text-text-primary">Primary Focus:</strong>{' '}
+                {selectedSolution.problemItAddresses}
               </div>
               <div className="space-y-1.5">
                 {selectedSolution.problemsItSolves.map((prob, idx) => (
@@ -396,7 +476,10 @@ export const SolutionsPage: React.FC = () => {
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {selectedSolution.keyCapabilities.map((cap, idx) => (
-                  <div key={idx} className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-text-primary flex items-center gap-2 font-mono">
+                  <div
+                    key={idx}
+                    className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-text-primary flex items-center gap-2 font-mono"
+                  >
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                     <span>{cap}</span>
                   </div>
@@ -410,9 +493,18 @@ export const SolutionsPage: React.FC = () => {
                 4. Example Scenario & Outcome
               </h4>
               <div className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5 text-xs">
-                <p><strong className="text-text-primary">Operational Scenario:</strong> {selectedSolution.exampleApplication.scenario}</p>
-                <p><strong className="text-sky-300">Aether Action:</strong> {selectedSolution.exampleApplication.action}</p>
-                <p><strong className="text-emerald-400">Illustrative Outcome:</strong> {selectedSolution.exampleApplication.outcome}</p>
+                <p>
+                  <strong className="text-text-primary">Operational Scenario:</strong>{' '}
+                  {selectedSolution.exampleApplication.scenario}
+                </p>
+                <p>
+                  <strong className="text-sky-300">Aether Action:</strong>{' '}
+                  {selectedSolution.exampleApplication.action}
+                </p>
+                <p>
+                  <strong className="text-emerald-400">Illustrative Outcome:</strong>{' '}
+                  {selectedSolution.exampleApplication.outcome}
+                </p>
               </div>
             </div>
 
@@ -437,9 +529,7 @@ export const SolutionsPage: React.FC = () => {
                         {ind.buttonLabel} <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>
-                    <p className="text-[11px] text-text-muted leading-tight">
-                      {ind.useCase}
-                    </p>
+                    <p className="text-[11px] text-text-muted leading-tight">{ind.useCase}</p>
                   </Link>
                 ))}
               </div>
@@ -450,7 +540,11 @@ export const SolutionsPage: React.FC = () => {
               <Button variant="secondary" onClick={() => setSelectedSolution(null)}>
                 Close
               </Button>
-              <Button variant="primary" onClick={openSolutionModal} rightIcon={<ArrowRight className="w-4 h-4" />}>
+              <Button
+                variant="primary"
+                onClick={openSolutionModal}
+                rightIcon={<ArrowRight className="w-4 h-4" />}
+              >
                 Request Solution Briefing
               </Button>
             </div>
@@ -471,9 +565,12 @@ export const SolutionsPage: React.FC = () => {
             <div className="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-3">
               <Cpu className="w-5 h-5" />
             </div>
-            <h4 className="text-sm font-semibold text-text-primary mb-1">Universal Connector API</h4>
+            <h4 className="text-sm font-semibold text-text-primary mb-1">
+              Universal Connector API
+            </h4>
             <p className="text-xs text-text-secondary leading-relaxed">
-              Standardized two-way ingestion adapters for POS, CRM, ERP, and scheduling software with zero disruption.
+              Standardized two-way ingestion adapters for POS, CRM, ERP, and scheduling software
+              with zero disruption.
             </p>
           </Card>
 
@@ -483,7 +580,8 @@ export const SolutionsPage: React.FC = () => {
             </div>
             <h4 className="text-sm font-semibold text-text-primary mb-1">Asynchronous Event Bus</h4>
             <p className="text-xs text-text-secondary leading-relaxed">
-              Processes high-frequency operational telemetry with sub-50ms latency across multi-location fleets.
+              Processes high-frequency operational telemetry with sub-50ms latency across
+              multi-location fleets.
             </p>
           </Card>
 
@@ -493,7 +591,8 @@ export const SolutionsPage: React.FC = () => {
             </div>
             <h4 className="text-sm font-semibold text-text-primary mb-1">Enterprise Guardrails</h4>
             <p className="text-xs text-text-secondary leading-relaxed">
-              Strict deterministic bounds ensuring all autonomous actions comply with company rules and human review gates.
+              Strict deterministic bounds ensuring all autonomous actions comply with company rules
+              and human review gates.
             </p>
           </Card>
         </div>
@@ -515,4 +614,3 @@ export const SolutionsPage: React.FC = () => {
     </div>
   );
 };
-

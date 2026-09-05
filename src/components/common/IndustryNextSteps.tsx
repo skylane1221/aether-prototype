@@ -36,7 +36,8 @@ export const IndustryNextSteps: React.FC<IndustryNextStepsProps> = ({
               Where would you like to go next?
             </h3>
             <p className="text-xs sm:text-sm text-text-secondary mt-1">
-              Choose your path to test live workflows, review benchmarks, or configure your solution.
+              Choose your path to test live workflows, review benchmarks, or configure your
+              solution.
             </p>
           </div>
 
@@ -69,7 +70,8 @@ export const IndustryNextSteps: React.FC<IndustryNextStepsProps> = ({
                 Run {industryName} Demo
               </h4>
               <p className="text-xs text-text-secondary leading-relaxed mt-1.5">
-                Interact with the 6-stage telemetry and automated orchestration pipeline in our live simulation sandbox.
+                Interact with the 6-stage telemetry and automated orchestration pipeline in our live
+                simulation sandbox.
               </p>
             </div>
             <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs font-semibold text-sky-400">
@@ -94,7 +96,8 @@ export const IndustryNextSteps: React.FC<IndustryNextStepsProps> = ({
                 Calculate ROI & Impact
               </h4>
               <p className="text-xs text-text-secondary leading-relaxed mt-1.5">
-                Review verified industry benchmarks, labor savings estimators, and operational yield models.
+                Review verified industry benchmarks, labor savings estimators, and operational yield
+                models.
               </p>
             </div>
             <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs font-semibold text-emerald-400">
@@ -119,7 +122,8 @@ export const IndustryNextSteps: React.FC<IndustryNextStepsProps> = ({
                 Explore All 10 Verticals
               </h4>
               <p className="text-xs text-text-secondary leading-relaxed mt-1.5">
-                Discover how Aether adapts its cognitive intelligence across dining, fitness, healthcare, hospitality, and retail.
+                Discover how Aether adapts its cognitive intelligence across dining, fitness,
+                healthcare, hospitality, and retail.
               </p>
             </div>
             <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs font-semibold text-text-secondary group-hover:text-text-primary">

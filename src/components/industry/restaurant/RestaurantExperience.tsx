@@ -134,7 +134,9 @@ export const RestaurantExperience: React.FC<RestaurantExperienceProps> = ({ indu
                 <Badge variant="warning" size="sm">
                   Operations & Kitchen Architecture
                 </Badge>
-                <span className="text-xs font-mono text-amber-400 font-semibold">Back-of-House Precision Engine</span>
+                <span className="text-xs font-mono text-amber-400 font-semibold">
+                  Back-of-House Precision Engine
+                </span>
               </div>
               <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                 How Aether Eliminates Food Waste & Kitchen Bottlenecks
@@ -158,7 +160,9 @@ export const RestaurantExperience: React.FC<RestaurantExperienceProps> = ({ indu
                   Volatile Demand & Blind Batch Prep
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
-                  Kitchens prep expensive proteins and simmer sauces based on guesswork. When shift footfall swings unexpectedly, food spoils or high-demand dishes run out (86'd), while dinner rushes choke line stations.
+                  Kitchens prep expensive proteins and simmer sauces based on guesswork. When shift
+                  footfall swings unexpectedly, food spoils or high-demand dishes run out (86'd),
+                  while dinner rushes choke line stations.
                 </p>
               </div>
               <div className="pt-3 border-t border-rose-500/20 flex items-center justify-between text-[11px] font-mono text-rose-300/80">
@@ -174,14 +178,20 @@ export const RestaurantExperience: React.FC<RestaurantExperienceProps> = ({ indu
                   <BrainCircuit className="w-4 h-4 text-amber-400 shrink-0" />
                   <span>Aether Understands</span>
                 </div>
-                <h3 className="text-base font-extrabold text-white">
-                  Real-Time Kitchen Ingestion
-                </h3>
+                <h3 className="text-base font-extrabold text-white">Real-Time Kitchen Ingestion</h3>
                 <p className="text-xs text-slate-300 mt-2 leading-relaxed">
-                  Synthesizes POS order streams, weather shifts, table reservation pacing, and shelf-life horizons:
+                  Synthesizes POS order streams, weather shifts, table reservation pacing, and
+                  shelf-life horizons:
                 </p>
                 <div className="mt-3 flex flex-wrap gap-1.5">
-                  {['Item Order Velocity', 'Prep Shelf-Life Limits', 'Weather & Rain Multipliers', 'Reservation Covers', 'Delivery Surge Signals', 'Station Cook Times'].map((attr, i) => (
+                  {[
+                    'Item Order Velocity',
+                    'Prep Shelf-Life Limits',
+                    'Weather & Rain Multipliers',
+                    'Reservation Covers',
+                    'Delivery Surge Signals',
+                    'Station Cook Times',
+                  ].map((attr, i) => (
                     <span
                       key={attr}
                       className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-amber-500/10 border border-amber-500/25 text-amber-300"
@@ -204,9 +214,7 @@ export const RestaurantExperience: React.FC<RestaurantExperienceProps> = ({ indu
                   <Target className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span>Aether Recommends</span>
                 </div>
-                <h3 className="text-base font-extrabold text-white">
-                  Back-of-House Directives
-                </h3>
+                <h3 className="text-base font-extrabold text-white">Back-of-House Directives</h3>
                 <p className="text-xs text-slate-300 mt-2 leading-relaxed">
                   Generates precise prep par sheets, purchase orders, and station cadence commands:
                 </p>
@@ -218,9 +226,14 @@ export const RestaurantExperience: React.FC<RestaurantExperienceProps> = ({ indu
                     'Real-Time Wastage Alerts (Expiry Warning)',
                     'Menu Profitability & Prime Cost Actions',
                   ].map((rec, i) => (
-                    <div key={rec} className="flex items-center gap-2 text-[11px] font-mono text-emerald-300">
+                    <div
+                      key={rec}
+                      className="flex items-center gap-2 text-[11px] font-mono text-emerald-300"
+                    >
                       <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
-                      <span>{i + 1}. {rec}</span>
+                      <span>
+                        {i + 1}. {rec}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -246,18 +259,23 @@ export const RestaurantExperience: React.FC<RestaurantExperienceProps> = ({ indu
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {industry.challenges.map((item, idx) => (
-            <Card key={item.id} className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all">
+            <Card
+              key={item.id}
+              className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all"
+            >
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-slate-800">
-                  <span className="text-[10px] font-mono text-amber-400 font-bold">Problem 0{idx + 1}</span>
+                  <span className="text-[10px] font-mono text-amber-400 font-bold">
+                    Problem 0{idx + 1}
+                  </span>
                   <span
                     className={cn(
                       'text-[9px] uppercase font-mono px-2 py-0.5 rounded font-bold',
                       item.severity === 'critical'
                         ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
                         : item.severity === 'high'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                        : 'bg-slate-800 text-slate-300'
+                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                          : 'bg-slate-800 text-slate-300'
                     )}
                   >
                     {item.severity}
@@ -273,9 +291,7 @@ export const RestaurantExperience: React.FC<RestaurantExperienceProps> = ({ indu
                     <AlertCircle className="w-3 h-3" />
                     <span>Root Cause</span>
                   </div>
-                  <p className="text-xs text-text-secondary leading-relaxed pl-4">
-                    {item.cause}
-                  </p>
+                  <p className="text-xs text-text-secondary leading-relaxed pl-4">{item.cause}</p>
                 </div>
 
                 <div className="pt-1">
@@ -305,7 +321,10 @@ export const RestaurantExperience: React.FC<RestaurantExperienceProps> = ({ indu
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {industry.opportunities.map((opp, idx) => (
-            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card">
+            <Card
+              key={idx}
+              className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card"
+            >
               <div className="space-y-4">
                 <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
                   <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
@@ -333,7 +352,9 @@ export const RestaurantExperience: React.FC<RestaurantExperienceProps> = ({ indu
 
               <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
                 <span className="text-text-muted font-mono">Projected Multiplier:</span>
-                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+                <span className="font-bold font-mono text-emerald-400">
+                  {opp.potentialMultiplier}
+                </span>
               </div>
             </Card>
           ))}
@@ -352,7 +373,10 @@ export const RestaurantExperience: React.FC<RestaurantExperienceProps> = ({ indu
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {industry.solutionMappings.map((mapping, idx) => (
-            <Card key={idx} className="p-5 sm:p-6 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80 hover:border-amber-500/40 transition-all">
+            <Card
+              key={idx}
+              className="p-5 sm:p-6 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80 hover:border-amber-500/40 transition-all"
+            >
               <div className="space-y-3">
                 <div className="flex items-center justify-between mb-1">
                   <Badge variant="neutral" size="sm" className="font-mono text-[10px]">
@@ -572,7 +596,8 @@ export const RestaurantExperience: React.FC<RestaurantExperienceProps> = ({ indu
             </h2>
 
             <p className="mt-4 text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed max-w-2xl">
-              Eliminate food waste, optimize kitchen prep schedules, and synchronize dining room pacing with an autonomous cognitive engine tailored to your restaurant footprint.
+              Eliminate food waste, optimize kitchen prep schedules, and synchronize dining room
+              pacing with an autonomous cognitive engine tailored to your restaurant footprint.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">

@@ -30,29 +30,19 @@ cd "Aether Prototype"
 npm install
 ```
 
-### Development
+### Development Scripts
 
-Run the local development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Build
-
-Create an optimized production build:
-
-```bash
-npm run build
-```
-
-Preview the production build locally:
-
-```bash
-npm run preview
-```
+| Command                 | Action                                                          |
+| :---------------------- | :-------------------------------------------------------------- |
+| `npm run dev`           | Starts the Vite local development server with HMR               |
+| `npm run lint`          | Runs ESLint on project source files                             |
+| `npm run typecheck`     | Validates TypeScript types across the codebase (`tsc --noEmit`) |
+| `npm run test`          | Runs unit and integration tests using Vitest                    |
+| `npm run test:coverage` | Generates a Vitest code coverage report with V8                 |
+| `npm run build`         | Compiles TypeScript and builds production assets                |
+| `npm run preview`       | Locally serves the production build                             |
+| `npm run format`        | Automatically formats files using Prettier                      |
+| `npm run format:check`  | Checks formatting without writing changes                       |
 
 ## 📁 Project Structure
 

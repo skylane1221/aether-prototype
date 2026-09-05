@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  GraduationCap, 
-  BookOpen, 
-  Calendar, 
-  Clock, 
-  Sparkles, 
-  CheckCircle2, 
-  Send, 
-  MessageSquare, 
-  ShieldCheck, 
-  Target, 
+import {
+  GraduationCap,
+  BookOpen,
+  Calendar,
+  Clock,
+  Sparkles,
+  CheckCircle2,
+  Send,
+  MessageSquare,
+  ShieldCheck,
+  Target,
   Award,
   Users,
-  Briefcase
+  Briefcase,
 } from 'lucide-react';
 import { Card } from '../../ui/Card';
 import { Badge } from '../../ui/Badge';
@@ -58,7 +58,10 @@ export const EducationInquiryDemo: React.FC = () => {
             SIMULATED DEMO
           </Badge>
           <span className="text-xs font-mono text-text-muted">
-            Signature Journey: <strong className="text-rose-300">Student Inquiry → Requirement → Course Match → Follow-up</strong>
+            Signature Journey:{' '}
+            <strong className="text-rose-300">
+              Student Inquiry → Requirement → Course Match → Follow-up
+            </strong>
           </span>
         </div>
 
@@ -94,8 +97,8 @@ export const EducationInquiryDemo: React.FC = () => {
             i.priorityTier === 'High Priority (Immediate Action)'
               ? 'bg-rose-500/20 text-rose-300 border-rose-500/40'
               : i.priorityTier === 'Warm Candidate'
-              ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
-              : 'bg-purple-500/20 text-purple-300 border-purple-500/40';
+                ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                : 'bg-purple-500/20 text-purple-300 border-purple-500/40';
 
           return (
             <button
@@ -109,8 +112,12 @@ export const EducationInquiryDemo: React.FC = () => {
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-[10px] font-mono text-zinc-400 font-semibold">{i.background}</span>
-                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded border ${priorityBadge}`}>
+                  <span className="text-[10px] font-mono text-zinc-400 font-semibold">
+                    {i.background}
+                  </span>
+                  <span
+                    className={`text-[10px] font-mono px-2 py-0.5 rounded border ${priorityBadge}`}
+                  >
                     {i.leadPriorityScore}/100 Priority
                   </span>
                 </div>
@@ -125,7 +132,9 @@ export const EducationInquiryDemo: React.FC = () => {
 
               <div className="mt-3 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
                 <span className="text-zinc-400 font-mono text-[11px]">{i.inquiryChannel}</span>
-                <span className="text-rose-400 font-mono font-bold text-[11px]">{i.matchedCourses.length} Matched</span>
+                <span className="text-rose-400 font-mono font-bold text-[11px]">
+                  {i.matchedCourses.length} Matched
+                </span>
               </div>
             </button>
           );
@@ -148,12 +157,17 @@ export const EducationInquiryDemo: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-2">
                     <h3 className="text-lg font-bold text-white">{inquiry.studentName}</h3>
-                    <Badge variant="primary" size="sm" className="text-[10px] bg-rose-500/20 text-rose-300 border-rose-500/30">
+                    <Badge
+                      variant="primary"
+                      size="sm"
+                      className="text-[10px] bg-rose-500/20 text-rose-300 border-rose-500/30"
+                    >
                       {inquiry.priorityTier.split(' (')[0]}
                     </Badge>
                   </div>
                   <p className="text-xs text-zinc-400">
-                    Background: <span className="text-zinc-200">{inquiry.background}</span> • Channel: <span className="text-zinc-300">{inquiry.inquiryChannel}</span>
+                    Background: <span className="text-zinc-200">{inquiry.background}</span> •
+                    Channel: <span className="text-zinc-300">{inquiry.inquiryChannel}</span>
                   </p>
                 </div>
               </div>
@@ -162,11 +176,17 @@ export const EducationInquiryDemo: React.FC = () => {
               <div className="flex items-center gap-3 text-right">
                 <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/5">
                   <div className="text-[10px] text-zinc-400 uppercase font-mono">Lead Score</div>
-                  <div className="text-xs font-bold text-rose-400 font-mono">{inquiry.leadPriorityScore}/100</div>
+                  <div className="text-xs font-bold text-rose-400 font-mono">
+                    {inquiry.leadPriorityScore}/100
+                  </div>
                 </div>
                 <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/5">
-                  <div className="text-[10px] text-zinc-400 uppercase font-mono">Target Program</div>
-                  <div className="text-xs font-bold text-white font-mono">{inquiry.targetDegree}</div>
+                  <div className="text-[10px] text-zinc-400 uppercase font-mono">
+                    Target Program
+                  </div>
+                  <div className="text-xs font-bold text-white font-mono">
+                    {inquiry.targetDegree}
+                  </div>
                 </div>
               </div>
             </div>
@@ -206,8 +226,12 @@ export const EducationInquiryDemo: React.FC = () => {
                       <Clock className="w-3 h-3 text-rose-400" />
                       Format & Timeline
                     </span>
-                    <p className="text-xs font-bold text-white pt-0.5">{inquiry.requirements.formatPreference}</p>
-                    <span className="text-[11px] text-rose-300 font-mono">{inquiry.requirements.timeline}</span>
+                    <p className="text-xs font-bold text-white pt-0.5">
+                      {inquiry.requirements.formatPreference}
+                    </p>
+                    <span className="text-[11px] text-rose-300 font-mono">
+                      {inquiry.requirements.timeline}
+                    </span>
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
@@ -215,13 +239,19 @@ export const EducationInquiryDemo: React.FC = () => {
                       <Award className="w-3 h-3 text-rose-400" />
                       Budget & Scholarship
                     </span>
-                    <p className="text-xs font-bold text-white pt-0.5">{inquiry.requirements.budgetOrScholarship}</p>
-                    <span className="text-[11px] text-zinc-400 font-mono">Financial aid pre-approved</span>
+                    <p className="text-xs font-bold text-white pt-0.5">
+                      {inquiry.requirements.budgetOrScholarship}
+                    </p>
+                    <span className="text-[11px] text-zinc-400 font-mono">
+                      Financial aid pre-approved
+                    </span>
                   </div>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
-                  <span className="text-[10px] uppercase font-mono text-zinc-400">Current Skill Baseline & Prerequisite Discovery</span>
+                  <span className="text-[10px] uppercase font-mono text-zinc-400">
+                    Current Skill Baseline & Prerequisite Discovery
+                  </span>
                   <p className="text-xs text-zinc-300 leading-relaxed pt-1">
                     {inquiry.requirements.currentSkillBaseline}
                   </p>
@@ -239,14 +269,22 @@ export const EducationInquiryDemo: React.FC = () => {
                   >
                     <div className="flex items-center justify-between">
                       <h4 className="text-sm font-bold text-white">{crs.courseTitle}</h4>
-                      <Badge variant="primary" size="sm" className="text-[10px] bg-rose-500/20 text-rose-300 border-rose-500/30 font-mono">
+                      <Badge
+                        variant="primary"
+                        size="sm"
+                        className="text-[10px] bg-rose-500/20 text-rose-300 border-rose-500/30 font-mono"
+                      >
                         {crs.matchScore}
                       </Badge>
                     </div>
 
                     <div className="grid grid-cols-2 gap-2 text-xs font-mono text-zinc-400 pt-1">
-                      <div>Duration: <span className="text-zinc-200">{crs.duration}</span></div>
-                      <div>Cohort Start: <span className="text-rose-300">{crs.cohortStart}</span></div>
+                      <div>
+                        Duration: <span className="text-zinc-200">{crs.duration}</span>
+                      </div>
+                      <div>
+                        Cohort Start: <span className="text-rose-300">{crs.cohortStart}</span>
+                      </div>
                     </div>
 
                     <div className="text-[11px] text-emerald-400 font-mono flex items-center gap-1.5 pt-1">
@@ -283,10 +321,16 @@ export const EducationInquiryDemo: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white">Aether Admissions Outreach</h4>
-                  <span className="text-[10px] font-mono text-zinc-400">Automated Student Advisor Engine</span>
+                  <span className="text-[10px] font-mono text-zinc-400">
+                    Automated Student Advisor Engine
+                  </span>
                 </div>
               </div>
-              <Badge variant="primary" size="sm" className="text-[10px] bg-rose-500/20 text-rose-300 border-rose-500/40 font-mono">
+              <Badge
+                variant="primary"
+                size="sm"
+                className="text-[10px] bg-rose-500/20 text-rose-300 border-rose-500/40 font-mono"
+              >
                 Lead Score {inquiry.leadPriorityScore}
               </Badge>
             </div>
@@ -363,10 +407,13 @@ export const EducationInquiryDemo: React.FC = () => {
                       Result: Admissions Package & Syllabus Dispatched
                     </div>
                     <p className="text-[11px] text-emerald-200/80">
-                      Tailored syllabus, scholarship review, and orientation invite sent to {inquiry.studentName}.
+                      Tailored syllabus, scholarship review, and orientation invite sent to{' '}
+                      {inquiry.studentName}.
                     </p>
                     <div className="pt-1 flex items-center justify-center gap-2">
-                      <span className="text-[10px] font-mono text-emerald-300">Recommended Action: Consultation Scheduled</span>
+                      <span className="text-[10px] font-mono text-emerald-300">
+                        Recommended Action: Consultation Scheduled
+                      </span>
                       <Button
                         variant="outline"
                         size="sm"

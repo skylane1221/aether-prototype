@@ -132,14 +132,16 @@ export const RetailInventoryDemo: React.FC = () => {
                         prod.stockoutRisk.includes('Critical')
                           ? 'bg-rose-500/20 text-rose-300'
                           : prod.stockoutRisk.includes('High')
-                          ? 'bg-amber-500/20 text-amber-300'
-                          : 'bg-indigo-500/20 text-indigo-300'
+                            ? 'bg-amber-500/20 text-amber-300'
+                            : 'bg-indigo-500/20 text-indigo-300'
                       )}
                     >
                       {prod.stockoutRisk.replace(' (< 2 Days)', '').replace(' (< 4 Days)', '')}
                     </span>
                   </div>
-                  <div className="text-xs font-bold text-text-primary line-clamp-1">{prod.name}</div>
+                  <div className="text-xs font-bold text-text-primary line-clamp-1">
+                    {prod.name}
+                  </div>
                   <div className="text-[11px] font-mono text-sky-300 mt-1">{prod.price}</div>
                 </button>
               );
@@ -162,7 +164,9 @@ export const RetailInventoryDemo: React.FC = () => {
 
             <div className="flex items-center gap-3">
               <div className="text-right">
-                <div className="text-[10px] font-mono text-text-muted uppercase">Retail Unit Price</div>
+                <div className="text-[10px] font-mono text-text-muted uppercase">
+                  Retail Unit Price
+                </div>
                 <div className="text-lg font-mono font-bold text-text-primary">{product.price}</div>
               </div>
               <div className="h-8 w-px bg-slate-800" />
@@ -187,8 +191,8 @@ export const RetailInventoryDemo: React.FC = () => {
                     product.currentStock < 10
                       ? 'text-rose-400'
                       : product.currentStock < 20
-                      ? 'text-amber-400'
-                      : 'text-text-primary'
+                        ? 'text-amber-400'
+                        : 'text-text-primary'
                   )}
                 >
                   {product.currentStock}
@@ -244,8 +248,8 @@ export const RetailInventoryDemo: React.FC = () => {
                 product.stockoutRisk.includes('Critical')
                   ? 'bg-rose-500/10 border-rose-500/30'
                   : product.stockoutRisk.includes('High')
-                  ? 'bg-amber-500/10 border-amber-500/30'
-                  : 'bg-indigo-500/10 border-indigo-500/30'
+                    ? 'bg-amber-500/10 border-amber-500/30'
+                    : 'bg-indigo-500/10 border-indigo-500/30'
               )}
             >
               <span
@@ -254,8 +258,8 @@ export const RetailInventoryDemo: React.FC = () => {
                   product.stockoutRisk.includes('Critical')
                     ? 'text-rose-300'
                     : product.stockoutRisk.includes('High')
-                    ? 'text-amber-300'
-                    : 'text-indigo-300'
+                      ? 'text-amber-300'
+                      : 'text-indigo-300'
                 )}
               >
                 <AlertTriangle className="w-3 h-3" />
@@ -267,8 +271,8 @@ export const RetailInventoryDemo: React.FC = () => {
                   product.stockoutRisk.includes('Critical')
                     ? 'text-rose-400'
                     : product.stockoutRisk.includes('High')
-                    ? 'text-amber-400'
-                    : 'text-indigo-400'
+                      ? 'text-amber-400'
+                      : 'text-indigo-400'
                 )}
               >
                 {product.stockoutRisk}
@@ -324,8 +328,8 @@ export const RetailInventoryDemo: React.FC = () => {
             demoState === 'idle'
               ? 'bg-slate-900/40 border-slate-800/80 opacity-75'
               : demoState === 'analyzing'
-              ? 'bg-slate-900/80 border-sky-500/40 shadow-glow-subtle'
-              : 'bg-slate-900/90 border-emerald-500/40 shadow-glow-subtle'
+                ? 'bg-slate-900/80 border-sky-500/40 shadow-glow-subtle'
+                : 'bg-slate-900/90 border-emerald-500/40 shadow-glow-subtle'
           )}
         >
           {demoState === 'idle' && (
@@ -338,8 +342,8 @@ export const RetailInventoryDemo: React.FC = () => {
               </h4>
               <p className="text-xs text-text-muted max-w-md mx-auto">
                 Click <span className="text-sky-400 font-semibold">"Run Aether"</span> to simulate
-                cognitive telemetry ingestion, stockout risk diagnosis, and automated supplier reorder
-                generation.
+                cognitive telemetry ingestion, stockout risk diagnosis, and automated supplier
+                reorder generation.
               </p>
               <div className="pt-2">
                 <Button
@@ -363,7 +367,8 @@ export const RetailInventoryDemo: React.FC = () => {
                   Diagnosing Inventory Velocity & Lead Time...
                 </h4>
                 <p className="text-xs text-text-muted font-mono">
-                  Synthesizing POS stream • Calculating size depletion curves • Generating supplier EDI payload
+                  Synthesizing POS stream • Calculating size depletion curves • Generating supplier
+                  EDI payload
                 </p>
               </div>
             </div>
@@ -455,7 +460,9 @@ export const RetailInventoryDemo: React.FC = () => {
                       </div>
                       <div>
                         <span className="text-text-muted">Lead Time Match: </span>
-                        <span className="text-sky-300">{product.aetherDiagnosis.leadTimeBuffer}</span>
+                        <span className="text-sky-300">
+                          {product.aetherDiagnosis.leadTimeBuffer}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -495,7 +502,9 @@ export const RetailInventoryDemo: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[11px]">
                     <div>
                       <span className="text-text-muted">Supplier: </span>
-                      <span className="text-slate-200">{product.generatedReorderPO.supplierName}</span>
+                      <span className="text-slate-200">
+                        {product.generatedReorderPO.supplierName}
+                      </span>
                     </div>
                     <div>
                       <span className="text-text-muted">Units Ordered: </span>
@@ -555,7 +564,9 @@ export const RetailInventoryDemo: React.FC = () => {
                                   : 'text-slate-400'
                               )}
                             >
-                              {t.unassistedStock === 0 ? 'STOCKOUT (0)' : `${t.unassistedStock} units`}
+                              {t.unassistedStock === 0
+                                ? 'STOCKOUT (0)'
+                                : `${t.unassistedStock} units`}
                             </span>
                           </td>
                           <td className="py-2 text-emerald-400 font-bold">

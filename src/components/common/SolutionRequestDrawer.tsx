@@ -29,7 +29,7 @@ import {
   Clock,
   Eye,
   Check,
-  MessageSquare
+  MessageSquare,
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
@@ -42,42 +42,86 @@ export interface SolutionRequestDrawerProps {
 // 10 Industries + Other
 const INDUSTRY_OPTIONS = [
   { slug: 'real-estate', name: 'Real Estate', icon: <Building2 className="w-3.5 h-3.5" /> },
-  { slug: 'restaurants', name: 'Restaurants & Food', icon: <UtensilsCrossed className="w-3.5 h-3.5" /> },
+  {
+    slug: 'restaurants',
+    name: 'Restaurants & Food',
+    icon: <UtensilsCrossed className="w-3.5 h-3.5" />,
+  },
   { slug: 'gyms', name: 'Gyms & Fitness', icon: <Dumbbell className="w-3.5 h-3.5" /> },
   { slug: 'salons', name: 'Salons & Beauty', icon: <Scissors className="w-3.5 h-3.5" /> },
   { slug: 'cafes', name: 'Cafes & Quick-Serve', icon: <Coffee className="w-3.5 h-3.5" /> },
   { slug: 'retail', name: 'Retail & Commerce', icon: <ShoppingBag className="w-3.5 h-3.5" /> },
   { slug: 'hotels', name: 'Hotels & Hospitality', icon: <Hotel className="w-3.5 h-3.5" /> },
-  { slug: 'healthcare', name: 'Healthcare & Clinics', icon: <Stethoscope className="w-3.5 h-3.5" /> },
+  {
+    slug: 'healthcare',
+    name: 'Healthcare & Clinics',
+    icon: <Stethoscope className="w-3.5 h-3.5" />,
+  },
   { slug: 'automotive', name: 'Automotive & Service', icon: <Car className="w-3.5 h-3.5" /> },
-  { slug: 'education', name: 'Education & Training', icon: <GraduationCap className="w-3.5 h-3.5" /> },
+  {
+    slug: 'education',
+    name: 'Education & Training',
+    icon: <GraduationCap className="w-3.5 h-3.5" />,
+  },
   { slug: 'other', name: 'Other Business', icon: <Sparkles className="w-3.5 h-3.5" /> },
 ];
 
 // 8 Improvement Goals
 const IMPROVEMENT_OPTIONS = [
   { id: 'manual-work', label: 'Reduce manual work', icon: <Clock className="w-3.5 h-3.5" /> },
-  { id: 'customer-exp', label: 'Improve customer experience', icon: <Sparkles className="w-3.5 h-3.5" /> },
-  { id: 'operational-eff', label: 'Improve operational efficiency', icon: <Zap className="w-3.5 h-3.5" /> },
-  { id: 'sales-conversion', label: 'Improve sales/conversion', icon: <TrendingUp className="w-3.5 h-3.5" /> },
-  { id: 'demand-forecast', label: 'Improve demand forecasting', icon: <BrainCircuit className="w-3.5 h-3.5" /> },
-  { id: 'automate-workflows', label: 'Automate workflows', icon: <Workflow className="w-3.5 h-3.5" /> },
-  { id: 'business-visibility', label: 'Improve business visibility', icon: <Eye className="w-3.5 h-3.5" /> },
+  {
+    id: 'customer-exp',
+    label: 'Improve customer experience',
+    icon: <Sparkles className="w-3.5 h-3.5" />,
+  },
+  {
+    id: 'operational-eff',
+    label: 'Improve operational efficiency',
+    icon: <Zap className="w-3.5 h-3.5" />,
+  },
+  {
+    id: 'sales-conversion',
+    label: 'Improve sales/conversion',
+    icon: <TrendingUp className="w-3.5 h-3.5" />,
+  },
+  {
+    id: 'demand-forecast',
+    label: 'Improve demand forecasting',
+    icon: <BrainCircuit className="w-3.5 h-3.5" />,
+  },
+  {
+    id: 'automate-workflows',
+    label: 'Automate workflows',
+    icon: <Workflow className="w-3.5 h-3.5" />,
+  },
+  {
+    id: 'business-visibility',
+    label: 'Improve business visibility',
+    icon: <Eye className="w-3.5 h-3.5" />,
+  },
   { id: 'other-improvement', label: 'Other', icon: <MessageSquare className="w-3.5 h-3.5" /> },
 ];
 
 const INDUSTRY_CHALLENGE_PROMPTS: Record<string, string> = {
-  'real-estate': 'e.g. Inbound buyer leads arrive unorganized across portals; agents spend hours manually qualifying and scheduling site visits...',
-  restaurants: 'e.g. High food wastage during slow periods and ticket bottlenecks during peak dinner rushes...',
+  'real-estate':
+    'e.g. Inbound buyer leads arrive unorganized across portals; agents spend hours manually qualifying and scheduling site visits...',
+  restaurants:
+    'e.g. High food wastage during slow periods and ticket bottlenecks during peak dinner rushes...',
   gyms: 'e.g. Members stop attending for weeks without staff noticing; class capacities remain unoptimized...',
-  salons: 'e.g. Clients delay rebooking color and treatments; prime weekend slots suffer from last-minute empty chair gaps...',
+  salons:
+    'e.g. Clients delay rebooking color and treatments; prime weekend slots suffer from last-minute empty chair gaps...',
   cafes: 'e.g. Morning commuter queue walk-aways and afternoon pastry spoilage...',
   retail: 'e.g. Frequent stockouts on best-selling SKUs and slow inventory replenishment cycles...',
-  hotels: 'e.g. Check-in lines during peak arrival hours and delayed room readiness from housekeeping...',
-  healthcare: 'e.g. Paper intake delays clinic appointments and late patient cancellations leave provider hours unbilled...',
-  automotive: 'e.g. Lift bays blocked while waiting for replacement parts and uneven technician allocation...',
-  education: 'e.g. Slow inquiry turnaround for prospective students and manual transcript verification delays...',
-  other: 'e.g. Describe where administrative friction, customer wait times, or manual coordination slow down your operations...',
+  hotels:
+    'e.g. Check-in lines during peak arrival hours and delayed room readiness from housekeeping...',
+  healthcare:
+    'e.g. Paper intake delays clinic appointments and late patient cancellations leave provider hours unbilled...',
+  automotive:
+    'e.g. Lift bays blocked while waiting for replacement parts and uneven technician allocation...',
+  education:
+    'e.g. Slow inquiry turnaround for prospective students and manual transcript verification delays...',
+  other:
+    'e.g. Describe where administrative friction, customer wait times, or manual coordination slow down your operations...',
 };
 
 export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
@@ -132,7 +176,11 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
     <Modal
       isOpen={isOpen}
       onClose={handleReset}
-      title={isSubmitted ? 'Business Challenge Captured' : "Don't Choose a Product. Tell Aether Your Problem."}
+      title={
+        isSubmitted
+          ? 'Business Challenge Captured'
+          : "Don't Choose a Product. Tell Aether Your Problem."
+      }
       description={
         isSubmitted
           ? 'Prototype cognitive analysis & workflow opportunity synthesis.'
@@ -150,14 +198,19 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
             <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-6 h-6" />
             </div>
-            <Badge variant="success" size="sm" className="font-mono text-[10px] uppercase tracking-wider">
+            <Badge
+              variant="success"
+              size="sm"
+              className="font-mono text-[10px] uppercase tracking-wider"
+            >
               Prototype Intake Captured
             </Badge>
             <h3 className="text-xl sm:text-2xl font-bold text-text-primary tracking-tight">
               Your business challenge has been captured.
             </h3>
             <p className="text-xs sm:text-sm text-sky-300 font-medium max-w-lg mx-auto leading-relaxed">
-              An Aether solution analysis could identify potential opportunities across your workflow.
+              An Aether solution analysis could identify potential opportunities across your
+              workflow.
             </p>
           </div>
 
@@ -165,7 +218,9 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
           <div className="p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-4 text-xs">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
-                <span className="text-[10px] uppercase font-mono text-text-muted">Business Domain</span>
+                <span className="text-[10px] uppercase font-mono text-text-muted">
+                  Business Domain
+                </span>
                 <div className="text-xs font-bold text-text-primary flex items-center gap-1.5">
                   <span className="text-sky-400">{activeIndustryObj.icon}</span>
                   <span>{activeIndustryObj.name}</span>
@@ -173,16 +228,21 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
               </div>
 
               <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
-                <span className="text-[10px] uppercase font-mono text-text-muted">Organization & Contact</span>
+                <span className="text-[10px] uppercase font-mono text-text-muted">
+                  Organization & Contact
+                </span>
                 <div className="text-xs font-bold text-text-primary truncate">
-                  {business || 'Your Organization'} • <span className="text-text-secondary">{name || 'Executive'}</span>
+                  {business || 'Your Organization'} •{' '}
+                  <span className="text-text-secondary">{name || 'Executive'}</span>
                 </div>
               </div>
             </div>
 
             {/* Improvement Priorities */}
             <div className="space-y-1.5">
-              <span className="text-[10px] uppercase font-mono text-text-muted">Identified Improvement Priorities</span>
+              <span className="text-[10px] uppercase font-mono text-text-muted">
+                Identified Improvement Priorities
+              </span>
               <div className="flex flex-wrap gap-1.5">
                 {selectedImprovements.map((imp, idx) => (
                   <span
@@ -215,7 +275,9 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                 <span>Simulated Cognitive Architecture Plan:</span>
               </div>
               <p className="text-[11px] text-text-secondary leading-relaxed">
-                Aether would overlay your existing operational systems to ingest real-time signals, diagnose throughput friction, and trigger context-aware recommendations autonomously.
+                Aether would overlay your existing operational systems to ingest real-time signals,
+                diagnose throughput friction, and trigger context-aware recommendations
+                autonomously.
               </p>
             </div>
           </div>
@@ -223,7 +285,8 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
           <div className="p-3 rounded-xl bg-slate-900/50 border border-slate-800 text-[11px] text-text-muted flex items-center gap-2">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
             <span>
-              <strong>Prototype Sandbox:</strong> Simulated intake mode. No production lead routing executed.
+              <strong>Prototype Sandbox:</strong> Simulated intake mode. No production lead routing
+              executed.
             </span>
           </div>
 
@@ -234,7 +297,11 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
             </Button>
             {selectedIndustry !== 'other' && (
               <Link to={`/industries/${selectedIndustry}`} onClick={handleReset}>
-                <Button variant="secondary" size="sm" rightIcon={<ArrowRight className="w-3.5 h-3.5" />}>
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+                >
                   Explore {activeIndustryObj.name}
                 </Button>
               </Link>
@@ -248,7 +315,10 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
         /* ========================================================================= */
         /* INTERACTIVE BUSINESS CHALLENGE FORM */
         /* ========================================================================= */
-        <form onSubmit={handleSubmit} className="space-y-6 pt-1 max-h-[75vh] overflow-y-auto pr-1 scrollbar-none">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6 pt-1 max-h-[75vh] overflow-y-auto pr-1 scrollbar-none"
+        >
           {/* ========================================================================= */}
           {/* 1. What type of business are you? */}
           {/* ========================================================================= */}
@@ -281,7 +351,9 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                     <span
                       className={cn(
                         'shrink-0 transition-colors',
-                        isSelected ? 'text-sky-300' : 'text-text-muted group-hover:text-text-primary'
+                        isSelected
+                          ? 'text-sky-300'
+                          : 'text-text-muted group-hover:text-text-primary'
                       )}
                     >
                       {ind.icon}
@@ -326,7 +398,9 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                       <span
                         className={cn(
                           'transition-colors',
-                          isChecked ? 'text-indigo-300' : 'text-text-muted group-hover:text-text-primary'
+                          isChecked
+                            ? 'text-indigo-300'
+                            : 'text-text-muted group-hover:text-text-primary'
                         )}
                       >
                         {opt.icon}
@@ -380,8 +454,7 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
               rows={3}
               required
               placeholder={
-                INDUSTRY_CHALLENGE_PROMPTS[selectedIndustry] ||
-                INDUSTRY_CHALLENGE_PROMPTS.other
+                INDUSTRY_CHALLENGE_PROMPTS[selectedIndustry] || INDUSTRY_CHALLENGE_PROMPTS.other
               }
               value={challengeText}
               onChange={(e) => setChallengeText(e.target.value)}

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { 
-  Scissors, 
-  TrendingUp, 
-  Calendar, 
-  ShieldCheck, 
-  Sparkles, 
+import {
+  Scissors,
+  TrendingUp,
+  Calendar,
+  ShieldCheck,
+  Sparkles,
   ArrowUpRight,
   Clock,
-  UserCheck
+  UserCheck,
 } from 'lucide-react';
 import { Card } from '../../ui/Card';
 import { Badge } from '../../ui/Badge';
@@ -25,7 +25,11 @@ export const SalonBiDashboard: React.FC = () => {
             <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40">
               SIMULATED DEMO
             </span>
-            <Badge variant="primary" size="sm" className="bg-rose-500/10 text-rose-300 border-rose-500/30">
+            <Badge
+              variant="primary"
+              size="sm"
+              className="bg-rose-500/10 text-rose-300 border-rose-500/30"
+            >
               Salon Performance Analytics
             </Badge>
             <span className="text-xs font-mono text-zinc-400">Live Chair & Stylist Telemetry</span>
@@ -34,7 +38,8 @@ export const SalonBiDashboard: React.FC = () => {
             Salon Utilization & Staff Lifecycle Intelligence
           </h3>
           <p className="text-xs sm:text-sm text-zinc-400 mt-1">
-            Real-time telemetry across chair capacity yield, no-show probability reduction, and master stylist productivity.
+            Real-time telemetry across chair capacity yield, no-show probability reduction, and
+            master stylist productivity.
           </p>
         </div>
       </div>
@@ -46,7 +51,9 @@ export const SalonBiDashboard: React.FC = () => {
             <span>CHAIR UTILIZATION</span>
             <Scissors className="w-4 h-4 text-rose-400" />
           </div>
-          <div className="text-2xl font-bold text-white font-mono">{SALON_BI_DATA.chairUtilization.currentUtilization}</div>
+          <div className="text-2xl font-bold text-white font-mono">
+            {SALON_BI_DATA.chairUtilization.currentUtilization}
+          </div>
           <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-mono mt-1">
             <ArrowUpRight className="w-3 h-3" />
             <span>vs {SALON_BI_DATA.chairUtilization.traditionalAverage} traditional</span>
@@ -58,7 +65,9 @@ export const SalonBiDashboard: React.FC = () => {
             <span>NO-SHOW RATE</span>
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
           </div>
-          <div className="text-2xl font-bold text-emerald-400 font-mono">{SALON_BI_DATA.noShowReduction.currentNoShowRate}</div>
+          <div className="text-2xl font-bold text-emerald-400 font-mono">
+            {SALON_BI_DATA.noShowReduction.currentNoShowRate}
+          </div>
           <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-mono mt-1">
             <ArrowUpRight className="w-3 h-3" />
             <span>Down from {SALON_BI_DATA.noShowReduction.traditionalNoShowRate}</span>
@@ -70,7 +79,9 @@ export const SalonBiDashboard: React.FC = () => {
             <span>MID-DAY GAP FILL</span>
             <Calendar className="w-4 h-4 text-purple-400" />
           </div>
-          <div className="text-2xl font-bold text-purple-400 font-mono">{SALON_BI_DATA.chairUtilization.middayGapFillRate}</div>
+          <div className="text-2xl font-bold text-purple-400 font-mono">
+            {SALON_BI_DATA.chairUtilization.middayGapFillRate}
+          </div>
           <div className="flex items-center gap-1 text-[11px] text-purple-300 font-mono mt-1">
             <ArrowUpRight className="w-3 h-3" />
             <span>Dynamic slot packing</span>
@@ -82,7 +93,9 @@ export const SalonBiDashboard: React.FC = () => {
             <span>MONTHLY RECOVERED REV</span>
             <Sparkles className="w-4 h-4 text-rose-400" />
           </div>
-          <div className="text-2xl font-bold text-rose-400 font-mono">{SALON_BI_DATA.chairUtilization.recoveredRevenueMonthly}</div>
+          <div className="text-2xl font-bold text-rose-400 font-mono">
+            {SALON_BI_DATA.chairUtilization.recoveredRevenueMonthly}
+          </div>
           <div className="flex items-center gap-1 text-[11px] text-rose-300 font-mono mt-1">
             <ArrowUpRight className="w-3 h-3" />
             <span>Rebooking + gap filling</span>
@@ -129,12 +142,18 @@ export const SalonBiDashboard: React.FC = () => {
         <Card className="p-6 bg-gradient-to-br from-zinc-900/90 via-black to-zinc-950 border-white/10 space-y-6">
           <div className="flex items-center justify-between pb-4 border-b border-white/10">
             <div>
-              <h4 className="text-base font-bold text-white">Chair Capacity & Dynamic Slot Yield</h4>
+              <h4 className="text-base font-bold text-white">
+                Chair Capacity & Dynamic Slot Yield
+              </h4>
               <p className="text-xs text-zinc-400">
                 Aether slot-packing converts dead afternoon valleys into high-margin service slots.
               </p>
             </div>
-            <Badge variant="primary" size="sm" className="text-xs bg-rose-500/20 text-rose-300 border-rose-500/30">
+            <Badge
+              variant="primary"
+              size="sm"
+              className="text-xs bg-rose-500/20 text-rose-300 border-rose-500/30"
+            >
               Peak Slot Optimization Active
             </Badge>
           </div>
@@ -142,16 +161,22 @@ export const SalonBiDashboard: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 rounded-xl bg-black/50 border border-white/5 space-y-2">
               <span className="text-xs font-mono text-zinc-400">Aether Intelligent Yield</span>
-              <div className="text-3xl font-extrabold text-white font-mono">{SALON_BI_DATA.chairUtilization.currentUtilization}</div>
+              <div className="text-3xl font-extrabold text-white font-mono">
+                {SALON_BI_DATA.chairUtilization.currentUtilization}
+              </div>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Dynamic slot packaging algorithm prevents 15-30 min idle gaps between complex chemical services.
+                Dynamic slot packaging algorithm prevents 15-30 min idle gaps between complex
+                chemical services.
               </p>
             </div>
             <div className="p-4 rounded-xl bg-black/50 border border-white/5 space-y-2">
               <span className="text-xs font-mono text-zinc-400">Traditional Salon Average</span>
-              <div className="text-3xl font-extrabold text-zinc-500 font-mono">{SALON_BI_DATA.chairUtilization.traditionalAverage}</div>
+              <div className="text-3xl font-extrabold text-zinc-500 font-mono">
+                {SALON_BI_DATA.chairUtilization.traditionalAverage}
+              </div>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Unstructured booking leads to schedule fragmentation, leaving up to a third of chair hours unmonetized.
+                Unstructured booking leads to schedule fragmentation, leaving up to a third of chair
+                hours unmonetized.
               </p>
             </div>
           </div>
@@ -159,7 +184,10 @@ export const SalonBiDashboard: React.FC = () => {
           <div className="p-4 rounded-xl bg-rose-950/20 border border-rose-500/30 flex items-start gap-3">
             <Sparkles className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
             <p className="text-xs text-rose-200/90 leading-relaxed">
-              <strong>Aether Yield Impact:</strong> Mid-day gap fill rate reached <strong>{SALON_BI_DATA.chairUtilization.middayGapFillRate}</strong>, driving <strong>{SALON_BI_DATA.chairUtilization.recoveredRevenueMonthly}</strong> in recovered monthly salon revenue.
+              <strong>Aether Yield Impact:</strong> Mid-day gap fill rate reached{' '}
+              <strong>{SALON_BI_DATA.chairUtilization.middayGapFillRate}</strong>, driving{' '}
+              <strong>{SALON_BI_DATA.chairUtilization.recoveredRevenueMonthly}</strong> in recovered
+              monthly salon revenue.
             </p>
           </div>
         </Card>
@@ -170,12 +198,17 @@ export const SalonBiDashboard: React.FC = () => {
         <Card className="p-6 bg-gradient-to-br from-zinc-900/90 via-black to-zinc-950 border-white/10 space-y-6">
           <div className="flex items-center justify-between pb-4 border-b border-white/10">
             <div>
-              <h4 className="text-base font-bold text-white">Stylist Roster Productivity & Chair Occupancy</h4>
+              <h4 className="text-base font-bold text-white">
+                Stylist Roster Productivity & Chair Occupancy
+              </h4>
               <p className="text-xs text-zinc-400">
-                Workstation formula archiving and client preference memory boost retention and ticket size.
+                Workstation formula archiving and client preference memory boost retention and
+                ticket size.
               </p>
             </div>
-            <span className="text-xs font-mono text-zinc-400">{SALON_BI_DATA.stylistProductivity.length} Active Stylists</span>
+            <span className="text-xs font-mono text-zinc-400">
+              {SALON_BI_DATA.stylistProductivity.length} Active Stylists
+            </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -191,7 +224,11 @@ export const SalonBiDashboard: React.FC = () => {
                       <div className="text-[10px] text-zinc-400 font-mono">Status: {st.status}</div>
                     </div>
                   </div>
-                  <Badge variant="primary" size="sm" className="text-[10px] bg-rose-500/20 text-rose-300 border-rose-500/30 font-mono">
+                  <Badge
+                    variant="primary"
+                    size="sm"
+                    className="text-[10px] bg-rose-500/20 text-rose-300 border-rose-500/30 font-mono"
+                  >
                     {st.chairOccupancy} Occupancy
                   </Badge>
                 </div>
@@ -203,7 +240,9 @@ export const SalonBiDashboard: React.FC = () => {
                   </div>
                   <div className="p-2 rounded-lg bg-white/[0.02]">
                     <div className="text-[10px] text-zinc-400">Rebooking Rate</div>
-                    <div className="text-xs font-bold text-emerald-400 mt-0.5">{st.rebookingRate}</div>
+                    <div className="text-xs font-bold text-emerald-400 mt-0.5">
+                      {st.rebookingRate}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -217,9 +256,12 @@ export const SalonBiDashboard: React.FC = () => {
         <Card className="p-6 bg-gradient-to-br from-zinc-900/90 via-black to-zinc-950 border-white/10 space-y-6">
           <div className="flex items-center justify-between pb-4 border-b border-white/10">
             <div>
-              <h4 className="text-base font-bold text-white">No-Show Prediction & Cancellation Interception</h4>
+              <h4 className="text-base font-bold text-white">
+                No-Show Prediction & Cancellation Interception
+              </h4>
               <p className="text-xs text-zinc-400">
-                Automated confirmation protocols with intelligent micro-deposits for high-risk booking slots.
+                Automated confirmation protocols with intelligent micro-deposits for high-risk
+                booking slots.
               </p>
             </div>
             <Badge variant="success" size="sm" className="text-xs font-mono">
@@ -229,20 +271,32 @@ export const SalonBiDashboard: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 rounded-xl bg-black/50 border border-white/5 space-y-1">
-              <span className="text-[10px] uppercase font-mono text-zinc-400">Aether No-Show Rate</span>
-              <div className="text-2xl font-bold text-emerald-400 font-mono">{SALON_BI_DATA.noShowReduction.currentNoShowRate}</div>
+              <span className="text-[10px] uppercase font-mono text-zinc-400">
+                Aether No-Show Rate
+              </span>
+              <div className="text-2xl font-bold text-emerald-400 font-mono">
+                {SALON_BI_DATA.noShowReduction.currentNoShowRate}
+              </div>
               <p className="text-[11px] text-zinc-400">Across all scheduled appointments</p>
             </div>
 
             <div className="p-4 rounded-xl bg-black/50 border border-white/5 space-y-1">
-              <span className="text-[10px] uppercase font-mono text-zinc-400">Industry Baseline</span>
-              <div className="text-2xl font-bold text-rose-400 font-mono">{SALON_BI_DATA.noShowReduction.traditionalNoShowRate}</div>
+              <span className="text-[10px] uppercase font-mono text-zinc-400">
+                Industry Baseline
+              </span>
+              <div className="text-2xl font-bold text-rose-400 font-mono">
+                {SALON_BI_DATA.noShowReduction.traditionalNoShowRate}
+              </div>
               <p className="text-[11px] text-zinc-400">Unmanaged phone/DM bookings</p>
             </div>
 
             <div className="p-4 rounded-xl bg-black/50 border border-white/5 space-y-1">
-              <span className="text-[10px] uppercase font-mono text-zinc-400">Deposit Compliance</span>
-              <div className="text-2xl font-bold text-purple-400 font-mono">{SALON_BI_DATA.noShowReduction.depositCompliance}</div>
+              <span className="text-[10px] uppercase font-mono text-zinc-400">
+                Deposit Compliance
+              </span>
+              <div className="text-2xl font-bold text-purple-400 font-mono">
+                {SALON_BI_DATA.noShowReduction.depositCompliance}
+              </div>
               <p className="text-[11px] text-zinc-400">For multi-hour chemical services</p>
             </div>
           </div>

@@ -34,8 +34,10 @@ const JOURNEY_STAGES: JourneyStage[] = [
     title: 'Lead Ingestion',
     subtitle: 'Omni-channel signal capture',
     icon: <UserCheck className="w-5 h-5 text-cyan-400" />,
-    frictionInManual: 'Leads scattered across WhatsApp, 99acres, MagicBricks; 4+ hour initial response latency.',
-    aetherIntelligence: 'Unified cognitive webhook dedupes and ingests multi-portal inquiries in real time.',
+    frictionInManual:
+      'Leads scattered across WhatsApp, 99acres, MagicBricks; 4+ hour initial response latency.',
+    aetherIntelligence:
+      'Unified cognitive webhook dedupes and ingests multi-portal inquiries in real time.',
     typicalDuration: '4.2 hours',
     aetherSpeed: '< 5 seconds',
     telemetryMetric: '100% Capture Rate',
@@ -46,8 +48,10 @@ const JOURNEY_STAGES: JourneyStage[] = [
     title: 'Requirement Extraction',
     subtitle: 'Natural language entity parsing',
     icon: <FileSearch className="w-5 h-5 text-indigo-400" />,
-    frictionInManual: 'Manual tele-calling scripts; prospective buyers drop off during repetitive interrogations.',
-    aetherIntelligence: 'Extracts 6+ parameters (budget, location, carpet area, parking, possession) without forms.',
+    frictionInManual:
+      'Manual tele-calling scripts; prospective buyers drop off during repetitive interrogations.',
+    aetherIntelligence:
+      'Extracts 6+ parameters (budget, location, carpet area, parking, possession) without forms.',
     typicalDuration: '24-48 hours',
     aetherSpeed: '< 10 seconds',
     telemetryMetric: '98.2% Entity Accuracy',
@@ -58,8 +62,10 @@ const JOURNEY_STAGES: JourneyStage[] = [
     title: 'Intent & Readiness',
     subtitle: 'Predictive qualification scoring',
     icon: <Zap className="w-5 h-5 text-amber-400" />,
-    frictionInManual: 'Brokers waste 60% of weekend bandwidth touring unvetted or low-intent window shoppers.',
-    aetherIntelligence: 'Scores home-loan pre-approval, closing urgency, and budget elasticity into a single score.',
+    frictionInManual:
+      'Brokers waste 60% of weekend bandwidth touring unvetted or low-intent window shoppers.',
+    aetherIntelligence:
+      'Scores home-loan pre-approval, closing urgency, and budget elasticity into a single score.',
     typicalDuration: '3-5 days',
     aetherSpeed: 'Instantaneous',
     telemetryMetric: '94% Intent Precision',
@@ -70,8 +76,10 @@ const JOURNEY_STAGES: JourneyStage[] = [
     title: 'Property Match',
     subtitle: 'Semantic multi-factor ranking',
     icon: <Building2 className="w-5 h-5 text-sky-400" />,
-    frictionInManual: 'Brokers search memory or static PDF brochures, frequently showing mismatched specs.',
-    aetherIntelligence: 'Ranks active developer inventory by floor plate, view, carpet area, and payment plan fit.',
+    frictionInManual:
+      'Brokers search memory or static PDF brochures, frequently showing mismatched specs.',
+    aetherIntelligence:
+      'Ranks active developer inventory by floor plate, view, carpet area, and payment plan fit.',
     typicalDuration: '1-2 days',
     aetherSpeed: 'Sub-second',
     telemetryMetric: '4.6x Higher Match Rate',
@@ -82,8 +90,10 @@ const JOURNEY_STAGES: JourneyStage[] = [
     title: 'Site Visit',
     subtitle: 'Autonomous slot & gate pass dispatch',
     icon: <CalendarCheck className="w-5 h-5 text-emerald-400" />,
-    frictionInManual: 'Back-and-forth SMS coordination; gate entry delays and 40% site visit no-show rate.',
-    aetherIntelligence: 'Self-locks calendar windows, notifies site sales managers, and issues digital QR passes.',
+    frictionInManual:
+      'Back-and-forth SMS coordination; gate entry delays and 40% site visit no-show rate.',
+    aetherIntelligence:
+      'Self-locks calendar windows, notifies site sales managers, and issues digital QR passes.',
     typicalDuration: '3-4 calls',
     aetherSpeed: '1-Click Booking',
     telemetryMetric: '-85% No-Show Rate',
@@ -94,8 +104,10 @@ const JOURNEY_STAGES: JourneyStage[] = [
     title: 'Follow-up Cadence',
     subtitle: 'Contextual nurturing intelligence',
     icon: <Repeat className="w-5 h-5 text-violet-400" />,
-    frictionInManual: 'Agents forget follow-ups or spam buyers with generic "Are you still interested?" pings.',
-    aetherIntelligence: 'Analyzes viewing feedback telemetry and dispatches tailored comparison sheets & payment plans.',
+    frictionInManual:
+      'Agents forget follow-ups or spam buyers with generic "Are you still interested?" pings.',
+    aetherIntelligence:
+      'Analyzes viewing feedback telemetry and dispatches tailored comparison sheets & payment plans.',
     typicalDuration: 'Inconsistent',
     aetherSpeed: 'Autonomous Nurture',
     telemetryMetric: '3.1x Higher Re-engagement',
@@ -106,8 +118,10 @@ const JOURNEY_STAGES: JourneyStage[] = [
     title: 'Conversion & Token',
     subtitle: 'Digital closing enablement',
     icon: <Trophy className="w-5 h-5 text-amber-300" />,
-    frictionInManual: 'Paperwork friction, delayed cost-sheet iterations, and prolonged KYC negotiation cycles.',
-    aetherIntelligence: 'Generates instant dynamic payment schedules, stamp duty breakdowns, and token reservation locks.',
+    frictionInManual:
+      'Paperwork friction, delayed cost-sheet iterations, and prolonged KYC negotiation cycles.',
+    aetherIntelligence:
+      'Generates instant dynamic payment schedules, stamp duty breakdowns, and token reservation locks.',
     typicalDuration: '14-21 days',
     aetherSpeed: '< 48 hours',
     telemetryMetric: '+38% Close Velocity',
@@ -132,7 +146,8 @@ export const RealEstateJourneyPipeline: React.FC = () => {
             From Fragmented Inbound to Closed Token
           </h3>
           <p className="text-xs sm:text-sm text-text-secondary mt-1">
-            How Aether orchestrates each stage of the real estate buyer qualification and inventory matching lifecycle.
+            How Aether orchestrates each stage of the real estate buyer qualification and inventory
+            matching lifecycle.
           </p>
         </div>
 
@@ -144,14 +159,24 @@ export const RealEstateJourneyPipeline: React.FC = () => {
 
       {/* Visual Flow Indicator */}
       <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between gap-1 overflow-x-auto text-xs font-mono">
-        {['Lead', 'Requirement', 'Intent', 'Property Match', 'Site Visit', 'Follow-up', 'Conversion'].map((step, idx, arr) => (
+        {[
+          'Lead',
+          'Requirement',
+          'Intent',
+          'Property Match',
+          'Site Visit',
+          'Follow-up',
+          'Conversion',
+        ].map((step, idx, arr) => (
           <React.Fragment key={step}>
-            <div className={cn(
-              "flex items-center gap-1.5 px-2.5 py-1 rounded-lg shrink-0 transition-colors",
-              selectedStage.id === JOURNEY_STAGES[idx]?.id
-                ? "bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/40"
-                : "text-slate-400 hover:text-white"
-            )}>
+            <div
+              className={cn(
+                'flex items-center gap-1.5 px-2.5 py-1 rounded-lg shrink-0 transition-colors',
+                selectedStage.id === JOURNEY_STAGES[idx]?.id
+                  ? 'bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/40'
+                  : 'text-slate-400 hover:text-white'
+              )}
+            >
               <span className="text-[10px] text-cyan-400 font-bold">0{idx + 1}</span>
               <span>{step}</span>
             </div>
@@ -189,7 +214,9 @@ export const RealEstateJourneyPipeline: React.FC = () => {
                 <div
                   className={cn(
                     'p-1 rounded-md transition-colors',
-                    isSelected ? 'bg-cyan-500/10' : 'text-text-muted group-hover:text-text-secondary'
+                    isSelected
+                      ? 'bg-cyan-500/10'
+                      : 'text-text-muted group-hover:text-text-secondary'
                   )}
                 >
                   {stage.icon}
@@ -241,7 +268,9 @@ export const RealEstateJourneyPipeline: React.FC = () => {
 
             <div className="pt-2 grid grid-cols-2 gap-3 font-mono text-xs">
               <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800">
-                <span className="text-[10px] text-text-muted uppercase block">Traditional Time</span>
+                <span className="text-[10px] text-text-muted uppercase block">
+                  Traditional Time
+                </span>
                 <span className="text-rose-400 font-bold">{selectedStage.typicalDuration}</span>
               </div>
               <div className="p-2.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30">

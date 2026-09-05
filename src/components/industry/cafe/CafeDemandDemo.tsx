@@ -22,16 +22,48 @@ import {
 import { cn } from '../../../utils/cn';
 
 const HISTORICAL_CAFE_BASELINE = [
-  { item: 'House Flat White & Latte', category: 'Espresso Bar', avgDaily: '320 cups', peakWindow: '7:30 - 9:30 AM', margin: '82%' },
-  { item: 'Cold Drip / Nitrogen Nitro Kegs', category: 'Cold Brew', avgDaily: '140 cups', peakWindow: '11:00 AM - 2:00 PM', margin: '88%' },
-  { item: 'Oat Milk Cortado & Specialty Pourover', category: 'Hand Brew', avgDaily: '95 cups', peakWindow: '8:00 - 10:00 AM', margin: '80%' },
-  { item: 'Artisan Butter & Almond Croissants', category: 'Pastry Par-Bake', avgDaily: '110 bakes', peakWindow: '7:15 - 9:00 AM', margin: '76%' },
-  { item: 'Smoked Sourdough Melts & Toasties', category: 'All-Day Kitchen', avgDaily: '85 orders', peakWindow: '12:00 - 2:00 PM', margin: '74%' },
+  {
+    item: 'House Flat White & Latte',
+    category: 'Espresso Bar',
+    avgDaily: '320 cups',
+    peakWindow: '7:30 - 9:30 AM',
+    margin: '82%',
+  },
+  {
+    item: 'Cold Drip / Nitrogen Nitro Kegs',
+    category: 'Cold Brew',
+    avgDaily: '140 cups',
+    peakWindow: '11:00 AM - 2:00 PM',
+    margin: '88%',
+  },
+  {
+    item: 'Oat Milk Cortado & Specialty Pourover',
+    category: 'Hand Brew',
+    avgDaily: '95 cups',
+    peakWindow: '8:00 - 10:00 AM',
+    margin: '80%',
+  },
+  {
+    item: 'Artisan Butter & Almond Croissants',
+    category: 'Pastry Par-Bake',
+    avgDaily: '110 bakes',
+    peakWindow: '7:15 - 9:00 AM',
+    margin: '76%',
+  },
+  {
+    item: 'Smoked Sourdough Melts & Toasties',
+    category: 'All-Day Kitchen',
+    avgDaily: '85 orders',
+    peakWindow: '12:00 - 2:00 PM',
+    margin: '74%',
+  },
 ];
 
 export const CafeDemandDemo: React.FC = () => {
   const [activePlanKey, setActivePlanKey] = useState<'weekday' | 'weekend'>('weekday');
-  const [activeSection, setActiveSection] = useState<'coffee' | 'food' | 'inventory' | 'staffing' | 'hourly'>('coffee');
+  const [activeSection, setActiveSection] = useState<
+    'coffee' | 'food' | 'inventory' | 'staffing' | 'hourly'
+  >('coffee');
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
 
   const plan = CAFE_NEXT_DAY_PLANS[activePlanKey];
@@ -61,9 +93,7 @@ export const CafeDemandDemo: React.FC = () => {
                 aether-roast-engine
               </span>
               <span className="text-text-muted text-xs">/</span>
-              <span className="text-xs font-mono text-text-muted">
-                next-day-barista-dispatch
-              </span>
+              <span className="text-xs font-mono text-text-muted">next-day-barista-dispatch</span>
             </div>
           </div>
 
@@ -93,9 +123,7 @@ export const CafeDemandDemo: React.FC = () => {
                 </span>
                 <span>{phase.split('. ')[1]}</span>
               </div>
-              {idx < arr.length - 1 && (
-                <ArrowRight className="w-3 h-3 text-stone-600 shrink-0" />
-              )}
+              {idx < arr.length - 1 && <ArrowRight className="w-3 h-3 text-stone-600 shrink-0" />}
             </React.Fragment>
           ))}
         </div>
@@ -111,7 +139,9 @@ export const CafeDemandDemo: React.FC = () => {
                   Step 1: Historical Beverage & Pastry Sales Baseline (30-Day Moving Average)
                 </h4>
               </div>
-              <span className="text-[11px] font-mono text-text-muted">Source: POS & Counter Stream</span>
+              <span className="text-[11px] font-mono text-text-muted">
+                Source: POS & Counter Stream
+              </span>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
@@ -194,23 +224,28 @@ export const CafeDemandDemo: React.FC = () => {
                 <Badge variant="warning" size="sm" className="font-mono text-[10px]">
                   {plan.dayName}
                 </Badge>
-                <span className="text-xs text-amber-300/90 font-mono">
-                  {plan.weatherCondition}
-                </span>
+                <span className="text-xs text-amber-300/90 font-mono">{plan.weatherCondition}</span>
               </div>
               <p className="text-xs text-stone-300">
-                Aether forecast has synthesized 90-day commuter transaction trends, morning weather radar, and roastery bean degassing schedules.
+                Aether forecast has synthesized 90-day commuter transaction trends, morning weather
+                radar, and roastery bean degassing schedules.
               </p>
             </div>
 
             <div className="flex items-center gap-5 font-mono text-xs border-t md:border-t-0 md:border-l border-amber-500/20 pt-3 md:pt-0 md:pl-6 shrink-0">
               <div>
-                <span className="text-[10px] text-text-muted uppercase block">Projected Cups & Orders</span>
+                <span className="text-[10px] text-text-muted uppercase block">
+                  Projected Cups & Orders
+                </span>
                 <span className="text-2xl font-extrabold text-white">{plan.projectedOrders}</span>
               </div>
               <div>
-                <span className="text-[10px] text-text-muted uppercase block">Estimated Revenue</span>
-                <span className="text-2xl font-extrabold text-emerald-400">{plan.projectedRevenue}</span>
+                <span className="text-[10px] text-text-muted uppercase block">
+                  Estimated Revenue
+                </span>
+                <span className="text-2xl font-extrabold text-emerald-400">
+                  {plan.projectedRevenue}
+                </span>
               </div>
             </div>
           </div>
@@ -374,7 +409,9 @@ export const CafeDemandDemo: React.FC = () => {
                     <div>
                       <div className="text-sm font-bold text-white font-sans">{inv.ingredient}</div>
                       <div className="text-[11px] text-stone-400 mt-0.5">
-                        Stock on Hand: <span className="text-stone-200">{inv.stockOnHand}</span> | Needed Tomorrow: <span className="text-white font-bold">{inv.neededTomorrow}</span>
+                        Stock on Hand: <span className="text-stone-200">{inv.stockOnHand}</span> |
+                        Needed Tomorrow:{' '}
+                        <span className="text-white font-bold">{inv.neededTomorrow}</span>
                       </div>
                     </div>
 
@@ -388,8 +425,8 @@ export const CafeDemandDemo: React.FC = () => {
                           inv.status === 'Critical'
                             ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
                             : inv.status === 'Reorder Now'
-                            ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
-                            : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                              ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                              : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                         )}
                       >
                         {inv.status}
@@ -441,7 +478,9 @@ export const CafeDemandDemo: React.FC = () => {
                 <span className="text-xs font-semibold text-white uppercase tracking-wider">
                   Hourly Cup Velocity & Rush Curve
                 </span>
-                <span className="text-xs font-mono text-amber-400">Peak Surge: 8:00 - 10:00 AM</span>
+                <span className="text-xs font-mono text-amber-400">
+                  Peak Surge: 8:00 - 10:00 AM
+                </span>
               </div>
 
               <div className="overflow-x-auto">
@@ -460,7 +499,9 @@ export const CafeDemandDemo: React.FC = () => {
                     {plan.hourlyBreakdown.map((row, i) => (
                       <tr key={i} className="hover:bg-stone-950/60 transition-colors">
                         <td className="p-3 font-bold text-white">{row.timeSlot}</td>
-                        <td className="p-3 font-bold text-amber-400">{row.expectedBeverages} cups</td>
+                        <td className="p-3 font-bold text-amber-400">
+                          {row.expectedBeverages} cups
+                        </td>
                         <td className="p-3 text-stone-300">{row.expectedFoodItems} items</td>
                         <td className="p-3">
                           <span
@@ -469,15 +510,19 @@ export const CafeDemandDemo: React.FC = () => {
                               row.peakRushLevel === 'Peak Morning Rush'
                                 ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
                                 : row.peakRushLevel === 'Afternoon Surge'
-                                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
-                                : 'bg-stone-800 text-stone-300'
+                                  ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                                  : 'bg-stone-800 text-stone-300'
                             )}
                           >
                             {row.peakRushLevel}
                           </span>
                         </td>
-                        <td className="p-3 font-bold text-emerald-400">{row.recommendedBaristas} Baristas</td>
-                        <td className="p-3 text-stone-300">{row.recommendedExpeditors} Expeditor</td>
+                        <td className="p-3 font-bold text-emerald-400">
+                          {row.recommendedBaristas} Baristas
+                        </td>
+                        <td className="p-3 text-stone-300">
+                          {row.recommendedExpeditors} Expeditor
+                        </td>
                       </tr>
                     ))}
                   </tbody>

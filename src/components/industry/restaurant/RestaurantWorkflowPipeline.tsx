@@ -33,8 +33,10 @@ const RESTAURANT_STEPS: WorkflowStep[] = [
     title: 'Sales',
     subtitle: 'Telemetry & POS ingestion',
     icon: <History className="w-5 h-5 text-amber-400" />,
-    traditionalFriction: 'Static daily totals logged in spreadsheets; no hourly item-level consumption pattern analysis.',
-    aetherIntelligence: 'Ingests granular transaction records, dish order velocity, modifier choices, and table turn timestamps.',
+    traditionalFriction:
+      'Static daily totals logged in spreadsheets; no hourly item-level consumption pattern analysis.',
+    aetherIntelligence:
+      'Ingests granular transaction records, dish order velocity, modifier choices, and table turn timestamps.',
     metricLabel: 'Telemetry Ingest',
     metricValue: '100% Item Granularity',
   },
@@ -44,8 +46,10 @@ const RESTAURANT_STEPS: WorkflowStep[] = [
     title: 'Demand',
     subtitle: 'Weather & event-aware modeling',
     icon: <TrendingUp className="w-5 h-5 text-sky-400" />,
-    traditionalFriction: 'Head chef estimates covers based on intuition; fails to anticipate rain spikes or local event surges.',
-    aetherIntelligence: 'Simulates item-level demand incorporating weather, reservation book, delivery trends, and holiday seasonality.',
+    traditionalFriction:
+      'Head chef estimates covers based on intuition; fails to anticipate rain spikes or local event surges.',
+    aetherIntelligence:
+      'Simulates item-level demand incorporating weather, reservation book, delivery trends, and holiday seasonality.',
     metricLabel: 'Forecast Accuracy',
     metricValue: '98.4% Precision',
   },
@@ -55,8 +59,10 @@ const RESTAURANT_STEPS: WorkflowStep[] = [
     title: 'Preparation',
     subtitle: 'Staged batch & par-level planning',
     icon: <ChefHat className="w-5 h-5 text-emerald-400" />,
-    traditionalFriction: 'Kitchen over-preps expensive gravies and cut proteins at 7 AM; high end-of-night spoilage.',
-    aetherIntelligence: 'Calculates two-stage prep par levels, sauce simmer quantities, and butchery cuts to minimize holding degradation.',
+    traditionalFriction:
+      'Kitchen over-preps expensive gravies and cut proteins at 7 AM; high end-of-night spoilage.',
+    aetherIntelligence:
+      'Calculates two-stage prep par levels, sauce simmer quantities, and butchery cuts to minimize holding degradation.',
     metricLabel: 'Waste Reduction',
     metricValue: '-68% Kitchen Waste',
   },
@@ -66,8 +72,10 @@ const RESTAURANT_STEPS: WorkflowStep[] = [
     title: 'Inventory',
     subtitle: 'Recipe-level supplier procurement',
     icon: <Boxes className="w-5 h-5 text-indigo-400" />,
-    traditionalFriction: 'Morning walk-in stockouts cause emergency high-cost retail purchases and mid-service 86ing.',
-    aetherIntelligence: 'Converts dish forecast into exact gram-level raw material orders and automatically dispatches supplier POs.',
+    traditionalFriction:
+      'Morning walk-in stockouts cause emergency high-cost retail purchases and mid-service 86ing.',
+    aetherIntelligence:
+      'Converts dish forecast into exact gram-level raw material orders and automatically dispatches supplier POs.',
     metricLabel: 'Stockout Rate',
     metricValue: 'Zero 86 Incidents',
   },
@@ -77,8 +85,10 @@ const RESTAURANT_STEPS: WorkflowStep[] = [
     title: 'Kitchen',
     subtitle: 'Station load pacing & ticket cadence',
     icon: <Flame className="w-5 h-5 text-rose-400" />,
-    traditionalFriction: 'Simultaneous 40-cover dining rush and delivery aggregator spikes choke sauté, grill, and tandoor stations.',
-    aetherIntelligence: 'Paces incoming tickets dynamically across line stations and adjusts delivery driver lead times in real time.',
+    traditionalFriction:
+      'Simultaneous 40-cover dining rush and delivery aggregator spikes choke sauté, grill, and tandoor stations.',
+    aetherIntelligence:
+      'Paces incoming tickets dynamically across line stations and adjusts delivery driver lead times in real time.',
     metricLabel: 'Ticket Speed',
     metricValue: '12.4m Avg Ticket Time',
   },
@@ -88,8 +98,10 @@ const RESTAURANT_STEPS: WorkflowStep[] = [
     title: 'Customer',
     subtitle: 'Loyalty & preference tracking',
     icon: <Users className="w-5 h-5 text-violet-400" />,
-    traditionalFriction: 'Regular guests treated as first-time walk-ins; no memory of favorite tables, wine, or allergies.',
-    aetherIntelligence: 'Synthesizes dining history, dietary profiles, and visit frequency to prompt VIP touches and re-engagement tasting invites.',
+    traditionalFriction:
+      'Regular guests treated as first-time walk-ins; no memory of favorite tables, wine, or allergies.',
+    aetherIntelligence:
+      'Synthesizes dining history, dietary profiles, and visit frequency to prompt VIP touches and re-engagement tasting invites.',
     metricLabel: 'Repeat Dining',
     metricValue: '+34% Loyalty Return',
   },
@@ -99,8 +111,10 @@ const RESTAURANT_STEPS: WorkflowStep[] = [
     title: 'Profitability',
     subtitle: 'Menu contribution & cost optimization',
     icon: <DollarSign className="w-5 h-5 text-emerald-300" />,
-    traditionalFriction: 'Hidden ingredient cost creep and discounting bleed margins; menu stars and dogs go unmanaged for quarters.',
-    aetherIntelligence: 'Real-time food cost telemetry calculates contribution margins per plate, recommends dynamic portioning, and flags margin leaks.',
+    traditionalFriction:
+      'Hidden ingredient cost creep and discounting bleed margins; menu stars and dogs go unmanaged for quarters.',
+    aetherIntelligence:
+      'Real-time food cost telemetry calculates contribution margins per plate, recommends dynamic portioning, and flags margin leaks.',
     metricLabel: 'Prime Cost Gain',
     metricValue: '+4.8% Net Margin',
   },
@@ -124,7 +138,8 @@ export const RestaurantWorkflowPipeline: React.FC = () => {
             From Historical POS Data to Precision Kitchen Profitability
           </h3>
           <p className="text-xs sm:text-sm text-text-secondary mt-1">
-            How Aether aligns dining room demand with back-of-house butchery, line station execution, and margin control.
+            How Aether aligns dining room demand with back-of-house butchery, line station
+            execution, and margin control.
           </p>
         </div>
 
@@ -136,15 +151,23 @@ export const RestaurantWorkflowPipeline: React.FC = () => {
 
       {/* Visual Flow Indicator */}
       <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between gap-1 overflow-x-auto text-xs font-mono">
-        {['Sales', 'Demand', 'Preparation', 'Inventory', 'Kitchen', 'Customer', 'Profitability'].map((step, idx, arr) => (
+        {[
+          'Sales',
+          'Demand',
+          'Preparation',
+          'Inventory',
+          'Kitchen',
+          'Customer',
+          'Profitability',
+        ].map((step, idx, arr) => (
           <React.Fragment key={step}>
             <button
               onClick={() => setSelectedStep(RESTAURANT_STEPS[idx])}
               className={cn(
-                "flex items-center gap-1.5 px-2.5 py-1 rounded-lg shrink-0 transition-colors cursor-pointer",
+                'flex items-center gap-1.5 px-2.5 py-1 rounded-lg shrink-0 transition-colors cursor-pointer',
                 selectedStep.id === RESTAURANT_STEPS[idx]?.id
-                  ? "bg-amber-500/20 text-amber-300 font-bold border border-amber-500/40"
-                  : "text-slate-400 hover:text-white"
+                  ? 'bg-amber-500/20 text-amber-300 font-bold border border-amber-500/40'
+                  : 'text-slate-400 hover:text-white'
               )}
             >
               <span className="text-[10px] text-amber-400 font-bold">0{idx + 1}</span>
@@ -184,7 +207,9 @@ export const RestaurantWorkflowPipeline: React.FC = () => {
                 <div
                   className={cn(
                     'p-1 rounded-md transition-colors',
-                    isSelected ? 'bg-amber-500/10' : 'text-text-muted group-hover:text-text-secondary'
+                    isSelected
+                      ? 'bg-amber-500/10'
+                      : 'text-text-muted group-hover:text-text-secondary'
                   )}
                 >
                   {step.icon}
@@ -235,8 +260,12 @@ export const RestaurantWorkflowPipeline: React.FC = () => {
             <p className="text-xs sm:text-sm text-text-muted">{selectedStep.subtitle}</p>
 
             <div className="pt-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800">
-              <span className="text-[10px] font-mono text-text-muted uppercase block">Aether Performance Metric</span>
-              <span className="text-amber-300 font-bold font-mono text-sm">{selectedStep.metricLabel}: {selectedStep.metricValue}</span>
+              <span className="text-[10px] font-mono text-text-muted uppercase block">
+                Aether Performance Metric
+              </span>
+              <span className="text-amber-300 font-bold font-mono text-sm">
+                {selectedStep.metricLabel}: {selectedStep.metricValue}
+              </span>
             </div>
           </div>
 

@@ -49,13 +49,15 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     accentColor: 'cyan',
     title: 'Instant Inbound Buyer Qualification & Private Showing Lock',
     badge: 'Lead Qualification & Showing Mesh',
-    description: 'Simulate an unassigned portal lead arriving after business hours (9:45 PM) and watch Aether qualify requirements, match listing inventory, and lock in a showing.',
+    description:
+      'Simulate an unassigned portal lead arriving after business hours (9:45 PM) and watch Aether qualify requirements, match listing inventory, and lock in a showing.',
     input: {
       source: 'Zillow / MagicBricks Inbound Webhook',
       timestamp: '21:45:12 GMT',
       rawPayload: {
         Buyer: 'Marcus Vance',
-        InquiryText: 'Looking for a 2BHK in Powai around ₹1.5 Cr with parking and ready possession.',
+        InquiryText:
+          'Looking for a 2BHK in Powai around ₹1.5 Cr with parking and ready possession.',
         Timeline: 'Ready to buy in 30 days; pre-approved home loan on file',
         PreferredTime: 'Tomorrow afternoon between 2:00–4:00 PM',
       },
@@ -63,17 +65,29 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     processing: {
       telemetryStream: 'NLP Entity Extraction & Property Graph DB Ingest',
       latencyMs: 38,
-      modelsActive: ['Requirement Extractor v3', 'Listing Inventory Matcher', 'Agent Calendar Sync'],
+      modelsActive: [
+        'Requirement Extractor v3',
+        'Listing Inventory Matcher',
+        'Agent Calendar Sync',
+      ],
     },
     understanding: {
-      diagnosis: 'High-intent pre-approved buyer with immediate purchase horizon. Listing #PW-402 matches 98.4% of criteria.',
-      riskOrOpportunityScored: 'Conversion Probability: 94.2% | Lead Decay Risk: High if uncontacted for >15 min',
+      diagnosis:
+        'High-intent pre-approved buyer with immediate purchase horizon. Listing #PW-402 matches 98.4% of criteria.',
+      riskOrOpportunityScored:
+        'Conversion Probability: 94.2% | Lead Decay Risk: High if uncontacted for >15 min',
       confidence: '98.4% Parameter Match',
-      factors: ['Budget matches seller floor', 'Parking slot allocated', 'Immediate possession available in Tower B'],
+      factors: [
+        'Budget matches seller floor',
+        'Parking slot allocated',
+        'Immediate possession available in Tower B',
+      ],
     },
     recommendation: {
-      actionProposed: 'Fast-track showing invitation, reserve 2:30 PM slot with Senior Agent Rajesh, and dispatch property dossier.',
-      expectedImpact: 'Locks showing within 15 minutes before competitor portals receive duplicate inquiry.',
+      actionProposed:
+        'Fast-track showing invitation, reserve 2:30 PM slot with Senior Agent Rajesh, and dispatch property dossier.',
+      expectedImpact:
+        'Locks showing within 15 minutes before competitor portals receive duplicate inquiry.',
       confidenceScore: '99.1%',
     },
     action: {
@@ -87,7 +101,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       humanReviewState: 'Showing confirmed on Broker calendar; alert pushed to mobile app',
     },
     result: {
-      primaryOutcome: 'Showing confirmed and verified within 4 minutes with zero manual agent friction.',
+      primaryOutcome:
+        'Showing confirmed and verified within 4 minutes with zero manual agent friction.',
       quantifiedGain: 'Simulated Gain: ₹1.5 Cr pipeline captured',
       timeToImpact: '4 minutes',
     },
@@ -99,7 +114,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     accentColor: 'amber',
     title: 'Sudden Rainstorm Surge & Kitchen Prep Staging',
     badge: 'Demand Forecasting & Table Yield',
-    description: 'Simulate a sudden evening rainstorm causing a 40% influx in comfort food orders while two prime 4-top tables cancel.',
+    description:
+      'Simulate a sudden evening rainstorm causing a 40% influx in comfort food orders while two prime 4-top tables cancel.',
     input: {
       source: 'OpenTable POS Feed & Weather Radar API',
       timestamp: '18:30:00 GMT',
@@ -116,13 +132,18 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       modelsActive: ['Demand Forecaster Kernel', 'Kitchen Pacing Model', 'Standby Seat Balancer'],
     },
     understanding: {
-      diagnosis: 'Rainstorm triggers modeled surge in signature pasta & broth orders. Two empty 4-top tables risk $480 lost shift revenue.',
+      diagnosis:
+        'Rainstorm triggers modeled surge in signature pasta & broth orders. Two empty 4-top tables risk $480 lost shift revenue.',
       riskOrOpportunityScored: 'Modeled Revenue Leakage: $480 | Standby Fill Probability: 96%',
       confidence: '96.2%',
-      factors: ['Waitlist party S. Chen is 500m away', 'Kitchen hot line has 8-minute capacity window before peak'],
+      factors: [
+        'Waitlist party S. Chen is 500m away',
+        'Kitchen hot line has 8-minute capacity window before peak',
+      ],
     },
     recommendation: {
-      actionProposed: 'Dispatch 10-minute hold claim link to standby parties and notify Head Chef to prep 14 additional pasta portions.',
+      actionProposed:
+        'Dispatch 10-minute hold claim link to standby parties and notify Head Chef to prep 14 additional pasta portions.',
       expectedImpact: 'Recovers cancellation revenue and prevents kitchen ticket delays.',
       confidenceScore: '97.5%',
     },
@@ -137,7 +158,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       humanReviewState: 'Sous Chef acknowledged batch prep on KDS display',
     },
     result: {
-      primaryOutcome: 'Both cancellation tables re-occupied in 3.5 minutes; zero food stockouts or ticket delays.',
+      primaryOutcome:
+        'Both cancellation tables re-occupied in 3.5 minutes; zero food stockouts or ticket delays.',
       quantifiedGain: 'Simulated Gain: +$480 shift yield recovered',
       timeToImpact: '3.5 minutes',
     },
@@ -149,7 +171,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     accentColor: 'amber',
     title: 'Morning Commuter Surge Flow & High-Velocity Drink Pacing',
     badge: 'Queue Pacing & Role Balancing',
-    description: 'Simulate a sudden commuter influx from nearby transit hub and test Aether balancing mobile vs counter drink queues.',
+    description:
+      'Simulate a sudden commuter influx from nearby transit hub and test Aether balancing mobile vs counter drink queues.',
     input: {
       source: 'Transit Hub Foot-Traffic Telemetry & POS Register',
       timestamp: '08:15:00 GMT',
@@ -165,13 +188,18 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       modelsActive: ['Queue Rate Limiter', 'Ticket Batching Engine', 'Barista Station Balancer'],
     },
     understanding: {
-      diagnosis: 'Espresso Bar 1 bottleneck diagnosed. Mobile order wait time projected to exceed 8 minutes if unpaced.',
+      diagnosis:
+        'Espresso Bar 1 bottleneck diagnosed. Mobile order wait time projected to exceed 8 minutes if unpaced.',
       riskOrOpportunityScored: 'Queue Congestion Risk: High | Drop-off Probability: 28%',
       confidence: '98.0%',
-      factors: ['Barista 2 currently on backup register', '6 pending orders share identical oat milk shot profile'],
+      factors: [
+        'Barista 2 currently on backup register',
+        '6 pending orders share identical oat milk shot profile',
+      ],
     },
     recommendation: {
-      actionProposed: 'Re-allocate Barista 2 to dedicated cold espresso extraction and batch identical milk steaming.',
+      actionProposed:
+        'Re-allocate Barista 2 to dedicated cold espresso extraction and batch identical milk steaming.',
       expectedImpact: 'Compresses average drink ready time from 8.5 minutes to under 2.5 minutes.',
       confidenceScore: '99.4%',
     },
@@ -186,7 +214,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       humanReviewState: 'Barista switched station with 1-tap touch screen confirmation',
     },
     result: {
-      primaryOutcome: 'Processed 31% more commuter orders; average lobby wait held under 2.5 minutes.',
+      primaryOutcome:
+        'Processed 31% more commuter orders; average lobby wait held under 2.5 minutes.',
       quantifiedGain: 'Simulated Gain: +$340 rush revenue',
       timeToImpact: '2.5 minutes',
     },
@@ -198,7 +227,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     accentColor: 'emerald',
     title: 'Silent Member Churn Detection & Re-Activation Outreach',
     badge: 'Turnstile Telemetry & Retention',
-    description: 'Simulate Aether detecting a premium member dropping from 4 visits/week to 0 visits over 21 days and launching proactive coach intervention.',
+    description:
+      'Simulate Aether detecting a premium member dropping from 4 visits/week to 0 visits over 21 days and launching proactive coach intervention.',
     input: {
       source: 'Turnstile Access Scanner & Member Mobile App',
       timestamp: '08:00:00 GMT',
@@ -215,13 +245,18 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       modelsActive: ['Habit Decay Kernel', 'Churn Predictor AI', 'Perk Matcher'],
     },
     understanding: {
-      diagnosis: 'Silent habit break detected. 89% probability of non-renewal if uncontacted within 7 days.',
+      diagnosis:
+        'Silent habit break detected. 89% probability of non-renewal if uncontacted within 7 days.',
       riskOrOpportunityScored: 'Churn Probability: 89% | ARR at Risk: $2,160',
       confidence: '92.7%',
-      factors: ['Member usually trains mornings with Coach Marcus', 'Missed 3 regular reformer pilates classes'],
+      factors: [
+        'Member usually trains mornings with Coach Marcus',
+        'Missed 3 regular reformer pilates classes',
+      ],
     },
     recommendation: {
-      actionProposed: 'Generate personalized coach recovery touchpoint with complimentary hydro-massage pass.',
+      actionProposed:
+        'Generate personalized coach recovery touchpoint with complimentary hydro-massage pass.',
       expectedImpact: 'Restores member training habit before formal renewal invoice is dispatched.',
       confidenceScore: '95.0%',
     },
@@ -236,7 +271,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       humanReviewState: 'Coach approved and sent outreach with single tap',
     },
     result: {
-      primaryOutcome: 'Member returned to active training; $2,160 annual subscription value protected.',
+      primaryOutcome:
+        'Member returned to active training; $2,160 annual subscription value protected.',
       quantifiedGain: 'Simulated Gain: $2,160 renewal protected',
       timeToImpact: '45 minutes',
     },
@@ -248,7 +284,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     accentColor: 'rose',
     title: 'Biological Regrowth Cycle Calculation & 1-Tap Rebooking',
     badge: 'Cycle Cadence & Chair Yield',
-    description: 'Simulate Aether tracking balayage root regrowth and dispatching an optimal rebooking invitation before client drifts to a competitor.',
+    description:
+      'Simulate Aether tracking balayage root regrowth and dispatching an optimal rebooking invitation before client drifts to a competitor.',
     input: {
       source: 'Salon POS & Formula Dossier Archive',
       timestamp: '11:00:00 GMT',
@@ -265,13 +302,18 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       modelsActive: ['Color Regrowth Model', 'Chair Slot Packing Engine', 'Formula Memory Sync'],
     },
     understanding: {
-      diagnosis: 'Root fade risk active. Stylist Elena has open mid-day chair slot on Tuesday at 2:00 PM.',
+      diagnosis:
+        'Root fade risk active. Stylist Elena has open mid-day chair slot on Tuesday at 2:00 PM.',
       riskOrOpportunityScored: 'Rebooking Opportunity: High | Expected Ticket: ₹9,500',
       confidence: '96.4%',
-      factors: ['Client prefers Tuesday afternoons', 'Level 9 toner formula on file in digital dossier'],
+      factors: [
+        'Client prefers Tuesday afternoons',
+        'Level 9 toner formula on file in digital dossier',
+      ],
     },
     recommendation: {
-      actionProposed: 'Dispatch personalized WhatsApp rebooking invitation with pre-reserved Tuesday 2:00 PM slot.',
+      actionProposed:
+        'Dispatch personalized WhatsApp rebooking invitation with pre-reserved Tuesday 2:00 PM slot.',
       expectedImpact: 'Eliminates 6-week appointment delay and fills an off-peak Tuesday chair.',
       confidenceScore: '98.2%',
     },
@@ -298,7 +340,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     accentColor: 'sky',
     title: 'Omnichannel Stockout Interception & Ship-From-Store Routing',
     badge: 'Inventory Routing & Cart Recovery',
-    description: 'Simulate an online shopper about to abandon a $285 coat due to warehouse stockout, rescued by routing inventory from a physical retail store.',
+    description:
+      'Simulate an online shopper about to abandon a $285 coat due to warehouse stockout, rescued by routing inventory from a physical retail store.',
     input: {
       source: 'Shopify E-Commerce Cart & POS Store Telemetry',
       timestamp: '15:20:00 GMT',
@@ -314,13 +357,15 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       modelsActive: ['Omnichannel Routing Kernel', 'Local Foot-Traffic Feasibility Model'],
     },
     understanding: {
-      diagnosis: 'Cart abandonment imminent. Downtown store has excess stock and low afternoon foot traffic.',
+      diagnosis:
+        'Cart abandonment imminent. Downtown store has excess stock and low afternoon foot traffic.',
       riskOrOpportunityScored: 'Cart Abandonment Risk: 98% | Fulfillment Feasibility: 99.2%',
       confidence: '99.0%',
       factors: ['Customer delivery address is within regional ship-from-store zone (12 miles)'],
     },
     recommendation: {
-      actionProposed: 'Enable instant ship-from-store routing and dispatch pre-approved checkout link to customer.',
+      actionProposed:
+        'Enable instant ship-from-store routing and dispatch pre-approved checkout link to customer.',
       expectedImpact: 'Captures full-price $285 sale that would otherwise bounce to a competitor.',
       confidenceScore: '98.5%',
     },
@@ -335,7 +380,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       humanReviewState: 'Store associate confirmed item packaged for 2-day delivery',
     },
     result: {
-      primaryOutcome: 'Full-price order captured; fulfillment completed from nearby physical store.',
+      primaryOutcome:
+        'Full-price order captured; fulfillment completed from nearby physical store.',
       quantifiedGain: 'Simulated Gain: +$285 order preserved',
       timeToImpact: '2 minutes',
     },
@@ -347,30 +393,39 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     accentColor: 'teal',
     title: 'VIP Flight Tracking & Priority Housekeeping Turnaround',
     badge: 'Flight Telemetry & Room Dispatch',
-    description: 'Simulate Aether tracking an early-landing VIP guest flight and dynamically reprioritizing housekeeping queues to have the suite ready with mobile key issued.',
+    description:
+      'Simulate Aether tracking an early-landing VIP guest flight and dynamically reprioritizing housekeeping queues to have the suite ready with mobile key issued.',
     input: {
       source: 'Airline Flight Telemetry API & Hotel PMS',
       timestamp: '13:15:00 GMT',
       rawPayload: {
         Guest: 'David Sterling (VIP Diamond Guest)',
-        FlightTelemetry: 'Flight #UA421 landed 13:15 (1 hr 45 min ahead of standard 15:00 check-in)',
+        FlightTelemetry:
+          'Flight #UA421 landed 13:15 (1 hr 45 min ahead of standard 15:00 check-in)',
         RoomStatus: 'Suite 402 currently Dirty (Housekeeping on 4th floor)',
       },
     },
     processing: {
       telemetryStream: 'Flight Radar Telemetry & Housekeeping Tablet Mesh',
       latencyMs: 40,
-      modelsActive: ['Flight Arrival Tracker', 'Housekeeping Queue Optimizer', 'Smart Lock Key Dispenser'],
+      modelsActive: [
+        'Flight Arrival Tracker',
+        'Housekeeping Queue Optimizer',
+        'Smart Lock Key Dispenser',
+      ],
     },
     understanding: {
-      diagnosis: 'Early arrival VIP guest. Suite 402 must be prioritized to prevent 20-minute lobby wait.',
+      diagnosis:
+        'Early arrival VIP guest. Suite 402 must be prioritized to prevent 20-minute lobby wait.',
       riskOrOpportunityScored: 'Guest Satisfaction Impact: High ancillary spend likelihood',
       confidence: '99.4%',
       factors: ['Housekeeping team currently 2 doors down from Suite 402'],
     },
     recommendation: {
-      actionProposed: 'Re-route Housekeeping Team to Suite 402 immediately; pre-condition climate to 68°F.',
-      expectedImpact: 'Delivers frictionless 5-star experience with direct room access via mobile digital key.',
+      actionProposed:
+        'Re-route Housekeeping Team to Suite 402 immediately; pre-condition climate to 68°F.',
+      expectedImpact:
+        'Delivers frictionless 5-star experience with direct room access via mobile digital key.',
       confidenceScore: '99.5%',
     },
     action: {
@@ -396,7 +451,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     accentColor: 'cyan',
     title: 'Specialist Cancellation Gap Recovery & Pre-Visit Intake',
     badge: 'Waitlist Recovery & Admin Intake',
-    description: 'Simulate a cardiologist cancellation at 10:30 AM backfilled by an urgent waitlisted patient with digital intake completed in 3 minutes.',
+    description:
+      'Simulate a cardiologist cancellation at 10:30 AM backfilled by an urgent waitlisted patient with digital intake completed in 3 minutes.',
     input: {
       source: 'Clinic EHR Scheduling System & SMS Gateway',
       timestamp: '09:00:00 GMT',
@@ -412,13 +468,18 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       modelsActive: ['Waitlist Urgency Scorer', 'Patient Matcher AI', 'Digital Intake Parser'],
     },
     understanding: {
-      diagnosis: 'Provider idle time diagnosed ($350 lost billable slot). Patient Marcus Reed has urgent referral and requested morning slot.',
+      diagnosis:
+        'Provider idle time diagnosed ($350 lost billable slot). Patient Marcus Reed has urgent referral and requested morning slot.',
       riskOrOpportunityScored: 'Waitlist Match Confidence: 97.6% | Provider Loss: $350 avoided',
       confidence: '98.2%',
-      factors: ['Marcus Reed lives 15 mins from clinic', 'Requested morning cancellation notifications'],
+      factors: [
+        'Marcus Reed lives 15 mins from clinic',
+        'Requested morning cancellation notifications',
+      ],
     },
     recommendation: {
-      actionProposed: 'Dispatch automated SMS slot claim link to Marcus Reed with 15-minute response window.',
+      actionProposed:
+        'Dispatch automated SMS slot claim link to Marcus Reed with 15-minute response window.',
       expectedImpact: 'Preserves provider productivity and accelerates patient care by 2 weeks.',
       confidenceScore: '98.5%',
     },
@@ -433,7 +494,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       humanReviewState: 'Slot locked automatically; receptionist desk notified of on-time arrival',
     },
     result: {
-      primaryOutcome: 'Open cardiology slot filled in 3 minutes; intake paperwork 100% complete prior to arrival.',
+      primaryOutcome:
+        'Open cardiology slot filled in 3 minutes; intake paperwork 100% complete prior to arrival.',
       quantifiedGain: 'Simulated Gain: +$350 clinical slot preserved',
       timeToImpact: '3 minutes',
     },
@@ -445,7 +507,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     accentColor: 'indigo',
     title: 'Brake Wear Telematics Alert, Bay Scheduling & Parts Staging',
     badge: 'Predictive Service & Bay Balancer',
-    description: 'Simulate connected telematics detecting 3mm brake pad wear on a BMW 330i, verifying warehouse parts, and reserving a master tech lift bay.',
+    description:
+      'Simulate connected telematics detecting 3mm brake pad wear on a BMW 330i, verifying warehouse parts, and reserving a master tech lift bay.',
     input: {
       source: 'Connected Vehicle Telematics & Dealership DMS',
       timestamp: '14:10:00 GMT',
@@ -462,13 +525,18 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       modelsActive: ['Maintenance Predictor AI', 'Bay Capacity Matrix', 'Parts Stager'],
     },
     understanding: {
-      diagnosis: 'Heavy mechanical repair order required. Lift Bay #4 with Master Tech Dan is available Thursday at 9:30 AM.',
+      diagnosis:
+        'Heavy mechanical repair order required. Lift Bay #4 with Master Tech Dan is available Thursday at 9:30 AM.',
       riskOrOpportunityScored: 'Brake Safety Risk: Moderate | Parts Readiness: 100% In Stock',
       confidence: '99.1%',
-      factors: ['Parts in stock', 'Certified BMW master tech required for electronic sensor recalibration'],
+      factors: [
+        'Parts in stock',
+        'Certified BMW master tech required for electronic sensor recalibration',
+      ],
     },
     recommendation: {
-      actionProposed: 'Reserve Lift Bay #4, stage OEM brake parts at parts counter, and dispatch WhatsApp service invite.',
+      actionProposed:
+        'Reserve Lift Bay #4, stage OEM brake parts at parts counter, and dispatch WhatsApp service invite.',
       expectedImpact: 'Prevents customer breakdown and eliminates lift bay hold-overs.',
       confidenceScore: '99.5%',
     },
@@ -483,7 +551,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       humanReviewState: 'Service advisor approved repair order estimate with 1 click',
     },
     result: {
-      primaryOutcome: 'Repair order booked, bay locked, and parts staged with zero technician waiting time.',
+      primaryOutcome:
+        'Repair order booked, bay locked, and parts staged with zero technician waiting time.',
       quantifiedGain: 'Simulated Gain: +₹18,500 RO captured',
       timeToImpact: '5 minutes',
     },
@@ -495,7 +564,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     accentColor: 'rose',
     title: 'Admissions Inquiry Triage, Transcript Audit & Fast-Track Enrollment',
     badge: 'Cognitive Ingestion & Course Matching',
-    description: 'Simulate a career switcher uploading a university transcript for a Master of Data Science program and receiving a verified syllabus and scholarship offer in 12 minutes.',
+    description:
+      'Simulate a career switcher uploading a university transcript for a Master of Data Science program and receiving a verified syllabus and scholarship offer in 12 minutes.',
     input: {
       source: 'Admissions Web Inquiry & PDF Document Upload',
       timestamp: '16:45:00 GMT',
@@ -512,13 +582,18 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       modelsActive: ['Credential Parser v4', 'Curriculum Matcher AI', 'Scholarship Allocator'],
     },
     understanding: {
-      diagnosis: 'Prerequisites met with distinction (GPA: 3.82, Linear Algebra & Python verified). High-intent candidate eligible for $4,000 scholarship.',
+      diagnosis:
+        'Prerequisites met with distinction (GPA: 3.82, Linear Algebra & Python verified). High-intent candidate eligible for $4,000 scholarship.',
       riskOrOpportunityScored: 'Admissions Fit Score: 98.5% | Matriculation Likelihood: High',
       confidence: '99.5%',
-      factors: ['3 years software QA experience', 'Weekend cohort matches working professional schedule'],
+      factors: [
+        '3 years software QA experience',
+        'Weekend cohort matches working professional schedule',
+      ],
     },
     recommendation: {
-      actionProposed: 'Fast-track application acceptance, allocate $4,000 scholarship, and schedule 1-on-1 Academic Director orientation.',
+      actionProposed:
+        'Fast-track application acceptance, allocate $4,000 scholarship, and schedule 1-on-1 Academic Director orientation.',
       expectedImpact: 'Secures enrollment within 15 minutes vs 6-day competitor turnaround.',
       confidenceScore: '99.2%',
     },
@@ -533,7 +608,8 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       humanReviewState: 'Faculty Director signed off on acceptance package in admissions dashboard',
     },
     result: {
-      primaryOutcome: 'Application parsed, verified, and enrolled in 12 minutes vs 6-day industry average.',
+      primaryOutcome:
+        'Application parsed, verified, and enrolled in 12 minutes vs 6-day industry average.',
       quantifiedGain: 'Simulated Gain: +$14,000 tuition yield',
       timeToImpact: '12 minutes',
     },

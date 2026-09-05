@@ -133,7 +133,9 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
                 <Badge variant="success" size="sm">
                   Member Retention & Churn Architecture
                 </Badge>
-                <span className="text-xs font-mono text-emerald-400 font-semibold">Proactive Fitness Intelligence</span>
+                <span className="text-xs font-mono text-emerald-400 font-semibold">
+                  Proactive Fitness Intelligence
+                </span>
               </div>
               <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                 How Aether Eliminates Member Drop-Off & Maximizes LTV
@@ -157,7 +159,9 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
                   Silent Disengagement & Churn Blindspots
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
-                  Members drop from 4 visits/week down to 0 visits over 3 weeks without front-desk detection. Staff only discover disengagement when members cancel auto-renewal, resulting in 40%+ annual churn.
+                  Members drop from 4 visits/week down to 0 visits over 3 weeks without front-desk
+                  detection. Staff only discover disengagement when members cancel auto-renewal,
+                  resulting in 40%+ annual churn.
                 </p>
               </div>
               <div className="pt-3 border-t border-rose-500/20 flex items-center justify-between text-[11px] font-mono text-rose-300/80">
@@ -177,10 +181,18 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
                   Turnstile & Engagement Ingestion
                 </h3>
                 <p className="text-xs text-slate-300 mt-2 leading-relaxed">
-                  Synthesizes turnstile RFID check-ins, habit decay intervals, and studio class booking curves:
+                  Synthesizes turnstile RFID check-ins, habit decay intervals, and studio class
+                  booking curves:
                 </p>
                 <div className="mt-3 flex flex-wrap gap-1.5">
-                  {['Weekly Visit Velocity', 'Habit Break Thresholds', 'Favorite Workout Styles', 'Assigned Coach Sync', 'Studio Class Fill Rates', 'Renewal Countdown Days'].map((attr, i) => (
+                  {[
+                    'Weekly Visit Velocity',
+                    'Habit Break Thresholds',
+                    'Favorite Workout Styles',
+                    'Assigned Coach Sync',
+                    'Studio Class Fill Rates',
+                    'Renewal Countdown Days',
+                  ].map((attr, i) => (
                     <span
                       key={attr}
                       className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-emerald-500/10 border border-emerald-500/25 text-emerald-300"
@@ -207,7 +219,8 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
                   Targeted Retention Protocols
                 </h3>
                 <p className="text-xs text-slate-300 mt-2 leading-relaxed">
-                  Triggers personalized coach recovery tasks, incentive vouchers, and proactive renewal incentives:
+                  Triggers personalized coach recovery tasks, incentive vouchers, and proactive
+                  renewal incentives:
                 </p>
                 <div className="mt-3 space-y-1.5">
                   {[
@@ -217,9 +230,14 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
                     'Trainer Priority Schedule Alerts',
                     'Proactive 30-Day Milestone Renewal Locks',
                   ].map((rec, i) => (
-                    <div key={rec} className="flex items-center gap-2 text-[11px] font-mono text-teal-300">
+                    <div
+                      key={rec}
+                      className="flex items-center gap-2 text-[11px] font-mono text-teal-300"
+                    >
                       <CheckCircle2 className="w-3 h-3 text-teal-400 shrink-0" />
-                      <span>{i + 1}. {rec}</span>
+                      <span>
+                        {i + 1}. {rec}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -245,18 +263,23 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {industry.challenges.map((item, idx) => (
-            <Card key={item.id} className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all">
+            <Card
+              key={item.id}
+              className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all"
+            >
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-slate-800">
-                  <span className="text-[10px] font-mono text-emerald-400 font-bold">Problem 0{idx + 1}</span>
+                  <span className="text-[10px] font-mono text-emerald-400 font-bold">
+                    Problem 0{idx + 1}
+                  </span>
                   <span
                     className={cn(
                       'text-[9px] uppercase font-mono px-2 py-0.5 rounded font-bold',
                       item.severity === 'critical'
                         ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
                         : item.severity === 'high'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                        : 'bg-slate-800 text-slate-300'
+                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                          : 'bg-slate-800 text-slate-300'
                     )}
                   >
                     {item.severity}
@@ -272,9 +295,7 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
                     <AlertCircle className="w-3 h-3" />
                     <span>Root Cause</span>
                   </div>
-                  <p className="text-xs text-text-secondary leading-relaxed pl-4">
-                    {item.cause}
-                  </p>
+                  <p className="text-xs text-text-secondary leading-relaxed pl-4">{item.cause}</p>
                 </div>
 
                 <div className="pt-1">
@@ -304,7 +325,10 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {industry.opportunities.map((opp, idx) => (
-            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card">
+            <Card
+              key={idx}
+              className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card"
+            >
               <div className="space-y-4">
                 <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
                   <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
@@ -332,7 +356,9 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
 
               <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
                 <span className="text-text-muted font-mono">Projected Multiplier:</span>
-                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+                <span className="font-bold font-mono text-emerald-400">
+                  {opp.potentialMultiplier}
+                </span>
               </div>
             </Card>
           ))}
@@ -351,13 +377,18 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {industry.solutionMappings.map((mapping, idx) => (
-            <Card key={idx} className="p-5 sm:p-6 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80">
+            <Card
+              key={idx}
+              className="p-5 sm:p-6 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80"
+            >
               <div className="space-y-3">
                 <div className="flex items-center justify-between mb-1">
                   <Badge variant="neutral" size="sm" className="font-mono text-[10px]">
                     {mapping.capabilityTag}
                   </Badge>
-                  <span className="text-[10px] font-mono text-emerald-400">Solution 0{idx + 1}</span>
+                  <span className="text-[10px] font-mono text-emerald-400">
+                    Solution 0{idx + 1}
+                  </span>
                 </div>
 
                 <div className="text-xs text-text-muted">
@@ -578,7 +609,8 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
             </h2>
 
             <p className="mt-4 text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed max-w-2xl">
-              Experience an intelligent retention blueprint configured for your membership tiers, studio capacity, and coaching staff.
+              Experience an intelligent retention blueprint configured for your membership tiers,
+              studio capacity, and coaching staff.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">

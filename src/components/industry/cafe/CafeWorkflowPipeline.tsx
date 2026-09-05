@@ -32,8 +32,10 @@ const CAFE_STEPS: CafeWorkflowStep[] = [
     title: 'Sales Telemetry',
     subtitle: 'High-speed drink transaction stream',
     icon: <Coffee className="w-5 h-5 text-amber-500" />,
-    traditionalDrag: 'POS records total daily cash, but misses bean grams per shot and modifier demand spikes.',
-    aetherIntelligence: 'Captures sub-second drink ticket streams, oat milk modifiers, cup sizes, and takeaway ratios.',
+    traditionalDrag:
+      'POS records total daily cash, but misses bean grams per shot and modifier demand spikes.',
+    aetherIntelligence:
+      'Captures sub-second drink ticket streams, oat milk modifiers, cup sizes, and takeaway ratios.',
     metricLabel: 'Capture Latency',
     metricValue: 'Real-Time Stream',
   },
@@ -43,8 +45,10 @@ const CAFE_STEPS: CafeWorkflowStep[] = [
     title: 'Demand Curve',
     subtitle: 'Commuter rush & weather modeling',
     icon: <TrendingUp className="w-5 h-5 text-sky-400" />,
-    traditionalDrag: '7:30 AM morning rush hits without warning; baristas get slammed with unbatched complex iced drinks.',
-    aetherIntelligence: 'Projects exact hourly beverage curves, distinguishing cold brew vs flat white demand by morning temperature.',
+    traditionalDrag:
+      '7:30 AM morning rush hits without warning; baristas get slammed with unbatched complex iced drinks.',
+    aetherIntelligence:
+      'Projects exact hourly beverage curves, distinguishing cold brew vs flat white demand by morning temperature.',
     metricLabel: 'Rush Accuracy',
     metricValue: '99.1% Forecast Fit',
   },
@@ -54,8 +58,10 @@ const CAFE_STEPS: CafeWorkflowStep[] = [
     title: 'Preparation',
     subtitle: 'Espresso calibration & bakery par-bakes',
     icon: <Croissant className="w-5 h-5 text-orange-400" />,
-    traditionalDrag: 'Baking 100 croissants at 6 AM leads to afternoon staleness; cold brew runs dry by 1:00 PM.',
-    aetherIntelligence: 'Schedules 6:15 AM first-bake batches, cold brew keg charge timings, and grinder micron calibrations.',
+    traditionalDrag:
+      'Baking 100 croissants at 6 AM leads to afternoon staleness; cold brew runs dry by 1:00 PM.',
+    aetherIntelligence:
+      'Schedules 6:15 AM first-bake batches, cold brew keg charge timings, and grinder micron calibrations.',
     metricLabel: 'Bakery Spoilage',
     metricValue: '< 3.1% Total Waste',
   },
@@ -65,8 +71,10 @@ const CAFE_STEPS: CafeWorkflowStep[] = [
     title: 'Inventory Ledger',
     subtitle: 'Bean roast dates & fresh dairy burn',
     icon: <PackageCheck className="w-5 h-5 text-emerald-400" />,
-    traditionalDrag: 'Running out of oat milk or coffee cups mid-Saturday morning forces 86ing core lattes.',
-    aetherIntelligence: 'Monitors whole bean roast decay windows, milk carton depletion, and auto-dispatches roastery reorders.',
+    traditionalDrag:
+      'Running out of oat milk or coffee cups mid-Saturday morning forces 86ing core lattes.',
+    aetherIntelligence:
+      'Monitors whole bean roast decay windows, milk carton depletion, and auto-dispatches roastery reorders.',
     metricLabel: 'Stockout Frequency',
     metricValue: '0 Mid-Rush Stockouts',
   },
@@ -76,8 +84,10 @@ const CAFE_STEPS: CafeWorkflowStep[] = [
     title: 'Customer Behaviour',
     subtitle: 'Habit clustering & loyalty cycles',
     icon: <Users className="w-5 h-5 text-indigo-400" />,
-    traditionalDrag: 'Commuter regulars wait in standard retail queues; high queue walk-aways during 8:00 AM peak.',
-    aetherIntelligence: 'Recognizes regular morning commuter orders and triggers one-tap mobile pre-orders upon approach.',
+    traditionalDrag:
+      'Commuter regulars wait in standard retail queues; high queue walk-aways during 8:00 AM peak.',
+    aetherIntelligence:
+      'Recognizes regular morning commuter orders and triggers one-tap mobile pre-orders upon approach.',
     metricLabel: 'Repeat Frequency',
     metricValue: '84% Daily Retention',
   },
@@ -87,8 +97,10 @@ const CAFE_STEPS: CafeWorkflowStep[] = [
     title: 'Station Optimization',
     subtitle: 'Barista role & counter throughput',
     icon: <SlidersHorizontal className="w-5 h-5 text-amber-300" />,
-    traditionalDrag: 'Single barista handles grinding, steaming, and register simultaneously, causing 6-minute wait lines.',
-    aetherIntelligence: 'Dynamically divides extraction, milk pitcher staging, and expeditor hand-offs during peak surge.',
+    traditionalDrag:
+      'Single barista handles grinding, steaming, and register simultaneously, causing 6-minute wait lines.',
+    aetherIntelligence:
+      'Dynamically divides extraction, milk pitcher staging, and expeditor hand-offs during peak surge.',
     metricLabel: 'Drink Velocity',
     metricValue: '88s Average Extraction',
   },
@@ -112,7 +124,8 @@ export const CafeWorkflowPipeline: React.FC = () => {
             From High-Speed Counter Signals to Perfect Morning Extractions
           </h3>
           <p className="text-xs sm:text-sm text-text-secondary mt-1">
-            How Aether orchestrates morning rush velocity, bean roast freshness, and bakery par-bakes.
+            How Aether orchestrates morning rush velocity, bean roast freshness, and bakery
+            par-bakes.
           </p>
         </div>
 
@@ -124,25 +137,27 @@ export const CafeWorkflowPipeline: React.FC = () => {
 
       {/* Visual Flow Indicator */}
       <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between gap-1 overflow-x-auto text-xs font-mono">
-        {['Sales', 'Demand', 'Preparation', 'Inventory', 'Customer', 'Optimization'].map((step, idx, arr) => (
-          <React.Fragment key={step}>
-            <button
-              onClick={() => setSelectedStep(CAFE_STEPS[idx])}
-              className={cn(
-                "flex items-center gap-1.5 px-2.5 py-1 rounded-lg shrink-0 transition-colors cursor-pointer",
-                selectedStep.id === CAFE_STEPS[idx]?.id
-                  ? "bg-amber-500/20 text-amber-300 font-bold border border-amber-500/40"
-                  : "text-slate-400 hover:text-white"
+        {['Sales', 'Demand', 'Preparation', 'Inventory', 'Customer', 'Optimization'].map(
+          (step, idx, arr) => (
+            <React.Fragment key={step}>
+              <button
+                onClick={() => setSelectedStep(CAFE_STEPS[idx])}
+                className={cn(
+                  'flex items-center gap-1.5 px-2.5 py-1 rounded-lg shrink-0 transition-colors cursor-pointer',
+                  selectedStep.id === CAFE_STEPS[idx]?.id
+                    ? 'bg-amber-500/20 text-amber-300 font-bold border border-amber-500/40'
+                    : 'text-slate-400 hover:text-white'
+                )}
+              >
+                <span className="text-[10px] text-amber-400 font-bold">0{idx + 1}</span>
+                <span>{step}</span>
+              </button>
+              {idx < arr.length - 1 && (
+                <ChevronRight className="w-3.5 h-3.5 text-slate-600 shrink-0" />
               )}
-            >
-              <span className="text-[10px] text-amber-400 font-bold">0{idx + 1}</span>
-              <span>{step}</span>
-            </button>
-            {idx < arr.length - 1 && (
-              <ChevronRight className="w-3.5 h-3.5 text-slate-600 shrink-0" />
-            )}
-          </React.Fragment>
-        ))}
+            </React.Fragment>
+          )
+        )}
       </div>
 
       {/* Steps Selector Bar */}
@@ -172,7 +187,9 @@ export const CafeWorkflowPipeline: React.FC = () => {
                 <div
                   className={cn(
                     'p-1 rounded-md transition-colors',
-                    isSelected ? 'bg-amber-500/10' : 'text-text-muted group-hover:text-text-secondary'
+                    isSelected
+                      ? 'bg-amber-500/10'
+                      : 'text-text-muted group-hover:text-text-secondary'
                   )}
                 >
                   {step.icon}
@@ -223,8 +240,12 @@ export const CafeWorkflowPipeline: React.FC = () => {
             <p className="text-xs sm:text-sm text-text-muted">{selectedStep.subtitle}</p>
 
             <div className="pt-2 p-3 rounded-xl bg-slate-900 border border-slate-800">
-              <span className="text-[10px] font-mono text-text-muted uppercase block">Cafe Velocity Metric</span>
-              <span className="text-amber-300 font-bold font-mono text-sm">{selectedStep.metricLabel}: {selectedStep.metricValue}</span>
+              <span className="text-[10px] font-mono text-text-muted uppercase block">
+                Cafe Velocity Metric
+              </span>
+              <span className="text-amber-300 font-bold font-mono text-sm">
+                {selectedStep.metricLabel}: {selectedStep.metricValue}
+              </span>
             </div>
           </div>
 

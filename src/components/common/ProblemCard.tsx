@@ -63,9 +63,7 @@ export const ProblemCard: React.FC<ProblemCardProps> = ({ problem, className }) 
       {/* Outcome Metric */}
       <div className="mt-4 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
         <span className="text-text-muted font-medium">Measured Efficiency Gain:</span>
-        <span className="font-semibold font-mono text-emerald-400">
-          {problem.efficiencyGain}
-        </span>
+        <span className="font-semibold font-mono text-emerald-400">{problem.efficiencyGain}</span>
       </div>
     </Card>
   );

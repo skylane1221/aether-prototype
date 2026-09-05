@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -32,7 +29,7 @@ export default {
           secondary: '#94a3b8',
           muted: '#64748b',
           faint: '#475569',
-        }
+        },
       },
       fontFamily: {
         sans: [
@@ -43,17 +40,12 @@ export default {
           'Roboto',
           'sans-serif',
         ],
-        mono: [
-          '"JetBrains Mono"',
-          'ui-monospace',
-          'SFMono-Regular',
-          'Menlo',
-          'monospace',
-        ],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       boxShadow: {
-        'card': '0 2px 8px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.04)',
-        'card-hover': '0 12px 28px -6px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08)',
+        card: '0 2px 8px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.04)',
+        'card-hover':
+          '0 12px 28px -6px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08)',
         'glow-subtle': '0 0 25px -5px rgba(14, 165, 233, 0.12)',
         'glow-sm': '0 0 12px -2px rgba(14, 165, 233, 0.2)',
         'inner-bevel': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.06)',

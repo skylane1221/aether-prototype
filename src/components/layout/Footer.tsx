@@ -18,12 +18,12 @@ export const Footer: React.FC = () => {
               <div className="w-7 h-7 rounded-lg bg-slate-900 border border-aether-border flex items-center justify-center">
                 <Layers className="w-4 h-4 text-sky-400" />
               </div>
-              <span className="text-base font-bold tracking-tight text-text-primary">
-                AETHER
-              </span>
+              <span className="text-base font-bold tracking-tight text-text-primary">AETHER</span>
             </Link>
             <p className="text-sm text-text-secondary leading-relaxed max-w-sm">
-              An intelligent business transformation platform demonstrating how enterprise and mid-market organizations diagnose operational friction and deploy autonomous solutions.
+              An intelligent business transformation platform demonstrating how enterprise and
+              mid-market organizations diagnose operational friction and deploy autonomous
+              solutions.
             </p>
             <div className="pt-2 flex items-center gap-3">
               <Badge variant="neutral" size="sm" dot dotColor="bg-emerald-400">
@@ -96,7 +96,8 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
             <span className="font-medium text-text-secondary">
-              Prototype Disclaimer: Metrics shown in this prototype are illustrative demonstrations and are not guaranteed production results.
+              Prototype Disclaimer: Metrics shown in this prototype are illustrative demonstrations
+              and are not guaranteed production results.
             </span>
           </div>
           <Badge variant="neutral" size="sm" className="font-mono text-[10px] shrink-0">
@@ -106,7 +107,10 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-aether-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-muted">
-          <p>© {new Date().getFullYear()} Aether Technologies. Showcase Prototype for Executive Briefings.</p>
+          <p>
+            © {new Date().getFullYear()} Aether Technologies. Showcase Prototype for Executive
+            Briefings.
+          </p>
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />

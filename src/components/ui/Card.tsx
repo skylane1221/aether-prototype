@@ -8,7 +8,10 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ className, interactive = false, glow = false, surface = 'default', children, ...props }, ref) => {
+  (
+    { className, interactive = false, glow = false, surface = 'default', children, ...props },
+    ref
+  ) => {
     const surfaceStyles = {
       default: 'bg-aether-card card-gradient-surface',
       surface: 'bg-aether-surface',

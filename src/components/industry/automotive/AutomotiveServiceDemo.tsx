@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Car, 
-  Wrench, 
-  Calendar, 
-  Clock, 
-  Sparkles, 
-  CheckCircle2, 
-  Send, 
-  MessageSquare, 
-  ShieldCheck, 
-  AlertTriangle, 
+import {
+  Car,
+  Wrench,
+  Calendar,
+  Clock,
+  Sparkles,
+  CheckCircle2,
+  Send,
+  MessageSquare,
+  ShieldCheck,
+  AlertTriangle,
   Layers,
-  Cpu
+  Cpu,
 } from 'lucide-react';
 import { Card } from '../../ui/Card';
 import { Badge } from '../../ui/Badge';
@@ -57,7 +57,10 @@ export const AutomotiveServiceDemo: React.FC = () => {
             SIMULATED DEMO
           </Badge>
           <span className="text-xs font-mono text-text-muted">
-            Signature Journey: <strong className="text-indigo-300">Vehicle History → Service Prediction → Appointment</strong>
+            Signature Journey:{' '}
+            <strong className="text-indigo-300">
+              Vehicle History → Service Prediction → Appointment
+            </strong>
           </span>
         </div>
 
@@ -93,8 +96,8 @@ export const AutomotiveServiceDemo: React.FC = () => {
             v.urgencyLevel === 'Overdue Maintenance'
               ? 'bg-rose-500/20 text-rose-300 border-rose-500/40'
               : v.urgencyLevel === 'Service Imminent'
-              ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
-              : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
+                ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
 
           return (
             <button
@@ -108,8 +111,12 @@ export const AutomotiveServiceDemo: React.FC = () => {
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-[10px] font-mono text-zinc-400 font-semibold">{v.currentMileageKm.toLocaleString()} km</span>
-                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded border ${urgencyBadge}`}>
+                  <span className="text-[10px] font-mono text-zinc-400 font-semibold">
+                    {v.currentMileageKm.toLocaleString()} km
+                  </span>
+                  <span
+                    className={`text-[10px] font-mono px-2 py-0.5 rounded border ${urgencyBadge}`}
+                  >
                     {v.urgencyLevel}
                   </span>
                 </div>
@@ -123,8 +130,12 @@ export const AutomotiveServiceDemo: React.FC = () => {
               </div>
 
               <div className="mt-3 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
-                <span className="text-zinc-400 font-mono text-[11px]">Due: {v.mileageIntervalDue.toLocaleString()} km</span>
-                <span className="text-indigo-400 font-mono font-bold text-[11px]">{v.partsReadiness.status}</span>
+                <span className="text-zinc-400 font-mono text-[11px]">
+                  Due: {v.mileageIntervalDue.toLocaleString()} km
+                </span>
+                <span className="text-indigo-400 font-mono font-bold text-[11px]">
+                  {v.partsReadiness.status}
+                </span>
               </div>
             </button>
           );
@@ -147,12 +158,17 @@ export const AutomotiveServiceDemo: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-2">
                     <h3 className="text-lg font-bold text-white">{vehicle.vehicleName}</h3>
-                    <Badge variant="primary" size="sm" className="text-[10px] bg-indigo-500/20 text-indigo-300 border-indigo-500/30">
+                    <Badge
+                      variant="primary"
+                      size="sm"
+                      className="text-[10px] bg-indigo-500/20 text-indigo-300 border-indigo-500/30"
+                    >
                       {vehicle.urgencyLevel}
                     </Badge>
                   </div>
                   <p className="text-xs text-zinc-400 font-mono">
-                    VIN: {vehicle.vinNumber} • Owner: <span className="text-zinc-200">{vehicle.ownerName}</span>
+                    VIN: {vehicle.vinNumber} • Owner:{' '}
+                    <span className="text-zinc-200">{vehicle.ownerName}</span>
                   </p>
                 </div>
               </div>
@@ -160,12 +176,18 @@ export const AutomotiveServiceDemo: React.FC = () => {
               {/* Quick Status Chips */}
               <div className="flex items-center gap-3 text-right">
                 <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/5">
-                  <div className="text-[10px] text-zinc-400 uppercase font-mono">Current Odometer</div>
-                  <div className="text-xs font-bold text-white font-mono">{vehicle.currentMileageKm.toLocaleString()} KM</div>
+                  <div className="text-[10px] text-zinc-400 uppercase font-mono">
+                    Current Odometer
+                  </div>
+                  <div className="text-xs font-bold text-white font-mono">
+                    {vehicle.currentMileageKm.toLocaleString()} KM
+                  </div>
                 </div>
                 <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/5">
                   <div className="text-[10px] text-zinc-400 uppercase font-mono">Last Service</div>
-                  <div className="text-xs font-bold text-indigo-300 font-mono">{vehicle.lastServiceKm.toLocaleString()} KM</div>
+                  <div className="text-xs font-bold text-indigo-300 font-mono">
+                    {vehicle.lastServiceKm.toLocaleString()} KM
+                  </div>
                 </div>
               </div>
             </div>
@@ -212,12 +234,19 @@ export const AutomotiveServiceDemo: React.FC = () => {
                     >
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
-                          <span className="text-xs font-bold text-white">{item.jobDescription}</span>
-                          <span className="text-[10px] text-zinc-400 font-mono">({item.mileageKm.toLocaleString()} km)</span>
+                          <span className="text-xs font-bold text-white">
+                            {item.jobDescription}
+                          </span>
+                          <span className="text-[10px] text-zinc-400 font-mono">
+                            ({item.mileageKm.toLocaleString()} km)
+                          </span>
                         </div>
                         <div className="flex flex-wrap gap-1 pt-0.5">
                           {item.partsReplaced.map((part: string, pIdx: number) => (
-                            <span key={pIdx} className="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-zinc-300 font-mono">
+                            <span
+                              key={pIdx}
+                              className="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-zinc-300 font-mono"
+                            >
                               {part}
                             </span>
                           ))}
@@ -239,26 +268,43 @@ export const AutomotiveServiceDemo: React.FC = () => {
               <div className="space-y-3">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
-                    <span className="text-[10px] uppercase font-mono text-zinc-400">Assigned Lift Bay</span>
-                    <p className="text-xs font-bold text-white pt-1">{vehicle.partsReadiness.bayRequirement}</p>
-                    <span className="text-[11px] text-indigo-300 font-mono">Tech: {vehicle.partsReadiness.assignedTechCert}</span>
+                    <span className="text-[10px] uppercase font-mono text-zinc-400">
+                      Assigned Lift Bay
+                    </span>
+                    <p className="text-xs font-bold text-white pt-1">
+                      {vehicle.partsReadiness.bayRequirement}
+                    </p>
+                    <span className="text-[11px] text-indigo-300 font-mono">
+                      Tech: {vehicle.partsReadiness.assignedTechCert}
+                    </span>
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
-                    <span className="text-[10px] uppercase font-mono text-zinc-400">Parts Inventory Status</span>
+                    <span className="text-[10px] uppercase font-mono text-zinc-400">
+                      Parts Inventory Status
+                    </span>
                     <div className="flex items-center gap-1.5 pt-1">
                       <div className="w-2 h-2 rounded-full bg-emerald-400" />
-                      <span className="text-xs font-bold text-emerald-400">{vehicle.partsReadiness.status}</span>
+                      <span className="text-xs font-bold text-emerald-400">
+                        {vehicle.partsReadiness.status}
+                      </span>
                     </div>
-                    <span className="text-[11px] text-zinc-400 font-mono">Pre-allocated before customer arrival</span>
+                    <span className="text-[11px] text-zinc-400 font-mono">
+                      Pre-allocated before customer arrival
+                    </span>
                   </div>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
-                  <span className="text-[10px] uppercase font-mono text-zinc-400">Staged OEM Replacement Parts</span>
+                  <span className="text-[10px] uppercase font-mono text-zinc-400">
+                    Staged OEM Replacement Parts
+                  </span>
                   <div className="flex flex-wrap gap-1.5 pt-1.5">
                     {vehicle.partsReadiness.requiredItems.map((item: string, idx: number) => (
-                      <span key={idx} className="text-[11px] px-2 py-0.5 rounded bg-indigo-950/40 text-indigo-200 border border-indigo-500/30 font-mono">
+                      <span
+                        key={idx}
+                        className="text-[11px] px-2 py-0.5 rounded bg-indigo-950/40 text-indigo-200 border border-indigo-500/30 font-mono"
+                      >
                         ✓ {item}
                       </span>
                     ))}
@@ -301,10 +347,16 @@ export const AutomotiveServiceDemo: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white">Aether Service Outreach</h4>
-                  <span className="text-[10px] font-mono text-zinc-400">Automated Workshop Retention Engine</span>
+                  <span className="text-[10px] font-mono text-zinc-400">
+                    Automated Workshop Retention Engine
+                  </span>
                 </div>
               </div>
-              <Badge variant="primary" size="sm" className="text-[10px] bg-indigo-500/20 text-indigo-300 border-indigo-500/40 font-mono">
+              <Badge
+                variant="primary"
+                size="sm"
+                className="text-[10px] bg-indigo-500/20 text-indigo-300 border-indigo-500/40 font-mono"
+              >
                 Confidence 99%
               </Badge>
             </div>
@@ -375,10 +427,13 @@ export const AutomotiveServiceDemo: React.FC = () => {
                       Result: Bay Reserved & Service Invitation Sent
                     </div>
                     <p className="text-[11px] text-emerald-200/80">
-                      {vehicle.partsReadiness.bayRequirement} reserved for {vehicle.ownerName}. OEM parts kit staged at parts counter.
+                      {vehicle.partsReadiness.bayRequirement} reserved for {vehicle.ownerName}. OEM
+                      parts kit staged at parts counter.
                     </p>
                     <div className="pt-1 flex items-center justify-center gap-2">
-                      <span className="text-[10px] font-mono text-emerald-300">Recommended Action: Workshop Slot Confirmed</span>
+                      <span className="text-[10px] font-mono text-emerald-300">
+                        Recommended Action: Workshop Slot Confirmed
+                      </span>
                       <Button
                         variant="outline"
                         size="sm"

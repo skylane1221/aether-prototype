@@ -5,7 +5,11 @@ export interface ClinicAppointmentProfile {
   appointmentTime: string;
   provider: string;
   department: string;
-  visitType: 'Specialist Consultation' | 'Follow-Up Review' | 'Pre-Procedure Check' | 'Routine Clinical Screen';
+  visitType:
+    | 'Specialist Consultation'
+    | 'Follow-Up Review'
+    | 'Pre-Procedure Check'
+    | 'Routine Clinical Screen';
   noShowProbability: number; // 0 to 1
   noShowRiskLevel: 'High Risk' | 'Moderate Risk' | 'Low Risk';
   riskFactors: string[];
@@ -48,7 +52,8 @@ export const HEALTHCARE_APPOINTMENTS: ClinicAppointmentProfile[] = [
       actionRequired: 'Mandatory 1-tap confirmation + digital symptom check',
     },
     followUpPlan: {
-      recommendedAction: 'Schedule 30-day medication review and dispatch digital BP logging link post-consultation.',
+      recommendedAction:
+        'Schedule 30-day medication review and dispatch digital BP logging link post-consultation.',
       window: 'Post-consultation (+30 days)',
       postVisitCoordination: 'Automated ambulatory BP monitor pickup reminder.',
     },
@@ -101,7 +106,8 @@ export const HEALTHCARE_APPOINTMENTS: ClinicAppointmentProfile[] = [
       actionRequired: 'Standard calendar reminder notification',
     },
     followUpPlan: {
-      recommendedAction: 'Coordinate Week 4 home mobility exercise evaluation and lock in next 3 rehabilitation sessions.',
+      recommendedAction:
+        'Coordinate Week 4 home mobility exercise evaluation and lock in next 3 rehabilitation sessions.',
       window: 'At check-out',
       postVisitCoordination: 'Multi-session recurring slot reservation on therapist roster.',
     },
@@ -129,7 +135,8 @@ export const HEALTHCARE_APPOINTMENTS: ClinicAppointmentProfile[] = [
       actionRequired: 'One-tap confirm or instant smart swap to afternoon slot',
     },
     followUpPlan: {
-      recommendedAction: 'Automated 6-month developmental milestone reminder and digital growth chart sync.',
+      recommendedAction:
+        'Automated 6-month developmental milestone reminder and digital growth chart sync.',
       window: 'In 6 months',
       postVisitCoordination: 'Pediatric vaccination reminder trigger.',
     },
@@ -149,9 +156,33 @@ export const HEALTHCARE_BI_DATA = {
     highRiskInterceptionRate: '86.2%',
   },
   departmentEfficiency: [
-    { department: 'Cardiology Outpatient', utilization: '96%', noShowRate: '2.8%', intakeCompletion: '98%', avgWaitTime: '4.5 min' },
-    { department: 'Orthopedics & PT', utilization: '95%', noShowRate: '3.1%', intakeCompletion: '94%', avgWaitTime: '3.8 min' },
-    { department: 'Dermatology & Procedures', utilization: '93%', noShowRate: '4.2%', intakeCompletion: '91%', avgWaitTime: '6.0 min' },
-    { department: 'Pediatrics & Family Care', utilization: '94%', noShowRate: '3.5%', intakeCompletion: '96%', avgWaitTime: '5.2 min' },
+    {
+      department: 'Cardiology Outpatient',
+      utilization: '96%',
+      noShowRate: '2.8%',
+      intakeCompletion: '98%',
+      avgWaitTime: '4.5 min',
+    },
+    {
+      department: 'Orthopedics & PT',
+      utilization: '95%',
+      noShowRate: '3.1%',
+      intakeCompletion: '94%',
+      avgWaitTime: '3.8 min',
+    },
+    {
+      department: 'Dermatology & Procedures',
+      utilization: '93%',
+      noShowRate: '4.2%',
+      intakeCompletion: '91%',
+      avgWaitTime: '6.0 min',
+    },
+    {
+      department: 'Pediatrics & Family Care',
+      utilization: '94%',
+      noShowRate: '3.5%',
+      intakeCompletion: '96%',
+      avgWaitTime: '5.2 min',
+    },
   ],
 };

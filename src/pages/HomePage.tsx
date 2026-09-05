@@ -94,7 +94,8 @@ export const HomePage: React.FC = () => {
 
           {/* Subheading */}
           <p className="mt-6 text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl font-normal">
-            Aether understands how businesses operate, identifies opportunities for AI and automation, and transforms them into intelligent workflows.
+            Aether understands how businesses operate, identifies opportunities for AI and
+            automation, and transforms them into intelligent workflows.
           </p>
 
           {/* CTA Buttons */}
@@ -214,7 +215,8 @@ export const HomePage: React.FC = () => {
               </div>
               <h3 className="text-lg font-bold text-text-primary mb-2">Understand</h3>
               <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
-                Aether connects to existing business data streams—schedules, communications, sales, and inventory—understanding operational reality without disruptive system overhauls.
+                Aether connects to existing business data streams—schedules, communications, sales,
+                and inventory—understanding operational reality without disruptive system overhauls.
               </p>
             </div>
             <div className="mt-5 pt-3 border-t border-aether-border-subtle text-xs text-sky-400 font-medium">
@@ -230,7 +232,8 @@ export const HomePage: React.FC = () => {
               </div>
               <h3 className="text-lg font-bold text-text-primary mb-2">Identify</h3>
               <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
-                The cognitive engine detects hidden friction points, capacity dead zones, delayed lead responses, and client churn risks before they damage margins.
+                The cognitive engine detects hidden friction points, capacity dead zones, delayed
+                lead responses, and client churn risks before they damage margins.
               </p>
             </div>
             <div className="mt-5 pt-3 border-t border-aether-border-subtle text-xs text-indigo-400 font-medium">
@@ -246,7 +249,8 @@ export const HomePage: React.FC = () => {
               </div>
               <h3 className="text-lg font-bold text-text-primary mb-2">Transform</h3>
               <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
-                Aether converts diagnosed opportunities into autonomous workflows that qualify leads in seconds, backfill cancellations, and dispatch resources seamlessly.
+                Aether converts diagnosed opportunities into autonomous workflows that qualify leads
+                in seconds, backfill cancellations, and dispatch resources seamlessly.
               </p>
             </div>
             <div className="mt-5 pt-3 border-t border-aether-border-subtle text-xs text-amber-400 font-medium">
@@ -262,7 +266,8 @@ export const HomePage: React.FC = () => {
               </div>
               <h3 className="text-lg font-bold text-text-primary mb-2">Optimize</h3>
               <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
-                Continuously models surge patterns, refines operational throughput, and reports verifiable business impact on a unified executive dashboard.
+                Continuously models surge patterns, refines operational throughput, and reports
+                verifiable business impact on a unified executive dashboard.
               </p>
             </div>
             <div className="mt-5 pt-3 border-t border-aether-border-subtle text-xs text-emerald-400 font-medium">
@@ -290,7 +295,8 @@ export const HomePage: React.FC = () => {
               10 Industry Applications
             </h2>
             <p className="mt-2 text-sm sm:text-base text-text-secondary max-w-xl">
-              Aether is the product. See how the exact same cognitive engine powers distinct operational workflows across ten diverse business domains.
+              Aether is the product. See how the exact same cognitive engine powers distinct
+              operational workflows across ten diverse business domains.
             </p>
           </div>
           <Link to="/industries">
@@ -319,10 +325,8 @@ export const HomePage: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PLATFORM_SOLUTIONS.map((solution: any) => (
-            <div
-              key={solution.id}
-            >
+          {PLATFORM_SOLUTIONS.map((solution) => (
+            <div key={solution.id}>
               <SolutionCard solution={solution} />
             </div>
           ))}
@@ -344,7 +348,7 @@ export const HomePage: React.FC = () => {
           {/* Top Bar with Industry Scenario Selector */}
           <div className="bg-slate-950 px-4 sm:px-6 py-3.5 border-b border-aether-border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
-              {DEMO_SCENARIOS.map((sc: any, idx: number) => {
+              {DEMO_SCENARIOS.map((sc, idx: number) => {
                 const isSelected = idx === selectedDemoIndex;
                 return (
                   <button
@@ -411,12 +415,14 @@ export const HomePage: React.FC = () => {
                     {currentDemo.incomingSignal.source}
                   </div>
                   <div className="p-2 rounded bg-slate-950/90 text-[11px] font-mono text-slate-300 space-y-1">
-                    {Object.entries(currentDemo.incomingSignal.payload).slice(0, 3).map(([k, v]: [string, any]) => (
-                      <div key={k} className="line-clamp-1">
-                        <span className="text-text-muted">{k}: </span>
-                        <span>{String(v)}</span>
-                      </div>
-                    ))}
+                    {Object.entries(currentDemo.incomingSignal.payload)
+                      .slice(0, 3)
+                      .map(([k, v]) => (
+                        <div key={k} className="line-clamp-1">
+                          <span className="text-text-muted">{k}: </span>
+                          <span>{String(v)}</span>
+                        </div>
+                      ))}
                   </div>
                 </div>
                 <div className="mt-3 text-[10px] text-text-muted font-mono">Status: Ingested</div>
@@ -504,7 +510,9 @@ export const HomePage: React.FC = () => {
                     </div>
                   ) : (
                     <div className="text-xs space-y-1.5 animate-fade-in">
-                      <div className="text-emerald-400 font-medium text-[11px]">Outcome Verified:</div>
+                      <div className="text-emerald-400 font-medium text-[11px]">
+                        Outcome Verified:
+                      </div>
                       <p className="text-[11px] text-slate-200 leading-relaxed line-clamp-3">
                         {currentDemo.automatedExecution.resultingOutcome}
                       </p>
@@ -597,7 +605,8 @@ export const HomePage: React.FC = () => {
             </h2>
 
             <p className="mt-4 text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed max-w-2xl">
-              Discover where operational friction is holding back your growth. Request a simulated transformation blueprint tailored to your specific business model.
+              Discover where operational friction is holding back your growth. Request a simulated
+              transformation blueprint tailored to your specific business model.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">

@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  HelpCircle, 
-  Target, 
-  BookOpen, 
-  Send, 
-  GraduationCap, 
-  Sparkles, 
-  ArrowRight, 
+import {
+  HelpCircle,
+  Target,
+  BookOpen,
+  Send,
+  GraduationCap,
+  Sparkles,
+  ArrowRight,
   Info,
   CheckCircle2,
   Clock,
   Award,
-  Users
+  Users,
 } from 'lucide-react';
 import { Card } from '../../ui/Card';
 import { Badge } from '../../ui/Badge';
@@ -36,10 +36,17 @@ const EDUCATION_STAGES: EducationStageDetail[] = [
     name: 'Inquiry',
     shortDesc: 'Multi-channel prospect capture, source attribution & intent prioritization',
     icon: HelpCircle,
-    traditionalPain: 'Inbound inquiries languish in CRM queues for 3–5 business days before an admissions advisor calls.',
-    aetherIntelligence: 'Instant 24/7 conversational advisor capturing candidate goals, scoring intent, and answering prerequisite questions in <45s.',
-    dataPoints: ['Inbound Channel Attribution', 'Prospect Intent Score (94/100)', 'Target Career Trajectory', 'Schedule & Budget Preference'],
-    metricGain: '4x faster response speed'
+    traditionalPain:
+      'Inbound inquiries languish in CRM queues for 3–5 business days before an admissions advisor calls.',
+    aetherIntelligence:
+      'Instant 24/7 conversational advisor capturing candidate goals, scoring intent, and answering prerequisite questions in <45s.',
+    dataPoints: [
+      'Inbound Channel Attribution',
+      'Prospect Intent Score (94/100)',
+      'Target Career Trajectory',
+      'Schedule & Budget Preference',
+    ],
+    metricGain: '4x faster response speed',
   },
   {
     id: 'requirement',
@@ -47,10 +54,17 @@ const EDUCATION_STAGES: EducationStageDetail[] = [
     name: 'Requirement',
     shortDesc: 'Cognitive transcript parsing, prerequisite audits & learning style discovery',
     icon: Target,
-    traditionalPain: 'Admissions staff manually inspect PDF transcripts and certificates, taking days to verify degree eligibility.',
-    aetherIntelligence: 'Automated OCR transcript analysis parsing GPA, transfer credits, and prerequisite coursework against program catalog.',
-    dataPoints: ['Undergraduate GPA (3.82)', 'Prerequisite Course Match', 'Transfer Credit Approvals', 'Time Commitment Feasibility'],
-    metricGain: '82% faster app triage'
+    traditionalPain:
+      'Admissions staff manually inspect PDF transcripts and certificates, taking days to verify degree eligibility.',
+    aetherIntelligence:
+      'Automated OCR transcript analysis parsing GPA, transfer credits, and prerequisite coursework against program catalog.',
+    dataPoints: [
+      'Undergraduate GPA (3.82)',
+      'Prerequisite Course Match',
+      'Transfer Credit Approvals',
+      'Time Commitment Feasibility',
+    ],
+    metricGain: '82% faster app triage',
   },
   {
     id: 'course_matching',
@@ -58,10 +72,17 @@ const EDUCATION_STAGES: EducationStageDetail[] = [
     name: 'Course Matching',
     shortDesc: 'AI curriculum alignment, elective personalization & scholarship calculation',
     icon: BookOpen,
-    traditionalPain: 'Students get lost in complex course catalogs; mismatched program enrollments lead to early dropouts.',
-    aetherIntelligence: 'Curriculum matching engine recommending optimal degree tracks, modular certifications, and merit scholarship packages.',
-    dataPoints: ['Curriculum Fit Score (98.5%)', 'Cohort Schedule Compatibility', 'Merit Scholarship Package ($4k)', 'Career Placement Alignment'],
-    metricGain: '+19.5% enrollment yield'
+    traditionalPain:
+      'Students get lost in complex course catalogs; mismatched program enrollments lead to early dropouts.',
+    aetherIntelligence:
+      'Curriculum matching engine recommending optimal degree tracks, modular certifications, and merit scholarship packages.',
+    dataPoints: [
+      'Curriculum Fit Score (98.5%)',
+      'Cohort Schedule Compatibility',
+      'Merit Scholarship Package ($4k)',
+      'Career Placement Alignment',
+    ],
+    metricGain: '+19.5% enrollment yield',
   },
   {
     id: 'followup',
@@ -69,10 +90,17 @@ const EDUCATION_STAGES: EducationStageDetail[] = [
     name: 'Follow-up',
     shortDesc: 'Contextual WhatsApp & email admissions packages, faculty invites & lab passes',
     icon: Send,
-    traditionalPain: 'Generic bulk email blasts with <12% open rates; prospective students matriculate with responsive competitors.',
-    aetherIntelligence: 'Personalized multi-touch admissions sequences with tailored syllabus previews, faculty 1-on-1 bookings, and lab tour passes.',
-    dataPoints: ['Customized Syllabus PDF', 'Dean Orientation Invite Link', 'Tuition Financing Calculator', 'Dynamic Response Timing Engine'],
-    metricGain: '3.2x higher matriculation'
+    traditionalPain:
+      'Generic bulk email blasts with <12% open rates; prospective students matriculate with responsive competitors.',
+    aetherIntelligence:
+      'Personalized multi-touch admissions sequences with tailored syllabus previews, faculty 1-on-1 bookings, and lab tour passes.',
+    dataPoints: [
+      'Customized Syllabus PDF',
+      'Dean Orientation Invite Link',
+      'Tuition Financing Calculator',
+      'Dynamic Response Timing Engine',
+    ],
+    metricGain: '3.2x higher matriculation',
   },
   {
     id: 'enrollment',
@@ -80,10 +108,17 @@ const EDUCATION_STAGES: EducationStageDetail[] = [
     name: 'Enrollment',
     shortDesc: 'Frictionless digital registration, tuition ledger sync & orientation staging',
     icon: GraduationCap,
-    traditionalPain: 'Paper enrollment slips, manual fee reconciliation, and backlogged registrar paperwork.',
-    aetherIntelligence: 'Instant 1-tap digital enrollment packet with automated student ID issuance, SIS sync, and payment plan setup.',
-    dataPoints: ['Digital Signature Timestamp', 'SIS Student ID Generation', 'Payment Schedule Ledgering', 'Faculty Mentor Assignment'],
-    metricGain: '< 12 min full enrollment'
+    traditionalPain:
+      'Paper enrollment slips, manual fee reconciliation, and backlogged registrar paperwork.',
+    aetherIntelligence:
+      'Instant 1-tap digital enrollment packet with automated student ID issuance, SIS sync, and payment plan setup.',
+    dataPoints: [
+      'Digital Signature Timestamp',
+      'SIS Student ID Generation',
+      'Payment Schedule Ledgering',
+      'Faculty Mentor Assignment',
+    ],
+    metricGain: '< 12 min full enrollment',
   },
   {
     id: 'engagement',
@@ -91,11 +126,18 @@ const EDUCATION_STAGES: EducationStageDetail[] = [
     name: 'Engagement',
     shortDesc: 'Continuous LMS telemetry monitoring, assignment pacing & retention watchdog',
     icon: Sparkles,
-    traditionalPain: 'Struggling learners drop out unnoticed mid-semester until failing final assessments.',
-    aetherIntelligence: 'Continuous LMS activity tracking detecting assignment delays at Week 3 and triggering proactive faculty intervention.',
-    dataPoints: ['LMS Login Frequency Index', 'Assignment Velocity Scoring', 'Peer Collaboration Telemetry', 'Early Dropout Risk Alarm'],
-    metricGain: '+22% course completion rate'
-  }
+    traditionalPain:
+      'Struggling learners drop out unnoticed mid-semester until failing final assessments.',
+    aetherIntelligence:
+      'Continuous LMS activity tracking detecting assignment delays at Week 3 and triggering proactive faculty intervention.',
+    dataPoints: [
+      'LMS Login Frequency Index',
+      'Assignment Velocity Scoring',
+      'Peer Collaboration Telemetry',
+      'Early Dropout Risk Alarm',
+    ],
+    metricGain: '+22% course completion rate',
+  },
 ];
 
 export const EducationWorkflowPipeline: React.FC = () => {
@@ -125,23 +167,33 @@ export const EducationWorkflowPipeline: React.FC = () => {
               >
                 {/* Header with Stage Number and Icon */}
                 <div className="flex items-center justify-between mb-2">
-                  <span className={`text-[10px] font-mono tracking-widest font-semibold px-1.5 py-0.5 rounded ${
-                    isSelected ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40' : 'bg-white/5 text-zinc-400'
-                  }`}>
+                  <span
+                    className={`text-[10px] font-mono tracking-widest font-semibold px-1.5 py-0.5 rounded ${
+                      isSelected
+                        ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
+                        : 'bg-white/5 text-zinc-400'
+                    }`}
+                  >
                     {stage.number}
                   </span>
-                  <div className={`p-1.5 rounded-lg transition-colors ${
-                    isSelected ? 'bg-rose-500 text-white shadow-lg shadow-rose-500/30' : 'bg-white/5 text-zinc-400 group-hover:text-rose-400'
-                  }`}>
+                  <div
+                    className={`p-1.5 rounded-lg transition-colors ${
+                      isSelected
+                        ? 'bg-rose-500 text-white shadow-lg shadow-rose-500/30'
+                        : 'bg-white/5 text-zinc-400 group-hover:text-rose-400'
+                    }`}
+                  >
                     <Icon className="w-3.5 h-3.5" />
                   </div>
                 </div>
 
                 {/* Name and Snippet */}
                 <div>
-                  <h4 className={`text-xs font-semibold mb-1 transition-colors ${
-                    isSelected ? 'text-white' : 'text-zinc-300 group-hover:text-zinc-200'
-                  }`}>
+                  <h4
+                    className={`text-xs font-semibold mb-1 transition-colors ${
+                      isSelected ? 'text-white' : 'text-zinc-300 group-hover:text-zinc-200'
+                    }`}
+                  >
                     {stage.name}
                   </h4>
                   <p className="text-[10px] text-zinc-400 line-clamp-2 leading-relaxed">
@@ -183,18 +235,22 @@ export const EducationWorkflowPipeline: React.FC = () => {
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <Badge variant="primary" size="sm" className="text-[10px] bg-rose-500/20 text-rose-300 border-rose-500/40">
+                      <Badge
+                        variant="primary"
+                        size="sm"
+                        className="text-[10px] bg-rose-500/20 text-rose-300 border-rose-500/40"
+                      >
                         STAGE {currentStage.number}
                       </Badge>
                       <span className="text-xs font-mono text-zinc-400">LEARNER LIFECYCLE</span>
                     </div>
-                    <h3 className="text-xl font-bold text-white tracking-tight">{currentStage.name}</h3>
+                    <h3 className="text-xl font-bold text-white tracking-tight">
+                      {currentStage.name}
+                    </h3>
                   </div>
                 </div>
 
-                <p className="text-sm text-zinc-300 leading-relaxed">
-                  {currentStage.shortDesc}
-                </p>
+                <p className="text-sm text-zinc-300 leading-relaxed">{currentStage.shortDesc}</p>
 
                 <div className="p-4 rounded-xl bg-rose-950/20 border border-rose-500/30 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-rose-300 text-xs font-semibold">
@@ -242,7 +298,10 @@ export const EducationWorkflowPipeline: React.FC = () => {
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
                     {currentStage.dataPoints.map((point: string, idx: number) => (
-                      <div key={idx} className="p-2 rounded-lg bg-black/50 border border-white/5 text-[11px] text-zinc-300 font-mono flex items-center gap-1.5">
+                      <div
+                        key={idx}
+                        className="p-2 rounded-lg bg-black/50 border border-white/5 text-[11px] text-zinc-300 font-mono flex items-center gap-1.5"
+                      >
                         <div className="w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0" />
                         <span className="truncate">{point}</span>
                       </div>

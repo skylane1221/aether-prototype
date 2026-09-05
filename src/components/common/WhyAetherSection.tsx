@@ -28,7 +28,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       num: '01',
       title: 'Understand',
       tagline: 'Operational Context First',
-      description: 'Ingests real-time business signals, schedules, customer interactions, and resource constraints without disrupting daily operations.',
+      description:
+        'Ingests real-time business signals, schedules, customer interactions, and resource constraints without disrupting daily operations.',
       icon: <BrainCircuit className="w-5 h-5 text-sky-400" />,
       accent: 'border-sky-500/30 text-sky-400 bg-sky-500/10',
     },
@@ -36,7 +37,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       num: '02',
       title: 'Connect',
       tagline: 'Unified Intelligence Layer',
-      description: 'Bridges fragmented software tools—POS, CRM, PMS, EHR, and ERP—into a coherent, live intelligence stream.',
+      description:
+        'Bridges fragmented software tools—POS, CRM, PMS, EHR, and ERP—into a coherent, live intelligence stream.',
       icon: <Layers className="w-5 h-5 text-indigo-400" />,
       accent: 'border-indigo-500/30 text-indigo-400 bg-indigo-500/10',
     },
@@ -44,7 +46,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       num: '03',
       title: 'Identify',
       tagline: 'Friction & Leak Diagnosis',
-      description: 'Pinpoints hidden bottlenecks, unutilized capacity, delayed lead response, and silent customer churn before margins suffer.',
+      description:
+        'Pinpoints hidden bottlenecks, unutilized capacity, delayed lead response, and silent customer churn before margins suffer.',
       icon: <Search className="w-5 h-5 text-rose-400" />,
       accent: 'border-rose-500/30 text-rose-400 bg-rose-500/10',
     },
@@ -52,7 +55,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       num: '04',
       title: 'Recommend',
       tagline: 'Contextual Action Guidance',
-      description: 'Synthesizes mathematically sound, high-margin next-best-actions tailored to current operational load.',
+      description:
+        'Synthesizes mathematically sound, high-margin next-best-actions tailored to current operational load.',
       icon: <Sparkles className="w-5 h-5 text-amber-400" />,
       accent: 'border-amber-500/30 text-amber-400 bg-amber-500/10',
     },
@@ -60,7 +64,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       num: '05',
       title: 'Act',
       tagline: 'Autonomous Execution',
-      description: 'Executes communication, calendar packing, inventory alerts, and triage workflows with deterministic guardrails.',
+      description:
+        'Executes communication, calendar packing, inventory alerts, and triage workflows with deterministic guardrails.',
       icon: <Zap className="w-5 h-5 text-teal-400" />,
       accent: 'border-teal-500/30 text-teal-400 bg-teal-500/10',
     },
@@ -68,7 +73,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       num: '06',
       title: 'Optimize',
       tagline: 'Compounding Business Impact',
-      description: 'Continuously measures realized outcomes, refines predictive models, and compounds efficiency over time.',
+      description:
+        'Continuously measures realized outcomes, refines predictive models, and compounds efficiency over time.',
       icon: <TrendingUp className="w-5 h-5 text-emerald-400" />,
       accent: 'border-emerald-500/30 text-emerald-400 bg-emerald-500/10',
     },
@@ -118,10 +124,15 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
 
             <div className="space-y-3 text-xs sm:text-sm text-text-secondary leading-relaxed">
               <p>
-                <strong className="text-text-primary">Starts with an isolated chore:</strong> A single repetitive task (e.g. sending a generic email or copying spreadsheet data) is hard-coded into an if-then rule.
+                <strong className="text-text-primary">Starts with an isolated chore:</strong> A
+                single repetitive task (e.g. sending a generic email or copying spreadsheet data) is
+                hard-coded into an if-then rule.
               </p>
               <p>
-                <strong className="text-rose-300">The Problem:</strong> Has zero awareness of operational state, capacity limits, customer history, or changing margins. The moment an exception occurs or a schedule changes, static rules break, forcing staff back to manual firefighting.
+                <strong className="text-rose-300">The Problem:</strong> Has zero awareness of
+                operational state, capacity limits, customer history, or changing margins. The
+                moment an exception occurs or a schedule changes, static rules break, forcing staff
+                back to manual firefighting.
               </p>
             </div>
           </div>
@@ -179,10 +190,16 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
 
             <div className="space-y-3 text-xs sm:text-sm text-text-secondary leading-relaxed">
               <p>
-                <strong className="text-text-primary">Starts with the entire operating reality:</strong> Continuously understands customer intent, provider capacity, and margin dynamics before formulating action.
+                <strong className="text-text-primary">
+                  Starts with the entire operating reality:
+                </strong>{' '}
+                Continuously understands customer intent, provider capacity, and margin dynamics
+                before formulating action.
               </p>
               <p>
-                <strong className="text-sky-300">The Advantage:</strong> Synthesizes context-aware recommendations, self-heals around real-world disruptions (cancellations, late arrivals, inventory stockouts), and measures actual business ROI.
+                <strong className="text-sky-300">The Advantage:</strong> Synthesizes context-aware
+                recommendations, self-heals around real-world disruptions (cancellations, late
+                arrivals, inventory stockouts), and measures actual business ROI.
               </p>
             </div>
           </div>
@@ -199,17 +216,23 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
           <Badge variant="neutral" size="sm" className="font-mono text-xs mb-2">
             The 6 Principles of Aether Intelligence
           </Badge>
-          <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
-            How Aether Operates
-          </h3>
+          <h3 className="text-xl sm:text-2xl font-bold text-text-primary">How Aether Operates</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {SIX_PRINCIPLES.map((principle) => (
-            <Card key={principle.num} className="p-5 sm:p-6 flex flex-col justify-between h-full bg-slate-900/60 border-slate-800 hover:border-slate-700 transition-all">
+            <Card
+              key={principle.num}
+              className="p-5 sm:p-6 flex flex-col justify-between h-full bg-slate-900/60 border-slate-800 hover:border-slate-700 transition-all"
+            >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className={cn('w-9 h-9 rounded-xl border flex items-center justify-center', principle.accent)}>
+                  <div
+                    className={cn(
+                      'w-9 h-9 rounded-xl border flex items-center justify-center',
+                      principle.accent
+                    )}
+                  >
                     {principle.icon}
                   </div>
                   <span className="text-xs font-mono font-bold text-text-muted">
@@ -217,12 +240,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
                   </span>
                 </div>
 
-                <h4 className="text-base font-bold text-text-primary mb-1">
-                  {principle.title}
-                </h4>
-                <div className="text-xs font-mono text-sky-400/90 mb-3">
-                  {principle.tagline}
-                </div>
+                <h4 className="text-base font-bold text-text-primary mb-1">{principle.title}</h4>
+                <div className="text-xs font-mono text-sky-400/90 mb-3">{principle.tagline}</div>
 
                 <p className="text-xs text-text-secondary leading-relaxed">
                   {principle.description}
@@ -242,10 +261,11 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
           Aether is designed around the business, not around a predefined feature.
         </h3>
         <p className="text-xs sm:text-sm text-text-secondary leading-relaxed max-w-2xl mx-auto font-normal">
-          Instead of asking you to force your team into static forms and rigid triggers, Aether models itself around how your specific business operates—identifying where intelligence creates verifiable operational yield.
+          Instead of asking you to force your team into static forms and rigid triggers, Aether
+          models itself around how your specific business operates—identifying where intelligence
+          creates verifiable operational yield.
         </p>
       </div>
     </section>
   );
 };
-

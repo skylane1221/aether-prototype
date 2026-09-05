@@ -18,7 +18,9 @@ import {
 import { cn } from '../../../utils/cn';
 
 export const RestaurantBiDashboard: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'wastage' | 'efficiency' | 'menu' | 'multioutlet'>('wastage');
+  const [activeTab, setActiveTab] = useState<'wastage' | 'efficiency' | 'menu' | 'multioutlet'>(
+    'wastage'
+  );
 
   return (
     <div className="space-y-6">
@@ -38,7 +40,8 @@ export const RestaurantBiDashboard: React.FC = () => {
             Back-of-House Operational Intelligence
           </h3>
           <p className="text-xs sm:text-sm text-text-secondary mt-1">
-            Continuous synthesis across food cost variances, station line ticket speed, and multi-outlet brand standards.
+            Continuous synthesis across food cost variances, station line ticket speed, and
+            multi-outlet brand standards.
           </p>
         </div>
 
@@ -95,15 +98,21 @@ export const RestaurantBiDashboard: React.FC = () => {
       {activeTab === 'wastage' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-fade-in">
           <Card className="p-5 bg-slate-900/90 border-slate-800 text-center space-y-1">
-            <span className="text-[11px] font-mono text-text-muted uppercase block">Current Wastage Rate</span>
+            <span className="text-[11px] font-mono text-text-muted uppercase block">
+              Current Wastage Rate
+            </span>
             <span className="text-3xl font-extrabold font-mono text-emerald-400">
               {RESTAURANT_BI_DATA.wastageMetrics.currentWastageRate}
             </span>
-            <span className="text-[10px] text-text-muted block">vs {RESTAURANT_BI_DATA.wastageMetrics.traditionalAverage} Industry Average</span>
+            <span className="text-[10px] text-text-muted block">
+              vs {RESTAURANT_BI_DATA.wastageMetrics.traditionalAverage} Industry Average
+            </span>
           </Card>
 
           <Card className="p-5 bg-slate-900/90 border-amber-500/30 text-center space-y-1">
-            <span className="text-[11px] font-mono text-amber-400 uppercase block">Monthly Cost Recovered</span>
+            <span className="text-[11px] font-mono text-amber-400 uppercase block">
+              Monthly Cost Recovered
+            </span>
             <span className="text-3xl font-extrabold font-mono text-amber-300">
               {RESTAURANT_BI_DATA.wastageMetrics.costSavedMonthly}
             </span>
@@ -129,15 +138,21 @@ export const RestaurantBiDashboard: React.FC = () => {
       {activeTab === 'efficiency' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-fade-in">
           <Card className="p-5 bg-slate-900/90 border-sky-500/30 text-center space-y-1">
-            <span className="text-[11px] font-mono text-sky-400 uppercase block">Average Ticket Time</span>
+            <span className="text-[11px] font-mono text-sky-400 uppercase block">
+              Average Ticket Time
+            </span>
             <span className="text-3xl font-extrabold font-mono text-sky-300">
               {RESTAURANT_BI_DATA.kitchenEfficiency.averageTicketTime}
             </span>
-            <span className="text-[10px] text-text-muted block">Down from {RESTAURANT_BI_DATA.kitchenEfficiency.traditionalTicketTime}</span>
+            <span className="text-[10px] text-text-muted block">
+              Down from {RESTAURANT_BI_DATA.kitchenEfficiency.traditionalTicketTime}
+            </span>
           </Card>
 
           <Card className="p-5 bg-slate-900/90 border-emerald-500/30 text-center space-y-1">
-            <span className="text-[11px] font-mono text-emerald-400 uppercase block">Peak Hour Speedup</span>
+            <span className="text-[11px] font-mono text-emerald-400 uppercase block">
+              Peak Hour Speedup
+            </span>
             <span className="text-3xl font-extrabold font-mono text-emerald-300">
               {RESTAURANT_BI_DATA.kitchenEfficiency.peakHourSpeedup}
             </span>
@@ -151,7 +166,9 @@ export const RestaurantBiDashboard: React.FC = () => {
             </div>
             <div className="flex items-center justify-between text-xs font-mono">
               <span className="text-text-muted">Order Accuracy:</span>
-              <span className="text-emerald-400 font-bold">{RESTAURANT_BI_DATA.kitchenEfficiency.orderAccuracy}</span>
+              <span className="text-emerald-400 font-bold">
+                {RESTAURANT_BI_DATA.kitchenEfficiency.orderAccuracy}
+              </span>
             </div>
             <p className="text-[11px] text-text-muted">
               Zero dish remake write-offs logged during 7:30 - 10:00 PM rush window.
@@ -192,8 +209,8 @@ export const RestaurantBiDashboard: React.FC = () => {
                           dish.classification.includes('Star')
                             ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
                             : dish.classification.includes('Dog')
-                            ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
-                            : 'bg-sky-500/20 text-sky-300 border border-sky-500/40'
+                              ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
+                              : 'bg-sky-500/20 text-sky-300 border border-sky-500/40'
                         )}
                       >
                         {dish.classification}

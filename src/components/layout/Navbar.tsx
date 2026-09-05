@@ -2,15 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { MAIN_NAV_ITEMS } from '../../data/navigation';
 import { Button } from '../ui/Button';
-import { Badge } from '../ui/Badge';
-import {
-  ChevronDown,
-  Menu,
-  X,
-  ArrowRight,
-  Layers,
-  Sparkles,
-} from 'lucide-react';
+import { ChevronDown, Menu, X, ArrowRight, Layers } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
 export interface NavbarProps {
@@ -37,8 +29,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
     setIsIndustriesDropdownOpen(false);
   }, [location.pathname]);
 
-  const industriesItem = MAIN_NAV_ITEMS.find((item) => item.label === 'Industries');
-
   return (
     <header
       className={cn(
@@ -57,9 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-1.5">
-              <span className="text-lg font-bold tracking-tight text-text-primary">
-                AETHER
-              </span>
+              <span className="text-lg font-bold tracking-tight text-text-primary">AETHER</span>
               <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
             </div>
           </div>
@@ -204,10 +192,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                       <span className="text-xs font-semibold uppercase tracking-wider text-text-muted">
                         {item.label}
                       </span>
-                      <Link
-                        to="/industries"
-                        className="text-xs text-sky-400 font-medium"
-                      >
+                      <Link to="/industries" className="text-xs text-sky-400 font-medium">
                         All 10
                       </Link>
                     </div>

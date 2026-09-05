@@ -1,19 +1,8 @@
 export type IndustryThemeColor =
-  | 'cyan'
-  | 'emerald'
-  | 'amber'
-  | 'violet'
-  | 'rose'
-  | 'sky'
-  | 'teal'
-  | 'indigo'
-  | 'slate';
+  'cyan' | 'emerald' | 'amber' | 'violet' | 'rose' | 'sky' | 'teal' | 'indigo' | 'slate';
 
 export type IndustryFocusCategory =
-  | 'Customer-focused'
-  | 'Operations-focused'
-  | 'Sales-focused'
-  | 'Intelligence-heavy';
+  'Customer-focused' | 'Operations-focused' | 'Sales-focused' | 'Intelligence-heavy';
 
 export interface ProblemTransformation {
   id: string;
@@ -26,7 +15,8 @@ export interface ProblemTransformation {
 
 export interface WorkflowStep {
   stepNumber: number;
-  phase: 'Signal Ingestion' | 'Cognitive Diagnosis' | 'Autonomous Orchestration' | 'Measured Outcome';
+  phase:
+    'Signal Ingestion' | 'Cognitive Diagnosis' | 'Autonomous Orchestration' | 'Measured Outcome';
   title: string;
   description: string;
   systemAction: string;
@@ -151,6 +141,7 @@ export interface PlatformSolution {
     | 'AI Intelligence'
     | 'Workflow Automation'
     | 'Customer Intelligence'
+    | 'Operational Intelligence'
     | 'Business Intelligence'
     | 'Communication Intelligence';
   description: string;
@@ -176,7 +167,14 @@ export interface NavItem {
 
 export interface PlatformImpactMetric {
   id: string;
-  dimension: 'Time' | 'Efficiency' | 'Customer Experience' | 'Opportunity' | 'Decision Making' | 'Visibility' | 'Operational Visibility';
+  dimension:
+    | 'Time'
+    | 'Efficiency'
+    | 'Customer Experience'
+    | 'Opportunity'
+    | 'Decision Making'
+    | 'Visibility'
+    | 'Operational Visibility';
   metric: string;
   label: string;
   subtext: string;

@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Calendar, 
-  MessageSquare, 
-  UserCheck, 
-  HeartHandshake, 
-  FileText, 
-  ArrowRight, 
+import {
+  Calendar,
+  MessageSquare,
+  UserCheck,
+  HeartHandshake,
+  FileText,
+  ArrowRight,
   Info,
   CheckCircle2,
   Clock,
   ShieldCheck,
-  Sparkles
+  Sparkles,
 } from 'lucide-react';
 import { Card } from '../../ui/Card';
 import { Badge } from '../../ui/Badge';
@@ -35,10 +35,17 @@ const HEALTHCARE_STAGES: HealthcareStageDetail[] = [
     name: 'Appointment',
     shortDesc: 'Specialist schedule alignment, clinical slot allocation & triage booking',
     icon: Calendar,
-    traditionalPain: 'Fragmented phone booking, double-booked consultation slots, and rigid 15-min blocks that create cascading clinic delays.',
-    aetherIntelligence: 'Dynamic provider schedule pacing based on historical case complexity + instant cancellation gap backfilling in <5 minutes.',
-    dataPoints: ['Provider Consultation Velocity', 'Historical Case Duration (28 min avg)', 'Specialty Capacity Load', 'Urgent Standby Waitlist Queue'],
-    metricGain: '84% recovered open slots'
+    traditionalPain:
+      'Fragmented phone booking, double-booked consultation slots, and rigid 15-min blocks that create cascading clinic delays.',
+    aetherIntelligence:
+      'Dynamic provider schedule pacing based on historical case complexity + instant cancellation gap backfilling in <5 minutes.',
+    dataPoints: [
+      'Provider Consultation Velocity',
+      'Historical Case Duration (28 min avg)',
+      'Specialty Capacity Load',
+      'Urgent Standby Waitlist Queue',
+    ],
+    metricGain: '84% recovered open slots',
   },
   {
     id: 'communication',
@@ -46,10 +53,17 @@ const HEALTHCARE_STAGES: HealthcareStageDetail[] = [
     name: 'Communication',
     shortDesc: 'Multi-touch conversational reminders, prep instructions & digital check-in',
     icon: MessageSquare,
-    traditionalPain: 'Robotic auto-calls ignored by patients, missing fasting/prep requirements, and 18%+ outpatient clinic no-show rates.',
-    aetherIntelligence: 'Contextual WhatsApp/SMS briefings with interactive 1-tap confirmation checkpoints and pre-visit insurance/photo ingestion.',
-    dataPoints: ['Pre-Op Fasting Confirmation', 'Digital Insurance OCR Scan', '1-Tap SMS Slot Lock', 'Multilingual Patient Scripting'],
-    metricGain: '-78% clinic no-shows'
+    traditionalPain:
+      'Robotic auto-calls ignored by patients, missing fasting/prep requirements, and 18%+ outpatient clinic no-show rates.',
+    aetherIntelligence:
+      'Contextual WhatsApp/SMS briefings with interactive 1-tap confirmation checkpoints and pre-visit insurance/photo ingestion.',
+    dataPoints: [
+      'Pre-Op Fasting Confirmation',
+      'Digital Insurance OCR Scan',
+      '1-Tap SMS Slot Lock',
+      'Multilingual Patient Scripting',
+    ],
+    metricGain: '-78% clinic no-shows',
   },
   {
     id: 'attendance',
@@ -57,10 +71,17 @@ const HEALTHCARE_STAGES: HealthcareStageDetail[] = [
     name: 'Attendance',
     shortDesc: 'Frictionless reception check-in, queue pacing & examination room routing',
     icon: UserCheck,
-    traditionalPain: 'Waiting room clipboard queues, redundant paper forms, and patients waiting 40+ minutes past appointment time.',
-    aetherIntelligence: 'Instant mobile kiosk check-in with auto-synced EHR symptom intake and intelligent room readiness routing.',
-    dataPoints: ['Mobile Check-In Timestamp', 'EHR Intake Ingestion Status', 'Exam Room Cleanliness Telemetry', 'Provider Ready Indicator'],
-    metricGain: '< 4.5 min avg wait time'
+    traditionalPain:
+      'Waiting room clipboard queues, redundant paper forms, and patients waiting 40+ minutes past appointment time.',
+    aetherIntelligence:
+      'Instant mobile kiosk check-in with auto-synced EHR symptom intake and intelligent room readiness routing.',
+    dataPoints: [
+      'Mobile Check-In Timestamp',
+      'EHR Intake Ingestion Status',
+      'Exam Room Cleanliness Telemetry',
+      'Provider Ready Indicator',
+    ],
+    metricGain: '< 4.5 min avg wait time',
   },
   {
     id: 'followup',
@@ -68,10 +89,17 @@ const HEALTHCARE_STAGES: HealthcareStageDetail[] = [
     name: 'Follow-up',
     shortDesc: 'Automated care plan adherence, lab review notifications & referral tracking',
     icon: HeartHandshake,
-    traditionalPain: 'Patients leave without clear next steps, missing critical 30-day reviews and diagnostic lab follow-ups.',
-    aetherIntelligence: 'Automated post-visit digital check-ins, lab portal sync alerts, and smart recurring appointment pre-reservations.',
-    dataPoints: ['30-Day Medication Review Cadence', 'Lab Result Turnaround Alerts', 'Referral Routing Tracker', 'Patient Adherence Feedback'],
-    metricGain: '96% on-time review adherence'
+    traditionalPain:
+      'Patients leave without clear next steps, missing critical 30-day reviews and diagnostic lab follow-ups.',
+    aetherIntelligence:
+      'Automated post-visit digital check-ins, lab portal sync alerts, and smart recurring appointment pre-reservations.',
+    dataPoints: [
+      '30-Day Medication Review Cadence',
+      'Lab Result Turnaround Alerts',
+      'Referral Routing Tracker',
+      'Patient Adherence Feedback',
+    ],
+    metricGain: '96% on-time review adherence',
   },
   {
     id: 'administration',
@@ -79,16 +107,24 @@ const HEALTHCARE_STAGES: HealthcareStageDetail[] = [
     name: 'Administration',
     shortDesc: 'EHR documentation structuring, insurance ledger sync & operational telemetry',
     icon: FileText,
-    traditionalPain: 'Physicians spend 2+ hours daily on manual administrative charting; clinic managers face blind spots on room utilization.',
-    aetherIntelligence: 'Automated administrative workflow orchestration, structured note exports to EHR, and real-time clinic capacity telemetry.',
-    dataPoints: ['Structured CCDA Note Export', 'Insurance Pre-Auth Reconciliation', 'Provider Utilization Yield', 'Exam Room Turn Speed'],
-    metricGain: '12 hrs/wk admin saved'
-  }
+    traditionalPain:
+      'Physicians spend 2+ hours daily on manual administrative charting; clinic managers face blind spots on room utilization.',
+    aetherIntelligence:
+      'Automated administrative workflow orchestration, structured note exports to EHR, and real-time clinic capacity telemetry.',
+    dataPoints: [
+      'Structured CCDA Note Export',
+      'Insurance Pre-Auth Reconciliation',
+      'Provider Utilization Yield',
+      'Exam Room Turn Speed',
+    ],
+    metricGain: '12 hrs/wk admin saved',
+  },
 ];
 
 export const HealthcareWorkflowPipeline: React.FC = () => {
   const [activeStageId, setActiveStageId] = useState<string>('appointment');
-  const currentStage = HEALTHCARE_STAGES.find((s) => s.id === activeStageId) || HEALTHCARE_STAGES[0];
+  const currentStage =
+    HEALTHCARE_STAGES.find((s) => s.id === activeStageId) || HEALTHCARE_STAGES[0];
 
   return (
     <div className="space-y-8">
@@ -113,23 +149,33 @@ export const HealthcareWorkflowPipeline: React.FC = () => {
               >
                 {/* Header with Stage Number and Icon */}
                 <div className="flex items-center justify-between mb-3">
-                  <span className={`text-[10px] font-mono tracking-widest font-semibold px-2 py-0.5 rounded ${
-                    isSelected ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40' : 'bg-white/5 text-zinc-400'
-                  }`}>
+                  <span
+                    className={`text-[10px] font-mono tracking-widest font-semibold px-2 py-0.5 rounded ${
+                      isSelected
+                        ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40'
+                        : 'bg-white/5 text-zinc-400'
+                    }`}
+                  >
                     {stage.number}
                   </span>
-                  <div className={`p-2 rounded-lg transition-colors ${
-                    isSelected ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/30' : 'bg-white/5 text-zinc-400 group-hover:text-cyan-400'
-                  }`}>
+                  <div
+                    className={`p-2 rounded-lg transition-colors ${
+                      isSelected
+                        ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/30'
+                        : 'bg-white/5 text-zinc-400 group-hover:text-cyan-400'
+                    }`}
+                  >
                     <Icon className="w-4 h-4" />
                   </div>
                 </div>
 
                 {/* Name and Snippet */}
                 <div>
-                  <h4 className={`text-sm font-semibold mb-1 transition-colors ${
-                    isSelected ? 'text-white' : 'text-zinc-300 group-hover:text-zinc-200'
-                  }`}>
+                  <h4
+                    className={`text-sm font-semibold mb-1 transition-colors ${
+                      isSelected ? 'text-white' : 'text-zinc-300 group-hover:text-zinc-200'
+                    }`}
+                  >
                     {stage.name}
                   </h4>
                   <p className="text-[11px] text-zinc-400 line-clamp-2 leading-relaxed">
@@ -171,18 +217,22 @@ export const HealthcareWorkflowPipeline: React.FC = () => {
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <Badge variant="primary" size="sm" className="text-[10px] bg-cyan-500/20 text-cyan-300 border-cyan-500/40">
+                      <Badge
+                        variant="primary"
+                        size="sm"
+                        className="text-[10px] bg-cyan-500/20 text-cyan-300 border-cyan-500/40"
+                      >
                         STAGE {currentStage.number}
                       </Badge>
                       <span className="text-xs font-mono text-zinc-400">CLINICAL OPS ENGINE</span>
                     </div>
-                    <h3 className="text-xl font-bold text-white tracking-tight">{currentStage.name}</h3>
+                    <h3 className="text-xl font-bold text-white tracking-tight">
+                      {currentStage.name}
+                    </h3>
                   </div>
                 </div>
 
-                <p className="text-sm text-zinc-300 leading-relaxed">
-                  {currentStage.shortDesc}
-                </p>
+                <p className="text-sm text-zinc-300 leading-relaxed">{currentStage.shortDesc}</p>
 
                 <div className="p-4 rounded-xl bg-cyan-950/20 border border-cyan-500/30 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-cyan-300 text-xs font-semibold">
@@ -230,7 +280,10 @@ export const HealthcareWorkflowPipeline: React.FC = () => {
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
                     {currentStage.dataPoints.map((point: string, idx: number) => (
-                      <div key={idx} className="p-2 rounded-lg bg-black/50 border border-white/5 text-[11px] text-zinc-300 font-mono flex items-center gap-1.5">
+                      <div
+                        key={idx}
+                        className="p-2 rounded-lg bg-black/50 border border-white/5 text-[11px] text-zinc-300 font-mono flex items-center gap-1.5"
+                      >
                         <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
                         <span className="truncate">{point}</span>
                       </div>

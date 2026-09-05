@@ -32,14 +32,18 @@ import {
   Clock,
   Eye,
   Check,
-  MessageSquare
+  MessageSquare,
 } from 'lucide-react';
 import { cn } from '../utils/cn';
 
 // 10 Industries + Other
 const INDUSTRY_OPTIONS = [
   { slug: 'real-estate', name: 'Real Estate', icon: <Building2 className="w-4 h-4" /> },
-  { slug: 'restaurants', name: 'Restaurants & Food', icon: <UtensilsCrossed className="w-4 h-4" /> },
+  {
+    slug: 'restaurants',
+    name: 'Restaurants & Food',
+    icon: <UtensilsCrossed className="w-4 h-4" />,
+  },
   { slug: 'gyms', name: 'Gyms & Fitness', icon: <Dumbbell className="w-4 h-4" /> },
   { slug: 'salons', name: 'Salons & Beauty', icon: <Scissors className="w-4 h-4" /> },
   { slug: 'cafes', name: 'Cafes & Quick-Serve', icon: <Coffee className="w-4 h-4" /> },
@@ -54,27 +58,61 @@ const INDUSTRY_OPTIONS = [
 // 8 Improvement Goals
 const IMPROVEMENT_OPTIONS = [
   { id: 'manual-work', label: 'Reduce manual work', icon: <Clock className="w-3.5 h-3.5" /> },
-  { id: 'customer-exp', label: 'Improve customer experience', icon: <Sparkles className="w-3.5 h-3.5" /> },
-  { id: 'operational-eff', label: 'Improve operational efficiency', icon: <Zap className="w-3.5 h-3.5" /> },
-  { id: 'sales-conversion', label: 'Improve sales/conversion', icon: <TrendingUp className="w-3.5 h-3.5" /> },
-  { id: 'demand-forecast', label: 'Improve demand forecasting', icon: <BrainCircuit className="w-3.5 h-3.5" /> },
-  { id: 'automate-workflows', label: 'Automate workflows', icon: <Workflow className="w-3.5 h-3.5" /> },
-  { id: 'business-visibility', label: 'Improve business visibility', icon: <Eye className="w-3.5 h-3.5" /> },
+  {
+    id: 'customer-exp',
+    label: 'Improve customer experience',
+    icon: <Sparkles className="w-3.5 h-3.5" />,
+  },
+  {
+    id: 'operational-eff',
+    label: 'Improve operational efficiency',
+    icon: <Zap className="w-3.5 h-3.5" />,
+  },
+  {
+    id: 'sales-conversion',
+    label: 'Improve sales/conversion',
+    icon: <TrendingUp className="w-3.5 h-3.5" />,
+  },
+  {
+    id: 'demand-forecast',
+    label: 'Improve demand forecasting',
+    icon: <BrainCircuit className="w-3.5 h-3.5" />,
+  },
+  {
+    id: 'automate-workflows',
+    label: 'Automate workflows',
+    icon: <Workflow className="w-3.5 h-3.5" />,
+  },
+  {
+    id: 'business-visibility',
+    label: 'Improve business visibility',
+    icon: <Eye className="w-3.5 h-3.5" />,
+  },
   { id: 'other-improvement', label: 'Other', icon: <MessageSquare className="w-3.5 h-3.5" /> },
 ];
 
 const INDUSTRY_CHALLENGE_PROMPTS: Record<string, string> = {
-  'real-estate': 'e.g. Leads from 99acres and WhatsApp arrive unorganized; agents take hours to qualify buyers and coordinate site visits...',
-  restaurants: 'e.g. High food waste on fresh proteins during slow weekdays, while peak dinner rushes bottleneck the kitchen line...',
+  'real-estate':
+    'e.g. Leads from 99acres and WhatsApp arrive unorganized; agents take hours to qualify buyers and coordinate site visits...',
+  restaurants:
+    'e.g. High food waste on fresh proteins during slow weekdays, while peak dinner rushes bottleneck the kitchen line...',
   gyms: 'e.g. Members stop attending for weeks without front desk noticing until cancellation; classes have empty spots while walk-ins wait...',
-  salons: 'e.g. Clients forget to rebook their next appointment on time; prime weekend chair slots suffer from last-minute no-shows...',
-  cafes: 'e.g. Morning commuter lines cause customer walk-aways, and bakery items are over-baked causing afternoon waste...',
-  retail: 'e.g. Frequent stockouts on high-velocity SKUs while excess slow-moving inventory sits tied up in storage...',
-  hotels: 'e.g. Guests wait too long during peak 3 PM check-in, and late housekeeping turnovers cause room readiness delays...',
-  healthcare: 'e.g. Paper intake clipboards delay appointments by 15 minutes, and late cancellations leave provider slots unbilled...',
-  automotive: 'e.g. Vehicles disassembled on lift bays waiting for parts delivery; service advisors struggle to balance technician load...',
-  education: 'e.g. Prospective student inquiries take 4 days to answer; verifying transcripts manually creates admissions bottlenecks...',
-  other: 'e.g. Describe where repetitive administrative friction, customer wait times, or communication drop-offs occur in your daily operations...',
+  salons:
+    'e.g. Clients forget to rebook their next appointment on time; prime weekend chair slots suffer from last-minute no-shows...',
+  cafes:
+    'e.g. Morning commuter lines cause customer walk-aways, and bakery items are over-baked causing afternoon waste...',
+  retail:
+    'e.g. Frequent stockouts on high-velocity SKUs while excess slow-moving inventory sits tied up in storage...',
+  hotels:
+    'e.g. Guests wait too long during peak 3 PM check-in, and late housekeeping turnovers cause room readiness delays...',
+  healthcare:
+    'e.g. Paper intake clipboards delay appointments by 15 minutes, and late cancellations leave provider slots unbilled...',
+  automotive:
+    'e.g. Vehicles disassembled on lift bays waiting for parts delivery; service advisors struggle to balance technician load...',
+  education:
+    'e.g. Prospective student inquiries take 4 days to answer; verifying transcripts manually creates admissions bottlenecks...',
+  other:
+    'e.g. Describe where repetitive administrative friction, customer wait times, or communication drop-offs occur in your daily operations...',
 };
 
 export const ContactPage: React.FC = () => {
@@ -175,7 +213,11 @@ export const ContactPage: React.FC = () => {
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
                 <div className="inline-block">
-                  <Badge variant="success" size="sm" className="font-mono text-[10px] uppercase tracking-wider">
+                  <Badge
+                    variant="success"
+                    size="sm"
+                    className="font-mono text-[10px] uppercase tracking-wider"
+                  >
                     Prototype Intake Captured
                   </Badge>
                 </div>
@@ -183,7 +225,8 @@ export const ContactPage: React.FC = () => {
                   Your business challenge has been captured.
                 </h2>
                 <p className="text-sm sm:text-base text-sky-300 font-medium max-w-xl mx-auto leading-relaxed">
-                  An Aether solution analysis could identify potential opportunities across your workflow.
+                  An Aether solution analysis could identify potential opportunities across your
+                  workflow.
                 </p>
               </div>
 
@@ -199,7 +242,9 @@ export const ContactPage: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                   <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1">
-                    <span className="text-[10px] uppercase font-mono text-text-muted">Business Domain</span>
+                    <span className="text-[10px] uppercase font-mono text-text-muted">
+                      Business Domain
+                    </span>
                     <div className="text-sm font-bold text-text-primary flex items-center gap-2">
                       <span className="text-sky-400">{activeIndustryObj.icon}</span>
                       <span>{activeIndustryObj.name}</span>
@@ -207,16 +252,21 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1">
-                    <span className="text-[10px] uppercase font-mono text-text-muted">Contact Registered</span>
+                    <span className="text-[10px] uppercase font-mono text-text-muted">
+                      Contact Registered
+                    </span>
                     <div className="text-sm font-bold text-text-primary truncate">
-                      {name || 'Executive Stakeholder'} • <span className="text-text-secondary text-xs">{email || 'Not provided'}</span>
+                      {name || 'Executive Stakeholder'} •{' '}
+                      <span className="text-text-secondary text-xs">{email || 'Not provided'}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Captured Improvement Goals */}
                 <div className="space-y-2">
-                  <span className="text-[10px] uppercase font-mono text-text-muted">Identified Priority Goals</span>
+                  <span className="text-[10px] uppercase font-mono text-text-muted">
+                    Identified Priority Goals
+                  </span>
                   <div className="flex flex-wrap gap-1.5">
                     {selectedImprovements.map((imp, idx) => (
                       <span
@@ -249,9 +299,18 @@ export const ContactPage: React.FC = () => {
                     <span>How Aether Would Approach This In Production:</span>
                   </div>
                   <ol className="text-xs text-text-secondary space-y-1 pl-4 list-decimal leading-relaxed">
-                    <li><strong className="text-text-primary">Connect:</strong> Ingest existing operational telemetry (CRM, POS, schedules, messaging).</li>
-                    <li><strong className="text-text-primary">Diagnose:</strong> Quantify bottlenecks, idle capacity, and drop-off points automatically.</li>
-                    <li><strong className="text-text-primary">Deploy:</strong> Activate autonomous recommendation and execution pipelines with human oversight.</li>
+                    <li>
+                      <strong className="text-text-primary">Connect:</strong> Ingest existing
+                      operational telemetry (CRM, POS, schedules, messaging).
+                    </li>
+                    <li>
+                      <strong className="text-text-primary">Diagnose:</strong> Quantify bottlenecks,
+                      idle capacity, and drop-off points automatically.
+                    </li>
+                    <li>
+                      <strong className="text-text-primary">Deploy:</strong> Activate autonomous
+                      recommendation and execution pipelines with human oversight.
+                    </li>
                   </ol>
                 </div>
               </div>
@@ -261,7 +320,8 @@ export const ContactPage: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span>
-                    <strong>Prototype Demonstration:</strong> This interaction demonstrates Aether's problem-first intake methodology. Live lead processing is not executed.
+                    <strong>Prototype Demonstration:</strong> This interaction demonstrates Aether's
+                    problem-first intake methodology. Live lead processing is not executed.
                   </span>
                 </div>
               </div>
@@ -317,7 +377,11 @@ export const ContactPage: React.FC = () => {
                     Tell us what you are trying to solve
                   </h3>
                 </div>
-                <Badge variant="outline" size="sm" className="font-mono text-[10px] text-sky-300 border-sky-400/30">
+                <Badge
+                  variant="outline"
+                  size="sm"
+                  className="font-mono text-[10px] text-sky-300 border-sky-400/30"
+                >
                   Prototype Sandbox
                 </Badge>
               </div>
@@ -356,7 +420,9 @@ export const ContactPage: React.FC = () => {
                         <span
                           className={cn(
                             'shrink-0 transition-colors',
-                            isSelected ? 'text-sky-300' : 'text-text-muted group-hover:text-text-primary'
+                            isSelected
+                              ? 'text-sky-300'
+                              : 'text-text-muted group-hover:text-text-primary'
                           )}
                         >
                           {ind.icon}
@@ -403,7 +469,9 @@ export const ContactPage: React.FC = () => {
                           <span
                             className={cn(
                               'transition-colors',
-                              isChecked ? 'text-indigo-300' : 'text-text-muted group-hover:text-text-primary'
+                              isChecked
+                                ? 'text-indigo-300'
+                                : 'text-text-muted group-hover:text-text-primary'
                             )}
                           >
                             {opt.icon}
@@ -545,7 +613,8 @@ export const ContactPage: React.FC = () => {
               <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-text-muted flex items-center gap-2.5">
                 <ShieldCheck className="w-4 h-4 text-sky-400 shrink-0" />
                 <span>
-                  <strong>Interactive Prototype Notice:</strong> Demonstrates problem-to-solution intake mapping without storing real customer data.
+                  <strong>Interactive Prototype Notice:</strong> Demonstrates problem-to-solution
+                  intake mapping without storing real customer data.
                 </span>
               </div>
 

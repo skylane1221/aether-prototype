@@ -3,10 +3,7 @@ import { Card } from '../../ui/Card';
 import { Badge } from '../../ui/Badge';
 import { Button } from '../../ui/Button';
 import { Modal } from '../../ui/Modal';
-import {
-  REAL_ESTATE_PROPERTIES,
-  RealEstateProperty,
-} from '../../../data/realEstateData';
+import { REAL_ESTATE_PROPERTIES, RealEstateProperty } from '../../../data/realEstateData';
 import {
   Play,
   RotateCcw,
@@ -37,17 +34,19 @@ const SAMPLE_PROMPTS = [
   },
   {
     label: 'Luxury 3BHK Lake-View Penthouse',
-    text: "Need a premium 3BHK penthouse with Powai lake view, 2 car parking bays, ready to move in, budget up to ₹2.8 Cr.",
+    text: 'Need a premium 3BHK penthouse with Powai lake view, 2 car parking bays, ready to move in, budget up to ₹2.8 Cr.',
   },
   {
     label: 'Investor Ready Compact 2BHK Chandivali',
-    text: "Looking for high-rental yield 2BHK in Chandivali/Powai extension under ₹1.40 Cr with quick 3-month possession.",
+    text: 'Looking for high-rental yield 2BHK in Chandivali/Powai extension under ₹1.40 Cr with quick 3-month possession.',
   },
 ];
 
 export const RealEstateHeroDemo: React.FC = () => {
   const [messageInput, setMessageInput] = useState<string>(SAMPLE_PROMPTS[0].text);
-  const [extractionState, setExtractionState] = useState<'idle' | 'analyzing' | 'extracted'>('extracted');
+  const [extractionState, setExtractionState] = useState<'idle' | 'analyzing' | 'extracted'>(
+    'extracted'
+  );
   const [shortlistedIds, setShortlistedIds] = useState<string[]>(['prop-1']);
 
   // Modals state
@@ -122,14 +121,16 @@ export const RealEstateHeroDemo: React.FC = () => {
                 aether-cognitive-engine
               </span>
               <span className="text-text-muted text-xs">/</span>
-              <span className="text-xs font-mono text-text-muted">
-                natural-language-triage
-              </span>
+              <span className="text-xs font-mono text-text-muted">natural-language-triage</span>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <Badge variant="neutral" size="sm" className="font-mono text-[10px] uppercase tracking-wider bg-slate-800 text-cyan-300 border-cyan-500/30">
+            <Badge
+              variant="neutral"
+              size="sm"
+              className="font-mono text-[10px] uppercase tracking-wider bg-slate-800 text-cyan-300 border-cyan-500/30"
+            >
               SIMULATED DEMO
             </Badge>
             {extractionState !== 'idle' && (
@@ -227,7 +228,9 @@ export const RealEstateHeroDemo: React.FC = () => {
                 <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5 font-mono text-xs">
                   {/* 1. Property Type */}
                   <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
-                    <span className="text-[10px] text-text-muted uppercase block">1. Property Type</span>
+                    <span className="text-[10px] text-text-muted uppercase block">
+                      1. Property Type
+                    </span>
                     <span className="text-xs font-bold text-white flex items-center gap-1 mt-0.5">
                       <Building2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                       Residential
@@ -253,7 +256,9 @@ export const RealEstateHeroDemo: React.FC = () => {
 
                   {/* 4. Configuration */}
                   <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
-                    <span className="text-[10px] text-text-muted uppercase block">4. Configuration</span>
+                    <span className="text-[10px] text-text-muted uppercase block">
+                      4. Configuration
+                    </span>
                     <span className="text-xs font-bold text-white flex items-center gap-1 mt-0.5">
                       2 BHK (780+ sq.ft.)
                     </span>
@@ -263,14 +268,15 @@ export const RealEstateHeroDemo: React.FC = () => {
                   <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
                     <span className="text-[10px] text-text-muted uppercase block">5. Parking</span>
                     <span className="text-xs font-bold text-white flex items-center gap-1 mt-0.5">
-                      <Car className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                      1 Covered Bay
+                      <Car className="w-3.5 h-3.5 text-amber-400 shrink-0" />1 Covered Bay
                     </span>
                   </div>
 
                   {/* 6. Possession */}
                   <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
-                    <span className="text-[10px] text-text-muted uppercase block">6. Possession</span>
+                    <span className="text-[10px] text-text-muted uppercase block">
+                      6. Possession
+                    </span>
                     <span className="text-xs font-bold text-cyan-300 flex items-center gap-1 mt-0.5">
                       <Clock className="w-3.5 h-3.5 text-sky-400 shrink-0" />
                       &lt; 6 Months
@@ -279,7 +285,9 @@ export const RealEstateHeroDemo: React.FC = () => {
 
                   {/* 7. Intent */}
                   <div className="p-2.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30">
-                    <span className="text-[10px] text-cyan-400 uppercase block">7. Intent Score</span>
+                    <span className="text-[10px] text-cyan-400 uppercase block">
+                      7. Intent Score
+                    </span>
                     <span className="text-xs font-bold text-emerald-400 flex items-center gap-1 mt-0.5">
                       <Zap className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                       High Intent (96%)
@@ -317,7 +325,8 @@ export const RealEstateHeroDemo: React.FC = () => {
                       2. Lead Priority
                     </span>
                     <p className="text-slate-200 font-medium leading-snug">
-                      <span className="text-white font-bold">Tier 1 Closer Priority</span> • Pre-approved loan of ₹1.2 Cr ready for token.
+                      <span className="text-white font-bold">Tier 1 Closer Priority</span> •
+                      Pre-approved loan of ₹1.2 Cr ready for token.
                     </p>
                   </div>
 
@@ -362,7 +371,8 @@ export const RealEstateHeroDemo: React.FC = () => {
                       <span>3. Matched Inventory Ranking (4 Verified Properties)</span>
                     </h4>
                     <p className="text-xs text-text-muted mt-0.5">
-                      Ranked dynamically by semantic criteria fit, budget tolerance, and possession window.
+                      Ranked dynamically by semantic criteria fit, budget tolerance, and possession
+                      window.
                     </p>
                   </div>
 
@@ -374,10 +384,12 @@ export const RealEstateHeroDemo: React.FC = () => {
                       leftIcon={<Columns2 className="w-3.5 h-3.5 text-cyan-400" />}
                       className="text-xs"
                     >
-                      Compare Properties ({compareProperties.length > 0 ? compareProperties.length : 2})
+                      Compare Properties (
+                      {compareProperties.length > 0 ? compareProperties.length : 2})
                     </Button>
                     <div className="text-xs font-mono text-text-muted bg-slate-900 px-2.5 py-1 rounded border border-slate-800">
-                      Shortlisted: <span className="text-cyan-400 font-bold">{shortlistedIds.length}</span>
+                      Shortlisted:{' '}
+                      <span className="text-cyan-400 font-bold">{shortlistedIds.length}</span>
                     </div>
                   </div>
                 </div>
@@ -412,7 +424,9 @@ export const RealEstateHeroDemo: React.FC = () => {
                                   <Sparkles className="w-3 h-3 text-cyan-400" />
                                   <span>{property.matchScore}% Match</span>
                                 </div>
-                                <span className="text-[10px] font-mono text-emerald-400 mt-0.5">High Fit</span>
+                                <span className="text-[10px] font-mono text-emerald-400 mt-0.5">
+                                  High Fit
+                                </span>
                               </div>
 
                               <button
@@ -481,7 +495,9 @@ export const RealEstateHeroDemo: React.FC = () => {
                                   : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-white'
                               )}
                             >
-                              {compareProperties.some((p) => p.id === property.id) ? '✓ In Compare' : '+ Compare'}
+                              {compareProperties.some((p) => p.id === property.id)
+                                ? '✓ In Compare'
+                                : '+ Compare'}
                             </button>
                           </div>
 
@@ -518,11 +534,15 @@ export const RealEstateHeroDemo: React.FC = () => {
           <div className="space-y-6">
             <div className="flex items-center justify-between pb-3 border-b border-aether-border-subtle">
               <div>
-                <div className="text-xs font-mono text-cyan-400 uppercase">{viewProperty.developer}</div>
+                <div className="text-xs font-mono text-cyan-400 uppercase">
+                  {viewProperty.developer}
+                </div>
                 <div className="text-xs text-text-muted">{viewProperty.location}</div>
               </div>
               <div className="text-right">
-                <div className="text-xl font-bold font-mono text-emerald-400">{viewProperty.price}</div>
+                <div className="text-xl font-bold font-mono text-emerald-400">
+                  {viewProperty.price}
+                </div>
                 <div className="text-[10px] font-mono text-text-muted">All-inclusive Estimate</div>
               </div>
             </div>
@@ -605,7 +625,8 @@ export const RealEstateHeroDemo: React.FC = () => {
         >
           <div className="space-y-6">
             <p className="text-xs text-text-secondary">
-              Comparing {compareProperties.length} short-listed properties matched against client budget (₹1.50 Cr) and 6-month possession timeline.
+              Comparing {compareProperties.length} short-listed properties matched against client
+              budget (₹1.50 Cr) and 6-month possession timeline.
             </p>
 
             <div className="overflow-x-auto">
@@ -742,7 +763,8 @@ export const RealEstateHeroDemo: React.FC = () => {
                     <span>Automated Security Clearance & Valet Reserved</span>
                   </div>
                   <p className="text-[11px] pl-5">
-                    Assigned Project Relationship Manager: <strong className="text-white">Sameer Kapoor (Senior Specialist)</strong>
+                    Assigned Project Relationship Manager:{' '}
+                    <strong className="text-white">Sameer Kapoor (Senior Specialist)</strong>
                   </p>
                 </div>
 
@@ -769,7 +791,8 @@ export const RealEstateHeroDemo: React.FC = () => {
                 <div>
                   <h4 className="text-lg font-bold text-white">Site Visit Confirmed!</h4>
                   <p className="text-xs text-slate-400 mt-1">
-                    Slot reserved for <span className="text-cyan-400 font-semibold">{selectedSlot}</span>
+                    Slot reserved for{' '}
+                    <span className="text-cyan-400 font-semibold">{selectedSlot}</span>
                   </p>
                 </div>
 
@@ -784,12 +807,19 @@ export const RealEstateHeroDemo: React.FC = () => {
                   <div className="text-slate-300 text-[11px] space-y-1">
                     <div>Property: {scheduleProperty.name}</div>
                     <div>Location: {scheduleProperty.location}</div>
-                    <div>Security Code: <span className="text-amber-400 font-bold">PW-4482</span></div>
+                    <div>
+                      Security Code: <span className="text-amber-400 font-bold">PW-4482</span>
+                    </div>
                     <div>Sales Concierge: Sameer Kapoor (+91 98201 XXXXX)</div>
                   </div>
                 </div>
 
-                <Button variant="primary" size="sm" onClick={() => setScheduleProperty(null)} className="w-full">
+                <Button
+                  variant="primary"
+                  size="sm"
+                  onClick={() => setScheduleProperty(null)}
+                  className="w-full"
+                >
                   Done
                 </Button>
               </div>

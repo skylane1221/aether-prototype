@@ -129,10 +129,16 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
             <div>
               <div className="flex items-center gap-2 mb-1.5">
-                <Badge variant="primary" size="sm" className="bg-rose-500/20 text-rose-300 border-rose-500/30">
+                <Badge
+                  variant="primary"
+                  size="sm"
+                  className="bg-rose-500/20 text-rose-300 border-rose-500/30"
+                >
                   Customer Lifecycle & Appointment Architecture
                 </Badge>
-                <span className="text-xs font-mono text-rose-400 font-semibold">Client Retention & Chair Yield Engine</span>
+                <span className="text-xs font-mono text-rose-400 font-semibold">
+                  Client Retention & Chair Yield Engine
+                </span>
               </div>
               <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                 How Aether Automates Salon Rebooking & Eliminates No-Shows
@@ -156,7 +162,9 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
                   Rebooking Drift & Empty Chair Latency
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-300 mt-2 leading-relaxed">
-                  Clients leave without rebooking and delay their next appointment by 4–8 weeks past the optimal color fade threshold. Unconfirmed bookings lead to 18% no-show rates and unrecoverable chair gaps.
+                  Clients leave without rebooking and delay their next appointment by 4–8 weeks past
+                  the optimal color fade threshold. Unconfirmed bookings lead to 18% no-show rates
+                  and unrecoverable chair gaps.
                 </p>
               </div>
               <div className="pt-3 border-t border-rose-500/20 flex items-center justify-between text-[11px] font-mono text-rose-300/80">
@@ -176,10 +184,18 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
                   Formula & Regrowth Telemetry
                 </h3>
                 <p className="text-xs text-zinc-300 mt-2 leading-relaxed">
-                  Synthesizes chemical formula records, stylist chair velocity, personal hair growth rates, and no-show patterns:
+                  Synthesizes chemical formula records, stylist chair velocity, personal hair growth
+                  rates, and no-show patterns:
                 </p>
                 <div className="mt-3 flex flex-wrap gap-1.5">
-                  {['Color & Toner Formula Archive', 'Regrowth & Fade Cadence (wks)', 'Preferred Stylist Sync', 'Stylist Chair Time Duration', 'No-Show Risk Signals', 'Lifetime Spend Trajectory'].map((attr, i) => (
+                  {[
+                    'Color & Toner Formula Archive',
+                    'Regrowth & Fade Cadence (wks)',
+                    'Preferred Stylist Sync',
+                    'Stylist Chair Time Duration',
+                    'No-Show Risk Signals',
+                    'Lifetime Spend Trajectory',
+                  ].map((attr, i) => (
                     <span
                       key={attr}
                       className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-purple-500/10 border border-purple-500/25 text-purple-300"
@@ -202,11 +218,10 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
                   <Target className="w-4 h-4 text-rose-400 shrink-0" />
                   <span>Aether Recommends</span>
                 </div>
-                <h3 className="text-base font-extrabold text-white">
-                  Lifecycle Directives
-                </h3>
+                <h3 className="text-base font-extrabold text-white">Lifecycle Directives</h3>
                 <p className="text-xs text-zinc-300 mt-2 leading-relaxed">
-                  Triggers timed WhatsApp appointment invites, customized treatment add-ons, and dynamic slot packing:
+                  Triggers timed WhatsApp appointment invites, customized treatment add-ons, and
+                  dynamic slot packing:
                 </p>
                 <div className="mt-3 space-y-1.5">
                   {[
@@ -216,9 +231,14 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
                     'Stylist Workstation Formula & Note Sync',
                     'Automated VIP Churn Interception',
                   ].map((rec, i) => (
-                    <div key={rec} className="flex items-center gap-2 text-[11px] font-mono text-rose-300">
+                    <div
+                      key={rec}
+                      className="flex items-center gap-2 text-[11px] font-mono text-rose-300"
+                    >
                       <CheckCircle2 className="w-3 h-3 text-rose-400 shrink-0" />
-                      <span>{i + 1}. {rec}</span>
+                      <span>
+                        {i + 1}. {rec}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -244,18 +264,23 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {industry.challenges.map((item, idx: number) => (
-            <Card key={item.id} className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all">
+            <Card
+              key={item.id}
+              className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all"
+            >
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-slate-800">
-                  <span className="text-[10px] font-mono text-rose-400 font-bold">Problem 0{idx + 1}</span>
+                  <span className="text-[10px] font-mono text-rose-400 font-bold">
+                    Problem 0{idx + 1}
+                  </span>
                   <span
                     className={cn(
                       'text-[9px] uppercase font-mono px-2 py-0.5 rounded font-bold',
                       item.severity === 'critical'
                         ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
                         : item.severity === 'high'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                        : 'bg-slate-800 text-slate-300'
+                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                          : 'bg-slate-800 text-slate-300'
                     )}
                   >
                     {item.severity}
@@ -271,9 +296,7 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
                     <AlertCircle className="w-3 h-3" />
                     <span>Root Cause</span>
                   </div>
-                  <p className="text-xs text-text-secondary leading-relaxed pl-4">
-                    {item.cause}
-                  </p>
+                  <p className="text-xs text-text-secondary leading-relaxed pl-4">{item.cause}</p>
                 </div>
 
                 <div className="pt-1">
@@ -303,7 +326,10 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {industry.opportunities.map((opp, idx: number) => (
-            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card">
+            <Card
+              key={idx}
+              className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card"
+            >
               <div className="space-y-4">
                 <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
                   <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
@@ -331,7 +357,9 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
 
               <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
                 <span className="text-text-muted font-mono">Projected Multiplier:</span>
-                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+                <span className="font-bold font-mono text-emerald-400">
+                  {opp.potentialMultiplier}
+                </span>
               </div>
             </Card>
           ))}
@@ -350,7 +378,10 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {industry.solutionMappings.map((mapping, idx: number) => (
-            <Card key={idx} className="p-5 sm:p-6 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80">
+            <Card
+              key={idx}
+              className="p-5 sm:p-6 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80"
+            >
               <div className="space-y-3">
                 <div className="flex items-center justify-between mb-1">
                   <Badge variant="neutral" size="sm" className="font-mono text-[10px]">
@@ -531,7 +562,10 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
                   <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-2 border-t border-slate-800/80 bg-slate-950/40">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                       {cap.features.map((feature: string, fIdx: number) => (
-                        <div key={fIdx} className="flex items-start gap-2 text-xs text-text-secondary">
+                        <div
+                          key={fIdx}
+                          className="flex items-start gap-2 text-xs text-text-secondary"
+                        >
                           <span className="w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0 mt-1.5" />
                           <span>{feature}</span>
                         </div>
@@ -567,7 +601,8 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
             </h2>
 
             <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-              Experience how Aether's predictive rebooking cycles and formula archiving maximize salon revenue and client loyalty from day one.
+              Experience how Aether's predictive rebooking cycles and formula archiving maximize
+              salon revenue and client loyalty from day one.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">

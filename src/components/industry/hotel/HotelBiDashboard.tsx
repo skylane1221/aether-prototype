@@ -21,10 +21,16 @@ import {
 import { cn } from '../../../utils/cn';
 import { HOTEL_BI_DATA } from '../../../data/hotelData';
 
+type HotelTabId =
+  | 'occupancy'
+  | 'bookingTrend'
+  | 'cancellationRisk'
+  | 'guestPreferences'
+  | 'operationalLoad'
+  | 'revenueOpportunities';
+
 export const HotelBiDashboard: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<
-    'occupancy' | 'bookingTrend' | 'cancellationRisk' | 'guestPreferences' | 'operationalLoad' | 'revenueOpportunities'
-  >('occupancy');
+  const [activeTab, setActiveTab] = useState<HotelTabId>('occupancy');
   const [executedOppIds, setExecutedOppIds] = useState<string[]>([]);
 
   const handleExecuteOpportunity = (id: string) => {
@@ -32,6 +38,35 @@ export const HotelBiDashboard: React.FC = () => {
       setExecutedOppIds([...executedOppIds, id]);
     }
   };
+
+  const tabs: { id: HotelTabId; label: string; icon: React.ReactNode }[] = [
+    { id: 'occupancy', label: 'Occupancy', icon: <BedDouble className="w-3.5 h-3.5" /> },
+    {
+      id: 'bookingTrend',
+      label: 'Booking Trend',
+      icon: <TrendingUp className="w-3.5 h-3.5" />,
+    },
+    {
+      id: 'cancellationRisk',
+      label: 'Cancellation Risk',
+      icon: <AlertTriangle className="w-3.5 h-3.5" />,
+    },
+    {
+      id: 'guestPreferences',
+      label: 'Guest Preferences',
+      icon: <UserCheck className="w-3.5 h-3.5" />,
+    },
+    {
+      id: 'operationalLoad',
+      label: 'Operational Load',
+      icon: <Activity className="w-3.5 h-3.5" />,
+    },
+    {
+      id: 'revenueOpportunities',
+      label: 'Revenue Opportunities',
+      icon: <Sparkles className="w-3.5 h-3.5" />,
+    },
+  ];
 
   return (
     <div className="space-y-6">
@@ -45,19 +80,12 @@ export const HotelBiDashboard: React.FC = () => {
         {/* Tab Navigation Header */}
         <div className="bg-slate-950 px-4 sm:px-6 py-3 border-b border-aether-border flex items-center justify-between overflow-x-auto no-scrollbar gap-2">
           <div className="flex items-center gap-1.5 sm:gap-2">
-            {[
-              { id: 'occupancy', label: 'Occupancy', icon: <BedDouble className="w-3.5 h-3.5" /> },
-              { id: 'bookingTrend', label: 'Booking Trend', icon: <TrendingUp className="w-3.5 h-3.5" /> },
-              { id: 'cancellationRisk', label: 'Cancellation Risk', icon: <AlertTriangle className="w-3.5 h-3.5" /> },
-              { id: 'guestPreferences', label: 'Guest Preferences', icon: <UserCheck className="w-3.5 h-3.5" /> },
-              { id: 'operationalLoad', label: 'Operational Load', icon: <Activity className="w-3.5 h-3.5" /> },
-              { id: 'revenueOpportunities', label: 'Revenue Opportunities', icon: <Sparkles className="w-3.5 h-3.5" /> },
-            ].map((tab) => {
+            {tabs.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id as any)}
+                  onClick={() => setActiveTab(tab.id)}
                   className={cn(
                     'px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 shrink-0',
                     isActive
@@ -88,17 +116,19 @@ export const HotelBiDashboard: React.FC = () => {
                 <div className="text-2xl font-extrabold font-mono text-teal-300 mt-2">
                   {HOTEL_BI_DATA.overviewMetrics.occupancyRate}
                 </div>
-                <span className="text-[10px] text-teal-400 font-mono mt-1">+6.4% vs market compset</span>
+                <span className="text-[10px] text-teal-400 font-mono mt-1">
+                  +6.4% vs market compset
+                </span>
               </div>
 
               <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
-                <span className="text-[10px] font-mono text-text-muted uppercase">
-                  RevPAR
-                </span>
+                <span className="text-[10px] font-mono text-text-muted uppercase">RevPAR</span>
                 <div className="text-2xl font-extrabold font-mono text-emerald-400 mt-2">
                   {HOTEL_BI_DATA.overviewMetrics.revPar}
                 </div>
-                <span className="text-[10px] text-emerald-400 font-mono mt-1">+14.2% yield lift</span>
+                <span className="text-[10px] text-emerald-400 font-mono mt-1">
+                  +14.2% yield lift
+                </span>
               </div>
 
               <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
@@ -108,7 +138,9 @@ export const HotelBiDashboard: React.FC = () => {
                 <div className="text-2xl font-extrabold font-mono text-sky-300 mt-2">
                   {HOTEL_BI_DATA.overviewMetrics.adr}
                 </div>
-                <span className="text-[10px] text-sky-400 font-mono mt-1">Dynamic pricing active</span>
+                <span className="text-[10px] text-sky-400 font-mono mt-1">
+                  Dynamic pricing active
+                </span>
               </div>
 
               <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
@@ -118,7 +150,9 @@ export const HotelBiDashboard: React.FC = () => {
                 <div className="text-2xl font-extrabold font-mono text-indigo-300 mt-2">
                   {HOTEL_BI_DATA.overviewMetrics.directBookingShare}
                 </div>
-                <span className="text-[10px] text-indigo-300 font-mono mt-1">+18.2% direct shift</span>
+                <span className="text-[10px] text-indigo-300 font-mono mt-1">
+                  +18.2% direct shift
+                </span>
               </div>
 
               <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
@@ -132,13 +166,13 @@ export const HotelBiDashboard: React.FC = () => {
               </div>
 
               <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
-                <span className="text-[10px] font-mono text-text-muted uppercase">
-                  Guest CSAT
-                </span>
+                <span className="text-[10px] font-mono text-text-muted uppercase">Guest CSAT</span>
                 <div className="text-2xl font-extrabold font-mono text-emerald-300 mt-2">
                   {HOTEL_BI_DATA.overviewMetrics.guestSatisfactionScore}
                 </div>
-                <span className="text-[10px] text-emerald-300 font-mono mt-1">99.2% positive sentiment</span>
+                <span className="text-[10px] text-emerald-300 font-mono mt-1">
+                  99.2% positive sentiment
+                </span>
               </div>
             </div>
 
@@ -146,10 +180,15 @@ export const HotelBiDashboard: React.FC = () => {
               <div className="flex items-center gap-3">
                 <ShieldCheck className="w-5 h-5 text-teal-400 shrink-0" />
                 <span className="text-xs text-text-secondary">
-                  PMS booking pace is actively synchronized across 24 global channels with automated rate parity verification and instant room category balancing.
+                  PMS booking pace is actively synchronized across 24 global channels with automated
+                  rate parity verification and instant room category balancing.
                 </span>
               </div>
-              <Badge variant="primary" size="sm" className="hidden sm:inline font-mono text-[10px] bg-teal-500/20 text-teal-300 border-teal-500/30">
+              <Badge
+                variant="primary"
+                size="sm"
+                className="hidden sm:inline font-mono text-[10px] bg-teal-500/20 text-teal-300 border-teal-500/30"
+              >
                 Pace Status: Optimal
               </Badge>
             </div>
@@ -229,7 +268,8 @@ export const HotelBiDashboard: React.FC = () => {
                       </span>
                     </div>
                     <div className="text-3xl font-extrabold font-mono text-text-primary">
-                      {risk.count} <span className="text-xs text-text-muted font-normal">Rooms</span>
+                      {risk.count}{' '}
+                      <span className="text-xs text-text-muted font-normal">Rooms</span>
                     </div>
                   </div>
                   <div className="mt-4 pt-2 border-t border-slate-800 text-xs font-mono text-text-muted">
@@ -240,7 +280,10 @@ export const HotelBiDashboard: React.FC = () => {
             </div>
 
             <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-xs text-text-secondary">
-              💡 <strong className="text-text-primary">Aether Overbooking Shield:</strong> High-risk OTA reservations are backed by automated release triggers that immediately offer released capacity to high-paying corporate waitlists, maintaining 99%+ effective realization.
+              💡 <strong className="text-text-primary">Aether Overbooking Shield:</strong> High-risk
+              OTA reservations are backed by automated release triggers that immediately offer
+              released capacity to high-paying corporate waitlists, maintaining 99%+ effective
+              realization.
             </div>
           </div>
         )}
@@ -260,7 +303,11 @@ export const HotelBiDashboard: React.FC = () => {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <Badge variant="primary" size="sm" className="font-mono text-[10px] bg-teal-500/20 text-teal-300 border-teal-500/30">
+                      <Badge
+                        variant="primary"
+                        size="sm"
+                        className="font-mono text-[10px] bg-teal-500/20 text-teal-300 border-teal-500/30"
+                      >
                         {pref.category}
                       </Badge>
                       <span className="text-[10px] font-mono text-emerald-400">{pref.trend}</span>

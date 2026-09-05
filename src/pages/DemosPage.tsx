@@ -28,7 +28,7 @@ import {
   Car,
   GraduationCap,
   ArrowLeft,
-  Target
+  Target,
 } from 'lucide-react';
 import { cn } from '../utils/cn';
 
@@ -53,9 +53,7 @@ export const DemosPage: React.FC = () => {
   const urlIndustry = searchParams.get('industry');
 
   const [selectedIndustrySlug, setSelectedIndustrySlug] = useState<string>(
-    urlIndustry && INDUSTRY_ORDER.some((d) => d.slug === urlIndustry)
-      ? urlIndustry
-      : 'real-estate'
+    urlIndustry && INDUSTRY_ORDER.some((d) => d.slug === urlIndustry) ? urlIndustry : 'real-estate'
   );
   const [demoState, setDemoState] = useState<'idle' | 'analyzing' | 'executed'>('idle');
 
@@ -106,7 +104,12 @@ export const DemosPage: React.FC = () => {
           </div>
 
           <Link to="/industries">
-            <Button variant="ghost" size="sm" leftIcon={<ArrowLeft className="w-3.5 h-3.5" />} className="text-xs">
+            <Button
+              variant="ghost"
+              size="sm"
+              leftIcon={<ArrowLeft className="w-3.5 h-3.5" />}
+              className="text-xs"
+            >
               Back to Industries
             </Button>
           </Link>
@@ -173,9 +176,7 @@ export const DemosPage: React.FC = () => {
                   >
                     {item.icon}
                   </div>
-                  {isSelected && (
-                    <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-                  )}
+                  {isSelected && <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />}
                 </div>
                 <div>
                   <h4
@@ -238,7 +239,12 @@ export const DemosPage: React.FC = () => {
                   Run Aether
                 </Button>
               ) : demoState === 'analyzing' ? (
-                <Button variant="secondary" size="sm" disabled className="gap-1.5 font-mono text-xs">
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  disabled
+                  className="gap-1.5 font-mono text-xs"
+                >
                   <Cpu className="w-3.5 h-3.5 animate-spin text-sky-400" />
                   <span>Analyzing...</span>
                 </Button>
@@ -254,7 +260,12 @@ export const DemosPage: React.FC = () => {
                     Reset Demo
                   </Button>
                   <Link to={`/industries/${demo.industrySlug}`}>
-                    <Button variant="secondary" size="sm" rightIcon={<ArrowRight className="w-3.5 h-3.5" />} className="text-xs hidden sm:inline-flex">
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+                      className="text-xs hidden sm:inline-flex"
+                    >
                       Industry Deep Dive
                     </Button>
                   </Link>
@@ -274,9 +285,7 @@ export const DemosPage: React.FC = () => {
                   </Badge>
                   <span className="text-xs font-mono text-text-muted">• {demo.industryName}</span>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-text-primary">
-                  {demo.title}
-                </h3>
+                <h3 className="text-lg sm:text-xl font-bold text-text-primary">{demo.title}</h3>
                 <p className="text-xs sm:text-sm text-text-secondary mt-1 max-w-3xl">
                   {demo.description}
                 </p>
@@ -284,9 +293,13 @@ export const DemosPage: React.FC = () => {
 
               {/* Pitch Highlights Box */}
               <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-mono shrink-0 space-y-1">
-                <div className="text-[10px] text-text-muted uppercase tracking-wider">Presenter 60s Focus:</div>
+                <div className="text-[10px] text-text-muted uppercase tracking-wider">
+                  Presenter 60s Focus:
+                </div>
                 <div className="text-sky-300 font-semibold">{demo.result.quantifiedGain}</div>
-                <div className="text-slate-400 text-[11px]">Impact in {demo.result.timeToImpact}</div>
+                <div className="text-slate-400 text-[11px]">
+                  Impact in {demo.result.timeToImpact}
+                </div>
               </div>
             </div>
 
@@ -310,8 +323,13 @@ export const DemosPage: React.FC = () => {
                   </div>
                   <div className="space-y-1.5">
                     {Object.entries(demo.input.rawPayload).map(([key, val]) => (
-                      <div key={key} className="p-2 rounded bg-slate-950 border border-slate-800/80 text-xs">
-                        <span className="text-[10px] uppercase font-mono text-text-muted block">{key}</span>
+                      <div
+                        key={key}
+                        className="p-2 rounded bg-slate-950 border border-slate-800/80 text-xs"
+                      >
+                        <span className="text-[10px] uppercase font-mono text-text-muted block">
+                          {key}
+                        </span>
                         <span className="text-text-primary font-medium">{val}</span>
                       </div>
                     ))}
@@ -340,22 +358,32 @@ export const DemosPage: React.FC = () => {
                       <Cpu className="w-8 h-8 text-indigo-400/60 mx-auto animate-pulse" />
                       <div className="text-xs text-text-muted">Aether Engine Ready</div>
                       <p className="text-[11px] text-slate-400">
-                        Click <strong className="text-sky-300">Run Aether</strong> to execute multi-model analysis.
+                        Click <strong className="text-sky-300">Run Aether</strong> to execute
+                        multi-model analysis.
                       </p>
                     </div>
                   ) : demoState === 'analyzing' ? (
                     <div className="py-8 text-center space-y-2 animate-fade-in">
                       <div className="w-6 h-6 border-2 border-indigo-400 border-t-transparent animate-spin mx-auto" />
-                      <div className="text-xs font-bold text-indigo-300">Analyzing Telemetry...</div>
-                      <p className="text-[10px] font-mono text-text-muted">{demo.processing.telemetryStream}</p>
+                      <div className="text-xs font-bold text-indigo-300">
+                        Analyzing Telemetry...
+                      </div>
+                      <p className="text-[10px] font-mono text-text-muted">
+                        {demo.processing.telemetryStream}
+                      </p>
                     </div>
                   ) : (
                     <div className="space-y-3 pt-2 animate-fade-in">
                       <div className="text-xs text-text-secondary">
-                        Telemetry Stream: <span className="text-text-primary font-mono block mt-0.5">{demo.processing.telemetryStream}</span>
+                        Telemetry Stream:{' '}
+                        <span className="text-text-primary font-mono block mt-0.5">
+                          {demo.processing.telemetryStream}
+                        </span>
                       </div>
                       <div className="space-y-1">
-                        <span className="text-[10px] uppercase font-mono text-text-muted">Active AI Kernels:</span>
+                        <span className="text-[10px] uppercase font-mono text-text-muted">
+                          Active AI Kernels:
+                        </span>
                         <div className="flex flex-wrap gap-1">
                           {demo.processing.modelsActive.map((model, idx) => (
                             <span
@@ -384,7 +412,11 @@ export const DemosPage: React.FC = () => {
                       3. INSIGHT
                     </span>
                     {demoState === 'executed' && (
-                      <Badge variant="warning" size="sm" className="text-[9px] font-mono font-bold uppercase py-0 px-1.5">
+                      <Badge
+                        variant="warning"
+                        size="sm"
+                        className="text-[9px] font-mono font-bold uppercase py-0 px-1.5"
+                      >
                         Insight Found
                       </Badge>
                     )}
@@ -404,7 +436,10 @@ export const DemosPage: React.FC = () => {
                       </div>
                       <div className="space-y-1 pt-1">
                         {demo.understanding.factors.map((f, idx) => (
-                          <div key={idx} className="text-[11px] text-text-muted flex items-start gap-1.5">
+                          <div
+                            key={idx}
+                            className="text-[11px] text-text-muted flex items-start gap-1.5"
+                          >
                             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0 mt-1" />
                             <span>{f}</span>
                           </div>
@@ -443,7 +478,8 @@ export const DemosPage: React.FC = () => {
                         {demo.recommendation.actionProposed}
                       </div>
                       <div className="text-[11px] text-purple-200/90 font-mono pt-1">
-                        Expected Impact: <span className="text-slate-200">{demo.recommendation.expectedImpact}</span>
+                        Expected Impact:{' '}
+                        <span className="text-slate-200">{demo.recommendation.expectedImpact}</span>
                       </div>
                     </div>
                   )}
@@ -462,7 +498,11 @@ export const DemosPage: React.FC = () => {
                       5. ACTION
                     </span>
                     {demoState === 'executed' && (
-                      <Badge variant="primary" size="sm" className="text-[9px] font-mono font-bold uppercase py-0 px-1.5 bg-rose-500/20 text-rose-300 border-rose-500/30">
+                      <Badge
+                        variant="primary"
+                        size="sm"
+                        className="text-[9px] font-mono font-bold uppercase py-0 px-1.5 bg-rose-500/20 text-rose-300 border-rose-500/30"
+                      >
                         Recommended Action
                       </Badge>
                     )}
@@ -484,7 +524,10 @@ export const DemosPage: React.FC = () => {
                         </div>
                       ))}
                       <div className="text-[10px] text-text-muted font-mono pt-1">
-                        Systems Synced: <span className="text-slate-300">{demo.action.systemsTargeted.join(' • ')}</span>
+                        Systems Synced:{' '}
+                        <span className="text-slate-300">
+                          {demo.action.systemsTargeted.join(' • ')}
+                        </span>
                       </div>
                     </div>
                   )}
@@ -544,10 +587,16 @@ export const DemosPage: React.FC = () => {
           <div className="flex items-center gap-3">
             <ShieldCheck className="w-5 h-5 text-sky-400 shrink-0" />
             <span>
-              <strong>Showcase Sandbox Notice:</strong> This central showcase operates on simulated enterprise telemetry. Live customer credentials, third-party APIs, and real tenant databases are not connected.
+              <strong>Showcase Sandbox Notice:</strong> This central showcase operates on simulated
+              enterprise telemetry. Live customer credentials, third-party APIs, and real tenant
+              databases are not connected.
             </span>
           </div>
-          <Badge variant="outline" size="sm" className="shrink-0 font-mono text-[10px] text-sky-300 border-sky-400/30">
+          <Badge
+            variant="outline"
+            size="sm"
+            className="shrink-0 font-mono text-[10px] text-sky-300 border-sky-400/30"
+          >
             SIMULATED DEMO DATA
           </Badge>
         </div>
@@ -569,4 +618,3 @@ export const DemosPage: React.FC = () => {
     </div>
   );
 };
-

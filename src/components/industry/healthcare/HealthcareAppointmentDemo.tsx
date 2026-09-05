@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Calendar, 
-  Clock, 
-  Sparkles, 
-  CheckCircle2, 
-  Send, 
-  MessageSquare, 
-  ShieldCheck, 
-  AlertTriangle, 
+import {
+  Calendar,
+  Clock,
+  Sparkles,
+  CheckCircle2,
+  Send,
+  MessageSquare,
+  ShieldCheck,
+  AlertTriangle,
   FileText,
   User,
-  HeartHandshake
+  HeartHandshake,
 } from 'lucide-react';
 import { Card } from '../../ui/Card';
 import { Badge } from '../../ui/Badge';
@@ -55,7 +55,8 @@ export const HealthcareAppointmentDemo: React.FC = () => {
             SIMULATED DEMO
           </Badge>
           <span className="text-xs font-mono text-text-muted">
-            Signature Journey: <strong className="text-cyan-300">Appointment → Risk → Reminder</strong>
+            Signature Journey:{' '}
+            <strong className="text-cyan-300">Appointment → Risk → Reminder</strong>
           </span>
           <span className="text-[10px] font-mono bg-rose-500/10 text-rose-300 border border-rose-500/20 px-2 py-0.5 rounded">
             Administrative & Operational (Non-Diagnostic)
@@ -94,8 +95,8 @@ export const HealthcareAppointmentDemo: React.FC = () => {
             a.noShowRiskLevel === 'High Risk'
               ? 'bg-rose-500/20 text-rose-300 border-rose-500/40'
               : a.noShowRiskLevel === 'Moderate Risk'
-              ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
-              : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
+                ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
 
           return (
             <button
@@ -109,7 +110,9 @@ export const HealthcareAppointmentDemo: React.FC = () => {
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-[10px] font-mono text-zinc-400 font-semibold">{a.visitType}</span>
+                  <span className="text-[10px] font-mono text-zinc-400 font-semibold">
+                    {a.visitType}
+                  </span>
                   <span className={`text-[10px] font-mono px-2 py-0.5 rounded border ${riskBadge}`}>
                     {a.noShowRiskLevel}
                   </span>
@@ -124,7 +127,9 @@ export const HealthcareAppointmentDemo: React.FC = () => {
               </div>
 
               <div className="mt-3 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
-                <span className="text-zinc-400 font-mono text-[11px] truncate">{a.appointmentTime.split(' (')[0]}</span>
+                <span className="text-zinc-400 font-mono text-[11px] truncate">
+                  {a.appointmentTime.split(' (')[0]}
+                </span>
                 <span
                   className={`font-mono font-bold text-[11px] ${
                     a.noShowProbability > 0.5 ? 'text-rose-400' : 'text-emerald-400'
@@ -154,7 +159,11 @@ export const HealthcareAppointmentDemo: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-2">
                     <h3 className="text-lg font-bold text-white">{apt.patientName}</h3>
-                    <Badge variant="primary" size="sm" className="text-[10px] bg-cyan-500/20 text-cyan-300 border-cyan-500/30">
+                    <Badge
+                      variant="primary"
+                      size="sm"
+                      className="text-[10px] bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
+                    >
                       {apt.visitType}
                     </Badge>
                   </div>
@@ -172,9 +181,15 @@ export const HealthcareAppointmentDemo: React.FC = () => {
                 </div>
                 <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/5">
                   <div className="text-[10px] text-zinc-400 uppercase font-mono">No-Show Risk</div>
-                  <div className={`text-xs font-bold font-mono ${
-                    apt.noShowProbability > 0.5 ? 'text-rose-400' : apt.noShowProbability > 0.2 ? 'text-amber-400' : 'text-emerald-400'
-                  }`}>
+                  <div
+                    className={`text-xs font-bold font-mono ${
+                      apt.noShowProbability > 0.5
+                        ? 'text-rose-400'
+                        : apt.noShowProbability > 0.2
+                          ? 'text-amber-400'
+                          : 'text-emerald-400'
+                    }`}
+                  >
                     {(apt.noShowProbability * 100).toFixed(0)}%
                   </div>
                 </div>
@@ -189,7 +204,9 @@ export const HealthcareAppointmentDemo: React.FC = () => {
                   Scheduled Slot Window
                 </span>
                 <p className="text-xs font-bold text-white pt-0.5">{apt.appointmentTime}</p>
-                <span className="text-[11px] text-zinc-400 font-mono">Department: {apt.department}</span>
+                <span className="text-[11px] text-zinc-400 font-mono">
+                  Department: {apt.department}
+                </span>
               </div>
 
               <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
@@ -198,7 +215,9 @@ export const HealthcareAppointmentDemo: React.FC = () => {
                   Administrative Intake Workflow
                 </span>
                 <p className="text-xs font-semibold text-cyan-200 pt-0.5">{apt.intakeStatus}</p>
-                <span className="text-[11px] text-zinc-400 font-mono">Synced to EHR Scheduling Ledger</span>
+                <span className="text-[11px] text-zinc-400 font-mono">
+                  Synced to EHR Scheduling Ledger
+                </span>
               </div>
             </div>
 
@@ -209,7 +228,9 @@ export const HealthcareAppointmentDemo: React.FC = () => {
                   <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
                   Calculated Operational Risk Drivers
                 </span>
-                <span className="text-[10px] text-zinc-400">{apt.riskFactors.length} Risk Vectors</span>
+                <span className="text-[10px] text-zinc-400">
+                  {apt.riskFactors.length} Risk Vectors
+                </span>
               </div>
 
               <div className="space-y-1.5 pt-1">
@@ -253,10 +274,16 @@ export const HealthcareAppointmentDemo: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white">Aether Administrative Reminder</h4>
-                  <span className="text-[10px] font-mono text-zinc-400">Intelligent Pre-Visit Protocol</span>
+                  <span className="text-[10px] font-mono text-zinc-400">
+                    Intelligent Pre-Visit Protocol
+                  </span>
                 </div>
               </div>
-              <Badge variant="primary" size="sm" className="text-[10px] bg-cyan-500/20 text-cyan-300 border-cyan-500/40 font-mono">
+              <Badge
+                variant="primary"
+                size="sm"
+                className="text-[10px] bg-cyan-500/20 text-cyan-300 border-cyan-500/40 font-mono"
+              >
                 Confidence 98%
               </Badge>
             </div>
@@ -272,7 +299,9 @@ export const HealthcareAppointmentDemo: React.FC = () => {
                   </div>
                 </div>
                 <div className="p-3 rounded-lg bg-black/40 border border-white/5">
-                  <div className="text-[10px] text-zinc-400 font-mono uppercase">Dispatch Timing</div>
+                  <div className="text-[10px] text-zinc-400 font-mono uppercase">
+                    Dispatch Timing
+                  </div>
                   <div className="text-xs font-bold text-white flex items-center gap-1 mt-0.5">
                     <Clock className="w-3 h-3 text-cyan-400" />
                     {apt.recommendedReminder.timing.split(' (')[0]}
@@ -332,10 +361,13 @@ export const HealthcareAppointmentDemo: React.FC = () => {
                       Result: Administrative Pre-Visit Protocol Active
                     </div>
                     <p className="text-[11px] text-emerald-200/80">
-                      Conversational check-in dispatched to {apt.patientName}. Pre-visit intake link held for digital submission.
+                      Conversational check-in dispatched to {apt.patientName}. Pre-visit intake link
+                      held for digital submission.
                     </p>
                     <div className="pt-1 flex items-center justify-center gap-2">
-                      <span className="text-[10px] font-mono text-emerald-300">Recommended Action: Slot Locked</span>
+                      <span className="text-[10px] font-mono text-emerald-300">
+                        Recommended Action: Slot Locked
+                      </span>
                       <Button
                         variant="outline"
                         size="sm"

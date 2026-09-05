@@ -71,7 +71,12 @@ export const AUTOMOTIVE_VEHICLES: VehicleServiceProfile[] = [
     ],
     partsReadiness: {
       status: 'In Stock',
-      requiredItems: ['OEM Front Brake Rotors (Pair)', 'Ceramic Brake Pads', 'Sensor Wire', 'High-Flow Air Filter'],
+      requiredItems: [
+        'OEM Front Brake Rotors (Pair)',
+        'Ceramic Brake Pads',
+        'Sensor Wire',
+        'High-Flow Air Filter',
+      ],
       bayRequirement: 'Lift Bay #4 (Heavy Mechanical)',
       assignedTechCert: 'BMW Master Certified (Dan R.)',
     },
@@ -153,7 +158,12 @@ export const AUTOMOTIVE_VEHICLES: VehicleServiceProfile[] = [
     ],
     partsReadiness: {
       status: 'Allocated from Warehouse',
-      requiredItems: ['Hyundai ATF SP-IV (6L)', 'Long-Life Coolant (4L)', 'Serpentine Belt', 'Oil Filter Kit'],
+      requiredItems: [
+        'Hyundai ATF SP-IV (6L)',
+        'Long-Life Coolant (4L)',
+        'Serpentine Belt',
+        'Oil Filter Kit',
+      ],
       bayRequirement: 'Lift Bay #1 (Fluid & Flush Rig)',
       assignedTechCert: 'Senior Drivetrain Specialist (Farhan A.)',
     },
@@ -216,10 +226,34 @@ export const AUTOMOTIVE_BI_DATA = {
     partsHoldOverReduction: '-74%',
   },
   technicianEfficiency: [
-    { name: 'Dan R. (BMW Master Tech)', specialty: 'German Diagnostics & Engine', bay: 'Lift #4', flagHourEfficiency: '124%', roCompletedMonth: 48 },
-    { name: 'Sanjay K. (Express Lead)', specialty: 'Quick Lube & Periodic Service', bay: 'Express #2', flagHourEfficiency: '138%', roCompletedMonth: 72 },
-    { name: 'Farhan A. (Drivetrain Tech)', specialty: 'Transmission, Diesel & Flushes', bay: 'Lift #1', flagHourEfficiency: '118%', roCompletedMonth: 42 },
-    { name: 'Karan S. (4x4 & SUV Specialist)', specialty: 'Suspension & Fleet Drivetrain', bay: 'Lift #5', flagHourEfficiency: '122%', roCompletedMonth: 44 },
+    {
+      name: 'Dan R. (BMW Master Tech)',
+      specialty: 'German Diagnostics & Engine',
+      bay: 'Lift #4',
+      flagHourEfficiency: '124%',
+      roCompletedMonth: 48,
+    },
+    {
+      name: 'Sanjay K. (Express Lead)',
+      specialty: 'Quick Lube & Periodic Service',
+      bay: 'Express #2',
+      flagHourEfficiency: '138%',
+      roCompletedMonth: 72,
+    },
+    {
+      name: 'Farhan A. (Drivetrain Tech)',
+      specialty: 'Transmission, Diesel & Flushes',
+      bay: 'Lift #1',
+      flagHourEfficiency: '118%',
+      roCompletedMonth: 42,
+    },
+    {
+      name: 'Karan S. (4x4 & SUV Specialist)',
+      specialty: 'Suspension & Fleet Drivetrain',
+      bay: 'Lift #5',
+      flagHourEfficiency: '122%',
+      roCompletedMonth: 44,
+    },
   ],
   partsAvailability: {
     onHandFulfillmentRate: '98.2%',

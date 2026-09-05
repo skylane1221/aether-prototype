@@ -2,13 +2,7 @@ import React from 'react';
 import { PlatformSolution } from '../../types';
 import { Card } from '../ui/Card';
 import { Badge } from '../ui/Badge';
-import {
-  Cpu,
-  Workflow,
-  BarChart3,
-  BrainCircuit,
-  MessageSquareText,
-} from 'lucide-react';
+import { Cpu, Workflow, BarChart3, BrainCircuit, MessageSquareText } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
@@ -42,9 +36,7 @@ export const SolutionCard: React.FC<SolutionCardProps> = ({ solution, className 
         <h3 className="text-xl font-bold tracking-tight text-text-primary mb-2">
           {solution.title}
         </h3>
-        <p className="text-sm font-medium text-sky-400/90 mb-3 leading-snug">
-          {solution.tagline}
-        </p>
+        <p className="text-sm font-medium text-sky-400/90 mb-3 leading-snug">{solution.tagline}</p>
         <p className="text-xs sm:text-sm text-text-secondary leading-relaxed mb-6">
           {solution.description}
         </p>

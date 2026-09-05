@@ -2,7 +2,11 @@ export interface GymMemberProfile {
   id: string;
   name: string;
   avatarInitials: string;
-  membershipTier: 'All-Access Black Diamond' | 'Standard Fitness Core' | 'Studio Class Pass' | 'Corporate Wellness';
+  membershipTier:
+    | 'All-Access Black Diamond'
+    | 'Standard Fitness Core'
+    | 'Studio Class Pass'
+    | 'Corporate Wellness';
   joinDate: string;
   renewalDate: string;
   daysUntilRenewal: number;
@@ -21,7 +25,8 @@ export interface GymMemberProfile {
   engagementLevel: 'High Engagement' | 'Moderate Dropping' | 'Critical Inactive';
   engagementScore: number;
   churnRiskScore: number;
-  churnRiskLevel: 'Critical Risk (91%)' | 'High Risk (74%)' | 'Moderate Risk (38%)' | 'Low Risk (8%)';
+  churnRiskLevel:
+    'Critical Risk (91%)' | 'High Risk (74%)' | 'Moderate Risk (38%)' | 'Low Risk (8%)';
   diagnosis: string;
   recommendedAction: string;
   suggestedCommunication: {
@@ -63,12 +68,15 @@ export const GYM_MEMBERS: GymMemberProfile[] = [
     engagementScore: 18,
     churnRiskScore: 91,
     churnRiskLevel: 'Critical Risk (91%)',
-    diagnosis: 'Habit break threshold crossed (3 consecutive zero-visit weeks) coinciding with annual renewal window in 18 days.',
-    recommendedAction: 'Trigger coach wellness touchpoint and offer complimentary hydro-massage recovery voucher to restart routine.',
+    diagnosis:
+      'Habit break threshold crossed (3 consecutive zero-visit weeks) coinciding with annual renewal window in 18 days.',
+    recommendedAction:
+      'Trigger coach wellness touchpoint and offer complimentary hydro-massage recovery voucher to restart routine.',
     suggestedCommunication: {
       channel: 'WhatsApp',
       subject: 'Elena, your recovery pass is ready at Aether Fitness',
-      messageText: 'Hi Elena! Coach Vikram noticed you’ve missed your Saturday spin sessions lately. We’ve unlocked a complimentary 30-min Hydro-Massage & Sauna Pass for you this weekend. Tap here to reserve your recovery slot: aether.fit/elena-vip',
+      messageText:
+        'Hi Elena! Coach Vikram noticed you’ve missed your Saturday spin sessions lately. We’ve unlocked a complimentary 30-min Hydro-Massage & Sauna Pass for you this weekend. Tap here to reserve your recovery slot: aether.fit/elena-vip',
     },
     followUpTiming: 'Immediate (Within 4 hours before renewal lock)',
   },
@@ -102,12 +110,15 @@ export const GYM_MEMBERS: GymMemberProfile[] = [
     engagementScore: 96,
     churnRiskScore: 8,
     churnRiskLevel: 'Low Risk (8%)',
-    diagnosis: 'High-frequency core member hitting plateau signals; peak candidate for Personal Training package upsell.',
-    recommendedAction: 'Offer complimentary 1-on-1 body composition assessment & strength benchmark consultation with Head Strength Coach.',
+    diagnosis:
+      'High-frequency core member hitting plateau signals; peak candidate for Personal Training package upsell.',
+    recommendedAction:
+      'Offer complimentary 1-on-1 body composition assessment & strength benchmark consultation with Head Strength Coach.',
     suggestedCommunication: {
       channel: 'Mobile App Push',
       subject: 'Marcus, unlock your next strength milestone',
-      messageText: 'You’ve logged 16 workouts this month! You’ve unlocked a complimentary InBody 570 Composition Analysis & Strength Consultation with Head Coach Dev. Book your 20-min assessment: aether.fit/marcus-eval',
+      messageText:
+        'You’ve logged 16 workouts this month! You’ve unlocked a complimentary InBody 570 Composition Analysis & Strength Consultation with Head Coach Dev. Book your 20-min assessment: aether.fit/marcus-eval',
     },
     followUpTiming: 'Post-workout tomorrow morning',
   },
@@ -141,12 +152,15 @@ export const GYM_MEMBERS: GymMemberProfile[] = [
     engagementScore: 42,
     churnRiskScore: 74,
     churnRiskLevel: 'High Risk (74%)',
-    diagnosis: 'Class bookings declined 65% due to evening class capacity bottlenecks; autopay billing renewal in 5 days.',
-    recommendedAction: 'Grant priority 48-hour early booking window for waitlisted Reformer Pilates classes and offer a friend workout guest pass.',
+    diagnosis:
+      'Class bookings declined 65% due to evening class capacity bottlenecks; autopay billing renewal in 5 days.',
+    recommendedAction:
+      'Grant priority 48-hour early booking window for waitlisted Reformer Pilates classes and offer a friend workout guest pass.',
     suggestedCommunication: {
       channel: 'WhatsApp',
       subject: 'Priya, VIP early access to Reformer Pilates',
-      messageText: 'Hi Priya! We saw evening Pilates was fully booked last week. We’ve upgraded your account with 48-Hour Priority Class Access and a free Guest Pass for your next session. Reserve your Reformer bed: aether.fit/priya-priority',
+      messageText:
+        'Hi Priya! We saw evening Pilates was fully booked last week. We’ve upgraded your account with 48-Hour Priority Class Access and a free Guest Pass for your next session. Reserve your Reformer bed: aether.fit/priya-priority',
     },
     followUpTiming: 'Today at 4:30 PM (Prior to evening class release)',
   },
@@ -180,12 +194,14 @@ export const GYM_MEMBERS: GymMemberProfile[] = [
     engagementScore: 68,
     churnRiskScore: 38,
     churnRiskLevel: 'Moderate Risk (38%)',
-    diagnosis: 'Steady lunchtime corporate visitor; steady engagement with low community connection.',
+    diagnosis:
+      'Steady lunchtime corporate visitor; steady engagement with low community connection.',
     recommendedAction: 'Invite to Corporate Team Challenge with teammate leaderboard tracking.',
     suggestedCommunication: {
       channel: 'SMS',
       subject: 'David, join the Tech Corridor 5k Fitness Challenge',
-      messageText: 'Hi David, your corporate team is currently #3 on our Midday Velocity Board! Join this Thursday’s express challenge to earn points for your company. Details: aether.fit/corp-challenge',
+      messageText:
+        'Hi David, your corporate team is currently #3 on our Midday Velocity Board! Join this Thursday’s express challenge to earn points for your company. Details: aether.fit/corp-challenge',
     },
     followUpTiming: 'Wednesday 11:00 AM',
   },
@@ -199,19 +215,63 @@ export const GYM_BI_DATA = {
     revenuePreserved: '₹8,92,000',
   },
   churnDistribution: [
-    { category: 'Critical Inactivity (>14 Days No Turnstile)', percentage: 38, count: 54, color: '#f43f5e' },
+    {
+      category: 'Critical Inactivity (>14 Days No Turnstile)',
+      percentage: 38,
+      count: 54,
+      color: '#f43f5e',
+    },
     { category: 'Class Booking Bottleneck Droppers', percentage: 34, count: 48, color: '#f59e0b' },
     { category: 'Upcoming Renewal Hesitancy', percentage: 28, count: 40, color: '#38bdf8' },
   ],
   classCapacityMetrics: [
-    { className: 'Saturday Peak Spin', capacity: 35, avgWaitlist: 18, utilization: '98.5%', revenueYield: '₹52,000' },
-    { className: 'Reformer Pilates Master', capacity: 16, avgWaitlist: 24, utilization: '100%', revenueYield: '₹68,000' },
-    { className: 'HIIT Performance Zone', capacity: 25, avgWaitlist: 8, utilization: '92.0%', revenueYield: '₹38,000' },
-    { className: 'Vinyasa Sunset Yoga', capacity: 28, avgWaitlist: 4, utilization: '86.0%', revenueYield: '₹29,000' },
+    {
+      className: 'Saturday Peak Spin',
+      capacity: 35,
+      avgWaitlist: 18,
+      utilization: '98.5%',
+      revenueYield: '₹52,000',
+    },
+    {
+      className: 'Reformer Pilates Master',
+      capacity: 16,
+      avgWaitlist: 24,
+      utilization: '100%',
+      revenueYield: '₹68,000',
+    },
+    {
+      className: 'HIIT Performance Zone',
+      capacity: 25,
+      avgWaitlist: 8,
+      utilization: '92.0%',
+      revenueYield: '₹38,000',
+    },
+    {
+      className: 'Vinyasa Sunset Yoga',
+      capacity: 28,
+      avgWaitlist: 4,
+      utilization: '86.0%',
+      revenueYield: '₹29,000',
+    },
   ],
   trainerMonetization: [
-    { trainer: 'Coach Vikram (Strength)', bookedHours: '38 hrs/wk', clientRetention: '96.2%', status: 'Max Capacity' },
-    { trainer: 'Coach Ananya (Pilates/Yoga)', bookedHours: '34 hrs/wk', clientRetention: '94.8%', status: 'Optimal' },
-    { trainer: 'Coach Dev (Athletic Conditioning)', bookedHours: '30 hrs/wk', clientRetention: '91.0%', status: 'Available Slots' },
+    {
+      trainer: 'Coach Vikram (Strength)',
+      bookedHours: '38 hrs/wk',
+      clientRetention: '96.2%',
+      status: 'Max Capacity',
+    },
+    {
+      trainer: 'Coach Ananya (Pilates/Yoga)',
+      bookedHours: '34 hrs/wk',
+      clientRetention: '94.8%',
+      status: 'Optimal',
+    },
+    {
+      trainer: 'Coach Dev (Athletic Conditioning)',
+      bookedHours: '30 hrs/wk',
+      clientRetention: '91.0%',
+      status: 'Available Slots',
+    },
   ],
 };

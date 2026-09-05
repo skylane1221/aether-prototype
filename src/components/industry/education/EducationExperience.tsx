@@ -24,7 +24,7 @@ import {
   Zap,
   BookOpen,
   Award,
-  Target
+  Target,
 } from 'lucide-react';
 import { cn } from '../../../utils/cn';
 
@@ -127,13 +127,20 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
             <div>
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                <Badge variant="primary" size="sm" className="bg-rose-500/20 text-rose-300 border-rose-500/30">
+                <Badge
+                  variant="primary"
+                  size="sm"
+                  className="bg-rose-500/20 text-rose-300 border-rose-500/30"
+                >
                   Admissions Intelligence Thesis
                 </Badge>
-                <span className="text-xs font-mono text-rose-400 font-semibold">Student Lifecycle & Enrollment Orchestration</span>
+                <span className="text-xs font-mono text-rose-400 font-semibold">
+                  Student Lifecycle & Enrollment Orchestration
+                </span>
               </div>
               <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                "Match prospective students to the right course pathways and prevent drop-offs with instant guidance."
+                "Match prospective students to the right course pathways and prevent drop-offs with
+                instant guidance."
               </h2>
             </div>
             <div className="flex items-center gap-2 text-xs font-mono text-text-muted bg-slate-950/80 px-3 py-1.5 rounded-lg border border-slate-800">
@@ -149,11 +156,10 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
                 <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                 <span>1. Problem</span>
               </div>
-              <h4 className="text-xs font-bold text-white leading-snug">
-                72-Hour Response Lag
-              </h4>
+              <h4 className="text-xs font-bold text-white leading-snug">72-Hour Response Lag</h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Prospective students submit web inquiries and wait 3 days for a generic course PDF, losing momentum to competing academies.
+                Prospective students submit web inquiries and wait 3 days for a generic course PDF,
+                losing momentum to competing academies.
               </p>
               <span className="text-[10px] font-mono text-rose-400 pt-1 border-t border-rose-500/20">
                 42% Lead Decay
@@ -166,11 +172,10 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
                 <Clock className="w-3.5 h-3.5 shrink-0" />
                 <span>2. Opportunity</span>
               </div>
-              <h4 className="text-xs font-bold text-white leading-snug">
-                Instant Syllabus & Fit
-              </h4>
+              <h4 className="text-xs font-bold text-white leading-snug">Instant Syllabus & Fit</h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Profile candidate skills in real-time, generate customized curriculum pathways, and deliver scholarship reviews in &lt;2 minutes.
+                Profile candidate skills in real-time, generate customized curriculum pathways, and
+                deliver scholarship reviews in &lt;2 minutes.
               </p>
               <span className="text-[10px] font-mono text-amber-300 pt-1 border-t border-amber-500/20">
                 &lt;2 Min Response
@@ -183,11 +188,10 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
                 <BookOpen className="w-3.5 h-3.5 shrink-0" />
                 <span>3. Intelligence</span>
               </div>
-              <h4 className="text-xs font-bold text-white leading-snug">
-                Aspiration & Skill Mesh
-              </h4>
+              <h4 className="text-xs font-bold text-white leading-snug">Aspiration & Skill Mesh</h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Synthesizes educational background, current work profile, target learning format, budget constraints, and syllabus prerequisites.
+                Synthesizes educational background, current work profile, target learning format,
+                budget constraints, and syllabus prerequisites.
               </p>
               <span className="text-[10px] font-mono text-rose-300 pt-1 border-t border-rose-500/20">
                 Candidate Graph
@@ -200,11 +204,10 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
                 <Target className="w-3.5 h-3.5 shrink-0" />
                 <span>4. Recommendation</span>
               </div>
-              <h4 className="text-xs font-bold text-white leading-snug">
-                Precision Course Match
-              </h4>
+              <h4 className="text-xs font-bold text-white leading-snug">Precision Course Match</h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Ranks best-fit degree programs, assigns lead priority score (0-100), and formulates tailored scholarship incentives.
+                Ranks best-fit degree programs, assigns lead priority score (0-100), and formulates
+                tailored scholarship incentives.
               </p>
               <span className="text-[10px] font-mono text-purple-300 pt-1 border-t border-purple-500/20">
                 98% Program Fit
@@ -221,7 +224,8 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
                 Automated Advisor Briefing
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Dispatches personalized WhatsApp consultation invites with 1-click calendar reservation for academic advisors.
+                Dispatches personalized WhatsApp consultation invites with 1-click calendar
+                reservation for academic advisors.
               </p>
               <span className="text-[10px] font-mono text-indigo-300 pt-1 border-t border-indigo-500/20">
                 Auto-Calendar Dispatch
@@ -238,7 +242,8 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
                 +34% Enrolments & 94% Retention
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Accelerates application velocity from 18 days to 4 days, lowers drop-out rates, and unlocks higher student lifetime value.
+                Accelerates application velocity from 18 days to 4 days, lowers drop-out rates, and
+                unlocks higher student lifetime value.
               </p>
               <span className="text-[10px] font-mono text-emerald-400 pt-1 border-t border-emerald-500/20">
                 Institutional Growth
@@ -260,18 +265,23 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {industry.challenges.map((item, idx: number) => (
-            <Card key={item.id} className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all">
+            <Card
+              key={item.id}
+              className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all"
+            >
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-slate-800">
-                  <span className="text-[10px] font-mono text-rose-400 font-bold">Challenge 0{idx + 1}</span>
+                  <span className="text-[10px] font-mono text-rose-400 font-bold">
+                    Challenge 0{idx + 1}
+                  </span>
                   <span
                     className={cn(
                       'text-[9px] uppercase font-mono px-2 py-0.5 rounded font-bold',
                       item.severity === 'critical'
                         ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
                         : item.severity === 'high'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                        : 'bg-slate-800 text-slate-300'
+                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                          : 'bg-slate-800 text-slate-300'
                     )}
                   >
                     {item.severity}
@@ -287,9 +297,7 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
                     <AlertCircle className="w-3 h-3" />
                     <span>Root Cause</span>
                   </div>
-                  <p className="text-xs text-text-secondary leading-relaxed pl-4">
-                    {item.cause}
-                  </p>
+                  <p className="text-xs text-text-secondary leading-relaxed pl-4">{item.cause}</p>
                 </div>
 
                 <div className="pt-1">
@@ -319,7 +327,10 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {industry.opportunities.map((opp, idx: number) => (
-            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card">
+            <Card
+              key={idx}
+              className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card"
+            >
               <div className="space-y-4">
                 <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
                   <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
@@ -347,7 +358,9 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
 
               <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
                 <span className="text-text-muted font-mono">Projected Multiplier:</span>
-                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+                <span className="font-bold font-mono text-emerald-400">
+                  {opp.potentialMultiplier}
+                </span>
               </div>
             </Card>
           ))}
@@ -366,7 +379,10 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {industry.solutionMappings.map((mapping, idx: number) => (
-            <Card key={idx} className="p-4 sm:p-5 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80">
+            <Card
+              key={idx}
+              className="p-4 sm:p-5 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80"
+            >
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between mb-1">
                   <Badge variant="neutral" size="sm" className="font-mono text-[9px]">
@@ -547,7 +563,10 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
                   <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-2 border-t border-slate-800/80 bg-slate-950/40">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                       {cap.features.map((feature: string, fIdx: number) => (
-                        <div key={fIdx} className="flex items-start gap-2 text-xs text-text-secondary">
+                        <div
+                          key={fIdx}
+                          className="flex items-start gap-2 text-xs text-text-secondary"
+                        >
                           <span className="w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0 mt-1.5" />
                           <span>{feature}</span>
                         </div>
@@ -583,7 +602,8 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
             </h2>
 
             <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-              Deploy Aether with your SIS and LMS to triage student inquiries 24/7, parse transcripts automatically, and retain learners through graduation.
+              Deploy Aether with your SIS and LMS to triage student inquiries 24/7, parse
+              transcripts automatically, and retain learners through graduation.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">

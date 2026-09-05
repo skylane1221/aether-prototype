@@ -30,13 +30,16 @@ export const CafeBiDashboard: React.FC = () => {
             <Badge variant="warning" size="sm">
               Espresso Telemetry
             </Badge>
-            <span className="text-xs font-mono text-text-muted">Live Counter & Roastery Analytics</span>
+            <span className="text-xs font-mono text-text-muted">
+              Live Counter & Roastery Analytics
+            </span>
           </div>
           <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-text-primary">
             Cafe & Barista Operations Dashboard
           </h3>
           <p className="text-xs sm:text-sm text-text-secondary mt-1">
-            Continuous synthesis across morning drink speed, regular commuter loyalty, and specialty roast freshness.
+            Continuous synthesis across morning drink speed, regular commuter loyalty, and specialty
+            roast freshness.
           </p>
         </div>
 
@@ -82,15 +85,21 @@ export const CafeBiDashboard: React.FC = () => {
       {activeTab === 'velocity' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-fade-in">
           <Card className="p-5 bg-stone-900/90 border-stone-800 text-center space-y-1">
-            <span className="text-[11px] font-mono text-stone-400 uppercase block">Daily Cup Volume</span>
+            <span className="text-[11px] font-mono text-stone-400 uppercase block">
+              Daily Cup Volume
+            </span>
             <span className="text-3xl font-extrabold font-mono text-amber-400">
               {CAFE_BI_DATA.beverageVelocity.totalCupsDaily}
             </span>
-            <span className="text-[10px] text-stone-500 block">Across Counter & Mobile Pre-orders</span>
+            <span className="text-[10px] text-stone-500 block">
+              Across Counter & Mobile Pre-orders
+            </span>
           </Card>
 
           <Card className="p-5 bg-stone-900/90 border-amber-500/30 text-center space-y-1">
-            <span className="text-[11px] font-mono text-amber-400 uppercase block">Average Prep Time</span>
+            <span className="text-[11px] font-mono text-amber-400 uppercase block">
+              Average Prep Time
+            </span>
             <span className="text-3xl font-extrabold font-mono text-amber-300">
               {CAFE_BI_DATA.beverageVelocity.averageDrinkPrepTime}
             </span>
@@ -98,15 +107,21 @@ export const CafeBiDashboard: React.FC = () => {
           </Card>
 
           <Card className="p-5 bg-stone-900/90 border-emerald-500/30 text-center space-y-1">
-            <span className="text-[11px] font-mono text-emerald-400 uppercase block">Milk Waste Reduction</span>
+            <span className="text-[11px] font-mono text-emerald-400 uppercase block">
+              Milk Waste Reduction
+            </span>
             <span className="text-3xl font-extrabold font-mono text-emerald-300">
               {CAFE_BI_DATA.beverageVelocity.milkWasteReduction}
             </span>
-            <span className="text-[10px] text-emerald-400/80 block">Through pitcher sizing calibration</span>
+            <span className="text-[10px] text-emerald-400/80 block">
+              Through pitcher sizing calibration
+            </span>
           </Card>
 
           <Card className="p-5 bg-stone-900/90 border-stone-800 text-center space-y-1">
-            <span className="text-[11px] font-mono text-stone-400 uppercase block">Extraction Accuracy</span>
+            <span className="text-[11px] font-mono text-stone-400 uppercase block">
+              Extraction Accuracy
+            </span>
             <span className="text-3xl font-extrabold font-mono text-white">
               {CAFE_BI_DATA.beverageVelocity.espressoExtractionAccuracy}
             </span>
@@ -119,7 +134,10 @@ export const CafeBiDashboard: React.FC = () => {
       {activeTab === 'customer' && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 animate-fade-in">
           {CAFE_BI_DATA.customerBehaviour.map((seg, idx) => (
-            <Card key={idx} className="p-5 bg-stone-900/90 border-stone-800 flex flex-col justify-between space-y-3">
+            <Card
+              key={idx}
+              className="p-5 bg-stone-900/90 border-stone-800 flex flex-col justify-between space-y-3"
+            >
               <div className="space-y-2">
                 <div className="flex items-center justify-between pb-2 border-b border-stone-800">
                   <span className="text-xs font-bold text-white">{seg.segment}</span>
@@ -129,7 +147,9 @@ export const CafeBiDashboard: React.FC = () => {
                 </div>
 
                 <div className="space-y-1 font-mono text-xs">
-                  <span className="text-[10px] text-stone-400 uppercase block">Signature Habit:</span>
+                  <span className="text-[10px] text-stone-400 uppercase block">
+                    Signature Habit:
+                  </span>
                   <p className="text-stone-200 font-sans">{seg.orderPattern}</p>
                 </div>
               </div>

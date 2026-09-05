@@ -25,7 +25,9 @@ import { HOTEL_DEMO_SCENARIOS, HotelDemoDateScenario } from '../../../data/hotel
 export const HotelOperationsDemo: React.FC = () => {
   const [selectedScenarioId, setSelectedScenarioId] = useState<string>('friday-summit');
   const [demoState, setDemoState] = useState<'idle' | 'analyzing' | 'executed'>('idle');
-  const [activeOutputTab, setActiveOutputTab] = useState<'insights' | 'staffing' | 'steps'>('insights');
+  const [activeOutputTab, setActiveOutputTab] = useState<'insights' | 'staffing' | 'steps'>(
+    'insights'
+  );
 
   const scenario: HotelDemoDateScenario =
     HOTEL_DEMO_SCENARIOS.find((s) => s.id === selectedScenarioId) || HOTEL_DEMO_SCENARIOS[0];
@@ -134,8 +136,8 @@ export const HotelOperationsDemo: React.FC = () => {
                         sc.expectedOccupancyPercentage >= 90
                           ? 'bg-emerald-500/20 text-emerald-300'
                           : sc.expectedOccupancyPercentage >= 80
-                          ? 'bg-sky-500/20 text-sky-300'
-                          : 'bg-amber-500/20 text-amber-300'
+                            ? 'bg-sky-500/20 text-sky-300'
+                            : 'bg-amber-500/20 text-amber-300'
                       )}
                     >
                       {sc.expectedOccupancy} Occupancy
@@ -158,7 +160,11 @@ export const HotelOperationsDemo: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-800">
             <div>
               <div className="flex items-center gap-2">
-                <Badge variant="primary" size="sm" className="bg-teal-500/20 text-teal-300 border-teal-500/30">
+                <Badge
+                  variant="primary"
+                  size="sm"
+                  className="bg-teal-500/20 text-teal-300 border-teal-500/30"
+                >
                   {scenario.dayName} Scenario
                 </Badge>
                 <span className="text-xs text-text-muted">• {scenario.contextTag}</span>
@@ -170,15 +176,21 @@ export const HotelOperationsDemo: React.FC = () => {
 
             <div className="flex items-center gap-3">
               <div className="text-right">
-                <div className="text-[10px] font-mono text-text-muted uppercase">Inventory Base</div>
+                <div className="text-[10px] font-mono text-text-muted uppercase">
+                  Inventory Base
+                </div>
                 <div className="text-base font-mono font-bold text-text-primary">
                   {scenario.totalRooms} Total Rooms
                 </div>
               </div>
               <div className="h-8 w-px bg-slate-800" />
               <div className="text-right">
-                <div className="text-[10px] font-mono text-text-muted uppercase">Operational Pace</div>
-                <div className="text-sm font-mono text-teal-300 font-semibold">{scenario.demandStatus}</div>
+                <div className="text-[10px] font-mono text-text-muted uppercase">
+                  Operational Pace
+                </div>
+                <div className="text-sm font-mono text-teal-300 font-semibold">
+                  {scenario.demandStatus}
+                </div>
               </div>
             </div>
           </div>
@@ -267,11 +279,15 @@ export const HotelOperationsDemo: React.FC = () => {
           <div className="mt-3.5 p-3 rounded-lg bg-slate-950/90 border border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-mono text-text-secondary">
             <div>
               <span className="text-text-muted">Turnover Volume: </span>
-              <span className="text-slate-200 font-bold">{scenario.operationalLoad.housekeepingUnitsNeeded} Rooms to Clean</span>
+              <span className="text-slate-200 font-bold">
+                {scenario.operationalLoad.housekeepingUnitsNeeded} Rooms to Clean
+              </span>
             </div>
             <div>
               <span className="text-text-muted">Stay-Overs: </span>
-              <span className="text-slate-200">{scenario.operationalLoad.stayOvers} In-House Guests</span>
+              <span className="text-slate-200">
+                {scenario.operationalLoad.stayOvers} In-House Guests
+              </span>
             </div>
             <div>
               <span className="text-text-muted">Front Desk Peak: </span>
@@ -287,8 +303,8 @@ export const HotelOperationsDemo: React.FC = () => {
             demoState === 'idle'
               ? 'bg-slate-900/40 border-slate-800/80 opacity-75'
               : demoState === 'analyzing'
-              ? 'bg-slate-900/80 border-teal-500/40 shadow-glow-subtle'
-              : 'bg-slate-900/90 border-emerald-500/40 shadow-glow-subtle'
+                ? 'bg-slate-900/80 border-teal-500/40 shadow-glow-subtle'
+                : 'bg-slate-900/90 border-emerald-500/40 shadow-glow-subtle'
           )}
         >
           {demoState === 'idle' && (
@@ -301,7 +317,8 @@ export const HotelOperationsDemo: React.FC = () => {
               </h4>
               <p className="text-xs text-text-muted max-w-md mx-auto">
                 Click <span className="text-teal-300 font-semibold">"Run Aether"</span> to simulate
-                cancellation prediction, housekeeping turnover routing, and automated staff allocation.
+                cancellation prediction, housekeeping turnover routing, and automated staff
+                allocation.
               </p>
               <div className="pt-2">
                 <Button
@@ -325,7 +342,8 @@ export const HotelOperationsDemo: React.FC = () => {
                   Synthesizing Booking Channels & Housekeeping Priority...
                 </h4>
                 <p className="text-xs text-text-muted font-mono">
-                  Calculating cancellation probabilities • Modeling arrival peaks • Routing floor pods
+                  Calculating cancellation probabilities • Modeling arrival peaks • Routing floor
+                  pods
                 </p>
               </div>
             </div>
@@ -354,7 +372,9 @@ export const HotelOperationsDemo: React.FC = () => {
                   <Badge variant="success" size="sm" className="font-mono text-[10px]">
                     Latency: 520ms
                   </Badge>
-                  <span className="text-[10px] font-mono text-emerald-400">Zero System Bottlenecks</span>
+                  <span className="text-[10px] font-mono text-emerald-400">
+                    Zero System Bottlenecks
+                  </span>
                 </div>
               </div>
 

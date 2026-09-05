@@ -24,7 +24,7 @@ import {
   Zap,
   Wrench,
   Cpu,
-  Layers
+  Layers,
 } from 'lucide-react';
 import { cn } from '../../../utils/cn';
 
@@ -127,13 +127,20 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
             <div>
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                <Badge variant="primary" size="sm" className="bg-indigo-500/20 text-indigo-300 border-indigo-500/30">
+                <Badge
+                  variant="primary"
+                  size="sm"
+                  className="bg-indigo-500/20 text-indigo-300 border-indigo-500/30"
+                >
                   Workshop Intelligence Thesis
                 </Badge>
-                <span className="text-xs font-mono text-indigo-400 font-semibold">Predictive Maintenance & Workshop Orchestration</span>
+                <span className="text-xs font-mono text-indigo-400 font-semibold">
+                  Predictive Maintenance & Workshop Orchestration
+                </span>
               </div>
               <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                "Predict maintenance needs and parts requirements before the vehicle enters the service bay."
+                "Predict maintenance needs and parts requirements before the vehicle enters the
+                service bay."
               </h2>
             </div>
             <div className="flex items-center gap-2 text-xs font-mono text-text-muted bg-slate-950/80 px-3 py-1.5 rounded-lg border border-slate-800">
@@ -153,7 +160,8 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
                 Bay Hold-Overs & Missing Parts
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Vehicles sit stranded on service lifts waiting for stockroom parts while master technicians remain bottlenecked on routine oil changes.
+                Vehicles sit stranded on service lifts waiting for stockroom parts while master
+                technicians remain bottlenecked on routine oil changes.
               </p>
               <span className="text-[10px] font-mono text-rose-400 pt-1 border-t border-rose-500/20">
                 35% Bay Idleness
@@ -166,11 +174,10 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
                 <Clock className="w-3.5 h-3.5 shrink-0" />
                 <span>2. Opportunity</span>
               </div>
-              <h4 className="text-xs font-bold text-white leading-snug">
-                Pre-Kitted Maintenance
-              </h4>
+              <h4 className="text-xs font-bold text-white leading-snug">Pre-Kitted Maintenance</h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Forecast component wear and upcoming mileage triggers to stage exact OEM parts kits 24 hours prior to customer arrival.
+                Forecast component wear and upcoming mileage triggers to stage exact OEM parts kits
+                24 hours prior to customer arrival.
               </p>
               <span className="text-[10px] font-mono text-amber-300 pt-1 border-t border-amber-500/20">
                 Zero Parts Wait Latency
@@ -183,11 +190,10 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
                 <Layers className="w-3.5 h-3.5 shrink-0" />
                 <span>3. Intelligence</span>
               </div>
-              <h4 className="text-xs font-bold text-white leading-snug">
-                Vehicle Telemetry Mesh
-              </h4>
+              <h4 className="text-xs font-bold text-white leading-snug">Vehicle Telemetry Mesh</h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Synthesizes vehicle service logs, daily odometer velocity, OEM service bulletins, workshop bay load, and technician skill certifications.
+                Synthesizes vehicle service logs, daily odometer velocity, OEM service bulletins,
+                workshop bay load, and technician skill certifications.
               </p>
               <span className="text-[10px] font-mono text-indigo-300 pt-1 border-t border-indigo-500/20">
                 Live Garage Graph
@@ -204,7 +210,8 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
                 Precision Bay & Tech Routing
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Matches vehicle job complexity to dedicated lift bays (Mechanical vs Diagnostic) and reserves parts kits directly from warehouse ERP.
+                Matches vehicle job complexity to dedicated lift bays (Mechanical vs Diagnostic) and
+                reserves parts kits directly from warehouse ERP.
               </p>
               <span className="text-[10px] font-mono text-sky-300 pt-1 border-t border-sky-500/20">
                 Optimal Labor Yield
@@ -221,7 +228,8 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
                 Proactive Service Dispatch
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Sends personalized WhatsApp service alerts with pre-calculated estimates and instant 1-tap slot confirmation to vehicle owner.
+                Sends personalized WhatsApp service alerts with pre-calculated estimates and instant
+                1-tap slot confirmation to vehicle owner.
               </p>
               <span className="text-[10px] font-mono text-violet-300 pt-1 border-t border-violet-500/20">
                 1-Tap WhatsApp Booking
@@ -238,7 +246,8 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
                 +28% Bay Yield & 91% Same-Day
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Eliminates bay hold-overs, delivers 91% on-time same-day return, and drives 88% repeat service customer retention.
+                Eliminates bay hold-overs, delivers 91% on-time same-day return, and drives 88%
+                repeat service customer retention.
               </p>
               <span className="text-[10px] font-mono text-emerald-400 pt-1 border-t border-emerald-500/20">
                 Max Dealership ROI
@@ -260,18 +269,23 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {industry.challenges.map((item, idx: number) => (
-            <Card key={item.id} className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all">
+            <Card
+              key={item.id}
+              className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all"
+            >
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-slate-800">
-                  <span className="text-[10px] font-mono text-indigo-400 font-bold">Challenge 0{idx + 1}</span>
+                  <span className="text-[10px] font-mono text-indigo-400 font-bold">
+                    Challenge 0{idx + 1}
+                  </span>
                   <span
                     className={cn(
                       'text-[9px] uppercase font-mono px-2 py-0.5 rounded font-bold',
                       item.severity === 'critical'
                         ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
                         : item.severity === 'high'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                        : 'bg-slate-800 text-slate-300'
+                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                          : 'bg-slate-800 text-slate-300'
                     )}
                   >
                     {item.severity}
@@ -287,9 +301,7 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
                     <AlertCircle className="w-3 h-3" />
                     <span>Root Cause</span>
                   </div>
-                  <p className="text-xs text-text-secondary leading-relaxed pl-4">
-                    {item.cause}
-                  </p>
+                  <p className="text-xs text-text-secondary leading-relaxed pl-4">{item.cause}</p>
                 </div>
 
                 <div className="pt-1">
@@ -319,7 +331,10 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {industry.opportunities.map((opp, idx: number) => (
-            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card">
+            <Card
+              key={idx}
+              className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card"
+            >
               <div className="space-y-4">
                 <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
                   <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
@@ -347,7 +362,9 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
 
               <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
                 <span className="text-text-muted font-mono">Projected Multiplier:</span>
-                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+                <span className="font-bold font-mono text-emerald-400">
+                  {opp.potentialMultiplier}
+                </span>
               </div>
             </Card>
           ))}
@@ -366,7 +383,10 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {industry.solutionMappings.map((mapping, idx: number) => (
-            <Card key={idx} className="p-5 sm:p-6 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80">
+            <Card
+              key={idx}
+              className="p-5 sm:p-6 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80"
+            >
               <div className="space-y-3">
                 <div className="flex items-center justify-between mb-1">
                   <Badge variant="neutral" size="sm" className="font-mono text-[10px]">
@@ -547,7 +567,10 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
                   <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-2 border-t border-slate-800/80 bg-slate-950/40">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                       {cap.features.map((feature: string, fIdx: number) => (
-                        <div key={fIdx} className="flex items-start gap-2 text-xs text-text-secondary">
+                        <div
+                          key={fIdx}
+                          className="flex items-start gap-2 text-xs text-text-secondary"
+                        >
                           <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 shrink-0 mt-1.5" />
                           <span>{feature}</span>
                         </div>
@@ -583,7 +606,8 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
             </h2>
 
             <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-              Integrate Aether with your DMS and parts ERP to unlock predictive maintenance reminders, automated technician routing, and zero-holdover workshops.
+              Integrate Aether with your DMS and parts ERP to unlock predictive maintenance
+              reminders, automated technician routing, and zero-holdover workshops.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">

@@ -104,7 +104,11 @@ export const HotelWorkflowPipeline: React.FC = () => {
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <Badge variant="primary" size="sm" className="font-mono text-[10px] bg-teal-500/20 text-teal-300 border-teal-500/30">
+                <Badge
+                  variant="primary"
+                  size="sm"
+                  className="font-mono text-[10px] bg-teal-500/20 text-teal-300 border-teal-500/30"
+                >
                   Stage {activeStep.stepNumber} of 06
                 </Badge>
                 <span className="text-xs font-mono text-teal-400 font-semibold uppercase tracking-wider">

@@ -25,7 +25,7 @@ import {
   GitMerge,
   ShieldCheck,
   Building,
-  ArrowLeft
+  ArrowLeft,
 } from 'lucide-react';
 import { cn } from '../utils/cn';
 
@@ -93,7 +93,11 @@ export const WhatIsAetherPage: React.FC = () => {
       tagline: 'Operational capacity & margin dynamics',
       description:
         'Understands unit economics, asset yield limits, shift margins, and organizational constraints to ensure every automation maximizes net business value.',
-      keyAspects: ['Capacity yield modeling', 'Shift margin optimization', 'Resource constraint mapping'],
+      keyAspects: [
+        'Capacity yield modeling',
+        'Shift margin optimization',
+        'Resource constraint mapping',
+      ],
     },
     {
       id: 'customer',
@@ -102,7 +106,11 @@ export const WhatIsAetherPage: React.FC = () => {
       tagline: 'Intent velocity & churn interception',
       description:
         'Monitors subtle behavioral deviations, booking frequencies, and purchase trends to proactively detect churn risk and capitalize on high-intent conversion windows.',
-      keyAspects: ['Behavioral drift detection', 'Intent scoring & qualification', 'Client lifecycle tracking'],
+      keyAspects: [
+        'Behavioral drift detection',
+        'Intent scoring & qualification',
+        'Client lifecycle tracking',
+      ],
     },
     {
       id: 'operational',
@@ -111,7 +119,11 @@ export const WhatIsAetherPage: React.FC = () => {
       tagline: 'Live floor, staff & inventory balancing',
       description:
         'Maintains real-time awareness of seat turnover, chair availability, lift bay utilization, and inventory burn rates to eliminate idle downtime.',
-      keyAspects: ['Dynamic schedule nesting', 'Standby queue backfilling', 'Real-time throughput pacing'],
+      keyAspects: [
+        'Dynamic schedule nesting',
+        'Standby queue backfilling',
+        'Real-time throughput pacing',
+      ],
     },
     {
       id: 'workflow',
@@ -120,7 +132,11 @@ export const WhatIsAetherPage: React.FC = () => {
       tagline: 'Adaptive multi-agent execution',
       description:
         'Replaces brittle linear scripts with cognitive multi-agent workflows capable of handling messy exceptions, multi-day journeys, and edge cases autonomously.',
-      keyAspects: ['Stateful multi-day orchestration', 'Context-aware exception handling', 'Human-in-the-loop checkpoints'],
+      keyAspects: [
+        'Stateful multi-day orchestration',
+        'Context-aware exception handling',
+        'Human-in-the-loop checkpoints',
+      ],
     },
     {
       id: 'predictive',
@@ -129,7 +145,11 @@ export const WhatIsAetherPage: React.FC = () => {
       tagline: 'Forward-looking demand forecasting',
       description:
         'Anticipates rush-hour surges, weather-driven cancellations, and perishable replenishment needs days in advance, replacing guesswork with precision.',
-      keyAspects: ['Surge volume forecasting', 'Perishable burn prediction', 'Dynamic pricing simulations'],
+      keyAspects: [
+        'Surge volume forecasting',
+        'Perishable burn prediction',
+        'Dynamic pricing simulations',
+      ],
     },
   ];
 
@@ -139,13 +159,20 @@ export const WhatIsAetherPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="flex items-center justify-between py-2 border-b border-aether-border-subtle">
           <div className="flex items-center gap-2 text-xs text-text-muted">
-            <Link to="/" className="hover:text-text-primary transition-colors">Home</Link>
+            <Link to="/" className="hover:text-text-primary transition-colors">
+              Home
+            </Link>
             <span>/</span>
             <span className="text-text-primary font-medium">What is Aether?</span>
           </div>
 
           <Link to="/industries">
-            <Button variant="ghost" size="sm" rightIcon={<ArrowRight className="w-3.5 h-3.5" />} className="text-xs">
+            <Button
+              variant="ghost"
+              size="sm"
+              rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+              className="text-xs"
+            >
               Explore Industries
             </Button>
           </Link>
@@ -172,16 +199,25 @@ export const WhatIsAetherPage: React.FC = () => {
 
           <div className="mt-8 max-w-3xl mx-auto space-y-4 text-base sm:text-lg text-text-secondary leading-relaxed font-normal">
             <p className="text-text-primary font-medium text-lg sm:text-xl">
-              Traditional automation starts with predefined tasks. Aether starts with understanding the business.
+              Traditional automation starts with predefined tasks. Aether starts with understanding
+              the business.
             </p>
             <p>
-              Instead of forcing organizations into rigid rule trees that break whenever real-world conditions shift, Aether acts as a cognitive transformation layer—continuously understanding operational reality, diagnosing friction, and executing self-healing workflows.
+              Instead of forcing organizations into rigid rule trees that break whenever real-world
+              conditions shift, Aether acts as a cognitive transformation layer—continuously
+              understanding operational reality, diagnosing friction, and executing self-healing
+              workflows.
             </p>
           </div>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto">
             <Link to="/industries" className="w-full sm:w-auto">
-              <Button variant="primary" size="lg" rightIcon={<ArrowRight className="w-4 h-4" />} className="w-full sm:w-auto shadow-md">
+              <Button
+                variant="primary"
+                size="lg"
+                rightIcon={<ArrowRight className="w-4 h-4" />}
+                className="w-full sm:w-auto shadow-md"
+              >
                 Explore 10 Vertical Models
               </Button>
             </Link>
@@ -198,7 +234,6 @@ export const WhatIsAetherPage: React.FC = () => {
       {/* 2. WHY AETHER? - TRADITIONAL VS AETHER & THE 6 PRINCIPLES */}
       {/* ========================================================================= */}
       <WhyAetherSection />
-
 
       {/* ========================================================================= */}
       {/* 3. THE 6 STAGES OF THE AETHER PROCESS */}
@@ -317,12 +352,18 @@ export const WhatIsAetherPage: React.FC = () => {
             </p>
 
             <p className="mt-3 text-xs sm:text-sm text-text-secondary leading-relaxed max-w-xl">
-              Explore how this exact cognitive transformation architecture applies across ten major modern business verticals.
+              Explore how this exact cognitive transformation architecture applies across ten major
+              modern business verticals.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
               <Link to="/industries" className="w-full sm:w-auto">
-                <Button variant="primary" size="lg" rightIcon={<ArrowRight className="w-4 h-4" />} className="w-full sm:w-auto shadow-md font-semibold">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  rightIcon={<ArrowRight className="w-4 h-4" />}
+                  className="w-full sm:w-auto shadow-md font-semibold"
+                >
                   Explore 10 Verticals
                 </Button>
               </Link>

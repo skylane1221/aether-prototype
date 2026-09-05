@@ -22,7 +22,7 @@ import {
   ShieldCheck,
   Play,
   Zap,
-  FileText
+  FileText,
 } from 'lucide-react';
 import { cn } from '../../../utils/cn';
 
@@ -131,16 +131,23 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
             <div>
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                <Badge variant="primary" size="sm" className="bg-cyan-500/20 text-cyan-300 border-cyan-500/30">
+                <Badge
+                  variant="primary"
+                  size="sm"
+                  className="bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
+                >
                   Practice Intelligence Thesis
                 </Badge>
-                <span className="text-xs font-mono text-cyan-400 font-semibold">Administrative & Operational Intelligence</span>
+                <span className="text-xs font-mono text-cyan-400 font-semibold">
+                  Administrative & Operational Intelligence
+                </span>
                 <span className="text-[10px] font-mono bg-rose-500/10 text-rose-300 border border-rose-500/20 px-2 py-0.5 rounded">
                   Non-Diagnostic
                 </span>
               </div>
               <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                "Eliminate administrative bottlenecks and clinic no-shows through operational intelligence."
+                "Eliminate administrative bottlenecks and clinic no-shows through operational
+                intelligence."
               </h2>
             </div>
             <div className="flex items-center gap-2 text-xs font-mono text-text-muted bg-slate-950/80 px-3 py-1.5 rounded-lg border border-slate-800">
@@ -160,7 +167,8 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                 18-24% No-Shows & Idle Slots
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Unconfirmed appointments leave specialist blocks vacant while front-desk staff juggle manual phone calls and paper clipboards.
+                Unconfirmed appointments leave specialist blocks vacant while front-desk staff
+                juggle manual phone calls and paper clipboards.
               </p>
               <span className="text-[10px] font-mono text-rose-400 pt-1 border-t border-rose-500/20">
                 ₹1.2L+ Lost Per Provider/Wk
@@ -177,7 +185,8 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                 Predictive Slot Protection
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Forecast attendance risk 24-48 hours in advance to trigger digital intake and auto-fill cancellations from the urgent standby queue.
+                Forecast attendance risk 24-48 hours in advance to trigger digital intake and
+                auto-fill cancellations from the urgent standby queue.
               </p>
               <span className="text-[10px] font-mono text-amber-300 pt-1 border-t border-amber-500/20">
                 &lt;5 Min Slot Recovery
@@ -194,7 +203,8 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                 Operational Telemetry Mesh
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Synthesizes historical attendance records, booking lead-time, department capacity, digital intake status, and provider pacing.
+                Synthesizes historical attendance records, booking lead-time, department capacity,
+                digital intake status, and provider pacing.
               </p>
               <span className="text-[10px] font-mono text-cyan-300 pt-1 border-t border-cyan-500/20">
                 Administrative EHR Feed
@@ -211,7 +221,8 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                 Targeted Pre-Visit Protocol
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Prescribes precise conversational channel, timing, pre-visit checklist, and optimal standby overbook buffer.
+                Prescribes precise conversational channel, timing, pre-visit checklist, and optimal
+                standby overbook buffer.
               </p>
               <span className="text-[10px] font-mono text-sky-300 pt-1 border-t border-sky-500/20">
                 Dynamic Reminder Cadence
@@ -228,7 +239,8 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                 Autonomous Dispatch & Sync
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Sends personalized 1-tap confirmation WhatsApp/SMS with digital intake link and syncs attendance status to front-desk kiosk.
+                Sends personalized 1-tap confirmation WhatsApp/SMS with digital intake link and
+                syncs attendance status to front-desk kiosk.
               </p>
               <span className="text-[10px] font-mono text-indigo-300 pt-1 border-t border-indigo-500/20">
                 Instant System Sync
@@ -245,7 +257,8 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                 -78% No-Shows & +16% Capacity
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Recovers 84% of open cancellation slots, cuts waiting room wait times to under 4.5 minutes, and saves 12 hours/week in admin time.
+                Recovers 84% of open cancellation slots, cuts waiting room wait times to under 4.5
+                minutes, and saves 12 hours/week in admin time.
               </p>
               <span className="text-[10px] font-mono text-emerald-400 pt-1 border-t border-emerald-500/20">
                 Optimized Practice Yield
@@ -267,18 +280,23 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {industry.challenges.map((item, idx: number) => (
-            <Card key={item.id} className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all">
+            <Card
+              key={item.id}
+              className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all"
+            >
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-slate-800">
-                  <span className="text-[10px] font-mono text-cyan-400 font-bold">Challenge 0{idx + 1}</span>
+                  <span className="text-[10px] font-mono text-cyan-400 font-bold">
+                    Challenge 0{idx + 1}
+                  </span>
                   <span
                     className={cn(
                       'text-[9px] uppercase font-mono px-2 py-0.5 rounded font-bold',
                       item.severity === 'critical'
                         ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
                         : item.severity === 'high'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                        : 'bg-slate-800 text-slate-300'
+                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                          : 'bg-slate-800 text-slate-300'
                     )}
                   >
                     {item.severity}
@@ -294,9 +312,7 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                     <AlertCircle className="w-3 h-3" />
                     <span>Root Cause</span>
                   </div>
-                  <p className="text-xs text-text-secondary leading-relaxed pl-4">
-                    {item.cause}
-                  </p>
+                  <p className="text-xs text-text-secondary leading-relaxed pl-4">{item.cause}</p>
                 </div>
 
                 <div className="pt-1">
@@ -326,7 +342,10 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {industry.opportunities.map((opp, idx: number) => (
-            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card">
+            <Card
+              key={idx}
+              className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card"
+            >
               <div className="space-y-4">
                 <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
                   <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
@@ -354,7 +373,9 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
 
               <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
                 <span className="text-text-muted font-mono">Projected Multiplier:</span>
-                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+                <span className="font-bold font-mono text-emerald-400">
+                  {opp.potentialMultiplier}
+                </span>
               </div>
             </Card>
           ))}
@@ -373,7 +394,10 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {industry.solutionMappings.map((mapping, idx: number) => (
-            <Card key={idx} className="p-5 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80">
+            <Card
+              key={idx}
+              className="p-5 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80"
+            >
               <div className="space-y-3">
                 <div className="flex items-center justify-between mb-1">
                   <Badge variant="neutral" size="sm" className="font-mono text-[10px]">
@@ -554,7 +578,10 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                   <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-2 border-t border-slate-800/80 bg-slate-950/40">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                       {cap.features.map((feature: string, fIdx: number) => (
-                        <div key={fIdx} className="flex items-start gap-2 text-xs text-text-secondary">
+                        <div
+                          key={fIdx}
+                          className="flex items-start gap-2 text-xs text-text-secondary"
+                        >
                           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 mt-1.5" />
                           <span>{feature}</span>
                         </div>
@@ -590,7 +617,8 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
             </h2>
 
             <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-              Deploy Aether alongside your current EHR or practice management system to automate administrative intake, recover open slots, and eliminate no-shows.
+              Deploy Aether alongside your current EHR or practice management system to automate
+              administrative intake, recover open slots, and eliminate no-shows.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">

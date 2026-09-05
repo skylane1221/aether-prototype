@@ -21,7 +21,9 @@ import {
 import { cn } from '../../../utils/cn';
 
 export const RealEstateBiDashboard: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'funnel' | 'intent' | 'demand' | 'inventory' | 'followups'>('funnel');
+  const [activeTab, setActiveTab] = useState<
+    'funnel' | 'intent' | 'demand' | 'inventory' | 'followups'
+  >('funnel');
   const [executedFollowUps, setExecutedFollowUps] = useState<string[]>([]);
   const [executingId, setExecutingId] = useState<string | null>(null);
 
@@ -59,7 +61,8 @@ export const RealEstateBiDashboard: React.FC = () => {
             Forward-Looking Operational Intelligence
           </h3>
           <p className="text-xs sm:text-sm text-text-secondary mt-1">
-            Continuous synthesis across inbound buyer funnels, micro-market pricing demand, and high-velocity follow-up triggers.
+            Continuous synthesis across inbound buyer funnels, micro-market pricing demand, and
+            high-velocity follow-up triggers.
           </p>
         </div>
 
@@ -131,8 +134,12 @@ export const RealEstateBiDashboard: React.FC = () => {
         <Card className="p-6 bg-slate-900/90 border-slate-700/80 animate-fade-in space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
-              <h4 className="text-base font-bold text-white">Full-Funnel Lead Progression & Velocity</h4>
-              <p className="text-xs text-text-muted">Real-time conversion efficiency through Aether triage stages</p>
+              <h4 className="text-base font-bold text-white">
+                Full-Funnel Lead Progression & Velocity
+              </h4>
+              <p className="text-xs text-text-muted">
+                Real-time conversion efficiency through Aether triage stages
+              </p>
             </div>
             <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">
               Overall Closing Efficiency: 10.0% (vs 2.1% traditional)
@@ -152,7 +159,9 @@ export const RealEstateBiDashboard: React.FC = () => {
                       {item.stage}
                     </span>
                     <div className="flex items-center gap-3">
-                      <span className="text-white font-bold">{item.count.toLocaleString()} Leads</span>
+                      <span className="text-white font-bold">
+                        {item.count.toLocaleString()} Leads
+                      </span>
                       <span className="text-cyan-400 font-bold">{item.conversion}</span>
                     </div>
                   </div>
@@ -197,12 +206,19 @@ export const RealEstateBiDashboard: React.FC = () => {
 
                 <h4 className="text-sm font-bold text-white mt-3">{intent.category}</h4>
                 <p className="text-xs text-text-muted mt-1">
-                  Volume: <span className="text-slate-200 font-mono font-bold">{intent.count} Leads</span> currently active.
+                  Volume:{' '}
+                  <span className="text-slate-200 font-mono font-bold">{intent.count} Leads</span>{' '}
+                  currently active.
                 </p>
               </div>
 
               <div className="p-3 rounded-lg bg-slate-950 text-xs font-mono text-slate-300">
-                Action Protocol: {idx === 0 ? 'Instant Broker Dispatch' : idx === 1 ? 'Automated Property Alert Cadence' : 'Educational Nurture Pipeline'}
+                Action Protocol:{' '}
+                {idx === 0
+                  ? 'Instant Broker Dispatch'
+                  : idx === 1
+                    ? 'Automated Property Alert Cadence'
+                    : 'Educational Nurture Pipeline'}
               </div>
             </Card>
           ))}
@@ -216,15 +232,22 @@ export const RealEstateBiDashboard: React.FC = () => {
         <Card className="p-6 bg-slate-900/90 border-slate-700/80 animate-fade-in space-y-4">
           <div className="flex items-center justify-between pb-2 border-b border-slate-800">
             <div>
-              <h4 className="text-base font-bold text-white">Powai & Adjacent Micro-Market Inquiries</h4>
-              <p className="text-xs text-text-muted">Aggregated buyer demand trends across geographic corridors</p>
+              <h4 className="text-base font-bold text-white">
+                Powai & Adjacent Micro-Market Inquiries
+              </h4>
+              <p className="text-xs text-text-muted">
+                Aggregated buyer demand trends across geographic corridors
+              </p>
             </div>
             <span className="text-xs font-mono text-cyan-400">Live Ingest Telemetry</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {REAL_ESTATE_BI_DATA.demandByLocation.map((loc, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+              <div
+                key={idx}
+                className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3"
+              >
                 <div className="flex items-start justify-between gap-1">
                   <h5 className="text-xs font-bold text-white">{loc.location}</h5>
                   <span className="text-[10px] font-mono text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded">
@@ -254,7 +277,9 @@ export const RealEstateBiDashboard: React.FC = () => {
       {activeTab === 'inventory' && (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 animate-fade-in">
           <Card className="p-5 bg-slate-900/90 border-slate-700/80 text-center space-y-1">
-            <span className="text-[11px] font-mono text-text-muted uppercase block">Total Tracked Units</span>
+            <span className="text-[11px] font-mono text-text-muted uppercase block">
+              Total Tracked Units
+            </span>
             <span className="text-2xl sm:text-3xl font-extrabold font-mono text-white">
               {REAL_ESTATE_BI_DATA.inventoryStatus.totalUnits}
             </span>
@@ -262,7 +287,9 @@ export const RealEstateBiDashboard: React.FC = () => {
           </Card>
 
           <Card className="p-5 bg-slate-900/90 border-emerald-500/30 text-center space-y-1">
-            <span className="text-[11px] font-mono text-emerald-400 uppercase block">Available for Sale</span>
+            <span className="text-[11px] font-mono text-emerald-400 uppercase block">
+              Available for Sale
+            </span>
             <span className="text-2xl sm:text-3xl font-extrabold font-mono text-emerald-300">
               {REAL_ESTATE_BI_DATA.inventoryStatus.available}
             </span>
@@ -270,7 +297,9 @@ export const RealEstateBiDashboard: React.FC = () => {
           </Card>
 
           <Card className="p-5 bg-slate-900/90 border-amber-500/30 text-center space-y-1">
-            <span className="text-[11px] font-mono text-amber-400 uppercase block">Under Negotiation</span>
+            <span className="text-[11px] font-mono text-amber-400 uppercase block">
+              Under Negotiation
+            </span>
             <span className="text-2xl sm:text-3xl font-extrabold font-mono text-amber-300">
               {REAL_ESTATE_BI_DATA.inventoryStatus.underNegotiation}
             </span>
@@ -278,7 +307,9 @@ export const RealEstateBiDashboard: React.FC = () => {
           </Card>
 
           <Card className="p-5 bg-slate-900/90 border-rose-500/30 text-center space-y-1">
-            <span className="text-[11px] font-mono text-rose-400 uppercase block">Fast Depleting</span>
+            <span className="text-[11px] font-mono text-rose-400 uppercase block">
+              Fast Depleting
+            </span>
             <span className="text-2xl sm:text-3xl font-extrabold font-mono text-rose-300">
               {REAL_ESTATE_BI_DATA.inventoryStatus.fastDepleting}
             </span>
@@ -286,7 +317,9 @@ export const RealEstateBiDashboard: React.FC = () => {
           </Card>
 
           <Card className="p-5 bg-slate-900/90 border-cyan-500/30 text-center space-y-1">
-            <span className="text-[11px] font-mono text-cyan-400 uppercase block">Avg Velocity</span>
+            <span className="text-[11px] font-mono text-cyan-400 uppercase block">
+              Avg Velocity
+            </span>
             <span className="text-2xl sm:text-3xl font-extrabold font-mono text-cyan-300">
               {REAL_ESTATE_BI_DATA.inventoryStatus.avgDaysOnMarket}d
             </span>
@@ -307,7 +340,8 @@ export const RealEstateBiDashboard: React.FC = () => {
                 <span>High-Urgency Follow-up Opportunities</span>
               </h4>
               <p className="text-xs text-text-muted">
-                Cognitively identified buyers whose digital viewing signals indicate imminent closing readiness.
+                Cognitively identified buyers whose digital viewing signals indicate imminent
+                closing readiness.
               </p>
             </div>
 
@@ -337,7 +371,9 @@ export const RealEstateBiDashboard: React.FC = () => {
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <h5 className="text-sm font-bold text-white">{item.clientName}</h5>
-                        <div className="text-[11px] text-cyan-400 font-mono">{item.propertyViewed}</div>
+                        <div className="text-[11px] text-cyan-400 font-mono">
+                          {item.propertyViewed}
+                        </div>
                       </div>
 
                       <div className="flex items-center gap-1.5 shrink-0">
@@ -347,8 +383,8 @@ export const RealEstateBiDashboard: React.FC = () => {
                             item.urgency === 'Critical'
                               ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
                               : item.urgency === 'High'
-                              ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
-                              : 'bg-slate-800 text-slate-300'
+                                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                                : 'bg-slate-800 text-slate-300'
                           )}
                         >
                           {item.urgency}

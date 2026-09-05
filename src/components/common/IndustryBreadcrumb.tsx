@@ -19,9 +19,17 @@ export const IndustryBreadcrumb: React.FC<IndustryBreadcrumbProps> = ({
   className,
 }) => {
   return (
-    <div className={cn('w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-aether-border-subtle mb-6', className)}>
+    <div
+      className={cn(
+        'w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-aether-border-subtle mb-6',
+        className
+      )}
+    >
       {/* Breadcrumb Navigation Trail */}
-      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-text-muted flex-wrap">
+      <nav
+        aria-label="Breadcrumb"
+        className="flex items-center gap-1.5 text-xs text-text-muted flex-wrap"
+      >
         <Link
           to="/"
           className="hover:text-text-primary flex items-center gap-1 transition-colors p-1 rounded hover:bg-slate-800/40"
@@ -37,9 +45,7 @@ export const IndustryBreadcrumb: React.FC<IndustryBreadcrumbProps> = ({
           Industries
         </Link>
         <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
-        <span className="text-text-primary font-semibold p-1">
-          {industryName}
-        </span>
+        <span className="text-text-primary font-semibold p-1">{industryName}</span>
       </nav>
 
       {/* Quick Jump Actions */}

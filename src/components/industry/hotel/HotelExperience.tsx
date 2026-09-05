@@ -72,7 +72,12 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
             <div className="w-7 h-7 rounded-lg flex items-center justify-center border text-xs bg-teal-500/10 border-teal-500/20 text-teal-400">
               <BedDouble className="w-4 h-4" />
             </div>
-            <Badge variant="primary" dot size="md" className="bg-teal-500/20 text-teal-300 border-teal-500/30">
+            <Badge
+              variant="primary"
+              dot
+              size="md"
+              className="bg-teal-500/20 text-teal-300 border-teal-500/30"
+            >
               Aether for Hotels & Hospitality
             </Badge>
           </div>
@@ -133,10 +138,16 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
             <div>
               <div className="flex items-center gap-2 mb-1.5">
-                <Badge variant="primary" size="sm" className="bg-teal-500/20 text-teal-300 border-teal-500/30">
+                <Badge
+                  variant="primary"
+                  size="sm"
+                  className="bg-teal-500/20 text-teal-300 border-teal-500/30"
+                >
                   Core Hospitality Thesis
                 </Badge>
-                <span className="text-xs font-mono text-teal-400 font-semibold">Autonomous Operations & Yield Engine</span>
+                <span className="text-xs font-mono text-teal-400 font-semibold">
+                  Autonomous Operations & Yield Engine
+                </span>
               </div>
               <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                 "Turn booking and guest signals into smarter operational decisions."
@@ -159,7 +170,8 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
                 Volatile Pacing & Turn Delays
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Last-minute OTA cancellations, unforeseen check-in surges, and static housekeeping shifts cause room turnaround bottlenecks and lost RevPAR.
+                Last-minute OTA cancellations, unforeseen check-in surges, and static housekeeping
+                shifts cause room turnaround bottlenecks and lost RevPAR.
               </p>
               <span className="text-[10px] font-mono text-rose-400 pt-1 border-t border-rose-500/20">
                 14-22% RevPAR Leakage
@@ -176,7 +188,8 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
                 Dynamic Yield & Room Flow
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Pre-empt no-shows with algorithmic overbooking buffers while dynamically dispatching cleaning pods ahead of peak arrival windows.
+                Pre-empt no-shows with algorithmic overbooking buffers while dynamically dispatching
+                cleaning pods ahead of peak arrival windows.
               </p>
               <span className="text-[10px] font-mono text-amber-300 pt-1 border-t border-amber-500/20">
                 48-Hour Yield Window
@@ -193,7 +206,8 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
                 PMS & Telemetry Synthesis
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Aggregates booking channels, flight arrival feeds, guest profile stay history, VIP tags, and real-time floor status into one operational brain.
+                Aggregates booking channels, flight arrival feeds, guest profile stay history, VIP
+                tags, and real-time floor status into one operational brain.
               </p>
               <span className="text-[10px] font-mono text-teal-300 pt-1 border-t border-teal-500/20">
                 Unified Hospitality Mesh
@@ -210,7 +224,8 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
                 Dynamic Staffing & Pricing
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Computes optimal housekeeping unit allocations, front-desk peak staffing hours, and dynamic rate adjustments across direct & OTA channels.
+                Computes optimal housekeeping unit allocations, front-desk peak staffing hours, and
+                dynamic rate adjustments across direct & OTA channels.
               </p>
               <span className="text-[10px] font-mono text-sky-300 pt-1 border-t border-sky-500/20">
                 Precision Pod Schedules
@@ -227,7 +242,8 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
                 Autonomous Roster & Rate Push
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Pushes priority turnover queues directly to staff mobile handsets, triggers corporate waitlists, and syncs rates across channel managers.
+                Pushes priority turnover queues directly to staff mobile handsets, triggers
+                corporate waitlists, and syncs rates across channel managers.
               </p>
               <span className="text-[10px] font-mono text-indigo-300 pt-1 border-t border-indigo-500/20">
                 Instant System Sync
@@ -244,7 +260,8 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
                 +14.2% RevPAR & Zero Delays
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                60% reduction in check-in turnover bottlenecks, 98% VIP room readiness on arrival, and sustained direct booking margin expansion.
+                60% reduction in check-in turnover bottlenecks, 98% VIP room readiness on arrival,
+                and sustained direct booking margin expansion.
               </p>
               <span className="text-[10px] font-mono text-emerald-400 pt-1 border-t border-emerald-500/20">
                 Maximum Guest Lifetime Value
@@ -281,8 +298,8 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
                       item.severity === 'critical'
                         ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
                         : item.severity === 'high'
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                        : 'bg-slate-800 text-slate-300'
+                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                          : 'bg-slate-800 text-slate-300'
                     )}
                   >
                     {item.severity}
@@ -298,9 +315,7 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
                     <AlertCircle className="w-3 h-3" />
                     <span>Root Cause</span>
                   </div>
-                  <p className="text-xs text-text-secondary leading-relaxed pl-4">
-                    {item.cause}
-                  </p>
+                  <p className="text-xs text-text-secondary leading-relaxed pl-4">{item.cause}</p>
                 </div>
 
                 <div className="pt-1">
@@ -361,7 +376,9 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
 
               <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
                 <span className="text-text-muted font-mono">Projected Multiplier:</span>
-                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+                <span className="font-bold font-mono text-emerald-400">
+                  {opp.potentialMultiplier}
+                </span>
               </div>
             </Card>
           ))}
@@ -389,9 +406,7 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
                   <Badge variant="neutral" size="sm" className="font-mono text-[10px]">
                     {mapping.capabilityTag}
                   </Badge>
-                  <span className="text-[10px] font-mono text-teal-300">
-                    Solution 0{idx + 1}
-                  </span>
+                  <span className="text-[10px] font-mono text-teal-300">Solution 0{idx + 1}</span>
                 </div>
 
                 <div className="text-xs text-text-muted">
@@ -602,7 +617,12 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
 
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
             <div className="mb-4">
-              <Badge variant="primary" dot size="md" className="bg-teal-500/20 text-teal-300 border-teal-500/30">
+              <Badge
+                variant="primary"
+                dot
+                size="md"
+                className="bg-teal-500/20 text-teal-300 border-teal-500/30"
+              >
                 Hospitality Executive Briefing
               </Badge>
             </div>
@@ -612,7 +632,8 @@ export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) =>
             </h2>
 
             <p className="mt-4 text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed max-w-2xl">
-              Eliminate check-in friction, predict cancellations, and dynamically route housekeeping workflows with a cognitive engine custom-tailored to your property footprint.
+              Eliminate check-in friction, predict cancellations, and dynamically route housekeeping
+              workflows with a cognitive engine custom-tailored to your property footprint.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">

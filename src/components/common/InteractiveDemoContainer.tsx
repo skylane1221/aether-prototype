@@ -134,7 +134,7 @@ export const InteractiveDemoContainer: React.FC<InteractiveDemoContainerProps> =
                     Source: {currentScenario.incomingSignal.source}
                   </div>
                   <div className="p-2.5 rounded bg-slate-950/80 border border-slate-800/80 text-[11px] space-y-1 text-slate-300">
-                    {Object.entries(currentScenario.incomingSignal.payload).map(([k, v]: [string, any]) => (
+                    {Object.entries(currentScenario.incomingSignal.payload).map(([k, v]) => (
                       <div key={k}>
                         <span className="text-text-muted">{k}: </span>
                         <span className="text-slate-200">{String(v)}</span>
@@ -231,12 +231,17 @@ export const InteractiveDemoContainer: React.FC<InteractiveDemoContainerProps> =
                 ) : (
                   <div className="space-y-2.5 text-xs animate-fade-in">
                     <div className="space-y-1">
-                      {currentScenario.automatedExecution.actionsTaken.map((act: string, i: number) => (
-                        <div key={i} className="flex items-start gap-1.5 text-slate-300 text-[11px]">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                          <span>{act}</span>
-                        </div>
-                      ))}
+                      {currentScenario.automatedExecution.actionsTaken.map(
+                        (act: string, i: number) => (
+                          <div
+                            key={i}
+                            className="flex items-start gap-1.5 text-slate-300 text-[11px]"
+                          >
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                            <span>{act}</span>
+                          </div>
+                        )
+                      )}
                     </div>
                     <div className="p-2 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-[11px] font-medium">
                       {currentScenario.automatedExecution.resultingOutcome}
