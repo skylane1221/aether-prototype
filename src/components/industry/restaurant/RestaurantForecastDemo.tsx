@@ -67,9 +67,37 @@ export const RestaurantForecastDemo: React.FC = () => {
             </div>
           </div>
 
-          <Badge variant="primary" size="sm" className="font-mono text-[10px]">
-            Simulated Kitchen Telemetry
-          </Badge>
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">
+              SIMULATED DEMO
+            </span>
+            <Badge variant="primary" size="sm" className="font-mono text-[10px]">
+              Live Kitchen Telemetry
+            </Badge>
+          </div>
+        </div>
+
+        {/* 5-Step Restaurant Demo Pipeline Progress Bar */}
+        <div className="bg-slate-900/70 border-b border-slate-800 px-4 sm:px-6 py-2.5 flex items-center justify-between gap-1 overflow-x-auto text-[11px] font-mono">
+          {[
+            '1. Historical Sales',
+            '2. Predicted Demand',
+            '3. Preparation Recommendation',
+            '4. Inventory Requirement',
+            '5. Operational Action',
+          ].map((phase, idx, arr) => (
+            <React.Fragment key={phase}>
+              <div className="flex items-center gap-1.5 text-amber-300 font-semibold shrink-0">
+                <span className="w-4 h-4 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40 flex items-center justify-center text-[9px] font-bold">
+                  {idx + 1}
+                </span>
+                <span>{phase.split('. ')[1]}</span>
+              </div>
+              {idx < arr.length - 1 && (
+                <ArrowRight className="w-3 h-3 text-slate-600 shrink-0" />
+              )}
+            </React.Fragment>
+          ))}
         </div>
 
         {/* Sandbox Body */}
@@ -80,7 +108,7 @@ export const RestaurantForecastDemo: React.FC = () => {
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                 <h4 className="text-xs font-semibold text-text-primary uppercase tracking-wider">
-                  1. Historical Baseline Dish Sales (30-Day Moving Average)
+                  Step 1: Historical Sales Baseline (30-Day Moving Average by Dish)
                 </h4>
               </div>
               <span className="text-[11px] font-mono text-text-muted">Source: POS Line Ingest</span>
@@ -113,7 +141,7 @@ export const RestaurantForecastDemo: React.FC = () => {
           {/* 2. Scenario Selector Buttons */}
           <div className="space-y-3 pt-2">
             <label className="text-xs font-semibold text-text-primary uppercase tracking-wider block">
-              2. Select Shift Operating Condition:
+              Step 2: Predicted Shift Condition & Demand Multiplier:
             </label>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -202,10 +230,10 @@ export const RestaurantForecastDemo: React.FC = () => {
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <Badge variant="primary" size="sm" className="font-mono text-[10px]">
-                    Scenario Active: {currentForecast.scenarioName}
+                    Step 2 Predicted: {currentForecast.scenarioName}
                   </Badge>
                   <span className="text-xs font-mono text-emerald-400 font-bold">
-                    Multiplier: {currentForecast.footfallMultiplier}x
+                    Demand Multiplier: {currentForecast.footfallMultiplier}x
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">
@@ -215,7 +243,7 @@ export const RestaurantForecastDemo: React.FC = () => {
 
               <div className="flex items-center gap-4 font-mono text-xs border-t md:border-t-0 md:border-l border-amber-500/20 pt-3 md:pt-0 md:pl-6 shrink-0">
                 <div>
-                  <span className="text-[10px] text-text-muted uppercase block">Projected Covers</span>
+                  <span className="text-[10px] text-text-muted uppercase block">Predicted Covers</span>
                   <span className="text-xl font-extrabold text-white">{currentForecast.expectedCovers}</span>
                 </div>
                 <div>
@@ -227,7 +255,7 @@ export const RestaurantForecastDemo: React.FC = () => {
 
             {/* Navigation Tabs for Forecast Views */}
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <button
                   onClick={() => setActiveTab('items')}
                   className={cn(
@@ -237,7 +265,7 @@ export const RestaurantForecastDemo: React.FC = () => {
                       : 'text-text-muted hover:text-white'
                   )}
                 >
-                  Dish Demand & Prep ({currentForecast.items.length})
+                  Step 2 & 3: Predicted Demand & Prep ({currentForecast.items.length})
                 </button>
                 <button
                   onClick={() => setActiveTab('inventory')}
@@ -248,7 +276,7 @@ export const RestaurantForecastDemo: React.FC = () => {
                       : 'text-text-muted hover:text-white'
                   )}
                 >
-                  Inventory Orders ({currentForecast.inventorySummary.length})
+                  Step 4: Inventory Requirements ({currentForecast.inventorySummary.length})
                 </button>
                 <button
                   onClick={() => setActiveTab('operations')}
@@ -259,7 +287,7 @@ export const RestaurantForecastDemo: React.FC = () => {
                       : 'text-text-muted hover:text-white'
                   )}
                 >
-                  Station Directives ({currentForecast.operationalRecommendations.length})
+                  Step 5: Operational Actions ({currentForecast.operationalRecommendations.length})
                 </button>
               </div>
 

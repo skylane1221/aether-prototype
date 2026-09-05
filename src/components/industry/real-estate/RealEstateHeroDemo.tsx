@@ -129,8 +129,8 @@ export const RealEstateHeroDemo: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <Badge variant="primary" size="sm" className="font-mono text-[10px]">
-              Simulated Live Telemetry
+            <Badge variant="neutral" size="sm" className="font-mono text-[10px] uppercase tracking-wider bg-slate-800 text-cyan-300 border-cyan-500/30">
+              SIMULATED DEMO
             </Badge>
             {extractionState !== 'idle' && (
               <Button
@@ -209,97 +209,146 @@ export const RealEstateHeroDemo: React.FC = () => {
             </div>
           </div>
 
-          {/* 2. Extracted Entities & Generated Requirement Profile */}
+          {/* 2. Extracted Entities (AETHER UNDERSTANDS) & Recommendations (AETHER RECOMMENDS) */}
           {extractionState !== 'idle' && (
             <div className="space-y-6 animate-fade-in">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-                {/* Extracted Entity Badges */}
-                <div className="lg:col-span-8 p-4 sm:p-5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-3">
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                    <span className="text-xs font-semibold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>2. Extracted Entity Attributes</span>
-                    </span>
-                    <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                      Entity Confidence: 99.4%
-                    </span>
-                  </div>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                    <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800/80">
-                      <span className="text-[10px] text-text-muted font-mono uppercase block">Property Type</span>
-                      <span className="text-xs font-bold text-white flex items-center gap-1 mt-0.5">
-                        <Building2 className="w-3.5 h-3.5 text-cyan-400" />
-                        2 BHK Luxury
-                      </span>
-                    </div>
-
-                    <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800/80">
-                      <span className="text-[10px] text-text-muted font-mono uppercase block">Target Location</span>
-                      <span className="text-xs font-bold text-white flex items-center gap-1 mt-0.5">
-                        <MapPin className="w-3.5 h-3.5 text-indigo-400" />
-                        Powai, Mumbai
-                      </span>
-                    </div>
-
-                    <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800/80">
-                      <span className="text-[10px] text-text-muted font-mono uppercase block">Budget Threshold</span>
-                      <span className="text-xs font-bold text-emerald-400 flex items-center gap-1 mt-0.5 font-mono">
-                        ₹1.50 Cr (±5% flex)
-                      </span>
-                    </div>
-
-                    <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800/80">
-                      <span className="text-[10px] text-text-muted font-mono uppercase block">Parking Requirement</span>
-                      <span className="text-xs font-bold text-white flex items-center gap-1 mt-0.5">
-                        <Car className="w-3.5 h-3.5 text-amber-400" />
-                        1 Covered Bay
-                      </span>
-                    </div>
-
-                    <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800/80">
-                      <span className="text-[10px] text-text-muted font-mono uppercase block">Possession Horizon</span>
-                      <span className="text-xs font-bold text-white flex items-center gap-1 mt-0.5">
-                        <Clock className="w-3.5 h-3.5 text-sky-400" />
-                        Within 6 Months
-                      </span>
-                    </div>
-
-                    <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800/80">
-                      <span className="text-[10px] text-text-muted font-mono uppercase block">Intent Diagnosis</span>
-                      <span className="text-xs font-bold text-cyan-300 flex items-center gap-1 mt-0.5">
-                        <Zap className="w-3.5 h-3.5 text-cyan-400" />
-                        High Intent (Active)
-                      </span>
-                    </div>
-                  </div>
+              {/* 2A. AETHER UNDERSTANDS - 7 Core Extracted Entities */}
+              <div className="p-5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-3.5">
+                <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5 font-mono">
+                    <Sparkles className="w-4 h-4 text-cyan-400" />
+                    <span>Aether Understands • Autonomous Entity Extraction</span>
+                  </span>
+                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-bold">
+                    7 / 7 Attributes Extracted (99.4% Precision)
+                  </span>
                 </div>
 
-                {/* Generated Requirement Profile Card */}
-                <div className="lg:col-span-4 p-4 sm:p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/30 flex flex-col justify-between">
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between pb-2 border-b border-cyan-500/20">
-                      <span className="text-xs font-semibold text-cyan-300 uppercase tracking-wider">
-                        Buyer Dossier #RE-882
-                      </span>
-                      <Badge variant="primary" size="sm" className="font-mono text-[10px]">
-                        Scored: 96/100
-                      </Badge>
-                    </div>
-                    <div className="text-xs text-slate-300 leading-snug">
-                      <p className="font-medium text-white mb-1">Ananya & Rohan Malhotra</p>
-                      <p className="text-[11px] text-slate-400">
-                        Pre-approved home loan status: <span className="text-emerald-400 font-mono">₹1.20 Cr (HDFC)</span>
-                      </p>
-                      <p className="text-[11px] text-slate-400 mt-1">
-                        Timeline: Ready for immediate token with 3-month disbursement window.
-                      </p>
-                    </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5 font-mono text-xs">
+                  {/* 1. Property Type */}
+                  <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                    <span className="text-[10px] text-text-muted uppercase block">1. Property Type</span>
+                    <span className="text-xs font-bold text-white flex items-center gap-1 mt-0.5">
+                      <Building2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      Residential
+                    </span>
                   </div>
 
-                  <div className="pt-3 border-t border-cyan-500/20 flex items-center justify-between text-[11px] font-mono text-cyan-400">
-                    <span>Routing Priority:</span>
-                    <span className="font-bold text-white">Tier 1 Sales Closer</span>
+                  {/* 2. Location */}
+                  <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                    <span className="text-[10px] text-text-muted uppercase block">2. Location</span>
+                    <span className="text-xs font-bold text-white flex items-center gap-1 mt-0.5 truncate">
+                      <MapPin className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                      Powai, Mumbai
+                    </span>
+                  </div>
+
+                  {/* 3. Budget */}
+                  <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                    <span className="text-[10px] text-text-muted uppercase block">3. Budget</span>
+                    <span className="text-xs font-bold text-emerald-400 flex items-center gap-1 mt-0.5">
+                      ₹1.50 Cr (±5%)
+                    </span>
+                  </div>
+
+                  {/* 4. Configuration */}
+                  <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                    <span className="text-[10px] text-text-muted uppercase block">4. Configuration</span>
+                    <span className="text-xs font-bold text-white flex items-center gap-1 mt-0.5">
+                      2 BHK (780+ sq.ft.)
+                    </span>
+                  </div>
+
+                  {/* 5. Parking */}
+                  <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                    <span className="text-[10px] text-text-muted uppercase block">5. Parking</span>
+                    <span className="text-xs font-bold text-white flex items-center gap-1 mt-0.5">
+                      <Car className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      1 Covered Bay
+                    </span>
+                  </div>
+
+                  {/* 6. Possession */}
+                  <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                    <span className="text-[10px] text-text-muted uppercase block">6. Possession</span>
+                    <span className="text-xs font-bold text-cyan-300 flex items-center gap-1 mt-0.5">
+                      <Clock className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                      &lt; 6 Months
+                    </span>
+                  </div>
+
+                  {/* 7. Intent */}
+                  <div className="p-2.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30">
+                    <span className="text-[10px] text-cyan-400 uppercase block">7. Intent Score</span>
+                    <span className="text-xs font-bold text-emerald-400 flex items-center gap-1 mt-0.5">
+                      <Zap className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      High Intent (96%)
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2B. AETHER RECOMMENDS - 5 Core Recommendations Banner */}
+              <div className="p-5 rounded-xl bg-gradient-to-r from-cyan-950/30 via-slate-900 to-indigo-950/30 border border-cyan-500/30 space-y-3.5">
+                <div className="flex items-center justify-between pb-2 border-b border-cyan-500/20">
+                  <span className="text-xs font-bold text-cyan-300 uppercase tracking-wider flex items-center gap-1.5 font-mono">
+                    <Zap className="w-4 h-4 text-cyan-400" />
+                    <span>Aether Recommends • Autonomous Decision Directives</span>
+                  </span>
+                  <Badge variant="primary" size="sm" className="font-mono text-[10px]">
+                    Actionable Directives Active
+                  </Badge>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
+                  {/* 1. Property matches */}
+                  <div className="p-3 rounded-lg bg-slate-950/90 border border-slate-800">
+                    <span className="text-[10px] font-mono text-cyan-400 font-bold uppercase block mb-1">
+                      1. Property Matches
+                    </span>
+                    <p className="text-slate-200 font-medium leading-snug">
+                      4 verified properties ranked (Hiranandani Castle Rock #1 at 96% fit).
+                    </p>
+                  </div>
+
+                  {/* 2. Lead priority */}
+                  <div className="p-3 rounded-lg bg-slate-950/90 border border-slate-800">
+                    <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase block mb-1">
+                      2. Lead Priority
+                    </span>
+                    <p className="text-slate-200 font-medium leading-snug">
+                      <span className="text-white font-bold">Tier 1 Closer Priority</span> • Pre-approved loan of ₹1.2 Cr ready for token.
+                    </p>
+                  </div>
+
+                  {/* 3. Next action */}
+                  <div className="p-3 rounded-lg bg-slate-950/90 border border-slate-800">
+                    <span className="text-[10px] font-mono text-sky-400 font-bold uppercase block mb-1">
+                      3. Next Action
+                    </span>
+                    <p className="text-slate-200 font-medium leading-snug">
+                      Dispatch customized comparison matrix via WhatsApp in 1-click.
+                    </p>
+                  </div>
+
+                  {/* 4. Site visit recommendation */}
+                  <div className="p-3 rounded-lg bg-slate-950/90 border border-slate-800">
+                    <span className="text-[10px] font-mono text-amber-400 font-bold uppercase block mb-1">
+                      4. Site Visit Recommendation
+                    </span>
+                    <p className="text-slate-200 font-medium leading-snug">
+                      Saturday, 2:30 PM VIP showing slot pre-allocated with security pass.
+                    </p>
+                  </div>
+
+                  {/* 5. Follow-up */}
+                  <div className="p-3 rounded-lg bg-slate-950/90 border border-slate-800">
+                    <span className="text-[10px] font-mono text-violet-400 font-bold uppercase block mb-1">
+                      5. Follow-up Sequence
+                    </span>
+                    <p className="text-slate-200 font-medium leading-snug">
+                      48-hour post-showing feedback loop + payment schedule incentive.
+                    </p>
                   </div>
                 </div>
               </div>

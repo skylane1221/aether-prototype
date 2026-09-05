@@ -22,7 +22,10 @@ export const GymBiDashboard: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-aether-border-subtle">
         <div>
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex items-center gap-2 mb-1 flex-wrap">
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+              SIMULATED DEMO
+            </span>
             <Badge variant="success" size="sm">
               Member Lifecycle Analytics
             </Badge>
@@ -160,7 +163,7 @@ export const GymBiDashboard: React.FC = () => {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-xs text-left border-collapse font-mono">
+            <table className="w-full min-w-[550px] text-xs text-left border-collapse font-mono">
               <thead>
                 <tr className="border-b border-slate-800 text-text-muted text-[10px] uppercase">
                   <th className="p-3">Class Format</th>

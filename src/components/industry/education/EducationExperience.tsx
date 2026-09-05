@@ -23,7 +23,8 @@ import {
   Play,
   Zap,
   BookOpen,
-  Award
+  Award,
+  Target
 } from 'lucide-react';
 import { cn } from '../../../utils/cn';
 
@@ -119,14 +120,136 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
       </section>
 
       {/* ========================================================================= */}
-      {/* 02 CORE WORKFLOW (Inquiry -> Requirement -> Course Matching -> Follow-up -> Enrollment -> Engagement) */}
+      {/* 01.5 THE AETHER EDUCATION ARCHITECTURAL STORY */}
       {/* ========================================================================= */}
-      <section id="workflow-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <EducationWorkflowPipeline />
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12">
+        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900/95 via-slate-900/90 to-slate-950/95 border border-rose-500/30 shadow-2xl backdrop-blur-md">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+            <div>
+              <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                <Badge variant="primary" size="sm" className="bg-rose-500/20 text-rose-300 border-rose-500/30">
+                  Admissions Intelligence Thesis
+                </Badge>
+                <span className="text-xs font-mono text-rose-400 font-semibold">Student Lifecycle & Enrollment Orchestration</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                "Match prospective students to the right course pathways and prevent drop-offs with instant guidance."
+              </h2>
+            </div>
+            <div className="flex items-center gap-2 text-xs font-mono text-text-muted bg-slate-950/80 px-3 py-1.5 rounded-lg border border-slate-800">
+              <Sparkles className="w-3.5 h-3.5 text-rose-400" />
+              <span>Problem → Opportunity → Intelligence → Recommendation → Action → Impact</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-3.5 pt-6">
+            {/* 1. Problem */}
+            <div className="p-4 rounded-xl bg-rose-950/20 border border-rose-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-rose-400 font-bold text-[10px] uppercase font-mono">
+                <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                <span>1. Problem</span>
+              </div>
+              <h4 className="text-xs font-bold text-white leading-snug">
+                72-Hour Response Lag
+              </h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Prospective students submit web inquiries and wait 3 days for a generic course PDF, losing momentum to competing academies.
+              </p>
+              <span className="text-[10px] font-mono text-rose-400 pt-1 border-t border-rose-500/20">
+                42% Lead Decay
+              </span>
+            </div>
+
+            {/* 2. Opportunity */}
+            <div className="p-4 rounded-xl bg-amber-950/20 border border-amber-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-amber-400 font-bold text-[10px] uppercase font-mono">
+                <Clock className="w-3.5 h-3.5 shrink-0" />
+                <span>2. Opportunity</span>
+              </div>
+              <h4 className="text-xs font-bold text-white leading-snug">
+                Instant Syllabus & Fit
+              </h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Profile candidate skills in real-time, generate customized curriculum pathways, and deliver scholarship reviews in &lt;2 minutes.
+              </p>
+              <span className="text-[10px] font-mono text-amber-300 pt-1 border-t border-amber-500/20">
+                &lt;2 Min Response
+              </span>
+            </div>
+
+            {/* 3. Aether Intelligence */}
+            <div className="p-4 rounded-xl bg-rose-950/20 border border-rose-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-rose-400 font-bold text-[10px] uppercase font-mono">
+                <BookOpen className="w-3.5 h-3.5 shrink-0" />
+                <span>3. Intelligence</span>
+              </div>
+              <h4 className="text-xs font-bold text-white leading-snug">
+                Aspiration & Skill Mesh
+              </h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Synthesizes educational background, current work profile, target learning format, budget constraints, and syllabus prerequisites.
+              </p>
+              <span className="text-[10px] font-mono text-rose-300 pt-1 border-t border-rose-500/20">
+                Candidate Graph
+              </span>
+            </div>
+
+            {/* 4. Recommendation */}
+            <div className="p-4 rounded-xl bg-purple-950/20 border border-purple-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-purple-400 font-bold text-[10px] uppercase font-mono">
+                <Target className="w-3.5 h-3.5 shrink-0" />
+                <span>4. Recommendation</span>
+              </div>
+              <h4 className="text-xs font-bold text-white leading-snug">
+                Precision Course Match
+              </h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Ranks best-fit degree programs, assigns lead priority score (0-100), and formulates tailored scholarship incentives.
+              </p>
+              <span className="text-[10px] font-mono text-purple-300 pt-1 border-t border-purple-500/20">
+                98% Program Fit
+              </span>
+            </div>
+
+            {/* 5. Action */}
+            <div className="p-4 rounded-xl bg-indigo-950/20 border border-indigo-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-indigo-400 font-bold text-[10px] uppercase font-mono">
+                <Zap className="w-3.5 h-3.5 shrink-0" />
+                <span>5. Action</span>
+              </div>
+              <h4 className="text-xs font-bold text-white leading-snug">
+                Automated Advisor Briefing
+              </h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Dispatches personalized WhatsApp consultation invites with 1-click calendar reservation for academic advisors.
+              </p>
+              <span className="text-[10px] font-mono text-indigo-300 pt-1 border-t border-indigo-500/20">
+                Auto-Calendar Dispatch
+              </span>
+            </div>
+
+            {/* 6. Impact */}
+            <div className="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-emerald-400 font-bold text-[10px] uppercase font-mono">
+                <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
+                <span>6. Impact</span>
+              </div>
+              <h4 className="text-xs font-bold text-white leading-snug">
+                +34% Enrolments & 94% Retention
+              </h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Accelerates application velocity from 18 days to 4 days, lowers drop-out rates, and unlocks higher student lifetime value.
+              </p>
+              <span className="text-[10px] font-mono text-emerald-400 pt-1 border-t border-emerald-500/20">
+                Institutional Growth
+              </span>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 03 3 BUSINESS CHALLENGES */}
+      {/* 02 BUSINESS PROBLEMS & OPERATIONAL BOTTLENECKS */}
       {/* ========================================================================= */}
       <section id="challenges-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -185,20 +308,54 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
       </section>
 
       {/* ========================================================================= */}
-      {/* 04 INTERACTIVE DEMO (Admissions & Course Matching Engine) */}
+      {/* 03 AETHER OPPORTUNITIES */}
       {/* ========================================================================= */}
-      <section id="inquiry-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Interactive Sandbox"
-          title="Student Inquiry Triage & Course Matching Engine"
-          subtitle="Select a prospective student lead to analyze goal discovery, prerequisite audits, AI course matching, and automated personalized follow-up outreach."
+          badge="Opportunity Discovery"
+          title="Transforming Academic Admissions Drag Into Enrollment Multipliers"
+          subtitle="How Aether diagnoses application latency and matches student aspirations to optimal course pathways."
         />
 
-        <EducationInquiryDemo />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {industry.opportunities.map((opp, idx: number) => (
+            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card">
+              <div className="space-y-4">
+                <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
+                  <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
+                    Diagnosed Admissions Friction
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-secondary leading-snug">
+                    {opp.problem}
+                  </p>
+                </div>
+
+                <div className="flex justify-center text-rose-400">
+                  <ArrowRight className="w-4 h-4 rotate-90" />
+                </div>
+
+                <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/25">
+                  <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                    <Zap className="w-3.5 h-3.5" />
+                    <span>Aether Opportunity</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-primary font-medium leading-snug">
+                    {opp.opportunity}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
+                <span className="text-text-muted font-mono">Projected Multiplier:</span>
+                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+              </div>
+            </Card>
+          ))}
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 05 10 SOLUTIONS MAPPINGS */}
+      {/* 04 10 AETHER SOLUTIONS MAPPINGS */}
       {/* ========================================================================= */}
       <section id="solutions-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -245,7 +402,27 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
       </section>
 
       {/* ========================================================================= */}
-      {/* 06 BUSINESS INTELLIGENCE DASHBOARD */}
+      {/* 05 SIGNATURE WORKFLOW (Inquiry -> Requirement -> Course Matching -> Follow-up -> Enrollment -> Engagement) */}
+      {/* ========================================================================= */}
+      <section id="workflow-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <EducationWorkflowPipeline />
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 06 SIGNATURE INTERACTIVE DEMO (Admissions & Course Matching Engine) */}
+      {/* ========================================================================= */}
+      <section id="inquiry-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          badge="Signature Interactive Sandbox"
+          title="Student Inquiry Triage & Course Matching Engine"
+          subtitle="Select a prospective student lead to analyze goal discovery, prerequisite audits, AI course matching, and automated personalized follow-up outreach."
+        />
+
+        <EducationInquiryDemo />
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 07 BUSINESS INTELLIGENCE DASHBOARD */}
       {/* ========================================================================= */}
       <section id="bi-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -258,7 +435,7 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
       </section>
 
       {/* ========================================================================= */}
-      {/* 07 BUSINESS IMPACT */}
+      {/* 08 BUSINESS IMPACT */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -331,7 +508,7 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
       </section>
 
       {/* ========================================================================= */}
-      {/* 08 ADDITIONAL CAPABILITIES ACCORDION */}
+      {/* 09 ADDITIONAL CAPABILITIES ACCORDION */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -392,7 +569,7 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({ indust
       />
 
       {/* ========================================================================= */}
-      {/* 09 BOTTOM CTA */}
+      {/* 10 BOTTOM CTA */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-2xl p-8 sm:p-12 text-center overflow-hidden border border-rose-500/30 bg-gradient-to-b from-rose-950/30 via-slate-900 to-slate-950">

@@ -1,9 +1,37 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Modal } from '../ui/Modal';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
-import { INDUSTRIES } from '../../data/industries';
-import { CheckCircle2, ArrowRight, Sparkles, Building, Layers, Zap } from 'lucide-react';
+import {
+  Building2,
+  UtensilsCrossed,
+  Dumbbell,
+  Scissors,
+  Coffee,
+  ShoppingBag,
+  Hotel,
+  Stethoscope,
+  Car,
+  GraduationCap,
+  Sparkles,
+  CheckCircle2,
+  ArrowRight,
+  RotateCcw,
+  ShieldCheck,
+  User,
+  Building,
+  Mail,
+  Zap,
+  BrainCircuit,
+  Workflow,
+  TrendingUp,
+  Clock,
+  Eye,
+  Check,
+  MessageSquare
+} from 'lucide-react';
+import { cn } from '../../utils/cn';
 
 export interface SolutionRequestDrawerProps {
   isOpen: boolean;
@@ -11,245 +39,443 @@ export interface SolutionRequestDrawerProps {
   defaultIndustrySlug?: string;
 }
 
+// 10 Industries + Other
+const INDUSTRY_OPTIONS = [
+  { slug: 'real-estate', name: 'Real Estate', icon: <Building2 className="w-3.5 h-3.5" /> },
+  { slug: 'restaurants', name: 'Restaurants & Food', icon: <UtensilsCrossed className="w-3.5 h-3.5" /> },
+  { slug: 'gyms', name: 'Gyms & Fitness', icon: <Dumbbell className="w-3.5 h-3.5" /> },
+  { slug: 'salons', name: 'Salons & Beauty', icon: <Scissors className="w-3.5 h-3.5" /> },
+  { slug: 'cafes', name: 'Cafes & Quick-Serve', icon: <Coffee className="w-3.5 h-3.5" /> },
+  { slug: 'retail', name: 'Retail & Commerce', icon: <ShoppingBag className="w-3.5 h-3.5" /> },
+  { slug: 'hotels', name: 'Hotels & Hospitality', icon: <Hotel className="w-3.5 h-3.5" /> },
+  { slug: 'healthcare', name: 'Healthcare & Clinics', icon: <Stethoscope className="w-3.5 h-3.5" /> },
+  { slug: 'automotive', name: 'Automotive & Service', icon: <Car className="w-3.5 h-3.5" /> },
+  { slug: 'education', name: 'Education & Training', icon: <GraduationCap className="w-3.5 h-3.5" /> },
+  { slug: 'other', name: 'Other Business', icon: <Sparkles className="w-3.5 h-3.5" /> },
+];
+
+// 8 Improvement Goals
+const IMPROVEMENT_OPTIONS = [
+  { id: 'manual-work', label: 'Reduce manual work', icon: <Clock className="w-3.5 h-3.5" /> },
+  { id: 'customer-exp', label: 'Improve customer experience', icon: <Sparkles className="w-3.5 h-3.5" /> },
+  { id: 'operational-eff', label: 'Improve operational efficiency', icon: <Zap className="w-3.5 h-3.5" /> },
+  { id: 'sales-conversion', label: 'Improve sales/conversion', icon: <TrendingUp className="w-3.5 h-3.5" /> },
+  { id: 'demand-forecast', label: 'Improve demand forecasting', icon: <BrainCircuit className="w-3.5 h-3.5" /> },
+  { id: 'automate-workflows', label: 'Automate workflows', icon: <Workflow className="w-3.5 h-3.5" /> },
+  { id: 'business-visibility', label: 'Improve business visibility', icon: <Eye className="w-3.5 h-3.5" /> },
+  { id: 'other-improvement', label: 'Other', icon: <MessageSquare className="w-3.5 h-3.5" /> },
+];
+
+const INDUSTRY_CHALLENGE_PROMPTS: Record<string, string> = {
+  'real-estate': 'e.g. Inbound buyer leads arrive unorganized across portals; agents spend hours manually qualifying and scheduling site visits...',
+  restaurants: 'e.g. High food wastage during slow periods and ticket bottlenecks during peak dinner rushes...',
+  gyms: 'e.g. Members stop attending for weeks without staff noticing; class capacities remain unoptimized...',
+  salons: 'e.g. Clients delay rebooking color and treatments; prime weekend slots suffer from last-minute empty chair gaps...',
+  cafes: 'e.g. Morning commuter queue walk-aways and afternoon pastry spoilage...',
+  retail: 'e.g. Frequent stockouts on best-selling SKUs and slow inventory replenishment cycles...',
+  hotels: 'e.g. Check-in lines during peak arrival hours and delayed room readiness from housekeeping...',
+  healthcare: 'e.g. Paper intake delays clinic appointments and late patient cancellations leave provider hours unbilled...',
+  automotive: 'e.g. Lift bays blocked while waiting for replacement parts and uneven technician allocation...',
+  education: 'e.g. Slow inquiry turnaround for prospective students and manual transcript verification delays...',
+  other: 'e.g. Describe where administrative friction, customer wait times, or manual coordination slow down your operations...',
+};
+
 export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
   isOpen,
   onClose,
   defaultIndustrySlug,
 }) => {
-  const [step, setStep] = useState<1 | 2 | 3>(1);
   const [selectedIndustry, setSelectedIndustry] = useState<string>(
     defaultIndustrySlug || 'real-estate'
   );
-  const [bottleneck, setBottleneck] = useState<string>('capacity');
-  const [companyName, setCompanyName] = useState<string>('');
+  const [selectedImprovements, setSelectedImprovements] = useState<string[]>([
+    'Reduce manual work',
+    'Improve operational efficiency',
+  ]);
+  const [customImprovement, setCustomImprovement] = useState<string>('');
+  const [challengeText, setChallengeText] = useState<string>('');
+  const [name, setName] = useState<string>('');
+  const [business, setBusiness] = useState<string>('');
   const [email, setEmail] = useState<string>('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isGenerated, setIsGenerated] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
-  const bottlenecks = [
-    { id: 'capacity', label: 'Schedule & Capacity Inefficiencies', desc: 'Dead slots, slow table/chair/bay turns' },
-    { id: 'qualification', label: 'Delayed Inbound Lead Qualification', desc: 'Leads going cold before contact' },
-    { id: 'retention', label: 'Silent Customer & Member Churn', desc: 'Unnoticed drop in repeat frequency' },
-    { id: 'inventory', label: 'Inventory Spoilage or Stockouts', desc: 'Over-ordering or running out of critical SKUs' },
-  ];
+  const toggleImprovement = (optionLabel: string) => {
+    setSelectedImprovements((prev) =>
+      prev.includes(optionLabel)
+        ? prev.filter((item) => item !== optionLabel)
+        : [...prev, optionLabel]
+    );
+  };
 
-  const handleGenerate = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
-      setIsGenerated(true);
-      setStep(3);
-    }, 900);
+      setIsSubmitted(true);
+    }, 750);
   };
 
   const handleReset = () => {
-    setIsGenerated(false);
-    setStep(1);
+    setIsSubmitted(false);
+    setChallengeText('');
+    setSelectedImprovements(['Reduce manual work', 'Improve operational efficiency']);
+    setCustomImprovement('');
     onClose();
   };
 
-  const currentIndustryObj = INDUSTRIES.find((ind) => ind.slug === selectedIndustry) || INDUSTRIES[0];
+  const activeIndustryObj =
+    INDUSTRY_OPTIONS.find((ind) => ind.slug === selectedIndustry) || INDUSTRY_OPTIONS[0];
 
   return (
     <Modal
       isOpen={isOpen}
       onClose={handleReset}
-      title={step === 3 ? 'Transformation Blueprint Ready' : 'Request Aether Solution'}
+      title={isSubmitted ? 'Business Challenge Captured' : "Don't Choose a Product. Tell Aether Your Problem."}
       description={
-        step === 3
-          ? `Simulated architectural recommendation for ${companyName || 'your organization'}`
-          : 'Configure an intelligent operational transformation prototype tailored to your vertical.'
+        isSubmitted
+          ? 'Prototype cognitive analysis & workflow opportunity synthesis.'
+          : 'Aether starts with your operational reality rather than a predefined feature list.'
       }
-      maxWidth="2xl"
+      maxWidth="3xl"
     >
-      {/* Progress Indicators */}
-      <div className="flex items-center gap-2 mb-6 pb-4 border-b border-aether-border-subtle">
-        <span
-          className={`text-xs font-semibold px-2.5 py-1 rounded-md ${
-            step === 1 ? 'bg-sky-500/20 text-sky-400 border border-sky-500/30' : 'text-text-muted'
-          }`}
-        >
-          1. Industry & Challenge
-        </span>
-        <span className="text-text-muted text-xs">/</span>
-        <span
-          className={`text-xs font-semibold px-2.5 py-1 rounded-md ${
-            step === 2 ? 'bg-sky-500/20 text-sky-400 border border-sky-500/30' : 'text-text-muted'
-          }`}
-        >
-          2. Organization Scope
-        </span>
-        <span className="text-text-muted text-xs">/</span>
-        <span
-          className={`text-xs font-semibold px-2.5 py-1 rounded-md ${
-            step === 3 ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'text-text-muted'
-          }`}
-        >
-          3. AI Blueprint
-        </span>
-      </div>
-
-      {step === 1 && (
-        <div className="space-y-5">
-          <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-2">
-              Select Demonstration Industry
-            </label>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-              {INDUSTRIES.map((ind) => (
-                <button
-                  key={ind.slug}
-                  type="button"
-                  onClick={() => setSelectedIndustry(ind.slug)}
-                  className={`p-2.5 rounded-lg text-left text-xs font-medium border transition-all ${
-                    selectedIndustry === ind.slug
-                      ? 'bg-sky-500/10 border-sky-500/50 text-sky-300 font-semibold'
-                      : 'bg-aether-surface border-aether-border text-text-secondary hover:border-slate-700'
-                  }`}
-                >
-                  {ind.shortName}
-                </button>
-              ))}
+      {isSubmitted ? (
+        /* ========================================================================= */
+        /* POLISHED PROTOTYPE CONFIRMATION STATE */
+        /* ========================================================================= */
+        <div className="space-y-6 pt-2 animate-fade-in">
+          {/* Top Success Header */}
+          <div className="text-center space-y-2.5">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
+              <CheckCircle2 className="w-6 h-6" />
             </div>
+            <Badge variant="success" size="sm" className="font-mono text-[10px] uppercase tracking-wider">
+              Prototype Intake Captured
+            </Badge>
+            <h3 className="text-xl sm:text-2xl font-bold text-text-primary tracking-tight">
+              Your business challenge has been captured.
+            </h3>
+            <p className="text-xs sm:text-sm text-sky-300 font-medium max-w-lg mx-auto leading-relaxed">
+              An Aether solution analysis could identify potential opportunities across your workflow.
+            </p>
           </div>
 
-          <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-2">
-              Primary Friction Area
-            </label>
-            <div className="space-y-2">
-              {bottlenecks.map((b) => (
-                <button
-                  key={b.id}
-                  type="button"
-                  onClick={() => setBottleneck(b.id)}
-                  className={`w-full p-3 rounded-lg text-left border transition-all flex items-start justify-between ${
-                    bottleneck === b.id
-                      ? 'bg-slate-800/80 border-sky-500/50 text-text-primary'
-                      : 'bg-aether-surface border-aether-border text-text-secondary hover:border-slate-700'
-                  }`}
-                >
-                  <div>
-                    <p className="text-sm font-medium text-text-primary">{b.label}</p>
-                    <p className="text-xs text-text-muted mt-0.5">{b.desc}</p>
-                  </div>
-                  {bottleneck === b.id && (
-                    <span className="w-2 h-2 rounded-full bg-sky-400 mt-1.5 shrink-0" />
-                  )}
-                </button>
-              ))}
+          {/* Simulated Dossier Card */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-4 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
+                <span className="text-[10px] uppercase font-mono text-text-muted">Business Domain</span>
+                <div className="text-xs font-bold text-text-primary flex items-center gap-1.5">
+                  <span className="text-sky-400">{activeIndustryObj.icon}</span>
+                  <span>{activeIndustryObj.name}</span>
+                </div>
+              </div>
+
+              <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
+                <span className="text-[10px] uppercase font-mono text-text-muted">Organization & Contact</span>
+                <div className="text-xs font-bold text-text-primary truncate">
+                  {business || 'Your Organization'} • <span className="text-text-secondary">{name || 'Executive'}</span>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div className="pt-2 flex justify-end">
-            <Button
-              variant="primary"
-              size="md"
-              onClick={() => setStep(2)}
-              rightIcon={<ArrowRight className="w-4 h-4" />}
-            >
-              Continue to Scope
-            </Button>
-          </div>
-        </div>
-      )}
+            {/* Improvement Priorities */}
+            <div className="space-y-1.5">
+              <span className="text-[10px] uppercase font-mono text-text-muted">Identified Improvement Priorities</span>
+              <div className="flex flex-wrap gap-1.5">
+                {selectedImprovements.map((imp, idx) => (
+                  <span
+                    key={idx}
+                    className="px-2.5 py-0.5 rounded-lg bg-sky-500/10 border border-sky-500/25 text-sky-300 text-[11px] font-medium flex items-center gap-1"
+                  >
+                    <Check className="w-3 h-3 text-sky-400" />
+                    <span>{imp}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
 
-      {step === 2 && (
-        <div className="space-y-4">
-          <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-1.5">
-              Organization / Practice Name
-            </label>
-            <input
-              type="text"
-              placeholder="e.g. Apex Property Group / Summit Health"
-              value={companyName}
-              onChange={(e) => setCompanyName(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-lg bg-aether-surface border border-aether-border text-text-primary text-sm focus:outline-none focus:border-sky-500 transition-colors"
-            />
-          </div>
+            {/* Challenge Snippet */}
+            {challengeText && (
+              <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800/80 space-y-1">
+                <span className="text-[10px] uppercase font-mono text-amber-400 font-semibold">
+                  Captured Operational Challenge
+                </span>
+                <p className="text-[11px] text-text-secondary leading-relaxed italic">
+                  "{challengeText}"
+                </p>
+              </div>
+            )}
 
-          <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-1.5">
-              Executive Contact Email
-            </label>
-            <input
-              type="email"
-              placeholder="executive@company.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-lg bg-aether-surface border border-aether-border text-text-primary text-sm focus:outline-none focus:border-sky-500 transition-colors"
-            />
-          </div>
-
-          <div className="p-3.5 rounded-lg bg-slate-900/60 border border-aether-border-subtle text-xs text-text-secondary flex items-start gap-2.5">
-            <Sparkles className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-            <span>
-              Aether will instantly synthesize an autonomous workflow architecture using benchmark data from <strong>{currentIndustryObj.name}</strong>.
-            </span>
-          </div>
-
-          <div className="pt-4 flex items-center justify-between">
-            <Button variant="ghost" size="md" onClick={() => setStep(1)}>
-              Back
-            </Button>
-            <Button
-              variant="primary"
-              size="md"
-              isLoading={isSubmitting}
-              onClick={handleGenerate}
-              rightIcon={<Zap className="w-4 h-4" />}
-            >
-              Generate Architecture Blueprint
-            </Button>
-          </div>
-        </div>
-      )}
-
-      {step === 3 && (
-        <div className="space-y-5 animate-fade-in">
-          <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-            <div>
-              <h4 className="text-sm font-semibold text-emerald-300">
-                Blueprint Synthesized Successfully
-              </h4>
-              <p className="text-xs text-emerald-400/80 mt-0.5">
-                Targeted for {companyName || 'Enterprise Prototype'} ({currentIndustryObj.name})
+            {/* Aether Production Architecture Approach */}
+            <div className="p-3.5 rounded-xl bg-gradient-to-r from-sky-950/40 via-indigo-950/30 to-slate-900 border border-sky-500/20 space-y-1.5">
+              <div className="text-xs font-bold text-sky-300 flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+                <span>Simulated Cognitive Architecture Plan:</span>
+              </div>
+              <p className="text-[11px] text-text-secondary leading-relaxed">
+                Aether would overlay your existing operational systems to ingest real-time signals, diagnose throughput friction, and trigger context-aware recommendations autonomously.
               </p>
             </div>
           </div>
 
-          {/* Blueprint Summary Card */}
-          <div className="p-4 rounded-xl bg-aether-surface border border-aether-border space-y-3">
-            <div className="flex items-center justify-between pb-2 border-b border-aether-border-subtle">
-              <span className="text-xs font-semibold text-text-muted uppercase tracking-wider">
-                Recommended Solution Pipeline
-              </span>
-              <Badge variant="primary" size="sm">
-                Estimated Impact: {currentIndustryObj.stats[0].value} {currentIndustryObj.stats[0].label}
-              </Badge>
-            </div>
-
-            {currentIndustryObj.solutionMappings.slice(0, 3).map((mapItem, i) => (
-              <div key={i} className="space-y-1">
-                <div className="text-xs font-semibold text-text-primary">
-                  {i + 1}. {mapItem.capabilityTag}: {mapItem.opportunity}
-                </div>
-                <p className="text-xs text-text-secondary pl-3 border-l border-slate-700">
-                  {mapItem.solution}
-                </p>
-              </div>
-            ))}
+          <div className="p-3 rounded-xl bg-slate-900/50 border border-slate-800 text-[11px] text-text-muted flex items-center gap-2">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+            <span>
+              <strong>Prototype Sandbox:</strong> Simulated intake mode. No production lead routing executed.
+            </span>
           </div>
 
-          <div className="pt-2 flex items-center justify-between">
-            <span className="text-xs text-text-muted">Simulated Showcase Mode</span>
-            <Button variant="primary" size="md" onClick={handleReset}>
-              Done & Return to Showcase
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-end gap-2.5 pt-2 border-t border-slate-800">
+            <Button variant="outline" size="sm" onClick={() => setIsSubmitted(false)}>
+              Describe Another Challenge
+            </Button>
+            {selectedIndustry !== 'other' && (
+              <Link to={`/industries/${selectedIndustry}`} onClick={handleReset}>
+                <Button variant="secondary" size="sm" rightIcon={<ArrowRight className="w-3.5 h-3.5" />}>
+                  Explore {activeIndustryObj.name}
+                </Button>
+              </Link>
+            )}
+            <Button variant="primary" size="sm" onClick={handleReset}>
+              Close & Return to Showcase
             </Button>
           </div>
         </div>
+      ) : (
+        /* ========================================================================= */
+        /* INTERACTIVE BUSINESS CHALLENGE FORM */
+        /* ========================================================================= */
+        <form onSubmit={handleSubmit} className="space-y-6 pt-1 max-h-[75vh] overflow-y-auto pr-1 scrollbar-none">
+          {/* ========================================================================= */}
+          {/* 1. What type of business are you? */}
+          {/* ========================================================================= */}
+          <div className="space-y-2.5">
+            <div className="flex items-center justify-between">
+              <label className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
+                <span className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px]">
+                  1
+                </span>
+                <span>What type of business are you?</span>
+              </label>
+              <span className="text-[10px] text-text-muted font-mono">Select Sector</span>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+              {INDUSTRY_OPTIONS.map((ind) => {
+                const isSelected = selectedIndustry === ind.slug;
+                return (
+                  <button
+                    key={ind.slug}
+                    type="button"
+                    onClick={() => setSelectedIndustry(ind.slug)}
+                    className={cn(
+                      'p-2.5 rounded-xl border text-left text-xs font-medium transition-all duration-200 flex items-center gap-2 group',
+                      isSelected
+                        ? 'bg-sky-500/15 border-sky-500 text-white shadow-sm ring-1 ring-sky-500/50'
+                        : 'bg-slate-900/70 border-slate-800 text-text-secondary hover:border-slate-700 hover:text-text-primary'
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        'shrink-0 transition-colors',
+                        isSelected ? 'text-sky-300' : 'text-text-muted group-hover:text-text-primary'
+                      )}
+                    >
+                      {ind.icon}
+                    </span>
+                    <span className="truncate text-[11px]">{ind.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* ========================================================================= */}
+          {/* 2. What would you like to improve? */}
+          {/* ========================================================================= */}
+          <div className="space-y-2.5 pt-1">
+            <div className="flex items-center justify-between">
+              <label className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
+                <span className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px]">
+                  2
+                </span>
+                <span>What would you like to improve?</span>
+              </label>
+              <span className="text-[10px] text-text-muted font-mono">Select Priorities</span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {IMPROVEMENT_OPTIONS.map((opt) => {
+                const isChecked = selectedImprovements.includes(opt.label);
+                return (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    onClick={() => toggleImprovement(opt.label)}
+                    className={cn(
+                      'p-2.5 rounded-xl border text-left text-xs font-medium transition-all duration-200 flex items-center justify-between group',
+                      isChecked
+                        ? 'bg-indigo-950/40 border-indigo-500/60 text-white shadow-sm ring-1 ring-indigo-500/40'
+                        : 'bg-slate-900/70 border-slate-800 text-text-secondary hover:border-slate-700 hover:text-text-primary'
+                    )}
+                  >
+                    <div className="flex items-center gap-2">
+                      <span
+                        className={cn(
+                          'transition-colors',
+                          isChecked ? 'text-indigo-300' : 'text-text-muted group-hover:text-text-primary'
+                        )}
+                      >
+                        {opt.icon}
+                      </span>
+                      <span className="text-xs">{opt.label}</span>
+                    </div>
+
+                    <div
+                      className={cn(
+                        'w-3.5 h-3.5 rounded border flex items-center justify-center transition-all',
+                        isChecked
+                          ? 'bg-indigo-500 border-indigo-400 text-slate-950'
+                          : 'border-slate-700 bg-slate-950/60'
+                      )}
+                    >
+                      {isChecked && <Check className="w-2.5 h-2.5 stroke-[3]" />}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            {selectedImprovements.includes('Other') && (
+              <div className="pt-1 animate-fade-in">
+                <input
+                  type="text"
+                  placeholder="Specify other improvement goal..."
+                  value={customImprovement}
+                  onChange={(e) => setCustomImprovement(e.target.value)}
+                  className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors"
+                />
+              </div>
+            )}
+          </div>
+
+          {/* ========================================================================= */}
+          {/* 3. Tell us about your challenge */}
+          {/* ========================================================================= */}
+          <div className="space-y-1.5 pt-1">
+            <div className="flex items-center justify-between">
+              <label className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
+                <span className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px]">
+                  3
+                </span>
+                <span>Tell us about your challenge</span>
+              </label>
+              <span className="text-[10px] text-text-muted font-mono">Large Context Field</span>
+            </div>
+
+            <textarea
+              rows={3}
+              required
+              placeholder={
+                INDUSTRY_CHALLENGE_PROMPTS[selectedIndustry] ||
+                INDUSTRY_CHALLENGE_PROMPTS.other
+              }
+              value={challengeText}
+              onChange={(e) => setChallengeText(e.target.value)}
+              className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors placeholder:text-slate-600 resize-none leading-relaxed"
+            />
+          </div>
+
+          {/* ========================================================================= */}
+          {/* 4. Contact details */}
+          {/* ========================================================================= */}
+          <div className="space-y-2 pt-1">
+            <label className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
+              <span className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px]">
+                4
+              </span>
+              <span>Contact details</span>
+            </label>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <div className="space-y-1">
+                <label className="block text-[10px] font-medium text-text-muted uppercase font-mono">
+                  Name
+                </label>
+                <div className="relative">
+                  <User className="w-3.5 h-3.5 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <input
+                    type="text"
+                    required
+                    placeholder="Marcus Vance"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <label className="block text-[10px] font-medium text-text-muted uppercase font-mono">
+                  Business
+                </label>
+                <div className="relative">
+                  <Building className="w-3.5 h-3.5 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <input
+                    type="text"
+                    required
+                    placeholder="Acme Holdings"
+                    value={business}
+                    onChange={(e) => setBusiness(e.target.value)}
+                    className="w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <label className="block text-[10px] font-medium text-text-muted uppercase font-mono">
+                  Email
+                </label>
+                <div className="relative">
+                  <Mail className="w-3.5 h-3.5 text-text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <input
+                    type="email"
+                    required
+                    placeholder="marcus@company.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-[11px] text-text-muted flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-sky-400 shrink-0" />
+            <span>Interactive prototype mode. Zero third-party data tracking.</span>
+          </div>
+
+          {/* Submit CTA */}
+          <div className="pt-2 flex justify-end gap-2.5 border-t border-slate-800">
+            <Button variant="ghost" size="md" onClick={handleReset} type="button">
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              variant="primary"
+              size="md"
+              isLoading={isSubmitting}
+              className="font-semibold shadow-glow-subtle bg-sky-500 hover:bg-sky-400 text-slate-950"
+              rightIcon={<ArrowRight className="w-4 h-4" />}
+            >
+              Explore What Aether Could Do
+            </Button>
+          </div>
+        </form>
       )}
     </Modal>
   );

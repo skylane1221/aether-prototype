@@ -176,7 +176,7 @@ export interface NavItem {
 
 export interface PlatformImpactMetric {
   id: string;
-  dimension: 'Time' | 'Efficiency' | 'Customer Experience' | 'Opportunity' | 'Decision Making' | 'Visibility';
+  dimension: 'Time' | 'Efficiency' | 'Customer Experience' | 'Opportunity' | 'Decision Making' | 'Visibility' | 'Operational Visibility';
   metric: string;
   label: string;
   subtext: string;

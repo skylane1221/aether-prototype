@@ -24,6 +24,10 @@ import {
   Play,
   Zap,
   CheckCircle2,
+  Users,
+  ShieldCheck,
+  RefreshCw,
+  Target,
 } from 'lucide-react';
 import { cn } from '../../../utils/cn';
 
@@ -119,14 +123,118 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 02 CORE WORKFLOW (Member -> Activity -> Engagement -> Risk -> Retention -> Renewal) */}
+      {/* 01.5 THE AETHER GYM OPERATIONAL PARADIGM */}
       {/* ========================================================================= */}
-      <section id="workflow-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <GymWorkflowPipeline />
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12">
+        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900/95 via-slate-900/90 to-slate-950/95 border border-emerald-500/30 shadow-2xl backdrop-blur-md">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+            <div>
+              <div className="flex items-center gap-2 mb-1.5">
+                <Badge variant="success" size="sm">
+                  Member Retention & Churn Architecture
+                </Badge>
+                <span className="text-xs font-mono text-emerald-400 font-semibold">Proactive Fitness Intelligence</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                How Aether Eliminates Member Drop-Off & Maximizes LTV
+              </h2>
+            </div>
+            <div className="flex items-center gap-2 text-xs font-mono text-text-muted bg-slate-950/80 px-3 py-1.5 rounded-lg border border-slate-800">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Turnstile RFID Ingest → Autonomous Coach Intervention</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+            {/* 1. Problem */}
+            <div className="p-5 rounded-xl bg-rose-950/20 border border-rose-500/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 text-rose-400 font-bold text-xs uppercase tracking-wider mb-2">
+                  <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
+                  <span>The Retention Problem</span>
+                </div>
+                <h3 className="text-base font-extrabold text-white">
+                  Silent Disengagement & Churn Blindspots
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
+                  Members drop from 4 visits/week down to 0 visits over 3 weeks without front-desk detection. Staff only discover disengagement when members cancel auto-renewal, resulting in 40%+ annual churn.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-rose-500/20 flex items-center justify-between text-[11px] font-mono text-rose-300/80">
+                <span>Annual Impact:</span>
+                <span className="font-bold text-rose-300">42% Annual Membership Bleed</span>
+              </div>
+            </div>
+
+            {/* 2. Aether Understands */}
+            <div className="p-5 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">
+                  <BrainCircuit className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Aether Understands</span>
+                </div>
+                <h3 className="text-base font-extrabold text-white">
+                  Turnstile & Engagement Ingestion
+                </h3>
+                <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                  Synthesizes turnstile RFID check-ins, habit decay intervals, and studio class booking curves:
+                </p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {['Weekly Visit Velocity', 'Habit Break Thresholds', 'Favorite Workout Styles', 'Assigned Coach Sync', 'Studio Class Fill Rates', 'Renewal Countdown Days'].map((attr, i) => (
+                    <span
+                      key={attr}
+                      className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-emerald-500/10 border border-emerald-500/25 text-emerald-300"
+                    >
+                      {i + 1}. {attr}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="pt-3 border-t border-emerald-500/20 flex items-center justify-between text-[11px] font-mono text-emerald-300/80">
+                <span>Lead Time:</span>
+                <span className="font-bold text-emerald-300">45 Days Advance Warning</span>
+              </div>
+            </div>
+
+            {/* 3. Aether Recommends */}
+            <div className="p-5 rounded-xl bg-teal-950/20 border border-teal-500/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 text-teal-400 font-bold text-xs uppercase tracking-wider mb-2">
+                  <Target className="w-4 h-4 text-teal-400 shrink-0" />
+                  <span>Aether Recommends</span>
+                </div>
+                <h3 className="text-base font-extrabold text-white">
+                  Targeted Retention Protocols
+                </h3>
+                <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                  Triggers personalized coach recovery tasks, incentive vouchers, and proactive renewal incentives:
+                </p>
+                <div className="mt-3 space-y-1.5">
+                  {[
+                    'Assigned Coach WhatsApp Touchpoints',
+                    'Recovery Vouchers (Hydro-Massage & Saunas)',
+                    'Dynamic Studio Class Rebalancing',
+                    'Trainer Priority Schedule Alerts',
+                    'Proactive 30-Day Milestone Renewal Locks',
+                  ].map((rec, i) => (
+                    <div key={rec} className="flex items-center gap-2 text-[11px] font-mono text-teal-300">
+                      <CheckCircle2 className="w-3 h-3 text-teal-400 shrink-0" />
+                      <span>{i + 1}. {rec}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="pt-3 border-t border-teal-500/20 flex items-center justify-between text-[11px] font-mono text-teal-300/80">
+                <span>Retention Result:</span>
+                <span className="font-bold text-teal-300">89.4% Cohort Preserved • +18% LTV</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 03 7 BUSINESS CHALLENGES */}
+      {/* 02 BUSINESS PROBLEMS & OPERATIONAL BOTTLENECKS */}
       {/* ========================================================================= */}
       <section id="challenges-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -185,20 +293,54 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 04 INTERACTIVE DEMO (Member Risk & Retention Engine) */}
+      {/* 03 AETHER OPPORTUNITIES */}
       {/* ========================================================================= */}
-      <section id="retention-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Interactive Sandbox"
-          title="Member Retention & Inactivity Interception Engine"
-          subtitle="Select a simulated member profile to analyze turnstile attendance decay, churn vulnerability, and automated coach outreach."
+          badge="Opportunity Discovery"
+          title="Transforming Gym Friction Into Membership Velocity Multipliers"
+          subtitle="How Aether diagnoses early attendance decay and converts vulnerable members into long-term fitness renewals."
         />
 
-        <GymMemberRetentionDemo />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {industry.opportunities.map((opp, idx) => (
+            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card">
+              <div className="space-y-4">
+                <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
+                  <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
+                    Diagnosed Club Friction
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-secondary leading-snug">
+                    {opp.problem}
+                  </p>
+                </div>
+
+                <div className="flex justify-center text-emerald-400">
+                  <ArrowRight className="w-4 h-4 rotate-90" />
+                </div>
+
+                <div className="p-3.5 rounded-lg bg-emerald-500/5 border border-emerald-500/25">
+                  <div className="text-[11px] font-semibold text-emerald-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                    <Zap className="w-3.5 h-3.5" />
+                    <span>Aether Opportunity</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-primary font-medium leading-snug">
+                    {opp.opportunity}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
+                <span className="text-text-muted font-mono">Projected Multiplier:</span>
+                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+              </div>
+            </Card>
+          ))}
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 05 9 SOLUTIONS MAPPINGS */}
+      {/* 04 9 AETHER SOLUTIONS MAPPINGS */}
       {/* ========================================================================= */}
       <section id="solutions-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -245,7 +387,27 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 06 BUSINESS INTELLIGENCE DASHBOARD */}
+      {/* 05 SIGNATURE WORKFLOW (Member -> Activity -> Engagement -> Risk -> Retention -> Renewal) */}
+      {/* ========================================================================= */}
+      <section id="workflow-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <GymWorkflowPipeline />
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 06 SIGNATURE INTERACTIVE DEMO (Member Risk & Retention Engine) */}
+      {/* ========================================================================= */}
+      <section id="retention-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          badge="Signature Interactive Sandbox"
+          title="Member Retention & Inactivity Interception Engine"
+          subtitle="Select a simulated member profile to analyze turnstile attendance decay, churn vulnerability, and automated coach outreach."
+        />
+
+        <GymMemberRetentionDemo />
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 07 BUSINESS INTELLIGENCE DASHBOARD */}
       {/* ========================================================================= */}
       <section id="bi-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -258,7 +420,7 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 07 BUSINESS IMPACT */}
+      {/* 08 BUSINESS IMPACT */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -331,7 +493,7 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 08 ADDITIONAL CAPABILITIES */}
+      {/* 09 ADDITIONAL CAPABILITIES */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -398,7 +560,7 @@ export const GymExperience: React.FC<GymExperienceProps> = ({ industry }) => {
       />
 
       {/* ========================================================================= */}
-      {/* 09 FINAL CTA */}
+      {/* 10 BOTTOM CTA */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-2xl bg-aether-card card-gradient-surface border border-slate-700/80 p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-card-hover">

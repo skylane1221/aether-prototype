@@ -46,6 +46,8 @@ import { SalonExperience } from '../components/industry/salon/SalonExperience';
 import { HealthcareExperience } from '../components/industry/healthcare/HealthcareExperience';
 import { AutomotiveExperience } from '../components/industry/automotive/AutomotiveExperience';
 import { EducationExperience } from '../components/industry/education/EducationExperience';
+import { RetailExperience } from '../components/industry/retail/RetailExperience';
+import { HotelExperience } from '../components/industry/hotel/HotelExperience';
 import { IndustryBreadcrumb } from '../components/common/IndustryBreadcrumb';
 import { IndustryNextSteps } from '../components/common/IndustryNextSteps';
 
@@ -102,6 +104,12 @@ export const IndustryDetailPage: React.FC = () => {
   }
   if (industry.slug === 'education') {
     return <EducationExperience industry={industry} />;
+  }
+  if (industry.slug === 'retail') {
+    return <RetailExperience industry={industry} />;
+  }
+  if (industry.slug === 'hotels') {
+    return <HotelExperience industry={industry} />;
   }
 
   const theme = INDUSTRY_THEMES[industry.accentColor] || INDUSTRY_THEMES.cyan;

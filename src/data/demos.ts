@@ -88,7 +88,7 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     },
     result: {
       primaryOutcome: 'Showing confirmed and verified within 4 minutes with zero manual agent friction.',
-      quantifiedGain: '₹1.5 Cr deal pipeline captured',
+      quantifiedGain: 'Simulated Gain: ₹1.5 Cr pipeline captured',
       timeToImpact: '4 minutes',
     },
   },
@@ -116,14 +116,14 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
       modelsActive: ['Demand Forecaster Kernel', 'Kitchen Pacing Model', 'Standby Seat Balancer'],
     },
     understanding: {
-      diagnosis: 'Rainstorm triggers +45% surge in signature pasta & broth orders. Two empty 4-top tables risk $480 lost shift revenue.',
-      riskOrOpportunityScored: 'Revenue Leakage: $480 | Standby Fill Probability: 96%',
+      diagnosis: 'Rainstorm triggers modeled surge in signature pasta & broth orders. Two empty 4-top tables risk $480 lost shift revenue.',
+      riskOrOpportunityScored: 'Modeled Revenue Leakage: $480 | Standby Fill Probability: 96%',
       confidence: '96.2%',
       factors: ['Waitlist party S. Chen is 500m away', 'Kitchen hot line has 8-minute capacity window before peak'],
     },
     recommendation: {
       actionProposed: 'Dispatch 10-minute hold claim link to standby parties and notify Head Chef to prep 14 additional pasta portions.',
-      expectedImpact: 'Recovers 100% of cancellation revenue and prevents 20+ minute kitchen ticket delays.',
+      expectedImpact: 'Recovers cancellation revenue and prevents kitchen ticket delays.',
       confidenceScore: '97.5%',
     },
     action: {
@@ -138,7 +138,7 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     },
     result: {
       primaryOutcome: 'Both cancellation tables re-occupied in 3.5 minutes; zero food stockouts or ticket delays.',
-      quantifiedGain: '+$480 table revenue recovered',
+      quantifiedGain: 'Simulated Gain: +$480 shift yield recovered',
       timeToImpact: '3.5 minutes',
     },
   },
@@ -187,7 +187,7 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     },
     result: {
       primaryOutcome: 'Processed 31% more commuter orders; average lobby wait held under 2.5 minutes.',
-      quantifiedGain: '+$340 morning rush revenue',
+      quantifiedGain: 'Simulated Gain: +$340 rush revenue',
       timeToImpact: '2.5 minutes',
     },
   },
@@ -237,7 +237,7 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     },
     result: {
       primaryOutcome: 'Member returned to active training; $2,160 annual subscription value protected.',
-      quantifiedGain: '100% membership renewal secured',
+      quantifiedGain: 'Simulated Gain: $2,160 renewal protected',
       timeToImpact: '45 minutes',
     },
   },
@@ -287,7 +287,7 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     },
     result: {
       primaryOutcome: 'VIP client rebooked on-cadence; Tuesday mid-day chair vacancy monetized.',
-      quantifiedGain: '+₹9,500 service revenue captured',
+      quantifiedGain: 'Simulated Gain: +₹9,500 ticket captured',
       timeToImpact: '8 minutes',
     },
   },
@@ -336,7 +336,7 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     },
     result: {
       primaryOutcome: 'Full-price order captured; fulfillment completed from nearby physical store.',
-      quantifiedGain: '+$285 order preserved',
+      quantifiedGain: 'Simulated Gain: +$285 order preserved',
       timeToImpact: '2 minutes',
     },
   },
@@ -364,7 +364,7 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     },
     understanding: {
       diagnosis: 'Early arrival VIP guest. Suite 402 must be prioritized to prevent 20-minute lobby wait.',
-      riskOrOpportunityScored: 'Guest Satisfaction Impact: +40% ancilliary spend on early check-in',
+      riskOrOpportunityScored: 'Guest Satisfaction Impact: High ancillary spend likelihood',
       confidence: '99.4%',
       factors: ['Housekeeping team currently 2 doors down from Suite 402'],
     },
@@ -385,7 +385,7 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     },
     result: {
       primaryOutcome: 'Guest walked straight to prepared suite with zero lobby check-in waiting.',
-      quantifiedGain: '5-Star luxury review & +$120 room service spend',
+      quantifiedGain: 'Simulated Gain: VIP stay unlocked & +$120 ancillary spend',
       timeToImpact: '30 minutes',
     },
   },
@@ -434,7 +434,7 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     },
     result: {
       primaryOutcome: 'Open cardiology slot filled in 3 minutes; intake paperwork 100% complete prior to arrival.',
-      quantifiedGain: '+$350 provider revenue preserved',
+      quantifiedGain: 'Simulated Gain: +$350 clinical slot preserved',
       timeToImpact: '3 minutes',
     },
   },
@@ -484,7 +484,7 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     },
     result: {
       primaryOutcome: 'Repair order booked, bay locked, and parts staged with zero technician waiting time.',
-      quantifiedGain: '+₹18,500 service order captured',
+      quantifiedGain: 'Simulated Gain: +₹18,500 RO captured',
       timeToImpact: '5 minutes',
     },
   },
@@ -534,7 +534,7 @@ export const ALL_10_INDUSTRY_DEMOS: UniversalDemoWorkflow[] = [
     },
     result: {
       primaryOutcome: 'Application parsed, verified, and enrolled in 12 minutes vs 6-day industry average.',
-      quantifiedGain: '+$14,000 tuition enrollment secured',
+      quantifiedGain: 'Simulated Gain: +$14,000 tuition yield',
       timeToImpact: '12 minutes',
     },
   },

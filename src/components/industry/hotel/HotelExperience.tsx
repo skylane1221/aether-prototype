@@ -1,36 +1,44 @@
 import React, { useState } from 'react';
-import { Link, useOutletContext } from 'react-router-dom';
+import { useOutletContext, Link } from 'react-router-dom';
 import { IndustryData } from '../../../types';
 import { SectionHeader } from '../../ui/SectionHeader';
 import { Card } from '../../ui/Card';
 import { Badge } from '../../ui/Badge';
 import { Button } from '../../ui/Button';
-import { HealthcareWorkflowPipeline } from './HealthcareWorkflowPipeline';
-import { HealthcareAppointmentDemo } from './HealthcareAppointmentDemo';
-import { HealthcareBiDashboard } from './HealthcareBiDashboard';
 import { IndustryBreadcrumb } from '../../common/IndustryBreadcrumb';
 import { IndustryNextSteps } from '../../common/IndustryNextSteps';
+import { HotelWorkflowPipeline } from './HotelWorkflowPipeline';
+import { HotelOperationsDemo } from './HotelOperationsDemo';
+import { HotelBiDashboard } from './HotelBiDashboard';
 import {
-  Stethoscope,
+  BedDouble,
   ArrowRight,
+  CheckCircle2,
   AlertCircle,
+  Zap,
+  Play,
   Clock,
   Sparkles,
   ChevronDown,
   Activity,
-  Calendar,
+  Layers,
+  BrainCircuit,
+  Eye,
+  CalendarCheck,
+  TrendingUp,
+  UserCheck,
+  Coffee,
+  HeartHandshake,
+  DollarSign,
   ShieldCheck,
-  Play,
-  Zap,
-  FileText
 } from 'lucide-react';
 import { cn } from '../../../utils/cn';
 
-interface HealthcareExperienceProps {
+interface HotelExperienceProps {
   industry: IndustryData;
 }
 
-export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ industry }) => {
+export const HotelExperience: React.FC<HotelExperienceProps> = ({ industry }) => {
   const { openSolutionModal } = useOutletContext<{ openSolutionModal: () => void }>();
   const [openAccordionIdx, setOpenAccordionIdx] = useState<number | null>(0);
 
@@ -49,23 +57,23 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
     <div className="space-y-24 sm:space-y-32 pb-16">
       {/* Breadcrumb Navigation Trail */}
       <IndustryBreadcrumb
-        industrySlug="healthcare"
-        industryName="Healthcare & Clinics"
-        accentColor="cyan"
+        industrySlug="hotels"
+        industryName="Hotels & Hospitality"
+        accentColor="teal"
       />
 
       {/* ========================================================================= */}
-      {/* 01 HEALTHCARE HERO */}
+      {/* 01 INDUSTRY HERO */}
       {/* ========================================================================= */}
       <section className="relative pt-8 sm:pt-16 pb-12 sm:pb-16 text-center overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           {/* Eyebrow Badge */}
           <div className="mb-6 flex items-center gap-2 animate-fade-in">
-            <div className="w-7 h-7 rounded-lg flex items-center justify-center border text-xs bg-cyan-500/10 border-cyan-500/20 text-cyan-400">
-              <Stethoscope className="w-4 h-4" />
+            <div className="w-7 h-7 rounded-lg flex items-center justify-center border text-xs bg-teal-500/10 border-teal-500/20 text-teal-400">
+              <BedDouble className="w-4 h-4" />
             </div>
-            <Badge variant="primary" dot size="md">
-              Aether for Healthcare & Clinics
+            <Badge variant="primary" dot size="md" className="bg-teal-500/20 text-teal-300 border-teal-500/30">
+              Aether for Hotels & Hospitality
             </Badge>
           </div>
 
@@ -79,31 +87,25 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
             {industry.heroSubheadline}
           </p>
 
-          {/* Disclaimer Banner: Administrative Workflows Only */}
-          <div className="mt-4 px-4 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs font-mono flex items-center gap-2">
-            <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Administrative & Operational Practice Workflows • Non-Diagnostic</span>
-          </div>
-
           {/* Action Buttons */}
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto">
             <Button
               variant="primary"
               size="lg"
-              onClick={() => scrollToSection('appointment-demo-section')}
-              rightIcon={<ArrowRight className="w-4 h-4" />}
-              className="w-full sm:w-auto shadow-md"
+              onClick={() => scrollToSection('hotel-demo-section')}
+              leftIcon={<Play className="w-4 h-4 fill-current" />}
+              className="w-full sm:w-auto shadow-md font-semibold bg-teal-500 hover:bg-teal-400 text-slate-950"
             >
-              Analyze Appointment & No-Show Engine
+              Simulate Hotel Operations
             </Button>
             <Button
               variant="secondary"
               size="lg"
-              onClick={() => scrollToSection('solutions-section')}
-              leftIcon={<Play className="w-4 h-4 text-text-muted fill-current" />}
+              onClick={() => scrollToSection('hotel-solutions-section')}
+              rightIcon={<ArrowRight className="w-4 h-4" />}
               className="w-full sm:w-auto"
             >
-              Explore 8 Solutions
+              Explore 9 Hospitality Solutions
             </Button>
           </div>
 
@@ -111,7 +113,7 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
           <div className="mt-12 sm:mt-16 pt-8 border-t border-aether-border-subtle grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10 max-w-2xl w-full">
             {industry.stats.map((stat, idx: number) => (
               <div key={idx} className="flex flex-col items-center">
-                <span className="text-2xl sm:text-3xl font-extrabold font-mono tracking-tight text-cyan-400">
+                <span className="text-2xl sm:text-3xl font-extrabold font-mono tracking-tight text-teal-300">
                   {stat.value}
                 </span>
                 <span className="text-xs text-text-muted mt-1 uppercase tracking-wider font-medium">
@@ -124,27 +126,24 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 01.5 THE AETHER HEALTHCARE ARCHITECTURAL STORY */}
+      {/* 01.5 THE AETHER HOTEL ARCHITECTURAL STORY */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12">
-        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900/95 via-slate-900/90 to-slate-950/95 border border-cyan-500/30 shadow-2xl backdrop-blur-md">
+        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900/95 via-slate-900/90 to-slate-950/95 border border-teal-500/30 shadow-2xl backdrop-blur-md">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
             <div>
-              <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                <Badge variant="primary" size="sm" className="bg-cyan-500/20 text-cyan-300 border-cyan-500/30">
-                  Practice Intelligence Thesis
+              <div className="flex items-center gap-2 mb-1.5">
+                <Badge variant="primary" size="sm" className="bg-teal-500/20 text-teal-300 border-teal-500/30">
+                  Core Hospitality Thesis
                 </Badge>
-                <span className="text-xs font-mono text-cyan-400 font-semibold">Administrative & Operational Intelligence</span>
-                <span className="text-[10px] font-mono bg-rose-500/10 text-rose-300 border border-rose-500/20 px-2 py-0.5 rounded">
-                  Non-Diagnostic
-                </span>
+                <span className="text-xs font-mono text-teal-400 font-semibold">Autonomous Operations & Yield Engine</span>
               </div>
               <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                "Eliminate administrative bottlenecks and clinic no-shows through operational intelligence."
+                "Turn booking and guest signals into smarter operational decisions."
               </h2>
             </div>
             <div className="flex items-center gap-2 text-xs font-mono text-text-muted bg-slate-950/80 px-3 py-1.5 rounded-lg border border-slate-800">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+              <Sparkles className="w-3.5 h-3.5 text-teal-400" />
               <span>Problem → Opportunity → Intelligence → Recommendation → Action → Impact</span>
             </div>
           </div>
@@ -157,64 +156,64 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                 <span>1. Problem</span>
               </div>
               <h4 className="text-xs font-bold text-white leading-snug">
-                18-24% No-Shows & Idle Slots
+                Volatile Pacing & Turn Delays
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Unconfirmed appointments leave specialist blocks vacant while front-desk staff juggle manual phone calls and paper clipboards.
+                Last-minute OTA cancellations, unforeseen check-in surges, and static housekeeping shifts cause room turnaround bottlenecks and lost RevPAR.
               </p>
               <span className="text-[10px] font-mono text-rose-400 pt-1 border-t border-rose-500/20">
-                ₹1.2L+ Lost Per Provider/Wk
+                14-22% RevPAR Leakage
               </span>
             </div>
 
             {/* 2. Opportunity */}
             <div className="p-4 rounded-xl bg-amber-950/20 border border-amber-500/30 flex flex-col justify-between space-y-2.5">
               <div className="flex items-center gap-1.5 text-amber-400 font-bold text-[10px] uppercase font-mono">
-                <Clock className="w-3.5 h-3.5 shrink-0" />
+                <TrendingUp className="w-3.5 h-3.5 shrink-0" />
                 <span>2. Opportunity</span>
               </div>
               <h4 className="text-xs font-bold text-white leading-snug">
-                Predictive Slot Protection
+                Dynamic Yield & Room Flow
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Forecast attendance risk 24-48 hours in advance to trigger digital intake and auto-fill cancellations from the urgent standby queue.
+                Pre-empt no-shows with algorithmic overbooking buffers while dynamically dispatching cleaning pods ahead of peak arrival windows.
               </p>
               <span className="text-[10px] font-mono text-amber-300 pt-1 border-t border-amber-500/20">
-                &lt;5 Min Slot Recovery
+                48-Hour Yield Window
               </span>
             </div>
 
             {/* 3. Aether Intelligence */}
-            <div className="p-4 rounded-xl bg-cyan-950/20 border border-cyan-500/30 flex flex-col justify-between space-y-2.5">
-              <div className="flex items-center gap-1.5 text-cyan-400 font-bold text-[10px] uppercase font-mono">
-                <Calendar className="w-3.5 h-3.5 shrink-0" />
+            <div className="p-4 rounded-xl bg-teal-950/20 border border-teal-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-teal-400 font-bold text-[10px] uppercase font-mono">
+                <BrainCircuit className="w-3.5 h-3.5 shrink-0" />
                 <span>3. Intelligence</span>
               </div>
               <h4 className="text-xs font-bold text-white leading-snug">
-                Operational Telemetry Mesh
+                PMS & Telemetry Synthesis
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Synthesizes historical attendance records, booking lead-time, department capacity, digital intake status, and provider pacing.
+                Aggregates booking channels, flight arrival feeds, guest profile stay history, VIP tags, and real-time floor status into one operational brain.
               </p>
-              <span className="text-[10px] font-mono text-cyan-300 pt-1 border-t border-cyan-500/20">
-                Administrative EHR Feed
+              <span className="text-[10px] font-mono text-teal-300 pt-1 border-t border-teal-500/20">
+                Unified Hospitality Mesh
               </span>
             </div>
 
             {/* 4. Recommendation */}
             <div className="p-4 rounded-xl bg-sky-950/20 border border-sky-500/30 flex flex-col justify-between space-y-2.5">
               <div className="flex items-center gap-1.5 text-sky-400 font-bold text-[10px] uppercase font-mono">
-                <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
+                <CalendarCheck className="w-3.5 h-3.5 shrink-0" />
                 <span>4. Recommendation</span>
               </div>
               <h4 className="text-xs font-bold text-white leading-snug">
-                Targeted Pre-Visit Protocol
+                Dynamic Staffing & Pricing
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Prescribes precise conversational channel, timing, pre-visit checklist, and optimal standby overbook buffer.
+                Computes optimal housekeeping unit allocations, front-desk peak staffing hours, and dynamic rate adjustments across direct & OTA channels.
               </p>
               <span className="text-[10px] font-mono text-sky-300 pt-1 border-t border-sky-500/20">
-                Dynamic Reminder Cadence
+                Precision Pod Schedules
               </span>
             </div>
 
@@ -225,10 +224,10 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                 <span>5. Action</span>
               </div>
               <h4 className="text-xs font-bold text-white leading-snug">
-                Autonomous Dispatch & Sync
+                Autonomous Roster & Rate Push
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Sends personalized 1-tap confirmation WhatsApp/SMS with digital intake link and syncs attendance status to front-desk kiosk.
+                Pushes priority turnover queues directly to staff mobile handsets, triggers corporate waitlists, and syncs rates across channel managers.
               </p>
               <span className="text-[10px] font-mono text-indigo-300 pt-1 border-t border-indigo-500/20">
                 Instant System Sync
@@ -242,13 +241,13 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                 <span>6. Impact</span>
               </div>
               <h4 className="text-xs font-bold text-white leading-snug">
-                -78% No-Shows & +16% Capacity
+                +14.2% RevPAR & Zero Delays
               </h4>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Recovers 84% of open cancellation slots, cuts waiting room wait times to under 4.5 minutes, and saves 12 hours/week in admin time.
+                60% reduction in check-in turnover bottlenecks, 98% VIP room readiness on arrival, and sustained direct booking margin expansion.
               </p>
               <span className="text-[10px] font-mono text-emerald-400 pt-1 border-t border-emerald-500/20">
-                Optimized Practice Yield
+                Maximum Guest Lifetime Value
               </span>
             </div>
           </div>
@@ -256,21 +255,26 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 02 BUSINESS PROBLEMS & OPERATIONAL BOTTLENECKS */}
+      {/* 02 8 REALISTIC HOTEL PROBLEMS */}
       {/* ========================================================================= */}
       <section id="challenges-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Administrative Bottlenecks"
-          title="Core Challenges in Outpatient & Clinic Operations"
-          subtitle="The operational frictions causing intake delays, provider idle time, and last-minute cancellation gaps."
+          badge="Hospitality Friction"
+          title="8 Core Challenges in Hotel & Resort Operations"
+          subtitle="The systemic bottlenecks across occupancy volatility, housekeeping turnover delays, and fragmented guest preferences eroding RevPAR."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {industry.challenges.map((item, idx: number) => (
-            <Card key={item.id} className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all">
+            <Card
+              key={item.id}
+              className="p-5 flex flex-col justify-between h-full bg-slate-900/70 border-slate-800 hover:border-slate-700 transition-all"
+            >
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-slate-800">
-                  <span className="text-[10px] font-mono text-cyan-400 font-bold">Challenge 0{idx + 1}</span>
+                  <span className="text-[10px] font-mono text-teal-400 font-bold">
+                    Problem 0{idx + 1}
+                  </span>
                   <span
                     className={cn(
                       'text-[9px] uppercase font-mono px-2 py-0.5 rounded font-bold',
@@ -302,7 +306,7 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                 <div className="pt-1">
                   <div className="text-[10px] font-semibold text-text-muted uppercase tracking-wider mb-1 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
-                    <span>Consequence</span>
+                    <span>Business Consequence</span>
                   </div>
                   <p className="text-xs text-text-secondary leading-relaxed pl-4">
                     {item.consequence}
@@ -320,29 +324,32 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Opportunity Discovery"
-          title="Transforming Clinic Bottlenecks Into Administrative Multipliers"
-          subtitle="How Aether diagnoses intake drag and unlocks maximum provider utilization and patient continuity."
+          title="Transforming Hospitality Friction Into Yield Multipliers"
+          subtitle="How Aether turns cancellation risks and housekeeping bottlenecks into automated room turnaround and direct booking retention."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {industry.opportunities.map((opp, idx: number) => (
-            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card">
+            <Card
+              key={idx}
+              className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card"
+            >
               <div className="space-y-4">
                 <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
                   <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
-                    Diagnosed Practice Friction
+                    Diagnosed Hotel Friction
                   </div>
                   <p className="text-xs sm:text-sm text-text-secondary leading-snug">
                     {opp.problem}
                   </p>
                 </div>
 
-                <div className="flex justify-center text-cyan-400">
+                <div className="flex justify-center text-teal-400">
                   <ArrowRight className="w-4 h-4 rotate-90" />
                 </div>
 
-                <div className="p-3.5 rounded-lg bg-cyan-500/5 border border-cyan-500/25">
-                  <div className="text-[11px] font-semibold text-cyan-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                <div className="p-3.5 rounded-lg bg-teal-500/5 border border-teal-500/25">
+                  <div className="text-[11px] font-semibold text-teal-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
                     <Zap className="w-3.5 h-3.5" />
                     <span>Aether Opportunity</span>
                   </div>
@@ -362,24 +369,29 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 04 8 AETHER SOLUTIONS MAPPINGS */}
+      {/* 04 9 AETHER HOTEL SOLUTIONS */}
       {/* ========================================================================= */}
-      <section id="solutions-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="hotel-solutions-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Operational Intelligence Mesh"
-          title="8 Intelligent Solutions for Healthcare & Clinics"
-          subtitle="Streamlining outpatient operations from reactive scheduling to predictive clinic capacity and administrative automation."
+          badge="Platform Solutions"
+          title="9 Intelligent Solutions for Hotel Operations"
+          subtitle="Autonomous capabilities spanning multi-channel booking intelligence, cancellation protection, housekeeping routing, and dynamic RevPAR yield."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {industry.solutionMappings.map((mapping, idx: number) => (
-            <Card key={idx} className="p-5 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80">
+            <Card
+              key={idx}
+              className="p-5 sm:p-6 flex flex-col justify-between h-full bg-slate-900/80 border-slate-700/80 hover:border-teal-500/40 transition-all"
+            >
               <div className="space-y-3">
                 <div className="flex items-center justify-between mb-1">
                   <Badge variant="neutral" size="sm" className="font-mono text-[10px]">
                     {mapping.capabilityTag}
                   </Badge>
-                  <span className="text-[10px] font-mono text-cyan-400">Solution 0{idx + 1}</span>
+                  <span className="text-[10px] font-mono text-teal-300">
+                    Solution 0{idx + 1}
+                  </span>
                 </div>
 
                 <div className="text-xs text-text-muted">
@@ -390,15 +402,15 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
                 </div>
 
                 <div className="text-xs text-text-secondary pl-2.5 border-l border-slate-700">
-                  <span className="font-semibold text-cyan-400 uppercase tracking-wider text-[10px] block mb-0.5">
+                  <span className="font-semibold text-teal-400 uppercase tracking-wider text-[10px] block mb-0.5">
                     2. Unlocked Opportunity
                   </span>
                   {mapping.opportunity}
                 </div>
 
-                <div className="p-3 rounded-lg bg-slate-950 border border-cyan-500/20 text-xs text-text-primary leading-relaxed font-medium">
-                  <span className="font-bold text-cyan-400 uppercase tracking-wider text-[10px] block mb-1">
-                    3. Aether Capability
+                <div className="p-3 rounded-lg bg-slate-950/90 border border-teal-500/20 text-xs text-text-primary leading-relaxed font-medium">
+                  <span className="font-bold text-emerald-400 uppercase tracking-wider text-[10px] block mb-1">
+                    3. Aether Autonomous Solution
                   </span>
                   {mapping.solution}
                 </div>
@@ -409,51 +421,46 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 05 SIGNATURE WORKFLOW (Appointment -> Communication -> Attendance -> Follow-up -> Administration) */}
+      {/* 05 SIGNATURE WORKFLOW (Booking -> Occupancy -> Guest -> Operations -> Experience -> Retention) */}
       {/* ========================================================================= */}
       <section id="workflow-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <HealthcareWorkflowPipeline />
+        <HotelWorkflowPipeline />
       </section>
 
       {/* ========================================================================= */}
-      {/* 06 SIGNATURE INTERACTIVE DEMO (Appointment & No-Show Engine) */}
+      {/* 06 SIGNATURE INTERACTIVE DEMO (Hotel Operations Scenario) */}
       {/* ========================================================================= */}
-      <section id="appointment-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="hotel-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Signature Interactive Sandbox"
-          title="Clinical Appointment & No-Show Interception Engine"
-          subtitle="Select an upcoming clinic appointment to analyze calculated attendance risk, pre-visit digital checklists, and automated 1-tap reminders."
+          title="Simulate Daily Hotel Operations & Shift Intelligence"
+          subtitle="Select a date to model expected occupancy, predict OTA cancellations, calculate housekeeping turnover load, and auto-dispatch staff allocations."
         />
 
-        <HealthcareAppointmentDemo />
+        <HotelOperationsDemo />
       </section>
 
       {/* ========================================================================= */}
       {/* 07 BUSINESS INTELLIGENCE DASHBOARD */}
       {/* ========================================================================= */}
-      <section id="bi-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge="Live Clinic Analytics"
-          title="Clinical Capacity & Operational Intelligence"
-          subtitle="Real-time simulated analytics for examination room occupancy, no-show rate reduction, and departmental wait times."
-        />
-
-        <HealthcareBiDashboard />
+      <section id="bi-dashboard-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <HotelBiDashboard />
       </section>
 
       {/* ========================================================================= */}
-      {/* 08 BUSINESS IMPACT */}
+      {/* 08 BUSINESS IMPACT (Time, Efficiency, Customer Experience, Operations, Decision Making, Visibility) */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Value Realization"
-          title="Measurable Administrative Impact for Outpatient Clinics"
-          subtitle="Quantifiable improvements delivered across provider schedule fill rates, administrative hours saved, and patient waiting room velocity."
+          title="Business Impact & ROI in Hotel Operations"
+          subtitle="Quantifiable RevPAR expansion, labor efficiency gains, and direct booking retention delivered across hotel properties."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <Card className="p-6">
-            <div className="flex items-center gap-2.5 mb-3 text-cyan-400 font-bold text-sm">
+          {/* Time */}
+          <Card className="p-6 bg-slate-900/70 border-slate-800">
+            <div className="flex items-center gap-2.5 mb-3 text-teal-400 font-bold text-sm">
               <Clock className="w-4 h-4" />
               <span>Time Saved</span>
             </div>
@@ -462,50 +469,55 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
             </p>
           </Card>
 
-          <Card className="p-6">
-            <div className="flex items-center gap-2.5 mb-3 text-teal-400 font-bold text-sm">
+          {/* Efficiency */}
+          <Card className="p-6 bg-slate-900/70 border-slate-800">
+            <div className="flex items-center gap-2.5 mb-3 text-sky-400 font-bold text-sm">
               <Zap className="w-4 h-4" />
-              <span>Efficiency & Throughput</span>
+              <span>Room Turnover Speed</span>
             </div>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {industry.businessImpact.efficiency}
             </p>
           </Card>
 
-          <Card className="p-6">
-            <div className="flex items-center gap-2.5 mb-3 text-sky-400 font-bold text-sm">
+          {/* Customer Experience */}
+          <Card className="p-6 bg-slate-900/70 border-slate-800">
+            <div className="flex items-center gap-2.5 mb-3 text-emerald-400 font-bold text-sm">
               <Sparkles className="w-4 h-4" />
-              <span>Patient Experience</span>
+              <span>Guest Experience & CSAT</span>
             </div>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {industry.businessImpact.customerExperience}
             </p>
           </Card>
 
-          <Card className="p-6">
-            <div className="flex items-center gap-2.5 mb-3 text-rose-400 font-bold text-sm">
+          {/* Operations */}
+          <Card className="p-6 bg-slate-900/70 border-slate-800">
+            <div className="flex items-center gap-2.5 mb-3 text-amber-400 font-bold text-sm">
               <Activity className="w-4 h-4" />
-              <span>Operations & Rosters</span>
+              <span>Operations & Rostering</span>
             </div>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {industry.businessImpact.operations}
             </p>
           </Card>
 
-          <Card className="p-6">
-            <div className="flex items-center gap-2.5 mb-3 text-emerald-400 font-bold text-sm">
-              <ShieldCheck className="w-4 h-4" />
-              <span>Decision Making</span>
+          {/* Decision Making */}
+          <Card className="p-6 bg-slate-900/70 border-slate-800">
+            <div className="flex items-center gap-2.5 mb-3 text-indigo-400 font-bold text-sm">
+              <BrainCircuit className="w-4 h-4" />
+              <span>Revenue & Yield Management</span>
             </div>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {industry.businessImpact.decisionMaking}
             </p>
           </Card>
 
-          <Card className="p-6">
-            <div className="flex items-center gap-2.5 mb-3 text-indigo-400 font-bold text-sm">
-              <Calendar className="w-4 h-4" />
-              <span>Visibility & Continuity</span>
+          {/* Visibility */}
+          <Card className="p-6 bg-slate-900/70 border-slate-800">
+            <div className="flex items-center gap-2.5 mb-3 text-teal-300 font-bold text-sm">
+              <Eye className="w-4 h-4" />
+              <span>Single-Pane PMS Visibility</span>
             </div>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {industry.businessImpact.visibility}
@@ -519,44 +531,50 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Enterprise Modular Architecture"
-          title="Complete Clinical Practice Capability Grid"
-          subtitle="Expandable functional modules engineered for independent outpatient practices and multi-facility hospital networks."
+          badge="Extended Hospitality Mesh"
+          title="Additional Capabilities for Hotels & Resorts"
+          subtitle="Modular architectural extensions connecting Opera PMS, Salto digital keycards, GDS channels, and in-room IoT."
         />
 
         <div className="space-y-4 max-w-4xl mx-auto">
-          {industry.additionalCapabilities.map((cap, idx: number) => {
+          {industry.additionalCapabilities.map((group, idx: number) => {
             const isOpen = openAccordionIdx === idx;
             return (
-              <Card key={idx} className="overflow-hidden border-slate-800">
+              <Card
+                key={idx}
+                className="p-5 sm:p-6 transition-all duration-200 border-slate-700/80 card-gradient-surface"
+              >
                 <button
                   onClick={() => toggleAccordion(idx)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-slate-800/40 transition-colors"
+                  className="w-full flex items-center justify-between text-left gap-4"
                 >
-                  <div>
-                    <span className="text-[10px] font-mono text-cyan-400 font-semibold block mb-1">
-                      CAPABILITY MODULE 0{idx + 1}
-                    </span>
-                    <h4 className="text-base font-bold text-text-primary">{cap.groupTitle}</h4>
-                    <p className="text-xs text-text-secondary mt-1">{cap.summary}</p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-slate-900 border border-aether-border flex items-center justify-center text-teal-400 shrink-0">
+                      <Layers className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold text-text-primary">{group.groupTitle}</h4>
+                      <p className="text-xs text-text-muted mt-0.5">{group.summary}</p>
+                    </div>
                   </div>
-                  <div
+                  <ChevronDown
                     className={cn(
-                      'w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-text-muted shrink-0 transition-transform duration-200',
-                      isOpen && 'rotate-180 text-cyan-400 border-cyan-500/40'
+                      'w-5 h-5 text-text-muted transition-transform duration-200 shrink-0',
+                      isOpen && 'rotate-180 text-teal-400'
                     )}
-                  >
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
+                  />
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-2 border-t border-slate-800/80 bg-slate-950/40">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
-                      {cap.features.map((feature: string, fIdx: number) => (
-                        <div key={fIdx} className="flex items-start gap-2 text-xs text-text-secondary">
-                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 mt-1.5" />
-                          <span>{feature}</span>
+                  <div className="mt-5 pt-4 border-t border-aether-border-subtle animate-fade-in">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      {group.features.map((feat: string, i: number) => (
+                        <div
+                          key={i}
+                          className="p-3 rounded-lg bg-aether-surface border border-aether-border text-xs text-text-secondary flex items-start gap-2"
+                        >
+                          <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0 mt-0.5" />
+                          <span>{feat}</span>
                         </div>
                       ))}
                     </div>
@@ -570,8 +588,8 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
 
       {/* Guided Progression Next Steps */}
       <IndustryNextSteps
-        industrySlug="healthcare"
-        industryName="Healthcare & Clinics"
+        industrySlug="hotels"
+        industryName="Hotels & Hospitality"
         onRequestSolution={openSolutionModal}
       />
 
@@ -579,33 +597,37 @@ export const HealthcareExperience: React.FC<HealthcareExperienceProps> = ({ indu
       {/* 10 BOTTOM CTA */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-2xl p-8 sm:p-12 text-center overflow-hidden border border-cyan-500/30 bg-gradient-to-b from-cyan-950/30 via-slate-900 to-slate-950">
-          <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-            <Badge variant="primary" dot size="md">
-              Practice Administration Transformation
-            </Badge>
+        <div className="relative rounded-2xl bg-aether-card card-gradient-surface border border-slate-700/80 p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-card-hover">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-text-primary tracking-tight">
-              Ready to Eliminate Clipboard Delays & Unfilled Provider Slots?
+          <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+            <div className="mb-4">
+              <Badge variant="primary" dot size="md" className="bg-teal-500/20 text-teal-300 border-teal-500/30">
+                Hospitality Executive Briefing
+              </Badge>
+            </div>
+
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-text-primary leading-tight">
+              Elevate Guest Experiences & Maximize Hotel RevPAR
             </h2>
 
-            <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-              Deploy Aether alongside your current EHR or practice management system to automate administrative intake, recover open slots, and eliminate no-shows.
+            <p className="mt-4 text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed max-w-2xl">
+              Eliminate check-in friction, predict cancellations, and dynamically route housekeeping workflows with a cognitive engine custom-tailored to your property footprint.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
               <Button
                 variant="primary"
                 size="lg"
                 onClick={openSolutionModal}
                 rightIcon={<ArrowRight className="w-4 h-4" />}
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto font-semibold shadow-md bg-teal-500 hover:bg-teal-400 text-slate-950"
               >
-                Schedule Custom Clinic Demo
+                Request Custom Hospitality Architecture
               </Button>
-              <Link to="/industries">
+              <Link to="/industries" className="w-full sm:w-auto">
                 <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                  Explore Other Industries
+                  Explore Other Verticals
                 </Button>
               </Link>
             </div>

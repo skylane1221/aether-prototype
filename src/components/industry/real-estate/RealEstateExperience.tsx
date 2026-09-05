@@ -25,9 +25,6 @@ import {
   Layers,
   BrainCircuit,
   Eye,
-  Repeat,
-  Radio,
-  Cpu,
   Target,
 } from 'lucide-react';
 import { cn } from '../../../utils/cn';
@@ -61,7 +58,7 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
       />
 
       {/* ========================================================================= */}
-      {/* 01 INDUSTRY HERO */}
+      {/* 01 INDUSTRY OVERVIEW / HERO */}
       {/* ========================================================================= */}
       <section className="relative pt-8 sm:pt-16 pb-12 sm:pb-16 text-center overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
@@ -92,18 +89,18 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
               size="lg"
               onClick={() => scrollToSection('hero-demo-section')}
               rightIcon={<ArrowRight className="w-4 h-4" />}
-              className="w-full sm:w-auto shadow-md"
+              className="w-full sm:w-auto shadow-md font-semibold"
             >
               Try Natural Language Ingest
             </Button>
             <Button
               variant="secondary"
               size="lg"
-              onClick={() => scrollToSection('reverse-demo-section')}
-              leftIcon={<Play className="w-4 h-4 text-text-muted fill-current" />}
+              onClick={() => scrollToSection('solutions-section')}
+              rightIcon={<ArrowRight className="w-4 h-4" />}
               className="w-full sm:w-auto"
             >
-              Explore Reverse Matching
+              Explore 12 Real Estate Solutions
             </Button>
           </div>
 
@@ -111,7 +108,7 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
           <div className="mt-12 sm:mt-16 pt-8 border-t border-aether-border-subtle grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10 max-w-2xl w-full">
             {industry.stats.map((stat, idx) => (
               <div key={idx} className="flex flex-col items-center">
-                <span className="text-2xl sm:text-3xl font-extrabold font-mono tracking-tight text-text-primary">
+                <span className="text-2xl sm:text-3xl font-extrabold font-mono tracking-tight text-cyan-400">
                   {stat.value}
                 </span>
                 <span className="text-xs text-text-muted mt-1 uppercase tracking-wider font-medium">
@@ -124,20 +121,124 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 02 CORE JOURNEY PIPELINE */}
+      {/* 01.5 THE AETHER COGNITIVE PARADIGM (Problem -> Understands -> Recommends) */}
       {/* ========================================================================= */}
-      <section id="journey-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <RealEstateJourneyPipeline />
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12">
+        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900/95 via-slate-900/90 to-slate-950/95 border border-cyan-500/30 shadow-2xl backdrop-blur-md">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+            <div>
+              <div className="flex items-center gap-2 mb-1.5">
+                <Badge variant="primary" size="sm">
+                  The Core Real Estate Architecture
+                </Badge>
+                <span className="text-xs font-mono text-cyan-400 font-semibold">From Fragmentation to Automated Conversion</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                How Aether Eliminates Deal Friction
+              </h2>
+            </div>
+            <div className="flex items-center gap-2 text-xs font-mono text-text-muted bg-slate-950/80 px-3 py-1.5 rounded-lg border border-slate-800">
+              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+              <span>7 Ingest Attributes → 5 Recommendation Outputs</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+            {/* 1. Problem */}
+            <div className="p-5 rounded-xl bg-rose-950/20 border border-rose-500/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 text-rose-400 font-bold text-xs uppercase tracking-wider mb-2">
+                  <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
+                  <span>The Core Problem</span>
+                </div>
+                <h3 className="text-base font-extrabold text-white">
+                  Leads & Requirements Are Fragmented
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
+                  Inquiries arrive unstructured across WhatsApp, web forms, and portals. Agents spend 80% of their day manually copying parameters, missing subtle buyer criteria and failing to respond before buyer intent cools.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-rose-500/20 flex items-center justify-between text-[11px] font-mono text-rose-300/80">
+                <span>Resulting In:</span>
+                <span className="font-bold text-rose-300">40% Deal Drop-off</span>
+              </div>
+            </div>
+
+            {/* 2. Aether Understands */}
+            <div className="p-5 rounded-xl bg-indigo-950/20 border border-indigo-500/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 text-indigo-400 font-bold text-xs uppercase tracking-wider mb-2">
+                  <BrainCircuit className="w-4 h-4 text-indigo-400 shrink-0" />
+                  <span>Aether Understands</span>
+                </div>
+                <h3 className="text-base font-extrabold text-white">
+                  Instant Attribute Extraction
+                </h3>
+                <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                  Aether parses raw voice notes, chat transcripts, and web leads into 7 structured parameters:
+                </p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {['Property Type', 'Location', 'Budget', 'Configuration', 'Parking', 'Possession', 'Intent Score'].map((attr, i) => (
+                    <span
+                      key={attr}
+                      className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-indigo-500/10 border border-indigo-500/25 text-indigo-300"
+                    >
+                      {i + 1}. {attr}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="pt-3 border-t border-indigo-500/20 flex items-center justify-between text-[11px] font-mono text-indigo-300/80">
+                <span>Parsing Latency:</span>
+                <span className="font-bold text-indigo-300">&lt; 150ms</span>
+              </div>
+            </div>
+
+            {/* 3. Aether Recommends */}
+            <div className="p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 text-cyan-400 font-bold text-xs uppercase tracking-wider mb-2">
+                  <Target className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <span>Aether Recommends</span>
+                </div>
+                <h3 className="text-base font-extrabold text-white">
+                  Automated Decision Engine
+                </h3>
+                <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                  Synthesizes inventory database and buyer scoring to output 5 actionable directives:
+                </p>
+                <div className="mt-3 space-y-1.5">
+                  {[
+                    'Property Matches (Ranked by Match %)',
+                    'Lead Priority (Hot / Medium / Warm)',
+                    'Next Action (Call / WhatsApp Dossier)',
+                    'Site Visit Recommendation (Slot & Logistics)',
+                    'Follow-up Sequence (Multi-Touch Cadence)',
+                  ].map((rec, i) => (
+                    <div key={rec} className="flex items-center gap-2 text-[11px] font-mono text-cyan-300">
+                      <CheckCircle2 className="w-3 h-3 text-cyan-400 shrink-0" />
+                      <span>{i + 1}. {rec}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="pt-3 border-t border-cyan-500/20 flex items-center justify-between text-[11px] font-mono text-cyan-300/80">
+                <span>Conversion Uplift:</span>
+                <span className="font-bold text-cyan-300">+38% Site Visits</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 03 BUSINESS CHALLENGES (8 Core Problems) */}
+      {/* 02 BUSINESS PROBLEMS & OPERATIONAL BOTTLENECKS */}
       {/* ========================================================================= */}
       <section id="challenges-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Operational Friction"
           title="8 Core Challenges in Real Estate Brokerage"
-          subtitle="The systemic root causes and business consequences creating deal friction and lead decay."
+          subtitle="The systemic root causes and business consequences creating deal friction and lead decay across property portals."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -190,33 +291,54 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 04 HERO INTERACTIVE DEMO (Conversation-to-Requirement & Property Matching) */}
+      {/* 03 AETHER OPPORTUNITIES */}
       {/* ========================================================================= */}
-      <section id="hero-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Flagship Interactive Showcase"
-          title="Conversation-to-Requirement & Property Match Engine"
-          subtitle="Test how Aether parses unstructured buyer messages, builds requirement profiles, and matches live inventory."
+          badge="Opportunity Discovery"
+          title="Transforming Brokerage Drag Into Velocity Multipliers"
+          subtitle="How Aether diagnoses hidden qualification latency and unlocks high-leverage transaction value."
         />
 
-        <RealEstateHeroDemo />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {industry.opportunities.map((opp, idx) => (
+            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card">
+              <div className="space-y-4">
+                <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
+                  <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
+                    Diagnosed Friction
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-secondary leading-snug">
+                    {opp.problem}
+                  </p>
+                </div>
+
+                <div className="flex justify-center text-cyan-400">
+                  <ArrowRight className="w-4 h-4 rotate-90" />
+                </div>
+
+                <div className="p-3.5 rounded-lg bg-cyan-500/5 border border-cyan-500/25">
+                  <div className="text-[11px] font-semibold text-cyan-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                    <Zap className="w-3.5 h-3.5" />
+                    <span>Aether Opportunity</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-primary font-medium leading-snug">
+                    {opp.opportunity}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
+                <span className="text-text-muted font-mono">Projected Multiplier:</span>
+                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+              </div>
+            </Card>
+          ))}
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 05 SECONDARY INTERACTIVE DEMO (Reverse Property Matching) */}
-      {/* ========================================================================= */}
-      <section id="reverse-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge="Secondary Interactive Showcase"
-          title="Reverse Property Matching"
-          subtitle="Select new or price-revised developer inventory to instantly surface pre-qualified, ready-to-buy clients."
-        />
-
-        <RealEstateReverseMatchDemo />
-      </section>
-
-      {/* ========================================================================= */}
-      {/* 06 AETHER 12 SOLUTIONS MAPPINGS */}
+      {/* 04 AETHER 12 SOLUTIONS MAPPINGS */}
       {/* ========================================================================= */}
       <section id="solutions-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -263,15 +385,39 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 07 BUSINESS INTELLIGENCE (Interactive 5-Tab Dashboard) */}
+      {/* 05 SIGNATURE WORKFLOW (Journey Pipeline) */}
+      {/* ========================================================================= */}
+      <section id="journey-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <RealEstateJourneyPipeline />
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 06 SIGNATURE INTERACTIVE DEMOS */}
+      {/* ========================================================================= */}
+      <section id="hero-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div>
+          <SectionHeader
+            badge="Flagship Interactive Showcase"
+            title="Conversation-to-Requirement & Property Match Engine"
+            subtitle="Test how Aether parses unstructured buyer messages, builds requirement profiles, and matches live inventory."
+          />
+          <RealEstateHeroDemo />
+        </div>
+
+        <div id="reverse-demo-section" className="pt-8 border-t border-slate-800">
+          <SectionHeader
+            badge="Secondary Interactive Showcase"
+            title="Reverse Property Matching"
+            subtitle="Select new or price-revised developer inventory to instantly surface pre-qualified, ready-to-buy clients."
+          />
+          <RealEstateReverseMatchDemo />
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 07 BUSINESS INTELLIGENCE DASHBOARD */}
       {/* ========================================================================= */}
       <section id="bi-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge="Live Cognitive Analytics"
-          title="Brokerage Intelligence Dashboard"
-          subtitle="Real-time simulated telemetry for funnel progression, buyer intent, micro-market demand, and inventory status."
-        />
-
         <RealEstateBiDashboard />
       </section>
 
@@ -281,12 +427,12 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Value Realization"
-          title="Measurable Business Impact"
-          subtitle="Quantifiable improvements delivered across every dimension of real estate operations."
+          title="Qualitative & Quantitative Impact in Real Estate"
+          subtitle="How Aether creates measurable improvements across every brokerage operational dimension."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <Card className="p-6">
+          <Card className="p-6 bg-slate-900/70 border-slate-800">
             <div className="flex items-center gap-2.5 mb-3 text-cyan-400 font-bold text-sm">
               <Clock className="w-4 h-4" />
               <span>Time Saved</span>
@@ -296,37 +442,37 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
             </p>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-6 bg-slate-900/70 border-slate-800">
             <div className="flex items-center gap-2.5 mb-3 text-indigo-400 font-bold text-sm">
               <Zap className="w-4 h-4" />
-              <span>Efficiency & Throughput</span>
+              <span>Viewing Conversion</span>
             </div>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {industry.businessImpact.efficiency}
             </p>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-6 bg-slate-900/70 border-slate-800">
             <div className="flex items-center gap-2.5 mb-3 text-emerald-400 font-bold text-sm">
               <Sparkles className="w-4 h-4" />
-              <span>Customer Experience</span>
+              <span>Client Experience</span>
             </div>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {industry.businessImpact.customerExperience}
             </p>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-6 bg-slate-900/70 border-slate-800">
             <div className="flex items-center gap-2.5 mb-3 text-amber-400 font-bold text-sm">
               <Activity className="w-4 h-4" />
-              <span>Operations & Rostering</span>
+              <span>Broker Operations</span>
             </div>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {industry.businessImpact.operations}
             </p>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-6 bg-slate-900/70 border-slate-800">
             <div className="flex items-center gap-2.5 mb-3 text-teal-400 font-bold text-sm">
               <BrainCircuit className="w-4 h-4" />
               <span>Decision Making</span>
@@ -336,10 +482,10 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
             </p>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-6 bg-slate-900/70 border-slate-800">
             <div className="flex items-center gap-2.5 mb-3 text-sky-300 font-bold text-sm">
               <Eye className="w-4 h-4" />
-              <span>Single-Pane Visibility</span>
+              <span>Pipeline Visibility</span>
             </div>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {industry.businessImpact.visibility}
@@ -349,13 +495,13 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 09 ADDITIONAL CAPABILITIES */}
+      {/* 09 ADDITIONAL CAPABILITIES ACCORDION */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Extended Mesh"
-          title="Modular Real Estate Integrations"
-          subtitle="Plug-and-play integrations with MLS, CRM databases, WhatsApp Business API, and digital lockboxes."
+          badge="Extended Real Estate Mesh"
+          title="Additional Capabilities for Real Estate Brokerages"
+          subtitle="Modular architectural extensions connecting MLS portals, WhatsApp Business API, and CRM databases."
         />
 
         <div className="space-y-4 max-w-4xl mx-auto">
@@ -416,7 +562,7 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
       />
 
       {/* ========================================================================= */}
-      {/* 10 FINAL CTA */}
+      {/* 10 BOTTOM CTA */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-2xl bg-aether-card card-gradient-surface border border-slate-700/80 p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-card-hover">
@@ -425,16 +571,16 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
             <div className="mb-4">
               <Badge variant="primary" dot size="md">
-                Real Estate Transformation
+                Real Estate Executive Briefing
               </Badge>
             </div>
 
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-text-primary leading-tight">
-              Ready to Modernize Your Real Estate Operations?
+              Transform Your Brokerage Pipeline With Aether
             </h2>
 
             <p className="mt-4 text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed max-w-2xl">
-              Experience an interactive demonstration tailored to your portfolio size, inventory velocity, and sales team workflows.
+              Turn buyer inquiries into qualified viewings and closed deals with autonomous qualification and semantic matching tailored to your micro-market.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
@@ -445,7 +591,7 @@ export const RealEstateExperience: React.FC<RealEstateExperienceProps> = ({ indu
                 rightIcon={<ArrowRight className="w-4 h-4" />}
                 className="w-full sm:w-auto font-semibold shadow-md"
               >
-                Request Custom Solution
+                Request Custom Real Estate Architecture
               </Button>
               <Link to="/industries" className="w-full sm:w-auto">
                 <Button variant="secondary" size="lg" className="w-full sm:w-auto">

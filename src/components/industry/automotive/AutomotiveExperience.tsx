@@ -23,7 +23,8 @@ import {
   Play,
   Zap,
   Wrench,
-  Cpu
+  Cpu,
+  Layers
 } from 'lucide-react';
 import { cn } from '../../../utils/cn';
 
@@ -119,14 +120,136 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 02 CORE WORKFLOW (Vehicle -> Service History -> Service Prediction -> Reminder -> Appointment -> Workshop -> Retention) */}
+      {/* 01.5 THE AETHER AUTOMOTIVE ARCHITECTURAL STORY */}
       {/* ========================================================================= */}
-      <section id="workflow-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AutomotiveWorkflowPipeline />
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12">
+        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900/95 via-slate-900/90 to-slate-950/95 border border-indigo-500/30 shadow-2xl backdrop-blur-md">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+            <div>
+              <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                <Badge variant="primary" size="sm" className="bg-indigo-500/20 text-indigo-300 border-indigo-500/30">
+                  Workshop Intelligence Thesis
+                </Badge>
+                <span className="text-xs font-mono text-indigo-400 font-semibold">Predictive Maintenance & Workshop Orchestration</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                "Predict maintenance needs and parts requirements before the vehicle enters the service bay."
+              </h2>
+            </div>
+            <div className="flex items-center gap-2 text-xs font-mono text-text-muted bg-slate-950/80 px-3 py-1.5 rounded-lg border border-slate-800">
+              <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+              <span>Problem → Opportunity → Intelligence → Recommendation → Action → Impact</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-3.5 pt-6">
+            {/* 1. Problem */}
+            <div className="p-4 rounded-xl bg-rose-950/20 border border-rose-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-rose-400 font-bold text-[10px] uppercase font-mono">
+                <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                <span>1. Problem</span>
+              </div>
+              <h4 className="text-xs font-bold text-white leading-snug">
+                Bay Hold-Overs & Missing Parts
+              </h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Vehicles sit stranded on service lifts waiting for stockroom parts while master technicians remain bottlenecked on routine oil changes.
+              </p>
+              <span className="text-[10px] font-mono text-rose-400 pt-1 border-t border-rose-500/20">
+                35% Bay Idleness
+              </span>
+            </div>
+
+            {/* 2. Opportunity */}
+            <div className="p-4 rounded-xl bg-amber-950/20 border border-amber-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-amber-400 font-bold text-[10px] uppercase font-mono">
+                <Clock className="w-3.5 h-3.5 shrink-0" />
+                <span>2. Opportunity</span>
+              </div>
+              <h4 className="text-xs font-bold text-white leading-snug">
+                Pre-Kitted Maintenance
+              </h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Forecast component wear and upcoming mileage triggers to stage exact OEM parts kits 24 hours prior to customer arrival.
+              </p>
+              <span className="text-[10px] font-mono text-amber-300 pt-1 border-t border-amber-500/20">
+                Zero Parts Wait Latency
+              </span>
+            </div>
+
+            {/* 3. Aether Intelligence */}
+            <div className="p-4 rounded-xl bg-indigo-950/20 border border-indigo-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-indigo-400 font-bold text-[10px] uppercase font-mono">
+                <Layers className="w-3.5 h-3.5 shrink-0" />
+                <span>3. Intelligence</span>
+              </div>
+              <h4 className="text-xs font-bold text-white leading-snug">
+                Vehicle Telemetry Mesh
+              </h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Synthesizes vehicle service logs, daily odometer velocity, OEM service bulletins, workshop bay load, and technician skill certifications.
+              </p>
+              <span className="text-[10px] font-mono text-indigo-300 pt-1 border-t border-indigo-500/20">
+                Live Garage Graph
+              </span>
+            </div>
+
+            {/* 4. Recommendation */}
+            <div className="p-4 rounded-xl bg-sky-950/20 border border-sky-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-sky-400 font-bold text-[10px] uppercase font-mono">
+                <Wrench className="w-3.5 h-3.5 shrink-0" />
+                <span>4. Recommendation</span>
+              </div>
+              <h4 className="text-xs font-bold text-white leading-snug">
+                Precision Bay & Tech Routing
+              </h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Matches vehicle job complexity to dedicated lift bays (Mechanical vs Diagnostic) and reserves parts kits directly from warehouse ERP.
+              </p>
+              <span className="text-[10px] font-mono text-sky-300 pt-1 border-t border-sky-500/20">
+                Optimal Labor Yield
+              </span>
+            </div>
+
+            {/* 5. Action */}
+            <div className="p-4 rounded-xl bg-violet-950/20 border border-violet-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-violet-400 font-bold text-[10px] uppercase font-mono">
+                <Zap className="w-3.5 h-3.5 shrink-0" />
+                <span>5. Action</span>
+              </div>
+              <h4 className="text-xs font-bold text-white leading-snug">
+                Proactive Service Dispatch
+              </h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Sends personalized WhatsApp service alerts with pre-calculated estimates and instant 1-tap slot confirmation to vehicle owner.
+              </p>
+              <span className="text-[10px] font-mono text-violet-300 pt-1 border-t border-violet-500/20">
+                1-Tap WhatsApp Booking
+              </span>
+            </div>
+
+            {/* 6. Impact */}
+            <div className="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex flex-col justify-between space-y-2.5">
+              <div className="flex items-center gap-1.5 text-emerald-400 font-bold text-[10px] uppercase font-mono">
+                <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
+                <span>6. Impact</span>
+              </div>
+              <h4 className="text-xs font-bold text-white leading-snug">
+                +28% Bay Yield & 91% Same-Day
+              </h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Eliminates bay hold-overs, delivers 91% on-time same-day return, and drives 88% repeat service customer retention.
+              </p>
+              <span className="text-[10px] font-mono text-emerald-400 pt-1 border-t border-emerald-500/20">
+                Max Dealership ROI
+              </span>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 03 3 BUSINESS CHALLENGES */}
+      {/* 02 BUSINESS PROBLEMS & OPERATIONAL BOTTLENECKS */}
       {/* ========================================================================= */}
       <section id="challenges-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -185,20 +308,54 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 04 INTERACTIVE DEMO (Service Prediction & Bay Staging Engine) */}
+      {/* 03 AETHER OPPORTUNITIES */}
       {/* ========================================================================= */}
-      <section id="service-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Interactive Sandbox"
-          title="Vehicle Service Prediction & Workshop Bay Allocation"
-          subtitle="Select a customer vehicle to analyze mileage wear degradation, OEM parts readiness, lift bay reservation, and automated reminder outreach."
+          badge="Opportunity Discovery"
+          title="Transforming Garage Drag Into Service Velocity Multipliers"
+          subtitle="How Aether diagnoses bay hold-over latency and synchronizes parts delivery with technician schedules."
         />
 
-        <AutomotiveServiceDemo />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {industry.opportunities.map((opp, idx: number) => (
+            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card">
+              <div className="space-y-4">
+                <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
+                  <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
+                    Diagnosed Garage Friction
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-secondary leading-snug">
+                    {opp.problem}
+                  </p>
+                </div>
+
+                <div className="flex justify-center text-indigo-400">
+                  <ArrowRight className="w-4 h-4 rotate-90" />
+                </div>
+
+                <div className="p-3.5 rounded-lg bg-indigo-500/5 border border-indigo-500/25">
+                  <div className="text-[11px] font-semibold text-indigo-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                    <Zap className="w-3.5 h-3.5" />
+                    <span>Aether Opportunity</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-primary font-medium leading-snug">
+                    {opp.opportunity}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
+                <span className="text-text-muted font-mono">Projected Multiplier:</span>
+                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+              </div>
+            </Card>
+          ))}
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 05 9 SOLUTIONS MAPPINGS */}
+      {/* 04 9 AETHER SOLUTIONS MAPPINGS */}
       {/* ========================================================================= */}
       <section id="solutions-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -245,7 +402,27 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 06 BUSINESS INTELLIGENCE DASHBOARD */}
+      {/* 05 SIGNATURE WORKFLOW (Vehicle -> Service History -> Service Prediction -> Reminder -> Appointment -> Workshop -> Retention) */}
+      {/* ========================================================================= */}
+      <section id="workflow-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AutomotiveWorkflowPipeline />
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 06 SIGNATURE INTERACTIVE DEMO (Service Prediction & Bay Staging Engine) */}
+      {/* ========================================================================= */}
+      <section id="service-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          badge="Signature Interactive Sandbox"
+          title="Vehicle Service Prediction & Workshop Bay Allocation"
+          subtitle="Select a customer vehicle to analyze mileage wear degradation, OEM parts readiness, lift bay reservation, and automated reminder outreach."
+        />
+
+        <AutomotiveServiceDemo />
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 07 BUSINESS INTELLIGENCE DASHBOARD */}
       {/* ========================================================================= */}
       <section id="bi-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -258,7 +435,7 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 07 BUSINESS IMPACT */}
+      {/* 08 BUSINESS IMPACT */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -331,7 +508,7 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
       </section>
 
       {/* ========================================================================= */}
-      {/* 08 ADDITIONAL CAPABILITIES ACCORDION */}
+      {/* 09 ADDITIONAL CAPABILITIES ACCORDION */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -392,7 +569,7 @@ export const AutomotiveExperience: React.FC<AutomotiveExperienceProps> = ({ indu
       />
 
       {/* ========================================================================= */}
-      {/* 09 BOTTOM CTA */}
+      {/* 10 BOTTOM CTA */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-2xl p-8 sm:p-12 text-center overflow-hidden border border-indigo-500/30 bg-gradient-to-b from-indigo-950/30 via-slate-900 to-slate-950">

@@ -118,8 +118,31 @@ export const CafeWorkflowPipeline: React.FC = () => {
 
         <div className="flex items-center gap-2 font-mono text-xs text-text-muted bg-slate-900/80 px-3 py-1.5 rounded-lg border border-aether-border shrink-0">
           <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-          <span>Closed-Loop Cafe Telemetry</span>
+          <span>6-Stage Cafe Intelligence Loop</span>
         </div>
+      </div>
+
+      {/* Visual Flow Indicator */}
+      <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between gap-1 overflow-x-auto text-xs font-mono">
+        {['Sales', 'Demand', 'Preparation', 'Inventory', 'Customer', 'Optimization'].map((step, idx, arr) => (
+          <React.Fragment key={step}>
+            <button
+              onClick={() => setSelectedStep(CAFE_STEPS[idx])}
+              className={cn(
+                "flex items-center gap-1.5 px-2.5 py-1 rounded-lg shrink-0 transition-colors cursor-pointer",
+                selectedStep.id === CAFE_STEPS[idx]?.id
+                  ? "bg-amber-500/20 text-amber-300 font-bold border border-amber-500/40"
+                  : "text-slate-400 hover:text-white"
+              )}
+            >
+              <span className="text-[10px] text-amber-400 font-bold">0{idx + 1}</span>
+              <span>{step}</span>
+            </button>
+            {idx < arr.length - 1 && (
+              <ChevronRight className="w-3.5 h-3.5 text-slate-600 shrink-0" />
+            )}
+          </React.Fragment>
+        ))}
       </div>
 
       {/* Steps Selector Bar */}

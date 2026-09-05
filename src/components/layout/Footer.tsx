@@ -91,6 +91,19 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
+        {/* Global Prototype Disclaimer Banner */}
+        <div className="mb-8 p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-text-muted">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
+            <span className="font-medium text-text-secondary">
+              Prototype Disclaimer: Metrics shown in this prototype are illustrative demonstrations and are not guaranteed production results.
+            </span>
+          </div>
+          <Badge variant="neutral" size="sm" className="font-mono text-[10px] shrink-0">
+            Illustrative Model Data
+          </Badge>
+        </div>
+
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-aether-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-muted">
           <p>© {new Date().getFullYear()} Aether Technologies. Showcase Prototype for Executive Briefings.</p>
@@ -101,7 +114,7 @@ export const Footer: React.FC = () => {
             </span>
             <span className="flex items-center gap-1.5">
               <Activity className="w-3.5 h-3.5 text-sky-400" />
-              <span>Simulated Real-Time Workflows</span>
+              <span>Simulated Prototype Data</span>
             </span>
           </div>
         </div>

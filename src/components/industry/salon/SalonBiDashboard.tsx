@@ -18,6 +18,27 @@ export const SalonBiDashboard: React.FC = () => {
 
   return (
     <div className="space-y-6">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+        <div>
+          <div className="flex items-center gap-2 mb-1 flex-wrap">
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40">
+              SIMULATED DEMO
+            </span>
+            <Badge variant="primary" size="sm" className="bg-rose-500/10 text-rose-300 border-rose-500/30">
+              Salon Performance Analytics
+            </Badge>
+            <span className="text-xs font-mono text-zinc-400">Live Chair & Stylist Telemetry</span>
+          </div>
+          <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+            Salon Utilization & Staff Lifecycle Intelligence
+          </h3>
+          <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+            Real-time telemetry across chair capacity yield, no-show probability reduction, and master stylist productivity.
+          </p>
+        </div>
+      </div>
+
       {/* Top Level BI Metric Flash Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card className="p-4 bg-gradient-to-br from-zinc-900/90 to-black border-white/10">

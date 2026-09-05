@@ -124,22 +124,42 @@ export const RealEstateJourneyPipeline: React.FC = () => {
         <div>
           <div className="flex items-center gap-2 mb-1">
             <Badge variant="primary" size="sm">
-              End-to-End Pipeline
+              Core Business Journey
             </Badge>
-            <span className="text-xs font-mono text-text-muted">Real Estate Core Journey</span>
+            <span className="text-xs font-mono text-text-muted">Real Estate Lifecycle</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-text-primary">
             From Fragmented Inbound to Closed Token
           </h3>
           <p className="text-xs sm:text-sm text-text-secondary mt-1">
-            How Aether orchestrates each stage of the real estate buyer and inventory lifecycle.
+            How Aether orchestrates each stage of the real estate buyer qualification and inventory matching lifecycle.
           </p>
         </div>
 
         <div className="flex items-center gap-2 font-mono text-xs text-text-muted bg-slate-900/80 px-3 py-1.5 rounded-lg border border-aether-border shrink-0">
           <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-          <span>7-Stage Cognitive Lifecycle</span>
+          <span>7-Stage Cognitive Journey</span>
         </div>
+      </div>
+
+      {/* Visual Flow Indicator */}
+      <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between gap-1 overflow-x-auto text-xs font-mono">
+        {['Lead', 'Requirement', 'Intent', 'Property Match', 'Site Visit', 'Follow-up', 'Conversion'].map((step, idx, arr) => (
+          <React.Fragment key={step}>
+            <div className={cn(
+              "flex items-center gap-1.5 px-2.5 py-1 rounded-lg shrink-0 transition-colors",
+              selectedStage.id === JOURNEY_STAGES[idx]?.id
+                ? "bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/40"
+                : "text-slate-400 hover:text-white"
+            )}>
+              <span className="text-[10px] text-cyan-400 font-bold">0{idx + 1}</span>
+              <span>{step}</span>
+            </div>
+            {idx < arr.length - 1 && (
+              <ChevronRight className="w-3.5 h-3.5 text-slate-600 shrink-0" />
+            )}
+          </React.Fragment>
+        ))}
       </div>
 
       {/* Interactive Pipeline Bar */}

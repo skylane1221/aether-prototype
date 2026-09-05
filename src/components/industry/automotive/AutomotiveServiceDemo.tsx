@@ -21,34 +21,85 @@ import { AUTOMOTIVE_VEHICLES, VehicleServiceProfile } from '../../../data/automo
 
 export const AutomotiveServiceDemo: React.FC = () => {
   const [selectedVehId, setSelectedVehId] = useState<string>(AUTOMOTIVE_VEHICLES[0].id);
-  const [dispatchedVehId, setDispatchedVehId] = useState<string | null>(null);
+  const [demoState, setDemoState] = useState<'idle' | 'analyzing' | 'dispatched'>('idle');
   const [activeTab, setActiveTab] = useState<'history' | 'parts'>('history');
 
-  const vehicle: VehicleServiceProfile = AUTOMOTIVE_VEHICLES.find((v: VehicleServiceProfile) => v.id === selectedVehId) || AUTOMOTIVE_VEHICLES[0];
-  const isDispatched = dispatchedVehId === vehicle.id;
+  const vehicle: VehicleServiceProfile =
+    AUTOMOTIVE_VEHICLES.find((v: VehicleServiceProfile) => v.id === selectedVehId) ||
+    AUTOMOTIVE_VEHICLES[0];
 
-  const handleDispatchServiceBooking = () => {
-    setDispatchedVehId(vehicle.id);
+  const handleRunAether = () => {
+    setDemoState('analyzing');
+    setTimeout(() => {
+      setDemoState('dispatched');
+    }, 500);
+  };
+
+  const handleReset = () => {
+    setDemoState('idle');
+  };
+
+  const handleSelectVeh = (id: string) => {
+    setSelectedVehId(id);
+    setDemoState('idle');
   };
 
   return (
     <div className="space-y-6">
+      {/* Top Demo Bar */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+        <div className="flex items-center gap-2.5 flex-wrap">
+          <Badge
+            variant="outline"
+            size="sm"
+            className="bg-indigo-500/10 border-indigo-400/40 text-indigo-300 font-mono text-[10px] tracking-widest font-bold uppercase py-0.5 px-2.5"
+          >
+            SIMULATED DEMO
+          </Badge>
+          <span className="text-xs font-mono text-text-muted">
+            Signature Journey: <strong className="text-indigo-300">Vehicle History → Service Prediction → Appointment</strong>
+          </span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          {demoState === 'idle' ? (
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={handleRunAether}
+              leftIcon={<Sparkles className="w-3.5 h-3.5" />}
+              className="bg-indigo-500 hover:bg-indigo-400 text-slate-950 font-semibold shadow-glow-subtle"
+            >
+              Run Aether
+            </Button>
+          ) : (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleReset}
+              className="text-xs border-slate-700 text-slate-200"
+            >
+              Reset Demo
+            </Button>
+          )}
+        </div>
+      </div>
+
       {/* Vehicle Selector Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {AUTOMOTIVE_VEHICLES.map((v: VehicleServiceProfile) => {
           const isSelected = v.id === selectedVehId;
-          const urgencyBadge = 
-            v.urgencyLevel === 'Overdue Maintenance' ? 'bg-rose-500/20 text-rose-300 border-rose-500/40' :
-            v.urgencyLevel === 'Service Imminent' ? 'bg-amber-500/20 text-amber-300 border-amber-500/40' :
-            'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
+          const urgencyBadge =
+            v.urgencyLevel === 'Overdue Maintenance'
+              ? 'bg-rose-500/20 text-rose-300 border-rose-500/40'
+              : v.urgencyLevel === 'Service Imminent'
+              ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+              : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
 
           return (
             <button
               key={v.id}
-              onClick={() => {
-                setSelectedVehId(v.id);
-                setDispatchedVehId(null);
-              }}
+              onClick={() => handleSelectVeh(v.id)}
               className={`p-4 rounded-xl text-left border transition-all duration-300 relative group flex flex-col justify-between ${
                 isSelected
                   ? 'bg-gradient-to-b from-indigo-950/50 via-blue-950/30 to-black border-indigo-500 shadow-[0_0_20px_rgba(99,102,241,0.25)]'
@@ -305,29 +356,47 @@ export const AutomotiveServiceDemo: React.FC = () => {
             {/* Action Trigger */}
             <div className="pt-2">
               <AnimatePresence mode="wait">
-                {isDispatched ? (
+                {demoState === 'analyzing' ? (
+                  <div className="p-4 rounded-xl bg-indigo-950/40 border border-indigo-500/40 text-center space-y-2">
+                    <div className="w-5 h-5 border-2 border-indigo-400 border-t-transparent animate-spin mx-auto" />
+                    <p className="text-xs text-indigo-200 font-mono">
+                      Predicting maintenance intervals, parts availability & bay staging...
+                    </p>
+                  </div>
+                ) : demoState === 'dispatched' ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
-                    className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/50 text-center space-y-1.5"
+                    className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/50 text-center space-y-2"
                   >
                     <div className="flex items-center justify-center gap-2 text-emerald-400 font-bold text-sm">
                       <CheckCircle2 className="w-4 h-4" />
-                      Bay Reserved & Service Invitation Sent
+                      Result: Bay Reserved & Service Invitation Sent
                     </div>
                     <p className="text-[11px] text-emerald-200/80">
-                      {vehicle.partsReadiness.bayRequirement} held for {vehicle.ownerName}. Parts staged at parts counter.
+                      {vehicle.partsReadiness.bayRequirement} reserved for {vehicle.ownerName}. OEM parts kit staged at parts counter.
                     </p>
+                    <div className="pt-1 flex items-center justify-center gap-2">
+                      <span className="text-[10px] font-mono text-emerald-300">Recommended Action: Workshop Slot Confirmed</span>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleReset}
+                        className="text-[10px] py-0.5 px-2 h-auto border-emerald-500/40 text-emerald-300"
+                      >
+                        Reset Demo
+                      </Button>
+                    </div>
                   </motion.div>
                 ) : (
                   <Button
-                    onClick={handleDispatchServiceBooking}
+                    onClick={handleRunAether}
                     variant="primary"
-                    className="w-full justify-center gap-2 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 shadow-lg shadow-indigo-900/30"
+                    className="w-full justify-center gap-2 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 shadow-lg shadow-indigo-900/30 font-semibold"
                   >
                     <Send className="w-4 h-4" />
-                    Reserve Lift Bay & Dispatch Service Reminder
+                    Recommended Action: Reserve Lift Bay & Send Reminder
                   </Button>
                 )}
               </AnimatePresence>

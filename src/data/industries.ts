@@ -17,9 +17,9 @@ export const INDUSTRIES: IndustryData[] = [
     heroSubheadline:
       'How modern real estate operators replace high-friction manual triage with instant cognitive matching, reverse inventory discovery, and autonomous visit dispatch.',
     stats: [
-      { label: 'Lead Response Time', value: '< 15s', change: '-99%', detail: 'Down from 4.2 hours average' },
-      { label: 'Viewing Conversion', value: '38.4%', change: '+14.2%', detail: 'High-intent client pre-screening' },
-      { label: 'Admin Friction', value: '72%', change: '-72%', detail: 'Automated document collection' },
+      { label: 'Lead Response Time', value: '< 15s', change: 'Target', detail: 'Simulated model speed (down from 4.2h baseline)' },
+      { label: 'Viewing Conversion', value: '38.4%', change: 'Example', detail: 'Illustrative high-intent pre-screening cohort' },
+      { label: 'Admin Friction', value: 'Up to -72%', change: 'Potential', detail: 'Simulated automated document workflow savings' },
     ],
 
     // 02 Business Challenges (8 Specified Problems)
@@ -285,9 +285,9 @@ export const INDUSTRIES: IndustryData[] = [
     heroSubheadline:
       'How modern restaurant operators and multi-outlet culinary brands use Aether to predict item demand, synchronize raw ingredient orders, and streamline kitchen line execution.',
     stats: [
-      { label: 'Food Waste Reduction', value: '-68%', change: '-68%', detail: 'Dynamic prep batching' },
-      { label: 'Kitchen Ticket Velocity', value: '12.4m', change: '-50%', detail: 'Down from 24.8 mins' },
-      { label: 'Food Cost Margin', value: '+4.8%', change: '+4.8%', detail: 'Optimized recipe procurement' },
+      { label: 'Food Waste Reduction', value: 'Up to -68%', change: 'Illustrative', detail: 'Simulated dynamic prep batching impact' },
+      { label: 'Kitchen Ticket Velocity', value: '12.4m', change: 'Potential', detail: 'Illustrative peak shift model target' },
+      { label: 'Food Cost Margin', value: '+4.8%', change: 'Example', detail: 'Potential gain in modeled recipe procurement' },
     ],
 
     // 02 Business Challenges (8 Specified Problems)
@@ -537,9 +537,9 @@ export const INDUSTRIES: IndustryData[] = [
     heroSubheadline:
       'Empower fitness clubs with early warning member behavior analysis and automated high-touch re-engagement sequences.',
     stats: [
-      { label: 'Member Retention', value: '91.4%', change: '+18%', detail: 'Measured at 12-month cohort' },
-      { label: 'Class Capacity Fill', value: '88%', change: '+24%', detail: 'Dynamic standby backfills' },
-      { label: 'Saved At-Risk ARR', value: '$140k+', change: 'Per club', detail: 'Automated intervention triggers' },
+      { label: 'Member Retention', value: '91.4%', change: 'Illustrative', detail: 'Simulated 12-month cohort model' },
+      { label: 'Class Capacity Fill', value: '88%', change: 'Potential', detail: 'Illustrative dynamic standby backfill target' },
+      { label: 'Saved At-Risk ARR', value: 'Up to $140k', change: 'Example', detail: 'Illustrative retention scenario per club' },
     ],
     // 02 Business Challenges (7 Specified Problems)
     challenges: [
@@ -765,9 +765,9 @@ export const INDUSTRIES: IndustryData[] = [
     heroSubheadline:
       'Eliminate awkward calendar gaps and keep stylists booked solid with autonomous client lifecycle scheduling.',
     stats: [
-      { label: 'Chair Utilization', value: '94%', change: '+26%', detail: 'Gap-filling algorithm' },
-      { label: 'Re-Booking Interval', value: '5.2 wks', change: '-1.8 wks', detail: 'Cadence prompt engine' },
-      { label: 'Receptionist Admin', value: '-65%', change: '-65%', detail: 'Autonomous booking dispatch' },
+      { label: 'Chair Utilization', value: 'Up to 94%', change: 'Potential', detail: 'Illustrative schedule gap-fill scenario' },
+      { label: 'Re-Booking Interval', value: '5.2 wks', change: 'Illustrative', detail: 'Simulated cadence prompt optimization' },
+      { label: 'Receptionist Admin', value: 'Up to -65%', change: 'Potential', detail: 'Simulated automated dispatch model' },
     ],
     // 02 Business Challenges (6 Specified Problems for Salons)
     challenges: [
@@ -986,9 +986,9 @@ export const INDUSTRIES: IndustryData[] = [
     heroSubheadline:
       'Transform hectic coffee counters into precision production lines with real-time rush forecasting and smart bake scheduling.',
     stats: [
-      { label: 'Morning Rush Output', value: '+31%', change: '+31%', detail: 'Cups per barista hour' },
-      { label: 'Pastry Waste', value: '3.1%', change: '-68%', detail: 'Predictive bake batches' },
-      { label: 'Average Queue Time', value: '2.4 min', change: '-55%', detail: 'Down from 5.5 min' },
+      { label: 'Morning Rush Output', value: '+31%', change: 'Potential', detail: 'Illustrative barista station speed model' },
+      { label: 'Pastry Waste', value: '< 3.1%', change: 'Illustrative', detail: 'Simulated predictive bake batching' },
+      { label: 'Average Queue Time', value: '2.4 min', change: 'Example', detail: 'Illustrative peak commuter queue scenario' },
     ],
     challenges: [
       {
@@ -1165,157 +1165,261 @@ export const INDUSTRIES: IndustryData[] = [
     slug: 'retail',
     name: 'Retail Businesses',
     shortName: 'Retail',
-    transformationStatement: 'Unified omnichannel stock intelligence, automated returns, and restock triggers.',
-    tagline: 'Unified inventory intelligence, predictive restock triggers, and autonomous customer resolution.',
+    transformationStatement: 'Predictive demand forecasting, autonomous stockout prevention, and automated reorder orchestration.',
+    tagline: 'Predictive inventory intelligence, dynamic reorder recommendations, and customer behavior personalization.',
     description:
-      'Aether transforms retail storefronts and e-commerce brands by unifying multi-location inventory, predicting SKU demand, and automating customer return flows.',
+      'Aether transforms retail storefronts and omnichannel commerce by forecasting SKU demand velocity, predicting stockouts before they happen, and generating automated supplier reorders.',
     accentColor: 'sky',
     iconName: 'ShoppingBag',
     categoryFocus: ['Customer-focused', 'Operations-focused'],
-    heroHeadline: 'Unify omnichannel stock and automate customer service.',
+    heroHeadline: 'Eliminate Stockouts and Automate Retail Inventory Reordering.',
     heroSubheadline:
-      'Connect in-store POS, online storefronts, and warehouse fulfillment into a self-balancing commerce engine.',
+      'How modern retail operators replace spreadsheet guesswork with multi-factor demand forecasting, stockout risk prediction, and autonomous purchase order generation.',
     stats: [
-      { label: 'Stockout Incidents', value: '-81%', change: '-81%', detail: 'Predictive transfer triggers' },
-      { label: 'Customer Inquiry SLA', value: '< 45s', change: '-92%', detail: 'Autonomous support resolution' },
-      { label: 'Inventory Holding Cost', value: '-16%', change: '-16%', detail: 'Lean demand matching' },
+      { label: 'Stockout Incidents', value: 'Up to -81%', change: 'Potential', detail: 'Simulated proactive replenishment impact' },
+      { label: 'Inventory Holding Cost', value: 'Up to -18.4%', change: 'Illustrative', detail: 'Potential lean demand matching savings' },
+      { label: 'Reorder SLA', value: '< 15min', change: 'Target', detail: 'Simulated supplier PO generation benchmark' },
     ],
+
+    // 02 Business Challenges (8 Specified Problems)
     challenges: [
       {
         id: 'ret-c1',
-        problem: 'Siloed In-Store vs Warehouse Stock',
-        cause: 'Items sell out online while sitting unsold on retail store racks 20 miles away.',
-        consequence: 'Canceled online orders, lost sales, and frustrated customers who look elsewhere.',
+        problem: 'Stockouts & Lost High-Intent Sales',
+        cause: 'High-velocity SKUs and specific shoe/apparel sizes deplete unexpectedly without real-time depletion rate alerts.',
+        consequence: 'Frustrated shoppers walk out or bounce to competitors, causing permanent customer churn and lost high-margin revenue.',
         severity: 'critical',
       },
       {
         id: 'ret-c2',
-        problem: 'High Support Ticket Backlog',
-        cause: 'Support staff overwhelmed by repetitive "Where is my order?" and return policy questions.',
-        consequence: 'Response times balloon to 24+ hours, hurting customer loyalty and brand reputation.',
-        severity: 'high',
+        problem: 'Overstock & Trapped Working Capital',
+        cause: 'Bulk reordering based on outdated seasonal quotas rather than real-time sell-through velocity.',
+        consequence: 'Warehouses and retail backrooms overflow with stagnant inventory, tying up cash and inflating holding costs.',
+        severity: 'critical',
       },
       {
         id: 'ret-c3',
-        problem: 'Deep End-of-Season Markdown Losses',
-        cause: 'Slow-moving SKUs are identified too late in the season, requiring 50%+ clearance markdowns.',
-        consequence: 'Gross margins erode on seasonal inventory that could have sold with earlier micro-promotions.',
+        problem: 'Uncertain Demand & Surge Blindspots',
+        cause: 'Inability to factor localized weather, weekend sporting events, and social media virality into purchasing schedules.',
+        consequence: 'Stores get caught under-stocked during sudden footfall spikes and over-staffed during dead periods.',
+        severity: 'high',
+      },
+      {
+        id: 'ret-c4',
+        problem: 'Manual Inventory Monitoring',
+        cause: 'Store managers spending 12+ hours every week manually counting shelf stock, scanning barcodes, and updating spreadsheets.',
+        consequence: 'Data entry latency of 24–48 hours; inventory records are already obsolete before purchase orders are submitted.',
+        severity: 'high',
+      },
+      {
+        id: 'ret-c5',
+        problem: 'Poor Reorder Timing & Supplier Lead-Time Lag',
+        cause: 'Reorder triggers set to static minimum thresholds that ignore variable supplier manufacturing and transit lead times.',
+        consequence: 'Orders placed too late create 5-to-10 day stockout blackouts during peak commercial cycles.',
+        severity: 'critical',
+      },
+      {
+        id: 'ret-c6',
+        problem: 'Slow-Moving Products & Deadstock Accumulation',
+        cause: 'Lagging detection of declining SKU velocity, identifying stagnant products only after months of shelf holding.',
+        consequence: 'Forced deep 50%+ clearance fire-sales that completely wipe out seasonal gross margins.',
+        severity: 'high',
+      },
+      {
+        id: 'ret-c7',
+        problem: 'Customer Behaviour Being Underutilized',
+        cause: 'Point-of-sale systems record transactional receipts without linking customer sizing, browsing affinity, and repurchase cycles.',
+        consequence: 'Lost opportunities for personalized restock alerts, cross-sell pairings, and high-conversion clienteling.',
+        severity: 'moderate',
+      },
+      {
+        id: 'ret-c8',
+        problem: 'Pricing & Promotion Uncertainty',
+        cause: 'Store operators guess discount percentages without predictive modeling of price elasticity and bundle affinity.',
+        consequence: 'Over-discounting high-demand goods while failing to move price-sensitive slow inventory.',
         severity: 'moderate',
       },
     ],
+
+    // 03 Aether Opportunities
     opportunities: [
       {
-        problem: 'Online stockouts while physical stores hold inventory.',
-        opportunity: 'Ship-from-store automated routing based on local SKU velocity.',
-        potentialMultiplier: '81% fewer stockouts',
+        problem: 'Unexpected stockouts on high-demand SKUs and popular sizes.',
+        opportunity: 'Continuous velocity-based runway tracking that models lead times and triggers automated reorders days before depletion.',
+        potentialMultiplier: '81% fewer stockout events',
       },
       {
-        problem: 'High volume of repetitive WISMO customer inquiries.',
-        opportunity: 'Autonomous support agent that looks up courier tracking and issues instant return labels.',
-        potentialMultiplier: '92% tickets resolved in <45s',
+        problem: 'Working capital trapped in stagnant inventory and deadstock.',
+        opportunity: 'Dynamic overstock detection with automated early micro-promotions and cross-store inventory rebalancing.',
+        potentialMultiplier: '-18.4% holding cost reduction',
       },
       {
-        problem: 'Margin loss from deep clearance markdowns.',
-        opportunity: 'Dynamic micro-promotions triggered at the first sign of sell-through deceleration.',
-        potentialMultiplier: '+14% higher realized margins',
+        problem: 'Manual inventory audits and disconnected customer preferences.',
+        opportunity: 'Unified omnichannel stock mesh linked with automated clienteling restock alerts and personalized recommendations.',
+        potentialMultiplier: '3.4x higher customer repurchase rate',
       },
     ],
+
+    // 04 11 Aether Solutions
     solutionMappings: [
       {
-        problem: 'Fragmented omnichannel inventory',
-        opportunity: 'Single source of inventory truth',
-        solution: 'Omnichannel Stock Mesh that syncs warehouse, store, and online inventory and routes fulfillment dynamically.',
-        capabilityTag: 'Stock Mesh',
+        problem: 'Uncertain seasonal & event demand spikes',
+        opportunity: 'Multi-factor predictive demand modeling',
+        solution: 'Demand Forecasting: Ingests POS velocity, weather forecasts, footfall trends, and regional calendar events to project exact 7–14 day SKU demand.',
+        capabilityTag: 'Demand Forecasting',
       },
       {
-        problem: 'Overwhelmed customer service team',
-        opportunity: 'Autonomous 24/7 care concierge',
-        solution: 'Retail Support Agent that resolves delivery tracking, address changes, and exchanges autonomously.',
-        capabilityTag: 'Support Agent',
+        problem: 'Fragmented warehouse and retail store stock ledgers',
+        opportunity: 'Unified real-time stock mesh',
+        solution: 'Inventory Intelligence: Aggregates in-store POS, online fulfillment, and in-transit supplier stock into a single synchronized virtual ledger.',
+        capabilityTag: 'Inventory Intelligence',
       },
       {
-        problem: 'Unsold seasonal inventory accumulation',
-        opportunity: 'Predictive sell-through velocity tracking',
-        solution: 'Dynamic Markdown Engine that recommends targeted bundle offers before seasonal margin decay.',
-        capabilityTag: 'Markdown Optimizer',
+        problem: 'Sudden out-of-stock events during peak traffic',
+        opportunity: 'Preemptive velocity runway modeling',
+        solution: 'Stockout Prediction: Calculates exact days of remaining inventory buffer per size/SKU and flags items with < 48 hours of runway.',
+        capabilityTag: 'Stockout Prediction',
+      },
+      {
+        problem: 'Slow-moving SKUs tying up warehouse cash',
+        opportunity: 'Early deceleration anomaly detection',
+        solution: 'Overstock Detection: Identifies sluggish inventory in week 2 instead of month 3, preventing heavy clearance markdowns.',
+        capabilityTag: 'Overstock Detection',
+      },
+      {
+        problem: 'Delayed, manual purchase order generation',
+        opportunity: 'Automated EDI purchase order dispatch',
+        solution: 'Reorder Recommendations: Synthesizes supplier lead times, minimum order quantities, and forecast spikes to generate instant purchase orders.',
+        capabilityTag: 'Reorder Engine',
+      },
+      {
+        problem: 'Lack of granular product sell-through telemetry',
+        opportunity: 'SKU margin & velocity scoring',
+        solution: 'Product Performance Intelligence: Tracks margin contribution, size curve velocity, and return rates across every catalog item in real time.',
+        capabilityTag: 'Performance Intel',
+      },
+      {
+        problem: 'Generic mass-marketing with low conversion',
+        opportunity: 'Behavioral RFM customer clustering',
+        solution: 'Customer Segmentation: Automatically groups shoppers by size preference, purchase frequency, price sensitivity, and category affinity.',
+        capabilityTag: 'Segmentation',
+      },
+      {
+        problem: 'Missed cross-sell and up-sell opportunities at checkout',
+        opportunity: 'Contextual basket pairing algorithms',
+        solution: 'Product Recommendations: Powers smart in-cart bundle pairings and personalized post-purchase recommendations based on live customer context.',
+        capabilityTag: 'Recommendations',
+      },
+      {
+        problem: 'Arbitrary price markdowns eroding margins',
+        opportunity: 'Dynamic price elasticity modeling',
+        solution: 'Pricing Intelligence: Recommends optimal pricing points balancing gross margin protection with required sell-through velocity.',
+        capabilityTag: 'Pricing Intelligence',
+      },
+      {
+        problem: 'Uncoordinated promotional campaigns',
+        opportunity: 'Targeted micro-campaign activation',
+        solution: 'Promotion Intelligence: Automatically targets discounts exclusively to price-sensitive buyers and slow-moving SKU cohorts.',
+        capabilityTag: 'Promotion Intel',
+      },
+      {
+        problem: 'Blindspots in physical retail store operations',
+        opportunity: 'Footfall, conversion & dwell analytics',
+        solution: 'Store Analytics: Correlates physical customer traffic with hourly register receipts, staff allocations, and shelf replenishment schedules.',
+        capabilityTag: 'Store Analytics',
       },
     ],
+
+    // 05 Signature Workflow Pipeline
     workflowPipeline: {
       input: {
-        source: 'Shopify / POS Inventory Telemetry',
-        details: 'SKU "Wool Trench Coat - Navy - Size M" stockout online; 3 units available at Downtown Store.',
-        rawSignal: 'Online customer cart abandoned due to stockout alert.',
+        source: 'Omnichannel POS & Footfall Telemetry',
+        details: 'SKU "Running Shoes — Size 9" stock depleted to 8 units after +38% weekend marathon runner rush.',
+        rawSignal: 'POS line-item velocity: 4.8 units/day vs 2.1 units/day average. 1.6 days of stock remaining.',
       },
       intelligence: {
-        diagnosis: 'High-margin cart recovery opportunity. Downtown Store has low in-store foot traffic today.',
-        metricScored: 'Fulfillment Feasibility: 99.2%',
+        diagnosis: 'Critical stockout breach diagnosed. 2-day supplier lead time means stockout will occur within 38 hours unless immediate reorder dispatches.',
+        metricScored: 'Stockout Probability: 99.4% without action',
       },
       recommendation: {
-        actionProposed: 'Enable ship-from-store routing for Downtown Store and notify customer of available stock.',
-        confidence: '98.5% conversion likelihood',
+        actionProposed: 'Issue emergency purchase order for 60 units to AeroStep Athletics with priority 2-day ground freight.',
+        confidence: '98.8% optimal replenishment quantity',
       },
       action: {
         stepsExecuted: [
-          'Routed fulfillment ticket to Downtown Store handheld scanner',
-          'Reserved unit for packing',
-          'Sent instant restock notification to customer',
-          'Customer completed purchase within 4 minutes',
+          'Calculated optimal reorder volume: 60 units (14-day demand buffer)',
+          'Generated EDI Purchase Order PO-RET-2026-8841',
+          'Routed PO to AeroStep Athletics supplier portal with 2-day delivery SLA',
+          'Flagged 2 dormant units in Suburban Store for inter-store transfer',
+          'Reserved stock arrival notifications for 18 waitlisted shoppers',
         ],
-        targetSystem: 'Store POS & Warehouse ERP',
+        targetSystem: 'Supplier EDI Gateway, Warehouse ERP & Store POS',
       },
       result: {
-        outcome: '$285 order captured that would have otherwise bounced to a competitor.',
-        timeToImpact: '4 minutes',
+        outcome: 'Stockout prevented. Replenishment units arrive before inventory hits zero, protecting ₹3,22,966 in gross margin.',
+        timeToImpact: '480ms cognitive execution',
       },
     },
+
+    // 06 Interactive Demo Configuration
     interactiveDemo: {
-      scenarioTitle: 'Omnichannel Stockout Interception & Ship-From-Store Routing',
-      scenarioSubtitle: 'Simulate Aether rescuing an abandoned online cart by routing stock from a local store.',
+      scenarioTitle: 'Simulated Product Inventory & Reorder Intelligence',
+      scenarioSubtitle: 'Experience Aether diagnosing stockout risk on Running Shoes (Size 9) and generating automated supplier reorders.',
       simulatedSignal: {
-        CustomerCart: 'Navy Wool Trench Coat ($285)',
-        WarehouseStatus: 'Out of Stock (0 units)',
-        StoreStock: 'Downtown Store (3 units on rack)',
+        Product: 'Running Shoes — Size 9 (FW-RN-09-BLK)',
+        CurrentStock: '8 Units On Hand',
+        RecentSales: '34 Units Sold (Last 7 Days)',
+        AverageDailyDemand: '4.8 Units / Day',
+        PredictedDemand: '42 Units (Next 7 Days)',
+        StockoutRisk: 'Critical (< 2 Days Runway)',
+        SupplierLeadTime: '2 Days (AeroStep Athletics)',
       },
-      engineReasoning: 'Stockout abandonment diagnosed. Autonomous ship-from-store routing and customer alert executed.',
+      engineReasoning: 'Critical stockout breach imminent within 38 hours. Autonomous 60-unit EDI purchase order and inter-store rebalance executed.',
       automatedActions: [
-        'Detected stockout event during online checkout flow',
-        'Cross-checked physical store inventory within regional shipping radius',
-        'Created store picking ticket and reserved inventory',
-        'Dispatched instant checkout link to customer',
+        'Detected stockout threshold breach (< 10 units with accelerating velocity)',
+        'Synthesized supplier lead time (2 days) against predicted 7-day demand (42 units)',
+        'Generated 60-unit EDI purchase order PO-RET-2026-8841',
+        'Balanced inventory across retail store network and queued waitlist notifications',
       ],
-      verifiedOutcome: 'Full-price sale saved and fulfilled within standard 2-day delivery window.',
-      executionDuration: '4 minutes',
+      verifiedOutcome: '100% stockout protection. Zero lost sales during peak weekend runner surge.',
+      executionDuration: '480ms',
     },
+
+    // 07 Business Intelligence
     businessIntelligence: {
-      insights: 'Customers who use self-service returns repurchase 2.4x more frequently within 60 days.',
-      predictions: 'Outerwear category demand expected to surge 45% following forecasted weekend cold front.',
-      risks: 'Denim SKU #408 showing 35% higher return rate due to sizing discrepancy on product page.',
-      opportunities: 'Enabling ship-from-store across all 4 locations can unlock an estimated $140k in annual online sales.',
-      recommendations: 'Update sizing chart on Denim #408 and pre-allocate shipping supplies to Downtown Store.',
+      insights: 'Footwear category conversion increases 4.2x when size availability is maintained above 98% in-stock threshold.',
+      predictions: 'Weekend commercial surge will drive +118% demand increase across Footwear and Activewear categories.',
+      risks: '14 SKUs currently sitting at critical stockout risk (< 2 days runway) totaling ₹8.4L in vulnerable revenue.',
+      opportunities: 'Rebalancing stagnant suburban outlet inventory to flagship metro stores recovers ₹1.8L in immediate cash flow.',
+      recommendations: 'Auto-dispatch 60 units for Running Shoes (Size 9) and launch 12% accessory bundle for slow-moving headphones.',
     },
+
+    // 08 Business Impact
     businessImpact: {
-      time: 'Saves customer support team 14 hours per week by resolving tracking and return requests autonomously.',
-      efficiency: 'Reduces stockouts by 81% through smart cross-store inventory transfer and routing.',
-      customerExperience: 'Resolves customer questions in under 45 seconds, improving shopper satisfaction.',
-      operations: 'Eliminates deadstock by balancing inventory turnover across retail locations.',
-      decisionMaking: 'Provides merchandisers with accurate sell-through analytics and reorder signals.',
-      visibility: 'Live telemetry displaying real-time stock levels, return rates, and shipping SLAs across all stores.',
+      time: 'Eliminates 12+ hours of manual stock audits per store weekly through autonomous cycle counting and PO generation.',
+      efficiency: 'Increases inventory turnover by +1.8x while reducing carrying costs by 18.4% through precision demand alignment.',
+      customerExperience: 'Ensures customers always find their size in-store and online, driving a 34% increase in repeat repurchase rates.',
+      operations: 'Synchronizes retail stores, regional warehouses, and supplier production into a self-balancing fulfillment network.',
+      decisionMaking: 'Empowers merchandising teams with real-time SKU velocity rankings, price elasticity curves, and automated PO suggestions.',
+      visibility: 'Unified single-pane ledger displaying real-time stock levels, depletion trajectories, and supplier SLAs across all locations.',
     },
+
+    // 09 Additional Capabilities
     additionalCapabilities: [
       {
         groupTitle: 'Omnichannel ERP & POS Connectors',
-        summary: 'Direct integration with Shopify, Square, Lightspeed, and NetSuite.',
-        features: ['Real-time inventory sync', 'Cross-store transfer routing', 'Automated receiving reconciliation'],
+        summary: 'Deep two-way integration with Shopify, Square, Lightspeed, SAP, and NetSuite.',
+        features: ['Real-time inventory synchronization', 'Cross-store transfer routing', 'Automated receiving reconciliation'],
       },
       {
-        groupTitle: 'Autonomous Returns & Exchange Portal',
-        summary: 'Self-service customer portal with instant prepaid return label generation.',
-        features: ['Instant QR code return labels', 'Automated exchange validation', 'Damaged goods photo inspection'],
+        groupTitle: 'Autonomous Supplier EDI & Reorder Mesh',
+        summary: 'Direct electronic data interchange (EDI) with manufacturer and distributor portals.',
+        features: ['Automated purchase order dispatch', 'Advance shipment notice (ASN) tracking', 'Price variance reconciliation'],
       },
       {
-        groupTitle: 'Dynamic Bundling & Cross-Sell Engine',
-        summary: 'Pairs slow-moving accessories with high-velocity apparel items.',
-        features: ['Dynamic cart checkout bundles', 'Personalized email lookbooks', 'Restock alert notifications'],
+        groupTitle: 'Dynamic Clienteling & Restock Concierge',
+        summary: 'Converts out-of-stock browsing signals into high-converting personalized restock notifications.',
+        features: ['Automated SMS/WhatsApp restock alerts', 'Personalized lookbook recommendations', 'Size-matched back-in-stock reservations'],
       },
     ],
   },
@@ -1324,156 +1428,246 @@ export const INDUSTRIES: IndustryData[] = [
     slug: 'hotels',
     name: 'Hotels & Hospitality',
     shortName: 'Hotels & Hospitality',
-    transformationStatement: 'Autonomous guest concierge, predictive housekeeping routing, and amenity upsell.',
-    tagline: 'Autonomous guest concierge, predictive housekeeping dispatch, and dynamic room revenue optimization.',
+    transformationStatement: 'Predictive occupancy pace, automated cancellation recovery, and dynamic housekeeping dispatch.',
+    tagline: 'Predictive occupancy pace, autonomous cancellation backfills, and personalized guest revenue intelligence.',
     description:
-      'Aether transforms boutique and luxury hotels by streamlining front desk bottlenecks, intelligently pacing housekeeping staff, and delivering personalized guest services.',
+      'Aether transforms boutique and luxury hotels by forecasting occupancy pace, predicting OTA cancellations, dynamically routing housekeeping turns, and personalizing in-stay guest spend.',
     accentColor: 'teal',
     iconName: 'BedDouble',
     categoryFocus: ['Customer-focused', 'Operations-focused'],
-    heroHeadline: 'Elevate guest experience while optimizing hotel operations.',
+    heroHeadline: 'Eliminate Check-In Delays and Maximize Hotel RevPAR Yield.',
     heroSubheadline:
-      'Deliver five-star personalization at scale with autonomous guest communication and intelligent staff dispatch.',
+      'How modern hospitality operators replace PMS guesswork with predictive occupancy pace, automated cancellation recovery, and flight-aware housekeeping dispatch.',
     stats: [
-      { label: 'Check-In Wait Time', value: '< 1 min', change: '-85%', detail: 'Digital key & concierge flow' },
-      { label: 'Room Turnover Speed', value: '+28%', change: '+28%', detail: 'Predictive housekeeping routing' },
-      { label: 'Ancillary Guest Spend', value: '+$42/nt', change: '+32%', detail: 'Intelligent upsell prompts' },
+      { label: 'Check-In Wait Time', value: '< 1 min', change: 'Target', detail: 'Simulated digital key flow benchmark' },
+      { label: 'Room Turnover Speed', value: '24 min', change: 'Potential', detail: 'Illustrative housekeeping dispatch model' },
+      { label: 'Ancillary RevPAR Lift', value: '+₹4,200/nt', change: 'Example', detail: 'Illustrative upgrade yield scenario' },
     ],
+
+    // 02 Business Challenges (8 Specified Problems)
     challenges: [
       {
         id: 'hot-c1',
-        problem: '3 PM Front Desk Check-In Bottlenecks',
-        cause: 'Dozens of guests arrive simultaneously while receptionists manually process IDs and keys.',
-        consequence: '20+ minute lobby lines that create a frustrating first impression for tired travelers.',
+        problem: 'Occupancy Uncertainty & Demand Forecasting Gaps',
+        cause: 'Relying on static historic booking tables that fail to anticipate city events, airline capacity shifts, or competitor rate changes.',
+        consequence: 'Mispriced room inventories, lost weekend RevPAR, and under-utilized room capacity.',
         severity: 'critical',
       },
       {
         id: 'hot-c2',
-        problem: 'Housekeeping Route Inefficiencies',
-        cause: 'Cleaning staff clean rooms in floor numerical order rather than incoming guest arrival priorities.',
-        consequence: 'Early-arriving VIP guests wait in the lobby while empty rooms for late-arriving guests are cleaned first.',
+        problem: 'Booking Fluctuations Across Fragmented Channels',
+        cause: 'Reservations arriving asynchronously across OTAs (Booking.com, Expedia), GDS, direct web, and phone without centralized pace tracking.',
+        consequence: 'Rate parity violations, over-reliance on high-commission 20% OTA channels, and erratic cash flow.',
         severity: 'high',
       },
       {
         id: 'hot-c3',
-        problem: 'Unsold On-Property Amenities',
-        cause: 'Guests are unaware of spa openings, cabana availability, or chef tasting menus.',
-        consequence: 'Loss of $30–$60 per guest night in high-margin ancillary amenity revenue.',
+        problem: 'Cancellation Risk & Last-Minute Empty Rooms',
+        cause: 'Flexible OTA cancellation policies allowing guests to cancel 24 hours prior with zero penalty.',
+        consequence: 'Last-minute inventory collapse leaving 10–15% of rooms unexpectedly unsold on prime nights.',
+        severity: 'critical',
+      },
+      {
+        id: 'hot-c4',
+        problem: 'Guest Preference Fragmentation Across Stays',
+        cause: 'Guest requests (high-floor, extra foam pillows, dietary notes, airport transfer) trapped in unstructured legacy PMS notes.',
+        consequence: 'VIP guests receiving standard generic rooms, resulting in mediocre reviews and lost loyalty retention.',
+        severity: 'high',
+      },
+      {
+        id: 'hot-c5',
+        problem: 'Housekeeping Coordination & Turnover Bottlenecks',
+        cause: 'Cleaning supervisors manually assigning room cleaning in numerical floor order without visibility into incoming guest flight arrival times.',
+        consequence: 'Early-arriving VIPs waiting 45+ minutes in crowded lobbies while vacant late-arrival rooms are cleaned first.',
+        severity: 'critical',
+      },
+      {
+        id: 'hot-c6',
+        problem: 'Staff Allocation & Shift Mismatches',
+        cause: 'Static weekly staff schedules that fail to align front desk, housekeeping, and F&B headcount with real-time arrival/departure waves.',
+        consequence: 'Over-staffed during dead periods and severely under-staffed during 3 PM check-in lobby surges.',
+        severity: 'high',
+      },
+      {
+        id: 'hot-c7',
+        problem: 'Missed Upselling Opportunities During In-Stay Windows',
+        cause: 'Hotels offering room upgrades, late checkouts, and spa treatments only at front desk check-in when guests are tired.',
+        consequence: 'Losing ₹3,500–₹6,000 per guest in high-margin ancillary revenue from dining, cabanas, and premium suites.',
+        severity: 'moderate',
+      },
+      {
+        id: 'hot-c8',
+        problem: 'Operational Inefficiency & Multi-System Disconnects',
+        cause: 'Front desk, housekeeping, maintenance, and concierge operating on disconnected legacy radios, paper dockets, and disparate software.',
+        consequence: 'Delayed maintenance repairs, lost keycards, and slow guest request fulfillment exceeding 30 minutes.',
         severity: 'moderate',
       },
     ],
+
+    // 03 Aether Opportunities
     opportunities: [
       {
-        problem: 'Long front desk check-in lines.',
-        opportunity: 'Autonomous digital check-in, identity verification, and mobile key issuance.',
-        potentialMultiplier: '85% faster check-in',
+        problem: 'Last-minute OTA cancellations leaving prime rooms empty.',
+        opportunity: 'Predictive cancellation modeling that automatically releases high-risk rooms to waiting corporate groups and direct bookers.',
+        potentialMultiplier: '94% cancellation recovery rate',
       },
       {
-        problem: 'Housekeeping cleaned in arbitrary order.',
-        opportunity: 'Predictive housekeeping dispatch prioritized by real-time flight tracking.',
-        potentialMultiplier: '28% faster room turn',
+        problem: 'Housekeeping cleaning rooms in arbitrary order causing lobby queues.',
+        opportunity: 'Flight-aware dynamic housekeeping dispatch prioritizing rooms by guest landing telemetry.',
+        potentialMultiplier: '50% faster room readiness',
       },
       {
-        problem: 'Unsold spa and dining capacity.',
-        opportunity: 'Contextual AI recommendations delivered at optimal guest relaxation moments.',
-        potentialMultiplier: '+$42/night ancillary spend',
+        problem: 'Under-utilized spa, dining, and premium room upgrades.',
+        opportunity: 'Contextual AI in-stay concierge delivering personalized upgrade and amenity invitations at the moment of peak relaxation.',
+        potentialMultiplier: '+32% higher ancillary RevPAR',
       },
     ],
+
+    // 04 9 Aether Solutions
     solutionMappings: [
       {
-        problem: '3 PM front desk lobby congestion',
-        opportunity: 'Mobile pre-arrival check-in',
-        solution: 'Digital Concierge that verifies guest ID, processes security deposits, and issues mobile room keys before arrival.',
-        capabilityTag: 'Digital Concierge',
+        problem: 'Multi-channel reservation fragmentation and rate disparities',
+        opportunity: 'Unified channel distribution mesh',
+        solution: 'Booking Intelligence: Continuously monitors GDS, OTA, and direct booking streams, verifying rate parity and optimizing channel mix in real time.',
+        capabilityTag: 'Booking Intelligence',
       },
       {
-        problem: 'Mismatched room cleaning priorities',
-        opportunity: 'Flight-aware housekeeping routing',
-        solution: 'Housekeeping Dispatcher that dynamically orders room cleaning queues based on guest landing times.',
-        capabilityTag: 'Housekeeping Dispatch',
+        problem: 'Uncertain occupancy pace and seasonal demand swings',
+        opportunity: 'Predictive multi-factor pace modeling',
+        solution: 'Occupancy Forecasting: Correlates regional events, flight arrivals, and historical velocity to forecast exact daily category occupancy 14 days out.',
+        capabilityTag: 'Occupancy Forecasting',
       },
       {
-        problem: 'Under-utilized spa and dining amenities',
-        opportunity: 'Personalized in-stay recommendation',
-        solution: 'Amenity Upsell Engine that suggests relevant experiences via WhatsApp or SMS based on guest profile.',
-        capabilityTag: 'Amenity Upsell',
+        problem: 'Flexible OTA cancellation spikes causing revenue loss',
+        opportunity: 'Predictive cancellation risk scoring',
+        solution: 'Cancellation Prediction: Calculates cancellation probability per reservation and automatically queues overbooking buffers and waitlist backfills.',
+        capabilityTag: 'Cancellation Prediction',
+      },
+      {
+        problem: 'Lost guest preferences trapped in PMS silos',
+        opportunity: 'Persistent VIP guest preference graph',
+        solution: 'Guest Preference Intelligence: Aggregates room preferences, pillow choices, dining restrictions, and past feedback into an actionable guest dossier.',
+        capabilityTag: 'Guest Preference Intel',
+      },
+      {
+        problem: 'Disconnected room status and maintenance delays',
+        opportunity: 'IoT-enabled digital room ledger',
+        solution: 'Room Operations Intelligence: Connects smart door locks, HVAC thermostats, and housekeeping tablets into a live room readiness command board.',
+        capabilityTag: 'Room Operations Intel',
+      },
+      {
+        problem: 'Housekeeping cleaning rooms in numerical rather than priority order',
+        opportunity: 'Dynamic arrival-prioritized cleaning dispatch',
+        solution: 'Housekeeping Intelligence: Routes cleaning attendants to rooms based on incoming guest flight tracking, VIP status, and early check-in requests.',
+        capabilityTag: 'Housekeeping Intel',
+      },
+      {
+        problem: 'Lobby congestion and mismatched labor schedules',
+        opportunity: 'Pace-aligned predictive labor rostering',
+        solution: 'Staff Scheduling: Recommends precise department staffing headcount aligned with hourly check-in, check-out, and banquet turnover peaks.',
+        capabilityTag: 'Staff Scheduling',
+      },
+      {
+        problem: 'Missed ancillary revenue on premium suites and amenities',
+        opportunity: 'Contextual in-stay digital upsell triggers',
+        solution: 'Upselling Recommendations: Automatically delivers personalized suite upgrade bids, late checkout passes, and spa vouchers via WhatsApp/SMS.',
+        capabilityTag: 'Upselling Engine',
+      },
+      {
+        problem: 'Sub-optimal room pricing eroding gross margins',
+        opportunity: 'Autonomous dynamic ADR yield management',
+        solution: 'Revenue Intelligence: Adjusts room rates dynamically across all distribution channels to maximize RevPAR and direct booking margin.',
+        capabilityTag: 'Revenue Intelligence',
       },
     ],
+
+    // 05 Signature Workflow Pipeline
     workflowPipeline: {
       input: {
-        source: 'Airline Flight Telemetry & PMS Booking',
-        details: 'VIP guest flight landed at local airport at 13:15 (2 hours ahead of 15:00 check-in).',
-        rawSignal: 'Guest: David Sterling (Suite 402). Status: Flight landed early.',
+        source: 'Airline Flight Telemetry & PMS Booking Stream',
+        details: 'VIP Corporate Guest (Suite 402) flight landed 45 minutes ahead of schedule at 1:15 PM.',
+        rawSignal: 'Guest: David Sterling. Flight #UA421 landed early. Suite 402 status: Dirty (Checkout at 11:30 AM).',
       },
       intelligence: {
-        diagnosis: 'Early arrival opportunity. Suite 402 is dirty; Housekeeping currently on 4th floor.',
-        metricScored: 'Priority Cleaning Escalation: Confirmed',
+        diagnosis: 'Early VIP arrival diagnosed. Housekeeping Pod #3 currently operating on 4th floor.',
+        metricScored: 'Priority Turnaround Score: 99.4%',
       },
       recommendation: {
-        actionProposed: 'Re-route Housekeeping Team to Suite 402 immediately; pre-cool room to 68°F.',
-        confidence: '99.4% priority match',
+        actionProposed: 'Escalate Suite 402 to top of Housekeeping Pod queue; pre-condition climate to 68°F; generate digital key.',
+        confidence: '99.2% VIP readiness SLA match',
       },
       action: {
         stepsExecuted: [
-          'Sent priority cleaning ticket to Housekeeper mobile tablet',
-          'Suite 402 cleaned and inspected by 13:45',
-          'Activated mobile room key credential on guest phone',
-          'Sent welcome message: "Your suite is ready for early check-in"',
+          'Dispatched priority turnaround ticket to floor housekeeper tablet',
+          'Suite 402 turned, inspected, and sanitized in 22 minutes',
+          'Activated contactless digital keycard credential on guest mobile wallet',
+          'Dispatched welcome notification: "Your suite is ready for early check-in"',
         ],
-        targetSystem: 'PMS & Smart Door Lock API',
+        targetSystem: 'Opera PMS, Salto Smart Lock & Guest WhatsApp API',
       },
       result: {
-        outcome: 'Guest walked straight to prepared suite upon arrival; positive 5-star review logged.',
-        timeToImpact: '30 minutes',
+        outcome: 'VIP guest walked directly to pre-chilled suite with zero front desk lobby delay. 5-star review and direct rebooking logged.',
+        timeToImpact: '22 minutes',
       },
     },
+
+    // 06 Interactive Demo Configuration
     interactiveDemo: {
-      scenarioTitle: 'Flight Delay Tracking & Priority Room Turn Dispatch',
-      scenarioSubtitle: 'Simulate Aether detecting an early landing flight and prioritizing room turnaround.',
+      scenarioTitle: 'Simulate Daily Hotel Operations & Shift Intelligence',
+      scenarioSubtitle: 'Experience Aether diagnosing occupancy pace, predicting OTA cancellations, and auto-dispatching staff allocations.',
       simulatedSignal: {
-        Guest: 'David Sterling (Suite 402)',
-        FlightTelemetry: 'Flight #UA421 landed 13:15 (45 min early)',
-        RoomStatus: 'Suite 402 (Pending Cleaning)',
+        DateScenario: 'Tomorrow (Friday — Tech Summit & Weekend Inflow)',
+        TotalRooms: '200 Inventory Base',
+        ExpectedOccupancy: '94.5% (189 Confirmed Bookings)',
+        ExpectedCancellations: '12 Rooms (6.3% Predicted Risk)',
+        RoomDemand: 'High Surge (+42% vs baseline)',
+        OperationalLoad: 'Critical Peak: 146 Arrivals / 88 Departures',
       },
-      engineReasoning: 'Early arrival VIP diagnosed. Autonomous housekeeping re-route and digital key generation executed.',
+      engineReasoning: '12 high-probability OTA cancellations diagnosed. Automatic corporate waitlist backfill and +5 housekeeping morning shift reassignment executed.',
       automatedActions: [
-        'Ingested flight tracking telemetry and flagged early landing',
-        'Dispatched priority turnaround ticket to floor housekeeping tablet',
-        'Pre-conditioned room climate to guest profile preference',
-        'Issued digital key credential to guest mobile phone',
+        'Backfilled 12 predicted cancellations with pre-approved corporate conference waitlist',
+        'Reallocated +5 staff from evening turndown to 10 AM–2 PM express room turnover',
+        'Pushed $45 early check-in pass to 30 confirmed leisure arrivals',
+        'Pre-assigned high-floor quiet suites to 48 loyalty titanium members',
       ],
-      verifiedOutcome: 'Suite ready 75 minutes ahead of standard check-in time with zero front-desk queue.',
-      executionDuration: '30 minutes',
+      verifiedOutcome: 'Zero check-in lobby wait times. ₹3,48,000 in protected RevPAR yield.',
+      executionDuration: '520ms',
     },
+
+    // 07 Business Intelligence
     businessIntelligence: {
-      insights: 'Guests who receive an early check-in notification spend 40% more on room service on their arrival day.',
-      predictions: 'Sunday checkout volume projected to leave 35 rooms empty between 11:00 and 16:00.',
-      risks: 'Spa therapist schedule underutilized by 30% on Monday and Tuesday mornings.',
-      opportunities: 'Offering late checkout add-ons at 09:00 can generate an estimated $4,500 extra weekly room revenue.',
-      recommendations: 'Automate Monday spa promotion to guests staying 3+ nights and activate 14:00 late checkout offers.',
+      insights: 'Guests receiving automated digital key check-in spend 40% more on on-property dining during their arrival evening.',
+      predictions: 'Friday Tech Summit demand surge will push market compset ADR by +24%; recommend holding remaining 11 rooms at premium rate.',
+      risks: '28 OTA flexible reservations flagged with > 65% cancellation likelihood based on historical booking lead time.',
+      opportunities: 'Monetizing guaranteed 3:00 PM late checkouts on non-turnover floors captures an estimated ₹42,000 in pure weekend margin.',
+      recommendations: 'Auto-release 12 high-risk OTA rooms to corporate waitlist and deploy mobile lobby concierge greeters during 2–4 PM arrival peak.',
     },
+
+    // 08 Business Impact
     businessImpact: {
-      time: 'Saves front desk staff 15 hours per week by automating routine check-ins and amenity inquiries.',
-      efficiency: 'Accelerates room turnover by 28% through flight-aware housekeeping prioritization.',
-      customerExperience: 'Delivers frictionless 5-star luxury service with zero lobby waiting lines.',
-      operations: 'Eliminates lost keycard replacements and centralizes guest requests into a unified task board.',
-      decisionMaking: 'Provides hotel general managers with real-time RevPAR, occupancy, and guest satisfaction metrics.',
-      visibility: 'Live telemetry displaying room cleanliness status, guest arrival times, and concierge response times.',
+      time: 'Eliminates 15+ hours of manual room status calls between reception and housekeeping per shift.',
+      efficiency: 'Accelerates room turnover from 48 minutes to 24 minutes through flight-aware dynamic pod dispatching.',
+      customerExperience: 'Delivers effortless 5-star luxury experiences with zero front desk waiting lines and 100% preference recall.',
+      operations: 'Synchronizes front desk, housekeeping, concierge, and engineering into a single autonomous operational rhythm.',
+      decisionMaking: 'Provides general managers and revenue directors with real-time RevPAR pace, channel mix yield, and labor cost optimization.',
+      visibility: 'Live single-pane dashboard displaying room readiness, guest transit ETAs, digital key activations, and concierge SLAs.',
     },
+
+    // 09 Additional Capabilities
     additionalCapabilities: [
       {
         groupTitle: 'Property Management System (PMS) Mesh',
-        summary: 'Deep two-way integration with Opera, Cloudbeds, and Mews.',
+        summary: 'Deep two-way integration with Opera, Cloudbeds, Mews, and Protel.',
         features: ['Real-time folio updates', 'Smart lock access coding', 'Automatic tax and fee ledgering'],
       },
       {
-        groupTitle: 'Multilingual Guest Concierge',
-        summary: '24/7 conversational support in 30+ languages over SMS and WhatsApp.',
-        features: ['Instant luggage dispatch', 'Local restaurant recommendations', 'Maintenance request triage'],
+        groupTitle: 'Multilingual AI Guest Concierge',
+        summary: '24/7 conversational support in 30+ languages over WhatsApp, SMS, and in-room tablets.',
+        features: ['Instant luggage dispatch', 'Local dining concierge bookings', 'Engineering & maintenance triage'],
       },
       {
-        groupTitle: 'Amenity & Event Revenue Yield',
-        summary: 'Optimizes pricing and availability for cabanas, spa slots, and dining.',
+        groupTitle: 'Dynamic Amenity & Ancillary Yield Engine',
+        summary: 'Optimizes pricing and availability for cabanas, spa appointments, and chef tasting menus.',
         features: ['Dynamic cabana pricing', 'Spa slot gap filling', 'Private dining reservation locks'],
       },
     ],
@@ -1494,9 +1688,9 @@ export const INDUSTRIES: IndustryData[] = [
     heroSubheadline:
       'Free clinical staff from administrative overload while improving patient care continuity and appointment attendance.',
     stats: [
-      { label: 'Intake Admin Time', value: '-78%', change: '-78%', detail: 'Digital pre-visit ingestion' },
-      { label: 'Unfilled Slot Recovery', value: '84%', change: '+84%', detail: 'Automated waitlist matching' },
-      { label: 'Patient No-Show Rate', value: '3.4%', change: '-62%', detail: 'Multi-touch conversational prep' },
+      { label: 'Intake Admin Time', value: 'Up to -78%', change: 'Potential', detail: 'Simulated digital pre-visit intake savings' },
+      { label: 'Unfilled Slot Recovery', value: 'Up to 84%', change: 'Illustrative', detail: 'Simulated waitlist backfill scenario' },
+      { label: 'Patient No-Show Rate', value: '3.4%', change: 'Example', detail: 'Illustrative conversational prep cohort' },
     ],
     challenges: [
       {
@@ -1684,9 +1878,9 @@ export const INDUSTRIES: IndustryData[] = [
     heroSubheadline:
       'Eliminate technician downtime and vehicle hold-overs with unified bay scheduling and proactive customer service triggers.',
     stats: [
-      { label: 'Bay Utilization', value: '92.5%', change: '+24%', detail: 'Technician skill matching' },
-      { label: 'Parts Hold-Over Delay', value: '-70%', change: '-70%', detail: 'Pre-booking parts verification' },
-      { label: 'Customer RO Value', value: '+$185', change: '+28%', detail: 'AI diagnostic health checks' },
+      { label: 'Bay Utilization', value: '92.5%', change: 'Potential', detail: 'Simulated technician skill matching target' },
+      { label: 'Parts Hold-Over Delay', value: 'Up to -70%', change: 'Illustrative', detail: 'Potential savings from pre-booking checks' },
+      { label: 'Customer RO Value', value: '+$185', change: 'Example', detail: 'Illustrative diagnostic health check scenario' },
     ],
     challenges: [
       {
@@ -1880,9 +2074,9 @@ export const INDUSTRIES: IndustryData[] = [
     heroSubheadline:
       'Transform slow admissions cycles into instantaneous student guidance and proactive academic engagement.',
     stats: [
-      { label: 'Inquiry-to-App Speed', value: '4x faster', change: '4x', detail: 'Instant 24/7 advisor' },
-      { label: 'Enrollment Yield', value: '+19.5%', change: '+19.5%', detail: 'Personalized course matching' },
-      { label: 'Course Completion Rate', value: '87%', change: '+22%', detail: 'Proactive intervention alerts' },
+      { label: 'Inquiry-to-App Speed', value: '4x faster', change: 'Target', detail: 'Simulated 24/7 advisor routing benchmark' },
+      { label: 'Enrollment Yield', value: '+19.5%', change: 'Potential', detail: 'Illustrative course matching cohort' },
+      { label: 'Course Completion Rate', value: '87%', change: 'Example', detail: 'Illustrative proactive intervention cohort' },
     ],
     challenges: [
       {

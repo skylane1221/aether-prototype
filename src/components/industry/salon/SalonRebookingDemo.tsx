@@ -32,8 +32,69 @@ export const SalonRebookingDemo: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Customer Selector Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      {/* Sandbox Header */}
+      <div className="bg-zinc-900 px-4 sm:px-6 py-3.5 rounded-t-2xl border border-rose-500/20 flex flex-wrap items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <div className="flex gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+            <span className="w-2.5 h-2.5 rounded-full bg-purple-500/80" />
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-mono text-rose-400 font-semibold">
+              aether-stylist-mesh
+            </span>
+            <span className="text-zinc-500 text-xs">/</span>
+            <span className="text-xs font-mono text-zinc-400">
+              predictive-rebooking-dispatch
+            </span>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40">
+            SIMULATED DEMO
+          </span>
+          <span className="text-[10px] font-mono bg-rose-500/10 text-rose-300 border border-rose-500/30 px-2 py-0.5 rounded">
+            Live Client Lifecycle
+          </span>
+        </div>
+      </div>
+
+      {/* 5-Step Salon Demo Pipeline Progress Bar */}
+      <div className="bg-zinc-950 border-x border-b border-rose-500/20 px-4 sm:px-6 py-2.5 flex items-center justify-between gap-1 overflow-x-auto text-[11px] font-mono">
+        {[
+          '1. Select Customer',
+          '2. Analyze Service History',
+          '3. Predict Next Service',
+          '4. Recommend Rebooking',
+          '5. Suggest Communication',
+        ].map((phase, idx, arr) => (
+          <React.Fragment key={phase}>
+            <div className="flex items-center gap-1.5 text-rose-300 font-semibold shrink-0">
+              <span className="w-4 h-4 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/40 flex items-center justify-center text-[9px] font-bold">
+                {idx + 1}
+              </span>
+              <span>{phase.split('. ')[1]}</span>
+            </div>
+            {idx < arr.length - 1 && (
+              <span className="text-zinc-600">→</span>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
+
+      {/* Step 1: Customer Selector Cards */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between">
+          <span className="text-xs font-semibold text-zinc-300 uppercase tracking-wider font-mono flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-rose-400" />
+            Step 1: Select a Client Profile to Inspect
+          </span>
+          <span className="text-[11px] font-mono text-zinc-400">4 Client Archetypes</span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {SALON_CUSTOMERS.map((c: SalonCustomerProfile) => {
           const isSelected = c.id === selectedCustomerId;
           const urgencyBadge = 
@@ -77,6 +138,7 @@ export const SalonRebookingDemo: React.FC = () => {
             </button>
           );
         })}
+        </div>
       </div>
 
       {/* Main Interactive Dossier & Intelligence Engine */}
@@ -133,7 +195,7 @@ export const SalonRebookingDemo: React.FC = () => {
                 }`}
               >
                 <Clock className="w-3.5 h-3.5" />
-                Service History & Formula Archive
+                Step 2: Service History & Formula Archive
               </button>
               <button
                 onClick={() => setSelectedTab('preferences')}
@@ -144,38 +206,33 @@ export const SalonRebookingDemo: React.FC = () => {
                 }`}
               >
                 <Heart className="w-3.5 h-3.5" />
-                Preferred Services & Hair Profile
+                Treatment Preferences & Notes
               </button>
             </div>
 
-            {/* Tab 1: Service History */}
+            {/* Tab 1: Service History Timeline */}
             {selectedTab === 'service_history' && (
               <div className="space-y-3">
-                <div className="flex items-center justify-between text-xs text-zinc-400 font-mono">
-                  <span>Past Appointments Log</span>
-                  <span>{customer.serviceHistory.length} Recorded Visits</span>
+                <div className="text-xs font-mono text-zinc-400">
+                  Showing past treatments, stylists and formulation specifications:
                 </div>
-
-                <div className="space-y-2">
+                <div className="space-y-2.5">
                   {customer.serviceHistory.map((item, idx: number) => (
                     <div
                       key={idx}
-                      className="p-3.5 rounded-xl bg-black/40 border border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-2 hover:border-rose-500/30 transition-colors"
+                      className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1.5 hover:border-white/10 transition-colors"
                     >
-                      <div className="space-y-1">
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs font-bold text-white">{item.serviceName}</span>
-                          <span className="text-[10px] text-zinc-400 font-mono">with {item.stylist}</span>
-                        </div>
-                        {item.formulaNotes && (
-                          <p className="text-[11px] text-rose-300/90 font-mono flex items-center gap-1">
-                            <Sparkles className="w-3 h-3 text-rose-400 shrink-0" />
-                            <span>Formula: {item.formulaNotes}</span>
-                          </p>
-                        )}
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-bold text-white flex items-center gap-1.5">
+                          <Scissors className="w-3.5 h-3.5 text-rose-400" />
+                          {item.serviceName}
+                        </span>
+                        <span className="text-[11px] font-mono text-zinc-400">Stylist: {item.stylist}</span>
                       </div>
-
-                      <div className="flex items-center justify-between md:justify-end gap-3 text-xs font-mono">
+                      <div className="text-[11px] text-zinc-400 bg-white/[0.02] p-2 rounded border border-white/5 font-mono">
+                        Formula: {item.formulaNotes}
+                      </div>
+                      <div className="flex items-center justify-between text-[11px] font-mono pt-1">
                         <span className="text-zinc-400">{item.date}</span>
                         <span className="font-semibold text-rose-300">{item.price}</span>
                       </div>
@@ -211,9 +268,9 @@ export const SalonRebookingDemo: React.FC = () => {
             {/* Visit Gap & Cycle Diagnostic Bar */}
             <div className="p-4 rounded-xl bg-gradient-to-r from-rose-950/20 via-purple-950/20 to-black border border-rose-500/20 space-y-2">
               <div className="flex items-center justify-between text-xs">
-                <span className="text-zinc-300 flex items-center gap-1.5">
+                <span className="text-zinc-300 flex items-center gap-1.5 font-mono">
                   <Calendar className="w-3.5 h-3.5 text-rose-400" />
-                  Cycle Tracker: <strong className="text-white">{customer.daysSinceLastVisit} days since last visit</strong>
+                  Step 3: Predict Next Service Cadence: <strong className="text-white">{customer.daysSinceLastVisit} days elapsed</strong>
                 </span>
                 <span className="font-mono text-rose-300 text-[11px]">
                   Cadence: {customer.visitFrequencyWeeks * 7} days
@@ -251,7 +308,7 @@ export const SalonRebookingDemo: React.FC = () => {
                   <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white">Aether Rebooking Intelligence</h4>
+                  <h4 className="text-sm font-bold text-white">Step 4 & 5: Rebooking & Outreach</h4>
                   <span className="text-[10px] font-mono text-zinc-400">Automated Salon Retention Engine</span>
                 </div>
               </div>
@@ -260,13 +317,13 @@ export const SalonRebookingDemo: React.FC = () => {
               </Badge>
             </div>
 
-            {/* Aether 4 Recommendations */}
+            {/* Aether Recommendations */}
             <div className="space-y-3">
               {/* Recommended Service */}
               <div className="p-3.5 rounded-xl bg-black/60 border border-white/5 space-y-1">
-                <span className="text-[10px] uppercase font-mono text-zinc-400 flex items-center gap-1">
+                <span className="text-[10px] uppercase font-mono text-rose-400 flex items-center gap-1 font-semibold">
                   <Scissors className="w-3 h-3 text-rose-400" />
-                  Recommended Next Service
+                  Step 3: Predicted Next Treatment
                 </span>
                 <div className="text-sm font-bold text-white">
                   {customer.recommendedNextService}
@@ -278,9 +335,9 @@ export const SalonRebookingDemo: React.FC = () => {
 
               {/* Optimal Booking Window */}
               <div className="p-3.5 rounded-xl bg-black/60 border border-white/5 space-y-1">
-                <span className="text-[10px] uppercase font-mono text-zinc-400 flex items-center gap-1">
+                <span className="text-[10px] uppercase font-mono text-rose-400 flex items-center gap-1 font-semibold">
                   <Calendar className="w-3 h-3 text-rose-400" />
-                  Optimal Appointment Slot
+                  Step 4: Recommended Rebooking Window
                 </span>
                 <div className="text-xs font-semibold text-zinc-200">
                   {customer.recommendedAppointmentWindow}
@@ -291,11 +348,13 @@ export const SalonRebookingDemo: React.FC = () => {
               </div>
 
               {/* Outreach Channel */}
-              <div className="p-3 rounded-lg bg-black/40 border border-white/5">
-                <div className="text-[10px] text-zinc-400 font-mono uppercase">Channel</div>
-                <div className="text-xs font-bold text-white flex items-center gap-1 mt-0.5">
+              <div className="p-3.5 rounded-xl bg-black/60 border border-white/5 space-y-2">
+                <div className="text-[10px] text-emerald-400 font-mono uppercase font-semibold flex items-center gap-1">
                   <MessageSquare className="w-3 h-3 text-emerald-400" />
-                  {customer.suggestedCommunication.channel} Outreach Protocol
+                  Step 5: Suggested Communication Protocol
+                </div>
+                <div className="text-xs text-zinc-300 bg-zinc-900/80 p-2.5 rounded border border-white/5 italic leading-relaxed">
+                  "{customer.suggestedCommunication.messageContent}"
                 </div>
               </div>
             </div>

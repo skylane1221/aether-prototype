@@ -22,34 +22,85 @@ import { EDUCATION_INQUIRIES, StudentInquiryProfile } from '../../../data/educat
 
 export const EducationInquiryDemo: React.FC = () => {
   const [selectedInqId, setSelectedInqId] = useState<string>(EDUCATION_INQUIRIES[0].id);
-  const [dispatchedInqId, setDispatchedInqId] = useState<string | null>(null);
+  const [demoState, setDemoState] = useState<'idle' | 'analyzing' | 'dispatched'>('idle');
   const [activeTab, setActiveTab] = useState<'requirements' | 'courses'>('requirements');
 
-  const inquiry: StudentInquiryProfile = EDUCATION_INQUIRIES.find((i: StudentInquiryProfile) => i.id === selectedInqId) || EDUCATION_INQUIRIES[0];
-  const isDispatched = dispatchedInqId === inquiry.id;
+  const inquiry: StudentInquiryProfile =
+    EDUCATION_INQUIRIES.find((i: StudentInquiryProfile) => i.id === selectedInqId) ||
+    EDUCATION_INQUIRIES[0];
 
-  const handleDispatchFollowUp = () => {
-    setDispatchedInqId(inquiry.id);
+  const handleRunAether = () => {
+    setDemoState('analyzing');
+    setTimeout(() => {
+      setDemoState('dispatched');
+    }, 500);
+  };
+
+  const handleReset = () => {
+    setDemoState('idle');
+  };
+
+  const handleSelectInq = (id: string) => {
+    setSelectedInqId(id);
+    setDemoState('idle');
   };
 
   return (
     <div className="space-y-6">
+      {/* Top Demo Bar */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+        <div className="flex items-center gap-2.5 flex-wrap">
+          <Badge
+            variant="outline"
+            size="sm"
+            className="bg-rose-500/10 border-rose-400/40 text-rose-300 font-mono text-[10px] tracking-widest font-bold uppercase py-0.5 px-2.5"
+          >
+            SIMULATED DEMO
+          </Badge>
+          <span className="text-xs font-mono text-text-muted">
+            Signature Journey: <strong className="text-rose-300">Student Inquiry → Requirement → Course Match → Follow-up</strong>
+          </span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          {demoState === 'idle' ? (
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={handleRunAether}
+              leftIcon={<Sparkles className="w-3.5 h-3.5" />}
+              className="bg-rose-500 hover:bg-rose-400 text-slate-950 font-semibold shadow-glow-subtle"
+            >
+              Run Aether
+            </Button>
+          ) : (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleReset}
+              className="text-xs border-slate-700 text-slate-200"
+            >
+              Reset Demo
+            </Button>
+          )}
+        </div>
+      </div>
+
       {/* Student Inquiry Selector Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {EDUCATION_INQUIRIES.map((i: StudentInquiryProfile) => {
           const isSelected = i.id === selectedInqId;
-          const priorityBadge = 
-            i.priorityTier === 'High Priority (Immediate Action)' ? 'bg-rose-500/20 text-rose-300 border-rose-500/40' :
-            i.priorityTier === 'Warm Candidate' ? 'bg-amber-500/20 text-amber-300 border-amber-500/40' :
-            'bg-purple-500/20 text-purple-300 border-purple-500/40';
+          const priorityBadge =
+            i.priorityTier === 'High Priority (Immediate Action)'
+              ? 'bg-rose-500/20 text-rose-300 border-rose-500/40'
+              : i.priorityTier === 'Warm Candidate'
+              ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+              : 'bg-purple-500/20 text-purple-300 border-purple-500/40';
 
           return (
             <button
               key={i.id}
-              onClick={() => {
-                setSelectedInqId(i.id);
-                setDispatchedInqId(null);
-              }}
+              onClick={() => handleSelectInq(i.id)}
               className={`p-4 rounded-xl text-left border transition-all duration-300 relative group flex flex-col justify-between ${
                 isSelected
                   ? 'bg-gradient-to-b from-rose-950/50 via-pink-950/30 to-black border-rose-500 shadow-[0_0_20px_rgba(244,63,94,0.25)]'
@@ -293,29 +344,47 @@ export const EducationInquiryDemo: React.FC = () => {
             {/* Action Trigger */}
             <div className="pt-2">
               <AnimatePresence mode="wait">
-                {isDispatched ? (
+                {demoState === 'analyzing' ? (
+                  <div className="p-4 rounded-xl bg-rose-950/40 border border-rose-500/40 text-center space-y-2">
+                    <div className="w-5 h-5 border-2 border-rose-400 border-t-transparent animate-spin mx-auto" />
+                    <p className="text-xs text-rose-200 font-mono">
+                      Matching syllabus prerequisites & evaluating scholarship eligibility...
+                    </p>
+                  </div>
+                ) : demoState === 'dispatched' ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
-                    className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/50 text-center space-y-1.5"
+                    className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/50 text-center space-y-2"
                   >
                     <div className="flex items-center justify-center gap-2 text-emerald-400 font-bold text-sm">
                       <CheckCircle2 className="w-4 h-4" />
-                      Admissions Package Dispatched
+                      Result: Admissions Package & Syllabus Dispatched
                     </div>
                     <p className="text-[11px] text-emerald-200/80">
                       Tailored syllabus, scholarship review, and orientation invite sent to {inquiry.studentName}.
                     </p>
+                    <div className="pt-1 flex items-center justify-center gap-2">
+                      <span className="text-[10px] font-mono text-emerald-300">Recommended Action: Consultation Scheduled</span>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleReset}
+                        className="text-[10px] py-0.5 px-2 h-auto border-emerald-500/40 text-emerald-300"
+                      >
+                        Reset Demo
+                      </Button>
+                    </div>
                   </motion.div>
                 ) : (
                   <Button
-                    onClick={handleDispatchFollowUp}
+                    onClick={handleRunAether}
                     variant="primary"
-                    className="w-full justify-center gap-2 bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 shadow-lg shadow-rose-900/30"
+                    className="w-full justify-center gap-2 bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 shadow-lg shadow-rose-900/30 font-semibold"
                   >
                     <Send className="w-4 h-4" />
-                    Dispatch Tailored Course Package & Follow-Up
+                    Recommended Action: Dispatch Course Package & Follow-Up
                   </Button>
                 )}
               </AnimatePresence>

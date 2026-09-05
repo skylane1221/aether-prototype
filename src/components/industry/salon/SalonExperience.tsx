@@ -23,6 +23,10 @@ import {
   ShieldCheck,
   Play,
   Zap,
+  CheckCircle2,
+  BrainCircuit,
+  UserCheck,
+  Target,
 } from 'lucide-react';
 import { cn } from '../../../utils/cn';
 
@@ -118,14 +122,118 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
       </section>
 
       {/* ========================================================================= */}
-      {/* 02 CORE WORKFLOW (Customer -> Appointment -> Service -> Rebooking -> Retention) */}
+      {/* 01.5 THE AETHER SALON OPERATIONAL PARADIGM */}
       {/* ========================================================================= */}
-      <section id="workflow-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SalonWorkflowPipeline />
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12">
+        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-zinc-900/95 via-black/90 to-zinc-950/95 border border-rose-500/30 shadow-2xl backdrop-blur-md">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
+            <div>
+              <div className="flex items-center gap-2 mb-1.5">
+                <Badge variant="primary" size="sm" className="bg-rose-500/20 text-rose-300 border-rose-500/30">
+                  Customer Lifecycle & Appointment Architecture
+                </Badge>
+                <span className="text-xs font-mono text-rose-400 font-semibold">Client Retention & Chair Yield Engine</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                How Aether Automates Salon Rebooking & Eliminates No-Shows
+              </h2>
+            </div>
+            <div className="flex items-center gap-2 text-xs font-mono text-zinc-400 bg-zinc-950/80 px-3 py-1.5 rounded-lg border border-white/10">
+              <Sparkles className="w-3.5 h-3.5 text-rose-400" />
+              <span>Service & Formula Ingest → Precision Cycle Rebooking</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+            {/* 1. Problem */}
+            <div className="p-5 rounded-xl bg-rose-950/20 border border-rose-500/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 text-rose-400 font-bold text-xs uppercase tracking-wider mb-2">
+                  <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
+                  <span>The Salon Problem</span>
+                </div>
+                <h3 className="text-base font-extrabold text-white">
+                  Rebooking Drift & Empty Chair Latency
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-300 mt-2 leading-relaxed">
+                  Clients leave without rebooking and delay their next appointment by 4–8 weeks past the optimal color fade threshold. Unconfirmed bookings lead to 18% no-show rates and unrecoverable chair gaps.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-rose-500/20 flex items-center justify-between text-[11px] font-mono text-rose-300/80">
+                <span>Revenue Impact:</span>
+                <span className="font-bold text-rose-300">35% Chair Utilization Gap</span>
+              </div>
+            </div>
+
+            {/* 2. Aether Understands */}
+            <div className="p-5 rounded-xl bg-purple-950/20 border border-purple-500/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 text-purple-400 font-bold text-xs uppercase tracking-wider mb-2">
+                  <BrainCircuit className="w-4 h-4 text-purple-400 shrink-0" />
+                  <span>Aether Understands</span>
+                </div>
+                <h3 className="text-base font-extrabold text-white">
+                  Formula & Regrowth Telemetry
+                </h3>
+                <p className="text-xs text-zinc-300 mt-2 leading-relaxed">
+                  Synthesizes chemical formula records, stylist chair velocity, personal hair growth rates, and no-show patterns:
+                </p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {['Color & Toner Formula Archive', 'Regrowth & Fade Cadence (wks)', 'Preferred Stylist Sync', 'Stylist Chair Time Duration', 'No-Show Risk Signals', 'Lifetime Spend Trajectory'].map((attr, i) => (
+                    <span
+                      key={attr}
+                      className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-purple-500/10 border border-purple-500/25 text-purple-300"
+                    >
+                      {i + 1}. {attr}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="pt-3 border-t border-purple-500/20 flex items-center justify-between text-[11px] font-mono text-purple-300/80">
+                <span>Prediction Precision:</span>
+                <span className="font-bold text-purple-300">96% Rebooking Fit</span>
+              </div>
+            </div>
+
+            {/* 3. Aether Recommends */}
+            <div className="p-5 rounded-xl bg-rose-950/20 border border-rose-500/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 text-rose-400 font-bold text-xs uppercase tracking-wider mb-2">
+                  <Target className="w-4 h-4 text-rose-400 shrink-0" />
+                  <span>Aether Recommends</span>
+                </div>
+                <h3 className="text-base font-extrabold text-white">
+                  Lifecycle Directives
+                </h3>
+                <p className="text-xs text-zinc-300 mt-2 leading-relaxed">
+                  Triggers timed WhatsApp appointment invites, customized treatment add-ons, and dynamic slot packing:
+                </p>
+                <div className="mt-3 space-y-1.5">
+                  {[
+                    'Hyper-Personalized WhatsApp Rebooking Prompts',
+                    'Contextual Treatment Add-ons (+28% Ticket)',
+                    'Dynamic Mid-Day Chair Gap Filling',
+                    'Stylist Workstation Formula & Note Sync',
+                    'Automated VIP Churn Interception',
+                  ].map((rec, i) => (
+                    <div key={rec} className="flex items-center gap-2 text-[11px] font-mono text-rose-300">
+                      <CheckCircle2 className="w-3 h-3 text-rose-400 shrink-0" />
+                      <span>{i + 1}. {rec}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="pt-3 border-t border-rose-500/20 flex items-center justify-between text-[11px] font-mono text-rose-300/80">
+                <span>Lifecycle Result:</span>
+                <span className="font-bold text-rose-300">84% Rebooking • +41% Client LTV</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 03 6 BUSINESS CHALLENGES */}
+      {/* 02 BUSINESS PROBLEMS & OPERATIONAL BOTTLENECKS */}
       {/* ========================================================================= */}
       <section id="challenges-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -184,20 +292,54 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
       </section>
 
       {/* ========================================================================= */}
-      {/* 04 INTERACTIVE DEMO (Rebooking & Dossier Engine) */}
+      {/* 03 AETHER OPPORTUNITIES */}
       {/* ========================================================================= */}
-      <section id="rebooking-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Interactive Sandbox"
-          title="Predictive Rebooking & Client Dossier Engine"
-          subtitle="Select a client profile to analyze treatment regrowth cycles, formula archives, and 1-tap automated WhatsApp rebooking outreach."
+          badge="Opportunity Discovery"
+          title="Transforming Salon Friction Into Chair Yield Multipliers"
+          subtitle="How Aether diagnoses service cycle gaps and unlocks maximum stylist booking utilization."
         />
 
-        <SalonRebookingDemo />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {industry.opportunities.map((opp, idx: number) => (
+            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-slate-700/80 shadow-card">
+              <div className="space-y-4">
+                <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
+                  <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
+                    Diagnosed Salon Friction
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-secondary leading-snug">
+                    {opp.problem}
+                  </p>
+                </div>
+
+                <div className="flex justify-center text-rose-400">
+                  <ArrowRight className="w-4 h-4 rotate-90" />
+                </div>
+
+                <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/25">
+                  <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                    <Zap className="w-3.5 h-3.5" />
+                    <span>Aether Opportunity</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-primary font-medium leading-snug">
+                    {opp.opportunity}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
+                <span className="text-text-muted font-mono">Projected Multiplier:</span>
+                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+              </div>
+            </Card>
+          ))}
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 05 9 SOLUTIONS MAPPINGS */}
+      {/* 04 9 AETHER SOLUTIONS MAPPINGS */}
       {/* ========================================================================= */}
       <section id="solutions-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -244,7 +386,27 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
       </section>
 
       {/* ========================================================================= */}
-      {/* 06 BUSINESS INTELLIGENCE DASHBOARD */}
+      {/* 05 SIGNATURE WORKFLOW (Customer -> Appointment -> Service -> Rebooking -> Retention) */}
+      {/* ========================================================================= */}
+      <section id="workflow-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SalonWorkflowPipeline />
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 06 SIGNATURE INTERACTIVE DEMO (Rebooking & Dossier Engine) */}
+      {/* ========================================================================= */}
+      <section id="rebooking-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          badge="Signature Interactive Sandbox"
+          title="Predictive Rebooking & Client Dossier Engine"
+          subtitle="Select a client profile to analyze treatment regrowth cycles, formula archives, and 1-tap automated WhatsApp rebooking outreach."
+        />
+
+        <SalonRebookingDemo />
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 07 BUSINESS INTELLIGENCE DASHBOARD */}
       {/* ========================================================================= */}
       <section id="bi-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -257,7 +419,7 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
       </section>
 
       {/* ========================================================================= */}
-      {/* 07 BUSINESS IMPACT */}
+      {/* 08 BUSINESS IMPACT */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -330,7 +492,7 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
       </section>
 
       {/* ========================================================================= */}
-      {/* 08 ADDITIONAL CAPABILITIES ACCORDION */}
+      {/* 09 ADDITIONAL CAPABILITIES ACCORDION */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -391,7 +553,7 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ industry }) =>
       />
 
       {/* ========================================================================= */}
-      {/* 09 BOTTOM CTA */}
+      {/* 10 BOTTOM CTA */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-2xl p-8 sm:p-12 text-center overflow-hidden border border-rose-500/30 bg-gradient-to-b from-rose-950/30 via-slate-900 to-slate-950">

@@ -20,33 +20,87 @@ import { HEALTHCARE_APPOINTMENTS, ClinicAppointmentProfile } from '../../../data
 
 export const HealthcareAppointmentDemo: React.FC = () => {
   const [selectedAptId, setSelectedAptId] = useState<string>(HEALTHCARE_APPOINTMENTS[0].id);
-  const [dispatchedAptId, setDispatchedAptId] = useState<string | null>(null);
+  const [demoState, setDemoState] = useState<'idle' | 'analyzing' | 'dispatched'>('idle');
 
-  const apt: ClinicAppointmentProfile = HEALTHCARE_APPOINTMENTS.find((a: ClinicAppointmentProfile) => a.id === selectedAptId) || HEALTHCARE_APPOINTMENTS[0];
-  const isDispatched = dispatchedAptId === apt.id;
+  const apt: ClinicAppointmentProfile =
+    HEALTHCARE_APPOINTMENTS.find((a: ClinicAppointmentProfile) => a.id === selectedAptId) ||
+    HEALTHCARE_APPOINTMENTS[0];
 
-  const handleDispatchReminder = () => {
-    setDispatchedAptId(apt.id);
+  const handleRunAether = () => {
+    setDemoState('analyzing');
+    setTimeout(() => {
+      setDemoState('dispatched');
+    }, 500);
+  };
+
+  const handleReset = () => {
+    setDemoState('idle');
+  };
+
+  const handleSelectApt = (id: string) => {
+    setSelectedAptId(id);
+    setDemoState('idle');
   };
 
   return (
     <div className="space-y-6">
+      {/* Top Demo Bar */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+        <div className="flex items-center gap-2.5 flex-wrap">
+          <Badge
+            variant="outline"
+            size="sm"
+            className="bg-cyan-500/10 border-cyan-400/40 text-cyan-300 font-mono text-[10px] tracking-widest font-bold uppercase py-0.5 px-2.5"
+          >
+            SIMULATED DEMO
+          </Badge>
+          <span className="text-xs font-mono text-text-muted">
+            Signature Journey: <strong className="text-cyan-300">Appointment → Risk → Reminder</strong>
+          </span>
+          <span className="text-[10px] font-mono bg-rose-500/10 text-rose-300 border border-rose-500/20 px-2 py-0.5 rounded">
+            Administrative & Operational (Non-Diagnostic)
+          </span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          {demoState === 'idle' ? (
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={handleRunAether}
+              leftIcon={<Sparkles className="w-3.5 h-3.5" />}
+              className="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold shadow-glow-subtle"
+            >
+              Run Aether
+            </Button>
+          ) : (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleReset}
+              className="text-xs border-slate-700 text-slate-200"
+            >
+              Reset Demo
+            </Button>
+          )}
+        </div>
+      </div>
+
       {/* Appointment Selector Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {HEALTHCARE_APPOINTMENTS.map((a: ClinicAppointmentProfile) => {
           const isSelected = a.id === selectedAptId;
-          const riskBadge = 
-            a.noShowRiskLevel === 'High Risk' ? 'bg-rose-500/20 text-rose-300 border-rose-500/40' :
-            a.noShowRiskLevel === 'Moderate Risk' ? 'bg-amber-500/20 text-amber-300 border-amber-500/40' :
-            'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
+          const riskBadge =
+            a.noShowRiskLevel === 'High Risk'
+              ? 'bg-rose-500/20 text-rose-300 border-rose-500/40'
+              : a.noShowRiskLevel === 'Moderate Risk'
+              ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+              : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
 
           return (
             <button
               key={a.id}
-              onClick={() => {
-                setSelectedAptId(a.id);
-                setDispatchedAptId(null);
-              }}
+              onClick={() => handleSelectApt(a.id)}
               className={`p-4 rounded-xl text-left border transition-all duration-300 relative group flex flex-col justify-between ${
                 isSelected
                   ? 'bg-gradient-to-b from-cyan-950/40 via-teal-950/30 to-black border-cyan-500 shadow-[0_0_20px_rgba(6,182,212,0.25)]'
@@ -71,9 +125,11 @@ export const HealthcareAppointmentDemo: React.FC = () => {
 
               <div className="mt-3 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
                 <span className="text-zinc-400 font-mono text-[11px] truncate">{a.appointmentTime.split(' (')[0]}</span>
-                <span className={`font-mono font-bold text-[11px] ${
-                  a.noShowProbability > 0.5 ? 'text-rose-400' : 'text-emerald-400'
-                }`}>
+                <span
+                  className={`font-mono font-bold text-[11px] ${
+                    a.noShowProbability > 0.5 ? 'text-rose-400' : 'text-emerald-400'
+                  }`}
+                >
                   {(a.noShowProbability * 100).toFixed(0)}% Risk
                 </span>
               </div>
@@ -257,29 +313,47 @@ export const HealthcareAppointmentDemo: React.FC = () => {
             {/* Action Trigger */}
             <div className="pt-2">
               <AnimatePresence mode="wait">
-                {isDispatched ? (
+                {demoState === 'analyzing' ? (
+                  <div className="p-4 rounded-xl bg-cyan-950/40 border border-cyan-500/40 text-center space-y-2">
+                    <div className="w-5 h-5 border-2 border-cyan-400 border-t-transparent animate-spin mx-auto" />
+                    <p className="text-xs text-cyan-200 font-mono">
+                      Synthesizing attendance risk & structuring pre-visit briefing...
+                    </p>
+                  </div>
+                ) : demoState === 'dispatched' ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
-                    className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/50 text-center space-y-1.5"
+                    className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/50 text-center space-y-2"
                   >
                     <div className="flex items-center justify-center gap-2 text-emerald-400 font-bold text-sm">
                       <CheckCircle2 className="w-4 h-4" />
-                      Administrative Pre-Visit Sequence Active
+                      Result: Administrative Pre-Visit Protocol Active
                     </div>
                     <p className="text-[11px] text-emerald-200/80">
                       Conversational check-in dispatched to {apt.patientName}. Pre-visit intake link held for digital submission.
                     </p>
+                    <div className="pt-1 flex items-center justify-center gap-2">
+                      <span className="text-[10px] font-mono text-emerald-300">Recommended Action: Slot Locked</span>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleReset}
+                        className="text-[10px] py-0.5 px-2 h-auto border-emerald-500/40 text-emerald-300"
+                      >
+                        Reset Demo
+                      </Button>
+                    </div>
                   </motion.div>
                 ) : (
                   <Button
-                    onClick={handleDispatchReminder}
+                    onClick={handleRunAether}
                     variant="primary"
-                    className="w-full justify-center gap-2 bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 shadow-lg shadow-cyan-900/30"
+                    className="w-full justify-center gap-2 bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 shadow-lg shadow-cyan-900/30 font-semibold"
                   >
                     <Send className="w-4 h-4" />
-                    Dispatch Pre-Visit Check-In & Reminder
+                    Recommended Action: Dispatch Pre-Visit Check-In
                   </Button>
                 )}
               </AnimatePresence>

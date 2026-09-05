@@ -11,6 +11,7 @@ import { PLATFORM_SOLUTIONS } from '../data/solutions';
 import { PLATFORM_IMPACT_METRICS } from '../data/impact';
 import { DEMO_SCENARIOS } from '../data/demos';
 import { JourneyNavigator } from '../components/common/JourneyNavigator';
+import { WhyAetherSection } from '../components/common/WhyAetherSection';
 import {
   ArrowRight,
   Sparkles,
@@ -59,12 +60,13 @@ export const HomePage: React.FC = () => {
   };
 
   // 6 Impact Dimension Icons
-  const IMPACT_DIMENSION_ICONS = {
+  const IMPACT_DIMENSION_ICONS: Record<string, React.ReactNode> = {
     Time: <Clock className="w-5 h-5 text-sky-400" />,
     Efficiency: <Zap className="w-5 h-5 text-indigo-400" />,
     'Customer Experience': <Sparkles className="w-5 h-5 text-emerald-400" />,
     Opportunity: <Target className="w-5 h-5 text-amber-400" />,
     'Decision Making': <BrainCircuit className="w-5 h-5 text-teal-400" />,
+    'Operational Visibility': <Eye className="w-5 h-5 text-sky-300" />,
     Visibility: <Eye className="w-5 h-5 text-sky-300" />,
   };
 
@@ -271,6 +273,11 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
+      {/* 2.5 WHY AETHER? (Traditional Approach vs Aether & 6 Principles) */}
+      {/* ========================================================================= */}
+      <WhyAetherSection />
+
+      {/* ========================================================================= */}
       {/* 3. INDUSTRIES PREVIEW (All 10 Industries) */}
       {/* ========================================================================= */}
       <section id="industries-preview" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -302,20 +309,19 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. SOLUTIONS PREVIEW (5 Major Solution Categories) */}
+      {/* 4. SOLUTIONS PREVIEW (6 Major Solution Categories) */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Platform Solutions"
           title="Intelligent Operational Capabilities"
-          subtitle="Five unified solution pillars delivering end-to-end cognitive automation."
+          subtitle="Six unified solution disciplines delivering end-to-end cognitive automation."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PLATFORM_SOLUTIONS.map((solution: any, idx: number) => (
+          {PLATFORM_SOLUTIONS.map((solution: any) => (
             <div
               key={solution.id}
-              className={cn(idx === 4 ? 'md:col-span-2 lg:col-span-1' : '')}
             >
               <SolutionCard solution={solution} />
             </div>
@@ -532,8 +538,8 @@ export const HomePage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Business Value"
-          title="Verifiable Impact Across Six Dimensions"
-          subtitle="Aether delivers measurable operational gains without increasing headcount or overhead."
+          title="Illustrative Impact Across Six Dimensions"
+          subtitle="Modeled operational gains across simulated enterprise environments without increasing headcount or overhead."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">

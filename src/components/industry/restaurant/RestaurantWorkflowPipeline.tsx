@@ -8,6 +8,7 @@ import {
   Boxes,
   Flame,
   Users,
+  DollarSign,
   ChevronRight,
   Sparkles,
 } from 'lucide-react';
@@ -28,8 +29,8 @@ interface WorkflowStep {
 const RESTAURANT_STEPS: WorkflowStep[] = [
   {
     stepNumber: '01',
-    id: 'sales-history',
-    title: 'Sales History',
+    id: 'sales',
+    title: 'Sales',
     subtitle: 'Telemetry & POS ingestion',
     icon: <History className="w-5 h-5 text-amber-400" />,
     traditionalFriction: 'Static daily totals logged in spreadsheets; no hourly item-level consumption pattern analysis.',
@@ -39,8 +40,8 @@ const RESTAURANT_STEPS: WorkflowStep[] = [
   },
   {
     stepNumber: '02',
-    id: 'demand-forecast',
-    title: 'Demand Forecast',
+    id: 'demand',
+    title: 'Demand',
     subtitle: 'Weather & event-aware modeling',
     icon: <TrendingUp className="w-5 h-5 text-sky-400" />,
     traditionalFriction: 'Head chef estimates covers based on intuition; fails to anticipate rain spikes or local event surges.',
@@ -72,8 +73,8 @@ const RESTAURANT_STEPS: WorkflowStep[] = [
   },
   {
     stepNumber: '05',
-    id: 'kitchen-ops',
-    title: 'Kitchen Operations',
+    id: 'kitchen',
+    title: 'Kitchen',
     subtitle: 'Station load pacing & ticket cadence',
     icon: <Flame className="w-5 h-5 text-rose-400" />,
     traditionalFriction: 'Simultaneous 40-cover dining rush and delivery aggregator spikes choke sauté, grill, and tandoor stations.',
@@ -83,14 +84,25 @@ const RESTAURANT_STEPS: WorkflowStep[] = [
   },
   {
     stepNumber: '06',
-    id: 'customer-intel',
-    title: 'Customer Intelligence',
+    id: 'customer',
+    title: 'Customer',
     subtitle: 'Loyalty & preference tracking',
     icon: <Users className="w-5 h-5 text-violet-400" />,
     traditionalFriction: 'Regular guests treated as first-time walk-ins; no memory of favorite tables, wine, or allergies.',
     aetherIntelligence: 'Synthesizes dining history, dietary profiles, and visit frequency to prompt VIP touches and re-engagement tasting invites.',
     metricLabel: 'Repeat Dining',
     metricValue: '+34% Loyalty Return',
+  },
+  {
+    stepNumber: '07',
+    id: 'profitability',
+    title: 'Profitability',
+    subtitle: 'Menu contribution & cost optimization',
+    icon: <DollarSign className="w-5 h-5 text-emerald-300" />,
+    traditionalFriction: 'Hidden ingredient cost creep and discounting bleed margins; menu stars and dogs go unmanaged for quarters.',
+    aetherIntelligence: 'Real-time food cost telemetry calculates contribution margins per plate, recommends dynamic portioning, and flags margin leaks.',
+    metricLabel: 'Prime Cost Gain',
+    metricValue: '+4.8% Net Margin',
   },
 ];
 
@@ -106,24 +118,47 @@ export const RestaurantWorkflowPipeline: React.FC = () => {
             <Badge variant="primary" size="sm">
               Culinary Core Pipeline
             </Badge>
-            <span className="text-xs font-mono text-text-muted">6-Stage Restaurant Lifecycle</span>
+            <span className="text-xs font-mono text-text-muted">7-Stage Restaurant Lifecycle</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-text-primary">
-            From Historical POS Data to Precision Kitchen Service
+            From Historical POS Data to Precision Kitchen Profitability
           </h3>
           <p className="text-xs sm:text-sm text-text-secondary mt-1">
-            How Aether aligns dining room demand with back-of-house butchery, simmering, and line station execution.
+            How Aether aligns dining room demand with back-of-house butchery, line station execution, and margin control.
           </p>
         </div>
 
         <div className="flex items-center gap-2 font-mono text-xs text-text-muted bg-slate-900/80 px-3 py-1.5 rounded-lg border border-aether-border shrink-0">
           <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-          <span>Synchronized Restaurant Loop</span>
+          <span>7-Stage Kitchen Intelligence Loop</span>
         </div>
       </div>
 
+      {/* Visual Flow Indicator */}
+      <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between gap-1 overflow-x-auto text-xs font-mono">
+        {['Sales', 'Demand', 'Preparation', 'Inventory', 'Kitchen', 'Customer', 'Profitability'].map((step, idx, arr) => (
+          <React.Fragment key={step}>
+            <button
+              onClick={() => setSelectedStep(RESTAURANT_STEPS[idx])}
+              className={cn(
+                "flex items-center gap-1.5 px-2.5 py-1 rounded-lg shrink-0 transition-colors cursor-pointer",
+                selectedStep.id === RESTAURANT_STEPS[idx]?.id
+                  ? "bg-amber-500/20 text-amber-300 font-bold border border-amber-500/40"
+                  : "text-slate-400 hover:text-white"
+              )}
+            >
+              <span className="text-[10px] text-amber-400 font-bold">0{idx + 1}</span>
+              <span>{step}</span>
+            </button>
+            {idx < arr.length - 1 && (
+              <ChevronRight className="w-3.5 h-3.5 text-slate-600 shrink-0" />
+            )}
+          </React.Fragment>
+        ))}
+      </div>
+
       {/* Interactive Step Bar */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
+      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5">
         {RESTAURANT_STEPS.map((step) => {
           const isSelected = selectedStep.id === step.id;
           return (

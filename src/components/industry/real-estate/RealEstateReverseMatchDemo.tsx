@@ -55,7 +55,10 @@ export const RealEstateReverseMatchDemo: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-aether-border-subtle">
         <div>
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex items-center gap-2 mb-1 flex-wrap">
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">
+              SIMULATED DEMO
+            </span>
             <Badge variant="primary" size="sm">
               Reverse Discovery Engine
             </Badge>

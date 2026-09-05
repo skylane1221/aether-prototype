@@ -32,57 +32,66 @@ const PILLAR_ICONS: Record<string, React.ReactNode> = {
   'Customer Experience': <Sparkles className="w-5 h-5 text-cyan-400" />,
   Opportunity: <Target className="w-5 h-5 text-emerald-400" />,
   'Decision Making': <ShieldCheck className="w-5 h-5 text-purple-400" />,
+  'Operational Visibility': <Eye className="w-5 h-5 text-amber-400" />,
   Visibility: <Eye className="w-5 h-5 text-amber-400" />,
 };
 
 const PILLAR_DETAILS: Record<string, { title: string; subtitle: string; whyItMatters: string; traditionalFriction: string; aetherGain: string; illustrativeStat: string }> = {
   Time: {
-    title: 'Time: Reclaim 12–16 Hours per Staff Member Weekly',
+    title: 'Time: Potential Recovery of 8–15 Admin Hours Weekly',
     subtitle: 'Eliminate repetitive telephone tag, paperwork transcription, and manual follow-up drafting.',
-    whyItMatters: 'Operational staff spend up to 40% of their day manually copying data between scheduling apps, CRM inboxes, and paper intake clipboards rather than serving customers.',
-    traditionalFriction: 'Receptionists, admissions officers, and service advisors spend 3+ hours daily sending manual reminders and rescheduling dropped appointments.',
-    aetherGain: 'Aether autonomously captures incoming signals, extracts requirements, and sends 1-tap interactive confirmations without human latency.',
-    illustrativeStat: '76% reduction in repetitive coordination time',
+    whyItMatters: 'Operational staff often spend up to 40% of their day manually copying data between scheduling apps, CRM inboxes, and paper clipboards rather than directly serving clients.',
+    traditionalFriction: 'Receptionists, admissions officers, and service advisors spend hours daily sending manual reminders and rescheduling dropped appointments.',
+    aetherGain: 'Aether autonomously captures incoming signals, extracts requirements, and dispatches 1-tap interactive confirmations with minimal manual latency.',
+    illustrativeStat: 'Illustrative: Up to 76% reduction in repetitive admin tasks',
   },
   Efficiency: {
-    title: 'Efficiency: Expand Operational Capacity by +24% to +31%',
+    title: 'Efficiency: Potential Capacity Expansion by +24% to +31%',
     subtitle: 'Pack idle calendar valleys and balance workload across chairs, lifts, bays, and staff.',
-    whyItMatters: 'Unbalanced operations leave high-cost master technicians or specialty provider hours idle while morning counter queues and express bays suffer bottlenecks.',
+    whyItMatters: 'Unbalanced operations leave high-cost provider hours idle while morning counters and express intake queues suffer bottlenecks.',
     traditionalFriction: 'Rigid fixed-length booking templates create 15–30 min unusable gaps between chemical hair services, clinical consults, or vehicle lifts.',
-    aetherGain: 'Dynamic slot-packing algorithms nest appointments based on real-time velocity, maximizing daily throughput without adding headcount.',
-    illustrativeStat: '+28% average capacity and throughput expansion',
+    aetherGain: 'Dynamic slot-packing algorithms nest appointments based on real-time operational flow, maximizing daily throughput without adding headcount.',
+    illustrativeStat: 'Example Scenario: +24% to +31% throughput expansion',
   },
   'Customer Experience': {
-    title: 'Customer Experience: Zero-Latency Responses & Memory',
-    subtitle: 'Instant 24/7 engagement with perfect memory of formulas, preferences, and history.',
-    whyItMatters: 'Modern customers expect instantaneous answers on WhatsApp, zero lobby waiting lines, and seamless continuity across every visit.',
-    traditionalFriction: 'Prospective buyers wait 6+ hours for portal responses; salon and clinic clients repeatedly re-explain past formulas and allergies.',
-    aetherGain: 'Conversational intake triages customer requirements in <15 seconds, pre-stages room comfort, and archives exact formulas for instant staff recall.',
-    illustrativeStat: '< 15s instant inquiry response latency',
+    title: 'Customer Experience: Rapid Response Latency & Seamless Memory',
+    subtitle: 'Near-instant engagement with automated memory of formulas, preferences, and history.',
+    whyItMatters: 'Modern clients expect rapid communication on messaging channels, minimal waiting queues, and personalized continuity across visits.',
+    traditionalFriction: 'Prospective buyers wait hours for portal responses; salon and clinic clients repeatedly re-explain past formulas and allergies.',
+    aetherGain: 'Conversational intake triages customer requirements in seconds, pre-stages room comfort, and archives exact formulas for instant staff recall.',
+    illustrativeStat: 'Simulated Target: < 15s initial triage response latency',
   },
   Opportunity: {
-    title: 'Opportunity: Recapture 18%–26% of Lost or Deferred Demand',
-    subtitle: 'Rescue abandoned leads, overdue service mileage, and un-rebooked salon clients.',
-    whyItMatters: 'Every uncontacted website lead, missed rebooking window, or ignored service due date leaks high-margin revenue directly to competitors.',
-    traditionalFriction: 'Sales reps give up after 1 call; repair workshops rarely reach out until a customer vehicle breaks down completely.',
-    aetherGain: 'Autonomous background triggers compute exact optimal contact moments, dispatching personalized re-engagement messages that recover latent transactions.',
-    illustrativeStat: '+$142,000 avg. annual recovered revenue per outlet',
+    title: 'Opportunity: Recapture Latent Demand & Recover Dropped Slots',
+    subtitle: 'Re-engage cold inquiries, overdue maintenance schedules, and unbooked regular clients.',
+    whyItMatters: 'Every uncontacted inquiry, missed rebooking interval, or delayed service notice represents uncaptured revenue.',
+    traditionalFriction: 'Sales reps give up after a single call; repair workshops rarely reach out until a customer vehicle suffers a breakdown.',
+    aetherGain: 'Autonomous background triggers compute optimal contact intervals, dispatching personalized re-engagement messages that recover latent appointments.',
+    illustrativeStat: 'Prototype Benchmark: Up to 84% standby slot fill rate',
   },
   'Decision Making': {
     title: 'Decision Making: Shift from Reactive Guesswork to Proactive Strategy',
-    subtitle: 'Prescriptive operational diagnostics delivered before bottlenecks cause chaos.',
-    whyItMatters: 'Managers make staffing and purchasing decisions based on stale intuition rather than live operational telemetry.',
-    traditionalFriction: 'Restaurant chefs over-prep before rainy afternoons; gym owners fail to notice disengaged members until cancellation notices arrive.',
-    aetherGain: 'Cognitive models synthesize weather, event calendars, and historical velocity to provide exact daily prep and staffing recommendations.',
-    illustrativeStat: '88% proactive mitigation accuracy',
+    subtitle: 'Prescriptive operational diagnostics delivered before bottlenecks escalate.',
+    whyItMatters: 'Managers frequently make staffing and purchasing decisions based on delayed historical reports rather than live operational telemetry.',
+    traditionalFriction: 'Restaurant kitchens over-prep before rainy shifts; gym owners fail to notice disengaged members until cancellation requests arrive.',
+    aetherGain: 'Cognitive models correlate weather, event calendars, and historical velocity to provide predictive prep and staffing recommendations.',
+    illustrativeStat: 'Illustrative: 3.4x precision gain in demand forecasting',
+  },
+  'Operational Visibility': {
+    title: 'Operational Visibility: Cross-Location Telemetry Transparency',
+    subtitle: 'Continuous telemetry stream across all locations, bays, and service queues.',
+    whyItMatters: 'Multi-location operators often face delayed visibility into daily labor utilization, food cost variance, and cohort retention decay.',
+    traditionalFriction: 'Executives only discover high client churn or technician downtime weeks after revenue has already declined.',
+    aetherGain: 'Real-time telemetry streams monitor check-in rates, ticket velocities, and chair occupancy across all branches in a centralized view.',
+    illustrativeStat: 'Prototype Mesh: Unified telemetry across all branches',
   },
   Visibility: {
-    title: 'Operational Visibility: Longitudinal Cross-Branch Transparency',
-    subtitle: 'Continuous telemetry mesh across all locations, bays, and service queues.',
-    whyItMatters: 'Multi-location franchise operators and business leaders often operate blind to daily labor utilization, food cost variance, and cohort retention decay.',
-    traditionalFriction: 'Franchise executives only discover high member churn or technician downtime at the end of the quarter after revenue has already declined.',
-    aetherGain: 'Real-time telemetry streams monitor turnstiles, ticket velocities, and chair occupancy across all branches in a centralized dashboard.',
-    illustrativeStat: '100% transparent audit mesh across all branches',
+    title: 'Operational Visibility: Cross-Location Telemetry Transparency',
+    subtitle: 'Continuous telemetry stream across all locations, bays, and service queues.',
+    whyItMatters: 'Multi-location operators often face delayed visibility into daily labor utilization, food cost variance, and cohort retention decay.',
+    traditionalFriction: 'Executives only discover high client churn or technician downtime weeks after revenue has already declined.',
+    aetherGain: 'Real-time telemetry streams monitor check-in rates, ticket velocities, and chair occupancy across all branches in a centralized view.',
+    illustrativeStat: 'Prototype Mesh: Unified telemetry across all branches',
   },
 };
 
@@ -95,7 +104,7 @@ export const ImpactPage: React.FC = () => {
   const [hourlyRate, setHourlyRate] = useState<number>(35);
   const [selectedVertical, setSelectedVertical] = useState<string>('General Operations');
 
-  const hoursPerWeekPerPerson = 8.5; // average saved by Aether
+  const hoursPerWeekPerPerson = 8.5; // illustrative average in modeled scenarios
   const annualHoursSaved = Math.round(teamSize * hoursPerWeekPerPerson * 50);
   const annualCostSaved = Math.round(annualHoursSaved * hourlyRate);
 
@@ -107,7 +116,7 @@ export const ImpactPage: React.FC = () => {
           <div className="flex items-center gap-2 text-xs text-text-muted">
             <Link to="/" className="hover:text-text-primary transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-text-primary font-medium">Business Impact & ROI</span>
+            <span className="text-text-primary font-medium">Business Impact & Potential Value</span>
           </div>
 
           <Link to="/demos">
@@ -120,7 +129,7 @@ export const ImpactPage: React.FC = () => {
 
       {/* Hero */}
       <Hero
-        badge="Business Value Realization"
+        badge="Illustrative Value Modeling"
         title={
           <>
             Why Should a Business Care About{' '}
@@ -129,7 +138,7 @@ export const ImpactPage: React.FC = () => {
             </span>
           </>
         }
-        subtitle="Aether transforms reactive, paper-heavy operations into self-balancing, autonomous workflows—recovering lost revenue, eliminating administrative drag, and elevating customer retention."
+        subtitle="Aether transforms reactive, paper-heavy operations into self-balancing, autonomous workflows—helping businesses identify potential capacity gains, reduce administrative drag, and elevate customer retention."
         primaryAction={{
           label: 'Request Value Briefing',
           onClick: openSolutionModal,
@@ -145,34 +154,34 @@ export const ImpactPage: React.FC = () => {
         <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-black border border-slate-700/80 space-y-6">
           <div className="max-w-3xl space-y-3">
             <Badge variant="primary" dot size="md">
-              The Strategic Imperative
+              Operational Focus
             </Badge>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-text-primary tracking-tight">
-              Most businesses don't have a sales problem. <br />
+              Most businesses don't just have a sales problem. <br />
               <span className="text-sky-400">They have an operational leakage problem.</span>
             </h2>
             <p className="text-sm sm:text-base text-text-secondary leading-relaxed pt-2">
-              Every day, businesses lose 20% to 35% of their potential revenue to slow inquiry response times, unmonetized schedule gaps, silent customer churn, and manual paperwork friction. Aether overlays existing software to eliminate these leaks without requiring complex migrations.
+              Every day, operational friction slows down inquiry response times, leaves schedule gaps unmonetized, risks customer drift, and consumes staff hours in manual paperwork. Aether demonstrates how cognitive overlays can help resolve these bottlenecks without disruptive migrations.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800">
             <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
-              <span className="text-xs font-mono text-rose-400 font-bold uppercase">The Leak</span>
+              <span className="text-xs font-mono text-rose-400 font-bold uppercase">The Friction</span>
               <p className="text-xs text-text-secondary">
-                Dropped inquiries, empty afternoon slots, and undetected customer drift.
+                Delayed inquiry responses, unbooked schedule gaps, and manual data transcription.
               </p>
             </div>
             <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
               <span className="text-xs font-mono text-sky-400 font-bold uppercase">Aether Layer</span>
               <p className="text-xs text-text-secondary">
-                Autonomous diagnosis, predictive reminders, and dynamic slot packing.
+                Autonomous triage, predictive reminders, and dynamic slot packing.
               </p>
             </div>
             <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
-              <span className="text-xs font-mono text-emerald-400 font-bold uppercase">The Result</span>
+              <span className="text-xs font-mono text-emerald-400 font-bold uppercase">Illustrative Outcome</span>
               <p className="text-xs text-text-secondary">
-                +$140k+ average annual recovered revenue per operational unit.
+                Recovered operational hours and higher asset utilization in modeled scenarios.
               </p>
             </div>
           </div>
@@ -253,9 +262,9 @@ export const ImpactPage: React.FC = () => {
       {/* Interactive Value & ROI Estimator */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Interactive ROI Calculator"
-          title="Estimate Projected Time & Value Recovered"
-          subtitle="Model your team's operational parameters to project annual hours saved and revenue capacity unlocked."
+          badge="Illustrative Scenario Estimator"
+          title="Estimate Potential Time & Value Recovered"
+          subtitle="Model sample team parameters to explore illustrative operational hours saved and potential capacity unlocked."
         />
 
         <div className="p-6 sm:p-10 rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-2xl">
@@ -322,34 +331,34 @@ export const ImpactPage: React.FC = () => {
             <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-black border border-slate-800 space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-slate-800">
                 <div>
-                  <span className="text-xs font-mono text-text-muted uppercase">Annual Value Realization</span>
-                  <h4 className="text-lg font-bold text-white mt-0.5">{selectedVertical} Environment</h4>
+                  <span className="text-xs font-mono text-text-muted uppercase">Illustrative Model Projection</span>
+                  <h4 className="text-lg font-bold text-white mt-0.5">{selectedVertical} Scenario</h4>
                 </div>
-                <Badge variant="primary" size="sm" className="font-mono text-[10px]">
-                  Estimated ROI
+                <Badge variant="neutral" size="sm" className="font-mono text-[10px]">
+                  Example Outcome
                 </Badge>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
-                  <span className="text-[10px] font-mono text-text-muted uppercase block">Recovered Hours / Year</span>
+                  <span className="text-[10px] font-mono text-text-muted uppercase block">Potential Recovered Hours / Yr</span>
                   <div className="text-2xl sm:text-3xl font-extrabold font-mono text-sky-400 mt-1">
                     {annualHoursSaved.toLocaleString()} hrs
                   </div>
-                  <span className="text-[11px] text-text-muted mt-0.5 block">~{Math.round(annualHoursSaved / 50)} hrs/week</span>
+                  <span className="text-[11px] text-text-muted mt-0.5 block">~{Math.round(annualHoursSaved / 50)} hrs/week (illustrative)</span>
                 </div>
 
                 <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
-                  <span className="text-[10px] font-mono text-text-muted uppercase block">Recovered Labor Value</span>
+                  <span className="text-[10px] font-mono text-text-muted uppercase block">Potential Labor Value</span>
                   <div className="text-2xl sm:text-3xl font-extrabold font-mono text-emerald-400 mt-1">
                     ${annualCostSaved.toLocaleString()}
                   </div>
-                  <span className="text-[11px] text-emerald-400/80 mt-0.5 block font-mono">Annually preserved</span>
+                  <span className="text-[11px] text-emerald-400/80 mt-0.5 block font-mono">Modeled capacity value</span>
                 </div>
               </div>
 
               <p className="text-xs text-text-secondary leading-relaxed">
-                Calculated based on an average recovery of 8.5 administrative hours per team member weekly through automated scheduling, pre-visit intake, and cycle follow-ups.
+                Modeled for demonstration purposes assuming an illustrative recovery of 8.5 administrative hours per team member weekly through automated scheduling, pre-visit intake, and cycle follow-ups.
               </p>
 
               <Button
@@ -359,7 +368,7 @@ export const ImpactPage: React.FC = () => {
                 rightIcon={<ArrowRight className="w-4 h-4" />}
                 className="w-full justify-center"
               >
-                Schedule Custom ROI Briefing
+                Schedule Custom Architecture Briefing
               </Button>
             </div>
           </div>
@@ -369,9 +378,9 @@ export const ImpactPage: React.FC = () => {
       {/* Benchmark Comparisons Matrix */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <SectionHeader
-          badge="Operational Benchmark Comparisons"
+          badge="Illustrative Benchmark Comparisons"
           title="Traditional Operations vs Aether Intelligence"
-          subtitle="Side-by-side analysis of key operational workflows before and after deploying Aether."
+          subtitle="Side-by-side analysis of key operational workflows before and after deploying Aether in representative prototype simulations."
         />
 
         <div className="space-y-3">
@@ -408,11 +417,11 @@ export const ImpactPage: React.FC = () => {
           <div className="flex items-start sm:items-center gap-3">
             <AlertCircle className="w-5 h-5 text-sky-400 shrink-0 mt-0.5 sm:mt-0" />
             <p className="leading-relaxed">
-              <strong>Methodology & Simulation Disclaimer:</strong> All metrics presented on this showcase represent simulated and illustrative benchmark modeling based on representative operational data. Aether does not make unverified claims. Actual operational gains depend on customer transaction velocity and existing system configurations.
+              <strong>Methodology & Simulation Disclaimer:</strong> Metrics shown in this prototype are illustrative demonstrations and are not guaranteed production results. Aether presents these scenarios as representative models of potential impact. Actual operational outcomes depend on transaction volume, staff adoption, and specific business parameters.
             </p>
           </div>
-          <Badge variant="neutral" size="sm" className="shrink-0 font-mono">
-            Verified Showcase Data
+          <Badge variant="neutral" size="sm" className="shrink-0 font-mono text-[10px]">
+            Illustrative Prototype Data
           </Badge>
         </div>
       </section>

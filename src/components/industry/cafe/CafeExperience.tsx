@@ -24,6 +24,10 @@ import {
   Play,
   Zap,
   CheckCircle2,
+  Croissant,
+  PackageCheck,
+  Users,
+  Target,
 } from 'lucide-react';
 import { cn } from '../../../utils/cn';
 
@@ -119,14 +123,118 @@ export const CafeExperience: React.FC<CafeExperienceProps> = ({ industry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 02 CORE WORKFLOW (Sales -> Demand -> Preparation -> Inventory -> Customer Behaviour -> Optimization) */}
+      {/* 01.5 THE AETHER CAFE OPERATIONAL PARADIGM */}
       {/* ========================================================================= */}
-      <section id="workflow-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <CafeWorkflowPipeline />
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12">
+        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-stone-900/95 via-stone-900/90 to-stone-950/95 border border-amber-500/30 shadow-2xl backdrop-blur-md">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-stone-800">
+            <div>
+              <div className="flex items-center gap-2 mb-1.5">
+                <Badge variant="warning" size="sm">
+                  Demand, Customer & Product Architecture
+                </Badge>
+                <span className="text-xs font-mono text-amber-400 font-semibold">Specialty Cafe Optimization</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                How Aether Perfects Rush Velocity & Product Quality
+              </h2>
+            </div>
+            <div className="flex items-center gap-2 text-xs font-mono text-text-muted bg-stone-950/80 px-3 py-1.5 rounded-lg border border-stone-800">
+              <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+              <span>Counter & Commuter Signals → Calibrated Morning Extraction</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+            {/* 1. Problem */}
+            <div className="p-5 rounded-xl bg-rose-950/20 border border-rose-500/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 text-rose-400 font-bold text-xs uppercase tracking-wider mb-2">
+                  <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
+                  <span>The Cafe Problem</span>
+                </div>
+                <h3 className="text-base font-extrabold text-white">
+                  Morning Queue Drop-offs & Dairy Write-offs
+                </h3>
+                <p className="text-xs sm:text-sm text-stone-300 mt-2 leading-relaxed">
+                  During 8:00 AM rush, uncalibrated grinders, unbatched iced drinks, and single-barista bottlenecks cause 6-minute wait times. Pastries baked blindly at 6 AM turn stale by afternoon, while core oat milks run dry.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-rose-500/20 flex items-center justify-between text-[11px] font-mono text-rose-300/80">
+                <span>Peak Impact:</span>
+                <span className="font-bold text-rose-300">22% Commuter Walk-Away Rate</span>
+              </div>
+            </div>
+
+            {/* 2. Aether Understands */}
+            <div className="p-5 rounded-xl bg-amber-950/20 border border-amber-500/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider mb-2">
+                  <BrainCircuit className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span>Aether Understands</span>
+                </div>
+                <h3 className="text-base font-extrabold text-white">
+                  Granular Drink & Guest Telemetry
+                </h3>
+                <p className="text-xs text-stone-300 mt-2 leading-relaxed">
+                  Synthesizes commuter footfall, weather shifts, whole bean roast curves, and regular customer habits:
+                </p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {['Hourly Drink Velocity', 'Commuter Rush Windows', 'Weather & Temperature Curves', 'Milk Consumption Burn', 'Roastery Degassing Dates', 'Regular Guest Pre-Orders'].map((attr, i) => (
+                    <span
+                      key={attr}
+                      className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-amber-500/10 border border-amber-500/25 text-amber-300"
+                    >
+                      {i + 1}. {attr}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="pt-3 border-t border-amber-500/20 flex items-center justify-between text-[11px] font-mono text-amber-300/80">
+                <span>Data Precision:</span>
+                <span className="font-bold text-amber-300">Sub-Second Ticket Streams</span>
+              </div>
+            </div>
+
+            {/* 3. Aether Recommends */}
+            <div className="p-5 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">
+                  <Target className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Aether Recommends</span>
+                </div>
+                <h3 className="text-base font-extrabold text-white">
+                  Barista & Product Directives
+                </h3>
+                <p className="text-xs text-stone-300 mt-2 leading-relaxed">
+                  Generates dial-in grinder recipes, par-bake schedules, smart dairy reorders, and barista rush roles:
+                </p>
+                <div className="mt-3 space-y-1.5">
+                  {[
+                    'Espresso Dial-In Calibration (Grind & Dose)',
+                    'Staged Bakery Par-Bake Schedule (7AM / 11AM)',
+                    'Smart Dairy & Bean Reorders (Zero Stockouts)',
+                    'Rush Barista Rostering (Extraction vs Milk Staging)',
+                    'Companion Pastry Upsell Intelligence (+24% Basket)',
+                  ].map((rec, i) => (
+                    <div key={rec} className="flex items-center gap-2 text-[11px] font-mono text-emerald-300">
+                      <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
+                      <span>{i + 1}. {rec}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="pt-3 border-t border-emerald-500/20 flex items-center justify-between text-[11px] font-mono text-emerald-300/80">
+                <span>Counter Result:</span>
+                <span className="font-bold text-emerald-300">88s Drink Time • &lt; 3% Spoilage</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 03 8 BUSINESS CHALLENGES */}
+      {/* 02 BUSINESS PROBLEMS & OPERATIONAL BOTTLENECKS */}
       {/* ========================================================================= */}
       <section id="challenges-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -185,20 +293,54 @@ export const CafeExperience: React.FC<CafeExperienceProps> = ({ industry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 04 INTERACTIVE DEMO (Next-Day Demand Generator) */}
+      {/* 03 AETHER OPPORTUNITIES */}
       {/* ========================================================================= */}
-      <section id="cafe-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Interactive Sandbox"
-          title="Next-Day Demand & Barista Preparation Engine"
-          subtitle="Generate calibrated coffee extraction volumes, bakery par-bakes, inventory restocks, and morning rush staffing rosters."
+          badge="Opportunity Discovery"
+          title="Transforming Cafe Friction Into Counter Velocity Multipliers"
+          subtitle="How Aether diagnoses prep waste and unlocks high-throughput morning rush barista operations."
         />
 
-        <CafeDemandDemo />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {industry.opportunities.map((opp, idx) => (
+            <Card key={idx} className="p-6 sm:p-7 flex flex-col justify-between h-full card-gradient-surface border-stone-800 shadow-card bg-stone-900/80">
+              <div className="space-y-4">
+                <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20">
+                  <div className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider mb-1">
+                    Diagnosed Cafe Friction
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-secondary leading-snug">
+                    {opp.problem}
+                  </p>
+                </div>
+
+                <div className="flex justify-center text-amber-400">
+                  <ArrowRight className="w-4 h-4 rotate-90" />
+                </div>
+
+                <div className="p-3.5 rounded-lg bg-amber-500/5 border border-amber-500/25">
+                  <div className="text-[11px] font-semibold text-amber-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                    <Zap className="w-3.5 h-3.5" />
+                    <span>Aether Opportunity</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-primary font-medium leading-snug">
+                    {opp.opportunity}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-3 border-t border-stone-800 flex items-center justify-between text-xs">
+                <span className="text-text-muted font-mono">Projected Multiplier:</span>
+                <span className="font-bold font-mono text-emerald-400">{opp.potentialMultiplier}</span>
+              </div>
+            </Card>
+          ))}
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 05 8 AETHER SOLUTIONS MAPPINGS */}
+      {/* 04 8 AETHER SOLUTIONS MAPPINGS */}
       {/* ========================================================================= */}
       <section id="solutions-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -245,7 +387,27 @@ export const CafeExperience: React.FC<CafeExperienceProps> = ({ industry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 06 BUSINESS INTELLIGENCE DASHBOARD */}
+      {/* 05 SIGNATURE WORKFLOW (Sales -> Demand -> Preparation -> Inventory -> Customer Behaviour -> Optimization) */}
+      {/* ========================================================================= */}
+      <section id="workflow-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <CafeWorkflowPipeline />
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 06 SIGNATURE INTERACTIVE DEMO (Next-Day Demand Generator) */}
+      {/* ========================================================================= */}
+      <section id="cafe-demo-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          badge="Signature Interactive Sandbox"
+          title="Next-Day Demand & Barista Preparation Engine"
+          subtitle="Generate calibrated coffee extraction volumes, bakery par-bakes, inventory restocks, and morning rush staffing rosters."
+        />
+
+        <CafeDemandDemo />
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 07 BUSINESS INTELLIGENCE DASHBOARD */}
       {/* ========================================================================= */}
       <section id="bi-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -258,7 +420,7 @@ export const CafeExperience: React.FC<CafeExperienceProps> = ({ industry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 07 BUSINESS IMPACT */}
+      {/* 08 BUSINESS IMPACT */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -331,7 +493,7 @@ export const CafeExperience: React.FC<CafeExperienceProps> = ({ industry }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 08 ADDITIONAL CAPABILITIES */}
+      {/* 09 ADDITIONAL CAPABILITIES */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -398,7 +560,7 @@ export const CafeExperience: React.FC<CafeExperienceProps> = ({ industry }) => {
       />
 
       {/* ========================================================================= */}
-      {/* 09 FINAL CTA */}
+      {/* 10 BOTTOM CTA */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-2xl bg-stone-900 border border-stone-800 p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-card-hover">

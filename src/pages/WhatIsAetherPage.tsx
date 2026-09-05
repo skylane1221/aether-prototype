@@ -5,6 +5,7 @@ import { Button } from '../components/ui/Button';
 import { Badge } from '../components/ui/Badge';
 import { Card } from '../components/ui/Card';
 import { JourneyNavigator } from '../components/common/JourneyNavigator';
+import { WhyAetherSection } from '../components/common/WhyAetherSection';
 import {
   ArrowRight,
   Sparkles,
@@ -194,108 +195,10 @@ export const WhatIsAetherPage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. THE FUNDAMENTAL SHIFT: TRADITIONAL VS AETHER */}
+      {/* 2. WHY AETHER? - TRADITIONAL VS AETHER & THE 6 PRINCIPLES */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge="Architectural Comparison"
-          title="Why Legacy Automation Breaks Down"
-          subtitle="Fixed rule trees fail the moment customer behaviors or physical constraints diverge from expectations."
-        />
+      <WhyAetherSection />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Traditional Automation Card */}
-          <Card className="p-6 sm:p-8 border-rose-900/30 bg-gradient-to-b from-rose-950/10 to-aether-card relative overflow-hidden">
-            <div className="flex items-center justify-between pb-4 border-b border-rose-900/20 mb-6">
-              <div className="flex items-center gap-2 text-rose-400 font-bold text-sm tracking-wide uppercase">
-                <XCircle className="w-4 h-4" />
-                <span>Traditional Automation</span>
-              </div>
-              <Badge variant="warning" size="sm" className="font-mono text-[10px]">
-                Rigid & Fragile
-              </Badge>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-xs font-mono font-bold text-rose-400 shrink-0">
-                  01
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-text-primary">Predefined Task</h4>
-                  <p className="text-xs text-text-muted">Assumes perfect, unchanging human workflows.</p>
-                </div>
-              </div>
-
-              <div className="pl-4 text-text-muted text-xs font-mono">↓</div>
-
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-xs font-mono font-bold text-rose-400 shrink-0">
-                  02
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-text-primary">Hard-Coded Rule Tree</h4>
-                  <p className="text-xs text-text-muted">Breaks when an edge case or exception occurs.</p>
-                </div>
-              </div>
-
-              <div className="pl-4 text-text-muted text-xs font-mono">↓</div>
-
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-xs font-mono font-bold text-rose-400 shrink-0">
-                  03
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-text-primary">Static Script Execution</h4>
-                  <p className="text-xs text-text-muted">Zero awareness of live capacity, margins, or context.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 p-4 rounded-xl bg-slate-950/60 border border-rose-900/30 text-xs text-rose-300 leading-relaxed">
-              <strong>The Problem:</strong> When a customer cancels 10 minutes prior, or requests a custom alteration, static rules crash or send irrelevant auto-replies, forcing staff back to manual firefighting.
-            </div>
-          </Card>
-
-          {/* Aether Cognitive Layer Card */}
-          <Card className="p-6 sm:p-8 border-sky-500/40 bg-gradient-to-b from-sky-950/20 to-aether-card relative overflow-hidden shadow-glow-subtle">
-            <div className="flex items-center justify-between pb-4 border-b border-sky-500/20 mb-6">
-              <div className="flex items-center gap-2 text-sky-400 font-bold text-sm tracking-wide uppercase">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>The Aether Cognitive Architecture</span>
-              </div>
-              <Badge variant="primary" size="sm" className="font-mono text-[10px]">
-                Adaptive & Context-Aware
-              </Badge>
-            </div>
-
-            <div className="space-y-3">
-              {[
-                { num: '01', title: 'Business Context Ingestion', desc: 'Ingests schedules, menus, lead channels, and staff capacity.' },
-                { num: '02', title: 'Continuous Understanding', desc: 'Synthesizes real-time state vs. historical baselines.' },
-                { num: '03', title: 'Problem & Drag Diagnosis', desc: 'Locates revenue leaks, calendar gaps, and churn risk.' },
-                { num: '04', title: 'Opportunity Discovery', desc: 'Identifies high-margin actions & VIP rebooking moments.' },
-                { num: '05', title: 'Autonomous Solution Orchestration', desc: 'Dispatches multi-channel execution with zero latency.' },
-                { num: '06', title: 'Closed-Loop Optimization', desc: 'Compounds operational accuracy and ROI over time.' },
-              ].map((step) => (
-                <div key={step.num} className="flex items-center gap-3">
-                  <div className="w-7 h-7 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-xs font-mono font-bold text-sky-400 shrink-0">
-                    {step.num}
-                  </div>
-                  <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-text-primary">{step.title}</h4>
-                    <p className="text-[11px] text-text-secondary">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 p-4 rounded-xl bg-slate-950/80 border border-sky-500/30 text-xs text-sky-300 leading-relaxed">
-              <strong>The Advantage:</strong> Aether dynamically re-routes schedules, drafts contextual responses, and optimizes resources without human hand-holding.
-            </div>
-          </Card>
-        </div>
-      </section>
 
       {/* ========================================================================= */}
       {/* 3. THE 6 STAGES OF THE AETHER PROCESS */}
