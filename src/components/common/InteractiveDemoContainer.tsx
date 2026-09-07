@@ -48,11 +48,11 @@ export const InteractiveDemoContainer: React.FC<InteractiveDemoContainerProps> =
               className={cn(
                 'px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap border',
                 isSelected
-                  ? 'bg-aether-card text-text-primary border-sky-500/50 shadow-sm font-semibold'
-                  : 'bg-aether-surface text-text-secondary border-aether-border hover:border-slate-700'
+                  ? 'bg-aether-card text-text-primary border-aether-clay shadow-warm-xs font-semibold'
+                  : 'bg-aether-surface text-text-secondary border-aether-border hover:border-aether-clay/40'
               )}
             >
-              <span className="text-sky-400 font-mono mr-1.5">{sc.industryName}:</span>
+              <span className="text-aether-clay font-mono mr-1.5">{sc.industryName}:</span>
               <span>{sc.badge}</span>
             </button>
           );
@@ -60,14 +60,14 @@ export const InteractiveDemoContainer: React.FC<InteractiveDemoContainerProps> =
       </div>
 
       {/* Main Sandbox Frame */}
-      <Card className="border-slate-700/80 p-0 overflow-hidden shadow-card-hover">
+      <Card className="border-aether-border p-0 overflow-hidden shadow-warm-md">
         {/* Sandbox Window Bar */}
-        <div className="bg-slate-950 px-4 sm:px-6 py-3 border-b border-aether-border flex items-center justify-between">
+        <div className="bg-aether-surface px-4 sm:px-6 py-3 border-b border-aether-border flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="flex gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#C86446]/80" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#D9C36A]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#4D6B53]/80" />
             </div>
             <span className="text-xs font-mono text-text-muted hidden sm:inline">
               aether-engine // {currentScenario.industrySlug} // sandbox-env
@@ -122,7 +122,7 @@ export const InteractiveDemoContainer: React.FC<InteractiveDemoContainerProps> =
               <div>
                 <div className="flex items-center justify-between pb-2 border-b border-aether-border-subtle mb-3">
                   <span className="text-xs font-semibold text-text-primary flex items-center gap-1.5">
-                    <Radio className="w-3.5 h-3.5 text-sky-400" />
+                    <Radio className="w-3.5 h-3.5 text-aether-clay" />
                     1. Signal Ingested
                   </span>
                   <span className="text-[10px] font-mono text-text-muted">
@@ -130,14 +130,14 @@ export const InteractiveDemoContainer: React.FC<InteractiveDemoContainerProps> =
                   </span>
                 </div>
                 <div className="space-y-1.5 font-mono text-xs">
-                  <div className="text-sky-400 font-semibold text-[11px]">
+                  <div className="text-aether-clay font-semibold text-[11px]">
                     Source: {currentScenario.incomingSignal.source}
                   </div>
-                  <div className="p-2.5 rounded bg-slate-950/80 border border-slate-800/80 text-[11px] space-y-1 text-slate-300">
+                  <div className="p-2.5 rounded bg-aether-card border border-aether-border text-[11px] space-y-1 text-text-secondary">
                     {Object.entries(currentScenario.incomingSignal.payload).map(([k, v]) => (
                       <div key={k}>
                         <span className="text-text-muted">{k}: </span>
-                        <span className="text-slate-200">{String(v)}</span>
+                        <span className="text-text-primary">{String(v)}</span>
                       </div>
                     ))}
                   </div>
@@ -154,13 +154,13 @@ export const InteractiveDemoContainer: React.FC<InteractiveDemoContainerProps> =
                 'p-4 rounded-xl border flex flex-col justify-between transition-all duration-300',
                 executionState === 'idle'
                   ? 'bg-aether-surface/40 border-aether-border opacity-50'
-                  : 'bg-aether-surface border-indigo-500/40 shadow-glow-subtle'
+                  : 'bg-aether-surface border-aether-clay/40 shadow-warm-sm'
               )}
             >
               <div>
                 <div className="flex items-center justify-between pb-2 border-b border-aether-border-subtle mb-3">
                   <span className="text-xs font-semibold text-text-primary flex items-center gap-1.5">
-                    <Cpu className="w-3.5 h-3.5 text-indigo-400" />
+                    <Cpu className="w-3.5 h-3.5 text-aether-clay" />
                     2. Cognitive Diagnosis
                   </span>
                   {executionState !== 'idle' && (
@@ -177,7 +177,7 @@ export const InteractiveDemoContainer: React.FC<InteractiveDemoContainerProps> =
                 ) : (
                   <div className="space-y-2.5 text-xs">
                     <div>
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-rose-400">
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-[#C86446]">
                         Friction Diagnosed:
                       </span>
                       <p className="text-text-secondary mt-0.5">
@@ -185,7 +185,7 @@ export const InteractiveDemoContainer: React.FC<InteractiveDemoContainerProps> =
                       </p>
                     </div>
                     <div>
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-indigo-400">
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-aether-clay">
                         Prescribed Automation:
                       </span>
                       <p className="text-text-secondary mt-0.5">
@@ -206,13 +206,13 @@ export const InteractiveDemoContainer: React.FC<InteractiveDemoContainerProps> =
                 'p-4 rounded-xl border flex flex-col justify-between transition-all duration-300',
                 executionState !== 'executed'
                   ? 'bg-aether-surface/40 border-aether-border opacity-50'
-                  : 'bg-emerald-500/5 border-emerald-500/40 shadow-glow-subtle'
+                  : 'bg-[#4D6B53]/5 border-[#4D6B53]/30 shadow-warm-sm'
               )}
             >
               <div>
                 <div className="flex items-center justify-between pb-2 border-b border-aether-border-subtle mb-3">
                   <span className="text-xs font-semibold text-text-primary flex items-center gap-1.5">
-                    <Zap className="w-3.5 h-3.5 text-emerald-400" />
+                    <Zap className="w-3.5 h-3.5 text-[#4D6B53]" />
                     3. Autonomous Execution
                   </span>
                   {executionState === 'executed' && (
@@ -235,15 +235,15 @@ export const InteractiveDemoContainer: React.FC<InteractiveDemoContainerProps> =
                         (act: string, i: number) => (
                           <div
                             key={i}
-                            className="flex items-start gap-1.5 text-slate-300 text-[11px]"
+                            className="flex items-start gap-1.5 text-text-secondary text-[11px]"
                           >
-                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#4D6B53] shrink-0 mt-0.5" />
                             <span>{act}</span>
                           </div>
                         )
                       )}
                     </div>
-                    <div className="p-2 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-[11px] font-medium">
+                    <div className="p-2 rounded bg-[#4D6B53]/10 border border-[#4D6B53]/25 text-[#4D6B53] text-[11px] font-medium">
                       {currentScenario.automatedExecution.resultingOutcome}
                     </div>
                   </div>

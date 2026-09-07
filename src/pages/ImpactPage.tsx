@@ -28,13 +28,13 @@ import {
 import { cn } from '../utils/cn';
 
 const PILLAR_ICONS: Record<string, React.ReactNode> = {
-  Time: <Clock className="w-5 h-5 text-rose-400" />,
-  Efficiency: <Zap className="w-5 h-5 text-indigo-400" />,
-  'Customer Experience': <Sparkles className="w-5 h-5 text-cyan-400" />,
-  Opportunity: <Target className="w-5 h-5 text-emerald-400" />,
-  'Decision Making': <ShieldCheck className="w-5 h-5 text-purple-400" />,
-  'Operational Visibility': <Eye className="w-5 h-5 text-amber-400" />,
-  Visibility: <Eye className="w-5 h-5 text-amber-400" />,
+  Time: <Clock className="w-5 h-5 text-aether-clay" />,
+  Efficiency: <Zap className="w-5 h-5 text-aether-clay" />,
+  'Customer Experience': <Sparkles className="w-5 h-5 text-[#4D6B53]" />,
+  Opportunity: <Target className="w-5 h-5 text-[#C86446]" />,
+  'Decision Making': <ShieldCheck className="w-5 h-5 text-aether-clay" />,
+  'Operational Visibility': <Eye className="w-5 h-5 text-aether-clay" />,
+  Visibility: <Eye className="w-5 h-5 text-aether-clay" />,
 };
 
 const PILLAR_DETAILS: Record<
@@ -180,10 +180,7 @@ export const ImpactPage: React.FC = () => {
         badge="Illustrative Value Modeling"
         title={
           <>
-            Why Should a Business Care About{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-300">
-              Aether?
-            </span>
+            Why Should a Business Care About <span className="text-aether-clay">Aether?</span>
           </>
         }
         subtitle="Aether transforms reactive, paper-heavy operations into self-balancing, autonomous workflows—helping businesses identify potential capacity gains, reduce administrative drag, and elevate customer retention."
@@ -199,14 +196,14 @@ export const ImpactPage: React.FC = () => {
 
       {/* Core Executive Thesis: Why Business Care */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-black border border-slate-700/80 space-y-6">
+        <div className="p-8 sm:p-12 rounded-3xl bg-aether-card border border-aether-border shadow-warm-md space-y-6">
           <div className="max-w-3xl space-y-3">
             <Badge variant="primary" dot size="md">
               Operational Focus
             </Badge>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-text-primary tracking-tight">
               Most businesses don't just have a sales problem. <br />
-              <span className="text-sky-400">They have an operational leakage problem.</span>
+              <span className="text-aether-clay">They have an operational leakage problem.</span>
             </h2>
             <p className="text-sm sm:text-base text-text-secondary leading-relaxed pt-2">
               Every day, operational friction slows down inquiry response times, leaves schedule
@@ -216,25 +213,25 @@ export const ImpactPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800">
-            <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
-              <span className="text-xs font-mono text-rose-400 font-bold uppercase">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-aether-border">
+            <div className="p-4 rounded-xl bg-aether-surface border border-aether-border space-y-1">
+              <span className="text-xs font-mono text-[#C86446] font-bold uppercase">
                 The Friction
               </span>
               <p className="text-xs text-text-secondary">
                 Delayed inquiry responses, unbooked schedule gaps, and manual data transcription.
               </p>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
-              <span className="text-xs font-mono text-sky-400 font-bold uppercase">
+            <div className="p-4 rounded-xl bg-aether-surface border border-aether-border space-y-1">
+              <span className="text-xs font-mono text-aether-clay font-bold uppercase">
                 Aether Layer
               </span>
               <p className="text-xs text-text-secondary">
                 Autonomous triage, predictive reminders, and dynamic slot packing.
               </p>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1">
-              <span className="text-xs font-mono text-emerald-400 font-bold uppercase">
+            <div className="p-4 rounded-xl bg-aether-surface border border-aether-border space-y-1">
+              <span className="text-xs font-mono text-[#4D6B53] font-bold uppercase">
                 Illustrative Outcome
               </span>
               <p className="text-xs text-text-secondary">
@@ -257,17 +254,17 @@ export const ImpactPage: React.FC = () => {
           {PLATFORM_IMPACT_METRICS.map((metric) => {
             const detail = PILLAR_DETAILS[metric.dimension] || PILLAR_DETAILS['Time'];
             const icon = PILLAR_ICONS[metric.dimension] || (
-              <Clock className="w-5 h-5 text-sky-400" />
+              <Clock className="w-5 h-5 text-aether-clay" />
             );
 
             return (
               <Card
                 key={metric.id}
-                className="p-6 sm:p-7 flex flex-col justify-between h-full bg-slate-900/80 border-slate-800 hover:border-slate-700 transition-all space-y-5"
+                className="p-6 sm:p-7 flex flex-col justify-between h-full bg-aether-card border border-aether-border hover:border-aether-clay/40 shadow-warm-xs hover:shadow-warm-sm transition-all space-y-5"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-aether-surface border border-aether-border flex items-center justify-center">
                       {icon}
                     </div>
                     <Badge variant="neutral" size="sm" className="font-mono text-xs font-bold">
@@ -276,7 +273,7 @@ export const ImpactPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <span className="text-2xl sm:text-3xl font-extrabold font-mono text-white tracking-tight">
+                    <span className="text-2xl sm:text-3xl font-extrabold font-mono text-text-primary tracking-tight">
                       {metric.metric}
                     </span>
                     <h3 className="text-base font-bold text-text-primary mt-1">{metric.label}</h3>
@@ -286,17 +283,17 @@ export const ImpactPage: React.FC = () => {
                     {detail.whyItMatters}
                   </p>
 
-                  <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 space-y-2 text-xs">
+                  <div className="p-3 rounded-lg bg-aether-surface border border-aether-border space-y-2 text-xs">
                     <div>
-                      <span className="text-[10px] font-mono uppercase text-rose-400 font-bold block">
+                      <span className="text-[10px] font-mono uppercase text-[#C86446] font-bold block">
                         Traditional Friction:
                       </span>
                       <p className="text-text-muted text-[11px] leading-snug">
                         {detail.traditionalFriction}
                       </p>
                     </div>
-                    <div className="pt-1.5 border-t border-slate-900">
-                      <span className="text-[10px] font-mono uppercase text-emerald-400 font-bold block">
+                    <div className="pt-1.5 border-t border-aether-border">
+                      <span className="text-[10px] font-mono uppercase text-[#4D6B53] font-bold block">
                         Aether Transformation:
                       </span>
                       <p className="text-text-secondary text-[11px] leading-snug">
@@ -306,9 +303,9 @@ export const ImpactPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                <div className="pt-3 border-t border-aether-border flex items-center justify-between text-xs font-mono">
                   <span className="text-text-muted">Impact Benchmark:</span>
-                  <span className="text-emerald-400 font-bold">{detail.illustrativeStat}</span>
+                  <span className="text-[#4D6B53] font-bold">{detail.illustrativeStat}</span>
                 </div>
               </Card>
             );
@@ -324,7 +321,7 @@ export const ImpactPage: React.FC = () => {
           subtitle="Model sample team parameters to explore illustrative operational hours saved and potential capacity unlocked."
         />
 
-        <div className="p-6 sm:p-10 rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-2xl">
+        <div className="p-6 sm:p-10 rounded-2xl bg-aether-card border border-aether-border shadow-warm-md">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Input Controls */}
             <div className="lg:col-span-6 space-y-6">
@@ -333,7 +330,7 @@ export const ImpactPage: React.FC = () => {
                   <label className="text-xs font-semibold uppercase tracking-wider text-text-muted">
                     Team Members Handling Scheduling & Admin
                   </label>
-                  <span className="text-sm font-bold font-mono text-sky-400">
+                  <span className="text-sm font-bold font-mono text-aether-clay">
                     {teamSize} Staff Members
                   </span>
                 </div>
@@ -343,7 +340,7 @@ export const ImpactPage: React.FC = () => {
                   max="50"
                   value={teamSize}
                   onChange={(e) => setTeamSize(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-sky-400"
+                  className="w-full h-2 bg-aether-surface border border-aether-border rounded-lg appearance-none cursor-pointer accent-aether-clay"
                 />
               </div>
 
@@ -352,7 +349,7 @@ export const ImpactPage: React.FC = () => {
                   <label className="text-xs font-semibold uppercase tracking-wider text-text-muted">
                     Average Fully-Loaded Hourly Cost ($)
                   </label>
-                  <span className="text-sm font-bold font-mono text-sky-400">
+                  <span className="text-sm font-bold font-mono text-aether-clay">
                     ${hourlyRate}/hour
                   </span>
                 </div>
@@ -363,7 +360,7 @@ export const ImpactPage: React.FC = () => {
                   step="5"
                   value={hourlyRate}
                   onChange={(e) => setHourlyRate(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-sky-400"
+                  className="w-full h-2 bg-aether-surface border border-aether-border rounded-lg appearance-none cursor-pointer accent-aether-clay"
                 />
               </div>
 
@@ -386,8 +383,8 @@ export const ImpactPage: React.FC = () => {
                       className={cn(
                         'px-3 py-1.5 rounded-lg text-xs font-mono border transition-all text-left truncate',
                         selectedVertical === vert
-                          ? 'bg-sky-500/20 text-sky-300 border-sky-500/40'
-                          : 'bg-slate-950 border-slate-800 text-text-muted hover:text-text-primary'
+                          ? 'bg-aether-clay/10 text-aether-clay border-aether-clay font-semibold'
+                          : 'bg-aether-surface border-aether-border text-text-secondary hover:border-aether-clay/40 hover:text-text-primary'
                       )}
                     >
                       {vert}
@@ -398,13 +395,13 @@ export const ImpactPage: React.FC = () => {
             </div>
 
             {/* Calculated Output Display */}
-            <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-black border border-slate-800 space-y-6">
-              <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-aether-surface border border-aether-border space-y-6">
+              <div className="flex items-center justify-between pb-4 border-b border-aether-border">
                 <div>
                   <span className="text-xs font-mono text-text-muted uppercase">
                     Illustrative Model Projection
                   </span>
-                  <h4 className="text-lg font-bold text-white mt-0.5">
+                  <h4 className="text-lg font-bold text-text-primary mt-0.5">
                     {selectedVertical} Scenario
                   </h4>
                 </div>
@@ -414,11 +411,11 @@ export const ImpactPage: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+                <div className="p-4 rounded-xl bg-aether-card border border-aether-border shadow-warm-xs">
                   <span className="text-[10px] font-mono text-text-muted uppercase block">
                     Potential Recovered Hours / Yr
                   </span>
-                  <div className="text-2xl sm:text-3xl font-extrabold font-mono text-sky-400 mt-1">
+                  <div className="text-2xl sm:text-3xl font-extrabold font-mono text-aether-clay mt-1">
                     {annualHoursSaved.toLocaleString()} hrs
                   </div>
                   <span className="text-[11px] text-text-muted mt-0.5 block">
@@ -426,14 +423,14 @@ export const ImpactPage: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+                <div className="p-4 rounded-xl bg-aether-card border border-aether-border shadow-warm-xs">
                   <span className="text-[10px] font-mono text-text-muted uppercase block">
                     Potential Labor Value
                   </span>
-                  <div className="text-2xl sm:text-3xl font-extrabold font-mono text-emerald-400 mt-1">
+                  <div className="text-2xl sm:text-3xl font-extrabold font-mono text-[#4D6B53] mt-1">
                     ${annualCostSaved.toLocaleString()}
                   </div>
-                  <span className="text-[11px] text-emerald-400/80 mt-0.5 block font-mono">
+                  <span className="text-[11px] text-[#4D6B53] mt-0.5 block font-mono">
                     Modeled capacity value
                   </span>
                 </div>
@@ -450,7 +447,7 @@ export const ImpactPage: React.FC = () => {
                 size="md"
                 onClick={openSolutionModal}
                 rightIcon={<ArrowRight className="w-4 h-4" />}
-                className="w-full justify-center"
+                className="w-full justify-center shadow-warm-xs"
               >
                 Schedule Custom Architecture Briefing
               </Button>
@@ -469,7 +466,10 @@ export const ImpactPage: React.FC = () => {
 
         <div className="space-y-3">
           {BENCHMARK_COMPARISONS.map((b, idx) => (
-            <Card key={idx} className="p-5 bg-slate-900/70 border-slate-800">
+            <Card
+              key={idx}
+              className="p-5 bg-aether-card border border-aether-border shadow-warm-xs"
+            >
               <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
                 <div className="md:col-span-3">
                   <span className="text-xs font-mono font-bold text-text-muted uppercase block mb-0.5">
@@ -478,15 +478,15 @@ export const ImpactPage: React.FC = () => {
                   <h4 className="text-sm font-bold text-text-primary">{b.dimension}</h4>
                 </div>
 
-                <div className="md:col-span-4 p-3 rounded-lg bg-black/40 border border-red-950/40">
-                  <span className="text-[10px] font-mono text-rose-400 uppercase font-bold block mb-1">
+                <div className="md:col-span-4 p-3 rounded-lg bg-aether-surface border border-[#C86446]/25">
+                  <span className="text-[10px] font-mono text-[#C86446] uppercase font-bold block mb-1">
                     Traditional Method
                   </span>
                   <p className="text-xs text-text-muted leading-relaxed">{b.traditional}</p>
                 </div>
 
-                <div className="md:col-span-4 p-3 rounded-lg bg-sky-950/20 border border-sky-500/30">
-                  <span className="text-[10px] font-mono text-sky-400 uppercase font-bold block mb-1">
+                <div className="md:col-span-4 p-3 rounded-lg bg-aether-surface border border-aether-clay/30">
+                  <span className="text-[10px] font-mono text-aether-clay uppercase font-bold block mb-1">
                     With Aether Autonomous Layer
                   </span>
                   <p className="text-xs text-text-secondary leading-relaxed font-medium">
@@ -495,7 +495,7 @@ export const ImpactPage: React.FC = () => {
                 </div>
 
                 <div className="md:col-span-1 text-right md:text-center">
-                  <span className="text-xs font-bold font-mono text-emerald-400 block">
+                  <span className="text-xs font-bold font-mono text-[#4D6B53] block">
                     {b.impactMultiplier}
                   </span>
                 </div>
@@ -507,9 +507,9 @@ export const ImpactPage: React.FC = () => {
 
       {/* Clear Methodology & Simulation Labeling */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-text-secondary">
+        <div className="p-6 rounded-2xl bg-aether-surface border border-aether-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-text-secondary">
           <div className="flex items-start sm:items-center gap-3">
-            <AlertCircle className="w-5 h-5 text-sky-400 shrink-0 mt-0.5 sm:mt-0" />
+            <AlertCircle className="w-5 h-5 text-aether-clay shrink-0 mt-0.5 sm:mt-0" />
             <p className="leading-relaxed">
               <strong>Methodology & Simulation Disclaimer:</strong> Metrics shown in this prototype
               are illustrative demonstrations and are not guaranteed production results. Aether

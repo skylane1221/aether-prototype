@@ -491,7 +491,9 @@ export const RealEstateHeroDemo: React.FC = () => {
                             </div>
                             <div>
                               <span className="text-[10px] text-text-muted block">Parking</span>
-                              <span className="text-slate-200">1 Covered</span>
+                              <span className="text-slate-200 truncate block">
+                                {property.parking}
+                              </span>
                             </div>
                             <div>
                               <span className="text-[10px] text-text-muted block">Status</span>

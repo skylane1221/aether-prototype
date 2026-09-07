@@ -49,40 +49,40 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
 const CATEGORY_THEMES: Record<string, { badge: string; border: string; text: string; bg: string }> =
   {
     'AI Intelligence': {
-      badge: 'bg-cyan-500/10 border-cyan-500/20 text-cyan-400',
-      border: 'border-cyan-500/40',
-      text: 'text-cyan-400',
-      bg: 'from-cyan-950/30',
+      badge: 'bg-aether-clay/10 border-aether-clay/20 text-aether-clay',
+      border: 'border-aether-clay/30',
+      text: 'text-aether-clay',
+      bg: 'from-aether-clay/10',
     },
     'Customer Intelligence': {
-      badge: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400',
-      border: 'border-emerald-500/40',
-      text: 'text-emerald-400',
-      bg: 'from-emerald-950/30',
+      badge: 'bg-[#4D6B53]/10 border-[#4D6B53]/20 text-[#4D6B53]',
+      border: 'border-[#4D6B53]/30',
+      text: 'text-[#4D6B53]',
+      bg: 'from-[#4D6B53]/10',
     },
     'Operational Intelligence': {
-      badge: 'bg-amber-500/10 border-amber-500/20 text-amber-400',
-      border: 'border-amber-500/40',
-      text: 'text-amber-400',
-      bg: 'from-amber-950/30',
+      badge: 'bg-aether-clay/15 border-aether-clay/30 text-aether-clay',
+      border: 'border-aether-clay/30',
+      text: 'text-aether-clay',
+      bg: 'from-aether-clay/15',
     },
     'Workflow Automation': {
-      badge: 'bg-indigo-500/10 border-indigo-500/20 text-indigo-400',
-      border: 'border-indigo-500/40',
-      text: 'text-indigo-400',
-      bg: 'from-indigo-950/30',
+      badge: 'bg-aether-surface border-aether-border text-text-primary',
+      border: 'border-aether-border',
+      text: 'text-text-primary',
+      bg: 'from-aether-surface',
     },
     'Business Intelligence': {
-      badge: 'bg-sky-500/10 border-sky-500/20 text-sky-400',
-      border: 'border-sky-500/40',
-      text: 'text-sky-400',
-      bg: 'from-sky-950/30',
+      badge: 'bg-aether-clay/10 border-aether-clay/20 text-aether-clay',
+      border: 'border-aether-clay/30',
+      text: 'text-aether-clay',
+      bg: 'from-aether-clay/10',
     },
     'Communication Intelligence': {
-      badge: 'bg-rose-500/10 border-rose-500/20 text-rose-400',
-      border: 'border-rose-500/40',
-      text: 'text-rose-400',
-      bg: 'from-rose-950/30',
+      badge: 'bg-[#C86446]/10 border-[#C86446]/20 text-[#C86446]',
+      border: 'border-[#C86446]/30',
+      text: 'text-[#C86446]',
+      bg: 'from-[#C86446]/10',
     },
   };
 
@@ -168,10 +168,7 @@ export const SolutionsPage: React.FC = () => {
         badge="Modular Solution Architecture"
         title={
           <>
-            What Can Aether Do?{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-300">
-              Platform Solutions
-            </span>
+            What Can Aether Do? <span className="text-aether-clay">Platform Solutions</span>
           </>
         }
         subtitle="Explore Aether's 6 operational intelligence disciplines. Solutions answer 'What can Aether do?' while our 10 industry experiences show 'Where can Aether work?'—two connected views of the exact same cognitive platform."
@@ -187,13 +184,13 @@ export const SolutionsPage: React.FC = () => {
 
       {/* Two Views Callout Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-sky-950/40 via-slate-900 to-indigo-950/40 border border-sky-500/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="p-4 sm:p-5 rounded-2xl bg-aether-card border border-aether-border shadow-warm-xs flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+            <div className="w-9 h-9 rounded-xl bg-aether-clay/10 border border-aether-clay/20 text-aether-clay flex items-center justify-center shrink-0">
               <Sparkles className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-xs font-mono font-semibold text-sky-300 uppercase tracking-wider">
+              <div className="text-xs font-mono font-semibold text-aether-clay uppercase tracking-wider">
                 Two Views of One Cognitive System
               </div>
               <p className="text-xs text-text-secondary">
@@ -229,8 +226,8 @@ export const SolutionsPage: React.FC = () => {
                 className={cn(
                   'px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 border flex items-center gap-2',
                   isSelected
-                    ? 'bg-slate-800 text-text-primary border-sky-500/50 shadow-sm'
-                    : 'bg-slate-900/40 text-text-secondary border-slate-800 hover:border-slate-700 hover:text-text-primary'
+                    ? 'bg-aether-card text-text-primary border-aether-clay shadow-warm-xs font-semibold'
+                    : 'bg-aether-surface text-text-secondary border-aether-border hover:border-aether-clay/40 hover:text-text-primary'
                 )}
               >
                 {cat !== 'all' && <span className="text-xs">{CATEGORY_ICONS[cat]}</span>}
@@ -249,7 +246,7 @@ export const SolutionsPage: React.FC = () => {
           return (
             <div key={catGroup.id} className="space-y-6">
               {/* Category Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-800">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-aether-border">
                 <div className="flex items-center gap-3">
                   <div
                     className={cn(
@@ -283,7 +280,7 @@ export const SolutionsPage: React.FC = () => {
                 {catGroup.solutions.map((sol) => (
                   <Card
                     key={sol.id}
-                    className="p-6 flex flex-col justify-between h-full bg-slate-900/80 border-slate-800 hover:border-slate-700 transition-all group"
+                    className="p-6 flex flex-col justify-between h-full bg-aether-card border border-aether-border hover:border-aether-clay/40 shadow-warm-xs hover:shadow-warm-sm transition-all group"
                   >
                     <div className="space-y-5">
                       {/* Top Header */}
@@ -297,7 +294,7 @@ export const SolutionsPage: React.FC = () => {
                           >
                             {catGroup.category}
                           </span>
-                          <h3 className="text-lg font-bold text-text-primary group-hover:text-sky-300 transition-colors">
+                          <h3 className="text-lg font-bold text-text-primary group-hover:text-aether-clay transition-colors">
                             {sol.name}
                           </h3>
                         </div>
@@ -312,7 +309,7 @@ export const SolutionsPage: React.FC = () => {
 
                       {/* 1. What It Does */}
                       <div className="space-y-1.5">
-                        <div className="text-[11px] font-mono font-semibold uppercase tracking-wider text-sky-400">
+                        <div className="text-[11px] font-mono font-semibold uppercase tracking-wider text-aether-clay">
                           What It Does
                         </div>
                         <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
@@ -321,8 +318,8 @@ export const SolutionsPage: React.FC = () => {
                       </div>
 
                       {/* 2. What Problem It Addresses */}
-                      <div className="p-3.5 rounded-xl bg-slate-950/80 border border-rose-500/20 space-y-1.5">
-                        <div className="flex items-center gap-1.5 text-[11px] font-mono font-semibold uppercase tracking-wider text-rose-400">
+                      <div className="p-3.5 rounded-xl bg-aether-surface border border-[#C86446]/20 space-y-1.5">
+                        <div className="flex items-center gap-1.5 text-[11px] font-mono font-semibold uppercase tracking-wider text-[#C86446]">
                           <AlertCircle className="w-3.5 h-3.5" />
                           <span>Problem It Addresses</span>
                         </div>
@@ -332,8 +329,8 @@ export const SolutionsPage: React.FC = () => {
                       </div>
 
                       {/* 3. Example Application */}
-                      <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 space-y-2">
-                        <div className="flex items-center gap-1.5 text-[11px] font-mono font-semibold uppercase tracking-wider text-emerald-400">
+                      <div className="p-3.5 rounded-xl bg-aether-surface border border-aether-border space-y-2">
+                        <div className="flex items-center gap-1.5 text-[11px] font-mono font-semibold uppercase tracking-wider text-[#4D6B53]">
                           <Sparkles className="w-3.5 h-3.5" />
                           <span>Example Application</span>
                         </div>
@@ -343,23 +340,23 @@ export const SolutionsPage: React.FC = () => {
                             {sol.exampleApplication.scenario}
                           </p>
                           <p>
-                            <strong className="text-sky-300">Action:</strong>{' '}
+                            <strong className="text-aether-clay">Action:</strong>{' '}
                             {sol.exampleApplication.action}
                           </p>
                           <p>
-                            <strong className="text-emerald-400">Outcome:</strong>{' '}
+                            <strong className="text-[#4D6B53]">Outcome:</strong>{' '}
                             {sol.exampleApplication.outcome}
                           </p>
                         </div>
                       </div>
 
                       {/* 4. Which Industries Can Use It & Explore Links */}
-                      <div className="space-y-2 pt-2 border-t border-slate-800/80">
+                      <div className="space-y-2 pt-2 border-t border-aether-border">
                         <div className="flex items-center justify-between">
                           <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-text-muted">
                             Applicable Industries:
                           </span>
-                          <span className="text-[10px] font-mono text-sky-400">
+                          <span className="text-[10px] font-mono text-aether-clay">
                             {sol.applicableIndustries.length} Verticals
                           </span>
                         </div>
@@ -370,10 +367,10 @@ export const SolutionsPage: React.FC = () => {
                             <Link
                               key={ind.slug}
                               to={`/industries/${ind.slug}`}
-                              className="p-2 rounded-lg bg-slate-950/90 border border-slate-800 hover:border-sky-500/50 hover:bg-slate-800/60 transition-all flex items-center justify-between group/link"
+                              className="p-2 rounded-lg bg-aether-surface border border-aether-border hover:border-aether-clay/40 hover:bg-aether-card transition-all flex items-center justify-between group/link"
                             >
                               <div className="flex items-center gap-2 min-w-0">
-                                <span className="text-text-muted group-hover/link:text-sky-400 transition-colors">
+                                <span className="text-text-muted group-hover/link:text-aether-clay transition-colors">
                                   {INDUSTRY_ICONS[ind.slug] || (
                                     <ChevronRight className="w-3.5 h-3.5" />
                                   )}
@@ -382,7 +379,7 @@ export const SolutionsPage: React.FC = () => {
                                   {ind.name}
                                 </span>
                               </div>
-                              <span className="text-[10px] font-mono font-semibold text-sky-400 group-hover/link:translate-x-0.5 transition-transform flex items-center gap-0.5 shrink-0 ml-2">
+                              <span className="text-[10px] font-mono font-semibold text-aether-clay group-hover/link:translate-x-0.5 transition-transform flex items-center gap-0.5 shrink-0 ml-2">
                                 Explore <ArrowRight className="w-3 h-3" />
                               </span>
                             </Link>
@@ -392,10 +389,10 @@ export const SolutionsPage: React.FC = () => {
                     </div>
 
                     {/* Card Footer Deep-Dive Trigger */}
-                    <div className="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between">
+                    <div className="mt-5 pt-4 border-t border-aether-border flex items-center justify-between">
                       <button
                         onClick={() => setSelectedSolution(sol)}
-                        className="text-xs font-mono font-semibold text-sky-400 hover:text-sky-300 flex items-center gap-1 transition-colors"
+                        className="text-xs font-mono font-semibold text-aether-clay hover:text-aether-clay/80 flex items-center gap-1 transition-colors"
                       >
                         <span>View Technical Architecture</span>
                         <ChevronRight className="w-3.5 h-3.5" />
@@ -429,18 +426,20 @@ export const SolutionsPage: React.FC = () => {
         >
           <div className="space-y-6 pt-2">
             {/* Category & Impact Banner */}
-            <div className="p-4 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-between gap-4">
+            <div className="p-4 rounded-xl bg-aether-surface border border-aether-border flex items-center justify-between gap-4">
               <div>
                 <span className="text-[10px] uppercase font-mono text-text-muted">
                   Solution Discipline
                 </span>
-                <div className="text-sm font-bold text-sky-400">{selectedSolution.category}</div>
+                <div className="text-sm font-bold text-aether-clay">
+                  {selectedSolution.category}
+                </div>
               </div>
               <div className="text-right">
                 <span className="text-[10px] uppercase font-mono text-text-muted">
                   Illustrative Benchmark (Simulated Data)
                 </span>
-                <div className="text-xs font-bold font-mono text-emerald-400">
+                <div className="text-xs font-bold font-mono text-[#4D6B53]">
                   {selectedSolution.impactMetric}
                 </div>
               </div>
@@ -448,7 +447,7 @@ export const SolutionsPage: React.FC = () => {
 
             {/* 1. What It Does */}
             <div className="space-y-2">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-sky-400 font-mono">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-aether-clay font-mono">
                 1. What It Does
               </h4>
               <p className="text-sm text-text-secondary leading-relaxed">
@@ -458,17 +457,17 @@ export const SolutionsPage: React.FC = () => {
 
             {/* 2. Problem It Addresses */}
             <div className="space-y-2">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-rose-400 font-mono">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-[#C86446] font-mono">
                 2. Operational Problems It Solves
               </h4>
-              <div className="p-3 rounded-lg bg-slate-950 border border-rose-500/20 text-xs text-text-secondary mb-2">
+              <div className="p-3 rounded-lg bg-aether-card border border-[#C86446]/20 text-xs text-text-secondary mb-2">
                 <strong className="text-text-primary">Primary Focus:</strong>{' '}
                 {selectedSolution.problemItAddresses}
               </div>
               <div className="space-y-1.5">
                 {selectedSolution.problemsItSolves.map((prob, idx) => (
                   <div key={idx} className="flex items-start gap-2 text-xs text-text-secondary">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0 mt-1.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C86446] shrink-0 mt-1.5" />
                     <span>{prob}</span>
                   </div>
                 ))}
@@ -477,16 +476,16 @@ export const SolutionsPage: React.FC = () => {
 
             {/* 3. Technical Capabilities & Algorithms */}
             <div className="space-y-2">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-emerald-400 font-mono">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-[#4D6B53] font-mono">
                 3. Technical Capabilities & Algorithms
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {selectedSolution.keyCapabilities.map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-text-primary flex items-center gap-2 font-mono"
+                    className="p-2.5 rounded-lg bg-aether-card border border-aether-border text-xs text-text-primary flex items-center gap-2 font-mono"
                   >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#4D6B53] shrink-0" />
                     <span>{cap}</span>
                   </div>
                 ))}
@@ -495,20 +494,20 @@ export const SolutionsPage: React.FC = () => {
 
             {/* 4. Example Application */}
             <div className="space-y-2">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-amber-400 font-mono">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-aether-clay font-mono">
                 4. Example Scenario & Outcome
               </h4>
-              <div className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5 text-xs">
+              <div className="p-3.5 rounded-xl bg-aether-card border border-aether-border space-y-1.5 text-xs">
                 <p>
                   <strong className="text-text-primary">Operational Scenario:</strong>{' '}
                   {selectedSolution.exampleApplication.scenario}
                 </p>
                 <p>
-                  <strong className="text-sky-300">Aether Action:</strong>{' '}
+                  <strong className="text-aether-clay">Aether Action:</strong>{' '}
                   {selectedSolution.exampleApplication.action}
                 </p>
                 <p>
-                  <strong className="text-emerald-400">Illustrative Outcome:</strong>{' '}
+                  <strong className="text-[#4D6B53]">Illustrative Outcome:</strong>{' '}
                   {selectedSolution.exampleApplication.outcome}
                 </p>
               </div>
@@ -516,7 +515,7 @@ export const SolutionsPage: React.FC = () => {
 
             {/* 5. Applicable Industries & Direct Explore Links */}
             <div className="space-y-2">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-purple-400 font-mono">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-aether-clay font-mono">
                 5. Applicable Industry Implementations
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -525,13 +524,13 @@ export const SolutionsPage: React.FC = () => {
                     key={ind.slug}
                     to={`/industries/${ind.slug}`}
                     onClick={() => setSelectedSolution(null)}
-                    className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 hover:border-sky-500/50 flex flex-col justify-between gap-1 group/btn transition-colors"
+                    className="p-2.5 rounded-lg bg-aether-card border border-aether-border hover:border-aether-clay/40 flex flex-col justify-between gap-1 group/btn transition-colors"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-text-primary group-hover/btn:text-sky-400 transition-colors">
+                      <span className="text-xs font-bold text-text-primary group-hover/btn:text-aether-clay transition-colors">
                         {ind.name}
                       </span>
-                      <span className="text-[10px] font-mono text-sky-400 flex items-center gap-0.5">
+                      <span className="text-[10px] font-mono text-aether-clay flex items-center gap-0.5">
                         {ind.buttonLabel} <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>
@@ -542,7 +541,7 @@ export const SolutionsPage: React.FC = () => {
             </div>
 
             {/* Modal Actions */}
-            <div className="pt-4 border-t border-slate-800 flex justify-end gap-3">
+            <div className="pt-4 border-t border-aether-border flex justify-end gap-3">
               <Button variant="secondary" onClick={() => setSelectedSolution(null)}>
                 Close
               </Button>
@@ -568,7 +567,7 @@ export const SolutionsPage: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <Card className="p-6">
-            <div className="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-3">
+            <div className="w-9 h-9 rounded-lg bg-aether-clay/10 border border-aether-clay/25 text-aether-clay flex items-center justify-center mb-3">
               <Cpu className="w-5 h-5" />
             </div>
             <h4 className="text-sm font-semibold text-text-primary mb-1">
@@ -581,7 +580,7 @@ export const SolutionsPage: React.FC = () => {
           </Card>
 
           <Card className="p-6">
-            <div className="w-9 h-9 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-3">
+            <div className="w-9 h-9 rounded-lg bg-aether-surface border border-aether-border text-text-primary flex items-center justify-center mb-3">
               <Layers className="w-5 h-5" />
             </div>
             <h4 className="text-sm font-semibold text-text-primary mb-1">Asynchronous Event Bus</h4>
@@ -592,7 +591,7 @@ export const SolutionsPage: React.FC = () => {
           </Card>
 
           <Card className="p-6">
-            <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-3">
+            <div className="w-9 h-9 rounded-lg bg-[#4D6B53]/10 border border-[#4D6B53]/25 text-[#4D6B53] flex items-center justify-center mb-3">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <h4 className="text-sm font-semibold text-text-primary mb-1">Enterprise Guardrails</h4>

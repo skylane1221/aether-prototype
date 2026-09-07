@@ -38,8 +38,8 @@ export const ProblemCard: React.FC<ProblemCardProps> = ({ problem, className }) 
         </div>
 
         {/* Traditional Friction Block */}
-        <div className="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20 mb-3.5">
-          <div className="flex items-center gap-2 text-xs font-semibold text-rose-400 mb-1">
+        <div className="p-3.5 rounded-lg bg-[#9A6048]/5 border border-[#9A6048]/20 mb-3.5">
+          <div className="flex items-center gap-2 text-xs font-semibold text-[#8A543E] mb-1">
             <AlertCircle className="w-3.5 h-3.5 shrink-0" />
             <span>Traditional Operational Friction</span>
           </div>
@@ -49,8 +49,8 @@ export const ProblemCard: React.FC<ProblemCardProps> = ({ problem, className }) 
         </div>
 
         {/* Aether Transformation Block */}
-        <div className="p-3.5 rounded-lg bg-sky-500/5 border border-sky-500/20">
-          <div className="flex items-center gap-2 text-xs font-semibold text-sky-400 mb-1">
+        <div className="p-3.5 rounded-lg bg-aether-clay/10 border border-aether-clay/25">
+          <div className="flex items-center gap-2 text-xs font-semibold text-aether-clay mb-1">
             <Zap className="w-3.5 h-3.5 shrink-0" />
             <span>Aether Intelligent Transformation</span>
           </div>
@@ -63,7 +63,9 @@ export const ProblemCard: React.FC<ProblemCardProps> = ({ problem, className }) 
       {/* Outcome Metric */}
       <div className="mt-4 pt-3 border-t border-aether-border-subtle flex items-center justify-between text-xs">
         <span className="text-text-muted font-medium">Measured Efficiency Gain:</span>
-        <span className="font-semibold font-mono text-emerald-400">{problem.efficiencyGain}</span>
+        <span className="font-semibold font-mono text-aether-success">
+          {problem.efficiencyGain}
+        </span>
       </div>
     </Card>
   );

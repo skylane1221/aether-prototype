@@ -62,13 +62,13 @@ export const HomePage: React.FC = () => {
 
   // 6 Impact Dimension Icons
   const IMPACT_DIMENSION_ICONS: Record<string, React.ReactNode> = {
-    Time: <Clock className="w-5 h-5 text-sky-400" />,
-    Efficiency: <Zap className="w-5 h-5 text-indigo-400" />,
-    'Customer Experience': <Sparkles className="w-5 h-5 text-emerald-400" />,
-    Opportunity: <Target className="w-5 h-5 text-amber-400" />,
-    'Decision Making': <BrainCircuit className="w-5 h-5 text-teal-400" />,
-    'Operational Visibility': <Eye className="w-5 h-5 text-sky-300" />,
-    Visibility: <Eye className="w-5 h-5 text-sky-300" />,
+    Time: <Clock className="w-5 h-5 text-aether-clay" />,
+    Efficiency: <Zap className="w-5 h-5 text-aether-clay" />,
+    'Customer Experience': <Sparkles className="w-5 h-5 text-[#4D6B53]" />,
+    Opportunity: <Target className="w-5 h-5 text-[#C86446]" />,
+    'Decision Making': <BrainCircuit className="w-5 h-5 text-aether-clay" />,
+    'Operational Visibility': <Eye className="w-5 h-5 text-aether-clay" />,
+    Visibility: <Eye className="w-5 h-5 text-aether-clay" />,
   };
 
   return (
@@ -93,9 +93,7 @@ export const HomePage: React.FC = () => {
           {/* Headline */}
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-text-primary leading-[1.1] max-w-4xl">
             Turn Business Problems Into{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-sky-300 to-indigo-300">
-              Intelligent Solutions.
-            </span>
+            <span className="text-aether-clay">Intelligent Solutions.</span>
           </h1>
 
           {/* Subheading */}
@@ -111,7 +109,7 @@ export const HomePage: React.FC = () => {
               size="lg"
               onClick={() => scrollToSection('industries-preview')}
               rightIcon={<ArrowRight className="w-4 h-4" />}
-              className="w-full sm:w-auto shadow-md"
+              className="w-full sm:w-auto shadow-warm-sm"
             >
               Explore Industries
             </Button>
@@ -132,9 +130,9 @@ export const HomePage: React.FC = () => {
               Autonomous Transformation Pipeline
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-5 gap-2.5 sm:gap-3 p-3 sm:p-4 rounded-2xl bg-aether-card card-gradient-surface border border-slate-700/80 shadow-card">
+            <div className="grid grid-cols-1 sm:grid-cols-5 gap-2.5 sm:gap-3 p-3 sm:p-4 rounded-2xl bg-aether-card border border-aether-border shadow-warm-md">
               {/* Step 1: Business */}
-              <div className="p-3.5 rounded-xl bg-slate-900/90 border border-aether-border flex flex-col items-center justify-center text-center group hover:border-slate-600 transition-colors">
+              <div className="p-3.5 rounded-xl bg-aether-surface border border-aether-border flex flex-col items-center justify-center text-center group hover:border-aether-clay/40 transition-colors">
                 <span className="text-[10px] font-mono text-text-muted uppercase tracking-wider mb-1">
                   Step 01
                 </span>
@@ -147,11 +145,11 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Step 2: Understand */}
-              <div className="p-3.5 rounded-xl bg-sky-500/10 border border-sky-500/25 flex flex-col items-center justify-center text-center group hover:border-sky-500/40 transition-colors">
-                <span className="text-[10px] font-mono text-sky-400 uppercase tracking-wider mb-1">
+              <div className="p-3.5 rounded-xl bg-aether-clay/10 border border-aether-clay/25 flex flex-col items-center justify-center text-center group hover:border-aether-clay/40 transition-colors">
+                <span className="text-[10px] font-mono text-aether-clay uppercase tracking-wider mb-1">
                   Step 02
                 </span>
-                <span className="text-xs sm:text-sm font-bold tracking-tight text-sky-300">
+                <span className="text-xs sm:text-sm font-bold tracking-tight text-aether-clay">
                   UNDERSTAND
                 </span>
                 <span className="text-[11px] text-text-muted mt-1 line-clamp-1">
@@ -160,11 +158,11 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Step 3: Identify */}
-              <div className="p-3.5 rounded-xl bg-indigo-500/10 border border-indigo-500/25 flex flex-col items-center justify-center text-center group hover:border-indigo-500/40 transition-colors">
-                <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-wider mb-1">
+              <div className="p-3.5 rounded-xl bg-aether-surface border border-aether-border flex flex-col items-center justify-center text-center group hover:border-aether-clay/40 transition-colors">
+                <span className="text-[10px] font-mono text-aether-clay uppercase tracking-wider mb-1">
                   Step 03
                 </span>
-                <span className="text-xs sm:text-sm font-bold tracking-tight text-indigo-300">
+                <span className="text-xs sm:text-sm font-bold tracking-tight text-text-primary">
                   IDENTIFY
                 </span>
                 <span className="text-[11px] text-text-muted mt-1 line-clamp-1">
@@ -173,11 +171,11 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Step 4: Transform */}
-              <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/25 flex flex-col items-center justify-center text-center group hover:border-amber-500/40 transition-colors">
-                <span className="text-[10px] font-mono text-amber-400 uppercase tracking-wider mb-1">
+              <div className="p-3.5 rounded-xl bg-aether-clay/15 border border-aether-clay/30 flex flex-col items-center justify-center text-center group hover:border-aether-clay/40 transition-colors">
+                <span className="text-[10px] font-mono text-aether-clay uppercase tracking-wider mb-1">
                   Step 04
                 </span>
-                <span className="text-xs sm:text-sm font-bold tracking-tight text-amber-300">
+                <span className="text-xs sm:text-sm font-bold tracking-tight text-aether-clay">
                   TRANSFORM
                 </span>
                 <span className="text-[11px] text-text-muted mt-1 line-clamp-1">
@@ -186,11 +184,11 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Step 5: Optimize */}
-              <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex flex-col items-center justify-center text-center group hover:border-emerald-500/40 transition-colors">
-                <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider mb-1">
+              <div className="p-3.5 rounded-xl bg-[#4D6B53]/10 border border-[#4D6B53]/25 flex flex-col items-center justify-center text-center group hover:border-[#4D6B53]/40 transition-colors">
+                <span className="text-[10px] font-mono text-[#4D6B53] uppercase tracking-wider mb-1">
                   Step 05
                 </span>
-                <span className="text-xs sm:text-sm font-bold tracking-tight text-emerald-300">
+                <span className="text-xs sm:text-sm font-bold tracking-tight text-[#4D6B53]">
                   OPTIMIZE
                 </span>
                 <span className="text-[11px] text-text-muted mt-1 line-clamp-1">
@@ -216,7 +214,7 @@ export const HomePage: React.FC = () => {
           {/* Step 01: Understand */}
           <Card className="p-6 flex flex-col justify-between h-full">
             <div>
-              <div className="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center font-mono font-bold text-sm mb-4">
+              <div className="w-10 h-10 rounded-lg bg-aether-clay/10 border border-aether-clay/25 text-aether-clay flex items-center justify-center font-mono font-bold text-sm mb-4">
                 01
               </div>
               <h3 className="text-lg font-bold text-text-primary mb-2">Understand</h3>
@@ -225,7 +223,7 @@ export const HomePage: React.FC = () => {
                 and inventory—understanding operational reality without disruptive system overhauls.
               </p>
             </div>
-            <div className="mt-5 pt-3 border-t border-aether-border-subtle text-xs text-sky-400 font-medium">
+            <div className="mt-5 pt-3 border-t border-aether-border-subtle text-xs text-aether-clay font-medium">
               Zero-friction telemetry
             </div>
           </Card>
@@ -233,7 +231,7 @@ export const HomePage: React.FC = () => {
           {/* Step 02: Identify */}
           <Card className="p-6 flex flex-col justify-between h-full">
             <div>
-              <div className="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center font-mono font-bold text-sm mb-4">
+              <div className="w-10 h-10 rounded-lg bg-aether-surface border border-aether-border text-text-primary flex items-center justify-center font-mono font-bold text-sm mb-4">
                 02
               </div>
               <h3 className="text-lg font-bold text-text-primary mb-2">Identify</h3>
@@ -242,7 +240,7 @@ export const HomePage: React.FC = () => {
                 lead responses, and client churn risks before they damage margins.
               </p>
             </div>
-            <div className="mt-5 pt-3 border-t border-aether-border-subtle text-xs text-indigo-400 font-medium">
+            <div className="mt-5 pt-3 border-t border-aether-border-subtle text-xs text-text-secondary font-medium">
               Real-time bottleneck diagnosis
             </div>
           </Card>
@@ -250,7 +248,7 @@ export const HomePage: React.FC = () => {
           {/* Step 03: Transform */}
           <Card className="p-6 flex flex-col justify-between h-full">
             <div>
-              <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold text-sm mb-4">
+              <div className="w-10 h-10 rounded-lg bg-aether-clay/15 border border-aether-clay/30 text-aether-clay flex items-center justify-center font-mono font-bold text-sm mb-4">
                 03
               </div>
               <h3 className="text-lg font-bold text-text-primary mb-2">Transform</h3>
@@ -259,7 +257,7 @@ export const HomePage: React.FC = () => {
                 in seconds, backfill cancellations, and dispatch resources seamlessly.
               </p>
             </div>
-            <div className="mt-5 pt-3 border-t border-aether-border-subtle text-xs text-amber-400 font-medium">
+            <div className="mt-5 pt-3 border-t border-aether-border-subtle text-xs text-aether-clay font-medium">
               Autonomous multi-agent execution
             </div>
           </Card>
@@ -267,7 +265,7 @@ export const HomePage: React.FC = () => {
           {/* Step 04: Optimize */}
           <Card className="p-6 flex flex-col justify-between h-full">
             <div>
-              <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold text-sm mb-4">
+              <div className="w-10 h-10 rounded-lg bg-[#4D6B53]/10 border border-[#4D6B53]/25 text-[#4D6B53] flex items-center justify-center font-mono font-bold text-sm mb-4">
                 04
               </div>
               <h3 className="text-lg font-bold text-text-primary mb-2">Optimize</h3>
@@ -276,7 +274,7 @@ export const HomePage: React.FC = () => {
                 verifiable business impact on a unified executive dashboard.
               </p>
             </div>
-            <div className="mt-5 pt-3 border-t border-aether-border-subtle text-xs text-emerald-400 font-medium">
+            <div className="mt-5 pt-3 border-t border-aether-border-subtle text-xs text-[#4D6B53] font-medium">
               Compounding operational gains
             </div>
           </Card>
@@ -350,9 +348,9 @@ export const HomePage: React.FC = () => {
         />
 
         {/* Interactive Demo Sandbox Frame */}
-        <Card className="border-slate-700/80 p-0 overflow-hidden shadow-card-hover">
+        <Card className="border-aether-border p-0 overflow-hidden shadow-warm-md">
           {/* Top Bar with Industry Scenario Selector */}
-          <div className="bg-slate-950 px-4 sm:px-6 py-3.5 border-b border-aether-border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="bg-aether-surface px-4 sm:px-6 py-3.5 border-b border-aether-border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
               {DEMO_SCENARIOS.map((sc, idx: number) => {
                 const isSelected = idx === selectedDemoIndex;
@@ -366,11 +364,11 @@ export const HomePage: React.FC = () => {
                     className={cn(
                       'px-3 py-1.5 rounded-lg text-xs font-medium transition-all whitespace-nowrap border',
                       isSelected
-                        ? 'bg-aether-card text-text-primary border-sky-500/60 font-semibold shadow-sm'
-                        : 'bg-aether-surface text-text-secondary border-aether-border hover:border-slate-700'
+                        ? 'bg-aether-card text-text-primary border-aether-clay font-semibold shadow-warm-xs'
+                        : 'bg-aether-surface text-text-secondary border-aether-border hover:border-aether-clay/40'
                     )}
                   >
-                    <span className="text-sky-400 mr-1.5 font-mono">{sc.industryName}:</span>
+                    <span className="text-aether-clay mr-1.5 font-mono">{sc.industryName}:</span>
                     <span>{sc.badge}</span>
                   </button>
                 );
@@ -414,19 +412,19 @@ export const HomePage: React.FC = () => {
               <div className="p-4 rounded-xl bg-aether-surface border border-aether-border flex flex-col justify-between">
                 <div>
                   <div className="text-xs font-semibold text-text-primary flex items-center gap-1.5 mb-2 pb-2 border-b border-aether-border-subtle">
-                    <Radio className="w-3.5 h-3.5 text-sky-400" />
+                    <Radio className="w-3.5 h-3.5 text-aether-clay" />
                     <span>1. Input Signal</span>
                   </div>
-                  <div className="text-[11px] font-mono text-sky-400 mb-1">
+                  <div className="text-[11px] font-mono text-aether-clay mb-1">
                     {currentDemo.incomingSignal.source}
                   </div>
-                  <div className="p-2 rounded bg-slate-950/90 text-[11px] font-mono text-slate-300 space-y-1">
+                  <div className="p-2 rounded bg-aether-card border border-aether-border text-[11px] font-mono text-text-secondary space-y-1">
                     {Object.entries(currentDemo.incomingSignal.payload)
                       .slice(0, 3)
                       .map(([k, v]) => (
                         <div key={k} className="line-clamp-1">
                           <span className="text-text-muted">{k}: </span>
-                          <span>{String(v)}</span>
+                          <span className="text-text-primary">{String(v)}</span>
                         </div>
                       ))}
                   </div>
@@ -440,12 +438,12 @@ export const HomePage: React.FC = () => {
                   'p-4 rounded-xl border flex flex-col justify-between transition-all duration-300',
                   demoState === 'idle'
                     ? 'bg-aether-surface/40 border-aether-border opacity-60'
-                    : 'bg-aether-surface border-indigo-500/40 shadow-glow-subtle'
+                    : 'bg-aether-surface border-aether-clay/40 shadow-warm-sm'
                 )}
               >
                 <div>
                   <div className="text-xs font-semibold text-text-primary flex items-center gap-1.5 mb-2 pb-2 border-b border-aether-border-subtle">
-                    <Cpu className="w-3.5 h-3.5 text-indigo-400" />
+                    <Cpu className="w-3.5 h-3.5 text-aether-clay" />
                     <span>2. Aether Understands</span>
                   </div>
                   {demoState === 'idle' ? (
@@ -454,7 +452,7 @@ export const HomePage: React.FC = () => {
                     </div>
                   ) : (
                     <div className="text-xs text-text-secondary space-y-1.5 animate-fade-in">
-                      <div className="text-rose-400 font-medium text-[11px]">Diagnosed Drag:</div>
+                      <div className="text-[#C86446] font-medium text-[11px]">Diagnosed Drag:</div>
                       <p className="text-[11px] leading-relaxed line-clamp-3">
                         {currentDemo.cognitiveAnalysis.detectedBottleneck}
                       </p>
@@ -472,12 +470,12 @@ export const HomePage: React.FC = () => {
                   'p-4 rounded-xl border flex flex-col justify-between transition-all duration-300',
                   demoState === 'idle'
                     ? 'bg-aether-surface/40 border-aether-border opacity-60'
-                    : 'bg-aether-surface border-amber-500/40 shadow-glow-subtle'
+                    : 'bg-aether-surface border-aether-clay/40 shadow-warm-sm'
                 )}
               >
                 <div>
                   <div className="text-xs font-semibold text-text-primary flex items-center gap-1.5 mb-2 pb-2 border-b border-aether-border-subtle">
-                    <BrainCircuit className="w-3.5 h-3.5 text-amber-400" />
+                    <BrainCircuit className="w-3.5 h-3.5 text-aether-clay" />
                     <span>3. Recommendation</span>
                   </div>
                   {demoState === 'idle' ? (
@@ -486,7 +484,9 @@ export const HomePage: React.FC = () => {
                     </div>
                   ) : (
                     <div className="text-xs text-text-secondary space-y-1.5 animate-fade-in">
-                      <div className="text-amber-400 font-medium text-[11px]">Prescribed Flow:</div>
+                      <div className="text-aether-clay font-medium text-[11px]">
+                        Prescribed Flow:
+                      </div>
                       <p className="text-[11px] leading-relaxed line-clamp-3">
                         {currentDemo.cognitiveAnalysis.recommendedAction}
                       </p>
@@ -502,12 +502,12 @@ export const HomePage: React.FC = () => {
                   'p-4 rounded-xl border flex flex-col justify-between transition-all duration-300',
                   demoState !== 'executed'
                     ? 'bg-aether-surface/40 border-aether-border opacity-60'
-                    : 'bg-emerald-500/5 border-emerald-500/40 shadow-glow-subtle'
+                    : 'bg-[#4D6B53]/5 border-[#4D6B53]/30 shadow-warm-sm'
                 )}
               >
                 <div>
                   <div className="text-xs font-semibold text-text-primary flex items-center gap-1.5 mb-2 pb-2 border-b border-aether-border-subtle">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#4D6B53]" />
                     <span>4. Action Executed</span>
                   </div>
                   {demoState !== 'executed' ? (
@@ -516,16 +516,16 @@ export const HomePage: React.FC = () => {
                     </div>
                   ) : (
                     <div className="text-xs space-y-1.5 animate-fade-in">
-                      <div className="text-emerald-400 font-medium text-[11px]">
+                      <div className="text-[#4D6B53] font-medium text-[11px]">
                         Outcome Verified:
                       </div>
-                      <p className="text-[11px] text-slate-200 leading-relaxed line-clamp-3">
+                      <p className="text-[11px] text-text-primary leading-relaxed line-clamp-3">
                         {currentDemo.automatedExecution.resultingOutcome}
                       </p>
                     </div>
                   )}
                 </div>
-                <div className="mt-3 text-[10px] text-emerald-400 font-mono">
+                <div className="mt-3 text-[10px] text-[#4D6B53] font-mono">
                   Time: {currentDemo.automatedExecution.timeElapsed}
                 </div>
               </div>
@@ -561,7 +561,7 @@ export const HomePage: React.FC = () => {
             <Card key={item.id} className="p-6 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-9 h-9 rounded-lg bg-slate-900 border border-aether-border flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-lg bg-aether-surface border border-aether-border flex items-center justify-center">
                     {IMPACT_DIMENSION_ICONS[item.dimension]}
                   </div>
                   <Badge variant="neutral" size="sm" className="font-mono text-[11px]">
@@ -595,9 +595,9 @@ export const HomePage: React.FC = () => {
       {/* 7. FINAL CTA (What Could Aether Do For Your Business? -> Request an Aether Solution) */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-2xl bg-aether-card card-gradient-surface border border-slate-700/80 p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-card-hover">
+        <div className="relative rounded-2xl bg-aether-card border border-aether-border p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-warm-lg">
           {/* Subtle Ambient Radial Glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-aether-clay/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
             <div className="mb-4">
@@ -621,7 +621,7 @@ export const HomePage: React.FC = () => {
                 size="lg"
                 onClick={openSolutionModal}
                 rightIcon={<ArrowRight className="w-4 h-4" />}
-                className="w-full sm:w-auto font-semibold shadow-md"
+                className="w-full sm:w-auto font-semibold shadow-warm-sm"
               >
                 Request an Aether Solution
               </Button>

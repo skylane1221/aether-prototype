@@ -1,10 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
-import { HomePage } from './pages/HomePage';
 import { PageFallback } from './components/common/PageFallback';
 
-// Route-based lazy loading for code splitting
+const HomePage = lazy(() => import('./pages/HomePage').then((m) => ({ default: m.HomePage })));
 const WhatIsAetherPage = lazy(() =>
   import('./pages/WhatIsAetherPage').then((m) => ({ default: m.WhatIsAetherPage }))
 );
@@ -35,7 +34,11 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: (
+          <Suspense fallback={<PageFallback message="Loading Aether Home..." />}>
+            <HomePage />
+          </Suspense>
+        ),
       },
       {
         path: 'what-is-aether',

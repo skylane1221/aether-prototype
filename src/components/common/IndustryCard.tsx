@@ -45,13 +45,13 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({ industry, className 
   return (
     <Link
       to={`/industries/${industry.slug}`}
-      className="block group h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-xl"
+      className="block group h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aether-clay rounded-xl"
       aria-label={`Explore Aether solutions for ${industry.name}`}
     >
       <Card
         interactive
         className={cn(
-          'h-full flex flex-col justify-between transition-all duration-200 group-hover:border-slate-600 p-5 sm:p-6',
+          'h-full flex flex-col justify-between transition-all duration-200 group-hover:border-aether-border-bright p-5 sm:p-6',
           className
         )}
       >
@@ -78,7 +78,7 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({ industry, className 
             )}
           </div>
 
-          <h3 className="text-base font-semibold text-text-primary group-hover:text-sky-300 transition-colors">
+          <h3 className="text-base font-semibold text-text-primary group-hover:text-aether-clay transition-colors">
             {industry.name}
           </h3>
 
@@ -89,11 +89,11 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({ industry, className 
 
         {/* Action Button Footer */}
         <div className="mt-5 pt-3 border-t border-aether-border-subtle flex items-center justify-between">
-          <span className="text-xs font-semibold text-sky-400 group-hover:text-sky-300 transition-colors flex items-center gap-1">
+          <span className="text-xs font-semibold text-aether-clay group-hover:text-aether-clay-hover transition-colors flex items-center gap-1">
             Explore {industry.shortName}
           </span>
           <div
-            className="w-6 h-6 rounded-full bg-slate-800/80 group-hover:bg-sky-500/20 flex items-center justify-center text-text-muted group-hover:text-sky-400 transition-all"
+            className="w-6 h-6 rounded-full bg-aether-surface group-hover:bg-aether-clay group-hover:text-white flex items-center justify-center text-text-muted transition-all"
             aria-hidden="true"
           >
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />

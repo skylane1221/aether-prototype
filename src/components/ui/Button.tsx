@@ -30,14 +30,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variants = {
       primary:
-        'bg-slate-100 text-slate-950 hover:bg-white hover:shadow-glow-sm shadow-sm border border-white/20 font-semibold',
+        'bg-aether-cocoa text-[#FAF6F0] hover:bg-aether-cocoa-hover shadow-sm border border-aether-cocoa font-semibold',
       secondary:
         'bg-aether-card hover:bg-aether-card-hover text-text-primary border border-aether-border hover:border-aether-border-bright shadow-card',
       outline:
-        'bg-transparent hover:bg-slate-800/40 text-text-secondary hover:text-text-primary border border-aether-border hover:border-slate-600',
-      ghost: 'bg-transparent hover:bg-slate-800/50 text-text-secondary hover:text-text-primary',
+        'bg-transparent hover:bg-aether-beige/60 text-text-secondary hover:text-text-primary border border-aether-border hover:border-aether-border-bright',
+      ghost: 'bg-transparent hover:bg-aether-beige/60 text-text-secondary hover:text-text-primary',
       accent:
-        'bg-aether-primary/10 hover:bg-aether-primary/20 text-aether-primary border border-aether-primary/30 hover:border-aether-primary/60 shadow-glow-subtle font-medium',
+        'bg-aether-clay/10 hover:bg-aether-clay/20 text-aether-clay border border-aether-clay/30 hover:border-aether-clay/50 font-medium',
     };
 
     const sizes = {

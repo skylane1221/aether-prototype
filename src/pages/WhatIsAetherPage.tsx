@@ -40,48 +40,48 @@ export const WhatIsAetherPage: React.FC = () => {
       title: 'Understand the business',
       desc: 'Connects to operational telemetry across schedules, customer inquiries, inventory, and staff rosters to understand real-world business dynamics.',
       badge: 'Context Ingestion',
-      accent: 'text-sky-400',
-      bgAccent: 'bg-sky-500/10 border-sky-500/25',
+      accent: 'text-aether-clay',
+      bgAccent: 'bg-aether-clay/10 border-aether-clay/25',
     },
     {
       number: '02',
       title: 'Map processes',
       desc: 'Constructs an operational topology mapping how customers, staff, physical resources, and third-party tools interact across every touchpoint.',
       badge: 'Topology Mapping',
-      accent: 'text-indigo-400',
-      bgAccent: 'bg-indigo-500/10 border-indigo-500/25',
+      accent: 'text-text-primary',
+      bgAccent: 'bg-aether-surface border-aether-border',
     },
     {
       number: '03',
       title: 'Identify problems',
       desc: 'Pinpoints hidden friction points, capacity dead zones, delayed lead responses, and client churn signals that human operators overlook.',
       badge: 'Friction Diagnosis',
-      accent: 'text-rose-400',
-      bgAccent: 'bg-rose-500/10 border-rose-500/25',
+      accent: 'text-[#C86446]',
+      bgAccent: 'bg-[#C86446]/10 border-[#C86446]/25',
     },
     {
       number: '04',
       title: 'Discover opportunities',
       desc: 'Identifies high-leverage areas where autonomous orchestration and cognitive decision-making can produce immediate multiplier gains.',
       badge: 'Opportunity Discovery',
-      accent: 'text-amber-400',
-      bgAccent: 'bg-amber-500/10 border-amber-500/25',
+      accent: 'text-aether-clay',
+      bgAccent: 'bg-aether-clay/15 border-aether-clay/30',
     },
     {
       number: '05',
       title: 'Design intelligent solutions',
       desc: 'Architects and deploys adaptive, multi-agent workflows that execute customer communication, calendar nesting, and task routing autonomously.',
       badge: 'Autonomous Synthesis',
-      accent: 'text-teal-400',
-      bgAccent: 'bg-teal-500/10 border-teal-500/25',
+      accent: 'text-aether-clay',
+      bgAccent: 'bg-aether-clay/10 border-aether-clay/20',
     },
     {
       number: '06',
       title: 'Measure and improve',
       desc: 'Continuously logs verifiable business ROI, models future demand shifts, and compounds operational efficiency over time.',
       badge: 'Continuous Optimization',
-      accent: 'text-emerald-400',
-      bgAccent: 'bg-emerald-500/10 border-emerald-500/25',
+      accent: 'text-[#4D6B53]',
+      bgAccent: 'bg-[#4D6B53]/10 border-[#4D6B53]/25',
     },
   ];
 
@@ -90,7 +90,7 @@ export const WhatIsAetherPage: React.FC = () => {
     {
       id: 'business',
       title: 'Business Intelligence',
-      icon: <Building className="w-5 h-5 text-sky-400" />,
+      icon: <Building className="w-5 h-5 text-aether-clay" />,
       tagline: 'Operational capacity & margin dynamics',
       description:
         'Understands unit economics, asset yield limits, shift margins, and organizational constraints to ensure every automation maximizes net business value.',
@@ -103,7 +103,7 @@ export const WhatIsAetherPage: React.FC = () => {
     {
       id: 'customer',
       title: 'Customer Intelligence',
-      icon: <BrainCircuit className="w-5 h-5 text-indigo-400" />,
+      icon: <BrainCircuit className="w-5 h-5 text-aether-clay" />,
       tagline: 'Intent velocity & churn interception',
       description:
         'Monitors subtle behavioral deviations, booking frequencies, and purchase trends to proactively detect churn risk and capitalize on high-intent conversion windows.',
@@ -116,7 +116,7 @@ export const WhatIsAetherPage: React.FC = () => {
     {
       id: 'operational',
       title: 'Operational Intelligence',
-      icon: <Activity className="w-5 h-5 text-amber-400" />,
+      icon: <Activity className="w-5 h-5 text-aether-clay" />,
       tagline: 'Live floor, staff & inventory balancing',
       description:
         'Maintains real-time awareness of seat turnover, chair availability, lift bay utilization, and inventory burn rates to eliminate idle downtime.',
@@ -129,7 +129,7 @@ export const WhatIsAetherPage: React.FC = () => {
     {
       id: 'workflow',
       title: 'Workflow Intelligence',
-      icon: <Workflow className="w-5 h-5 text-emerald-400" />,
+      icon: <Workflow className="w-5 h-5 text-[#4D6B53]" />,
       tagline: 'Adaptive multi-agent execution',
       description:
         'Replaces brittle linear scripts with cognitive multi-agent workflows capable of handling messy exceptions, multi-day journeys, and edge cases autonomously.',
@@ -142,7 +142,7 @@ export const WhatIsAetherPage: React.FC = () => {
     {
       id: 'predictive',
       title: 'Predictive Intelligence',
-      icon: <TrendingUp className="w-5 h-5 text-teal-400" />,
+      icon: <TrendingUp className="w-5 h-5 text-[#C86446]" />,
       tagline: 'Forward-looking demand forecasting',
       description:
         'Anticipates rush-hour surges, weather-driven cancellations, and perishable replenishment needs days in advance, replacing guesswork with precision.',
@@ -197,10 +197,7 @@ export const WhatIsAetherPage: React.FC = () => {
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-text-primary leading-[1.1] max-w-4xl">
-            A New Way to Think About{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-sky-300 to-indigo-300">
-              Business Automation
-            </span>
+            A New Way to Think About <span className="text-aether-clay">Business Automation</span>
           </h1>
 
           <div className="mt-8 max-w-3xl mx-auto space-y-4 text-base sm:text-lg text-text-secondary leading-relaxed font-normal">
@@ -222,7 +219,7 @@ export const WhatIsAetherPage: React.FC = () => {
                 variant="primary"
                 size="lg"
                 rightIcon={<ArrowRight className="w-4 h-4" />}
-                className="w-full sm:w-auto shadow-md"
+                className="w-full sm:w-auto shadow-warm-sm"
               >
                 Explore 10 Vertical Models
               </Button>
@@ -272,7 +269,7 @@ export const WhatIsAetherPage: React.FC = () => {
 
               <div className="pt-3 border-t border-aether-border-subtle flex items-center justify-between text-[11px] text-text-muted">
                 <span>Phase Status</span>
-                <span className="text-emerald-400 font-mono">Continuous</span>
+                <span className="text-[#4D6B53] font-mono">Continuous</span>
               </div>
             </Card>
           ))}
@@ -300,12 +297,12 @@ export const WhatIsAetherPage: React.FC = () => {
             >
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-slate-900 border border-aether-border flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-aether-surface border border-aether-border flex items-center justify-center">
                     {pillar.icon}
                   </div>
                   <div>
                     <h3 className="text-base font-bold text-text-primary">{pillar.title}</h3>
-                    <span className="text-xs text-sky-400 font-mono">{pillar.tagline}</span>
+                    <span className="text-xs text-aether-clay font-mono">{pillar.tagline}</span>
                   </div>
                 </div>
 
@@ -319,7 +316,7 @@ export const WhatIsAetherPage: React.FC = () => {
                   </div>
                   {pillar.keyAspects.map((aspect, i) => (
                     <div key={i} className="text-xs text-text-secondary flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-aether-clay" />
                       <span>{aspect}</span>
                     </div>
                   ))}
@@ -339,8 +336,8 @@ export const WhatIsAetherPage: React.FC = () => {
       {/* 6. FINAL MESSAGE & CTA */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-2xl bg-aether-card card-gradient-surface border border-slate-700/80 p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-card-hover">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="relative rounded-2xl bg-aether-card border border-aether-border p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-warm-lg">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-aether-clay/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
             <div className="mb-4">
@@ -353,7 +350,7 @@ export const WhatIsAetherPage: React.FC = () => {
               Aether is not one fixed automation tool.
             </h2>
 
-            <p className="mt-4 text-base sm:text-xl text-sky-300 font-medium leading-relaxed max-w-2xl">
+            <p className="mt-4 text-base sm:text-xl text-aether-clay font-medium leading-relaxed max-w-2xl">
               It is a framework for discovering and implementing intelligent business solutions.
             </p>
 
@@ -368,7 +365,7 @@ export const WhatIsAetherPage: React.FC = () => {
                   variant="primary"
                   size="lg"
                   rightIcon={<ArrowRight className="w-4 h-4" />}
-                  className="w-full sm:w-auto shadow-md font-semibold"
+                  className="w-full sm:w-auto shadow-warm-sm font-semibold"
                 >
                   Explore 10 Verticals
                 </Button>

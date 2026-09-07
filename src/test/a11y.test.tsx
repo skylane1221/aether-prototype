@@ -1,6 +1,6 @@
 import React from 'react';
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Navbar } from '../components/layout/Navbar';
 import { Tabs } from '../components/ui/Tabs';
@@ -71,5 +71,38 @@ describe('Accessibility Audit & Interactive Semantics', () => {
 
     const link = screen.getByRole('link', { name: /explore aether solutions for real estate/i });
     expect(link).toBeInTheDocument();
+  });
+
+  it('Tabs component supports ArrowRight and ArrowLeft keyboard navigation', () => {
+    const handleChange = vi.fn();
+    const items = [
+      { id: 'tab1', label: 'Overview' },
+      { id: 'tab2', label: 'Details' },
+      { id: 'tab3', label: 'Analytics' },
+    ];
+
+    render(<Tabs items={items} activeId="tab1" onChange={handleChange} />);
+
+    const tablist = screen.getByRole('tablist');
+
+    // Press ArrowRight to go to next tab
+    fireEvent.keyDown(tablist, { key: 'ArrowRight' });
+    expect(handleChange).toHaveBeenCalledWith('tab2');
+
+    // Press ArrowLeft to wrap around to last tab
+    fireEvent.keyDown(tablist, { key: 'ArrowLeft' });
+    expect(handleChange).toHaveBeenCalledWith('tab3');
+  });
+
+  it('Modal component triggers onClose when Escape key is pressed', () => {
+    const handleClose = vi.fn();
+    render(
+      <Modal isOpen={true} onClose={handleClose} title="Escape Test Modal">
+        <p>Modal body</p>
+      </Modal>
+    );
+
+    fireEvent.keyDown(window, { key: 'Escape' });
+    expect(handleClose).toHaveBeenCalledTimes(1);
   });
 });

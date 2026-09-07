@@ -234,7 +234,7 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
         <div className="space-y-6 pt-2 animate-fade-in">
           {/* Top Success Header */}
           <div className="text-center space-y-2.5">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
+            <div className="w-12 h-12 rounded-2xl bg-[#4D6B53]/10 border border-[#4D6B53]/30 text-[#4D6B53] flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-6 h-6" />
             </div>
             <Badge
@@ -247,26 +247,26 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
             <h3 className="text-xl sm:text-2xl font-bold text-text-primary tracking-tight">
               Your business challenge has been captured.
             </h3>
-            <p className="text-xs sm:text-sm text-sky-300 font-medium max-w-lg mx-auto leading-relaxed">
+            <p className="text-xs sm:text-sm text-text-secondary font-medium max-w-lg mx-auto leading-relaxed">
               An Aether solution analysis could identify potential opportunities across your
               workflow.
             </p>
           </div>
 
           {/* Simulated Dossier Card */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-4 text-xs">
+          <div className="p-4 sm:p-5 rounded-2xl bg-aether-card border border-aether-border shadow-warm-sm space-y-4 text-xs">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
+              <div className="p-3 rounded-xl bg-aether-surface border border-aether-border space-y-1">
                 <span className="text-[10px] uppercase font-mono text-text-muted">
                   Business Domain
                 </span>
                 <div className="text-xs font-bold text-text-primary flex items-center gap-1.5">
-                  <span className="text-sky-400">{activeIndustryObj.icon}</span>
+                  <span className="text-aether-clay">{activeIndustryObj.icon}</span>
                   <span>{activeIndustryObj.name}</span>
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
+              <div className="p-3 rounded-xl bg-aether-surface border border-aether-border space-y-1">
                 <span className="text-[10px] uppercase font-mono text-text-muted">
                   Organization & Contact
                 </span>
@@ -286,9 +286,9 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                 {selectedImprovements.map((imp, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-0.5 rounded-lg bg-sky-500/10 border border-sky-500/25 text-sky-300 text-[11px] font-medium flex items-center gap-1"
+                    className="px-2.5 py-0.5 rounded-lg bg-aether-clay/10 border border-aether-clay/30 text-aether-clay text-[11px] font-medium flex items-center gap-1"
                   >
-                    <Check className="w-3 h-3 text-sky-400" />
+                    <Check className="w-3 h-3 text-aether-clay" />
                     <span>{imp}</span>
                   </span>
                 ))}
@@ -297,8 +297,8 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
 
             {/* Challenge Snippet */}
             {challengeText && (
-              <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800/80 space-y-1">
-                <span className="text-[10px] uppercase font-mono text-amber-400 font-semibold">
+              <div className="p-3 rounded-xl bg-aether-surface border border-aether-border space-y-1">
+                <span className="text-[10px] uppercase font-mono text-aether-clay font-semibold">
                   Captured Operational Challenge
                 </span>
                 <p className="text-[11px] text-text-secondary leading-relaxed italic">
@@ -308,9 +308,9 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
             )}
 
             {/* Aether Production Architecture Approach */}
-            <div className="p-3.5 rounded-xl bg-gradient-to-r from-sky-950/40 via-indigo-950/30 to-slate-900 border border-sky-500/20 space-y-1.5">
-              <div className="text-xs font-bold text-sky-300 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+            <div className="p-3.5 rounded-xl bg-aether-surface border border-aether-clay/25 space-y-1.5">
+              <div className="text-xs font-bold text-text-primary flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-aether-clay" />
                 <span>Simulated Cognitive Architecture Plan:</span>
               </div>
               <p className="text-[11px] text-text-secondary leading-relaxed">
@@ -321,8 +321,8 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
             </div>
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-900/50 border border-slate-800 text-[11px] text-text-muted flex items-center gap-2">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+          <div className="p-3 rounded-xl bg-aether-surface/60 border border-aether-border text-[11px] text-text-muted flex items-center gap-2">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#4D6B53] shrink-0" />
             <span>
               <strong>Prototype Sandbox:</strong> Simulated intake mode. No production lead routing
               executed.
@@ -330,7 +330,7 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-end gap-2.5 pt-2 border-t border-slate-800">
+          <div className="flex flex-col sm:flex-row items-center justify-end gap-2.5 pt-2 border-t border-aether-border">
             <Button variant="outline" size="sm" onClick={() => setIsSubmitted(false)}>
               Describe Another Challenge
             </Button>
@@ -364,7 +364,7 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
           <div className="space-y-2.5">
             <div className="flex items-center justify-between">
               <label className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px]">
+                <span className="w-5 h-5 rounded-full bg-aether-clay/15 text-aether-clay flex items-center justify-center text-[10px] font-bold">
                   1
                 </span>
                 <span>What type of business are you?</span>
@@ -383,16 +383,16 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                     className={cn(
                       'p-2.5 rounded-xl border text-left text-xs font-medium transition-all duration-200 flex items-center gap-2 group',
                       isSelected
-                        ? 'bg-sky-500/15 border-sky-500 text-white shadow-sm ring-1 ring-sky-500/50'
-                        : 'bg-slate-900/70 border-slate-800 text-text-secondary hover:border-slate-700 hover:text-text-primary'
+                        ? 'bg-aether-clay/10 border-aether-clay text-text-primary shadow-warm-xs ring-1 ring-aether-clay/30 font-semibold'
+                        : 'bg-aether-surface border-aether-border text-text-secondary hover:border-aether-clay/40 hover:text-text-primary'
                     )}
                   >
                     <span
                       className={cn(
                         'shrink-0 transition-colors',
                         isSelected
-                          ? 'text-sky-300'
-                          : 'text-text-muted group-hover:text-text-primary'
+                          ? 'text-aether-clay'
+                          : 'text-text-muted group-hover:text-aether-clay'
                       )}
                     >
                       {ind.icon}
@@ -410,7 +410,7 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
           <div className="space-y-2.5 pt-1">
             <div className="flex items-center justify-between">
               <label className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px]">
+                <span className="w-5 h-5 rounded-full bg-aether-clay/15 text-aether-clay flex items-center justify-center text-[10px] font-bold">
                   2
                 </span>
                 <span>What would you like to improve?</span>
@@ -429,8 +429,8 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                     className={cn(
                       'p-2.5 rounded-xl border text-left text-xs font-medium transition-all duration-200 flex items-center justify-between group',
                       isChecked
-                        ? 'bg-indigo-950/40 border-indigo-500/60 text-white shadow-sm ring-1 ring-indigo-500/40'
-                        : 'bg-slate-900/70 border-slate-800 text-text-secondary hover:border-slate-700 hover:text-text-primary'
+                        ? 'bg-aether-clay/10 border-aether-clay text-text-primary shadow-warm-xs ring-1 ring-aether-clay/30 font-semibold'
+                        : 'bg-aether-surface border-aether-border text-text-secondary hover:border-aether-clay/40 hover:text-text-primary'
                     )}
                   >
                     <div className="flex items-center gap-2">
@@ -438,8 +438,8 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                         className={cn(
                           'transition-colors',
                           isChecked
-                            ? 'text-indigo-300'
-                            : 'text-text-muted group-hover:text-text-primary'
+                            ? 'text-aether-clay'
+                            : 'text-text-muted group-hover:text-aether-clay'
                         )}
                       >
                         {opt.icon}
@@ -451,8 +451,8 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                       className={cn(
                         'w-3.5 h-3.5 rounded border flex items-center justify-center transition-all',
                         isChecked
-                          ? 'bg-indigo-500 border-indigo-400 text-slate-950'
-                          : 'border-slate-700 bg-slate-950/60'
+                          ? 'bg-aether-clay border-aether-clay text-white'
+                          : 'border-aether-border bg-aether-card'
                       )}
                     >
                       {isChecked && <Check className="w-2.5 h-2.5 stroke-[3]" />}
@@ -469,7 +469,7 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                   placeholder="Specify other improvement goal..."
                   value={customImprovement}
                   onChange={(e) => setCustomImprovement(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-text-primary text-xs focus:outline-none focus:border-sky-500 transition-colors"
+                  className="w-full px-3 py-2 rounded-xl bg-aether-card border border-aether-border text-text-primary text-xs focus:outline-none focus:border-aether-clay transition-colors"
                 />
               </div>
             )}
@@ -484,7 +484,7 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                 htmlFor="drawer-challenge-text"
                 className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2"
               >
-                <span className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px]">
+                <span className="w-5 h-5 rounded-full bg-aether-clay/15 text-aether-clay flex items-center justify-center text-[10px] font-bold">
                   3
                 </span>
                 <span>Tell us about your challenge</span>
@@ -516,14 +516,14 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
               }}
               onBlur={() => handleBlur('challenge')}
               className={cn(
-                'w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border text-text-primary text-xs focus:outline-none focus:visible:ring-2 transition-colors placeholder:text-slate-600 resize-none leading-relaxed',
+                'w-full px-3.5 py-2.5 rounded-xl bg-aether-card border text-text-primary text-xs focus:outline-none focus-visible:ring-2 transition-colors placeholder:text-text-muted/60 resize-none leading-relaxed',
                 touched.challenge && errors.challenge
                   ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-rose-500/40'
-                  : 'border-slate-800 focus:border-sky-500 focus-visible:ring-sky-400'
+                  : 'border-aether-border focus:border-aether-clay focus-visible:ring-aether-clay/30'
               )}
             />
             {touched.challenge && errors.challenge && (
-              <p role="alert" className="text-[11px] text-rose-400 font-medium animate-fade-in">
+              <p role="alert" className="text-[11px] text-rose-500 font-medium animate-fade-in">
                 {errors.challenge}
               </p>
             )}
@@ -534,7 +534,7 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
           {/* ========================================================================= */}
           <div className="space-y-2 pt-1">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-text-primary flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px]">
+              <span className="w-5 h-5 rounded-full bg-aether-clay/15 text-aether-clay flex items-center justify-center text-[10px] font-bold">
                 4
               </span>
               <span>Contact details</span>
@@ -573,15 +573,15 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                     }}
                     onBlur={() => handleBlur('name')}
                     className={cn(
-                      'w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border text-text-primary text-xs focus:outline-none transition-colors',
+                      'w-full pl-8 pr-3 py-2 rounded-xl bg-aether-card border text-text-primary text-xs focus:outline-none transition-colors',
                       touched.name && errors.name
                         ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-2 focus-visible:ring-rose-500/40'
-                        : 'border-slate-800 focus:border-sky-500 focus-visible:ring-2 focus-visible:ring-sky-400'
+                        : 'border-aether-border focus:border-aether-clay focus-visible:ring-2 focus-visible:ring-aether-clay/30'
                     )}
                   />
                 </div>
                 {touched.name && errors.name && (
-                  <p role="alert" className="text-[10px] text-rose-400 font-medium animate-fade-in">
+                  <p role="alert" className="text-[10px] text-rose-500 font-medium animate-fade-in">
                     {errors.name}
                   </p>
                 )}
@@ -619,15 +619,15 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                     }}
                     onBlur={() => handleBlur('business')}
                     className={cn(
-                      'w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border text-text-primary text-xs focus:outline-none transition-colors',
+                      'w-full pl-8 pr-3 py-2 rounded-xl bg-aether-card border text-text-primary text-xs focus:outline-none transition-colors',
                       touched.business && errors.business
                         ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-2 focus-visible:ring-rose-500/40'
-                        : 'border-slate-800 focus:border-sky-500 focus-visible:ring-2 focus-visible:ring-sky-400'
+                        : 'border-aether-border focus:border-aether-clay focus-visible:ring-2 focus-visible:ring-aether-clay/30'
                     )}
                   />
                 </div>
                 {touched.business && errors.business && (
-                  <p role="alert" className="text-[10px] text-rose-400 font-medium animate-fade-in">
+                  <p role="alert" className="text-[10px] text-rose-500 font-medium animate-fade-in">
                     {errors.business}
                   </p>
                 )}
@@ -668,15 +668,15 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
                     }}
                     onBlur={() => handleBlur('email')}
                     className={cn(
-                      'w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border text-text-primary text-xs focus:outline-none transition-colors',
+                      'w-full pl-8 pr-3 py-2 rounded-xl bg-aether-card border text-text-primary text-xs focus:outline-none transition-colors',
                       touched.email && errors.email
                         ? 'border-rose-500/80 focus:border-rose-500 focus-visible:ring-2 focus-visible:ring-rose-500/40'
-                        : 'border-slate-800 focus:border-sky-500 focus-visible:ring-2 focus-visible:ring-sky-400'
+                        : 'border-aether-border focus:border-aether-clay focus-visible:ring-2 focus-visible:ring-aether-clay/30'
                     )}
                   />
                 </div>
                 {touched.email && errors.email && (
-                  <p role="alert" className="text-[10px] text-rose-400 font-medium animate-fade-in">
+                  <p role="alert" className="text-[10px] text-rose-500 font-medium animate-fade-in">
                     {errors.email}
                   </p>
                 )}
@@ -684,13 +684,13 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
             </div>
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-[11px] text-text-muted flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-sky-400 shrink-0" />
+          <div className="p-3 rounded-xl bg-aether-surface/60 border border-aether-border text-[11px] text-text-muted flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-aether-clay shrink-0" />
             <span>Interactive prototype mode. Zero third-party data tracking.</span>
           </div>
 
           {/* Submit CTA */}
-          <div className="pt-2 flex justify-end gap-2.5 border-t border-slate-800">
+          <div className="pt-2 flex justify-end gap-2.5 border-t border-aether-border">
             <Button variant="ghost" size="md" onClick={handleReset} type="button">
               Cancel
             </Button>
@@ -700,7 +700,7 @@ export const SolutionRequestDrawer: React.FC<SolutionRequestDrawerProps> = ({
               size="md"
               isLoading={isSubmitting}
               disabled={isSubmitting}
-              className="font-semibold shadow-glow-subtle bg-sky-500 hover:bg-sky-400 text-slate-950 disabled:opacity-60"
+              className="font-semibold shadow-warm-xs"
               rightIcon={<ArrowRight className="w-4 h-4" />}
             >
               {isSubmitting ? 'Processing Intake...' : 'Explore What Aether Could Do'}

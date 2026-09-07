@@ -101,16 +101,16 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
     return (
       <div
         className={cn(
-          'p-4 rounded-xl bg-slate-900/60 border border-aether-border flex flex-col sm:flex-row items-center justify-between gap-4',
+          'p-4 rounded-xl bg-aether-card border border-aether-border flex flex-col sm:flex-row items-center justify-between gap-4',
           className
         )}
       >
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400">
+          <div className="w-8 h-8 rounded-lg bg-aether-clay/10 border border-aether-clay/30 flex items-center justify-center text-aether-clay">
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-[10px] font-mono text-sky-400 uppercase tracking-wider font-semibold block">
+            <span className="text-[10px] font-mono text-aether-clay uppercase tracking-wider font-semibold block">
               Suggested Next Step
             </span>
             <p className="text-xs sm:text-sm font-semibold text-text-primary">
@@ -124,7 +124,7 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
         {nextStep ? (
           <Link
             to={nextStep.path}
-            className="px-4 py-2 rounded-lg bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 border border-sky-500/30 hover:border-sky-500/50 text-xs font-semibold flex items-center gap-1.5 transition-all shrink-0"
+            className="px-4 py-2 rounded-lg bg-aether-clay text-white hover:bg-aether-clay-hover border border-aether-clay text-xs font-semibold flex items-center gap-1.5 transition-all shrink-0"
           >
             <span>Proceed to {nextStep.label}</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -132,7 +132,7 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
         ) : (
           <Link
             to="/contact"
-            className="px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-xs flex items-center gap-1.5 transition-all shrink-0"
+            className="px-4 py-2 rounded-lg bg-aether-cocoa hover:bg-aether-cocoa-hover text-[#FAF6F0] font-semibold text-xs flex items-center gap-1.5 transition-all shrink-0"
           >
             <span>Request Custom Solution</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -144,12 +144,12 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
 
   return (
     <div className={cn('w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10', className)}>
-      <div className="p-6 sm:p-8 rounded-2xl bg-aether-card card-gradient-surface border border-slate-700/80 shadow-card">
+      <div className="p-6 sm:p-8 rounded-2xl bg-aether-card border border-aether-border shadow-card">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-aether-border-subtle gap-2">
           <div>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-sky-400 font-semibold flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+            <span className="text-[10px] font-mono uppercase tracking-widest text-aether-clay font-semibold flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-aether-clay animate-pulse" />
               Guided Transformation Journey
             </span>
             <h3 className="text-base sm:text-lg font-bold text-text-primary mt-1">
@@ -174,10 +174,10 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
                 className={cn(
                   'p-4 rounded-xl border transition-all flex flex-col justify-between group relative',
                   isCurrent
-                    ? 'bg-sky-500/10 border-sky-500/50 shadow-glow-subtle'
+                    ? 'bg-aether-clay/10 border-aether-clay shadow-sm'
                     : isCompleted
-                      ? 'bg-aether-surface/60 border-slate-700/60 hover:border-slate-600'
-                      : 'bg-aether-surface/30 border-aether-border/60 hover:border-slate-700'
+                      ? 'bg-aether-surface/60 border-aether-border hover:border-aether-border-bright'
+                      : 'bg-aether-surface/30 border-aether-border/60 hover:border-aether-border-bright'
                 )}
               >
                 <div>
@@ -186,10 +186,10 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
                       className={cn(
                         'text-[10px] font-mono font-bold px-1.5 py-0.5 rounded',
                         isCurrent
-                          ? 'bg-sky-500 text-slate-950'
+                          ? 'bg-aether-clay text-white'
                           : isCompleted
-                            ? 'bg-emerald-500/20 text-emerald-300'
-                            : 'bg-slate-800 text-text-muted'
+                            ? 'bg-aether-success/15 text-aether-success'
+                            : 'bg-aether-beige text-text-muted'
                       )}
                     >
                       {step.stageNumber}
@@ -199,10 +199,10 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
                       className={cn(
                         'p-1.5 rounded-lg border',
                         isCurrent
-                          ? 'bg-sky-500/20 border-sky-500/40 text-sky-300'
+                          ? 'bg-aether-clay/15 border-aether-clay/30 text-aether-clay'
                           : isCompleted
-                            ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
-                            : 'bg-slate-900 border-slate-800 text-text-muted group-hover:text-text-secondary'
+                            ? 'bg-aether-success/10 border-aether-success/30 text-aether-success'
+                            : 'bg-aether-surface border-aether-border text-text-muted group-hover:text-text-secondary'
                       )}
                     >
                       {isCompleted ? <CheckCircle2 className="w-3.5 h-3.5" /> : step.icon}
@@ -213,7 +213,7 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
                     className={cn(
                       'text-sm font-bold transition-colors',
                       isCurrent
-                        ? 'text-sky-300'
+                        ? 'text-aether-clay'
                         : isCompleted
                           ? 'text-text-primary'
                           : 'text-text-secondary group-hover:text-text-primary'
@@ -231,9 +231,9 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
                     className={cn(
                       'font-medium',
                       isCurrent
-                        ? 'text-sky-400'
+                        ? 'text-aether-clay'
                         : isCompleted
-                          ? 'text-emerald-400'
+                          ? 'text-aether-success'
                           : 'text-text-muted group-hover:text-text-secondary'
                     )}
                   >
@@ -242,7 +242,7 @@ export const JourneyNavigator: React.FC<JourneyNavigatorProps> = ({
                   <ArrowRight
                     className={cn(
                       'w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5',
-                      isCurrent ? 'text-sky-400' : 'text-text-muted'
+                      isCurrent ? 'text-aether-clay' : 'text-text-muted'
                     )}
                   />
                 </div>

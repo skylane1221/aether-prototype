@@ -6,10 +6,10 @@ import { Radio, BrainCircuit, Cog, CheckCircle2, ArrowRight } from 'lucide-react
 import { cn } from '../../utils/cn';
 
 const PHASE_ICONS: Record<string, React.ReactNode> = {
-  'Signal Ingestion': <Radio className="w-4 h-4 text-sky-400" />,
-  'Cognitive Diagnosis': <BrainCircuit className="w-4 h-4 text-indigo-400" />,
-  'Autonomous Orchestration': <Cog className="w-4 h-4 text-amber-400" />,
-  'Measured Outcome': <CheckCircle2 className="w-4 h-4 text-emerald-400" />,
+  'Signal Ingestion': <Radio className="w-4 h-4 text-aether-clay" />,
+  'Cognitive Diagnosis': <BrainCircuit className="w-4 h-4 text-aether-cocoa" />,
+  'Autonomous Orchestration': <Cog className="w-4 h-4 text-[#8A6F1D]" />,
+  'Measured Outcome': <CheckCircle2 className="w-4 h-4 text-aether-success" />,
 };
 
 export interface WorkflowVisualizationProps {
@@ -40,8 +40,8 @@ export const WorkflowVisualization: React.FC<WorkflowVisualizationProps> = ({
               className={cn(
                 'p-3.5 rounded-xl border text-left transition-all duration-200 flex flex-col justify-between group',
                 isActive
-                  ? 'bg-aether-card border-sky-500/50 shadow-glow-subtle'
-                  : 'bg-aether-surface border-aether-border hover:border-slate-700 opacity-80 hover:opacity-100'
+                  ? 'bg-aether-card border-aether-clay shadow-sm'
+                  : 'bg-aether-surface border-aether-border hover:border-aether-border-bright opacity-80 hover:opacity-100'
               )}
             >
               <div className="flex items-center justify-between mb-2">
@@ -66,14 +66,14 @@ export const WorkflowVisualization: React.FC<WorkflowVisualizationProps> = ({
       </div>
 
       {/* Active Phase Deep Dive Card */}
-      <Card className="p-6 sm:p-8 card-gradient-surface border-slate-700/80">
+      <Card className="p-6 sm:p-8 border-aether-border bg-aether-card">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-aether-border-subtle mb-6">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-slate-900 border border-aether-border flex items-center justify-center">
+            <div className="w-9 h-9 rounded-lg bg-aether-surface border border-aether-border flex items-center justify-center">
               {PHASE_ICONS[currentStep.phase]}
             </div>
             <div>
-              <span className="text-xs font-semibold text-sky-400 font-mono">
+              <span className="text-xs font-semibold text-aether-clay font-mono">
                 STAGE 0{currentStep.stepNumber} &bull; {currentStep.phase}
               </span>
               <h4 className="text-lg font-bold text-text-primary">{currentStep.title}</h4>
@@ -92,9 +92,9 @@ export const WorkflowVisualization: React.FC<WorkflowVisualizationProps> = ({
             <p className="text-sm text-text-secondary leading-relaxed">{currentStep.description}</p>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-950/80 border border-aether-border-subtle space-y-2">
-            <div className="flex items-center gap-2 text-xs font-semibold text-sky-400">
-              <Cog className="w-3.5 h-3.5 animate-spin text-sky-400" />
+          <div className="p-4 rounded-xl bg-aether-surface border border-aether-border space-y-2">
+            <div className="flex items-center gap-2 text-xs font-semibold text-aether-clay">
+              <Cog className="w-3.5 h-3.5 animate-spin text-aether-clay" />
               <span>Aether Execution Kernel Action</span>
             </div>
             <p className="text-xs font-mono text-text-primary leading-relaxed">
@@ -118,7 +118,7 @@ export const WorkflowVisualization: React.FC<WorkflowVisualizationProps> = ({
                 key={idx}
                 className={cn(
                   'w-1.5 h-1.5 rounded-full transition-all',
-                  idx === activeStep ? 'w-4 bg-sky-400' : 'bg-slate-700'
+                  idx === activeStep ? 'w-4 bg-aether-clay' : 'bg-aether-border-bright'
                 )}
               />
             ))}
@@ -126,7 +126,7 @@ export const WorkflowVisualization: React.FC<WorkflowVisualizationProps> = ({
           <button
             disabled={activeStep === steps.length - 1}
             onClick={() => setActiveStep((prev) => Math.min(steps.length - 1, prev + 1))}
-            className="text-xs text-sky-400 hover:text-sky-300 disabled:opacity-30 transition-opacity font-medium"
+            className="text-xs text-aether-clay hover:text-aether-clay-hover disabled:opacity-30 transition-opacity font-medium"
           >
             Next Stage &rarr;
           </button>

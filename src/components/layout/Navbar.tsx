@@ -41,14 +41,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-2.5 group select-none">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-800 to-slate-950 border border-aether-border-bright flex items-center justify-center relative overflow-hidden group-hover:border-sky-500/50 transition-colors shadow-inner-bevel">
-            <div className="absolute inset-0 bg-sky-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <Layers className="w-4 h-4 text-sky-400 relative z-10" />
+          <div className="w-8 h-8 rounded-lg bg-aether-cocoa text-[#FAF6F0] border border-aether-cocoa flex items-center justify-center relative overflow-hidden group-hover:border-aether-clay transition-colors shadow-sm">
+            <Layers className="w-4 h-4 text-aether-yellow relative z-10" />
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-1.5">
               <span className="text-lg font-bold tracking-tight text-text-primary">AETHER</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+              <span className="w-1.5 h-1.5 rounded-full bg-aether-clay" />
             </div>
           </div>
         </Link>
@@ -78,10 +77,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                       if (e.key === 'Escape') setIsIndustriesDropdownOpen(false);
                     }}
                     className={cn(
-                      'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400',
+                      'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aether-clay',
                       isActive
-                        ? 'text-text-primary bg-slate-800/40 font-semibold'
-                        : 'text-text-secondary hover:text-text-primary hover:bg-slate-800/30'
+                        ? 'text-text-primary bg-aether-beige/60 font-semibold'
+                        : 'text-text-secondary hover:text-text-primary hover:bg-aether-beige/40'
                     )}
                   >
                     <span>{item.label}</span>
@@ -101,14 +100,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                       aria-label="Demonstration Industries"
                       className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[540px] animate-fade-in"
                     >
-                      <div className="bg-aether-card border border-aether-border rounded-xl p-3 shadow-card-hover card-gradient-surface">
+                      <div className="bg-aether-card border border-aether-border rounded-xl p-3 shadow-card-hover">
                         <div className="flex items-center justify-between px-3 py-2 border-b border-aether-border-subtle mb-2">
                           <span className="text-xs font-semibold uppercase tracking-wider text-text-muted">
                             Demonstration Industries
                           </span>
                           <Link
                             to="/industries"
-                            className="text-xs text-sky-400 hover:text-sky-300 font-medium flex items-center gap-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sky-400 rounded"
+                            className="text-xs text-aether-clay hover:text-aether-clay-hover font-medium flex items-center gap-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-aether-clay rounded"
                           >
                             <span>View All 10</span>
                             <ArrowRight className="w-3 h-3" aria-hidden="true" />
@@ -121,10 +120,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                               key={subItem.href}
                               to={subItem.href}
                               role="menuitem"
-                              className="p-2.5 rounded-lg hover:bg-slate-800/60 transition-colors group flex flex-col focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sky-400"
+                              className="p-2.5 rounded-lg hover:bg-aether-beige/50 transition-colors group flex flex-col focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-aether-clay"
                             >
                               <div className="flex items-center justify-between">
-                                <span className="text-sm font-medium text-text-primary group-hover:text-sky-400 transition-colors">
+                                <span className="text-sm font-medium text-text-primary group-hover:text-aether-clay transition-colors">
                                   {subItem.label}
                                 </span>
                               </div>
@@ -148,10 +147,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                 key={item.href}
                 to={item.href}
                 className={cn(
-                  'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400',
+                  'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aether-clay',
                   isActive
-                    ? 'text-text-primary bg-slate-800/40 font-semibold'
-                    : 'text-text-secondary hover:text-text-primary hover:bg-slate-800/30'
+                    ? 'text-text-primary bg-aether-beige/60 font-semibold'
+                    : 'text-text-secondary hover:text-text-primary hover:bg-aether-beige/40'
                 )}
               >
                 {item.label}
@@ -184,7 +183,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
           </Button>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-slate-800/60 border border-aether-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+            className="p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-aether-beige/60 border border-aether-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aether-clay"
             aria-label="Toggle navigation menu"
             aria-expanded={isMobileMenuOpen}
           >
@@ -209,7 +208,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                       <span className="text-xs font-semibold uppercase tracking-wider text-text-muted">
                         {item.label}
                       </span>
-                      <Link to="/industries" className="text-xs text-sky-400 font-medium">
+                      <Link to="/industries" className="text-xs text-aether-clay font-medium">
                         All 10
                       </Link>
                     </div>
@@ -218,7 +217,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                         <Link
                           key={subItem.href}
                           to={subItem.href}
-                          className="px-3 py-2 rounded-lg text-xs font-medium text-text-secondary hover:text-text-primary hover:bg-slate-800/60"
+                          className="px-3 py-2 rounded-lg text-xs font-medium text-text-secondary hover:text-text-primary hover:bg-aether-beige/50"
                         >
                           {subItem.label}
                         </Link>
@@ -236,8 +235,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSolution }) => {
                   className={cn(
                     'px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors',
                     isActive
-                      ? 'text-text-primary bg-slate-800/60 font-semibold'
-                      : 'text-text-secondary hover:text-text-primary hover:bg-slate-800/30'
+                      ? 'text-text-primary bg-aether-beige/60 font-semibold'
+                      : 'text-text-secondary hover:text-text-primary hover:bg-aether-beige/40'
                   )}
                 >
                   {item.label}

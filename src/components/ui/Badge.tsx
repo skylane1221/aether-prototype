@@ -23,12 +23,12 @@ export const Badge: React.FC<BadgeProps> = ({
     'inline-flex items-center font-medium transition-colors select-none rounded-full tracking-wide';
 
   const variants = {
-    default: 'bg-slate-800/60 text-slate-300 border border-slate-700/60',
-    primary: 'bg-sky-500/10 text-sky-400 border border-sky-500/25',
-    success: 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/25',
-    warning: 'bg-amber-500/10 text-amber-400 border border-amber-500/25',
-    neutral: 'bg-slate-900/80 text-slate-400 border border-slate-800',
-    outline: 'bg-transparent text-slate-300 border border-slate-700/70',
+    default: 'bg-aether-beige text-text-primary border border-aether-border-bright',
+    primary: 'bg-aether-clay/10 text-aether-clay border border-aether-clay/25',
+    success: 'bg-aether-success/15 text-aether-success border border-aether-success/30',
+    warning: 'bg-aether-yellow/20 text-[#7A6218] border border-aether-yellow/40',
+    neutral: 'bg-aether-card text-text-secondary border border-aether-border',
+    outline: 'bg-transparent text-text-secondary border border-aether-border',
   };
 
   const sizes = {
@@ -38,12 +38,12 @@ export const Badge: React.FC<BadgeProps> = ({
   };
 
   const dotColors = {
-    default: 'bg-slate-400',
-    primary: 'bg-sky-400',
-    success: 'bg-emerald-400',
-    warning: 'bg-amber-400',
-    neutral: 'bg-slate-500',
-    outline: 'bg-slate-400',
+    default: 'bg-aether-cocoa',
+    primary: 'bg-aether-clay',
+    success: 'bg-aether-success',
+    warning: 'bg-aether-yellow',
+    neutral: 'bg-text-muted',
+    outline: 'bg-aether-clay',
   };
 
   return (

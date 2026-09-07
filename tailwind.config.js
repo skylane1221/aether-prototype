@@ -6,29 +6,39 @@ export default {
     extend: {
       colors: {
         aether: {
-          bg: '#080a0f',
-          surface: '#0e121a',
-          card: '#131824',
-          'card-hover': '#182030',
-          'card-active': '#1c2538',
-          border: '#1e2638',
-          'border-subtle': '#151b28',
-          'border-bright': '#2d3b55',
-          primary: '#0ea5e9',
-          'primary-hover': '#38bdf8',
-          'primary-muted': 'rgba(14, 165, 233, 0.12)',
-          success: '#10b981',
-          'success-muted': 'rgba(16, 185, 129, 0.12)',
-          warning: '#f59e0b',
-          'warning-muted': 'rgba(245, 158, 11, 0.12)',
-          accent: '#6366f1',
-          'accent-muted': 'rgba(99, 102, 241, 0.12)',
+          bg: '#F5F0E8', // Warm Off-White (70%)
+          surface: '#EDE6DB', // Soft Beige surface
+          card: '#FAF6F0', // Clean warm card surface
+          'card-hover': '#F2ECE1',
+          'card-active': '#EBE3D6',
+          border: '#E6DED2', // Soft Beige (Secondary surface/border)
+          'border-subtle': '#EFE8DE',
+          'border-bright': '#D8CEC0',
+          primary: '#9A6048', // Clay (8%)
+          'primary-hover': '#844F3A',
+          'primary-muted': 'rgba(154, 96, 72, 0.10)',
+          cocoa: '#332A27', // Cocoa (20%)
+          'cocoa-hover': '#241D1B',
+          'cocoa-muted': 'rgba(51, 42, 39, 0.08)',
+          clay: '#9A6048', // Clay
+          'clay-hover': '#844F3A',
+          'clay-muted': 'rgba(154, 96, 72, 0.10)',
+          yellow: '#D9C36A', // Pale Yellow (2%)
+          'yellow-muted': 'rgba(217, 195, 106, 0.18)',
+          beige: '#E6DED2', // Soft Beige
+          'beige-hover': '#DDD3C4',
+          accent: '#D9C36A', // Pale Yellow accent
+          'accent-muted': 'rgba(217, 195, 106, 0.18)',
+          success: '#4A6B53', // Warm sophisticated sage
+          'success-muted': 'rgba(74, 107, 83, 0.12)',
+          warning: '#D9C36A', // Pale Yellow for warnings/accents
+          'warning-muted': 'rgba(217, 195, 106, 0.18)',
         },
         text: {
-          primary: '#f8fafc',
-          secondary: '#94a3b8',
-          muted: '#64748b',
-          faint: '#475569',
+          primary: '#332A27', // Cocoa (Primary dark colour for headings, nav, strong text)
+          secondary: '#5C4E49', // Warm dark charcoal-cocoa
+          muted: '#85756E', // Readable muted cocoa
+          faint: '#B0A29B', // Faint cocoa
         },
       },
       fontFamily: {
@@ -43,12 +53,12 @@ export default {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       boxShadow: {
-        card: '0 2px 8px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.04)',
+        card: '0 1px 3px 0 rgba(51, 42, 39, 0.04), 0 1px 2px -1px rgba(51, 42, 39, 0.04)',
         'card-hover':
-          '0 12px 28px -6px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08)',
-        'glow-subtle': '0 0 25px -5px rgba(14, 165, 233, 0.12)',
-        'glow-sm': '0 0 12px -2px rgba(14, 165, 233, 0.2)',
-        'inner-bevel': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.06)',
+          '0 10px 25px -5px rgba(51, 42, 39, 0.07), 0 8px 10px -6px rgba(51, 42, 39, 0.03)',
+        'glow-subtle': '0 0 16px -3px rgba(154, 96, 72, 0.08)',
+        'glow-sm': '0 0 10px -2px rgba(154, 96, 72, 0.12)',
+        'inner-bevel': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.6)',
       },
       letterSpacing: {
         tighter: '-0.035em',

@@ -26,7 +26,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
           surfaceStyles[surface],
           interactive &&
             'cursor-pointer hover:border-aether-border-bright hover:shadow-card-hover hover:-translate-y-0.5',
-          glow && 'hover:border-aether-primary/40 hover:shadow-glow-subtle',
+          glow && 'hover:border-aether-clay/40 hover:shadow-glow-subtle',
           className
         )}
         {...props}

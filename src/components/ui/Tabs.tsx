@@ -23,11 +23,27 @@ export const Tabs: React.FC<TabsProps> = ({
   variant = 'segmented',
   className,
 }) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    const currentIndex = items.findIndex((tab) => tab.id === activeId);
+    if (currentIndex === -1) return;
+
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      const nextIndex = (currentIndex + 1) % items.length;
+      onChange(items[nextIndex].id);
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const prevIndex = (currentIndex - 1 + items.length) % items.length;
+      onChange(items[prevIndex].id);
+    }
+  };
+
   if (variant === 'segmented') {
     return (
       <div
         role="tablist"
         aria-label="Navigation Tabs"
+        onKeyDown={handleKeyDown}
         className={cn(
           'inline-flex items-center p-1 bg-aether-surface border border-aether-border rounded-xl max-w-full overflow-x-auto no-scrollbar',
           className
@@ -43,10 +59,10 @@ export const Tabs: React.FC<TabsProps> = ({
               tabIndex={isActive ? 0 : -1}
               onClick={() => onChange(tab.id)}
               className={cn(
-                'flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400',
+                'flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aether-clay',
                 isActive
                   ? 'bg-aether-card text-text-primary shadow-sm border border-aether-border-bright/80 font-semibold'
-                  : 'text-text-secondary hover:text-text-primary hover:bg-white/[0.02]'
+                  : 'text-text-secondary hover:text-text-primary hover:bg-aether-beige/50'
               )}
             >
               {tab.icon && (
@@ -59,7 +75,9 @@ export const Tabs: React.FC<TabsProps> = ({
                 <span
                   className={cn(
                     'text-[10px] px-1.5 py-0.5 rounded-full font-mono',
-                    isActive ? 'bg-sky-500/20 text-sky-400' : 'bg-slate-800 text-slate-400'
+                    isActive
+                      ? 'bg-aether-clay/15 text-aether-clay'
+                      : 'bg-aether-beige text-text-muted'
                   )}
                 >
                   {tab.count}
@@ -77,6 +95,7 @@ export const Tabs: React.FC<TabsProps> = ({
     <div
       role="tablist"
       aria-label="Navigation Tabs"
+      onKeyDown={handleKeyDown}
       className={cn(
         'flex border-b border-aether-border overflow-x-auto no-scrollbar gap-6',
         className
@@ -92,10 +111,10 @@ export const Tabs: React.FC<TabsProps> = ({
             tabIndex={isActive ? 0 : -1}
             onClick={() => onChange(tab.id)}
             className={cn(
-              'flex items-center gap-2 pb-3 text-sm font-medium border-b-2 transition-all whitespace-nowrap -mb-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400',
+              'flex items-center gap-2 pb-3 text-sm font-medium border-b-2 transition-all whitespace-nowrap -mb-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aether-clay',
               isActive
-                ? 'border-aether-primary text-text-primary font-semibold'
-                : 'border-transparent text-text-secondary hover:text-text-primary hover:border-slate-700'
+                ? 'border-aether-clay text-text-primary font-semibold'
+                : 'border-transparent text-text-secondary hover:text-text-primary hover:border-aether-border-bright'
             )}
           >
             {tab.icon && (
@@ -105,7 +124,7 @@ export const Tabs: React.FC<TabsProps> = ({
             )}
             <span>{tab.label}</span>
             {tab.count !== undefined && (
-              <span className="text-xs px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 font-mono">
+              <span className="text-xs px-1.5 py-0.5 rounded bg-aether-beige text-text-muted font-mono">
                 {tab.count}
               </span>
             )}

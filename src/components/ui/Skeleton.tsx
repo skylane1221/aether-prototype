@@ -19,7 +19,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   return (
     <div
       className={cn(
-        'animate-pulse bg-slate-800/60 border border-slate-700/30',
+        'animate-pulse bg-aether-beige/60 border border-aether-border/50',
         variantStyles[variant],
         className
       )}

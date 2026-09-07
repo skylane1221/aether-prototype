@@ -6,11 +6,11 @@ import { Cpu, Workflow, BarChart3, BrainCircuit, MessageSquareText } from 'lucid
 import { cn } from '../../utils/cn';
 
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
-  'AI Intelligence': <Cpu className="w-5 h-5 text-sky-400" />,
-  'Workflow Automation': <Workflow className="w-5 h-5 text-indigo-400" />,
-  'Customer Intelligence': <BrainCircuit className="w-5 h-5 text-emerald-400" />,
-  'Business Intelligence': <BarChart3 className="w-5 h-5 text-amber-400" />,
-  'Communication Intelligence': <MessageSquareText className="w-5 h-5 text-teal-400" />,
+  'AI Intelligence': <Cpu className="w-5 h-5 text-aether-clay" />,
+  'Workflow Automation': <Workflow className="w-5 h-5 text-aether-cocoa" />,
+  'Customer Intelligence': <BrainCircuit className="w-5 h-5 text-aether-clay" />,
+  'Business Intelligence': <BarChart3 className="w-5 h-5 text-[#8A6F1D]" />,
+  'Communication Intelligence': <MessageSquareText className="w-5 h-5 text-[#6D7A60]" />,
 };
 
 export interface SolutionCardProps {
@@ -24,8 +24,8 @@ export const SolutionCard: React.FC<SolutionCardProps> = ({ solution, className 
       <div>
         {/* Category & Icon */}
         <div className="flex items-center justify-between mb-4">
-          <div className="w-10 h-10 rounded-lg bg-slate-900 border border-aether-border flex items-center justify-center">
-            {CATEGORY_ICONS[solution.category] || <Cpu className="w-5 h-5 text-sky-400" />}
+          <div className="w-10 h-10 rounded-lg bg-aether-surface border border-aether-border flex items-center justify-center">
+            {CATEGORY_ICONS[solution.category] || <Cpu className="w-5 h-5 text-aether-clay" />}
           </div>
           <Badge variant="neutral" size="sm" className="font-mono text-[11px]">
             {solution.category}
@@ -36,7 +36,7 @@ export const SolutionCard: React.FC<SolutionCardProps> = ({ solution, className 
         <h3 className="text-xl font-bold tracking-tight text-text-primary mb-2">
           {solution.title}
         </h3>
-        <p className="text-sm font-medium text-sky-400/90 mb-3 leading-snug">{solution.tagline}</p>
+        <p className="text-sm font-medium text-aether-clay mb-3 leading-snug">{solution.tagline}</p>
         <p className="text-xs sm:text-sm text-text-secondary leading-relaxed mb-6">
           {solution.description}
         </p>
@@ -48,7 +48,7 @@ export const SolutionCard: React.FC<SolutionCardProps> = ({ solution, className 
           </div>
           {solution.capabilities.map((cap, idx) => (
             <div key={idx} className="text-xs text-text-secondary flex items-start gap-2">
-              <span className="text-sky-400 font-bold">&bull;</span>
+              <span className="text-aether-clay font-bold">&bull;</span>
               <span>{cap}</span>
             </div>
           ))}
@@ -56,9 +56,9 @@ export const SolutionCard: React.FC<SolutionCardProps> = ({ solution, className 
       </div>
 
       {/* Measured Impact Box */}
-      <div className="pt-3.5 border-t border-aether-border-subtle bg-slate-900/40 -mx-6 -mb-6 p-4 rounded-b-xl border-b border-aether-border">
-        <div className="text-[11px] font-semibold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5 mb-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+      <div className="pt-3.5 border-t border-aether-border-subtle bg-aether-surface/50 -mx-6 -mb-6 p-4 rounded-b-xl border-b border-aether-border">
+        <div className="text-[11px] font-semibold text-aether-success uppercase tracking-wider flex items-center gap-1.5 mb-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-aether-success" />
           Measured Outcome
         </div>
         <p className="text-xs text-text-secondary font-medium">{solution.metricsImpact}</p>

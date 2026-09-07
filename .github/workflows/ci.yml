@@ -37,8 +37,8 @@ jobs:
       - name: 6. Run TypeScript typecheck
         run: npm run typecheck
 
-      - name: 7. Run unit & smoke tests
-        run: npm run test
+      - name: 7. Run test suite with coverage
+        run: npm run test:coverage
 
       - name: 8. Run production build
         run: npm run build

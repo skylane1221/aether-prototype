@@ -52,9 +52,9 @@ export const CTASection: React.FC<CTASectionProps> = ({
   return (
     <section className={cn('py-12 sm:py-20', className)}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-2xl bg-aether-card card-gradient-surface border border-slate-700/70 p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-card-hover">
-          {/* Subtle Ambient Radial Glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="relative rounded-2xl bg-aether-card border border-aether-border p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-card-hover">
+          {/* Subtle Ambient Radial Warmth */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-aether-clay/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
             {badge && (

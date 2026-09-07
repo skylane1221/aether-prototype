@@ -30,8 +30,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       tagline: 'Operational Context First',
       description:
         'Ingests real-time business signals, schedules, customer interactions, and resource constraints without disrupting daily operations.',
-      icon: <BrainCircuit className="w-5 h-5 text-sky-400" />,
-      accent: 'border-sky-500/30 text-sky-400 bg-sky-500/10',
+      icon: <BrainCircuit className="w-5 h-5 text-aether-clay" />,
+      accent: 'border-aether-clay/30 text-aether-clay bg-aether-clay/10',
     },
     {
       num: '02',
@@ -39,8 +39,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       tagline: 'Unified Intelligence Layer',
       description:
         'Bridges fragmented software tools—POS, CRM, PMS, EHR, and ERP—into a coherent, live intelligence stream.',
-      icon: <Layers className="w-5 h-5 text-indigo-400" />,
-      accent: 'border-indigo-500/30 text-indigo-400 bg-indigo-500/10',
+      icon: <Layers className="w-5 h-5 text-aether-cocoa" />,
+      accent: 'border-aether-border-bright text-aether-cocoa bg-aether-beige/60',
     },
     {
       num: '03',
@@ -48,8 +48,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       tagline: 'Friction & Leak Diagnosis',
       description:
         'Pinpoints hidden bottlenecks, unutilized capacity, delayed lead response, and silent customer churn before margins suffer.',
-      icon: <Search className="w-5 h-5 text-rose-400" />,
-      accent: 'border-rose-500/30 text-rose-400 bg-rose-500/10',
+      icon: <Search className="w-5 h-5 text-[#8A543E]" />,
+      accent: 'border-[#8A543E]/30 text-[#8A543E] bg-[#8A543E]/10',
     },
     {
       num: '04',
@@ -57,8 +57,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       tagline: 'Contextual Action Guidance',
       description:
         'Synthesizes mathematically sound, high-margin next-best-actions tailored to current operational load.',
-      icon: <Sparkles className="w-5 h-5 text-amber-400" />,
-      accent: 'border-amber-500/30 text-amber-400 bg-amber-500/10',
+      icon: <Sparkles className="w-5 h-5 text-[#8A6F1D]" />,
+      accent: 'border-aether-yellow/40 text-[#8A6F1D] bg-aether-yellow/20',
     },
     {
       num: '05',
@@ -66,8 +66,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       tagline: 'Autonomous Execution',
       description:
         'Executes communication, calendar packing, inventory alerts, and triage workflows with deterministic guardrails.',
-      icon: <Zap className="w-5 h-5 text-teal-400" />,
-      accent: 'border-teal-500/30 text-teal-400 bg-teal-500/10',
+      icon: <Zap className="w-5 h-5 text-aether-clay" />,
+      accent: 'border-aether-clay/30 text-aether-clay bg-aether-clay/10',
     },
     {
       num: '06',
@@ -75,8 +75,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       tagline: 'Compounding Business Impact',
       description:
         'Continuously measures realized outcomes, refines predictive models, and compounds efficiency over time.',
-      icon: <TrendingUp className="w-5 h-5 text-emerald-400" />,
-      accent: 'border-emerald-500/30 text-emerald-400 bg-emerald-500/10',
+      icon: <TrendingUp className="w-5 h-5 text-aether-success" />,
+      accent: 'border-aether-success/30 text-aether-success bg-aether-success/10',
     },
   ];
 
@@ -93,10 +93,10 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       {/* 1. THE CORE ARCHITECTURAL COMPARISON */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Traditional Approach */}
-        <Card className="p-6 sm:p-8 bg-slate-950/70 border-rose-900/30 relative flex flex-col justify-between overflow-hidden">
+        <Card className="p-6 sm:p-8 bg-aether-card border border-[#E8D4CE] relative flex flex-col justify-between overflow-hidden shadow-sm">
           <div>
-            <div className="flex items-center justify-between pb-4 border-b border-rose-900/20 mb-6">
-              <div className="flex items-center gap-2 text-rose-400 font-bold text-xs sm:text-sm tracking-wide uppercase font-mono">
+            <div className="flex items-center justify-between pb-4 border-b border-[#E8D4CE] mb-6">
+              <div className="flex items-center gap-2 text-[#8A543E] font-bold text-xs sm:text-sm tracking-wide uppercase font-mono">
                 <XCircle className="w-4 h-4" />
                 <span>Traditional Approach</span>
               </div>
@@ -106,17 +106,17 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
             </div>
 
             {/* Pipeline Steps */}
-            <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 mb-6">
+            <div className="p-4 rounded-xl bg-aether-surface/60 border border-aether-border mb-6">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono font-semibold">
-                <div className="px-3 py-2 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-300 w-full sm:w-auto text-center">
+                <div className="px-3 py-2 rounded-lg bg-[#9A6048]/10 border border-[#9A6048]/20 text-[#8A543E] w-full sm:w-auto text-center">
                   Task
                 </div>
                 <div className="hidden sm:block text-text-muted">→</div>
-                <div className="px-3 py-2 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-300 w-full sm:w-auto text-center">
+                <div className="px-3 py-2 rounded-lg bg-[#9A6048]/10 border border-[#9A6048]/20 text-[#8A543E] w-full sm:w-auto text-center">
                   Rule
                 </div>
                 <div className="hidden sm:block text-text-muted">→</div>
-                <div className="px-3 py-2 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-300 w-full sm:w-auto text-center">
+                <div className="px-3 py-2 rounded-lg bg-[#9A6048]/10 border border-[#9A6048]/20 text-[#8A543E] w-full sm:w-auto text-center">
                   Automation
                 </div>
               </div>
@@ -129,7 +129,7 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
                 hard-coded into an if-then rule.
               </p>
               <p>
-                <strong className="text-rose-300">The Problem:</strong> Has zero awareness of
+                <strong className="text-[#8A543E]">The Problem:</strong> Has zero awareness of
                 operational state, capacity limits, customer history, or changing margins. The
                 moment an exception occurs or a schedule changes, static rules break, forcing staff
                 back to manual firefighting.
@@ -137,16 +137,16 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
             </div>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-rose-900/20 text-[11px] font-mono text-rose-400/90 flex items-center gap-1.5">
+          <div className="mt-6 pt-4 border-t border-[#E8D4CE] text-[11px] font-mono text-[#8A543E] flex items-center gap-1.5">
             <span>Result:</span> Rigid scripts that break when real-world conditions shift.
           </div>
         </Card>
 
         {/* Aether Approach */}
-        <Card className="p-6 sm:p-8 bg-gradient-to-b from-sky-950/20 via-slate-900/90 to-slate-950 border-sky-500/40 relative flex flex-col justify-between overflow-hidden shadow-glow-subtle">
+        <Card className="p-6 sm:p-8 bg-aether-card border-2 border-aether-clay/60 relative flex flex-col justify-between overflow-hidden shadow-card-hover">
           <div>
-            <div className="flex items-center justify-between pb-4 border-b border-sky-500/20 mb-6">
-              <div className="flex items-center gap-2 text-sky-400 font-bold text-xs sm:text-sm tracking-wide uppercase font-mono">
+            <div className="flex items-center justify-between pb-4 border-b border-aether-border-subtle mb-6">
+              <div className="flex items-center gap-2 text-aether-clay font-bold text-xs sm:text-sm tracking-wide uppercase font-mono">
                 <CheckCircle2 className="w-4 h-4" />
                 <span>The Aether Approach</span>
               </div>
@@ -156,33 +156,33 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
             </div>
 
             {/* Pipeline Steps */}
-            <div className="p-4 rounded-xl bg-slate-950/80 border border-sky-500/30 mb-6 overflow-x-auto scrollbar-none">
+            <div className="p-4 rounded-xl bg-aether-surface border border-aether-border mb-6 overflow-x-auto scrollbar-none">
               <div className="flex items-center gap-2 text-[11px] font-mono font-bold whitespace-nowrap min-w-max">
-                <span className="px-2.5 py-1.5 rounded-lg bg-sky-500/20 border border-sky-500/40 text-sky-300">
+                <span className="px-2.5 py-1.5 rounded-lg bg-aether-clay text-white border border-aether-clay font-semibold">
                   Business
                 </span>
-                <span className="text-sky-400/60">→</span>
-                <span className="px-2.5 py-1.5 rounded-lg bg-slate-800 text-text-primary border border-slate-700">
+                <span className="text-aether-clay">→</span>
+                <span className="px-2.5 py-1.5 rounded-lg bg-aether-card text-text-primary border border-aether-border">
                   Understand
                 </span>
-                <span className="text-sky-400/60">→</span>
-                <span className="px-2.5 py-1.5 rounded-lg bg-slate-800 text-text-primary border border-slate-700">
+                <span className="text-aether-clay">→</span>
+                <span className="px-2.5 py-1.5 rounded-lg bg-aether-card text-text-primary border border-aether-border">
                   Identify Problem
                 </span>
-                <span className="text-sky-400/60">→</span>
-                <span className="px-2.5 py-1.5 rounded-lg bg-slate-800 text-text-primary border border-slate-700">
+                <span className="text-aether-clay">→</span>
+                <span className="px-2.5 py-1.5 rounded-lg bg-aether-card text-text-primary border border-aether-border">
                   Discover Opportunity
                 </span>
-                <span className="text-sky-400/60">→</span>
-                <span className="px-2.5 py-1.5 rounded-lg bg-slate-800 text-text-primary border border-slate-700">
+                <span className="text-aether-clay">→</span>
+                <span className="px-2.5 py-1.5 rounded-lg bg-aether-card text-text-primary border border-aether-border">
                   Design Solution
                 </span>
-                <span className="text-sky-400/60">→</span>
-                <span className="px-2.5 py-1.5 rounded-lg bg-slate-800 text-text-primary border border-slate-700">
+                <span className="text-aether-clay">→</span>
+                <span className="px-2.5 py-1.5 rounded-lg bg-aether-card text-text-primary border border-aether-border">
                   Recommend Action
                 </span>
-                <span className="text-sky-400/60">→</span>
-                <span className="px-2.5 py-1.5 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300">
+                <span className="text-aether-clay">→</span>
+                <span className="px-2.5 py-1.5 rounded-lg bg-aether-success/15 border border-aether-success/30 text-aether-success font-semibold">
                   Optimize
                 </span>
               </div>
@@ -197,14 +197,15 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
                 before formulating action.
               </p>
               <p>
-                <strong className="text-sky-300">The Advantage:</strong> Synthesizes context-aware
-                recommendations, self-heals around real-world disruptions (cancellations, late
-                arrivals, inventory stockouts), and measures actual business ROI.
+                <strong className="text-aether-clay">The Advantage:</strong> Synthesizes
+                context-aware recommendations, self-heals around real-world disruptions
+                (cancellations, late arrivals, inventory stockouts), and measures actual business
+                ROI.
               </p>
             </div>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-sky-500/20 text-[11px] font-mono text-emerald-400 flex items-center gap-1.5">
+          <div className="mt-6 pt-4 border-t border-aether-border-subtle text-[11px] font-mono text-aether-success flex items-center gap-1.5">
             <span>Result:</span> Resilient operational intelligence that compounds over time.
           </div>
         </Card>
@@ -223,7 +224,7 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
           {SIX_PRINCIPLES.map((principle) => (
             <Card
               key={principle.num}
-              className="p-5 sm:p-6 flex flex-col justify-between h-full bg-slate-900/60 border-slate-800 hover:border-slate-700 transition-all"
+              className="p-5 sm:p-6 flex flex-col justify-between h-full bg-aether-card border-aether-border hover:border-aether-border-bright hover:shadow-card transition-all"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -241,7 +242,7 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
                 </div>
 
                 <h4 className="text-base font-bold text-text-primary mb-1">{principle.title}</h4>
-                <div className="text-xs font-mono text-sky-400/90 mb-3">{principle.tagline}</div>
+                <div className="text-xs font-mono text-aether-clay mb-3">{principle.tagline}</div>
 
                 <p className="text-xs text-text-secondary leading-relaxed">
                   {principle.description}
@@ -253,8 +254,8 @@ export const WhyAetherSection: React.FC<WhyAetherSectionProps> = ({
       </div>
 
       {/* 3. CORE TAKEAWAY CALLOUT */}
-      <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border border-sky-500/25 text-center max-w-4xl mx-auto shadow-sm">
-        <span className="text-xs font-mono font-semibold uppercase tracking-widest text-sky-400 block mb-2">
+      <div className="p-6 sm:p-8 rounded-2xl bg-aether-surface border border-aether-border text-center max-w-4xl mx-auto shadow-sm">
+        <span className="text-xs font-mono font-semibold uppercase tracking-widest text-aether-clay block mb-2">
           Core Architecture Principle
         </span>
         <h3 className="text-lg sm:text-2xl font-bold text-text-primary tracking-tight mb-3">

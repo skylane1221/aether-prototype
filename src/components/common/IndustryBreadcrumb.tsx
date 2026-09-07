@@ -32,19 +32,19 @@ export const IndustryBreadcrumb: React.FC<IndustryBreadcrumbProps> = ({
       >
         <Link
           to="/"
-          className="hover:text-text-primary flex items-center gap-1 transition-colors p-1 rounded hover:bg-slate-800/40"
+          className="hover:text-text-primary flex items-center gap-1 transition-colors p-1 rounded hover:bg-aether-surface"
         >
           <Home className="w-3.5 h-3.5" />
           <span className="hidden sm:inline">Home</span>
         </Link>
-        <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+        <ChevronRight className="w-3.5 h-3.5 text-aether-border" />
         <Link
           to="/industries"
-          className="hover:text-text-primary transition-colors p-1 rounded hover:bg-slate-800/40 font-medium"
+          className="hover:text-text-primary transition-colors p-1 rounded hover:bg-aether-surface font-medium"
         >
           Industries
         </Link>
-        <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+        <ChevronRight className="w-3.5 h-3.5 text-aether-border" />
         <span className="text-text-primary font-semibold p-1">{industryName}</span>
       </nav>
 
@@ -64,7 +64,7 @@ export const IndustryBreadcrumb: React.FC<IndustryBreadcrumbProps> = ({
           <Button
             variant="secondary"
             size="sm"
-            leftIcon={<Play className="w-3 h-3 text-sky-400 fill-current" />}
+            leftIcon={<Play className="w-3 h-3 text-aether-clay fill-current" />}
             className="text-xs h-7 px-2.5"
           >
             Live Demo
@@ -74,7 +74,7 @@ export const IndustryBreadcrumb: React.FC<IndustryBreadcrumbProps> = ({
           <Button
             variant="outline"
             size="sm"
-            leftIcon={<TrendingUp className="w-3 h-3 text-emerald-400" />}
+            leftIcon={<TrendingUp className="w-3 h-3 text-[#4D6B53]" />}
             className="text-xs h-7 px-2.5 hidden md:flex"
           >
             ROI Impact
